@@ -46,7 +46,7 @@ export default function Header() {
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gradient-to-r from-[#8a7fe9] via-[#b8a1e6] to-[#9fa6e9] border-b border-white/20',
-        isScrolled ? 'py-3' : 'py-5'
+        isScrolled ? 'py-3 shadow-lg' : 'py-5'
       )}
     >
       <div className="container-custom">
@@ -79,9 +79,9 @@ export default function Header() {
                   to={item.href}
                   className={cn(
                     'px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200',
-                    'text-white/80 hover:text-white hover:bg-[#2F73EE]/10',
+                    'text-white/90 hover:text-white hover:bg-white/20',
                     'flex items-center gap-1',
-                    location.pathname === item.href && 'text-white bg-[#2F73EE]/20'
+                    location.pathname === item.href && 'text-white bg-white/20'
                   )}
                 >
                   {item.name}
@@ -96,13 +96,13 @@ export default function Header() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-72 py-2 glass rounded-xl shadow-xl"
+                      className="absolute top-full left-0 mt-2 w-72 py-2 bg-white rounded-xl shadow-xl border border-gray-100"
                     >
                       {item.submenu.map((subItem) => (
                         <Link
                           key={subItem.name}
                           to={subItem.href}
-                          className="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-[#2F73EE]/20 transition-colors"
+                          className="block px-4 py-2.5 text-sm text-gray-700 hover:text-[#8734E1] hover:bg-[#8734E1]/5 transition-colors"
                         >
                           {subItem.name}
                         </Link>
@@ -118,7 +118,7 @@ export default function Header() {
           <div className="hidden lg:block">
             <Link to="/contact">
               <motion.button
-                className="btn-accent text-sm"
+                className="px-6 py-2.5 bg-white text-[#8734E1] font-semibold rounded-xl hover:bg-white/90 transition-all shadow-lg"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -129,7 +129,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-white hover:bg-[#2F73EE]/20 rounded-lg transition-colors"
+            className="lg:hidden p-2 text-white hover:bg-white/20 rounded-lg transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -146,14 +146,14 @@ export default function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-gradient-to-r from-[#8a7fe9] via-[#b8a1e6] to-[#9fa6e9] backdrop-blur-xl border-b border-white/20"
+            className="lg:hidden bg-gradient-to-r from-[#8a7fe9] via-[#b8a1e6] to-[#9fa6e9] border-b border-white/20"
           >
             <div className="container-custom py-6 space-y-2">
               {navigation.map((item) => (
                 <div key={item.name}>
                   <Link
                     to={item.href}
-                    className="block px-4 py-3 text-white/80 hover:text-white hover:bg-[#2F73EE]/20 rounded-lg transition-colors"
+                    className="block px-4 py-3 text-white/90 hover:text-white hover:bg-white/20 rounded-lg transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -161,7 +161,9 @@ export default function Header() {
               ))}
               <div className="pt-4">
                 <Link to="/contact">
-                  <button className="btn-accent w-full">Start Your Project</button>
+                  <button className="w-full px-6 py-3 bg-white text-[#8734E1] font-semibold rounded-xl hover:bg-white/90 transition-all">
+                    Start Your Project
+                  </button>
                 </Link>
               </div>
             </div>
