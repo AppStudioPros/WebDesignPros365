@@ -47,7 +47,7 @@ export default function Header() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
-          ? 'bg-[#0f1419]/80 backdrop-blur-xl border-b border-white/10 py-3'
+          ? 'bg-[#0a0f18]/90 backdrop-blur-xl border-b border-[#2F73EE]/20 py-3'
           : 'bg-transparent py-5'
       )}
     >
@@ -56,19 +56,15 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="relative z-10">
             <motion.div
-              className="flex items-center gap-2"
+              className="flex items-center gap-3"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#00d9ff] to-[#0066cc] flex items-center justify-center">
-                <span className="text-white font-bold text-lg">W</span>
-              </div>
-              <div className="hidden sm:block">
-                <span className="font-bold text-lg text-white">
-                  Web Design Pros
-                </span>
-                <span className="font-bold text-lg gradient-text"> 365</span>
-              </div>
+              <img 
+                src="https://customer-assets.emergentagent.com/job_designpros-test/artifacts/tf1dbj7e_Web%20Design%20Pros%20365%20noborder.png" 
+                alt="Web Design Pros 365" 
+                className="h-10 w-auto"
+              />
             </motion.div>
           </Link>
 
@@ -85,9 +81,9 @@ export default function Header() {
                   to={item.href}
                   className={cn(
                     'px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200',
-                    'text-white/80 hover:text-white hover:bg-white/10',
+                    'text-white/80 hover:text-white hover:bg-[#2F73EE]/10',
                     'flex items-center gap-1',
-                    location.pathname === item.href && 'text-white bg-white/10'
+                    location.pathname === item.href && 'text-white bg-[#2F73EE]/20'
                   )}
                 >
                   {item.name}
@@ -108,7 +104,7 @@ export default function Header() {
                         <Link
                           key={subItem.name}
                           to={subItem.href}
-                          className="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+                          className="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-[#2F73EE]/20 transition-colors"
                         >
                           {subItem.name}
                         </Link>
@@ -135,7 +131,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
+            className="lg:hidden p-2 text-white hover:bg-[#2F73EE]/20 rounded-lg transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -152,14 +148,14 @@ export default function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-[#0f1419]/95 backdrop-blur-xl border-b border-white/10"
+            className="lg:hidden bg-[#0a0f18]/95 backdrop-blur-xl border-b border-[#2F73EE]/20"
           >
             <div className="container-custom py-6 space-y-2">
               {navigation.map((item) => (
                 <div key={item.name}>
                   <Link
                     to={item.href}
-                    className="block px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+                    className="block px-4 py-3 text-white/80 hover:text-white hover:bg-[#2F73EE]/20 rounded-lg transition-colors"
                   >
                     {item.name}
                   </Link>

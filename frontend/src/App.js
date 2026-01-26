@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import HomePage from './pages/HomePage';
@@ -12,10 +12,22 @@ import PricingPage from './pages/PricingPage';
 import FAQPage from './pages/FAQPage';
 import './App.css';
 
+// ScrollToTop component to reset scroll position on route change
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col bg-[#0f1419]">
+      <ScrollToTop />
+      <div className="min-h-screen flex flex-col bg-[#0a0f18]">
         <Header />
         <main className="flex-1">
           <Routes>

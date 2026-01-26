@@ -84,29 +84,29 @@ export default function ContactPage() {
               </div>
 
               <div className="space-y-6">
-                <Card className="p-4 flex items-center gap-4 hover:bg-white/10 transition-colors">
-                  <div className="w-12 h-12 rounded-xl bg-[#00d9ff]/20 flex items-center justify-center">
-                    <Mail className="w-5 h-5 text-[#00d9ff]" />
+                <Card className="p-4 flex items-center gap-4 hover:bg-[#2F73EE]/10 transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-[#2F73EE]/20 flex items-center justify-center">
+                    <Mail className="w-5 h-5 text-[#2F73EE]" />
                   </div>
                   <div>
                     <p className="text-sm text-white/40">Email</p>
-                    <a href="mailto:hello@webdesignpros365.com" className="text-white hover:text-[#00d9ff] transition-colors">hello@webdesignpros365.com</a>
+                    <a href="mailto:info@webdesignpros365.com" className="text-white hover:text-[#2F73EE] transition-colors">info@webdesignpros365.com</a>
                   </div>
                 </Card>
 
-                <Card className="p-4 flex items-center gap-4 hover:bg-white/10 transition-colors">
-                  <div className="w-12 h-12 rounded-xl bg-[#0066cc]/20 flex items-center justify-center">
-                    <Phone className="w-5 h-5 text-[#3388dd]" />
+                <Card className="p-4 flex items-center gap-4 hover:bg-[#8734E1]/10 transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-[#8734E1]/20 flex items-center justify-center">
+                    <Phone className="w-5 h-5 text-[#BF5DE0]" />
                   </div>
                   <div>
                     <p className="text-sm text-white/40">Phone</p>
-                    <a href="tel:+1234567890" className="text-white hover:text-[#00d9ff] transition-colors">+1 (234) 567-890</a>
+                    <a href="tel:+17202760797" className="text-white hover:text-[#BF5DE0] transition-colors">+1 (720) 276-0797</a>
                   </div>
                 </Card>
 
-                <Card className="p-4 flex items-center gap-4 hover:bg-white/10 transition-colors">
-                  <div className="w-12 h-12 rounded-xl bg-[#00ff88]/20 flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-[#00ff88]" />
+                <Card className="p-4 flex items-center gap-4 hover:bg-[#FFD700]/10 transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-[#FFD700]/20 flex items-center justify-center">
+                    <MapPin className="w-5 h-5 text-[#FFD700]" />
                   </div>
                   <div>
                     <p className="text-sm text-white/40">Location</p>
@@ -119,7 +119,7 @@ export default function ContactPage() {
                 <div className="flex items-center gap-2 text-sm text-white/60"><CheckCircle className="w-4 h-4 text-[#00ff88]" />Free consultation</div>
                 <div className="flex items-center gap-2 text-sm text-white/60"><CheckCircle className="w-4 h-4 text-[#00ff88]" />No obligation quote</div>
                 <div className="flex items-center gap-2 text-sm text-white/60"><CheckCircle className="w-4 h-4 text-[#00ff88]" />24-48 hour response time</div>
-                <div className="flex items-center gap-2 text-sm text-white/60"><Shield className="w-4 h-4 text-[#00d9ff]" />Spam protected form</div>
+                <div className="flex items-center gap-2 text-sm text-white/60"><Shield className="w-4 h-4 text-[#2F73EE]" />Spam protected form</div>
               </div>
             </div>
 
@@ -138,11 +138,11 @@ export default function ContactPage() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-sm font-medium text-white/80 mb-2">Name <span className="text-[#ff3366]">*</span></label>
+                        <label className="block text-sm font-medium text-white/80 mb-2">Name <span className="text-[#BF5DE0]">*</span></label>
                         <Input name="name" value={formData.name} onChange={handleChange} placeholder="Your Name" required />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-white/80 mb-2">Email <span className="text-[#ff3366]">*</span></label>
+                        <label className="block text-sm font-medium text-white/80 mb-2">Email <span className="text-[#BF5DE0]">*</span></label>
                         <Input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="your@email.com" required />
                       </div>
                     </div>
@@ -170,7 +170,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-white/80 mb-2">Project Description <span className="text-[#ff3366]">*</span></label>
+                      <label className="block text-sm font-medium text-white/80 mb-2">Project Description <span className="text-[#BF5DE0]">*</span></label>
                       <Textarea name="message" value={formData.message} onChange={handleChange} placeholder="Tell us about your project, goals, and vision..." rows={6} required />
                     </div>
 

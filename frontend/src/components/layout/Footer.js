@@ -32,23 +32,17 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1a1f2e] border-t border-white/10">
+    <footer className="bg-[#121a2d] border-t border-[#2F73EE]/20">
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="inline-block mb-6">
-              <div className="flex items-center gap-2">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#00d9ff] to-[#0066cc] flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">W</span>
-                </div>
-                <div>
-                  <span className="font-bold text-lg text-white">
-                    Web Design Pros
-                  </span>
-                  <span className="font-bold text-lg gradient-text"> 365</span>
-                </div>
-              </div>
+              <img 
+                src="https://customer-assets.emergentagent.com/job_designpros-test/artifacts/tf1dbj7e_Web%20Design%20Pros%20365%20noborder.png" 
+                alt="Web Design Pros 365" 
+                className="h-12 w-auto"
+              />
             </Link>
             <p className="text-white/60 mb-6 max-w-sm">
               Crafting next-gen web experiences with cutting-edge technology. Your vision,
@@ -58,18 +52,18 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="space-y-3 text-sm text-white/60">
               <a
-                href="mailto:hello@webdesignpros365.com"
-                className="flex items-center gap-2 hover:text-[#00d9ff] transition-colors"
+                href="mailto:info@webdesignpros365.com"
+                className="flex items-center gap-2 hover:text-[#2F73EE] transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                hello@webdesignpros365.com
+                info@webdesignpros365.com
               </a>
               <a
-                href="tel:+1234567890"
-                className="flex items-center gap-2 hover:text-[#00d9ff] transition-colors"
+                href="tel:+17202760797"
+                className="flex items-center gap-2 hover:text-[#2F73EE] transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                +1 (234) 567-890
+                +1 (720) 276-0797
               </a>
               <p className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
@@ -86,7 +80,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-white/60 hover:text-[#00d9ff] transition-colors"
+                    className="text-sm text-white/60 hover:text-[#2F73EE] transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -103,7 +97,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-white/60 hover:text-[#00d9ff] transition-colors"
+                    className="text-sm text-white/60 hover:text-[#2F73EE] transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -120,7 +114,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-white/60 hover:text-[#00d9ff] transition-colors"
+                    className="text-sm text-white/60 hover:text-[#2F73EE] transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -131,7 +125,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-12 pt-8 border-t border-[#2F73EE]/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-white/40">
             &copy; {new Date().getFullYear()} Web Design Pros 365. All rights reserved.
           </p>
@@ -144,7 +138,7 @@ export default function Footer() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-white/40 hover:text-[#00d9ff] hover:bg-white/10 rounded-lg transition-all"
+                className="p-2 text-white/40 hover:text-[#2F73EE] hover:bg-[#2F73EE]/10 rounded-lg transition-all"
                 aria-label={social.name}
               >
                 <social.icon className="w-5 h-5" />
@@ -154,12 +148,12 @@ export default function Footer() {
 
           {/* Tech Badges */}
           <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-full bg-white/10 border border-white/20">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-full bg-[#1A3A6E]/30 border border-[#2F73EE]/30">
               <span className="w-1.5 h-1.5 rounded-full bg-[#00ff88]" />
               Next.js 15
             </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-full bg-white/10 border border-white/20">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00d9ff]" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-full bg-[#8734E1]/20 border border-[#8734E1]/30">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#BF5DE0]" />
               Vercel
             </span>
           </div>
