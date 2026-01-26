@@ -47,7 +47,7 @@ export default function Header() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
-          ? 'bg-[#0a0f18]/90 backdrop-blur-xl border-b border-[#2F73EE]/20 py-3'
+          ? 'bg-[#2a1f4e]/95 backdrop-blur-xl border-b border-[#8734E1]/30 py-3'
           : 'bg-transparent py-5'
       )}
     >
@@ -148,7 +148,7 @@ export default function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-[#0a0f18]/95 backdrop-blur-xl border-b border-[#2F73EE]/20"
+            className="lg:hidden bg-[#2a1f4e]/95 backdrop-blur-xl border-b border-[#8734E1]/30"
           >
             <div className="container-custom py-6 space-y-2">
               {navigation.map((item) => (
