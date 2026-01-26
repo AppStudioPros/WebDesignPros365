@@ -1,11 +1,11 @@
 [
   {
     "content": "Phase 1: Get integration playbooks (Sanity.io, Resend, reCAPTCHA v3)",
-    "status": "in_progress"
+    "status": "completed"
   },
   {
     "content": "Phase 1: Create Next.js 15 project skeleton with App Router",
-    "status": "pending"
+    "status": "in_progress"
   },
   {
     "content": "Phase 1: Implement Sanity.io client and schemas",
@@ -16,11 +16,7 @@
     "status": "pending"
   },
   {
-    "content": "Phase 1: Create POC test script (test_core.mjs)",
-    "status": "pending"
-  },
-  {
-    "content": "Phase 1: Test and validate POC",
+    "content": "Phase 1: Create POC test page and validate",
     "status": "pending"
   },
   {
