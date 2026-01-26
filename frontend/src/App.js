@@ -23,26 +23,44 @@ function ScrollToTop() {
   return null;
 }
 
+// Layout component that conditionally applies background
+function Layout({ children }) {
+  const { pathname } = useLocation();
+  const isHomePage = pathname === '/';
+  
+  return (
+    <div className={`min-h-screen flex flex-col ${isHomePage ? '' : 'bg-[#0a0f18]'}`}>
+      <Header />
+      <main className="flex-1">
+        {children}
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+function AppRoutes() {
+  return (
+    <Layout>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/portfolio" element={<PortfolioPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/faq" element={<FAQPage />} />
+      </Routes>
+    </Layout>
+  );
+}
+
 function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/portfolio" element={<PortfolioPage />} />
-            <Route path="/blog" element={<BlogPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/pricing" element={<PricingPage />} />
-            <Route path="/faq" element={<FAQPage />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <AppRoutes />
     </Router>
   );
 }
