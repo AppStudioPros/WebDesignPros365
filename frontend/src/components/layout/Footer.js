@@ -32,7 +32,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#2a1f4e] border-t border-[#8734E1]/30">
+    <footer className="bg-gradient-to-r from-[#7063e3] via-[#a487e0] to-[#8690e3] border-t border-white/20">
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           {/* Brand */}
@@ -125,7 +125,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-[#8734E1]/30 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-12 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-white/40">
             &copy; {new Date().getFullYear()} Web Design Pros 365. All rights reserved.
           </p>
