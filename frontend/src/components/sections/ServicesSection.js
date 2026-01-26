@@ -30,7 +30,7 @@ const services = [
     icon: Gauge,
     isFlagship: false,
     slug: 'seo-performance',
-    color: '#FFD700',
+    color: '#f59e0b',
   },
   {
     title: 'Next.js Full-Stack Development',
@@ -57,7 +57,7 @@ const services = [
     icon: TrendingUp,
     isFlagship: false,
     slug: 'digital-marketing',
-    color: '#00ff88',
+    color: '#10b981',
   },
 ];
 
@@ -76,8 +76,7 @@ const itemVariants = {
 
 export default function ServicesSection() {
   return (
-    <section className="section relative overflow-hidden">
-      {/* Transparent background to show video */}
+    <section className="section relative overflow-hidden bg-[#f8f9fc]">
       <div className="absolute inset-0 bg-gradient-mesh opacity-50" />
 
       <div className="container-custom relative z-10">
@@ -92,7 +91,7 @@ export default function ServicesSection() {
           <h2 className="heading-lg mb-4">
             What We <span className="gradient-text">Build</span>
           </h2>
-          <p className="text-white/60 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto">
             From cutting-edge AI integration to performance optimization,
             we deliver comprehensive digital solutions.
           </p>
@@ -108,14 +107,14 @@ export default function ServicesSection() {
           {services.map((service) => (
             <motion.div key={service.slug} variants={itemVariants}>
               <Link to={`/services#${service.slug}`}>
-                <Card className={`h-full p-6 group cursor-pointer hover:bg-[#2F73EE]/10 hover:border-[#2F73EE]/30 transition-all ${
-                  service.isFlagship ? 'border-[#8734E1]/40 bg-[#8734E1]/10' : ''
+                <Card className={`h-full p-6 group cursor-pointer bg-white border-gray-200 hover:border-[#8734E1]/30 hover:shadow-lg transition-all ${
+                  service.isFlagship ? 'border-[#8734E1]/40 bg-[#8734E1]/5' : ''
                 }`}>
                   <CardContent className="p-0">
                     <div className="flex items-start justify-between mb-4">
                       <div 
                         className="w-12 h-12 rounded-xl flex items-center justify-center"
-                        style={{ backgroundColor: `${service.color}20` }}
+                        style={{ backgroundColor: `${service.color}15` }}
                       >
                         <service.icon className="w-6 h-6" style={{ color: service.color }} />
                       </div>
@@ -123,13 +122,13 @@ export default function ServicesSection() {
                         <Badge variant="accent" dot>Flagship</Badge>
                       )}
                     </div>
-                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#2F73EE] transition-colors">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[#8734E1] transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-sm text-white/60 mb-4">
+                    <p className="text-sm text-gray-600 mb-4">
                       {service.shortDescription}
                     </p>
-                    <div className="flex items-center text-sm text-[#2F73EE] group-hover:gap-2 transition-all">
+                    <div className="flex items-center text-sm text-[#8734E1] group-hover:gap-2 transition-all">
                       Learn more
                       <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                     </div>
