@@ -34,7 +34,7 @@ const techStack = [
 
 export default function TechStackSection() {
   return (
-    <section className="section relative overflow-hidden">
+    <section className="section relative overflow-hidden bg-white">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ export default function TechStackSection() {
           <h2 className="heading-lg mb-4">
             Built with <span className="gradient-text">Modern Technology</span>
           </h2>
-          <p className="text-white/60 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto">
             We use cutting-edge tools and frameworks to deliver exceptional results.
           </p>
         </motion.div>
@@ -60,9 +60,9 @@ export default function TechStackSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-              className="glass p-6"
+              className="bg-[#f8f9fc] border border-gray-200 rounded-2xl p-6"
             >
-              <h3 className="text-lg font-semibold text-white mb-6">{category.category}</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-6">{category.category}</h3>
               <div className="space-y-4">
                 {category.technologies.map((tech, techIndex) => (
                   <motion.div
@@ -71,10 +71,10 @@ export default function TechStackSection() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: categoryIndex * 0.1 + techIndex * 0.05 }}
-                    className="flex items-center justify-between py-2 border-b border-white/5 last:border-0"
+                    className="flex items-center justify-between py-2 border-b border-gray-200 last:border-0"
                   >
-                    <span className="text-white font-medium">{tech.name}</span>
-                    <span className="text-sm text-white/40">{tech.description}</span>
+                    <span className="text-gray-900 font-medium">{tech.name}</span>
+                    <span className="text-sm text-gray-500">{tech.description}</span>
                   </motion.div>
                 ))}
               </div>

@@ -34,7 +34,7 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="section relative overflow-hidden bg-[#1a1f2e]">
+    <section className="section relative overflow-hidden bg-[#f8f9fc]">
       <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
 
       <div className="container-custom relative z-10">
@@ -49,7 +49,7 @@ export default function FAQSection() {
           <h2 className="heading-lg mb-4">
             Common <span className="gradient-text">Questions</span>
           </h2>
-          <p className="text-white/60 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto">
             Find answers to frequently asked questions about our services and process.
           </p>
         </motion.div>
@@ -63,14 +63,14 @@ export default function FAQSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
             >
-              <div className="glass overflow-hidden">
+              <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
                 >
-                  <span className="font-medium text-white pr-8">{faq.question}</span>
+                  <span className="font-medium text-gray-900 pr-8">{faq.question}</span>
                   <ChevronDown
-                    className={`w-5 h-5 text-[#00d9ff] transition-transform duration-300 flex-shrink-0 ${
+                    className={`w-5 h-5 text-[#8734E1] transition-transform duration-300 flex-shrink-0 ${
                       openIndex === index ? 'rotate-180' : ''
                     }`}
                   />
@@ -84,7 +84,7 @@ export default function FAQSection() {
                       transition={{ duration: 0.3 }}
                     >
                       <div className="px-6 pb-5">
-                        <p className="text-white/60 leading-relaxed">{faq.answer}</p>
+                        <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
                       </div>
                     </motion.div>
                   )}

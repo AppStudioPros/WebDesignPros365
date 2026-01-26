@@ -3,17 +3,17 @@ import { cn } from '../../lib/utils';
 
 const Badge = React.forwardRef(({ className, variant = 'default', dot, children, ...props }, ref) => {
   const variants = {
-    default: 'bg-white/10 border border-white/20 text-white',
-    accent: 'bg-[#00d9ff]/20 border border-[#00d9ff]/30 text-[#00d9ff]',
-    primary: 'bg-[#0066cc]/20 border border-[#0066cc]/30 text-[#3388dd]',
-    success: 'bg-[#00ff88]/20 border border-[#00ff88]/30 text-[#00ff88]',
+    default: 'bg-gray-100 border border-gray-200 text-gray-700',
+    accent: 'bg-[#8734E1]/10 border border-[#8734E1]/30 text-[#8734E1]',
+    primary: 'bg-[#2F73EE]/10 border border-[#2F73EE]/30 text-[#2F73EE]',
+    success: 'bg-[#10b981]/10 border border-[#10b981]/30 text-[#10b981]',
   };
 
   const dotColors = {
-    default: 'bg-white/60',
-    accent: 'bg-[#00d9ff]',
-    primary: 'bg-[#3388dd]',
-    success: 'bg-[#00ff88]',
+    default: 'bg-gray-500',
+    accent: 'bg-[#8734E1]',
+    primary: 'bg-[#2F73EE]',
+    success: 'bg-[#10b981]',
   };
 
   return (
