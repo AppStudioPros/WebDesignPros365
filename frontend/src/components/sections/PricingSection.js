@@ -54,13 +54,13 @@ const pricingTiers = [
     ],
     isPopular: false,
     ctaText: 'Contact Us',
-    color: '#FFD700',
+    color: '#f59e0b',
   },
 ];
 
 export default function PricingSection() {
   return (
-    <section className="section relative overflow-hidden">
+    <section className="section relative overflow-hidden bg-white">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -73,7 +73,7 @@ export default function PricingSection() {
           <h2 className="heading-lg mb-4">
             Transparent <span className="gradient-text">Investment</span>
           </h2>
-          <p className="text-white/60 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto">
             Choose the package that fits your needs. All packages include our commitment to quality.
           </p>
         </motion.div>
@@ -87,10 +87,10 @@ export default function PricingSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className={`h-full p-6 relative ${
+              <Card className={`h-full p-6 relative bg-white border-gray-200 ${
                 tier.isPopular
-                  ? 'border-[#8734E1]/50 bg-[#8734E1]/10 glow-purple'
-                  : 'hover:bg-[#2F73EE]/10'
+                  ? 'border-[#8734E1] shadow-xl'
+                  : 'hover:shadow-lg'
               }`}>
                 {tier.isPopular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
@@ -103,27 +103,27 @@ export default function PricingSection() {
 
                 <CardContent className="p-0">
                   <div className="mb-4">
-                    <p className="text-sm text-white/60 mb-1">{tier.bestFor}</p>
-                    <h3 className="text-2xl font-bold text-white">{tier.name}</h3>
+                    <p className="text-sm text-gray-500 mb-1">{tier.bestFor}</p>
+                    <h3 className="text-2xl font-bold text-gray-900">{tier.name}</h3>
                   </div>
 
                   <div className="mb-6">
                     <span className="text-3xl font-bold" style={{ color: tier.color }}>{tier.priceRange}</span>
-                    <p className="text-sm text-white/40 mt-1">Project-based pricing</p>
+                    <p className="text-sm text-gray-400 mt-1">Project-based pricing</p>
                   </div>
 
-                  <p className="text-sm text-white/60 mb-6">{tier.description}</p>
+                  <p className="text-sm text-gray-600 mb-6">{tier.description}</p>
 
                   <ul className="space-y-3 mb-8">
                     {tier.features.map((feature) => (
                       <li
                         key={feature.feature}
                         className={`flex items-center gap-3 text-sm ${
-                          feature.included ? 'text-white/80' : 'text-white/40'
+                          feature.included ? 'text-gray-700' : 'text-gray-400'
                         }`}
                       >
                         <Check className={`w-4 h-4 flex-shrink-0 ${
-                          feature.included ? 'text-[#00ff88]' : 'text-white/20'
+                          feature.included ? 'text-[#10b981]' : 'text-gray-300'
                         }`} />
                         {feature.feature}
                       </li>
@@ -150,10 +150,10 @@ export default function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="glass p-8 text-center"
+          className="bg-[#f8f9fc] border border-gray-200 rounded-2xl p-8 text-center"
         >
-          <h3 className="text-xl font-semibold text-white mb-2">Need a Retainer?</h3>
-          <p className="text-white/60 mb-4">
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">Need a Retainer?</h3>
+          <p className="text-gray-600 mb-4">
             Enterprise retainer packages starting at $3,000 - $5,000/month for ongoing development and support.
           </p>
           <Link to="/contact">
