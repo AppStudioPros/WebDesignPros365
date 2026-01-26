@@ -142,12 +142,20 @@ Goal: Complete all pages, CMS integration, animations, SEO/GEO, protections; del
 
 ---
 
-## 3) Next Actions
-- Confirm icon style (outline vs color) to use by default; keep both supported.
-- Provide/confirm Sanity project (or allow me to scaffold project ID/dataset names in README).
-- Proceed with Phase 1 POC repo scaffolding and test_core.mjs.
-- After POC PASS: implement full pages, animations, and CMS wiring.
-- Later: share RESEND_API_KEY, RECAPTCHA keys; wire live email/verification.
+## 3) Next Actions (Optional Enhancements)
+
+### For the React Live Preview:
+- [ ] Connect contact form to MongoDB for persistent storage
+- [ ] Add Resend email integration (requires API key from user)
+- [ ] Replace hardcoded content with dynamic data from backend
+- [ ] Add portfolio project detail pages
+
+### For Production Deployment (Next.js Project):
+- [ ] User to download `/app/wdp365-nextjs-project.zip`
+- [ ] Set up Sanity.io project and add credentials
+- [ ] Add reCAPTCHA v3 site/secret keys
+- [ ] Add Resend API key for email functionality
+- [ ] Deploy to Vercel
 
 ---
 
