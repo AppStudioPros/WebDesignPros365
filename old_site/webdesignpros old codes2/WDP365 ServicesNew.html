@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Web Design Pros 365</title>
+    <style>
+        :root {
+            --color-primary: #0066cc;
+            --color-primary-dark: #0052a3;
+            --color-accent: #00d9ff;
+            --color-dark: #0f1419;
+            --color-dark-secondary: #1a1f2e;
+            --color-text: #e0e0e0;
+            --color-text-secondary: #a0a0a0;
+            --color-success: #00ff88;
+            --color-warning: #ffaa00;
+            --color-error: #ff3366;
+            --color-border: #2a3040;
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 16px 40px rgba(0, 102, 204, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+            background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-secondary) 100%);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(15, 20, 25, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transition: var(--transition);
+        }
+
+        .nav a:hover:after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(0, 102, 204, 0.1) 0%, transparent 100%);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--color-text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .tech-badge {
+            background: rgba(0, 102, 204, 0.15);
+            border: 1px solid var(--color-primary);
+            color: var(--color-accent);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-size: 44px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--color-text), var(--color-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            color: var(--color-text-secondary);
+            font-size: 16px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, rgba(26, 31, 46, 0.8) 0%, rgba(15, 20, 25, 0.4) 100%);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 40px 30px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(0, 102, 204, 0.05) 100%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            border-color: var(--color-accent);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--color-text);
+        }
+
+        .service-card p {
+            color: var(--color-text-secondary);
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .service-features {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--color-text-secondary);
+        }
+
+        .feature-check {
+            color: var(--color-success);
+            font-weight: bold;
+        }
+
+        .learn-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+        }
+
+        .learn-more:hover {
+            gap: 12px;
+        }
+
+        .learn-more::after {
+            content: '→';
+        }
+
+        /* Filter Tabs */
+        .filter-tabs {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--color-border);
+            color: var(--color-text);
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(15, 20, 25, 0.95);
+            border-top: 1px solid var(--color-border);
+            padding: 40px 0;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            color: var(--color-text);
+            margin-bottom: 15px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--color-accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--color-border);
+            padding-top: 30px;
+            text-align: center;
+            color: var(--color-text-secondary);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-header h2 {
+                font-size: 32px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .tech-stack {
+                gap: 10px;
+            }
+
+            .tech-badge {
+                font-size: 11px;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">WDP365</div>
+                <nav class="nav">
+                    <a href="#services">Services</a>
+                    <a href="#tech">Tech Stack</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Modern Web Solutions Built on Enterprise Tech</h1>
+            <p>Next-generation web development, AI-powered experiences, and data-driven marketing strategies for brands that refuse to compromise.</p>
+            <div class="tech-stack">
+                <span class="tech-badge">Next.js 15</span>
+                <span class="tech-badge">Vercel</span>
+                <span class="tech-badge">Sanity.io</span>
+                <span class="tech-badge">AI-Ready</span>
+                <span class="tech-badge">Real-time</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Premium Services</h2>
+                <p>Cutting-edge solutions powered by the most advanced web technologies and strategic expertise</p>
+            </div>
+
+            <div class="filter-tabs">
+                <button class="filter-btn active" onclick="filterServices('all')">All Services</button>
+                <button class="filter-btn" onclick="filterServices('development')">Development</button>
+                <button class="filter-btn" onclick="filterServices('ai')">AI & Automation</button>
+                <button class="filter-btn" onclick="filterServices('marketing')">Marketing</button>
+            </div>
+
+            <div class="services-grid">
+                <!-- Next.js Full-Stack Development -->
+                <div class="service-card" data-category="development">
+                    <div class="service-icon">⚡</div>
+                    <h3>Next.js Full-Stack Development</h3>
+                    <p>Enterprise-grade websites and applications built with Next.js 15, server components, and App Router. Lightning-fast performance on Vercel's global edge network.</p>
+                    <div class="service-features">
+                        <div class="feature-item"><span class="feature-check">✓</span> React Server Components</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> API Routes & Middleware</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Incremental Static Regeneration</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Edge Function Deployment</div>
+                    </div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+
+                <!-- Headless CMS with Sanity -->
+                <div class="service-card" data-category="development">
+                    <div class="service-icon">📝</div>
+                    <h3>Headless CMS & Content Strategy</h3>
+                    <p>Sanity.io-powered content management with real-time editing, structured content modeling, and instant previews. Perfect for dynamic, scalable websites.</p>
+                    <div class="service-features">
+                        <div class="feature-item"><span class="feature-check">✓</span> Structured Content Modeling</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Real-time Visual Editing</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> GROQ Query Language</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Multi-language Support</div>
+                    </div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+
+                <!-- AI Integration Services -->
+                <div class="service-card" data-category="ai">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI Integration & Chatbots</h3>
+                    <p>Custom AI-powered chatbots, intelligent recommendations, and predictive analytics seamlessly integrated into your website for enhanced user engagement.</p>
+                    <div class="service-features">
+                        <div class="feature-item"><span class="feature-check">✓</span> AI Chatbot Solutions</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Recommendation Engines</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Predictive Analytics</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Natural Language Processing</div>
+                    </div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+
+                <!-- Generative Engine Optimization -->
+                <div class="service-card" data-category="marketing">
+                    <div class="service-icon">🤖✨</div>
+                    <h3>Generative Engine Optimization (GEO)</h3>
+                    <p>Position your brand where AI discovers it. Optimize for ChatGPT, Google Gemini, Perplexity, and other AI engines. Unlike SEO, GEO ensures AI engines cite and recommend your content.</p>
+                    <div class="service-features">
+                        <div class="feature-item"><span class="feature-check">✓</span> AI Citation Engineering</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> LLMs.txt & AI Crawler Optimization</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Semantic Content Architecture</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Real-time AI Visibility Tracking</div>
+                    </div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+
+                <!-- SEO & Performance Optimization -->
+                <div class="service-card" data-category="marketing">
+                    <div class="service-icon">🚀</div>
+                    <h3>SEO & Performance Optimization</h3>
+                    <p>Technical SEO, Core Web Vitals optimization, schema markup, and comprehensive search engine strategies. Achieve top rankings with data-driven approaches.</p>
+                    <div class="service-features">
+                        <div class="feature-item"><span class="feature-check">✓</span> Technical SEO Audits</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Core Web Vitals Optimization</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Structured Data & Schema</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Link Building Strategies</div>
+                    </div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+
+                <!-- Digital Marketing & Analytics -->
+                <div class="service-card" data-category="marketing">
+                    <div class="service-icon">📊</div>
+                    <h3>Digital Marketing & Analytics</h3>
+                    <p>Paid campaigns (Google Ads, Meta), conversion optimization, analytics implementation, and data-driven marketing strategies for maximum ROI.</p>
+                    <div class="service-features">
+                        <div class="feature-item"><span class="feature-check">✓</span> PPC Campaign Management</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Conversion Rate Optimization</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> GA4 & Analytics Setup</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Marketing Automation</div>
+                    </div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+
+                <!-- Social Media & Content Marketing -->
+                <div class="service-card" data-category="marketing">
+                    <div class="service-icon">📱</div>
+                    <h3>Social Media & Content Strategy</h3>
+                    <p>Strategic content creation, social media management, influencer partnerships, and brand storytelling across LinkedIn, TikTok, Instagram, and Meta platforms.</p>
+                    <div class="service-features">
+                        <div class="feature-item"><span class="feature-check">✓</span> Content Calendar Planning</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Social Media Management</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Video Production</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Community Engagement</div>
+                    </div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+
+                <!-- E-Commerce Solutions -->
+                <div class="service-card" data-category="development">
+                    <div class="service-icon">🛒</div>
+                    <h3>E-Commerce Development</h3>
+                    <p>High-converting e-commerce platforms built with Next.js, integrated with Stripe, Shopify, or custom payment systems. Optimized for sales and user experience.</p>
+                    <div class="service-features">
+                        <div class="feature-item"><span class="feature-check">✓</span> Custom Store Development</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Payment Gateway Integration</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Inventory Management</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Conversion Optimization</div>
+                    </div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+
+                <!-- Web Performance & Infrastructure -->
+                <div class="service-card" data-category="development">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Web Performance & Infrastructure</h3>
+                    <p>Edge computing, CDN optimization, caching strategies, and DevOps solutions. Lightning-fast load times and 99.99% uptime on Vercel's global infrastructure.</p>
+                    <div class="service-features">
+                        <div class="feature-item"><span class="feature-check">✓</span> Edge Function Optimization</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Global CDN Deployment</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Caching Strategies</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Monitoring & Analytics</div>
+                    </div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+
+                <!-- Custom Software Development -->
+                <div class="service-card" data-category="development">
+                    <div class="service-icon">💻</div>
+                    <h3>Custom Software Development</h3>
+                    <p>Bespoke web applications, dashboards, and tools tailored to your unique business needs. From SaaS platforms to internal management systems.</p>
+                    <div class="service-features">
+                        <div class="feature-item"><span class="feature-check">✓</span> Custom Application Build</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> SaaS Platform Development</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Dashboard & Admin Panels</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> API Development</div>
+                    </div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+
+                <!-- Brand & UI/UX Design -->
+                <div class="service-card" data-category="development">
+                    <div class="service-icon">🎨</div>
+                    <h3>Brand & UI/UX Design</h3>
+                    <p>World-class design experiences that captivate and convert. From brand identity to responsive interfaces, built with accessibility and usability at the core.</p>
+                    <div class="service-features">
+                        <div class="feature-item"><span class="feature-check">✓</span> Brand Identity Design</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> UI/UX Design Systems</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Responsive Design</div>
+                        <div class="feature-item"><span class="feature-check">✓</span> Accessibility (WCAG)</div>
+                    </div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">AI Integration</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Guides</a></li>
+                        <li><a href="#">Tools</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Web Design Pros 365. All rights reserved. Built on Next.js, Vercel, and Sanity.io</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function filterServices(category) {
+            const cards = document.querySelectorAll('.service-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter cards
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                    }, 10);
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
