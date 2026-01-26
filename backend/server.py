@@ -111,6 +111,80 @@ async def get_status_checks():
     
     return status_checks
 
+
+# Contact form endpoint
+@api_router.post("/contact")
+async def submit_contact_form(input: ContactFormInput, request: Request):
+    """Handle contact form submissions with spam protection."""
+    
+    # Get client IP
+    forwarded_for = request.headers.get("x-forwarded-for")
+    client_ip = forwarded_for.split(",")[0] if forwarded_for else request.client.host if request.client else "unknown"
+    
+    # Rate limit check
+    if not check_rate_limit(client_ip):
+        raise HTTPException(
+            status_code=429,
+            detail="Too many requests. Please try again in 15 minutes."
+        )
+    
+    # Honeypot check (should be empty)
+    if input.honeypot:
+        logger.warning(f"Honeypot triggered from IP: {client_ip}")
+        # Return success to avoid revealing honeypot mechanism
+        return {"success": True, "message": "Message received."}
+    
+    # Validate required fields
+    if not input.name or not input.email or not input.message:
+        raise HTTPException(
+            status_code=400,
+            detail="Name, email, and message are required."
+        )
+    
+    # Email format validation
+    email_regex = r'^[^\s@]+@[^\s@]+\.[^\s@]+$'
+    if not re.match(email_regex, input.email):
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid email address format."
+        )
+    
+    # Create submission record
+    submission = ContactSubmission(
+        name=input.name,
+        email=input.email,
+        company=input.company,
+        phone=input.phone,
+        service=input.service,
+        budget=input.budget,
+        message=input.message,
+        ip_address=client_ip
+    )
+    
+    # Store in database
+    doc = submission.model_dump()
+    doc['submitted_at'] = doc['submitted_at'].isoformat()
+    await db.contact_submissions.insert_one(doc)
+    
+    logger.info(f"New contact form submission from {input.name} ({input.email})")
+    
+    return {
+        "success": True,
+        "message": "Thank you! Your message has been sent. We'll get back to you within 24-48 hours."
+    }
+
+
+@api_router.get("/contact/submissions", response_model=List[ContactSubmission])
+async def get_contact_submissions():
+    """Get all contact form submissions (admin endpoint)."""
+    submissions = await db.contact_submissions.find({}, {"_id": 0}).to_list(1000)
+    
+    for submission in submissions:
+        if isinstance(submission.get('submitted_at'), str):
+            submission['submitted_at'] = datetime.fromisoformat(submission['submitted_at'])
+    
+    return submissions
+
 # Include the router in the main app
 app.include_router(api_router)
 
