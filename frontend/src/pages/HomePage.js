@@ -24,7 +24,7 @@ export default function HomePage() {
           className="absolute w-full h-full object-cover"
         >
           <source 
-            src="/video-background.mp4" 
+            src="/video-small.mp4" 
             type="video/mp4" 
           />
         </video>
