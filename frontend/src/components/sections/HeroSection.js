@@ -20,8 +20,15 @@ const stats = [
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Remove background effects when video is present - they're handled by HomePage */}
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-to-b from-white via-[#f8f9fc] to-white">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-gradient-mesh" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-50" />
+      
+      {/* Decorative Elements */}
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#8734E1]/10 rounded-full blur-3xl animate-blob" />
+      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[#2F73EE]/10 rounded-full blur-3xl animate-blob animation-delay-2000" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#BF5DE0]/5 rounded-full blur-3xl animate-blob animation-delay-4000" />
 
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -30,7 +37,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8734E1]/20 border border-[#8734E1]/40 text-[#BF5DE0] mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8734E1]/10 border border-[#8734E1]/30 text-[#8734E1] mb-8"
           >
             <Sparkles className="w-4 h-4" />
             <span className="text-sm font-medium">Introducing GEO - Generative Engine Optimization</span>
@@ -55,7 +62,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-8"
+            className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8"
           >
             We build high-performance websites and applications using cutting-edge technology.
             From AI integration to GEO optimization, we transform your digital presence.
@@ -71,9 +78,9 @@ export default function HeroSection() {
             {techBadges.map((badge) => (
               <div
                 key={badge.name}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#1A3A6E]/30 border border-[#2F73EE]/30 text-white/80 text-sm"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-gray-200 text-gray-700 text-sm shadow-sm"
               >
-                <badge.icon className="w-4 h-4 text-[#2F73EE]" />
+                <badge.icon className="w-4 h-4 text-[#8734E1]" />
                 {badge.name}
               </div>
             ))}
@@ -117,7 +124,7 @@ export default function HeroSection() {
                 <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">
                   {stat.value}
                 </div>
-                <div className="text-sm text-white/60">{stat.label}</div>
+                <div className="text-sm text-gray-500">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -134,12 +141,12 @@ export default function HeroSection() {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-[#2F73EE]/30 flex items-start justify-center p-2"
+          className="w-6 h-10 rounded-full border-2 border-[#8734E1]/30 flex items-start justify-center p-2"
         >
           <motion.div
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-1 h-2 bg-[#2F73EE]/60 rounded-full"
+            className="w-1 h-2 bg-[#8734E1]/60 rounded-full"
           />
         </motion.div>
       </motion.div>
