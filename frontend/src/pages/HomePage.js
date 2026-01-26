@@ -20,11 +20,12 @@ export default function HomePage() {
           loop
           muted
           playsInline
+          preload="auto"
           className="absolute w-full h-full object-cover"
         >
           <source 
-            src="https://customer-assets.emergentagent.com/job_designpros-test/artifacts/ji9hkmn4_3d-abstract-particle-slow-motion-flow-with-gradien-2026-01-23-02-03-20-utc.mov" 
-            type="video/quicktime" 
+            src="/video-bg.mp4" 
+            type="video/mp4" 
           />
           <source 
             src="https://customer-assets.emergentagent.com/job_designpros-test/artifacts/ji9hkmn4_3d-abstract-particle-slow-motion-flow-with-gradien-2026-01-23-02-03-20-utc.mov" 
