@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <title>Browser</title>
+  <g>
+    <g>
+      <path d="M14,17H114a8,8,0,0,1,8,8v77a9,9,0,0,1-9,9H15a9,9,0,0,1-9-9V25A8,8,0,0,1,14,17Z" fill="#e1f7ff"/>
+      <path d="M114,17H14a8,8,0,0,0-8,8V38.433H122V25A8,8,0,0,0,114,17Z" fill="#0081d0"/>
+      <circle cx="21.57" cy="27.717" r="4" fill="#f37249"/>
+      <circle cx="37.626" cy="27.717" r="4" fill="#ffcc5b"/>
+      <path d="M122,25a8,8,0,0,0-8-8H60.262L50.124,38.433H122Z" fill="#a4def7"/>
+      <path d="M112.267,29.466H67.522a1.75,1.75,0,0,1,0-3.5h44.745a1.75,1.75,0,0,1,0,3.5Z" fill="#59b7e8"/>
+    </g>
+    <circle cx="64" cy="57.592" r="10.248" fill="#f37249"/>
+    <rect x="31.153" y="76.277" width="65.693" height="9.261" fill="#59b7e8"/>
+    <rect x="56" y="92.652" width="16" height="9" fill="#ffcc5b"/>
+    <rect x="31.153" y="92.652" width="16" height="9" fill="#ffcc5b"/>
+    <rect x="80.847" y="92.652" width="16" height="9" fill="#ffcc5b"/>
+  </g>
+</svg>
