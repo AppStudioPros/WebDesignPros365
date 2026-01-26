@@ -21,14 +21,7 @@ const stats = [
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-mesh" />
-      <div className="absolute inset-0 bg-grid-pattern opacity-30" />
-      
-      {/* Animated Blobs */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#8734E1]/20 rounded-full blur-3xl animate-blob" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[#2F73EE]/20 rounded-full blur-3xl animate-blob animation-delay-2000" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#1A3A6E]/20 rounded-full blur-3xl animate-blob animation-delay-4000" />
+      {/* Remove background effects when video is present - they're handled by HomePage */}
 
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center">
