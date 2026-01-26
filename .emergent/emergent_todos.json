@@ -1,0 +1,78 @@
+[
+  {
+    "content": "Phase 1: Get integration playbooks (Sanity.io, Resend, reCAPTCHA v3)",
+    "status": "in_progress"
+  },
+  {
+    "content": "Phase 1: Create Next.js 15 project skeleton with App Router",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 1: Implement Sanity.io client and schemas",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 1: Create /api/contact with honeypot, rate limiting, reCAPTCHA placeholder",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 1: Create POC test script (test_core.mjs)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 1: Test and validate POC",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Full project setup with all dependencies",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Build Homepage (Hero, Services preview, Social proof, Process, Tech stack, FAQ, CTA)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Build Services page (11 services with filtering)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Build Portfolio/Case Studies page",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Build Blog page (CMS-powered)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Build About page",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Build Contact page with protected form",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Build Pricing page (4 tiers comparison)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Build FAQ page (accordion)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Implement Framer Motion animations throughout",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: SEO/GEO setup (metadata, sitemap, robots.txt, LLMs.txt, structured data)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Testing and QA",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Final documentation and handoff",
+    "status": "pending"
+  }
+]
