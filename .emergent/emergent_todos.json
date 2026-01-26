@@ -5,70 +5,74 @@
   },
   {
     "content": "Phase 1: Create Next.js 15 project skeleton with App Router",
-    "status": "in_progress"
+    "status": "completed"
   },
   {
-    "content": "Phase 1: Implement Sanity.io client and schemas",
-    "status": "pending"
+    "content": "Phase 1: Implement Sanity.io client and schemas (10 schemas)",
+    "status": "completed"
   },
   {
     "content": "Phase 1: Create /api/contact with honeypot, rate limiting, reCAPTCHA placeholder",
-    "status": "pending"
-  },
-  {
-    "content": "Phase 1: Create POC test page and validate",
-    "status": "pending"
+    "status": "completed"
   },
   {
     "content": "Phase 2: Full project setup with all dependencies",
-    "status": "pending"
+    "status": "completed"
   },
   {
     "content": "Phase 2: Build Homepage (Hero, Services preview, Social proof, Process, Tech stack, FAQ, CTA)",
-    "status": "pending"
+    "status": "completed"
   },
   {
     "content": "Phase 2: Build Services page (11 services with filtering)",
-    "status": "pending"
+    "status": "completed"
   },
   {
     "content": "Phase 2: Build Portfolio/Case Studies page",
-    "status": "pending"
+    "status": "completed"
   },
   {
     "content": "Phase 2: Build Blog page (CMS-powered)",
-    "status": "pending"
+    "status": "completed"
   },
   {
     "content": "Phase 2: Build About page",
-    "status": "pending"
+    "status": "completed"
   },
   {
     "content": "Phase 2: Build Contact page with protected form",
-    "status": "pending"
+    "status": "completed"
   },
   {
     "content": "Phase 2: Build Pricing page (4 tiers comparison)",
-    "status": "pending"
+    "status": "completed"
   },
   {
-    "content": "Phase 2: Build FAQ page (accordion)",
-    "status": "pending"
+    "content": "Phase 2: Build FAQ page (accordion with search/filter)",
+    "status": "completed"
   },
   {
     "content": "Phase 2: Implement Framer Motion animations throughout",
-    "status": "pending"
+    "status": "completed"
   },
   {
     "content": "Phase 2: SEO/GEO setup (metadata, sitemap, robots.txt, LLMs.txt, structured data)",
-    "status": "pending"
+    "status": "completed"
   },
   {
-    "content": "Phase 2: Testing and QA",
-    "status": "pending"
+    "content": "Phase 2: Create layout components (Header with nav, Footer)",
+    "status": "completed"
   },
   {
-    "content": "Phase 2: Final documentation and handoff",
-    "status": "pending"
+    "content": "Phase 2: Create UI component library (Button, Card, Input, Badge, etc.)",
+    "status": "completed"
+  },
+  {
+    "content": "Phase 2: Final documentation and handoff (README, .env.example)",
+    "status": "completed"
+  },
+  {
+    "content": "Downloadable ZIP created at /app/wdp365-nextjs-project.zip",
+    "status": "completed"
   }
 ]
