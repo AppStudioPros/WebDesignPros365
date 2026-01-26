@@ -24,20 +24,20 @@ export default function BlogPage() {
 
   return (
     <>
-      <section className="pt-32 pb-20 relative overflow-hidden">
+      <section className="pt-32 pb-20 relative overflow-hidden bg-gradient-to-b from-white to-[#f8f9fc]">
         <div className="absolute inset-0 bg-gradient-mesh" />
         <div className="container-custom relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <Badge variant="accent" className="mb-4">Blog</Badge>
             <h1 className="heading-xl mb-6">Insights & <span className="gradient-text">Resources</span></h1>
-            <p className="text-lg text-white/60">
+            <p className="text-lg text-gray-600">
               Stay updated with the latest in web development, AI, and digital marketing.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section bg-white">
         <div className="container-custom">
           <h2 className="heading-md mb-8">Featured Articles</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -49,24 +49,24 @@ export default function BlogPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="h-full overflow-hidden group hover:border-[#00d9ff]/30 transition-colors cursor-pointer">
-                  <div className="aspect-video bg-gradient-to-br from-[#0066cc]/20 to-[#00d9ff]/20 flex items-center justify-center">
+                <Card className="h-full overflow-hidden group hover:shadow-xl transition-all cursor-pointer">
+                  <div className="aspect-video bg-gradient-to-br from-[#8734E1]/20 to-[#2F73EE]/20 flex items-center justify-center">
                     <span className="text-6xl opacity-50">📝</span>
                   </div>
                   <CardContent className="p-6">
                     <div className="flex items-center gap-4 mb-4">
                       <Badge variant="primary">{post.category}</Badge>
-                      <span className="text-xs text-white/40 flex items-center gap-1">
+                      <span className="text-xs text-gray-500 flex items-center gap-1">
                         <Clock className="w-3 h-3" />{post.readTime}
                       </span>
                     </div>
-                    <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-[#00d9ff] transition-colors">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-[#8734E1] transition-colors">
                       {post.title}
                     </h3>
-                    <p className="text-white/60 text-sm mb-4">{post.excerpt}</p>
+                    <p className="text-gray-600 text-sm mb-4">{post.excerpt}</p>
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-white/40">{formatDate(post.publishedAt)}</span>
-                      <span className="text-sm text-[#00d9ff] flex items-center gap-1">
+                      <span className="text-xs text-gray-500">{formatDate(post.publishedAt)}</span>
+                      <span className="text-sm text-[#8734E1] flex items-center gap-1">
                         Read more<ArrowRight className="w-4 h-4" />
                       </span>
                     </div>
@@ -78,7 +78,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="section bg-[#1a1f2e]">
+      <section className="section bg-[#f8f9fc]">
         <div className="container-custom">
           <h2 className="heading-md mb-8">Recent Posts</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -90,13 +90,13 @@ export default function BlogPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="h-full p-6 group hover:bg-white/10 transition-colors cursor-pointer">
+                <Card className="h-full p-6 group hover:shadow-lg transition-all cursor-pointer">
                   <Badge variant="primary" className="mb-4">{post.category}</Badge>
-                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#00d9ff] transition-colors">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[#8734E1] transition-colors">
                     {post.title}
                   </h3>
-                  <p className="text-white/60 text-sm mb-4 line-clamp-2">{post.excerpt}</p>
-                  <div className="flex items-center gap-4 text-xs text-white/40">
+                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">{post.excerpt}</p>
+                  <div className="flex items-center gap-4 text-xs text-gray-500">
                     <span className="flex items-center gap-1"><Calendar className="w-3 h-3" />{formatDate(post.publishedAt)}</span>
                     <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{post.readTime}</span>
                   </div>

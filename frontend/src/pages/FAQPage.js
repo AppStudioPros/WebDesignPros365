@@ -39,22 +39,22 @@ export default function FAQPage() {
 
   return (
     <>
-      <section className="pt-32 pb-20 relative overflow-hidden">
+      <section className="pt-32 pb-20 relative overflow-hidden bg-gradient-to-b from-white to-[#f8f9fc]">
         <div className="absolute inset-0 bg-gradient-mesh" />
         <div className="container-custom relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <Badge variant="accent" className="mb-4">FAQ</Badge>
             <h1 className="heading-xl mb-6">Frequently Asked <span className="gradient-text">Questions</span></h1>
-            <p className="text-lg text-white/60">Find answers to common questions about our services, process, and pricing.</p>
+            <p className="text-lg text-gray-600">Find answers to common questions about our services, process, and pricing.</p>
           </div>
         </div>
       </section>
 
-      <section className="py-8 sticky top-16 z-30 bg-[#0f1419]/80 backdrop-blur-xl border-b border-white/10">
+      <section className="py-8 sticky top-16 z-30 bg-white/80 backdrop-blur-xl border-b border-gray-200">
         <div className="container-custom">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
             <div className="relative w-full md:w-80">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
               <Input
                 type="text"
                 placeholder="Search questions..."
@@ -70,8 +70,8 @@ export default function FAQPage() {
                   onClick={() => setActiveCategory(category.id)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${
                     activeCategory === category.id
-                      ? 'bg-[#00d9ff] text-[#0f1419]'
-                      : 'bg-white/5 text-white/60 hover:bg-white/10 hover:text-white'
+                      ? 'bg-[#8734E1] text-white'
+                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-900'
                   }`}
                 >
                   {category.name}
@@ -82,12 +82,12 @@ export default function FAQPage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section bg-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto space-y-4">
             {filteredFaqs.length === 0 ? (
               <Card className="p-8 text-center">
-                <p className="text-white/60">No questions found matching your search.</p>
+                <p className="text-gray-600">No questions found matching your search.</p>
               </Card>
             ) : (
               filteredFaqs.map((faq, index) => (
@@ -100,15 +100,15 @@ export default function FAQPage() {
                   <Card className="overflow-hidden">
                     <button
                       onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                      className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                      className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
                     >
                       <div className="flex items-center gap-3 pr-4">
                         <Badge variant="primary" className="text-xs flex-shrink-0">
                           {categories.find((c) => c.id === faq.category)?.name}
                         </Badge>
-                        <span className="font-medium text-white">{faq.question}</span>
+                        <span className="font-medium text-gray-900">{faq.question}</span>
                       </div>
-                      <ChevronDown className={`w-5 h-5 text-[#00d9ff] transition-transform duration-300 flex-shrink-0 ${openIndex === index ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-5 h-5 text-[#8734E1] transition-transform duration-300 flex-shrink-0 ${openIndex === index ? 'rotate-180' : ''}`} />
                     </button>
                     <AnimatePresence>
                       {openIndex === index && (
@@ -119,7 +119,7 @@ export default function FAQPage() {
                           transition={{ duration: 0.3 }}
                         >
                           <div className="px-6 pb-5">
-                            <p className="text-white/60 leading-relaxed">{faq.answer}</p>
+                            <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
                           </div>
                         </motion.div>
                       )}
