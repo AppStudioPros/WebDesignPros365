@@ -14,7 +14,7 @@ const steps = [
 
 export default function ProcessSection() {
   return (
-    <section className="section relative overflow-hidden bg-[#121a2d]/70">
+    <section className="section relative overflow-hidden bg-[#121a2d]/50">
       <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
 
       <div className="container-custom relative z-10">

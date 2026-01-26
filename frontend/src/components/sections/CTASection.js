@@ -7,7 +7,7 @@ import { Button } from '../ui';
 export default function CTASection() {
   return (
     <section className="section relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#121a2d]/70 to-[#0a0f18]/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#121a2d]/50 to-[#0a0f18]/50" />
       <div className="absolute inset-0 bg-gradient-mesh" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#8734E1]/10 rounded-full blur-3xl" />
 
