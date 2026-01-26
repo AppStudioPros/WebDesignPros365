@@ -12,6 +12,7 @@ const services = [
     icon: Sparkles,
     isFlagship: true,
     slug: 'geo',
+    color: '#8734E1',
   },
   {
     title: 'AI Integration & Chatbots',
@@ -20,6 +21,7 @@ const services = [
     icon: Brain,
     isFlagship: false,
     slug: 'ai-integration',
+    color: '#2F73EE',
   },
   {
     title: 'SEO & Performance Optimization',
@@ -28,6 +30,7 @@ const services = [
     icon: Gauge,
     isFlagship: false,
     slug: 'seo-performance',
+    color: '#FFD700',
   },
   {
     title: 'Next.js Full-Stack Development',
@@ -36,6 +39,7 @@ const services = [
     icon: Code,
     isFlagship: false,
     slug: 'nextjs-development',
+    color: '#BF5DE0',
   },
   {
     title: 'Headless CMS & Content Strategy',
@@ -44,6 +48,7 @@ const services = [
     icon: Database,
     isFlagship: false,
     slug: 'headless-cms',
+    color: '#1A3A6E',
   },
   {
     title: 'Digital Marketing & Analytics',
@@ -52,6 +57,7 @@ const services = [
     icon: TrendingUp,
     isFlagship: false,
     slug: 'digital-marketing',
+    color: '#00ff88',
   },
 ];
 
@@ -71,7 +77,7 @@ const itemVariants = {
 export default function ServicesSection() {
   return (
     <section className="section relative overflow-hidden">
-      <div className="absolute inset-0 bg-[#1a1f2e]" />
+      <div className="absolute inset-0 bg-[#121a2d]" />
       <div className="absolute inset-0 bg-gradient-mesh opacity-50" />
 
       <div className="container-custom relative z-10">
@@ -102,29 +108,28 @@ export default function ServicesSection() {
           {services.map((service) => (
             <motion.div key={service.slug} variants={itemVariants}>
               <Link to={`/services#${service.slug}`}>
-                <Card className={`h-full p-6 group cursor-pointer hover:bg-white/10 hover:border-white/20 ${
-                  service.isFlagship ? 'border-[#00d9ff]/30 bg-[#00d9ff]/5' : ''
+                <Card className={`h-full p-6 group cursor-pointer hover:bg-[#2F73EE]/10 hover:border-[#2F73EE]/30 transition-all ${
+                  service.isFlagship ? 'border-[#8734E1]/40 bg-[#8734E1]/10' : ''
                 }`}>
                   <CardContent className="p-0">
                     <div className="flex items-start justify-between mb-4">
-                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                        service.isFlagship
-                          ? 'bg-[#00d9ff]/20 text-[#00d9ff]'
-                          : 'bg-[#0066cc]/20 text-[#3388dd]'
-                      }`}>
-                        <service.icon className="w-6 h-6" />
+                      <div 
+                        className="w-12 h-12 rounded-xl flex items-center justify-center"
+                        style={{ backgroundColor: `${service.color}20` }}
+                      >
+                        <service.icon className="w-6 h-6" style={{ color: service.color }} />
                       </div>
                       {service.isFlagship && (
                         <Badge variant="accent" dot>Flagship</Badge>
                       )}
                     </div>
-                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#00d9ff] transition-colors">
+                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#2F73EE] transition-colors">
                       {service.title}
                     </h3>
                     <p className="text-sm text-white/60 mb-4">
                       {service.shortDescription}
                     </p>
-                    <div className="flex items-center text-sm text-[#00d9ff] group-hover:gap-2 transition-all">
+                    <div className="flex items-center text-sm text-[#2F73EE] group-hover:gap-2 transition-all">
                       Learn more
                       <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                     </div>

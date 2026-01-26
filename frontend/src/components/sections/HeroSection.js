@@ -26,9 +26,9 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
       
       {/* Animated Blobs */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#0066cc]/20 rounded-full blur-3xl animate-blob" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[#00d9ff]/20 rounded-full blur-3xl animate-blob animation-delay-2000" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0066cc]/10 rounded-full blur-3xl animate-blob animation-delay-4000" />
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#8734E1]/20 rounded-full blur-3xl animate-blob" />
+      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[#2F73EE]/20 rounded-full blur-3xl animate-blob animation-delay-2000" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#1A3A6E]/20 rounded-full blur-3xl animate-blob animation-delay-4000" />
 
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -37,7 +37,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00d9ff]/10 border border-[#00d9ff]/30 text-[#00d9ff] mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8734E1]/20 border border-[#8734E1]/40 text-[#BF5DE0] mb-8"
           >
             <Sparkles className="w-4 h-4" />
             <span className="text-sm font-medium">Introducing GEO - Generative Engine Optimization</span>
@@ -78,9 +78,9 @@ export default function HeroSection() {
             {techBadges.map((badge) => (
               <div
                 key={badge.name}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-white/80 text-sm"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#1A3A6E]/30 border border-[#2F73EE]/30 text-white/80 text-sm"
               >
-                <badge.icon className="w-4 h-4 text-[#00d9ff]" />
+                <badge.icon className="w-4 h-4 text-[#2F73EE]" />
                 {badge.name}
               </div>
             ))}
@@ -141,12 +141,12 @@ export default function HeroSection() {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-white/20 flex items-start justify-center p-2"
+          className="w-6 h-10 rounded-full border-2 border-[#2F73EE]/30 flex items-start justify-center p-2"
         >
           <motion.div
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-1 h-2 bg-white/60 rounded-full"
+            className="w-1 h-2 bg-[#2F73EE]/60 rounded-full"
           />
         </motion.div>
       </motion.div>

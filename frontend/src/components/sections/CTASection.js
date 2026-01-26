@@ -7,9 +7,9 @@ import { Button } from '../ui';
 export default function CTASection() {
   return (
     <section className="section relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#1a1f2e] to-[#0f1419]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#121a2d] to-[#0a0f18]" />
       <div className="absolute inset-0 bg-gradient-mesh" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#00d9ff]/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#8734E1]/10 rounded-full blur-3xl" />
 
       <div className="container-custom relative z-10">
         <motion.div
@@ -24,7 +24,7 @@ export default function CTASection() {
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, type: 'spring' }}
-            className="w-20 h-20 mx-auto mb-8 rounded-2xl bg-gradient-to-br from-[#00d9ff] to-[#0066cc] flex items-center justify-center"
+            className="w-20 h-20 mx-auto mb-8 rounded-2xl bg-gradient-to-br from-[#8734E1] to-[#BF5DE0] flex items-center justify-center"
           >
             <Sparkles className="w-10 h-10 text-white" />
           </motion.div>
