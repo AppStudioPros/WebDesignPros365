@@ -45,7 +45,7 @@ export default function Header() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gradient-to-r from-[#7063e3] via-[#a487e0] to-[#8690e3] border-b border-white/20',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gradient-to-r from-[#8a7fe9] via-[#b8a1e6] to-[#9fa6e9] border-b border-white/20',
         isScrolled ? 'py-3' : 'py-5'
       )}
     >
@@ -146,7 +146,7 @@ export default function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-gradient-to-r from-[#7063e3] via-[#a487e0] to-[#8690e3] backdrop-blur-xl border-b border-white/20"
+            className="lg:hidden bg-gradient-to-r from-[#8a7fe9] via-[#b8a1e6] to-[#9fa6e9] backdrop-blur-xl border-b border-white/20"
           >
             <div className="container-custom py-6 space-y-2">
               {navigation.map((item) => (
