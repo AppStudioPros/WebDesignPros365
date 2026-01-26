@@ -77,7 +77,7 @@ const itemVariants = {
 export default function ServicesSection() {
   return (
     <section className="section relative overflow-hidden">
-      <div className="absolute inset-0 bg-[#121a2d]" />
+      <div className="absolute inset-0 bg-[#121a2d]/70" />
       <div className="absolute inset-0 bg-gradient-mesh opacity-50" />
 
       <div className="container-custom relative z-10">
