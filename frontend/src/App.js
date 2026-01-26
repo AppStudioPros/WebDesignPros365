@@ -23,13 +23,10 @@ function ScrollToTop() {
   return null;
 }
 
-// Layout component that conditionally applies background
+// Layout component with light background
 function Layout({ children }) {
-  const { pathname } = useLocation();
-  const isHomePage = pathname === '/';
-  
   return (
-    <div className={`min-h-screen flex flex-col ${isHomePage ? '' : 'bg-[#0a0f18]'}`}>
+    <div className="min-h-screen flex flex-col bg-white">
       <Header />
       <main className="flex-1">
         {children}
