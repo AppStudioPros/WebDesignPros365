@@ -17,7 +17,7 @@ const caseStudies = [
     technologies: ['Next.js', 'Shopify', 'Vercel', 'Tailwind'],
     featured: true,
     icon: ShoppingCart,
-    color: '#FFD700',
+    color: '#f59e0b',
   },
   {
     title: 'GEO Implementation for SaaS',
@@ -73,7 +73,7 @@ const caseStudies = [
     technologies: ['Next.js', 'Vercel', 'Lighthouse', 'CDN'],
     featured: false,
     icon: Zap,
-    color: '#FFD700',
+    color: '#f59e0b',
   },
   {
     title: 'SEO & Content Strategy',
@@ -87,7 +87,7 @@ const caseStudies = [
     technologies: ['SEO', 'Content Strategy', 'Analytics', 'Schema'],
     featured: false,
     icon: Search,
-    color: '#00ff88',
+    color: '#10b981',
   },
   {
     title: 'Brand Refresh & Redesign',
@@ -143,7 +143,7 @@ const caseStudies = [
     technologies: ['OpenAI', 'Next.js', 'Sanity', 'Vercel'],
     featured: false,
     icon: Bot,
-    color: '#FFD700',
+    color: '#f59e0b',
   },
 ];
 
@@ -153,20 +153,20 @@ export default function PortfolioPage() {
 
   return (
     <>
-      <section className="pt-32 pb-20 relative overflow-hidden">
+      <section className="pt-32 pb-20 relative overflow-hidden bg-gradient-to-b from-white to-[#f8f9fc]">
         <div className="absolute inset-0 bg-gradient-mesh" />
         <div className="container-custom relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <Badge variant="accent" className="mb-4">Our Work</Badge>
             <h1 className="heading-xl mb-6">Case <span className="gradient-text">Studies</span></h1>
-            <p className="text-lg text-white/60">
+            <p className="text-lg text-gray-600">
               Real results for real businesses. See how we've helped our clients achieve their digital goals.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section bg-white">
         <div className="container-custom">
           <h2 className="heading-md mb-8">Featured Projects</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -178,31 +178,31 @@ export default function PortfolioPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="overflow-hidden group hover:border-[#2F73EE]/50 transition-colors h-full">
-                  <div className="aspect-video bg-gradient-to-br from-[#1A3A6E]/30 to-[#8734E1]/20 flex items-center justify-center relative">
-                    <project.icon className="w-16 h-16 opacity-30" style={{ color: project.color }} />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f18] to-transparent" />
+                <Card className="overflow-hidden group hover:shadow-xl transition-all h-full bg-white border-gray-200">
+                  <div className="aspect-video bg-gradient-to-br from-[#f8f9fc] to-white flex items-center justify-center relative">
+                    <project.icon className="w-16 h-16 opacity-20" style={{ color: project.color }} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent" />
                   </div>
                   <CardContent className="p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <p className="text-sm mb-1" style={{ color: project.color }}>{project.clientName}</p>
-                        <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+                        <h3 className="text-xl font-semibold text-gray-900">{project.title}</h3>
                       </div>
-                      <ArrowUpRight className="w-5 h-5 text-white/40 group-hover:text-[#2F73EE] transition-colors" />
+                      <ArrowUpRight className="w-5 h-5 text-gray-400 group-hover:text-[#8734E1] transition-colors" />
                     </div>
-                    <p className="text-white/60 text-sm mb-6">{project.solution}</p>
+                    <p className="text-gray-600 text-sm mb-6">{project.solution}</p>
                     <div className="grid grid-cols-3 gap-4 mb-6">
                       {project.results.map((result) => (
                         <div key={result.metric} className="text-center">
                           <p className="text-xl font-bold gradient-text">{result.value}</p>
-                          <p className="text-xs text-white/40">{result.metric}</p>
+                          <p className="text-xs text-gray-500">{result.metric}</p>
                         </div>
                       ))}
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech) => (
-                        <span key={tech} className="px-2 py-1 text-xs bg-[#2F73EE]/10 rounded-lg text-white/60 border border-[#2F73EE]/20">{tech}</span>
+                        <span key={tech} className="px-2 py-1 text-xs bg-[#f8f9fc] rounded-lg text-gray-600 border border-gray-200">{tech}</span>
                       ))}
                     </div>
                   </CardContent>
@@ -213,7 +213,7 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      <section className="section bg-[#121a2d]">
+      <section className="section bg-[#f8f9fc]">
         <div className="container-custom">
           <h2 className="heading-md mb-8">More Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -225,28 +225,28 @@ export default function PortfolioPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="p-6 group hover:bg-[#2F73EE]/10 transition-colors h-full">
+                <Card className="p-6 group hover:shadow-lg transition-all h-full bg-white border-gray-200">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${project.color}20` }}>
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${project.color}15` }}>
                       <project.icon className="w-5 h-5" style={{ color: project.color }} />
                     </div>
                     <div>
                       <p className="text-sm" style={{ color: project.color }}>{project.clientName}</p>
-                      <h3 className="text-lg font-semibold text-white">{project.title}</h3>
+                      <h3 className="text-lg font-semibold text-gray-900">{project.title}</h3>
                     </div>
                   </div>
-                  <p className="text-white/60 text-sm mb-4">{project.solution}</p>
+                  <p className="text-gray-600 text-sm mb-4">{project.solution}</p>
                   <div className="flex gap-4 mb-4">
                     {project.results.slice(0, 2).map((result) => (
                       <div key={result.metric}>
                         <span className="font-bold" style={{ color: project.color }}>{result.value}</span>
-                        <span className="text-xs text-white/40 ml-1">{result.metric}</span>
+                        <span className="text-xs text-gray-500 ml-1">{result.metric}</span>
                       </div>
                     ))}
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.slice(0, 3).map((tech) => (
-                      <span key={tech} className="px-2 py-1 text-xs bg-white/5 rounded-lg text-white/40">{tech}</span>
+                      <span key={tech} className="px-2 py-1 text-xs bg-[#f8f9fc] rounded-lg text-gray-500">{tech}</span>
                     ))}
                   </div>
                 </Card>
