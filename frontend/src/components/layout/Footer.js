@@ -44,23 +44,23 @@ export default function Footer() {
                 className="h-12 w-auto"
               />
             </Link>
-            <p className="text-white/60 mb-6 max-w-sm">
+            <p className="text-white/80 mb-6 max-w-sm">
               Crafting next-gen web experiences with cutting-edge technology. Your vision,
               our expertise.
             </p>
 
             {/* Contact Info */}
-            <div className="space-y-3 text-sm text-white/60">
+            <div className="space-y-3 text-sm text-white/80">
               <a
                 href="mailto:info@webdesignpros365.com"
-                className="flex items-center gap-2 hover:text-[#2F73EE] transition-colors"
+                className="flex items-center gap-2 hover:text-white transition-colors"
               >
                 <Mail className="w-4 h-4" />
                 info@webdesignpros365.com
               </a>
               <a
                 href="tel:+17202760797"
-                className="flex items-center gap-2 hover:text-[#2F73EE] transition-colors"
+                className="flex items-center gap-2 hover:text-white transition-colors"
               >
                 <Phone className="w-4 h-4" />
                 +1 (720) 276-0797
@@ -80,7 +80,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-white/60 hover:text-[#2F73EE] transition-colors"
+                    className="text-sm text-white/80 hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -97,7 +97,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-white/60 hover:text-[#2F73EE] transition-colors"
+                    className="text-sm text-white/80 hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -114,7 +114,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-white/60 hover:text-[#2F73EE] transition-colors"
+                    className="text-sm text-white/80 hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -126,7 +126,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-white/40">
+          <p className="text-sm text-white/70">
             &copy; {new Date().getFullYear()} Web Design Pros 365. All rights reserved.
           </p>
 
@@ -138,7 +138,7 @@ export default function Footer() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-white/40 hover:text-[#2F73EE] hover:bg-[#2F73EE]/10 rounded-lg transition-all"
+                className="p-2 text-white/70 hover:text-white hover:bg-white/20 rounded-lg transition-all"
                 aria-label={social.name}
               >
                 <social.icon className="w-5 h-5" />
@@ -148,12 +148,12 @@ export default function Footer() {
 
           {/* Tech Badges */}
           <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-full bg-[#1A3A6E]/30 border border-[#2F73EE]/30">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00ff88]" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-full bg-white/20 text-white">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
               Next.js 15
             </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-full bg-[#8734E1]/20 border border-[#8734E1]/30">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#BF5DE0]" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-full bg-white/20 text-white">
+              <span className="w-1.5 h-1.5 rounded-full bg-pink-400" />
               Vercel
             </span>
           </div>
