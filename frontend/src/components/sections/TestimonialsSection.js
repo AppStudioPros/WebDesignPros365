@@ -10,6 +10,7 @@ const testimonials = [
     authorTitle: 'CEO',
     company: 'Sculpted Beauty',
     rating: 5,
+    color: '#8734E1',
   },
   {
     content: 'The GEO optimization they implemented has positioned us ahead of competitors in AI search results. Truly cutting-edge work!',
@@ -17,6 +18,7 @@ const testimonials = [
     authorTitle: 'Marketing Director',
     company: 'PocketFiler',
     rating: 5,
+    color: '#2F73EE',
   },
   {
     content: 'Exceptional attention to detail and technical expertise. They delivered our e-commerce platform ahead of schedule with outstanding results.',
@@ -24,6 +26,7 @@ const testimonials = [
     authorTitle: 'Founder',
     company: 'Fast Track Solutions',
     rating: 5,
+    color: '#FFD700',
   },
   {
     content: 'Their AI chatbot integration increased our customer support efficiency by 60%. Professional team that truly understands modern web development.',
@@ -31,6 +34,7 @@ const testimonials = [
     authorTitle: 'CTO',
     company: 'Contractor Guardians',
     rating: 5,
+    color: '#BF5DE0',
   },
 ];
 
@@ -68,13 +72,13 @@ export default function TestimonialsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="h-full p-6 hover:bg-white/10 transition-colors">
+              <Card className="h-full p-6 hover:bg-[#2F73EE]/10 transition-colors">
                 <CardContent className="p-0">
-                  <Quote className="w-10 h-10 text-[#00d9ff]/30 mb-4" />
+                  <Quote className="w-10 h-10 mb-4" style={{ color: `${testimonial.color}40` }} />
                   
                   <div className="flex gap-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#ffaa00] text-[#ffaa00]" />
+                      <Star key={i} className="w-4 h-4 fill-[#FFD700] text-[#FFD700]" />
                     ))}
                   </div>
 
@@ -83,7 +87,10 @@ export default function TestimonialsSection() {
                   </p>
 
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#00d9ff] to-[#0066cc] flex items-center justify-center text-white font-semibold">
+                    <div 
+                      className="w-12 h-12 rounded-full flex items-center justify-center text-white font-semibold"
+                      style={{ background: `linear-gradient(135deg, ${testimonial.color}, ${testimonial.color}80)` }}
+                    >
                       {testimonial.author.split(' ').map(n => n[0]).join('')}
                     </div>
                     <div>
@@ -112,8 +119,8 @@ export default function TestimonialsSection() {
           </div>
 
           <div className="relative overflow-hidden">
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0f1419] to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#0f1419] to-transparent z-10" />
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0a0f18] to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#0a0f18] to-transparent z-10" />
 
             <div className="flex animate-marquee">
               {[...clientLogos, ...clientLogos].map((logo, index) => (
@@ -121,7 +128,7 @@ export default function TestimonialsSection() {
                   key={`${logo}-${index}`}
                   className="flex-shrink-0 mx-8 py-4"
                 >
-                  <div className="px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-white/40 font-medium hover:bg-white/10 hover:text-white/60 transition-colors">
+                  <div className="px-6 py-3 rounded-xl bg-[#1A3A6E]/20 border border-[#2F73EE]/20 text-white/40 font-medium hover:bg-[#2F73EE]/20 hover:text-white/60 transition-colors">
                     {logo}
                   </div>
                 </div>

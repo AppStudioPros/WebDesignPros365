@@ -20,6 +20,7 @@ const pricingTiers = [
     ],
     isPopular: false,
     ctaText: 'Get Started',
+    color: '#2F73EE',
   },
   {
     name: 'Growth',
@@ -36,6 +37,7 @@ const pricingTiers = [
     ],
     isPopular: true,
     ctaText: 'Most Popular',
+    color: '#8734E1',
   },
   {
     name: 'Premium',
@@ -52,6 +54,7 @@ const pricingTiers = [
     ],
     isPopular: false,
     ctaText: 'Contact Us',
+    color: '#FFD700',
   },
 ];
 
@@ -86,8 +89,8 @@ export default function PricingSection() {
             >
               <Card className={`h-full p-6 relative ${
                 tier.isPopular
-                  ? 'border-[#00d9ff]/50 bg-[#00d9ff]/5 glow-accent'
-                  : 'hover:bg-white/10'
+                  ? 'border-[#8734E1]/50 bg-[#8734E1]/10 glow-purple'
+                  : 'hover:bg-[#2F73EE]/10'
               }`}>
                 {tier.isPopular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
@@ -105,7 +108,7 @@ export default function PricingSection() {
                   </div>
 
                   <div className="mb-6">
-                    <span className="text-3xl font-bold gradient-text">{tier.priceRange}</span>
+                    <span className="text-3xl font-bold" style={{ color: tier.color }}>{tier.priceRange}</span>
                     <p className="text-sm text-white/40 mt-1">Project-based pricing</p>
                   </div>
 

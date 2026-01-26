@@ -4,17 +4,17 @@ import { MessageSquare, Search, Palette, Code, TestTube2, Rocket, ArrowRight } f
 import { Badge } from '../ui';
 
 const steps = [
-  { number: '01', title: 'Discovery', description: 'We dive deep into your business goals, target audience, and competitive landscape.', icon: MessageSquare },
-  { number: '02', title: 'Strategy', description: 'Define the tech stack, features, and roadmap tailored to your needs.', icon: Search },
-  { number: '03', title: 'Design', description: 'Create stunning UI/UX designs that align with your brand identity.', icon: Palette },
-  { number: '04', title: 'Development', description: 'Build with modern tech: Next.js, TypeScript, and best practices.', icon: Code },
-  { number: '05', title: 'Testing', description: 'Rigorous QA across devices, browsers, and performance benchmarks.', icon: TestTube2 },
-  { number: '06', title: 'Launch', description: 'Deploy to Vercel with optimized caching, monitoring, and support.', icon: Rocket },
+  { number: '01', title: 'Discovery', description: 'We dive deep into your business goals, target audience, and competitive landscape.', icon: MessageSquare, color: '#2F73EE' },
+  { number: '02', title: 'Strategy', description: 'Define the tech stack, features, and roadmap tailored to your needs.', icon: Search, color: '#8734E1' },
+  { number: '03', title: 'Design', description: 'Create stunning UI/UX designs that align with your brand identity.', icon: Palette, color: '#BF5DE0' },
+  { number: '04', title: 'Development', description: 'Build with modern tech: Next.js, TypeScript, and best practices.', icon: Code, color: '#FFD700' },
+  { number: '05', title: 'Testing', description: 'Rigorous QA across devices, browsers, and performance benchmarks.', icon: TestTube2, color: '#00ff88' },
+  { number: '06', title: 'Launch', description: 'Deploy to Vercel with optimized caching, monitoring, and support.', icon: Rocket, color: '#2F73EE' },
 ];
 
 export default function ProcessSection() {
   return (
-    <section className="section relative overflow-hidden bg-[#1a1f2e]">
+    <section className="section relative overflow-hidden bg-[#121a2d]">
       <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
 
       <div className="container-custom relative z-10">
@@ -35,7 +35,7 @@ export default function ProcessSection() {
         </motion.div>
 
         <div className="relative">
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#00d9ff]/30 to-transparent -translate-y-1/2" />
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#8734E1]/30 to-transparent -translate-y-1/2" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {steps.map((step, index) => (
@@ -50,8 +50,11 @@ export default function ProcessSection() {
                 <div className="glass-hover p-6 h-full">
                   <div className="flex items-center gap-4 mb-4">
                     <span className="text-5xl font-bold text-white/10">{step.number}</span>
-                    <div className="w-12 h-12 rounded-xl bg-[#00d9ff]/20 flex items-center justify-center">
-                      <step.icon className="w-6 h-6 text-[#00d9ff]" />
+                    <div 
+                      className="w-12 h-12 rounded-xl flex items-center justify-center"
+                      style={{ backgroundColor: `${step.color}20` }}
+                    >
+                      <step.icon className="w-6 h-6" style={{ color: step.color }} />
                     </div>
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2">{step.title}</h3>
@@ -60,7 +63,7 @@ export default function ProcessSection() {
 
                 {index < steps.length - 1 && index % 3 !== 2 && (
                   <div className="hidden lg:block absolute -right-4 top-1/2 -translate-y-1/2 z-10">
-                    <ArrowRight className="w-6 h-6 text-[#00d9ff]/40" />
+                    <ArrowRight className="w-6 h-6 text-[#8734E1]/40" />
                   </div>
                 )}
               </motion.div>
