@@ -182,9 +182,16 @@ npx sanity dev
 | `NEXT_PUBLIC_SANITY_PROJECT_ID` | Yes | Sanity project ID |
 | `NEXT_PUBLIC_SANITY_DATASET` | Yes | Dataset name (production) |
 | `SANITY_API_TOKEN` | Yes | API token for server operations |
+| `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` | Recommended | reCAPTCHA v3 site key (public) |
+| `RECAPTCHA_SECRET_KEY` | Recommended | reCAPTCHA v3 secret key (server-only) |
 | `RESEND_API_KEY` | No | Resend API key for emails |
-| `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` | No | reCAPTCHA v3 site key |
-| `RECAPTCHA_SECRET_KEY` | No | reCAPTCHA v3 secret key |
+| `CONTACT_ADMIN_EMAIL` | No | Email to receive form submissions |
+
+### Obtaining Keys
+
+- **Sanity:** https://www.sanity.io/manage → Create project → Get project ID
+- **reCAPTCHA v3:** https://www.google.com/recaptcha/admin → Register new site
+- **Resend:** https://resend.com/api-keys
 
 ## Performance Targets
 
