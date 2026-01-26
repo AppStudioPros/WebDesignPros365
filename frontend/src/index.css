@@ -28,7 +28,7 @@
   }
   
   body {
-    background-color: var(--dark);
+    background-color: transparent;
     color: white;
     font-family: 'Poppins', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
