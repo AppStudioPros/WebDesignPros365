@@ -13,7 +13,7 @@ import {
 export default function HomePage() {
   return (
     <div className="relative">
-      {/* Video Background - Full screen, no overlay */}
+      {/* Video Background - Full screen */}
       <div className="fixed inset-0 w-full h-full -z-10 overflow-hidden">
         <video
           autoPlay
@@ -24,11 +24,7 @@ export default function HomePage() {
           className="absolute w-full h-full object-cover"
         >
           <source 
-            src="/video-bg.mp4" 
-            type="video/mp4" 
-          />
-          <source 
-            src="https://customer-assets.emergentagent.com/job_designpros-test/artifacts/ji9hkmn4_3d-abstract-particle-slow-motion-flow-with-gradien-2026-01-23-02-03-20-utc.mov" 
+            src="/video-background.mp4" 
             type="video/mp4" 
           />
         </video>
