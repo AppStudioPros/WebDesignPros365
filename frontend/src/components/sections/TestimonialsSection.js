@@ -26,7 +26,7 @@ const testimonials = [
     authorTitle: 'Founder',
     company: 'Fast Track Solutions',
     rating: 5,
-    color: '#FFD700',
+    color: '#f59e0b',
   },
   {
     content: 'Their AI chatbot integration increased our customer support efficiency by 60%. Professional team that truly understands modern web development.',
@@ -45,7 +45,7 @@ const clientLogos = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="section relative overflow-hidden">
+    <section className="section relative overflow-hidden bg-white">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -58,7 +58,7 @@ export default function TestimonialsSection() {
           <h2 className="heading-lg mb-4">
             Trusted by <span className="gradient-text">Industry Leaders</span>
           </h2>
-          <p className="text-white/60 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto">
             See what our clients say about working with Web Design Pros 365.
           </p>
         </motion.div>
@@ -72,17 +72,17 @@ export default function TestimonialsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="h-full p-6 hover:bg-[#2F73EE]/10 transition-colors">
+              <Card className="h-full p-6 bg-white border-gray-200 hover:shadow-lg transition-shadow">
                 <CardContent className="p-0">
-                  <Quote className="w-10 h-10 mb-4" style={{ color: `${testimonial.color}40` }} />
+                  <Quote className="w-10 h-10 mb-4" style={{ color: `${testimonial.color}30` }} />
                   
                   <div className="flex gap-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#FFD700] text-[#FFD700]" />
+                      <Star key={i} className="w-4 h-4 fill-[#f59e0b] text-[#f59e0b]" />
                     ))}
                   </div>
 
-                  <p className="text-white/80 mb-6">
+                  <p className="text-gray-700 mb-6">
                     "{testimonial.content}"
                   </p>
 
@@ -94,8 +94,8 @@ export default function TestimonialsSection() {
                       {testimonial.author.split(' ').map(n => n[0]).join('')}
                     </div>
                     <div>
-                      <p className="font-semibold text-white">{testimonial.author}</p>
-                      <p className="text-sm text-white/60">
+                      <p className="font-semibold text-gray-900">{testimonial.author}</p>
+                      <p className="text-sm text-gray-500">
                         {testimonial.authorTitle}, {testimonial.company}
                       </p>
                     </div>
@@ -115,12 +115,12 @@ export default function TestimonialsSection() {
           className="relative"
         >
           <div className="text-center mb-8">
-            <p className="text-sm text-white/40 uppercase tracking-wider">Trusted by 50+ companies</p>
+            <p className="text-sm text-gray-500 uppercase tracking-wider">Trusted by 50+ companies</p>
           </div>
 
           <div className="relative overflow-hidden">
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0a0f18] to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#0a0f18] to-transparent z-10" />
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10" />
 
             <div className="flex animate-marquee">
               {[...clientLogos, ...clientLogos].map((logo, index) => (
@@ -128,7 +128,7 @@ export default function TestimonialsSection() {
                   key={`${logo}-${index}`}
                   className="flex-shrink-0 mx-8 py-4"
                 >
-                  <div className="px-6 py-3 rounded-xl bg-[#1A3A6E]/20 border border-[#2F73EE]/20 text-white/40 font-medium hover:bg-[#2F73EE]/20 hover:text-white/60 transition-colors">
+                  <div className="px-6 py-3 rounded-xl bg-[#f8f9fc] border border-gray-200 text-gray-500 font-medium hover:bg-[#8734E1]/5 hover:text-[#8734E1] hover:border-[#8734E1]/20 transition-colors">
                     {logo}
                   </div>
                 </div>
