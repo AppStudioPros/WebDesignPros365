@@ -20,6 +20,7 @@ A modern, high-performance website built with Next.js 15, Sanity.io CMS, and Tai
 - pnpm (recommended) or npm
 - Sanity.io account
 - Vercel account (for deployment)
+- Google account (for reCAPTCHA)
 
 ### Installation
 
@@ -39,13 +40,7 @@ pnpm install
 cp .env.example .env.local
 ```
 
-Edit `.env.local` with your actual values:
-- `NEXT_PUBLIC_SANITY_PROJECT_ID` - Your Sanity project ID
-- `NEXT_PUBLIC_SANITY_DATASET` - Usually 'production'
-- `SANITY_API_TOKEN` - API token from Sanity
-- `RESEND_API_KEY` - (Optional) Resend API key for emails
-- `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` - (Optional) reCAPTCHA site key
-- `RECAPTCHA_SECRET_KEY` - (Optional) reCAPTCHA secret key
+Edit `.env.local` with your actual values (see Environment Variables section below).
 
 4. Run development server:
 ```bash
@@ -53,6 +48,59 @@ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000)
+
+## reCAPTCHA v3 Setup
+
+### Step 1: Get reCAPTCHA Keys
+
+1. Go to **https://www.google.com/recaptcha/admin**
+2. Log in with your Google account
+3. Click **"+" (Create)** to register a new site
+4. Fill in the form:
+   - **Label:** `Web Design Pros 365`
+   - **reCAPTCHA Type:** Select `reCAPTCHA v3`
+   - **Domains:**
+     - `webdesignpros365.com`
+     - `www.webdesignpros365.com`
+     - `localhost` (for development)
+5. Accept Terms of Service and click **Create**
+6. Copy your **Site Key** (public) and **Secret Key** (private)
+
+### Step 2: Configure Environment Variables
+
+Add to `.env.local`:
+```bash
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY=6LcX...your_site_key
+RECAPTCHA_SECRET_KEY=6LcX...your_secret_key
+```
+
+**Important:**
+- `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` is safe for client-side (visible in browser)
+- `RECAPTCHA_SECRET_KEY` must stay server-side only (never expose to browser)
+
+### Step 3: Deploy to Vercel
+
+Add both keys to Vercel Dashboard → Project Settings → Environment Variables:
+- `NEXT_PUBLIC_RECAPTCHA_SITE_KEY`
+- `RECAPTCHA_SECRET_KEY`
+
+Apply to all environments (Production, Preview, Development).
+
+### reCAPTCHA Score Threshold
+
+The default threshold is `0.5` (scores range from 0.0 = bot to 1.0 = human).
+
+To adjust, edit `app/api/contact/route.ts`:
+```typescript
+const RECAPTCHA_THRESHOLD = 0.5; // Increase to be stricter, decrease to be more lenient
+```
+
+### Monitoring
+
+Monitor your reCAPTCHA performance at https://www.google.com/recaptcha/admin to see:
+- Score distribution
+- Challenge pass/fail rates
+- Suspicious activity patterns
 
 ### Sanity Studio Setup
 
