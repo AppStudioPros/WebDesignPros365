@@ -27,14 +27,6 @@ export default function HomePage() {
         className="fixed inset-0 overflow-hidden"
         style={{ zIndex: -1 }}
       >
-        {/* Fallback gradient background matching video colors */}
-        <div 
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(135deg, #1a0533 0%, #2d1b4e 25%, #1e3a5f 50%, #0d2137 75%, #0a1628 100%)'
-          }}
-        />
-        
         {/* Video element */}
         <video
           ref={videoRef}
@@ -44,7 +36,6 @@ export default function HomePage() {
           playsInline
           preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ opacity: 1 }}
         >
           <source 
             src="/particle-bg.mp4" 
