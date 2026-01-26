@@ -86,3 +86,4 @@ nextjs-project/node_modules/@next/swc-linux-arm64-gnu/next-swc.linux-arm64-gnu.n
 # Environment files
 *.env
 *.env.*
+frontend/public/video-bg.mp4
