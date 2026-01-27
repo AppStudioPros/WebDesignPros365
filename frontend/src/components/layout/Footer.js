@@ -1,16 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Github, Mail, Phone, MapPin } from 'lucide-react';
+import { Linkedin, Twitter, Github, Mail, Phone } from 'lucide-react';
 
 const footerLinks = {
-  services: [
-    { name: 'GEO - Generative Engine Optimization', href: '/services#geo' },
-    { name: 'AI Integration', href: '/services#ai' },
-    { name: 'Next.js Development', href: '/services#development' },
-    { name: 'SEO & Performance', href: '/services#seo' },
-    { name: 'E-Commerce', href: '/services#ecommerce' },
-  ],
   company: [
+    { name: 'Services', href: '/services' },
     { name: 'About Us', href: '/about' },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Blog', href: '/blog' },
@@ -32,25 +26,25 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-[#8a7fe9] via-[#b8a1e6] to-[#9fa6e9] border-t border-white/20">
-      <div className="container-custom py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
+    <footer className="bg-gradient-to-br from-[#a487e0] via-[#9a7de0] to-[#2F73EE]">
+      <div className="container-custom py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="inline-block mb-6">
+            <Link to="/" className="inline-block mb-3">
               <img 
                 src="https://customer-assets.emergentagent.com/job_designpros-test/artifacts/tf1dbj7e_Web%20Design%20Pros%20365%20noborder.png" 
                 alt="Web Design Pros 365" 
-                className="h-12 w-auto"
+                className="h-[60px] w-auto"
               />
             </Link>
-            <p className="text-white/80 mb-6 max-w-sm">
+            <p className="text-white/80 mb-3 max-w-sm text-sm">
               Crafting next-gen web experiences with cutting-edge technology. Your vision,
               our expertise.
             </p>
 
             {/* Contact Info */}
-            <div className="space-y-3 text-sm text-white/80">
+            <div className="space-y-2 text-sm text-white/80">
               <a
                 href="mailto:info@webdesignpros365.com"
                 className="flex items-center gap-2 hover:text-white transition-colors"
@@ -65,34 +59,13 @@ export default function Footer() {
                 <Phone className="w-4 h-4" />
                 +1 (720) 276-0797
               </a>
-              <p className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" />
-                Remote-First Agency
-              </p>
             </div>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="font-semibold text-white mb-4">Services</h3>
-            <ul className="space-y-3">
-              {footerLinks.services.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-sm text-white/80 hover:text-white transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
 
           {/* Company */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Company</h3>
-            <ul className="space-y-3">
+            <h3 className="font-semibold text-white mb-3">Company</h3>
+            <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -108,8 +81,8 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Resources</h3>
-            <ul className="space-y-3">
+            <h3 className="font-semibold text-white mb-3">Resources</h3>
+            <ul className="space-y-2">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -125,12 +98,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-6 pt-4 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-3">
           <p className="text-sm text-white/70">
             &copy; {new Date().getFullYear()} Web Design Pros 365. All rights reserved.
           </p>
 
-          {/* Social Links */}
+          {/* Social Links - moved to the right */}
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => (
               <a
@@ -144,18 +117,6 @@ export default function Footer() {
                 <social.icon className="w-5 h-5" />
               </a>
             ))}
-          </div>
-
-          {/* Tech Badges */}
-          <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-full bg-white/20 text-white">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-              Next.js 15
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-full bg-white/20 text-white">
-              <span className="w-1.5 h-1.5 rounded-full bg-pink-400" />
-              Vercel
-            </span>
           </div>
         </div>
       </div>
