@@ -905,20 +905,6 @@ export default function WebsiteScannerSection() {
                     </button>
                   </div>
 
-                  {/* Live Site Captures Note */}
-                  <div className="mb-8">
-                    <div className="flex items-center gap-2 mb-4">
-                      <Monitor className="w-4 h-4 text-gray-400" />
-                      <span className="text-sm font-medium text-gray-700">Site Preview</span>
-                      <span className="text-xs text-gray-400">(Screenshot capture requires additional service)</span>
-                    </div>
-                    <div className="grid grid-cols-3 gap-4">
-                      <ScreenshotPlaceholder label="Homepage" size="large" />
-                      <ScreenshotPlaceholder label="Tablet View" size="large" />
-                      <ScreenshotPlaceholder label="Mobile" size="large" />
-                    </div>
-                  </div>
-
                   {/* Score Cards - Now includes GEO */}
                   <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
                     <ScoreCard 
