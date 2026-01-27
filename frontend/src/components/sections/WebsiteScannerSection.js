@@ -260,7 +260,7 @@ const ScanningAnimation = ({ progress, status }) => (
     </div>
     
     <p className="text-gray-600 font-medium mb-2">{status}</p>
-    <p className="text-sm text-gray-400">{progress}% complete</p>
+    <p className="text-sm text-gray-400">{Math.round(progress)}% complete</p>
     
     {/* Scanning metrics animation */}
     <div className="mt-6 grid grid-cols-4 gap-4">
