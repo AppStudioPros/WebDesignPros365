@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Search, 
@@ -12,21 +12,21 @@ import {
   ArrowRight,
   Sparkles,
   Monitor,
-  Tablet,
-  Smartphone,
   RefreshCw,
   DollarSign,
   Clock,
-  MessageSquare,
   Bot,
   Lock,
   Rocket,
-  Eye
+  Smartphone,
+  X,
+  ExternalLink
 } from 'lucide-react';
 import { Button } from '../ui';
 import { Link } from 'react-router-dom';
 
-// Simulated screenshot placeholders with gradient backgrounds
+// Screenshot Placeholder - Note: PageSpeed API doesn't provide screenshots
+// Would need separate screenshot service (Puppeteer, ScreenshotAPI, etc.)
 const ScreenshotPlaceholder = ({ label, size = 'large' }) => (
   <div className={`relative rounded-lg overflow-hidden ${size === 'large' ? 'aspect-video' : 'aspect-[9/16]'}`}>
     <div className="absolute inset-0 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800" />
@@ -36,18 +36,13 @@ const ScreenshotPlaceholder = ({ label, size = 'large' }) => (
       <div className="w-2 h-2 rounded-full bg-green-500" />
     </div>
     <div className="absolute top-2 left-16 text-[10px] text-white/60">{label}</div>
-    <div className="absolute top-2 right-2 px-1.5 py-0.5 bg-emerald-500/80 text-[9px] text-white rounded font-medium">LIVE</div>
-    <div className="absolute inset-0 flex items-center justify-center">
-      <div className="w-16 h-16 rounded-full border-2 border-white/20 flex items-center justify-center">
-        <Globe className="w-8 h-8 text-white/40" />
+    <div className="absolute top-2 right-2 px-1.5 py-0.5 bg-slate-700 text-[9px] text-white/60 rounded font-medium">PREVIEW</div>
+    <div className="absolute inset-0 flex items-center justify-center flex-col gap-2">
+      <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center">
+        <Globe className="w-6 h-6 text-white/30" />
       </div>
+      <p className="text-[10px] text-white/40 text-center px-4">Screenshot capture requires additional service integration</p>
     </div>
-    {/* Scan line effect */}
-    <motion.div 
-      className="absolute inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent"
-      animate={{ top: ['0%', '100%', '0%'] }}
-      transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
-    />
   </div>
 );
 
@@ -141,10 +136,108 @@ const IssueItem = ({ severity, title, impact }) => {
   );
 };
 
-// Upgrade Card Component
-const UpgradeCard = ({ icon: Icon, title, description, badge, badgeColor }) => (
+// Upgrade Details Data
+const upgradeDetails = {
+  'ai-chat': {
+    title: 'AI Chat Integration',
+    badge: '+23% conversions',
+    badgeColor: 'text-emerald-500',
+    icon: Bot,
+    description: 'GPT-powered support could handle 40% of inquiries automatically',
+    fullDescription: `Transform your customer support with AI-powered chat that works 24/7.`,
+    benefits: [
+      'Handle 40% of customer inquiries automatically',
+      'Reduce response time from hours to seconds',
+      'Scale support without adding headcount',
+      'Learn from every interaction to improve over time',
+      'Seamless handoff to human agents when needed'
+    ],
+    stats: {
+      conversionIncrease: '+23%',
+      supportCostReduction: '-45%',
+      responseTime: '<3 seconds',
+      customerSatisfaction: '94%'
+    },
+    implementation: '2-3 weeks',
+    investment: '$3,000 - $8,000'
+  },
+  'edge-computing': {
+    title: 'Edge Computing',
+    badge: '2x faster loads',
+    badgeColor: 'text-blue-500',
+    icon: Zap,
+    description: 'Move to Vercel/Cloudflare for global edge deployment',
+    fullDescription: `Deploy your site to 300+ edge locations worldwide for lightning-fast performance.`,
+    benefits: [
+      'Serve content from the nearest location to each user',
+      'Reduce Time to First Byte (TTFB) by 60-80%',
+      'Handle traffic spikes without performance degradation',
+      'Automatic failover and redundancy',
+      'Built-in DDoS protection'
+    ],
+    stats: {
+      speedImprovement: '2x faster',
+      globalCoverage: '300+ locations',
+      uptime: '99.99%',
+      bandwidthSavings: '-40%'
+    },
+    implementation: '1-2 weeks',
+    investment: '$2,000 - $5,000'
+  },
+  'zero-trust': {
+    title: 'Zero-Trust Security',
+    badge: '99.9% secure',
+    badgeColor: 'text-cyan-500',
+    icon: Lock,
+    description: 'Latest auth patterns with biometric & passkey support',
+    fullDescription: `Implement enterprise-grade security with modern authentication methods.`,
+    benefits: [
+      'Passwordless login with biometrics and passkeys',
+      'Multi-factor authentication (MFA) built-in',
+      'Session management and anomaly detection',
+      'Compliance with SOC2, GDPR, and HIPAA',
+      'Real-time threat monitoring'
+    ],
+    stats: {
+      securityScore: '99.9%',
+      breachPrevention: '100%',
+      userFriction: '-70%',
+      complianceReady: 'Yes'
+    },
+    implementation: '2-4 weeks',
+    investment: '$4,000 - $12,000'
+  },
+  'pwa': {
+    title: 'PWA Upgrade',
+    badge: '+35% engagement',
+    badgeColor: 'text-amber-500',
+    icon: Smartphone,
+    description: 'Make your site installable like a native app',
+    fullDescription: `Convert your website into a Progressive Web App that users can install on any device.`,
+    benefits: [
+      'Install directly from browser - no app store needed',
+      'Work offline with smart caching',
+      'Push notifications to re-engage users',
+      'Home screen icon like native apps',
+      'Faster repeat visits with cached assets'
+    ],
+    stats: {
+      engagementIncrease: '+35%',
+      returnVisits: '+50%',
+      loadTime: '<1 second',
+      installRate: '15-25%'
+    },
+    implementation: '1-2 weeks',
+    investment: '$2,500 - $6,000'
+  }
+};
+
+// Upgrade Card Component with Click
+const UpgradeCard = ({ upgradeKey, icon: Icon, title, description, badge, badgeColor, onClick }) => (
   <motion.div 
     whileHover={{ scale: 1.02 }}
+    whileTap={{ scale: 0.98 }}
+    onClick={() => onClick(upgradeKey)}
     className="bg-white rounded-xl border border-gray-200 p-4 cursor-pointer hover:border-[#8734E1]/30 hover:shadow-lg transition-all group"
   >
     <div className="flex items-start gap-3">
@@ -163,8 +256,103 @@ const UpgradeCard = ({ icon: Icon, title, description, badge, badgeColor }) => (
   </motion.div>
 );
 
-// HUD Scanner Animation
-const HUDScanner = ({ isScanning }) => (
+// Upgrade Detail Modal
+const UpgradeDetailModal = ({ upgradeKey, onClose }) => {
+  const upgrade = upgradeDetails[upgradeKey];
+  if (!upgrade) return null;
+
+  const Icon = upgrade.icon;
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <motion.div 
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.9, opacity: 0 }}
+        className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Header */}
+        <div className="p-6 border-b border-gray-100">
+          <div className="flex items-start justify-between">
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#8734E1] to-[#2F73EE] flex items-center justify-center">
+                <Icon className="w-7 h-7 text-white" />
+              </div>
+              <div>
+                <h2 className="text-xl font-bold text-gray-900">{upgrade.title}</h2>
+                <span className={`text-sm font-bold ${upgrade.badgeColor}`}>{upgrade.badge}</span>
+              </div>
+            </div>
+            <button 
+              onClick={onClose}
+              className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            >
+              <X className="w-5 h-5 text-gray-400" />
+            </button>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="p-6">
+          <p className="text-gray-600 mb-6">{upgrade.fullDescription}</p>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+            {Object.entries(upgrade.stats).map(([key, value]) => (
+              <div key={key} className="bg-gray-50 rounded-lg p-3 text-center">
+                <div className="text-lg font-bold text-[#8734E1]">{value}</div>
+                <div className="text-xs text-gray-500 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Benefits */}
+          <div className="mb-6">
+            <h3 className="font-semibold text-gray-800 mb-3">Key Benefits</h3>
+            <ul className="space-y-2">
+              {upgrade.benefits.map((benefit, index) => (
+                <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
+                  <CheckCircle className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  {benefit}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Implementation Details */}
+          <div className="grid md:grid-cols-2 gap-4 mb-6">
+            <div className="bg-blue-50 rounded-lg p-4">
+              <div className="text-sm text-blue-600 font-medium">Implementation Time</div>
+              <div className="text-lg font-bold text-blue-800">{upgrade.implementation}</div>
+            </div>
+            <div className="bg-purple-50 rounded-lg p-4">
+              <div className="text-sm text-purple-600 font-medium">Investment Range</div>
+              <div className="text-lg font-bold text-purple-800">{upgrade.investment}</div>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <Link to="/contact" onClick={onClose}>
+            <Button variant="accent" className="w-full">
+              Get Custom Quote for {upgrade.title}
+              <ArrowRight className="w-4 h-4" />
+            </Button>
+          </Link>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+};
+
+// HUD Scanner Animation Frame
+const HUDFrame = ({ isScanning }) => (
   <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
     {/* Corner brackets */}
     <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-[#8734E1]/50" />
@@ -176,142 +364,275 @@ const HUDScanner = ({ isScanning }) => (
       <>
         {/* Scanning line */}
         <motion.div 
-          className="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#8734E1] to-transparent opacity-60"
+          className="absolute inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-60"
           animate={{ top: ['10%', '90%', '10%'] }}
           transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-        />
-        
-        {/* Pulsing circles */}
-        <motion.div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full border border-[#8734E1]/30"
-          animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        />
-        <motion.div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full border border-[#2F73EE]/20"
-          animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0, 0.3] }}
-          transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-        />
-        
-        {/* Data streams */}
-        <motion.div 
-          className="absolute left-0 top-1/4 w-full h-px bg-gradient-to-r from-[#8734E1]/0 via-[#8734E1]/30 to-[#8734E1]/0"
-          animate={{ opacity: [0, 1, 0] }}
-          transition={{ duration: 1, repeat: Infinity }}
-        />
-        <motion.div 
-          className="absolute left-0 top-3/4 w-full h-px bg-gradient-to-r from-[#2F73EE]/0 via-[#2F73EE]/30 to-[#2F73EE]/0"
-          animate={{ opacity: [0, 1, 0] }}
-          transition={{ duration: 1, repeat: Infinity, delay: 0.3 }}
         />
       </>
     )}
   </div>
 );
 
-// Loading Animation Component
-const ScanningAnimation = ({ progress, status }) => (
-  <motion.div 
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    className="absolute inset-0 bg-white/95 backdrop-blur-sm rounded-2xl flex flex-col items-center justify-center z-20"
-  >
-    <div className="relative mb-8">
-      {/* Outer rotating ring */}
-      <motion.div 
-        className="w-32 h-32 rounded-full border-4 border-[#8734E1]/20"
-        animate={{ rotate: 360 }}
-        transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
-      >
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#8734E1] rounded-full" />
-      </motion.div>
-      
-      {/* Inner rotating ring */}
-      <motion.div 
-        className="absolute inset-4 rounded-full border-4 border-[#2F73EE]/20"
-        animate={{ rotate: -360 }}
-        transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
-      >
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#2F73EE] rounded-full" />
-      </motion.div>
-      
-      {/* Center icon */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <motion.div
-          animate={{ scale: [1, 1.1, 1] }}
-          transition={{ duration: 1, repeat: Infinity }}
-        >
-          <Search className="w-10 h-10 text-[#8734E1]" />
-        </motion.div>
+// Futuristic HUD Loading Animation
+const HUDLoadingAnimation = ({ progress, status, metrics }) => {
+  return (
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="absolute inset-0 bg-[#0a0a12] rounded-2xl flex flex-col items-center justify-center z-20 overflow-hidden"
+    >
+      {/* Grid background */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(rgba(135, 52, 225, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(135, 52, 225, 0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '40px 40px'
+        }} />
       </div>
-    </div>
-    
-    {/* Progress bar */}
-    <div className="w-64 mb-4">
-      <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+
+      {/* Animated scan lines */}
+      <motion.div 
+        className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"
+        animate={{ top: ['0%', '100%'] }}
+        transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
+      />
+      <motion.div 
+        className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"
+        animate={{ top: ['100%', '0%'] }}
+        transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
+      />
+
+      {/* HUD Corner Elements */}
+      <div className="absolute top-6 left-6">
+        <div className="flex items-center gap-2 text-cyan-500/70 text-xs font-mono">
+          <div className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse" />
+          SYSTEM ACTIVE
+        </div>
+      </div>
+      <div className="absolute top-6 right-6">
+        <div className="text-purple-500/70 text-xs font-mono">
+          v2.4.1 // NEURAL_NET
+        </div>
+      </div>
+      <div className="absolute bottom-6 left-6">
+        <div className="text-gray-500 text-xs font-mono">
+          PAGESPEED_API::CONNECTED
+        </div>
+      </div>
+      <div className="absolute bottom-6 right-6">
+        <div className="text-emerald-500/70 text-xs font-mono flex items-center gap-2">
+          <motion.div 
+            className="w-1.5 h-1.5 bg-emerald-500 rounded-full"
+            animate={{ opacity: [1, 0.3, 1] }}
+            transition={{ duration: 1, repeat: Infinity }}
+          />
+          LIVE DATA
+        </div>
+      </div>
+
+      {/* Main HUD Display */}
+      <div className="relative z-10 flex flex-col items-center">
+        {/* Hexagonal Scanner */}
+        <div className="relative w-48 h-48 mb-8">
+          {/* Outer hexagon ring */}
+          <motion.svg 
+            viewBox="0 0 200 200" 
+            className="absolute inset-0 w-full h-full"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+          >
+            <polygon 
+              points="100,10 180,55 180,145 100,190 20,145 20,55" 
+              fill="none" 
+              stroke="rgba(135, 52, 225, 0.3)" 
+              strokeWidth="1"
+            />
+          </motion.svg>
+
+          {/* Middle hexagon ring */}
+          <motion.svg 
+            viewBox="0 0 200 200" 
+            className="absolute inset-0 w-full h-full"
+            animate={{ rotate: -360 }}
+            transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
+          >
+            <polygon 
+              points="100,30 160,65 160,135 100,170 40,135 40,65" 
+              fill="none" 
+              stroke="rgba(47, 115, 238, 0.4)" 
+              strokeWidth="1"
+              strokeDasharray="10 5"
+            />
+          </motion.svg>
+
+          {/* Inner hexagon ring */}
+          <motion.svg 
+            viewBox="0 0 200 200" 
+            className="absolute inset-0 w-full h-full"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+          >
+            <polygon 
+              points="100,50 140,75 140,125 100,150 60,125 60,75" 
+              fill="none" 
+              stroke="rgba(0, 255, 255, 0.5)" 
+              strokeWidth="2"
+            />
+          </motion.svg>
+
+          {/* Center icon */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <motion.div
+              animate={{ scale: [1, 1.1, 1], opacity: [0.7, 1, 0.7] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500/20 to-cyan-500/20 border border-cyan-500/50 flex items-center justify-center"
+            >
+              <Search className="w-8 h-8 text-cyan-400" />
+            </motion.div>
+          </div>
+
+          {/* Orbiting dots */}
+          {[0, 1, 2, 3].map((i) => (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-purple-500 rounded-full"
+              style={{ top: '50%', left: '50%' }}
+              animate={{
+                x: [0, Math.cos(i * Math.PI / 2) * 80, 0],
+                y: [0, Math.sin(i * Math.PI / 2) * 80, 0],
+                opacity: [0, 1, 0]
+              }}
+              transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
+            />
+          ))}
+        </div>
+
+        {/* Status Text */}
+        <div className="text-center mb-6">
+          <motion.p 
+            key={status}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-cyan-400 font-mono text-sm mb-2"
+          >
+            {status}
+          </motion.p>
+          <div className="flex items-center gap-2 text-gray-400 text-xs font-mono">
+            <span>PROGRESS:</span>
+            <span className="text-purple-400">{Math.round(progress)}%</span>
+          </div>
+        </div>
+
+        {/* Progress Bar */}
+        <div className="w-72 mb-8">
+          <div className="h-1 bg-gray-800 rounded-full overflow-hidden border border-gray-700">
+            <motion.div 
+              className="h-full bg-gradient-to-r from-purple-500 via-cyan-500 to-purple-500 rounded-full"
+              style={{ backgroundSize: '200% 100%' }}
+              initial={{ width: 0 }}
+              animate={{ 
+                width: `${progress}%`,
+                backgroundPosition: ['0% 0%', '100% 0%']
+              }}
+              transition={{ 
+                width: { duration: 0.3 },
+                backgroundPosition: { duration: 2, repeat: Infinity, ease: 'linear' }
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Metric Indicators */}
+        <div className="grid grid-cols-5 gap-6">
+          {metrics.map((metric, i) => (
+            <motion.div 
+              key={metric.name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ 
+                opacity: metric.complete ? 1 : 0.3,
+                y: 0
+              }}
+              transition={{ delay: i * 0.1 }}
+              className="text-center"
+            >
+              <div className={`w-10 h-10 mx-auto mb-2 rounded-lg border ${
+                metric.complete 
+                  ? 'border-emerald-500/50 bg-emerald-500/10' 
+                  : 'border-gray-700 bg-gray-800/50'
+              } flex items-center justify-center`}>
+                {metric.complete ? (
+                  <CheckCircle className="w-5 h-5 text-emerald-400" />
+                ) : (
+                  <motion.div 
+                    className="w-4 h-4 border-2 border-gray-600 border-t-purple-500 rounded-full"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                  />
+                )}
+              </div>
+              <div className={`text-xs font-mono ${metric.complete ? 'text-emerald-400' : 'text-gray-500'}`}>
+                {metric.name}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Data Stream Effect */}
+      <div className="absolute left-0 top-0 bottom-0 w-px overflow-hidden">
         <motion.div 
-          className="h-full bg-gradient-to-r from-[#8734E1] to-[#2F73EE] rounded-full"
-          initial={{ width: 0 }}
-          animate={{ width: `${progress}%` }}
-          transition={{ duration: 0.3 }}
+          className="w-full bg-gradient-to-b from-transparent via-cyan-500/50 to-transparent"
+          style={{ height: '30%' }}
+          animate={{ y: ['-100%', '400%'] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
         />
       </div>
-    </div>
-    
-    <p className="text-gray-600 font-medium mb-2">{status}</p>
-    <p className="text-sm text-gray-400">{Math.round(progress)}% complete</p>
-    
-    {/* Scanning metrics animation */}
-    <div className="mt-6 grid grid-cols-4 gap-4">
-      {['SEO', 'Speed', 'Security', 'GEO'].map((metric, i) => (
+      <div className="absolute right-0 top-0 bottom-0 w-px overflow-hidden">
         <motion.div 
-          key={metric}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: progress > (i + 1) * 20 ? 1 : 0.3 }}
-          className="text-center"
-        >
-          <div className={`text-xs font-medium ${progress > (i + 1) * 20 ? 'text-[#8734E1]' : 'text-gray-400'}`}>
-            {metric}
-          </div>
-          {progress > (i + 1) * 20 && (
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-            >
-              <CheckCircle className="w-4 h-4 text-emerald-500 mx-auto mt-1" />
-            </motion.div>
-          )}
-        </motion.div>
-      ))}
-    </div>
-  </motion.div>
-);
+          className="w-full bg-gradient-to-b from-transparent via-purple-500/50 to-transparent"
+          style={{ height: '30%' }}
+          animate={{ y: ['400%', '-100%'] }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}
+        />
+      </div>
+    </motion.div>
+  );
+};
 
 export default function WebsiteScannerSection() {
   const [url, setUrl] = useState('');
   const [isScanning, setIsScanning] = useState(false);
   const [scanProgress, setScanProgress] = useState(0);
   const [scanStatus, setScanStatus] = useState('');
+  const [scanMetrics, setScanMetrics] = useState([
+    { name: 'SEO', complete: false },
+    { name: 'SPEED', complete: false },
+    { name: 'SECURITY', complete: false },
+    { name: 'GEO', complete: false },
+    { name: 'A11Y', complete: false },
+  ]);
   const [results, setResults] = useState(null);
   const [error, setError] = useState(null);
+  const [selectedUpgrade, setSelectedUpgrade] = useState(null);
 
   const scanStatuses = [
-    'Initializing neural network...',
-    'Analyzing page structure...',
-    'Measuring performance metrics...',
-    'Checking SEO factors...',
-    'Evaluating security protocols...',
-    'Scanning for GEO readiness...',
-    'Compiling results...',
-    'Generating recommendations...'
+    'INITIALIZING NEURAL NETWORK...',
+    'ESTABLISHING SECURE CONNECTION...',
+    'ANALYZING DOM STRUCTURE...',
+    'MEASURING CORE WEB VITALS...',
+    'EVALUATING SEO FACTORS...',
+    'SCANNING SECURITY PROTOCOLS...',
+    'ASSESSING GEO READINESS...',
+    'COMPILING ANALYSIS REPORT...'
   ];
 
   const handleScan = async (e) => {
     e.preventDefault();
     if (!url) return;
     
-    // Validate URL
     let scanUrl = url;
     if (!url.startsWith('http://') && !url.startsWith('https://')) {
       scanUrl = 'https://' + url;
@@ -321,19 +642,32 @@ export default function WebsiteScannerSection() {
     setError(null);
     setResults(null);
     setScanProgress(0);
+    setScanMetrics([
+      { name: 'SEO', complete: false },
+      { name: 'SPEED', complete: false },
+      { name: 'SECURITY', complete: false },
+      { name: 'GEO', complete: false },
+      { name: 'A11Y', complete: false },
+    ]);
 
-    // Simulate scanning progress with statuses
+    // Progress simulation with metric completion
     const progressInterval = setInterval(() => {
       setScanProgress(prev => {
-        const newProgress = Math.min(prev + Math.random() * 15, 95);
+        const newProgress = Math.min(prev + Math.random() * 12, 95);
         const statusIndex = Math.floor((newProgress / 100) * scanStatuses.length);
         setScanStatus(scanStatuses[Math.min(statusIndex, scanStatuses.length - 1)]);
+        
+        // Update metrics as progress increases
+        setScanMetrics(metrics => metrics.map((m, i) => ({
+          ...m,
+          complete: newProgress > (i + 1) * 18
+        })));
+        
         return newProgress;
       });
-    }, 400);
+    }, 500);
 
     try {
-      // Call the backend PageSpeed API
       const backendUrl = process.env.REACT_APP_BACKEND_URL || '';
       const response = await fetch(`${backendUrl}/api/pagespeed?url=${encodeURIComponent(scanUrl)}&strategy=mobile`);
       
@@ -346,22 +680,18 @@ export default function WebsiteScannerSection() {
       
       clearInterval(progressInterval);
       setScanProgress(100);
-      setScanStatus('Analysis complete!');
+      setScanStatus('ANALYSIS COMPLETE');
+      setScanMetrics(metrics => metrics.map(m => ({ ...m, complete: true })));
       
-      // Transform the data into our display format
       setTimeout(() => {
         const performanceScore = Math.round(data.scores?.performance?.score || 0);
         const seoScore = Math.round(data.scores?.seo?.score || 0);
         const accessibilityScore = Math.round(data.scores?.accessibility?.score || 0);
         const bestPracticesScore = Math.round(data.scores?.['best-practices']?.score || 0);
         
-        // Calculate overall score
         const overallScore = Math.round((performanceScore + seoScore + accessibilityScore + bestPracticesScore) / 4);
+        const geoScore = Math.round((seoScore * 0.5 + performanceScore * 0.3 + accessibilityScore * 0.2));
         
-        // Generate GEO score (simulated based on SEO and performance)
-        const geoScore = Math.round((seoScore * 0.6 + performanceScore * 0.4));
-        
-        // Determine grades
         const getGrade = (score) => {
           if (score >= 90) return 'A';
           if (score >= 80) return 'B';
@@ -370,13 +700,15 @@ export default function WebsiteScannerSection() {
           return 'F';
         };
 
-        // Generate issues based on scores
         const issues = [];
         if (performanceScore < 90) {
-          issues.push({ severity: 'high', title: 'Performance optimization needed', impact: `-${90 - performanceScore}% speed` });
+          issues.push({ severity: performanceScore < 50 ? 'critical' : 'high', title: 'Performance optimization needed', impact: `-${90 - performanceScore}% speed` });
         }
         if (seoScore < 90) {
-          issues.push({ severity: 'high', title: 'SEO improvements available', impact: `-${Math.round((90 - seoScore) * 0.2)}% SEO` });
+          issues.push({ severity: 'high', title: 'SEO improvements available', impact: `-${Math.round((90 - seoScore) * 0.2)}% visibility` });
+        }
+        if (geoScore < 80) {
+          issues.push({ severity: 'medium', title: 'GEO optimization recommended', impact: 'AI discovery' });
         }
         if (accessibilityScore < 90) {
           issues.push({ severity: 'medium', title: 'Accessibility enhancements recommended', impact: 'User experience' });
@@ -384,11 +716,7 @@ export default function WebsiteScannerSection() {
         if (bestPracticesScore < 90) {
           issues.push({ severity: 'low', title: 'Best practices not fully implemented', impact: 'Code quality' });
         }
-        if (performanceScore < 70) {
-          issues.push({ severity: 'critical', title: 'Critical performance issues detected', impact: 'High bounce rate' });
-        }
 
-        // Detect technologies (simulated)
         const technologies = [
           { name: 'JavaScript', detected: true },
           { name: 'CSS3', detected: true },
@@ -402,7 +730,7 @@ export default function WebsiteScannerSection() {
             overall: { score: overallScore, grade: getGrade(overallScore), description: overallScore >= 70 ? 'Good - Room for improvement' : 'Needs Work - Optimization required' },
             seo: { score: seoScore, grade: getGrade(seoScore), description: seoScore >= 80 ? 'Good - Meta tags present' : 'Needs attention' },
             speed: { score: performanceScore, grade: getGrade(performanceScore), description: performanceScore >= 70 ? 'Acceptable - Can be faster' : 'Needs optimization' },
-            security: { score: bestPracticesScore, grade: getGrade(bestPracticesScore), description: bestPracticesScore >= 90 ? 'Excellent - SSL configured' : 'Review recommended' },
+            security: { score: bestPracticesScore, grade: getGrade(bestPracticesScore), description: bestPracticesScore >= 90 ? 'Excellent - Best practices followed' : 'Review recommended' },
             geo: { score: geoScore, grade: getGrade(geoScore), description: geoScore >= 70 ? 'Ready for AI discovery' : 'GEO optimization needed' },
           },
           coreWebVitals: data.coreWebVitals,
@@ -412,7 +740,7 @@ export default function WebsiteScannerSection() {
         });
         
         setIsScanning(false);
-      }, 500);
+      }, 800);
       
     } catch (err) {
       clearInterval(progressInterval);
@@ -428,56 +756,52 @@ export default function WebsiteScannerSection() {
     setError(null);
   };
 
-  // Calculate potential revenue impact
   const calculateRevenueImpact = (scores) => {
     if (!scores) return { min: 0, max: 0 };
-    const avgScore = (scores.overall.score + scores.seo.score + scores.speed.score) / 3;
+    const avgScore = (scores.overall.score + scores.seo.score + scores.speed.score + scores.geo.score) / 4;
     const improvementPotential = 100 - avgScore;
-    const baseValue = 1000;
+    const baseValue = 1200;
     const min = Math.round((improvementPotential * baseValue * 0.8) / 1000) * 1000;
-    const max = Math.round((improvementPotential * baseValue * 2.5) / 1000) * 1000;
+    const max = Math.round((improvementPotential * baseValue * 2.8) / 1000) * 1000;
     return { min, max };
   };
 
   return (
     <section className="section relative overflow-hidden bg-gradient-to-b from-white via-[#f8f9fc] to-white" data-testid="website-scanner-section">
-      {/* Background decorations */}
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#8734E1]/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#2F73EE]/5 rounded-full blur-3xl" />
 
       <div className="container-custom relative z-10">
-        {/* Header */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8734E1]/10 border border-[#8734E1]/30 text-[#8734E1] mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0a0a12] border border-[#8734E1]/30 text-cyan-400 mb-6">
             <Bot className="w-4 h-4" />
-            <span className="text-sm font-medium">AI Website Scanner</span>
-            <span className="text-xs text-[#8734E1]/60">Neural network deep analysis</span>
+            <span className="text-sm font-mono">AI WEBSITE SCANNER</span>
+            <span className="text-xs text-purple-400/60">// Neural Analysis v2.4</span>
           </div>
           
           <h2 className="heading-lg mb-4">
             Scan Your Website <span className="gradient-text">For Free</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Get instant insights into your website's performance, SEO, security, and AI-readiness. 
-            Our neural network analyzes 50+ factors in seconds.
+            Get instant insights into your website's performance, SEO, security, GEO readiness, and accessibility. 
+            Our AI analyzes 50+ factors using Google's PageSpeed API.
           </p>
         </motion.div>
 
-        {/* Scanner Card */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="relative max-w-5xl mx-auto"
         >
-          <div className="relative bg-white rounded-2xl border border-gray-200 shadow-xl overflow-hidden">
-            <HUDScanner isScanning={isScanning} />
+          <div className="relative bg-white rounded-2xl border border-gray-200 shadow-xl overflow-hidden min-h-[500px]">
+            <HUDFrame isScanning={isScanning} />
             
             {/* URL Input Form */}
             {!results && !isScanning && (
@@ -515,7 +839,6 @@ export default function WebsiteScannerSection() {
                   )}
                 </form>
 
-                {/* Quick stats */}
                 <div className="mt-8 flex flex-wrap items-center justify-center gap-8 text-sm text-gray-500">
                   <div className="flex items-center gap-2">
                     <Zap className="w-4 h-4 text-amber-500" />
@@ -526,15 +849,23 @@ export default function WebsiteScannerSection() {
                     <span>4.9/5 avg rating</span>
                   </div>
                 </div>
+                
+                <div className="mt-4 text-center">
+                  <p className="text-xs text-gray-400">
+                    Powered by Google PageSpeed Insights API • Real-time analysis
+                  </p>
+                </div>
               </div>
             )}
 
-            {/* Scanning Animation */}
+            {/* HUD Loading Animation */}
             <AnimatePresence>
               {isScanning && (
-                <div className="p-8 md:p-12 min-h-[400px] relative">
-                  <ScanningAnimation progress={scanProgress} status={scanStatus} />
-                </div>
+                <HUDLoadingAnimation 
+                  progress={scanProgress} 
+                  status={scanStatus}
+                  metrics={scanMetrics}
+                />
               )}
             </AnimatePresence>
 
@@ -567,27 +898,22 @@ export default function WebsiteScannerSection() {
                     </button>
                   </div>
 
-                  {/* Live Site Captures */}
+                  {/* Live Site Captures Note */}
                   <div className="mb-8">
                     <div className="flex items-center gap-2 mb-4">
                       <Monitor className="w-4 h-4 text-gray-400" />
-                      <span className="text-sm font-medium text-gray-700">Live Site Captures</span>
+                      <span className="text-sm font-medium text-gray-700">Site Preview</span>
+                      <span className="text-xs text-gray-400">(Screenshot capture requires additional service)</span>
                     </div>
                     <div className="grid grid-cols-3 gap-4">
                       <ScreenshotPlaceholder label="Homepage" size="large" />
                       <ScreenshotPlaceholder label="Tablet View" size="large" />
-                      <div className="flex flex-col gap-2">
-                        <ScreenshotPlaceholder label="Mobile" size="small" />
-                        <div className="text-center text-xs text-gray-400 flex items-center justify-center gap-1">
-                          <RefreshCw className="w-3 h-3 animate-spin" />
-                          Generating Preview...
-                        </div>
-                      </div>
+                      <ScreenshotPlaceholder label="Mobile" size="large" />
                     </div>
                   </div>
 
-                  {/* Score Cards */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                  {/* Score Cards - Now includes GEO */}
+                  <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
                     <ScoreCard 
                       icon={TrendingUp} 
                       label="Overall" 
@@ -603,6 +929,14 @@ export default function WebsiteScannerSection() {
                       grade={results.scores.seo.grade}
                       description={results.scores.seo.description}
                       color="text-blue-500"
+                    />
+                    <ScoreCard 
+                      icon={Sparkles} 
+                      label="GEO" 
+                      score={results.scores.geo.score}
+                      grade={results.scores.geo.grade}
+                      description={results.scores.geo.description}
+                      color="text-pink-500"
                     />
                     <ScoreCard 
                       icon={Zap} 
@@ -640,41 +974,49 @@ export default function WebsiteScannerSection() {
                     </div>
                   </div>
 
-                  {/* Upgrade Opportunities */}
+                  {/* Upgrade Opportunities - Now clickable */}
                   <div className="mb-8">
                     <div className="flex items-center gap-2 mb-4">
                       <Rocket className="w-4 h-4 text-[#8734E1]" />
                       <span className="text-sm font-medium text-gray-700">Upgrade Opportunities</span>
-                      <span className="text-xs text-gray-400">- Click for details</span>
+                      <span className="text-xs text-emerald-500 font-medium">← Click for details</span>
                     </div>
                     <div className="grid md:grid-cols-2 gap-3">
                       <UpgradeCard 
+                        upgradeKey="ai-chat"
                         icon={Bot}
                         title="AI Chat Integration"
                         description="GPT-powered support could handle 40% of inquiries automatically"
                         badge="+23% conversions"
                         badgeColor="text-emerald-500"
+                        onClick={setSelectedUpgrade}
                       />
                       <UpgradeCard 
+                        upgradeKey="edge-computing"
                         icon={Zap}
                         title="Edge Computing"
                         description="Move to Vercel/Cloudflare for global edge deployment"
                         badge="2x faster loads"
                         badgeColor="text-blue-500"
+                        onClick={setSelectedUpgrade}
                       />
                       <UpgradeCard 
+                        upgradeKey="zero-trust"
                         icon={Lock}
                         title="Zero-Trust Security"
                         description="Latest auth patterns with biometric & passkey support"
                         badge="99.9% secure"
                         badgeColor="text-cyan-500"
+                        onClick={setSelectedUpgrade}
                       />
                       <UpgradeCard 
+                        upgradeKey="pwa"
                         icon={Smartphone}
                         title="PWA Upgrade"
                         description="Make your site installable like a native app"
                         badge="+35% engagement"
                         badgeColor="text-amber-500"
+                        onClick={setSelectedUpgrade}
                       />
                     </div>
                   </div>
@@ -686,14 +1028,18 @@ export default function WebsiteScannerSection() {
                       <span className="text-sm font-medium text-gray-700">Issues Found ({results.issues.length})</span>
                     </div>
                     <div className="bg-gray-50 rounded-xl p-4">
-                      {results.issues.map((issue, index) => (
-                        <IssueItem 
-                          key={index}
-                          severity={issue.severity}
-                          title={issue.title}
-                          impact={issue.impact}
-                        />
-                      ))}
+                      {results.issues.length > 0 ? (
+                        results.issues.map((issue, index) => (
+                          <IssueItem 
+                            key={index}
+                            severity={issue.severity}
+                            title={issue.title}
+                            impact={issue.impact}
+                          />
+                        ))
+                      ) : (
+                        <p className="text-gray-500 text-sm text-center py-4">No critical issues found!</p>
+                      )}
                     </div>
                   </div>
 
@@ -702,7 +1048,7 @@ export default function WebsiteScannerSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
-                    className="mb-8 p-6 bg-gradient-to-r from-[#1a1a2e] to-[#2d2d4a] rounded-xl text-white"
+                    className="mb-8 p-6 bg-gradient-to-r from-[#0a0a12] to-[#1a1a2e] rounded-xl text-white"
                   >
                     <div className="flex items-center gap-2 mb-3">
                       <DollarSign className="w-5 h-5 text-amber-400" />
@@ -736,15 +1082,15 @@ export default function WebsiteScannerSection() {
 
                   {/* CTA Buttons */}
                   <div className="grid md:grid-cols-2 gap-4">
-                    <Link to="/portfolio">
+                    <Link to="/contact">
                       <motion.button
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         className="w-full py-4 px-6 bg-gradient-to-r from-[#8734E1] to-[#2F73EE] text-white font-semibold rounded-xl flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-[#8734E1]/25 transition-all"
-                        data-testid="scanner-ai-vision-btn"
+                        data-testid="scanner-redesign-btn"
                       >
                         <Sparkles className="w-5 h-5" />
-                        See AI Vision Samples
+                        Request Free AI Redesign Preview
                       </motion.button>
                     </Link>
                     <Link to="/contact">
@@ -778,6 +1124,16 @@ export default function WebsiteScannerSection() {
           </div>
         </motion.div>
       </div>
+
+      {/* Upgrade Detail Modal */}
+      <AnimatePresence>
+        {selectedUpgrade && (
+          <UpgradeDetailModal 
+            upgradeKey={selectedUpgrade} 
+            onClose={() => setSelectedUpgrade(null)} 
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 }
