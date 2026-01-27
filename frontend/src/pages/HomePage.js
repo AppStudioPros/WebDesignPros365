@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   HeroSection,
+  WebsiteScannerSection,
   ServicesSection,
   TestimonialsSection,
   ProcessSection,
@@ -14,6 +15,7 @@ export default function HomePage() {
   return (
     <div className="relative">
       <HeroSection />
+      <WebsiteScannerSection />
       <ServicesSection />
       <TestimonialsSection />
       <ProcessSection />
