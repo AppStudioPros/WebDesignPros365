@@ -355,16 +355,16 @@ const UpgradeDetailModal = ({ upgradeKey, onClose }) => {
 const HUDFrame = ({ isScanning }) => (
   <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
     {/* Corner brackets */}
-    <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-[#8734E1]/50" />
-    <div className="absolute top-4 right-4 w-8 h-8 border-r-2 border-t-2 border-[#8734E1]/50" />
-    <div className="absolute bottom-4 left-4 w-8 h-8 border-l-2 border-b-2 border-[#8734E1]/50" />
-    <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-[#8734E1]/50" />
+    <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-[#8734E1]/40" />
+    <div className="absolute top-4 right-4 w-8 h-8 border-r-2 border-t-2 border-[#8734E1]/40" />
+    <div className="absolute bottom-4 left-4 w-8 h-8 border-l-2 border-b-2 border-[#8734E1]/40" />
+    <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-[#8734E1]/40" />
     
     {isScanning && (
       <>
         {/* Scanning line */}
         <motion.div 
-          className="absolute inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-60"
+          className="absolute inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-[#8734E1] to-transparent opacity-40"
           animate={{ top: ['10%', '90%', '10%'] }}
           transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
         />
@@ -373,21 +373,21 @@ const HUDFrame = ({ isScanning }) => (
   </div>
 );
 
-// Futuristic HUD Loading Animation
+// Light Theme Futuristic HUD Loading Animation
 const HUDLoadingAnimation = ({ progress, status, metrics }) => {
   return (
     <motion.div 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="absolute inset-0 bg-[#0a0a12] rounded-2xl flex flex-col items-center justify-center z-20 overflow-hidden"
+      className="absolute inset-0 bg-gradient-to-br from-white via-[#f8f9fc] to-[#f0f2f8] rounded-2xl flex flex-col items-center justify-center z-20 overflow-hidden"
     >
       {/* Grid background */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-40">
         <div className="absolute inset-0" style={{
           backgroundImage: `
-            linear-gradient(rgba(135, 52, 225, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(135, 52, 225, 0.1) 1px, transparent 1px)
+            linear-gradient(rgba(135, 52, 225, 0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(135, 52, 225, 0.08) 1px, transparent 1px)
           `,
           backgroundSize: '40px 40px'
         }} />
@@ -395,25 +395,25 @@ const HUDLoadingAnimation = ({ progress, status, metrics }) => {
 
       {/* Animated scan lines */}
       <motion.div 
-        className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"
+        className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-[#8734E1]/30 to-transparent"
         animate={{ top: ['0%', '100%'] }}
         transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
       />
       <motion.div 
-        className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"
+        className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-[#2F73EE]/20 to-transparent"
         animate={{ top: ['100%', '0%'] }}
         transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
       />
 
       {/* HUD Corner Elements */}
       <div className="absolute top-6 left-6">
-        <div className="flex items-center gap-2 text-cyan-500/70 text-xs font-mono">
-          <div className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse" />
+        <div className="flex items-center gap-2 text-[#8734E1] text-xs font-mono">
+          <div className="w-2 h-2 bg-[#8734E1] rounded-full animate-pulse" />
           SYSTEM ACTIVE
         </div>
       </div>
       <div className="absolute top-6 right-6">
-        <div className="text-purple-500/70 text-xs font-mono">
+        <div className="text-[#2F73EE] text-xs font-mono">
           v2.4.1 // NEURAL_NET
         </div>
       </div>
@@ -423,7 +423,7 @@ const HUDLoadingAnimation = ({ progress, status, metrics }) => {
         </div>
       </div>
       <div className="absolute bottom-6 right-6">
-        <div className="text-emerald-500/70 text-xs font-mono flex items-center gap-2">
+        <div className="text-emerald-600 text-xs font-mono flex items-center gap-2">
           <motion.div 
             className="w-1.5 h-1.5 bg-emerald-500 rounded-full"
             animate={{ opacity: [1, 0.3, 1] }}
@@ -447,7 +447,7 @@ const HUDLoadingAnimation = ({ progress, status, metrics }) => {
             <polygon 
               points="100,10 180,55 180,145 100,190 20,145 20,55" 
               fill="none" 
-              stroke="rgba(135, 52, 225, 0.3)" 
+              stroke="rgba(135, 52, 225, 0.25)" 
               strokeWidth="1"
             />
           </motion.svg>
@@ -462,7 +462,7 @@ const HUDLoadingAnimation = ({ progress, status, metrics }) => {
             <polygon 
               points="100,30 160,65 160,135 100,170 40,135 40,65" 
               fill="none" 
-              stroke="rgba(47, 115, 238, 0.4)" 
+              stroke="rgba(47, 115, 238, 0.35)" 
               strokeWidth="1"
               strokeDasharray="10 5"
             />
@@ -478,7 +478,7 @@ const HUDLoadingAnimation = ({ progress, status, metrics }) => {
             <polygon 
               points="100,50 140,75 140,125 100,150 60,125 60,75" 
               fill="none" 
-              stroke="rgba(0, 255, 255, 0.5)" 
+              stroke="rgba(135, 52, 225, 0.5)" 
               strokeWidth="2"
             />
           </motion.svg>
@@ -486,11 +486,11 @@ const HUDLoadingAnimation = ({ progress, status, metrics }) => {
           {/* Center icon */}
           <div className="absolute inset-0 flex items-center justify-center">
             <motion.div
-              animate={{ scale: [1, 1.1, 1], opacity: [0.7, 1, 0.7] }}
+              animate={{ scale: [1, 1.1, 1], opacity: [0.8, 1, 0.8] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500/20 to-cyan-500/20 border border-cyan-500/50 flex items-center justify-center"
+              className="w-16 h-16 rounded-full bg-gradient-to-br from-[#8734E1]/20 to-[#2F73EE]/20 border-2 border-[#8734E1]/40 flex items-center justify-center shadow-lg"
             >
-              <Search className="w-8 h-8 text-cyan-400" />
+              <Search className="w-8 h-8 text-[#8734E1]" />
             </motion.div>
           </div>
 
@@ -498,7 +498,7 @@ const HUDLoadingAnimation = ({ progress, status, metrics }) => {
           {[0, 1, 2, 3].map((i) => (
             <motion.div
               key={i}
-              className="absolute w-2 h-2 bg-purple-500 rounded-full"
+              className="absolute w-2 h-2 bg-gradient-to-r from-[#8734E1] to-[#2F73EE] rounded-full shadow-sm"
               style={{ top: '50%', left: '50%' }}
               animate={{
                 x: [0, Math.cos(i * Math.PI / 2) * 80, 0],
@@ -516,21 +516,21 @@ const HUDLoadingAnimation = ({ progress, status, metrics }) => {
             key={status}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-cyan-400 font-mono text-sm mb-2"
+            className="text-[#8734E1] font-mono text-sm mb-2 font-medium"
           >
             {status}
           </motion.p>
-          <div className="flex items-center gap-2 text-gray-400 text-xs font-mono">
+          <div className="flex items-center gap-2 text-gray-500 text-xs font-mono">
             <span>PROGRESS:</span>
-            <span className="text-purple-400">{Math.round(progress)}%</span>
+            <span className="text-[#2F73EE] font-semibold">{Math.round(progress)}%</span>
           </div>
         </div>
 
         {/* Progress Bar */}
         <div className="w-72 mb-8">
-          <div className="h-1 bg-gray-800 rounded-full overflow-hidden border border-gray-700">
+          <div className="h-2 bg-gray-200 rounded-full overflow-hidden border border-gray-300 shadow-inner">
             <motion.div 
-              className="h-full bg-gradient-to-r from-purple-500 via-cyan-500 to-purple-500 rounded-full"
+              className="h-full bg-gradient-to-r from-[#8734E1] via-[#BF5DE0] to-[#2F73EE] rounded-full"
               style={{ backgroundSize: '200% 100%' }}
               initial={{ width: 0 }}
               animate={{ 
@@ -552,12 +552,62 @@ const HUDLoadingAnimation = ({ progress, status, metrics }) => {
               key={metric.name}
               initial={{ opacity: 0, y: 20 }}
               animate={{ 
-                opacity: metric.complete ? 1 : 0.3,
+                opacity: metric.complete ? 1 : 0.4,
                 y: 0
               }}
               transition={{ delay: i * 0.1 }}
               className="text-center"
             >
+              <div className={`w-10 h-10 mx-auto mb-2 rounded-lg border-2 ${
+                metric.complete 
+                  ? 'border-emerald-500 bg-emerald-50 shadow-sm' 
+                  : 'border-gray-300 bg-gray-100'
+              } flex items-center justify-center`}>
+                {metric.complete ? (
+                  <CheckCircle className="w-5 h-5 text-emerald-500" />
+                ) : (
+                  <motion.div 
+                    className="w-4 h-4 border-2 border-gray-400 border-t-[#8734E1] rounded-full"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                  />
+                )}
+              </div>
+              <div className={`text-xs font-mono font-medium ${metric.complete ? 'text-emerald-600' : 'text-gray-400'}`}>
+                {metric.name}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Data Stream Effect - Left */}
+      <div className="absolute left-0 top-0 bottom-0 w-px overflow-hidden">
+        <motion.div 
+          className="w-full bg-gradient-to-b from-transparent via-[#8734E1]/40 to-transparent"
+          style={{ height: '30%' }}
+          animate={{ y: ['-100%', '400%'] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
+        />
+      </div>
+      {/* Data Stream Effect - Right */}
+      <div className="absolute right-0 top-0 bottom-0 w-px overflow-hidden">
+        <motion.div 
+          className="w-full bg-gradient-to-b from-transparent via-[#2F73EE]/40 to-transparent"
+          style={{ height: '30%' }}
+          animate={{ y: ['400%', '-100%'] }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}
+        />
+      </div>
+
+      {/* Decorative corner accents */}
+      <div className="absolute top-0 left-0 w-24 h-24 border-l-2 border-t-2 border-[#8734E1]/20 rounded-tl-2xl" />
+      <div className="absolute top-0 right-0 w-24 h-24 border-r-2 border-t-2 border-[#8734E1]/20 rounded-tr-2xl" />
+      <div className="absolute bottom-0 left-0 w-24 h-24 border-l-2 border-b-2 border-[#2F73EE]/20 rounded-bl-2xl" />
+      <div className="absolute bottom-0 right-0 w-24 h-24 border-r-2 border-b-2 border-[#2F73EE]/20 rounded-br-2xl" />
+    </motion.div>
+  );
+};
               <div className={`w-10 h-10 mx-auto mb-2 rounded-lg border ${
                 metric.complete 
                   ? 'border-emerald-500/50 bg-emerald-500/10' 
