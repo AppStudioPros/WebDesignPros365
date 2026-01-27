@@ -6,8 +6,6 @@ const footerLinks = {
   company: [
     { name: 'Services', href: '/services' },
     { name: 'About Us', href: '/about' },
-    { name: 'Portfolio', href: '/portfolio' },
-    { name: 'Blog', href: '/blog' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'Contact', href: '/contact' },
   ],
@@ -26,9 +24,9 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-[#a487e0] via-[#9a7de0] to-[#2F73EE]">
+    <footer className="bg-gradient-to-tr from-[#a487e0] via-[#9a7de0] to-[#2F73EE]">
       <div className="container-custom py-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-3">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="inline-block mb-3">
