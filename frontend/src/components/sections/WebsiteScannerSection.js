@@ -1098,22 +1098,22 @@ export default function WebsiteScannerSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
-                    className="mb-8 p-6 bg-gradient-to-r from-[#0a0a12] to-[#1a1a2e] rounded-xl text-white"
+                    className="mb-8 p-6 bg-gradient-to-r from-[#8734E1]/10 via-[#BF5DE0]/10 to-[#2F73EE]/10 border border-[#8734E1]/20 rounded-xl"
                   >
                     <div className="flex items-center gap-2 mb-3">
-                      <DollarSign className="w-5 h-5 text-amber-400" />
-                      <span className="font-semibold">Potential Revenue Impact</span>
+                      <DollarSign className="w-5 h-5 text-amber-500" />
+                      <span className="font-semibold text-gray-800">Potential Revenue Impact</span>
                     </div>
-                    <p className="text-white/70 text-sm mb-4">
+                    <p className="text-gray-600 text-sm mb-4">
                       Based on industry benchmarks, fixing these issues could <em>potentially</em> recover:
                     </p>
                     <div className="text-3xl font-bold mb-2">
-                      <span className="text-emerald-400">${calculateRevenueImpact(results.scores).min.toLocaleString()}</span>
-                      <span className="text-white/50 mx-2">to</span>
-                      <span className="text-amber-400">${calculateRevenueImpact(results.scores).max.toLocaleString()}</span>
-                      <span className="text-white/50 text-lg font-normal">/year*</span>
+                      <span className="text-emerald-600">${calculateRevenueImpact(results.scores).min.toLocaleString()}</span>
+                      <span className="text-gray-400 mx-2">to</span>
+                      <span className="text-amber-600">${calculateRevenueImpact(results.scores).max.toLocaleString()}</span>
+                      <span className="text-gray-400 text-lg font-normal">/year*</span>
                     </div>
-                    <p className="text-xs text-white/40">
+                    <p className="text-xs text-gray-500">
                       *Estimates vary based on your traffic, industry, and conversion rates. We'll provide precise projections during consultation.
                     </p>
                   </motion.div>
