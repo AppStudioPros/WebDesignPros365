@@ -1053,15 +1053,15 @@ export default function WebsiteScannerSection() {
 
                   {/* CTA Buttons */}
                   <div className="grid md:grid-cols-2 gap-4">
-                    <Link to="/contact">
+                    <Link to="/portfolio">
                       <motion.button
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         className="w-full py-4 px-6 bg-gradient-to-r from-[#8734E1] to-[#2F73EE] text-white font-semibold rounded-xl flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-[#8734E1]/25 transition-all"
-                        data-testid="scanner-redesign-btn"
+                        data-testid="scanner-portfolio-btn"
                       >
-                        <Sparkles className="w-5 h-5" />
-                        Request Free AI Redesign Preview
+                        <Eye className="w-5 h-5" />
+                        See Our Transformation Gallery
                       </motion.button>
                     </Link>
                     <Link to="/contact">
