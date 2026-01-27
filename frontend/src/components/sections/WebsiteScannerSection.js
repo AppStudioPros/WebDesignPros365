@@ -11,7 +11,6 @@ import {
   XCircle,
   ArrowRight,
   Sparkles,
-  Monitor,
   RefreshCw,
   DollarSign,
   Clock,
@@ -20,7 +19,7 @@ import {
   Rocket,
   Smartphone,
   X,
-  ExternalLink
+  Eye
 } from 'lucide-react';
 import { Button } from '../ui';
 import { Link } from 'react-router-dom';
