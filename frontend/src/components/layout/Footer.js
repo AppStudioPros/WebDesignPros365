@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Github, Mail, Phone } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Youtube, Mail, Phone } from 'lucide-react';
 
 const footerLinks = {
   company: [
@@ -17,9 +17,10 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { name: 'LinkedIn', href: 'https://linkedin.com', icon: Linkedin },
-  { name: 'Twitter', href: 'https://twitter.com', icon: Twitter },
-  { name: 'GitHub', href: 'https://github.com', icon: Github },
+  { name: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61566930435901', icon: Facebook },
+  { name: 'Instagram', href: 'https://www.instagram.com/webdesignpros365/', icon: Instagram },
+  { name: 'X', href: 'https://x.com/WebDesignPro365', icon: Twitter },
+  { name: 'YouTube', href: 'https://www.youtube.com/@WebDesignPros365', icon: Youtube },
 ];
 
 export default function Footer() {
