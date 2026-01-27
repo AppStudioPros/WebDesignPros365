@@ -608,49 +608,6 @@ const HUDLoadingAnimation = ({ progress, status, metrics }) => {
     </motion.div>
   );
 };
-              <div className={`w-10 h-10 mx-auto mb-2 rounded-lg border ${
-                metric.complete 
-                  ? 'border-emerald-500/50 bg-emerald-500/10' 
-                  : 'border-gray-700 bg-gray-800/50'
-              } flex items-center justify-center`}>
-                {metric.complete ? (
-                  <CheckCircle className="w-5 h-5 text-emerald-400" />
-                ) : (
-                  <motion.div 
-                    className="w-4 h-4 border-2 border-gray-600 border-t-purple-500 rounded-full"
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                  />
-                )}
-              </div>
-              <div className={`text-xs font-mono ${metric.complete ? 'text-emerald-400' : 'text-gray-500'}`}>
-                {metric.name}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-
-      {/* Data Stream Effect */}
-      <div className="absolute left-0 top-0 bottom-0 w-px overflow-hidden">
-        <motion.div 
-          className="w-full bg-gradient-to-b from-transparent via-cyan-500/50 to-transparent"
-          style={{ height: '30%' }}
-          animate={{ y: ['-100%', '400%'] }}
-          transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
-        />
-      </div>
-      <div className="absolute right-0 top-0 bottom-0 w-px overflow-hidden">
-        <motion.div 
-          className="w-full bg-gradient-to-b from-transparent via-purple-500/50 to-transparent"
-          style={{ height: '30%' }}
-          animate={{ y: ['400%', '-100%'] }}
-          transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}
-        />
-      </div>
-    </motion.div>
-  );
-};
 
 export default function WebsiteScannerSection() {
   const [url, setUrl] = useState('');
