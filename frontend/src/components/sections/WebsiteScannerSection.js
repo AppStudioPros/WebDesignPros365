@@ -24,27 +24,6 @@ import {
 import { Button } from '../ui';
 import { Link } from 'react-router-dom';
 
-// Screenshot Placeholder - Note: PageSpeed API doesn't provide screenshots
-// Would need separate screenshot service (Puppeteer, ScreenshotAPI, etc.)
-const ScreenshotPlaceholder = ({ label, size = 'large' }) => (
-  <div className={`relative rounded-lg overflow-hidden ${size === 'large' ? 'aspect-video' : 'aspect-[9/16]'}`}>
-    <div className="absolute inset-0 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800" />
-    <div className="absolute top-2 left-2 flex items-center gap-1.5">
-      <div className="w-2 h-2 rounded-full bg-red-500" />
-      <div className="w-2 h-2 rounded-full bg-yellow-500" />
-      <div className="w-2 h-2 rounded-full bg-green-500" />
-    </div>
-    <div className="absolute top-2 left-16 text-[10px] text-white/60">{label}</div>
-    <div className="absolute top-2 right-2 px-1.5 py-0.5 bg-slate-700 text-[9px] text-white/60 rounded font-medium">PREVIEW</div>
-    <div className="absolute inset-0 flex items-center justify-center flex-col gap-2">
-      <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center">
-        <Globe className="w-6 h-6 text-white/30" />
-      </div>
-      <p className="text-[10px] text-white/40 text-center px-4">Screenshot capture requires additional service integration</p>
-    </div>
-  </div>
-);
-
 // Score Card Component
 const ScoreCard = ({ icon: Icon, label, score, grade, description, color }) => {
   const getGradeColor = (grade) => {
