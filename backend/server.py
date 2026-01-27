@@ -186,6 +186,113 @@ async def get_contact_submissions():
     
     return submissions
 
+
+# PageSpeed Insights API endpoint
+class PageSpeedRequest(BaseModel):
+    url: str
+    strategy: Optional[str] = "mobile"  # "mobile" or "desktop"
+    categories: Optional[List[str]] = ["performance", "accessibility", "best-practices", "seo"]
+
+@api_router.post("/pagespeed")
+async def get_pagespeed_insights(request: PageSpeedRequest):
+    """
+    Fetch PageSpeed Insights for a given URL.
+    This endpoint securely calls Google's PageSpeed API from the backend.
+    """
+    api_key = os.environ.get('PAGESPEED_API_KEY')
+    if not api_key:
+        raise HTTPException(
+            status_code=500,
+            detail="PageSpeed API key not configured"
+        )
+    
+    # Validate URL format
+    url_pattern = r'^https?://[^\s/$.?#].[^\s]*$'
+    if not re.match(url_pattern, request.url):
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid URL format. URL must start with http:// or https://"
+        )
+    
+    # Build the PageSpeed API URL
+    base_url = "https://www.googleapis.com/pagespeedonline/v5/runPagespeed"
+    params = {
+        "url": request.url,
+        "key": api_key,
+        "strategy": request.strategy,
+    }
+    
+    # Add categories
+    for category in request.categories:
+        if "category" not in params:
+            params["category"] = []
+        params["category"] = request.categories
+    
+    try:
+        async with httpx.AsyncClient(timeout=60.0) as client:
+            response = await client.get(base_url, params=params)
+            
+            if response.status_code != 200:
+                error_detail = response.json().get("error", {}).get("message", "Unknown error")
+                raise HTTPException(
+                    status_code=response.status_code,
+                    detail=f"PageSpeed API error: {error_detail}"
+                )
+            
+            data = response.json()
+            
+            # Extract key metrics for a cleaner response
+            lighthouse_result = data.get("lighthouseResult", {})
+            categories_result = lighthouse_result.get("categories", {})
+            audits = lighthouse_result.get("audits", {})
+            
+            # Build simplified response
+            scores = {}
+            for cat_key, cat_data in categories_result.items():
+                scores[cat_key] = {
+                    "score": cat_data.get("score", 0) * 100 if cat_data.get("score") else 0,
+                    "title": cat_data.get("title", cat_key)
+                }
+            
+            # Extract core web vitals
+            core_web_vitals = {
+                "first-contentful-paint": audits.get("first-contentful-paint", {}).get("displayValue"),
+                "largest-contentful-paint": audits.get("largest-contentful-paint", {}).get("displayValue"),
+                "total-blocking-time": audits.get("total-blocking-time", {}).get("displayValue"),
+                "cumulative-layout-shift": audits.get("cumulative-layout-shift", {}).get("displayValue"),
+                "speed-index": audits.get("speed-index", {}).get("displayValue"),
+            }
+            
+            return {
+                "url": request.url,
+                "strategy": request.strategy,
+                "scores": scores,
+                "coreWebVitals": core_web_vitals,
+                "fetchTime": lighthouse_result.get("fetchTime"),
+                "finalUrl": lighthouse_result.get("finalUrl"),
+            }
+            
+    except httpx.TimeoutException:
+        raise HTTPException(
+            status_code=504,
+            detail="PageSpeed API request timed out. The target URL may be slow to respond."
+        )
+    except httpx.RequestError as e:
+        raise HTTPException(
+            status_code=502,
+            detail=f"Failed to connect to PageSpeed API: {str(e)}"
+        )
+
+
+@api_router.get("/pagespeed")
+async def get_pagespeed_simple(url: str, strategy: str = "mobile"):
+    """
+    Simple GET endpoint for PageSpeed Insights.
+    Usage: /api/pagespeed?url=https://example.com&strategy=mobile
+    """
+    request = PageSpeedRequest(url=url, strategy=strategy)
+    return await get_pagespeed_insights(request)
+
 # Include the router in the main app
 app.include_router(api_router)
 
