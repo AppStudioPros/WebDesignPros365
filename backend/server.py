@@ -12,6 +12,7 @@ import uuid
 from datetime import datetime, timezone
 from collections import defaultdict
 import time
+import httpx
 
 
 ROOT_DIR = Path(__file__).parent
