@@ -78,11 +78,9 @@ export default function ServicesSection() {
   return (
     <section className="section relative overflow-hidden">
       {/* Semi-transparent overlay - video visible underneath */}
-      <div className="absolute inset-0 bg-[#f8f9fc]/85" />
+      <div className="absolute inset-0 bg-[#f8f9fc]/70" />
       {/* Grid pattern on top */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-40" />
-      {/* Gradient mesh */}
-      <div className="absolute inset-0 bg-gradient-mesh opacity-50" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-30" />
 
       <div className="container-custom relative z-10">
         <motion.div
