@@ -226,14 +226,9 @@ export default function PortfolioPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <Card className="p-6 group hover:shadow-lg transition-all h-full bg-white border-gray-200">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${project.color}15` }}>
-                      <img src={project.icon} alt={project.title} className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <p className="text-sm" style={{ color: project.color }}>{project.clientName}</p>
-                      <h3 className="text-lg font-semibold text-gray-900">{project.title}</h3>
-                    </div>
+                  <div className="mb-4">
+                    <p className="text-sm" style={{ color: project.color }}>{project.clientName}</p>
+                    <h3 className="text-lg font-semibold text-gray-900">{project.title}</h3>
                   </div>
                   <p className="text-gray-600 text-sm mb-4">{project.solution}</p>
                   <div className="flex gap-4 mb-4">
