@@ -38,7 +38,7 @@
   }
   
   body {
-    background-color: var(--background);
+    background-color: transparent;
     color: var(--text-primary);
     font-family: 'Poppins', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
