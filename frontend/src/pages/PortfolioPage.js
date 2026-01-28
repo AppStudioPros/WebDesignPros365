@@ -180,7 +180,7 @@ export default function PortfolioPage() {
               >
                 <Card className="overflow-hidden group hover:shadow-xl transition-all h-full bg-white border-gray-200">
                   <div className="aspect-video bg-gradient-to-br from-[#f8f9fc] to-white flex items-center justify-center relative">
-                    <project.icon className="w-16 h-16 opacity-20" style={{ color: project.color }} />
+                    <img src={project.icon} alt={project.title} className="w-16 h-16 opacity-30" />
                     <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent" />
                   </div>
                   <CardContent className="p-6">
