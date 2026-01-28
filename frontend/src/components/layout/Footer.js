@@ -32,7 +32,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-tr from-[#a487e0] via-[#9a7de0] to-[#2F73EE]">
+    <footer className="bg-[#8734E1]/10 border-t border-[#8734E1]/30">
       <div className="container-custom py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-3">
           {/* Brand */}
@@ -44,23 +44,23 @@ export default function Footer() {
                 className="h-[60px] w-auto"
               />
             </Link>
-            <p className="text-white/80 mb-3 max-w-sm text-sm">
+            <p className="text-gray-600 mb-3 max-w-sm text-sm">
               Crafting next-gen web experiences with cutting-edge technology. Your vision,
               our expertise.
             </p>
 
             {/* Contact Info */}
-            <div className="space-y-2 text-sm text-white/80">
+            <div className="space-y-2 text-sm text-gray-600">
               <a
                 href="mailto:info@webdesignpros365.com"
-                className="flex items-center gap-2 hover:text-white transition-colors"
+                className="flex items-center gap-2 hover:text-[#8734E1] transition-colors"
               >
                 <Mail className="w-4 h-4" />
                 info@webdesignpros365.com
               </a>
               <a
                 href="tel:+17202760797"
-                className="flex items-center gap-2 hover:text-white transition-colors"
+                className="flex items-center gap-2 hover:text-[#8734E1] transition-colors"
               >
                 <Phone className="w-4 h-4" />
                 +1 (720) 276-0797
@@ -70,13 +70,13 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="font-semibold text-white mb-3">Company</h3>
+            <h3 className="font-semibold text-gray-800 mb-3">Company</h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-white/80 hover:text-white transition-colors"
+                    className="text-sm text-gray-600 hover:text-[#8734E1] transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -87,13 +87,13 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="font-semibold text-white mb-3">Resources</h3>
+            <h3 className="font-semibold text-gray-800 mb-3">Resources</h3>
             <ul className="space-y-2">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm text-white/80 hover:text-white transition-colors"
+                    className="text-sm text-gray-600 hover:text-[#8734E1] transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -104,8 +104,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-6 pt-4 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-3">
-          <p className="text-sm text-white/70">
+        <div className="mt-6 pt-4 border-t border-[#8734E1]/20 flex flex-col md:flex-row justify-between items-center gap-3">
+          <p className="text-sm text-gray-500">
             &copy; {new Date().getFullYear()} Web Design Pros 365. All rights reserved.
           </p>
 
@@ -117,7 +117,7 @@ export default function Footer() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-white/70 hover:text-white hover:bg-white/20 rounded-lg transition-all"
+                className="p-2 text-gray-500 hover:text-[#8734E1] hover:bg-[#8734E1]/10 rounded-lg transition-all"
                 aria-label={social.name}
               >
                 <social.icon className="w-5 h-5" />
