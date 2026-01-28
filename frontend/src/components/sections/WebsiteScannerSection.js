@@ -764,7 +764,7 @@ export default function WebsiteScannerSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#e8daf8] border border-[#d4c4e8] text-[#8734E1] mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f0e6fb] border border-[#8734E1] text-[#8734E1] mb-6">
             <Bot className="w-4 h-4" />
             <span className="text-sm font-mono font-medium">AI WEBSITE SCANNER</span>
             <span className="text-xs text-[#2F73EE]">// Neural Analysis v2.4</span>

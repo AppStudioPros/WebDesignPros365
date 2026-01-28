@@ -128,7 +128,7 @@ export default function TestimonialsSection() {
                   key={`${logo}-${index}`}
                   className="flex-shrink-0 mx-8 py-4"
                 >
-                  <div className="px-6 py-3 rounded-xl bg-[#f8f9fc] border border-gray-200 text-gray-500 font-medium hover:bg-[#e8daf8] hover:text-[#8734E1] hover:border-[#d4c4e8] transition-colors">
+                  <div className="px-6 py-3 rounded-xl bg-[#f8f9fc] border border-gray-200 text-gray-500 font-medium hover:bg-[#f0e6fb] hover:text-[#8734E1] hover:border-[#8734E1] transition-colors">
                     {logo}
                   </div>
                 </div>

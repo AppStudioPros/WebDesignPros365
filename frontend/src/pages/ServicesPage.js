@@ -90,7 +90,7 @@ export default function ServicesPage() {
                 exit={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
               >
-                <Card className={`h-full p-6 group cursor-pointer hover:shadow-lg hover:border-[#d4c4e8] relative overflow-hidden ${service.isFlagship ? 'border-[#d4c4e8] bg-[#e8daf8]' : ''}`}>
+                <Card className={`h-full p-6 group cursor-pointer hover:shadow-lg hover:border-[#8734E1] relative overflow-hidden ${service.isFlagship ? 'border-[#8734E1] bg-[#f0e6fb]' : ''}`}>
                   {/* Background Icon - bottom right, large, transparent, cut off */}
                   <img 
                     src={service.icon} 
