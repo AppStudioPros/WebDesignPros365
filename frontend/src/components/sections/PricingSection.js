@@ -61,8 +61,10 @@ const pricingTiers = [
 export default function PricingSection() {
   return (
     <section className="section relative overflow-hidden">
-      {/* Light section overlay */}
-      <div className="absolute inset-0 bg-white/95" />
+      {/* Semi-transparent overlay - video visible underneath */}
+      <div className="absolute inset-0 bg-white/85" />
+      {/* Grid pattern on top */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-40" />
       <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
