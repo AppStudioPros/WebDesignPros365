@@ -15,13 +15,15 @@ export default function HomePage() {
   return (
     <div className="relative">
       {/* Fixed Video Background - covers entire page */}
-      <div className="fixed inset-0 w-full h-full -z-10 overflow-hidden">
+      <div className="fixed inset-0 w-full h-full overflow-hidden" style={{ zIndex: -1 }}>
         <video
           autoPlay
           loop
           muted
           playsInline
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
+          style={{ minWidth: '100%', minHeight: '100%' }}
         >
           <source
             src="https://customer-assets.emergentagent.com/job_design-scanner-3/artifacts/uacga4lg_wdpbgvideo.mp4"
