@@ -79,9 +79,9 @@ export default function Header() {
                   to={item.href}
                   className={cn(
                     'px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200',
-                    'text-gray-700 hover:text-[#8734E1] hover:bg-[#8734E1]/10',
+                    'text-gray-700 hover:text-[#8734E1] hover:bg-[#e8daf8]',
                     'flex items-center gap-1',
-                    location.pathname === item.href && 'text-[#8734E1] bg-[#8734E1]/10'
+                    location.pathname === item.href && 'text-[#8734E1] bg-[#e8daf8]'
                   )}
                 >
                   {item.name}
@@ -129,7 +129,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-[#8734E1] hover:bg-[#8734E1]/10 rounded-lg transition-colors"
+            className="lg:hidden p-2 text-[#8734E1] hover:bg-[#e8daf8] rounded-lg transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
