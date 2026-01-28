@@ -107,17 +107,17 @@ export default function ServicesSection() {
           {services.map((service) => (
             <motion.div key={service.slug} variants={itemVariants}>
               <Link to={`/services#${service.slug}`}>
-                <Card className={`h-full p-6 group cursor-pointer bg-white border-gray-200 hover:border-[#8734E1]/30 hover:shadow-lg transition-all ${
+                <Card className={`h-full p-6 group cursor-pointer bg-white border-gray-200 hover:border-[#8734E1]/30 hover:shadow-lg transition-all relative overflow-hidden ${
                   service.isFlagship ? 'border-[#8734E1]/40 bg-[#8734E1]/5' : ''
                 }`}>
-                  <CardContent className="p-0">
+                  {/* Background Icon - bottom right, large, transparent, cut off */}
+                  <img 
+                    src={service.icon} 
+                    alt="" 
+                    className="absolute -bottom-6 -right-6 w-32 h-32 opacity-10 pointer-events-none"
+                  />
+                  <CardContent className="p-0 relative z-10">
                     <div className="flex items-start justify-between mb-4">
-                      <div 
-                        className="w-12 h-12 rounded-xl flex items-center justify-center"
-                        style={{ backgroundColor: `${service.color}15` }}
-                      >
-                        <img src={service.icon} alt={service.title} className="w-7 h-7" />
-                      </div>
                       {service.isFlagship && (
                         <Badge variant="accent" dot>Flagship</Badge>
                       )}
