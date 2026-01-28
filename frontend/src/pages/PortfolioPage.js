@@ -128,7 +128,7 @@ const caseStudies = [
     ],
     technologies: ['Next.js', 'D3.js', 'WebSockets', 'PostgreSQL'],
     featured: false,
-    icon: TrendingUp,
+    icon: '/icons/gradient/vision.png',
     color: '#8734E1',
   },
   {
@@ -142,7 +142,7 @@ const caseStudies = [
     ],
     technologies: ['OpenAI', 'Next.js', 'Sanity', 'Vercel'],
     featured: false,
-    icon: Bot,
+    icon: '/icons/gradient/mind.png',
     color: '#f59e0b',
   },
 ];
