@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, Twitter, Github } from 'lucide-react';
+import { Linkedin, Twitter, Github, Check } from 'lucide-react';
 import { Card, Badge } from '../components/ui';
 import { CTASection } from '../components/sections';
 
@@ -10,10 +10,10 @@ const team = [
 ];
 
 const values = [
-  { title: 'Innovation First', description: 'We stay ahead of the curve, adopting cutting-edge technologies like GEO and AI integration before they become mainstream.', icon: '🚀' },
-  { title: 'Client-Centric', description: 'Your success is our success. We work closely with you to understand your needs and deliver tailored solutions.', icon: '🤝' },
-  { title: 'Quality Obsessed', description: "We don't cut corners. Every project undergoes rigorous testing and optimization before launch.", icon: '✨' },
-  { title: 'Transparent Process', description: "Clear communication, honest pricing, and no surprises. You'll always know where your project stands.", icon: '💬' },
+  { title: 'Innovation First', description: 'We stay ahead of the curve, adopting cutting-edge technologies like GEO and AI integration before they become mainstream.', icon: '/icons/gradient/rocket.png' },
+  { title: 'Client-Centric', description: 'Your success is our success. We work closely with you to understand your needs and deliver tailored solutions.', icon: '/icons/gradient/chat.png' },
+  { title: 'Quality Obsessed', description: "We don't cut corners. Every project undergoes rigorous testing and optimization before launch.", icon: '/icons/gradient/shield.png' },
+  { title: 'Transparent Process', description: "Clear communication, honest pricing, and no surprises. You'll always know where your project stands.", icon: '/icons/gradient/vision.png' },
 ];
 
 const stats = [
@@ -21,6 +21,13 @@ const stats = [
   { value: '98%', label: 'Client Satisfaction' },
   { value: '5+', label: 'Years Experience' },
   { value: '24/7', label: 'Support Available' },
+];
+
+const whyChooseUs = [
+  { title: 'Senior Developers', description: 'No juniors, no handoffs - direct access to experts' },
+  { title: 'Innovative Practices', description: 'GEO, AI integration, and cutting-edge tech' },
+  { title: 'Tailored Solutions', description: 'Every project is unique - no templates' },
+  { title: 'Rigorous Testing', description: 'Every project is thoroughly QA\'d before launch' },
 ];
 
 export default function AboutPage() {
@@ -67,10 +74,17 @@ export default function AboutPage() {
             <div className="bg-[#f8f9fc] border border-gray-200 rounded-2xl p-8">
               <h3 className="text-xl font-semibold text-gray-900 mb-6">Why Choose Us?</h3>
               <ul className="space-y-4">
-                <li className="flex items-start gap-3"><span className="text-2xl">👥</span><div><p className="font-medium text-gray-900">Senior Developers</p><p className="text-sm text-gray-600">No juniors, no handoffs - direct access to experts</p></div></li>
-                <li className="flex items-start gap-3"><span className="text-2xl">🎯</span><div><p className="font-medium text-gray-900">Innovative Practices</p><p className="text-sm text-gray-600">GEO, AI integration, and cutting-edge tech</p></div></li>
-                <li className="flex items-start gap-3"><span className="text-2xl">🛠️</span><div><p className="font-medium text-gray-900">Tailored Solutions</p><p className="text-sm text-gray-600">Every project is unique - no templates</p></div></li>
-                <li className="flex items-start gap-3"><span className="text-2xl">✅</span><div><p className="font-medium text-gray-900">Rigorous Testing</p><p className="text-sm text-gray-600">Every project is thoroughly QA'd before launch</p></div></li>
+                {whyChooseUs.map((item) => (
+                  <li key={item.title} className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-[#8734E1]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-4 h-4 text-[#8734E1]" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-gray-900">{item.title}</p>
+                      <p className="text-sm text-gray-600">{item.description}</p>
+                    </div>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -85,10 +99,17 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value) => (
-              <Card key={value.title} className="p-6 text-center hover:shadow-lg transition-shadow">
-                <div className="text-4xl mb-4">{value.icon}</div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{value.title}</h3>
-                <p className="text-sm text-gray-600">{value.description}</p>
+              <Card key={value.title} className="p-6 text-center hover:shadow-lg transition-shadow relative overflow-hidden">
+                {/* Background Icon - bottom right, large, transparent, cut off */}
+                <img 
+                  src={value.icon} 
+                  alt="" 
+                  className="absolute -bottom-6 -right-6 w-32 h-32 opacity-10 pointer-events-none"
+                />
+                <div className="relative z-10">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{value.title}</h3>
+                  <p className="text-sm text-gray-600">{value.description}</p>
+                </div>
               </Card>
             ))}
           </div>
