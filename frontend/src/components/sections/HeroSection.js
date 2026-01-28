@@ -5,10 +5,10 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '../ui';
 
 const techBadges = [
-  { name: 'Next.js 15' },
-  { name: 'Vercel Edge' },
-  { name: 'Sanity CMS' },
-  { name: 'GEO Ready' },
+  { name: 'Next.js 15', icon: '/icons/gradient/coding.png' },
+  { name: 'Vercel Edge', icon: '/icons/gradient/speed test.png' },
+  { name: 'Sanity CMS', icon: '/icons/gradient/database.png' },
+  { name: 'GEO Ready', icon: '/icons/gradient/rocket.png' },
 ];
 
 const stats = [
@@ -39,6 +39,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8734E1]/10 border border-[#8734E1]/30 text-[#8734E1] mb-8"
           >
+            <img src="/icons/gradient/rocket.png" alt="rocket" className="w-4 h-4" />
             <span className="text-sm font-medium">Introducing GEO - Generative Engine Optimization</span>
             <ArrowRight className="w-4 h-4" />
           </motion.div>
@@ -77,8 +78,9 @@ export default function HeroSection() {
             {techBadges.map((badge) => (
               <div
                 key={badge.name}
-                className="inline-flex items-center px-4 py-2 rounded-xl bg-white border border-gray-200 text-gray-700 text-sm shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-gray-200 text-gray-700 text-sm shadow-sm"
               >
+                <img src={badge.icon} alt={badge.name} className="w-5 h-5" />
                 {badge.name}
               </div>
             ))}
@@ -128,6 +130,26 @@ export default function HeroSection() {
           </motion.div>
         </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="w-6 h-10 rounded-full border-2 border-[#8734E1]/30 flex items-start justify-center p-2"
+        >
+          <motion.div
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="w-1 h-2 bg-[#8734E1]/60 rounded-full"
+          />
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
