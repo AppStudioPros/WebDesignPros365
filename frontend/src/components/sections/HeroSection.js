@@ -5,10 +5,10 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '../ui';
 
 const techBadges = [
-  { name: 'Next.js 15', icon: '/icons/gradient/coding.png' },
-  { name: 'Vercel Edge', icon: '/icons/gradient/speed test.png' },
-  { name: 'Sanity CMS', icon: '/icons/gradient/database.png' },
-  { name: 'GEO Ready', icon: '/icons/gradient/rocket.png' },
+  { name: 'Next.js 15', icon: '/icons/svg/gradient/coding.svg' },
+  { name: 'Vercel Edge', icon: '/icons/svg/gradient/speed test.svg' },
+  { name: 'Sanity CMS', icon: '/icons/svg/gradient/database.svg' },
+  { name: 'GEO Ready', icon: '/icons/svg/gradient/rocket.svg' },
 ];
 
 const stats = [
