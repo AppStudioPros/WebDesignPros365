@@ -20,7 +20,9 @@ const stats = [
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-to-b from-white via-[#f8f9fc] to-white">
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      {/* Light section overlay - allows video to show through subtly */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/90 to-white/95" />
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-mesh" />
       <div className="absolute inset-0 bg-grid-pattern opacity-50" />
