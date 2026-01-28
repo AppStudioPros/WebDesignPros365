@@ -79,9 +79,9 @@ export default function Header() {
                   to={item.href}
                   className={cn(
                     'px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200',
-                    'text-white/90 hover:text-white hover:bg-white/20',
+                    'text-gray-700 hover:text-[#8734E1] hover:bg-[#8734E1]/10',
                     'flex items-center gap-1',
-                    location.pathname === item.href && 'text-white bg-white/20'
+                    location.pathname === item.href && 'text-[#8734E1] bg-[#8734E1]/10'
                   )}
                 >
                   {item.name}
