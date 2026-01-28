@@ -92,3 +92,7 @@ frontend/public/video-bg.mp4
 *.env
 *.env.*
 frontend/build/video-bg.mp4
+-e 
+# Environment files
+*.env
+*.env.*
