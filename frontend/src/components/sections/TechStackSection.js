@@ -34,8 +34,10 @@ const techStack = [
 
 export default function TechStackSection() {
   return (
-    <section className="section relative overflow-hidden bg-white">
-      <div className="container-custom">
+    <section className="section relative overflow-hidden">
+      {/* Light section overlay */}
+      <div className="absolute inset-0 bg-white/95" />
+      <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
