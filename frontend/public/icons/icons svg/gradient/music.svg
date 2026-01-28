@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="OBJECT" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#New_Gradient_Swatch);
+      }
+
+      .cls-2 {
+        fill: url(#New_Gradient_Swatch-4);
+      }
+
+      .cls-3 {
+        fill: url(#New_Gradient_Swatch-3);
+      }
+
+      .cls-4 {
+        fill: url(#New_Gradient_Swatch-2);
+      }
+    </style>
+    <linearGradient id="New_Gradient_Swatch" data-name="New Gradient Swatch" x1="-3.83" y1="16" x2="32.17" y2="16" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7738c8"/>
+      <stop offset="1" stop-color="#461d93"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch-2" data-name="New Gradient Swatch" y1="21.75" x2="32.17" y2="21.75" xlink:href="#New_Gradient_Swatch"/>
+    <linearGradient id="New_Gradient_Swatch-3" data-name="New Gradient Swatch" y1="21.75" x2="32.17" y2="21.75" xlink:href="#New_Gradient_Swatch"/>
+    <linearGradient id="New_Gradient_Swatch-4" data-name="New Gradient Swatch" y1="21.75" x2="32.17" y2="21.75" xlink:href="#New_Gradient_Swatch"/>
+  </defs>
+  <path class="cls-1" d="m22,12.51V2c0-.3-.13-.58-.36-.77-.23-.19-.53-.28-.82-.22l-9.77,1.78c-1.19.22-2.05,1.25-2.05,2.46v9.77c-.84-.63-1.87-1.03-3-1.03-2.76,0-5,2.24-5,5s2.24,5,5,5,5-2.24,5-5v-10.12l9-1.68v5.47c-4.27.82-7.5,4.58-7.5,9.08,0,5.1,4.15,9.25,9.25,9.25s9.25-4.15,9.25-9.25-4.02-9.1-9-9.24ZM6,22c-1.65,0-3-1.35-3-3s1.35-3,3-3,3,1.35,3,3-1.35,3-3,3Zm5-15.16v-1.59c0-.24.17-.45.41-.49l8.59-1.56v1.97l-9,1.67Zm10.75,22.15c-4,0-7.25-3.25-7.25-7.25s3.25-7.25,7.25-7.25,7.25,3.25,7.25,7.25-3.25,7.25-7.25,7.25Z"/>
+  <path class="cls-4" d="m18.98,19.11c-.39-.39-1.02-.39-1.41,0l-1.93,1.93c-.39.39-.39,1.02,0,1.41l1.93,1.93c.2.2.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.02,0-1.41l-1.23-1.23,1.23-1.23c.39-.39.39-1.02,0-1.41Z"/>
+  <path class="cls-3" d="m27.87,21.04l-1.93-1.93c-.39-.39-1.02-.39-1.41,0s-.39,1.02,0,1.41l1.23,1.23-1.23,1.23c-.39.39-.39,1.02,0,1.41.2.2.45.29.71.29s.51-.1.71-.29l1.93-1.93c.39-.39.39-1.02,0-1.41Z"/>
+  <path class="cls-2" d="m22.77,17.69c-.54-.14-1.08.19-1.21.73l-1.55,6.19c-.13.54.19,1.08.73,1.21.08.02.16.03.24.03.45,0,.86-.3.97-.76l1.55-6.19c.13-.54-.19-1.08-.73-1.21Z"/>
+</svg>

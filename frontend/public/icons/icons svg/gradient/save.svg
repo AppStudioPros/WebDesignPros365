@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="OBJECT" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#New_Gradient_Swatch-7);
+      }
+
+      .cls-2 {
+        fill: url(#New_Gradient_Swatch-6);
+      }
+
+      .cls-3 {
+        fill: url(#New_Gradient_Swatch);
+      }
+
+      .cls-4 {
+        fill: url(#New_Gradient_Swatch-5);
+      }
+
+      .cls-5 {
+        fill: url(#New_Gradient_Swatch-4);
+      }
+
+      .cls-6 {
+        fill: url(#New_Gradient_Swatch-3);
+      }
+
+      .cls-7 {
+        fill: url(#New_Gradient_Swatch-2);
+      }
+    </style>
+    <linearGradient id="New_Gradient_Swatch" data-name="New Gradient Swatch" x1="-3.65" y1="7" x2="34.33" y2="7" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7738c8"/>
+      <stop offset="1" stop-color="#461d93"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch-2" data-name="New Gradient Swatch" y1="22.5" x2="34.33" y2="22.5" xlink:href="#New_Gradient_Swatch"/>
+    <linearGradient id="New_Gradient_Swatch-3" data-name="New Gradient Swatch" y1="22.5" x2="34.33" y2="22.5" xlink:href="#New_Gradient_Swatch"/>
+    <linearGradient id="New_Gradient_Swatch-4" data-name="New Gradient Swatch" y1="26.5" x2="34.33" y2="26.5" xlink:href="#New_Gradient_Swatch"/>
+    <linearGradient id="New_Gradient_Swatch-5" data-name="New Gradient Swatch" y1="6" x2="34.33" y2="6" xlink:href="#New_Gradient_Swatch"/>
+    <linearGradient id="New_Gradient_Swatch-6" data-name="New Gradient Swatch" y1="9" x2="34.33" y2="9" xlink:href="#New_Gradient_Swatch"/>
+    <linearGradient id="New_Gradient_Swatch-7" data-name="New Gradient Swatch" y1="16" y2="16" xlink:href="#New_Gradient_Swatch"/>
+  </defs>
+  <path class="cls-3" d="m11,8h1c.55,0,1-.45,1-1s-.45-1-1-1h-1c-.55,0-1,.45-1,1s.45,1,1,1Z"/>
+  <path class="cls-7" d="m15,23.5h6c.55,0,1-.45,1-1s-.45-1-1-1h-6c-.55,0-1,.45-1,1s.45,1,1,1Z"/>
+  <path class="cls-6" d="m11,23.5h.5c.55,0,1-.45,1-1s-.45-1-1-1h-.5c-.55,0-1,.45-1,1s.45,1,1,1Z"/>
+  <path class="cls-5" d="m21,25.5h-10c-.55,0-1,.45-1,1s.45,1,1,1h10c.55,0,1-.45,1-1s-.45-1-1-1Z"/>
+  <path class="cls-4" d="m24,5h-5c-.55,0-1,.45-1,1s.45,1,1,1h5c.55,0,1-.45,1-1s-.45-1-1-1Z"/>
+  <path class="cls-2" d="m24,8h-5c-.55,0-1,.45-1,1s.45,1,1,1h5c.55,0,1-.45,1-1s-.45-1-1-1Z"/>
+  <path class="cls-1" d="m30.12,4.71l-2.83-2.83c-.57-.57-1.32-.88-2.12-.88H4c-1.65,0-3,1.35-3,3v24c0,1.65,1.35,3,3,3h24c1.65,0,3-1.35,3-3V6.83c0-.8-.31-1.56-.88-2.12Zm-21.12-1.71h5v6c0,.55-.45,1-1,1h-3c-.55,0-1-.45-1-1V3Zm15,15H8v-1.5c0-.28.22-.5.5-.5h15c.28,0,.5.22.5.5v1.5Zm-16,2h16v9H8v-9Zm21,8c0,.55-.45,1-1,1h-2v-12.5c0-1.38-1.12-2.5-2.5-2.5h-15c-1.38,0-2.5,1.12-2.5,2.5v12.5h-2c-.55,0-1-.45-1-1V4c0-.55.45-1,1-1h3v6c0,1.65,1.35,3,3,3h3c1.65,0,3-1.35,3-3V3h9.17c.27,0,.52.1.71.29l2.83,2.83c.19.19.29.44.29.71v21.17Z"/>
+</svg>
