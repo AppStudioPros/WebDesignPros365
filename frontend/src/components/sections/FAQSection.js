@@ -34,7 +34,9 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="section relative overflow-hidden bg-[#f8f9fc]">
+    <section className="section relative overflow-hidden">
+      {/* Dark section overlay */}
+      <div className="absolute inset-0 bg-[#f8f9fc]/90" />
       <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
 
       <div className="container-custom relative z-10">
