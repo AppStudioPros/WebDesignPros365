@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Card, CardContent, Badge, Button } from '../ui';
-import { VideoBackground } from '../ui/VideoBackground';
 
 const services = [
   {
@@ -78,7 +77,8 @@ const itemVariants = {
 export default function ServicesSection() {
   return (
     <section className="section relative overflow-hidden">
-      <VideoBackground overlayOpacity={0.88} />
+      {/* Dark section overlay */}
+      <div className="absolute inset-0 bg-[#f8f9fc]/90" />
       <div className="absolute inset-0 bg-gradient-mesh opacity-50" />
 
       <div className="container-custom relative z-10">
