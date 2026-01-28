@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Brain, Gauge, Code, Database, TrendingUp } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Card, CardContent, Badge, Button } from '../ui';
 
 const services = [
@@ -9,7 +9,7 @@ const services = [
     title: 'Generative Engine Optimization',
     shortDescription: 'Optimize your site for AI search engines and LLMs. Future-proof your SEO.',
     category: 'geo',
-    icon: Sparkles,
+    icon: '/icons/gradient/rocket.png',
     isFlagship: true,
     slug: 'geo',
     color: '#8734E1',
@@ -18,7 +18,7 @@ const services = [
     title: 'AI Integration & Chatbots',
     shortDescription: 'Custom AI solutions, chatbots, and automation to enhance user experience.',
     category: 'ai',
-    icon: Brain,
+    icon: '/icons/gradient/mind.png',
     isFlagship: false,
     slug: 'ai-integration',
     color: '#2F73EE',
@@ -27,7 +27,7 @@ const services = [
     title: 'SEO & Performance Optimization',
     shortDescription: 'Boost rankings and speed. Core Web Vitals optimization included.',
     category: 'marketing',
-    icon: Gauge,
+    icon: '/icons/gradient/speed test.png',
     isFlagship: false,
     slug: 'seo-performance',
     color: '#f59e0b',
@@ -36,7 +36,7 @@ const services = [
     title: 'Next.js Full-Stack Development',
     shortDescription: 'Modern web applications with React, TypeScript, and server-side rendering.',
     category: 'development',
-    icon: Code,
+    icon: '/icons/gradient/coding.png',
     isFlagship: false,
     slug: 'nextjs-development',
     color: '#BF5DE0',
@@ -45,7 +45,7 @@ const services = [
     title: 'Headless CMS & Content Strategy',
     shortDescription: 'Sanity, Contentful, or Strapi setup with structured content workflows.',
     category: 'development',
-    icon: Database,
+    icon: '/icons/gradient/database.png',
     isFlagship: false,
     slug: 'headless-cms',
     color: '#1A3A6E',
@@ -54,7 +54,7 @@ const services = [
     title: 'Digital Marketing & Analytics',
     shortDescription: 'Data-driven campaigns, GA4 setup, and conversion optimization.',
     category: 'marketing',
-    icon: TrendingUp,
+    icon: '/icons/gradient/vision.png',
     isFlagship: false,
     slug: 'digital-marketing',
     color: '#10b981',
@@ -116,7 +116,7 @@ export default function ServicesSection() {
                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                         style={{ backgroundColor: `${service.color}15` }}
                       >
-                        <service.icon className="w-6 h-6" style={{ color: service.color }} />
+                        <img src={service.icon} alt={service.title} className="w-7 h-7" />
                       </div>
                       {service.isFlagship && (
                         <Badge variant="accent" dot>Flagship</Badge>
