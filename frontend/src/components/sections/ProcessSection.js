@@ -15,8 +15,11 @@ const steps = [
 export default function ProcessSection() {
   return (
     <section className="section relative overflow-hidden">
-      {/* Dark section overlay */}
-      <div className="absolute inset-0 bg-[#f8f9fc]/90" />
+      {/* Semi-transparent overlay - video visible underneath */}
+      <div className="absolute inset-0 bg-[#f8f9fc]/85" />
+      {/* Grid pattern on top */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-40" />
+      {/* Gradient mesh */}
       <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
 
       <div className="container-custom relative z-10">
