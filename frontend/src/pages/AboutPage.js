@@ -76,7 +76,7 @@ export default function AboutPage() {
               <ul className="space-y-4">
                 {whyChooseUs.map((item) => (
                   <li key={item.title} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#8734E1]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-6 h-6 rounded-full bg-[#e8daf8] flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="w-4 h-4 text-[#8734E1]" />
                     </div>
                     <div>
@@ -135,7 +135,7 @@ export default function AboutPage() {
                     <p className="text-gray-600 text-sm mb-4">{member.bio}</p>
                     <div className="flex gap-2">
                       {member.socialLinks.map((social) => (
-                        <a key={social.platform} href={social.url} className="p-2 text-gray-400 hover:text-[#8734E1] hover:bg-[#8734E1]/10 rounded-lg transition-all" target="_blank" rel="noopener noreferrer">
+                        <a key={social.platform} href={social.url} className="p-2 text-gray-400 hover:text-[#8734E1] hover:bg-[#e8daf8] rounded-lg transition-all" target="_blank" rel="noopener noreferrer">
                           {social.platform === 'linkedin' && <Linkedin className="w-4 h-4" />}
                           {social.platform === 'twitter' && <Twitter className="w-4 h-4" />}
                           {social.platform === 'github' && <Github className="w-4 h-4" />}

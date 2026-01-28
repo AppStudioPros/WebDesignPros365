@@ -108,7 +108,7 @@ export default function ServicesSection() {
             <motion.div key={service.slug} variants={itemVariants}>
               <Link to={`/services#${service.slug}`}>
                 <Card className={`h-full p-6 group cursor-pointer bg-white border-gray-200 hover:border-[#8734E1]/30 hover:shadow-lg transition-all relative overflow-hidden ${
-                  service.isFlagship ? 'border-[#8734E1]/40 bg-[#8734E1]/5' : ''
+                  service.isFlagship ? 'border-[#d4c4e8] bg-[#e8daf8]' : ''
                 }`}>
                   {/* Background Icon - bottom right, large, transparent, cut off */}
                   <img 

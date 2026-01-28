@@ -85,7 +85,7 @@ export default function ContactPage() {
 
               <div className="space-y-6">
                 <Card className="p-4 flex items-center gap-4 bg-white border-gray-200 hover:border-[#8734E1]/30 hover:shadow-md transition-all">
-                  <div className="w-12 h-12 rounded-xl bg-[#8734E1]/10 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-xl bg-[#e8daf8] flex items-center justify-center">
                     <Mail className="w-5 h-5 text-[#8734E1]" />
                   </div>
                   <div>
