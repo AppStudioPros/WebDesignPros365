@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, TrendingUp, Globe, Zap, Bot, ShoppingCart, Search, Palette, Code } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { Card, CardContent, Badge } from '../components/ui';
 import { CTASection } from '../components/sections';
 
@@ -16,7 +16,7 @@ const caseStudies = [
     ],
     technologies: ['Next.js', 'Shopify', 'Vercel', 'Tailwind'],
     featured: true,
-    icon: ShoppingCart,
+    icon: '/icons/gradient/client server.png',
     color: '#f59e0b',
   },
   {
@@ -30,7 +30,7 @@ const caseStudies = [
     ],
     technologies: ['GEO', 'Next.js', 'Sanity', 'OpenAI'],
     featured: true,
-    icon: Globe,
+    icon: '/icons/gradient/rocket.png',
     color: '#8734E1',
   },
   {
@@ -44,7 +44,7 @@ const caseStudies = [
     ],
     technologies: ['OpenAI', 'Next.js', 'PostgreSQL', 'Vercel'],
     featured: true,
-    icon: Bot,
+    icon: '/icons/gradient/mind.png',
     color: '#2F73EE',
   },
   {
@@ -58,7 +58,7 @@ const caseStudies = [
     ],
     technologies: ['Sanity', 'Next.js', 'Vercel', 'TypeScript'],
     featured: true,
-    icon: Code,
+    icon: '/icons/gradient/coding.png',
     color: '#BF5DE0',
   },
   {
@@ -72,7 +72,7 @@ const caseStudies = [
     ],
     technologies: ['Next.js', 'Vercel', 'Lighthouse', 'CDN'],
     featured: false,
-    icon: Zap,
+    icon: '/icons/gradient/speed test.png',
     color: '#f59e0b',
   },
   {
@@ -86,7 +86,7 @@ const caseStudies = [
     ],
     technologies: ['SEO', 'Content Strategy', 'Analytics', 'Schema'],
     featured: false,
-    icon: Search,
+    icon: '/icons/gradient/search.png',
     color: '#10b981',
   },
   {
@@ -100,7 +100,7 @@ const caseStudies = [
     ],
     technologies: ['Figma', 'Next.js', 'Framer Motion', 'Tailwind'],
     featured: false,
-    icon: Palette,
+    icon: '/icons/gradient/eyedropper.png',
     color: '#BF5DE0',
   },
   {
@@ -114,7 +114,7 @@ const caseStudies = [
     ],
     technologies: ['Next.js', 'Stripe Connect', 'PostgreSQL', 'Vercel'],
     featured: false,
-    icon: ShoppingCart,
+    icon: '/icons/gradient/client server.png',
     color: '#2F73EE',
   },
   {
