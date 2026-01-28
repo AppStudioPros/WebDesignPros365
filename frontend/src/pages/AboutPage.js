@@ -10,10 +10,10 @@ const team = [
 ];
 
 const values = [
-  { title: 'Innovation First', description: 'We stay ahead of the curve, adopting cutting-edge technologies like GEO and AI integration before they become mainstream.', icon: '/icons/gradient/rocket.png' },
-  { title: 'Client-Centric', description: 'Your success is our success. We work closely with you to understand your needs and deliver tailored solutions.', icon: '/icons/gradient/chat.png' },
-  { title: 'Quality Obsessed', description: "We don't cut corners. Every project undergoes rigorous testing and optimization before launch.", icon: '/icons/gradient/shield.png' },
-  { title: 'Transparent Process', description: "Clear communication, honest pricing, and no surprises. You'll always know where your project stands.", icon: '/icons/gradient/vision.png' },
+  { title: 'Innovation First', description: 'We stay ahead of the curve, adopting cutting-edge technologies like GEO and AI integration before they become mainstream.', icon: '/icons/svg/gradient/rocket.svg' },
+  { title: 'Client-Centric', description: 'Your success is our success. We work closely with you to understand your needs and deliver tailored solutions.', icon: '/icons/svg/gradient/chat.svg' },
+  { title: 'Quality Obsessed', description: "We don't cut corners. Every project undergoes rigorous testing and optimization before launch.", icon: '/icons/svg/gradient/shield.svg' },
+  { title: 'Transparent Process', description: "Clear communication, honest pricing, and no surprises. You'll always know where your project stands.", icon: '/icons/svg/gradient/vision.svg' },
 ];
 
 const stats = [
