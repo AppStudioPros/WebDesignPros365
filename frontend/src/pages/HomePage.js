@@ -14,6 +14,23 @@ import {
 export default function HomePage() {
   return (
     <div className="relative">
+      {/* Fixed Video Background - covers entire page */}
+      <div className="fixed inset-0 w-full h-full -z-10 overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source
+            src="https://customer-assets.emergentagent.com/job_design-scanner-3/artifacts/uacga4lg_wdpbgvideo.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+
+      {/* Page Content */}
       <HeroSection />
       <WebsiteScannerSection />
       <ServicesSection />
