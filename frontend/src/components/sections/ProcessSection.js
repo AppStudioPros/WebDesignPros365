@@ -4,12 +4,12 @@ import { ArrowRight } from 'lucide-react';
 import { Badge } from '../ui';
 
 const steps = [
-  { number: '01', title: 'Discovery', description: 'We dive deep into your business goals, target audience, and competitive landscape.', icon: '/icons/gradient/chat.png', color: '#2F73EE' },
-  { number: '02', title: 'Strategy', description: 'Define the tech stack, features, and roadmap tailored to your needs.', icon: '/icons/gradient/search.png', color: '#8734E1' },
-  { number: '03', title: 'Design', description: 'Create stunning UI/UX designs that align with your brand identity.', icon: '/icons/gradient/eyedropper.png', color: '#BF5DE0' },
-  { number: '04', title: 'Development', description: 'Build with modern tech: Next.js, TypeScript, and best practices.', icon: '/icons/gradient/coding.png', color: '#f59e0b' },
-  { number: '05', title: 'Testing', description: 'Rigorous QA across devices, browsers, and performance benchmarks.', icon: '/icons/gradient/internet bug.png', color: '#10b981' },
-  { number: '06', title: 'Launch', description: 'Deploy to Vercel with optimized caching, monitoring, and support.', icon: '/icons/gradient/rocket.png', color: '#2F73EE' },
+  { number: '01', title: 'Discovery', description: 'We dive deep into your business goals, target audience, and competitive landscape.', color: '#2F73EE' },
+  { number: '02', title: 'Strategy', description: 'Define the tech stack, features, and roadmap tailored to your needs.', color: '#8734E1' },
+  { number: '03', title: 'Design', description: 'Create stunning UI/UX designs that align with your brand identity.', color: '#BF5DE0' },
+  { number: '04', title: 'Development', description: 'Build with modern tech: Next.js, TypeScript, and best practices.', color: '#f59e0b' },
+  { number: '05', title: 'Testing', description: 'Rigorous QA across devices, browsers, and performance benchmarks.', color: '#10b981' },
+  { number: '06', title: 'Launch', description: 'Deploy to Vercel with optimized caching, monitoring, and support.', color: '#2F73EE' },
 ];
 
 export default function ProcessSection() {
@@ -50,12 +50,6 @@ export default function ProcessSection() {
                 <div className="bg-white border border-gray-200 rounded-2xl p-6 h-full hover:shadow-lg hover:border-[#8734E1]/30 transition-all">
                   <div className="flex items-center gap-4 mb-4">
                     <span className="text-5xl font-bold text-gray-100">{step.number}</span>
-                    <div 
-                      className="w-12 h-12 rounded-xl flex items-center justify-center"
-                      style={{ backgroundColor: `${step.color}15` }}
-                    >
-                      <img src={step.icon} alt={step.title} className="w-7 h-7" />
-                    </div>
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{step.title}</h3>
                   <p className="text-gray-600 text-sm">{step.description}</p>
