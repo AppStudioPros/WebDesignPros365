@@ -45,7 +45,7 @@ export default function Header() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#e8daf8] border-b border-[#d4c4e8]',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#8734E1]/10 border-b border-[#8734E1]/30',
         isScrolled ? 'py-3 shadow-lg backdrop-blur-sm' : 'py-5'
       )}
     >
@@ -79,9 +79,9 @@ export default function Header() {
                   to={item.href}
                   className={cn(
                     'px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200',
-                    'text-gray-700 hover:text-[#8734E1] hover:bg-[#e8daf8]',
+                    'text-gray-700 hover:text-[#8734E1] hover:bg-[#8734E1]/10',
                     'flex items-center gap-1',
-                    location.pathname === item.href && 'text-[#8734E1] bg-[#e8daf8]'
+                    location.pathname === item.href && 'text-[#8734E1] bg-[#8734E1]/10'
                   )}
                 >
                   {item.name}
@@ -129,7 +129,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-[#8734E1] hover:bg-[#e8daf8] rounded-lg transition-colors"
+            className="lg:hidden p-2 text-[#8734E1] hover:bg-[#8734E1]/10 rounded-lg transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
