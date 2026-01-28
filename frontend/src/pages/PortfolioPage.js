@@ -16,7 +16,7 @@ const caseStudies = [
     ],
     technologies: ['Next.js', 'Shopify', 'Vercel', 'Tailwind'],
     featured: true,
-    icon: '/icons/gradient/client server.png',
+    icon: '/icons/svg/gradient/client server.svg',
     color: '#f59e0b',
   },
   {
@@ -30,7 +30,7 @@ const caseStudies = [
     ],
     technologies: ['GEO', 'Next.js', 'Sanity', 'OpenAI'],
     featured: true,
-    icon: '/icons/gradient/rocket.png',
+    icon: '/icons/svg/gradient/rocket.svg',
     color: '#8734E1',
   },
   {
@@ -44,7 +44,7 @@ const caseStudies = [
     ],
     technologies: ['OpenAI', 'Next.js', 'PostgreSQL', 'Vercel'],
     featured: true,
-    icon: '/icons/gradient/mind.png',
+    icon: '/icons/svg/gradient/mind.svg',
     color: '#2F73EE',
   },
   {
@@ -58,7 +58,7 @@ const caseStudies = [
     ],
     technologies: ['Sanity', 'Next.js', 'Vercel', 'TypeScript'],
     featured: true,
-    icon: '/icons/gradient/coding.png',
+    icon: '/icons/svg/gradient/coding.svg',
     color: '#BF5DE0',
   },
   {
@@ -72,7 +72,7 @@ const caseStudies = [
     ],
     technologies: ['Next.js', 'Vercel', 'Lighthouse', 'CDN'],
     featured: false,
-    icon: '/icons/gradient/speed test.png',
+    icon: '/icons/svg/gradient/speed test.svg',
     color: '#f59e0b',
   },
   {
@@ -86,7 +86,7 @@ const caseStudies = [
     ],
     technologies: ['SEO', 'Content Strategy', 'Analytics', 'Schema'],
     featured: false,
-    icon: '/icons/gradient/search.png',
+    icon: '/icons/svg/gradient/search.svg',
     color: '#10b981',
   },
   {
@@ -100,7 +100,7 @@ const caseStudies = [
     ],
     technologies: ['Figma', 'Next.js', 'Framer Motion', 'Tailwind'],
     featured: false,
-    icon: '/icons/gradient/eyedropper.png',
+    icon: '/icons/svg/gradient/eyedropper.svg',
     color: '#BF5DE0',
   },
   {
@@ -114,7 +114,7 @@ const caseStudies = [
     ],
     technologies: ['Next.js', 'Stripe Connect', 'PostgreSQL', 'Vercel'],
     featured: false,
-    icon: '/icons/gradient/client server.png',
+    icon: '/icons/svg/gradient/client server.svg',
     color: '#2F73EE',
   },
   {
@@ -128,7 +128,7 @@ const caseStudies = [
     ],
     technologies: ['Next.js', 'D3.js', 'WebSockets', 'PostgreSQL'],
     featured: false,
-    icon: '/icons/gradient/vision.png',
+    icon: '/icons/svg/gradient/vision.svg',
     color: '#8734E1',
   },
   {
@@ -142,7 +142,7 @@ const caseStudies = [
     ],
     technologies: ['OpenAI', 'Next.js', 'Sanity', 'Vercel'],
     featured: false,
-    icon: '/icons/gradient/mind.png',
+    icon: '/icons/svg/gradient/mind.svg',
     color: '#f59e0b',
   },
 ];
