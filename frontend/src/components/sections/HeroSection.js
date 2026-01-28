@@ -39,7 +39,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8734E1]/10 border border-[#8734E1]/30 text-[#8734E1] mb-8"
           >
-            <img src="/icons/gradient/rocket.png" alt="rocket" className="w-4 h-4" />
+            <img src="/icons/svg/gradient/rocket.svg" alt="rocket" className="w-4 h-4" />
             <span className="text-sm font-medium">Introducing GEO - Generative Engine Optimization</span>
             <ArrowRight className="w-4 h-4" />
           </motion.div>
