@@ -47,9 +47,9 @@ export default function TestimonialsSection() {
   return (
     <section className="section relative overflow-hidden">
       {/* Semi-transparent overlay - video visible underneath */}
-      <div className="absolute inset-0 bg-white/85" />
+      <div className="absolute inset-0 bg-white/70" />
       {/* Grid pattern on top */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-40" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-30" />
       <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
