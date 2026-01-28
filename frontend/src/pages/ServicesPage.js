@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Brain, Gauge, Code, Database, TrendingUp, Share2, ShoppingCart, Server, Layers, Palette, Filter } from 'lucide-react';
+import { ArrowRight, Filter } from 'lucide-react';
 import { Card, CardContent, Badge, Button } from '../components/ui';
 import { CTASection } from '../components/sections';
 
 const services = [
-  { title: 'Generative Engine Optimization (GEO)', shortDescription: 'Optimize your site for AI search engines and LLMs. Future-proof your SEO strategy.', category: 'geo', icon: Sparkles, isFlagship: true, slug: 'geo', color: '#8734E1' },
-  { title: 'AI Integration & Chatbots', shortDescription: 'Custom AI solutions, chatbots, and automation to enhance user experience.', category: 'ai', icon: Brain, slug: 'ai-integration', color: '#2F73EE' },
-  { title: 'SEO & Performance Optimization', shortDescription: 'Boost rankings and speed. Core Web Vitals optimization included.', category: 'marketing', icon: Gauge, slug: 'seo-performance', color: '#f59e0b' },
-  { title: 'Next.js Full-Stack Development', shortDescription: 'Modern web applications with React, TypeScript, and server-side rendering.', category: 'development', icon: Code, slug: 'nextjs-development', color: '#BF5DE0' },
-  { title: 'Headless CMS & Content Strategy', shortDescription: 'Sanity, Contentful, or Strapi setup with structured content workflows.', category: 'development', icon: Database, slug: 'headless-cms', color: '#1A3A6E' },
-  { title: 'Digital Marketing & Analytics', shortDescription: 'Data-driven campaigns, GA4 setup, and conversion optimization.', category: 'marketing', icon: TrendingUp, slug: 'digital-marketing', color: '#10b981' },
-  { title: 'Social Media & Content Strategy', shortDescription: 'Build your brand presence with strategic content across platforms.', category: 'marketing', icon: Share2, slug: 'social-media', color: '#8734E1' },
-  { title: 'E-Commerce Development', shortDescription: 'Shopify, WooCommerce, or custom solutions that convert visitors to customers.', category: 'development', icon: ShoppingCart, slug: 'e-commerce', color: '#f59e0b' },
-  { title: 'Web Performance & Infrastructure', shortDescription: 'Edge computing, CDN setup, and infrastructure optimization.', category: 'development', icon: Server, slug: 'web-performance', color: '#2F73EE' },
-  { title: 'Custom Software Development', shortDescription: 'Bespoke applications tailored to your unique business requirements.', category: 'development', icon: Layers, slug: 'custom-software', color: '#BF5DE0' },
-  { title: 'Brand & UI/UX Design', shortDescription: 'Create memorable brand experiences with stunning visual design.', category: 'development', icon: Palette, slug: 'brand-design', color: '#10b981' },
+  { title: 'Generative Engine Optimization (GEO)', shortDescription: 'Optimize your site for AI search engines and LLMs. Future-proof your SEO strategy.', category: 'geo', icon: '/icons/gradient/rocket.png', isFlagship: true, slug: 'geo', color: '#8734E1' },
+  { title: 'AI Integration & Chatbots', shortDescription: 'Custom AI solutions, chatbots, and automation to enhance user experience.', category: 'ai', icon: '/icons/gradient/mind.png', slug: 'ai-integration', color: '#2F73EE' },
+  { title: 'SEO & Performance Optimization', shortDescription: 'Boost rankings and speed. Core Web Vitals optimization included.', category: 'marketing', icon: '/icons/gradient/speed test.png', slug: 'seo-performance', color: '#f59e0b' },
+  { title: 'Next.js Full-Stack Development', shortDescription: 'Modern web applications with React, TypeScript, and server-side rendering.', category: 'development', icon: '/icons/gradient/coding.png', slug: 'nextjs-development', color: '#BF5DE0' },
+  { title: 'Headless CMS & Content Strategy', shortDescription: 'Sanity, Contentful, or Strapi setup with structured content workflows.', category: 'development', icon: '/icons/gradient/database.png', slug: 'headless-cms', color: '#1A3A6E' },
+  { title: 'Digital Marketing & Analytics', shortDescription: 'Data-driven campaigns, GA4 setup, and conversion optimization.', category: 'marketing', icon: '/icons/gradient/vision.png', slug: 'digital-marketing', color: '#10b981' },
+  { title: 'Social Media & Content Strategy', shortDescription: 'Build your brand presence with strategic content across platforms.', category: 'marketing', icon: '/icons/gradient/share code.png', slug: 'social-media', color: '#8734E1' },
+  { title: 'E-Commerce Development', shortDescription: 'Shopify, WooCommerce, or custom solutions that convert visitors to customers.', category: 'development', icon: '/icons/gradient/client server.png', slug: 'e-commerce', color: '#f59e0b' },
+  { title: 'Web Performance & Infrastructure', shortDescription: 'Edge computing, CDN setup, and infrastructure optimization.', category: 'development', icon: '/icons/gradient/server.png', slug: 'web-performance', color: '#2F73EE' },
+  { title: 'Custom Software Development', shortDescription: 'Bespoke applications tailored to your unique business requirements.', category: 'development', icon: '/icons/gradient/layer code.png', slug: 'custom-software', color: '#BF5DE0' },
+  { title: 'Brand & UI/UX Design', shortDescription: 'Create memorable brand experiences with stunning visual design.', category: 'development', icon: '/icons/gradient/eyedropper.png', slug: 'brand-design', color: '#10b981' },
 ];
 
 const categories = [
