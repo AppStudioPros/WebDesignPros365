@@ -1,14 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Zap, Shield, Code2 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '../ui';
+import { IconCodeTag, IconSpeed, IconShield, IconRocket } from '../CustomIcons';
 
 const techBadges = [
-  { name: 'Next.js 15', icon: Code2 },
-  { name: 'Vercel Edge', icon: Zap },
-  { name: 'Sanity CMS', icon: Shield },
-  { name: 'GEO Ready', icon: Sparkles },
+  { name: 'Next.js 15', icon: '/icons/gradient/coding.png' },
+  { name: 'Vercel Edge', icon: '/icons/gradient/speed test.png' },
+  { name: 'Sanity CMS', icon: '/icons/gradient/database.png' },
+  { name: 'GEO Ready', icon: '/icons/gradient/rocket.png' },
 ];
 
 const stats = [
@@ -39,7 +40,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8734E1]/10 border border-[#8734E1]/30 text-[#8734E1] mb-8"
           >
-            <Sparkles className="w-4 h-4" />
+            <img src="/icons/gradient/rocket.png" alt="rocket" className="w-4 h-4" />
             <span className="text-sm font-medium">Introducing GEO - Generative Engine Optimization</span>
             <ArrowRight className="w-4 h-4" />
           </motion.div>
@@ -80,7 +81,7 @@ export default function HeroSection() {
                 key={badge.name}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-gray-200 text-gray-700 text-sm shadow-sm"
               >
-                <badge.icon className="w-4 h-4 text-[#8734E1]" />
+                <img src={badge.icon} alt={badge.name} className="w-5 h-5" />
                 {badge.name}
               </div>
             ))}
