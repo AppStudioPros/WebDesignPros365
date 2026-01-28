@@ -754,9 +754,9 @@ export default function WebsiteScannerSection() {
   return (
     <section className="section relative overflow-hidden" data-testid="website-scanner-section">
       {/* Semi-transparent overlay - video visible underneath */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/80 to-white/85" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/60 to-white/70" />
       {/* Grid pattern on top */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-40" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-30" />
       {/* Decorative blurs */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#8734E1]/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#2F73EE]/5 rounded-full blur-3xl" />
