@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Badge } from '../ui';
-import { VideoBackground } from '../ui/VideoBackground';
 
 const steps = [
   { number: '01', title: 'Discovery', description: 'We dive deep into your business goals, target audience, and competitive landscape.', color: '#2F73EE' },
@@ -16,7 +15,8 @@ const steps = [
 export default function ProcessSection() {
   return (
     <section className="section relative overflow-hidden">
-      <VideoBackground overlayOpacity={0.88} />
+      {/* Dark section overlay */}
+      <div className="absolute inset-0 bg-[#f8f9fc]/90" />
       <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
 
       <div className="container-custom relative z-10">
