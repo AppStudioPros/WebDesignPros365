@@ -21,12 +21,12 @@ const stats = [
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Semi-transparent overlay - video visible underneath */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/80 to-white/85" />
+      {/* Semi-transparent overlay - TESTING at 30% opacity */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/20 to-white/30" />
       {/* Grid pattern on top of overlay */}
       <div className="absolute inset-0 bg-grid-pattern opacity-40" />
       {/* Gradient mesh effect */}
-      <div className="absolute inset-0 bg-gradient-mesh opacity-60" />
+      <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
       
       {/* Decorative Elements */}
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#8734E1]/10 rounded-full blur-3xl animate-blob" />
