@@ -132,15 +132,23 @@ export async function POST(request: NextRequest) {
       },
       timestamp: new Date().toISOString(),
     });
-  } catch (error) {
+  } catch (error: any) {
     console.error('PageSpeed API error:', error);
 
-    // Return mock data if API fails or no API key
-    console.log('⚠️ Returning mock data due to API failure or missing key');
+    if (error instanceof z.ZodError) {
+      return NextResponse.json(
+        { error: 'Invalid URL provided' },
+        { status: 400 }
+      );
+    }
+
+    // Return mock data if API fails
+    console.log('⚠️ Returning mock data due to API failure');
     const mockScore = 75 + Math.floor(Math.random() * 15);
+    const requestBody = await (error.request ? {} : { url: 'https://example.com' });
     
     return NextResponse.json({
-      url,
+      url: 'https://example.com',
       performance: {
         score: mockScore,
         metrics: {
