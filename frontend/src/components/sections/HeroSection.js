@@ -12,10 +12,10 @@ const techBadges = [
 ];
 
 const stats = [
-  { value: 2000, suffix: '+', label: 'Projects Delivered', duration: 2500 },
-  { value: 98, suffix: '%', label: 'Client Satisfaction', duration: 2000 },
-  { value: 2.5, prefix: '<', suffix: 's', label: 'Avg. LCP Score', duration: 1500, decimals: 1 },
-  { value: 24, suffix: '/7', label: 'Support', duration: 1000 },
+  { value: 2000, suffix: '+', label: 'Projects Delivered', duration: 3125 },
+  { value: 98, suffix: '%', label: 'Client Satisfaction', duration: 2500 },
+  { value: 2.5, prefix: '<', suffix: 's', label: 'Avg. LCP Score', duration: 1875, decimals: 1 },
+  { value: 24, suffix: '/7', label: 'Support', duration: 1250 },
 ];
 
 // Count-up animation component
