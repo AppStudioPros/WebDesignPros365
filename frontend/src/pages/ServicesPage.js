@@ -232,23 +232,24 @@ function ServiceModal({ service, isOpen, onClose }) {
             className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
           />
           
-          {/* Modal */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed inset-4 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-2xl md:w-full bg-white rounded-2xl shadow-2xl z-50 overflow-hidden max-h-[90vh] overflow-y-auto"
-          >
-            {/* Header with gradient */}
-            <div 
-              className="relative p-6 pb-8"
-              style={{ background: `linear-gradient(135deg, ${service.color}15, ${service.color}05)` }}
+          {/* Modal Container - Centered */}
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              className="w-full max-w-xl bg-white rounded-2xl shadow-2xl overflow-hidden max-h-[85vh] overflow-y-auto pointer-events-auto"
             >
-              <button
-                onClick={onClose}
-                className="absolute top-4 right-4 p-2 rounded-full bg-white/80 hover:bg-white text-gray-500 hover:text-gray-700 transition-colors"
+              {/* Header with gradient */}
+              <div 
+                className="relative p-6 pb-8"
+                style={{ background: `linear-gradient(135deg, ${service.color}15, ${service.color}05)` }}
               >
+                <button
+                  onClick={onClose}
+                  className="absolute top-4 right-4 p-2 rounded-full bg-white/80 hover:bg-white text-gray-500 hover:text-gray-700 transition-colors"
+                >
                 <X className="w-5 h-5" />
               </button>
               
