@@ -101,3 +101,4 @@ frontend/build/video-bg.mp4
 *.env
 *.env.*
 nextjs-app/node_modules/@next/swc-linux-arm64-gnu/next-swc.linux-arm64-gnu.node
+nextjs-app/node_modules/@next/swc-linux-arm64-musl/next-swc.linux-arm64-musl.node
