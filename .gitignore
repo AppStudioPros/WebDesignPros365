@@ -62,3 +62,7 @@ node_modules/@next/swc-linux-arm64-musl/next-swc.linux-arm64-musl.node
 node_modules/@next/swc-linux-arm64-gnu/next-swc.linux-arm64-gnu.node
 old_site/old_codes1.zip
 old_site/old_codes2.zip
+-e 
+# Environment files
+*.env
+*.env.*

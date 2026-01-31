@@ -2,7 +2,7 @@
 
 ## Current Status: ✅ REACT PREVIEW LIVE & WORKING
 
-### Live Preview URL: https://design-scanner-3.preview.emergentagent.com
+### Live Preview URL: https://nextjs-sanity-app.preview.emergentagent.com
 
 ---
 
