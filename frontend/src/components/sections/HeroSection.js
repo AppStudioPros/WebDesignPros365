@@ -72,7 +72,7 @@ export default function HeroSection() {
   const isInView = useInView(statsRef, { once: true, margin: "-100px" });
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-start pt-28 pb-16 overflow-hidden">
+    <section className="relative flex flex-col justify-start pt-32 pb-32 overflow-hidden">
       {/* Semi-transparent overlay - video visible underneath */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/60 to-white/70" />
       {/* Grid pattern on top */}
