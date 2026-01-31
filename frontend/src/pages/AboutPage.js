@@ -1,13 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, Twitter, Github, Check } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { Card, Badge } from '../components/ui';
 import { CTASection } from '../components/sections';
-
-const team = [
-  { name: 'Lead Developer', role: 'Senior Full-Stack Engineer', bio: 'Expert in Next.js, TypeScript, and AI integration. 10+ years of experience building high-performance web applications.', socialLinks: [{ platform: 'linkedin', url: '#' }, { platform: 'github', url: '#' }] },
-  { name: 'Lead Designer', role: 'Senior UI/UX Designer', bio: 'Passionate about creating beautiful, user-centered designs. Specializes in modern web aesthetics and interaction design.', socialLinks: [{ platform: 'linkedin', url: '#' }, { platform: 'twitter', url: '#' }] },
-];
 
 const values = [
   { title: 'Innovation First', description: 'We stay ahead of the curve, adopting cutting-edge technologies like GEO and AI integration before they become mainstream.', icon: '/icons/svg/gradient/rocket.svg' },
