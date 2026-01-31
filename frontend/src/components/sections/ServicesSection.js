@@ -233,6 +233,7 @@ function ServiceModal({ service, isOpen, onClose }) {
               </div>
             </div>
           </motion.div>
+          </div>
         </>
       )}
     </AnimatePresence>
