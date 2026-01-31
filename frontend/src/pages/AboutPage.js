@@ -111,40 +111,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <Badge variant="primary" className="mb-4">Our Team</Badge>
-            <h2 className="heading-lg">Meet the <span className="gradient-text">Pros</span></h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {team.map((member) => (
-              <Card key={member.name} className="p-6 hover:shadow-lg transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="w-20 h-20 rounded-xl bg-gradient-to-br from-[#8734E1] to-[#BF5DE0] flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
-                    {member.name.split(' ').map(n => n[0]).join('')}
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900">{member.name}</h3>
-                    <p className="text-[#8734E1] text-sm mb-2">{member.role}</p>
-                    <p className="text-gray-600 text-sm mb-4">{member.bio}</p>
-                    <div className="flex gap-2">
-                      {member.socialLinks.map((social) => (
-                        <a key={social.platform} href={social.url} className="p-2 text-gray-400 hover:text-[#8734E1] hover:bg-[#f0e6fb] rounded-lg transition-all" target="_blank" rel="noopener noreferrer">
-                          {social.platform === 'linkedin' && <Linkedin className="w-4 h-4" />}
-                          {social.platform === 'twitter' && <Twitter className="w-4 h-4" />}
-                          {social.platform === 'github' && <Github className="w-4 h-4" />}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <CTASection />
     </>
   );
