@@ -58,48 +58,17 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
             {navigation.map((item) => (
-              <div
+              <Link
                 key={item.name}
-                className="relative"
-                onMouseEnter={() => item.submenu && setActiveSubmenu(item.name)}
-                onMouseLeave={() => setActiveSubmenu(null)}
+                to={item.href}
+                className={cn(
+                  'px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200',
+                  'text-gray-700 hover:text-[#8734E1] hover:bg-[#8734E1]/10',
+                  location.pathname === item.href && 'text-[#8734E1] bg-[#8734E1]/10'
+                )}
               >
-                <Link
-                  to={item.href}
-                  className={cn(
-                    'px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200',
-                    'text-gray-700 hover:text-[#8734E1] hover:bg-[#8734E1]/10',
-                    'flex items-center gap-1',
-                    location.pathname === item.href && 'text-[#8734E1] bg-[#8734E1]/10'
-                  )}
-                >
-                  {item.name}
-                  {item.submenu && <ChevronDown className="w-4 h-4" />}
-                </Link>
-
-                {/* Submenu */}
-                <AnimatePresence>
-                  {item.submenu && activeSubmenu === item.name && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-72 py-2 bg-white rounded-xl shadow-xl border border-gray-100"
-                    >
-                      {item.submenu.map((subItem) => (
-                        <Link
-                          key={subItem.name}
-                          to={subItem.href}
-                          className="block px-4 py-2.5 text-sm text-gray-700 hover:text-[#8734E1] hover:bg-[#8734E1]/5 transition-colors"
-                        >
-                          {subItem.name}
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+                {item.name}
+              </Link>
             ))}
           </div>
 
