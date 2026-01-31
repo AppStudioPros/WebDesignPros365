@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '../ui';
@@ -12,13 +12,65 @@ const techBadges = [
 ];
 
 const stats = [
-  { value: '50+', label: 'Projects Delivered' },
-  { value: '98%', label: 'Client Satisfaction' },
-  { value: '<2.5s', label: 'Avg. LCP Score' },
-  { value: '24/7', label: 'Support' },
+  { value: 2000, suffix: '+', label: 'Projects Delivered', duration: 2500 },
+  { value: 98, suffix: '%', label: 'Client Satisfaction', duration: 2000 },
+  { value: 2.5, prefix: '<', suffix: 's', label: 'Avg. LCP Score', duration: 1500, decimals: 1 },
+  { value: 24, suffix: '/7', label: 'Support', duration: 1000 },
 ];
 
+// Count-up animation component
+function CountUpStat({ stat, inView }) {
+  const [count, setCount] = useState(0);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    if (inView && !hasAnimated.current) {
+      hasAnimated.current = true;
+      const startTime = Date.now();
+      const duration = stat.duration || 2000;
+      
+      const animate = () => {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing function (ease-out cubic)
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        
+        const currentValue = easeOut * stat.value;
+        
+        if (stat.decimals) {
+          setCount(parseFloat(currentValue.toFixed(stat.decimals)));
+        } else {
+          setCount(Math.floor(currentValue));
+        }
+        
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          // Ensure final value is exact
+          setCount(stat.value);
+        }
+      };
+      
+      requestAnimationFrame(animate);
+    }
+  }, [inView, stat]);
+
+  const displayValue = stat.decimals 
+    ? count.toFixed(stat.decimals) 
+    : count.toLocaleString();
+
+  return (
+    <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">
+      {stat.prefix || ''}{displayValue}{stat.suffix || ''}
+    </div>
+  );
+}
+
 export default function HeroSection() {
+  const statsRef = useRef(null);
+  const isInView = useInView(statsRef, { once: true, margin: "-100px" });
+
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Semi-transparent overlay - video visible underneath */}
@@ -106,8 +158,9 @@ export default function HeroSection() {
             </Link>
           </motion.div>
 
-          {/* Stats */}
+          {/* Stats with Count-up Animation */}
           <motion.div
+            ref={statsRef}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
@@ -121,10 +174,11 @@ export default function HeroSection() {
                 transition={{ duration: 0.3, delay: 0.6 + index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">
-                  {stat.value}
+                {/* Fixed width container to prevent layout shift */}
+                <div className="min-w-[120px] mx-auto">
+                  <CountUpStat stat={stat} inView={isInView} />
+                  <div className="text-sm text-gray-500">{stat.label}</div>
                 </div>
-                <div className="text-sm text-gray-500">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
