@@ -1,22 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { cn } from '../../lib/utils';
 
 const navigation = [
   { name: 'Home', href: '/' },
-  {
-    name: 'Services',
-    href: '/services',
-    submenu: [
-      { name: 'GEO - Generative Engine Optimization', href: '/services#geo' },
-      { name: 'AI Integration & Chatbots', href: '/services#ai' },
-      { name: 'Next.js Development', href: '/services#development' },
-      { name: 'SEO & Performance', href: '/services#seo' },
-      { name: 'View All Services', href: '/services' },
-    ],
-  },
+  { name: 'Services', href: '/services' },
   { name: 'Portfolio', href: '/portfolio' },
   { name: 'Pricing', href: '/pricing' },
   { name: 'Blog', href: '/blog' },
@@ -27,7 +17,6 @@ const navigation = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSubmenu, setActiveSubmenu] = useState(null);
   const location = useLocation();
 
   useEffect(() => {
