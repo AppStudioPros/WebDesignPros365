@@ -19,6 +19,7 @@ export const services = [
     icon: '/icons/svg/gradient/rocket.svg',
     isFlagship: true,
     color: '#8734E1',
+    category: 'geo',
   },
   {
     _id: '2',
@@ -38,6 +39,7 @@ export const services = [
     icon: '/icons/svg/gradient/mind.svg',
     isFlagship: false,
     color: '#2F73EE',
+    category: 'ai',
   },
   {
     _id: '3',
@@ -57,6 +59,7 @@ export const services = [
     icon: '/icons/svg/gradient/speed test.svg',
     isFlagship: false,
     color: '#f59e0b',
+    category: 'marketing',
   },
   {
     _id: '4',
@@ -76,6 +79,7 @@ export const services = [
     icon: '/icons/svg/gradient/coding.svg',
     isFlagship: false,
     color: '#BF5DE0',
+    category: 'development',
   },
   {
     _id: '5',
@@ -95,6 +99,7 @@ export const services = [
     icon: '/icons/svg/gradient/database.svg',
     isFlagship: false,
     color: '#1A3A6E',
+    category: 'development',
   },
   {
     _id: '6',
@@ -114,5 +119,6 @@ export const services = [
     icon: '/icons/svg/gradient/vision.svg',
     isFlagship: false,
     color: '#10b981',
+    category: 'marketing',
   },
 ];

@@ -61,7 +61,7 @@ export default function Footer() {
           </div>
 
           {/* Company */}
-          <div>
+          <div className="pt-4 lg:pt-6">
             <h3 className="font-semibold text-gray-800 mb-3">Company</h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
@@ -78,7 +78,7 @@ export default function Footer() {
           </div>
 
           {/* Resources */}
-          <div>
+          <div className="pt-4 lg:pt-6">
             <h3 className="font-semibold text-gray-800 mb-3">Resources</h3>
             <ul className="space-y-2">
               {footerLinks.resources.map((link) => (
