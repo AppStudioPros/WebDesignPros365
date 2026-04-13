@@ -16,10 +16,13 @@ const plans = [
     description: 'Perfect for small businesses and startups',
     features: [
       'Up to 5 pages',
+      'Next.js development',
       'Responsive design',
-      'Basic SEO setup',
+      'Basic SEO & GEO',
       'Contact form',
       '1 month support',
+      'Mobile responsiveness*',
+      'PWA*',
     ],
   },
   {
@@ -29,11 +32,14 @@ const plans = [
     popular: true,
     features: [
       'Up to 15 pages',
+      'Next.js development',
       'Custom design',
-      'Advanced SEO',
+      'Advanced SEO & GEO',
       'CMS integration',
       'Analytics setup',
       '3 months support',
+      'Mobile responsiveness*',
+      'PWA*',
     ],
   },
   {
@@ -42,11 +48,14 @@ const plans = [
     description: 'For large organizations with complex needs',
     features: [
       'Unlimited pages',
+      'Next.js development',
       'Custom development',
       'AI integration',
-      'GEO optimization',
+      'Advanced SEO & GEO',
       'Priority support',
       'SLA guarantee',
+      'Mobile responsiveness*',
+      'PWA*',
     ],
   },
 ];
@@ -122,6 +131,7 @@ export default function PricingPage() {
               </motion.div>
             ))}
           </div>
+          <p className="text-center text-sm text-muted-foreground mt-8">* Optional add-on</p>
         </div>
       </section>
 
