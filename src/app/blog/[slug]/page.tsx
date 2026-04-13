@@ -1,8 +1,10 @@
-import { getBlogPost, getAllSlugs, portableTextToHtml, formatDate, estimateReadTime } from "@/lib/sanity-blog";
+import { getGAPBlogPostBySlug, getAllGAPSlugs, slugify, estimateReadTime, extractExcerpt, formatDate } from "@/lib/gap";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import type { Metadata } from "next";
+
+const GAP_CLIENT_ID = "10a80963-f49b-4bee-a6d5-c305b98e3317";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -12,7 +14,7 @@ export const revalidate = 60;
 
 export async function generateStaticParams() {
   try {
-    const slugs = await getAllSlugs();
+    const slugs = await getAllGAPSlugs(GAP_CLIENT_ID);
     return slugs.map((slug) => ({ slug }));
   } catch {
     return [];
@@ -22,11 +24,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   try {
-    const post = await getBlogPost(slug);
+    const post = await getGAPBlogPostBySlug(GAP_CLIENT_ID, slug);
     if (!post) return { title: "Post Not Found — Web Design Pros 365" };
     return {
-      title: `${post.seoTitle || post.title} — WDP365 Blog`,
-      description: post.seoDescription || post.excerpt || "",
+      title: `${post.blog_title} — WDP365 Blog`,
+      description: extractExcerpt(post.blog_content, 160),
     };
   } catch {
     return { title: "Blog — Web Design Pros 365" };
@@ -42,11 +44,10 @@ export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
 
   let post;
-  try { post = await getBlogPost(slug); } catch {}
+  try { post = await getGAPBlogPostBySlug(GAP_CLIENT_ID, slug); } catch {}
   if (!post) notFound();
 
-  const bodyHtml = portableTextToHtml(post.body);
-  const readTime = estimateReadTime(post.body);
+  const readTime = estimateReadTime(post.blog_content);
 
   return (
     <main className="min-h-screen bg-background">
@@ -56,18 +57,16 @@ export default async function BlogPostPage({ params }: Props) {
             ← Back to Blog
           </Link>
           <div className="flex items-center gap-3 mb-4">
-            {post.categories?.[0] && (
-              <Badge variant="outline" style={{ color: getCategoryColor(post.categories[0]), borderColor: `${getCategoryColor(post.categories[0])}40` }}>
-                {post.categories[0]}
-              </Badge>
-            )}
-            <span className="text-xs text-muted-foreground">{formatDate(post.publishedAt)}</span>
+            <Badge variant="outline" style={{ color: "#8734E1", borderColor: "#8734E140" }}>
+              Blog
+            </Badge>
+            <span className="text-xs text-muted-foreground">{formatDate(post.created_at)}</span>
             <span className="text-xs text-muted-foreground">·</span>
             <span className="text-xs text-muted-foreground">{readTime}</span>
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground leading-tight mb-6">{post.title}</h1>
-          {post.excerpt && (
-            <p className="text-lg text-muted-foreground mb-8 border-l-2 border-[#8734E1] pl-4">{post.excerpt}</p>
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground leading-tight mb-6">{post.blog_title}</h1>
+          {post.blog_meta && (
+            <p className="text-lg text-muted-foreground mb-8 border-l-2 border-[#8734E1] pl-4">{post.blog_meta}</p>
           )}
           <div
             className="prose prose-lg max-w-none
@@ -78,7 +77,7 @@ export default async function BlogPostPage({ params }: Props) {
               prose-strong:text-foreground
               prose-blockquote:border-[#8734E1] prose-blockquote:text-muted-foreground
               prose-a:text-[#8734E1] prose-a:no-underline hover:prose-a:underline"
-            dangerouslySetInnerHTML={{ __html: bodyHtml }}
+            dangerouslySetInnerHTML={{ __html: post.blog_content }}
           />
           <div className="mt-16 pt-8 border-t border-border text-center">
             <p className="text-muted-foreground text-sm mb-4">Ready to transform your digital presence?</p>
