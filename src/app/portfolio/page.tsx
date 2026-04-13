@@ -131,7 +131,7 @@ export default function PortfolioPage() {
                     <img
                       src={project.image}
                       alt={`${project.title} homepage`}
-                      className="absolute top-0 left-0 w-full object-cover object-top transition-all duration-[3s] ease-in-out group-hover:translate-y-[calc(-100%+320px)]"
+                      className="absolute top-0 left-0 w-full object-cover object-top transition-all duration-[6s] ease-in-out group-hover:translate-y-[calc(-100%+320px)]"
                       style={{ minHeight: '100%' }}
                       loading="lazy"
                     />
