@@ -12,7 +12,7 @@ import CTASection from '@/components/sections/CTASection';
 const plans = [
   {
     name: 'Starter',
-    price: '$2,500',
+    price: '$3,500',
     description: 'Perfect for small businesses and startups',
     features: [
       'Up to 5 pages',
