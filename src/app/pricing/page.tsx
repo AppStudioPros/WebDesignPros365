@@ -117,7 +117,7 @@ export default function PricingPage() {
 
       <section className="section bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {plans.map((plan, index) => (
               <motion.div
                 key={plan.name}
@@ -153,9 +153,11 @@ export default function PricingPage() {
                     <Button className={`w-full ${
                       plan.popular
                         ? 'bg-gradient-to-r from-[#8734E1] to-[#BF5DE0] text-white'
+                        : plan.name === 'ACI-Powered'
+                        ? 'bg-gradient-to-r from-[#8734E1] to-[#2F73EE] text-white'
                         : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                     }`}>
-                      Get Started
+                      {plan.name === 'ACI-Powered' ? 'Talk to Us' : plan.name === 'Custom' ? 'Get a Quote' : 'Start a Project'}
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </Link>
@@ -164,6 +166,36 @@ export default function PricingPage() {
             ))}
           </div>
           <p className="text-center text-sm text-muted-foreground mt-8">* Optional add-on</p>
+
+          {/* Trust block: how engagements work */}
+          <div className="mt-16 max-w-4xl mx-auto">
+            <div className="bg-[#f8f9fc] border border-gray-200 rounded-2xl p-8">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">How an engagement actually works</h3>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div>
+                  <div className="w-8 h-8 rounded-full bg-[#f0e6fb] text-[#8734E1] flex items-center justify-center font-semibold mb-3">1</div>
+                  <h4 className="font-semibold text-gray-900 mb-2">Free Discovery Call</h4>
+                  <p className="text-sm text-gray-600">30-minute call to scope your goals, audience, and timeline. No commitment.</p>
+                </div>
+                <div>
+                  <div className="w-8 h-8 rounded-full bg-[#f0e6fb] text-[#8734E1] flex items-center justify-center font-semibold mb-3">2</div>
+                  <h4 className="font-semibold text-gray-900 mb-2">Fixed-Price Quote</h4>
+                  <p className="text-sm text-gray-600">Within 48 hours, you get a fixed-price proposal mapped to one of the tiers above. No surprises.</p>
+                </div>
+                <div>
+                  <div className="w-8 h-8 rounded-full bg-[#f0e6fb] text-[#8734E1] flex items-center justify-center font-semibold mb-3">3</div>
+                  <h4 className="font-semibold text-gray-900 mb-2">50% Kickoff Deposit</h4>
+                  <p className="text-sm text-gray-600">Standard payment terms: 50% to begin, 25% at design approval, 25% at launch. Milestone-based available on larger engagements.</p>
+                </div>
+                <div>
+                  <div className="w-8 h-8 rounded-full bg-[#f0e6fb] text-[#8734E1] flex items-center justify-center font-semibold mb-3">4</div>
+                  <h4 className="font-semibold text-gray-900 mb-2">Weekly Updates Until Launch</h4>
+                  <p className="text-sm text-gray-600">You'll always know where your project stands. Slack/email check-ins, demo links, and a Notion progress board.</p>
+                </div>
+              </div>
+              <p className="text-xs text-gray-500 text-center mt-6">All prices in USD. Retainer packages from $5,000/month. Add-ons (additional locales, accessibility remediation, custom integrations) priced separately. Tax not included.</p>
+            </div>
+          </div>
         </div>
       </section>
 

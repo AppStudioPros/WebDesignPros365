@@ -103,7 +103,7 @@ export default function HeroSection() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f0e6fb] border border-[#8734E1] text-[#8734E1] mb-8"
           >
             <span className="text-lg">🚀</span>
-            <span className="text-sm font-medium">Introducing GEO - Generative Engine Optimization</span>
+            <span className="text-sm font-medium">Introducing the AI Visibility Stack: SEO + AEO + GEO</span>
             <ArrowRight className="w-4 h-4" />
           </motion.div>
 
@@ -128,7 +128,8 @@ export default function HeroSection() {
             className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8"
           >
             We build high-performance websites and applications using cutting-edge technology.
-            From AI integration to GEO optimization, we transform your digital presence.
+            From patented ACI AI integration to the full AI Visibility Stack — SEO, AEO, and GEO —
+            we make sure you rank, you're the answer, and you get cited by AI.
           </motion.p>
 
           {/* Tech Badges */}

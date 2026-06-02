@@ -431,9 +431,10 @@ export default function WebsiteScannerSection() {
   const [scanStatus, setScanStatus] = useState('');
   const [scanMetrics, setScanMetrics] = useState([
     { name: 'SEO', complete: false },
+    { name: 'AEO', complete: false },
+    { name: 'GEO', complete: false },
     { name: 'SPEED', complete: false },
     { name: 'SECURITY', complete: false },
-    { name: 'GEO', complete: false },
     { name: 'A11Y', complete: false },
   ]);
   const [results, setResults] = useState<any>(null);
@@ -446,9 +447,10 @@ export default function WebsiteScannerSection() {
     'ANALYZING DOM STRUCTURE...',
     'MEASURING CORE WEB VITALS...',
     'EVALUATING SEO FACTORS...',
+    'CHECKING ANSWER ENGINE READINESS...',
+    'ASSESSING GEO + LLM CITABILITY...',
     'SCANNING SECURITY PROTOCOLS...',
-    'ASSESSING GEO READINESS...',
-    'COMPILING ANALYSIS REPORT...'
+    'COMPILING AI VISIBILITY REPORT...'
   ];
 
   const handleScan = async (e: React.FormEvent) => {
@@ -466,9 +468,10 @@ export default function WebsiteScannerSection() {
     setScanProgress(0);
     setScanMetrics([
       { name: 'SEO', complete: false },
+      { name: 'AEO', complete: false },
+      { name: 'GEO', complete: false },
       { name: 'SPEED', complete: false },
       { name: 'SECURITY', complete: false },
-      { name: 'GEO', complete: false },
       { name: 'A11Y', complete: false },
     ]);
 
@@ -480,7 +483,7 @@ export default function WebsiteScannerSection() {
         
         setScanMetrics(metrics => metrics.map((m, i) => ({
           ...m,
-          complete: newProgress > (i + 1) * 18
+          complete: newProgress > (i + 1) * 15
         })));
         
         return newProgress;
@@ -513,6 +516,9 @@ export default function WebsiteScannerSection() {
         const bestPracticesScore = Math.round(data.bestPractices?.score || 0);
         
         const overallScore = Math.round((performanceScore + seoScore + accessibilityScore + bestPracticesScore) / 4);
+        // AEO score: how extractable is your content? Heavy on SEO (structured signals) + accessibility (semantic structure) with a slice of best practices.
+        const aeoScore = Math.round((seoScore * 0.6 + accessibilityScore * 0.3 + bestPracticesScore * 0.1));
+        // GEO score: how citable are you to generative AI? Weighted on SEO + accessibility + light performance for crawler success.
         const geoScore = Math.round((seoScore * 0.5 + performanceScore * 0.3 + accessibilityScore * 0.2));
         
         const getGrade = (score: number) => {
@@ -530,8 +536,11 @@ export default function WebsiteScannerSection() {
         if (seoScore < 90) {
           issues.push({ severity: 'high', title: 'SEO improvements available', impact: `-${Math.round((90 - seoScore) * 0.2)}% visibility` });
         }
+        if (aeoScore < 80) {
+          issues.push({ severity: 'high', title: 'AEO opportunity — not optimized for AI Overviews + voice search', impact: 'Direct-answer slot' });
+        }
         if (geoScore < 80) {
-          issues.push({ severity: 'medium', title: 'GEO optimization recommended', impact: 'AI discovery' });
+          issues.push({ severity: 'medium', title: 'GEO optimization recommended — weak signals for ChatGPT/Claude/Gemini citations', impact: 'AI discovery' });
         }
         if (accessibilityScore < 90) {
           issues.push({ severity: 'medium', title: 'Accessibility enhancements recommended', impact: 'User experience' });
@@ -551,10 +560,11 @@ export default function WebsiteScannerSection() {
           url: data.url || scanUrl,
           scores: {
             overall: { score: overallScore, grade: getGrade(overallScore), description: overallScore >= 70 ? 'Good - Room for improvement' : 'Needs Work - Optimization required' },
-            seo: { score: seoScore, grade: getGrade(seoScore), description: seoScore >= 80 ? 'Good - Meta tags present' : 'Needs attention' },
+            seo: { score: seoScore, grade: getGrade(seoScore), description: seoScore >= 80 ? 'Good - Ranking-ready' : 'Needs attention' },
+            aeo: { score: aeoScore, grade: getGrade(aeoScore), description: aeoScore >= 80 ? 'Strong - AI Overview ready' : 'Optimize for direct-answer selection' },
+            geo: { score: geoScore, grade: getGrade(geoScore), description: geoScore >= 70 ? 'Ready for AI citation' : 'Weak signals for LLM citation' },
             speed: { score: performanceScore, grade: getGrade(performanceScore), description: performanceScore >= 70 ? 'Acceptable - Can be faster' : 'Needs optimization' },
             security: { score: bestPracticesScore, grade: getGrade(bestPracticesScore), description: bestPracticesScore >= 90 ? 'Excellent - Best practices followed' : 'Review recommended' },
-            geo: { score: geoScore, grade: getGrade(geoScore), description: geoScore >= 70 ? 'Ready for AI discovery' : 'GEO optimization needed' },
           },
           issues,
           technologies,
@@ -579,7 +589,7 @@ export default function WebsiteScannerSection() {
 
   const calculateRevenueImpact = (scores: any) => {
     if (!scores) return { min: 0, max: 0 };
-    const avgScore = (scores.overall.score + scores.seo.score + scores.speed.score + scores.geo.score) / 4;
+    const avgScore = (scores.overall.score + scores.seo.score + scores.aeo.score + scores.geo.score + scores.speed.score) / 5;
     const improvementPotential = 100 - avgScore;
     const baseValue = 1200;
     const min = Math.round((improvementPotential * baseValue * 0.8) / 1000) * 1000;
@@ -611,8 +621,8 @@ export default function WebsiteScannerSection() {
             Scan Your Website <span className="gradient-text">For Free</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Get instant insights into your website's performance, SEO, security, GEO readiness, and accessibility. 
-            Our AI analyzes 50+ factors using Google's PageSpeed API.
+            Get instant insights into your website's performance, SEO, AEO (Answer Engine Optimization), GEO (Generative Engine Optimization), security, and accessibility.
+            Our AI analyzes 50+ factors using Google's PageSpeed API and our own AI Visibility heuristics.
           </p>
         </motion.div>
 
@@ -713,7 +723,7 @@ export default function WebsiteScannerSection() {
                   </div>
 
                   {/* Score Cards */}
-                  <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
                     <ScoreCard 
                       icon={TrendingUp} 
                       label="Overall" 
@@ -729,6 +739,14 @@ export default function WebsiteScannerSection() {
                       grade={results.scores.seo.grade}
                       description={results.scores.seo.description}
                       color="text-blue-500"
+                    />
+                    <ScoreCard 
+                      icon={Bot} 
+                      label="AEO" 
+                      score={results.scores.aeo.score}
+                      grade={results.scores.aeo.grade}
+                      description={results.scores.aeo.description}
+                      color="text-fuchsia-500"
                     />
                     <ScoreCard 
                       icon={Sparkles} 

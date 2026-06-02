@@ -12,10 +12,10 @@ import CTASection from '@/components/sections/CTASection';
 
 const categories = [
   { id: 'all', name: 'All Services' },
+  { id: 'visibility', name: 'AI Visibility (SEO+AEO+GEO)' },
   { id: 'development', name: 'Development' },
   { id: 'ai', name: 'AI & Automation' },
   { id: 'marketing', name: 'Marketing' },
-  { id: 'geo', name: 'GEO' },
 ];
 
 function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0] | null; isOpen: boolean; onClose: () => void }) {
