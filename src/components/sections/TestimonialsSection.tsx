@@ -39,52 +39,50 @@ const testimonials = [
   },
 ];
 
-// Logos served from Clearbit Logo API (free, real color logos by domain).
-// Verified-domain whitelist: only confirmed-working brands ship here. No broken renders.
+// All logos served from /public/logos/ — locally hosted SVGs, no CDN dependency.
+// Verified-working file set: 26 real brand SVGs downloaded from Devicon, Lobehub, and Simple Icons.
 type LogoChip = {
   name: string;
-  domain: string;
+  /** Filename in /public/logos/ (without .svg extension) */
+  file: string;
 };
 
-// Curated, working-domain logo list. Single smooth row, ~24 brands. Loops seamlessly.
 const logos: LogoChip[] = [
   // Core stack
-  { name: 'Next.js', domain: 'nextjs.org' },
-  { name: 'Vercel', domain: 'vercel.com' },
-  { name: 'React', domain: 'react.dev' },
-  { name: 'TypeScript', domain: 'typescriptlang.org' },
-  { name: 'Python', domain: 'python.org' },
-  { name: 'Node.js', domain: 'nodejs.org' },
-  // AI providers
-  { name: 'Anthropic', domain: 'anthropic.com' },
-  { name: 'OpenAI', domain: 'openai.com' },
-  { name: 'Pinecone', domain: 'pinecone.io' },
+  { name: 'Next.js', file: 'nextjs' },
+  { name: 'Vercel', file: 'vercel' },
+  { name: 'React', file: 'react' },
+  { name: 'TypeScript', file: 'typescript' },
+  { name: 'Python', file: 'python' },
+  { name: 'Node.js', file: 'nodejs' },
+  // AI providers (Lobehub-sourced for color brand-mark accuracy)
+  { name: 'Anthropic', file: 'anthropic' },
+  { name: 'OpenAI', file: 'openai' },
+  { name: 'Claude', file: 'claude' },
   // Data + infrastructure
-  { name: 'Supabase', domain: 'supabase.com' },
-  { name: 'Cloudflare', domain: 'cloudflare.com' },
-  { name: 'PostgreSQL', domain: 'postgresql.org' },
+  { name: 'Supabase', file: 'supabase' },
+  { name: 'Cloudflare', file: 'cloudflare' },
+  { name: 'PostgreSQL', file: 'postgresql' },
   // CMS
-  { name: 'Sanity', domain: 'sanity.io' },
-  { name: 'Contentful', domain: 'contentful.com' },
+  { name: 'Sanity', file: 'sanity' },
+  { name: 'Contentful', file: 'contentful' },
   // Commerce
-  { name: 'Shopify', domain: 'shopify.com' },
-  { name: 'WordPress', domain: 'wordpress.org' },
-  { name: 'Stripe', domain: 'stripe.com' },
+  { name: 'Shopify', file: 'shopify' },
+  { name: 'WordPress', file: 'wordpress' },
+  { name: 'Stripe', file: 'stripe' },
   // Payments + fintech
-  { name: 'Plaid', domain: 'plaid.com' },
-  { name: 'Mercury', domain: 'mercury.com' },
-  { name: 'Brex', domain: 'brex.com' },
+  { name: 'Brex', file: 'brex' },
   // CRM
-  { name: 'HubSpot', domain: 'hubspot.com' },
-  { name: 'Salesforce', domain: 'salesforce.com' },
+  { name: 'HubSpot', file: 'hubspot' },
+  { name: 'Salesforce', file: 'salesforce' },
   // Comms
-  { name: 'Twilio', domain: 'twilio.com' },
-  { name: 'Resend', domain: 'resend.com' },
+  { name: 'Twilio', file: 'twilio' },
+  { name: 'Resend', file: 'resend' },
   // Tools
-  { name: 'GitHub', domain: 'github.com' },
-  { name: 'Figma', domain: 'figma.com' },
-  { name: 'Notion', domain: 'notion.so' },
-  { name: 'Clerk', domain: 'clerk.com' },
+  { name: 'GitHub', file: 'github' },
+  { name: 'Figma', file: 'figma' },
+  { name: 'Notion', file: 'notion' },
+  { name: 'Clerk', file: 'clerk' },
 ];
 
 function LogoBadge({ logo }: { logo: LogoChip }) {
@@ -93,13 +91,12 @@ function LogoBadge({ logo }: { logo: LogoChip }) {
       <div className="px-5 py-3 rounded-xl bg-white border border-gray-200 text-gray-700 font-medium flex items-center gap-2.5 whitespace-nowrap shadow-sm hover:shadow-md hover:border-[#8734E1]/40 transition-all">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={`https://logo.clearbit.com/${logo.domain}?size=64`}
+          src={`/logos/${logo.file}.svg`}
           alt={`${logo.name} logo`}
           className="w-5 h-5 object-contain"
           loading="lazy"
-          onError={(e) => {
-            (e.currentTarget as HTMLImageElement).style.display = 'none';
-          }}
+          width={20}
+          height={20}
         />
         <span className="text-sm">{logo.name}</span>
       </div>
@@ -116,7 +113,7 @@ export default function TestimonialsSection() {
       <div className="absolute inset-0 bg-white/70" />
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
       <div className="container-custom relative z-10">
-        {/* TRUSTED-BY MARQUEE — moved to TOP of section, single smooth row */}
+        {/* TRUSTED-BY MARQUEE — top of section, single smooth row */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -130,7 +127,7 @@ export default function TestimonialsSection() {
             </p>
           </div>
 
-          {/* Single smooth row, left to right, pause on hover, no glitch */}
+          {/* Single smooth row, left-to-right, pause on hover, no glitch */}
           <div className="relative overflow-hidden">
             <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />

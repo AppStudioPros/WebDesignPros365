@@ -107,7 +107,7 @@ export default function HeroSection() {
             <ArrowRight className="w-4 h-4" />
           </motion.div>
 
-          {/* Free Consultation CTA — shimmering pill */}
+          {/* Free Consultation CTA — shimmering pill, BLACK TEXT for readability */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -116,11 +116,11 @@ export default function HeroSection() {
           >
             <Link
               href="/contact?topic=free-consultation"
-              className="shimmer-cta group inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-[#8734E1] to-[#2F73EE] text-white text-sm font-medium shadow-lg shadow-[#8734E1]/20 hover:shadow-xl hover:shadow-[#8734E1]/30 transition-shadow"
+              className="shimmer-cta group inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white border-2 border-[#8734E1] text-gray-900 text-sm font-semibold shadow-lg shadow-[#8734E1]/15 hover:shadow-xl hover:shadow-[#8734E1]/25 hover:bg-[#f0e6fb] transition-all"
             >
-              <CalendarCheck className="w-4 h-4" />
+              <CalendarCheck className="w-4 h-4 text-[#8734E1]" />
               <span>Free 30-minute consultation</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-[#8734E1] group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </motion.div>
 
@@ -212,6 +212,36 @@ export default function HeroSection() {
                 </div>
               </motion.div>
             ))}
+          </motion.div>
+
+          {/* BBB accreditation badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.9 }}
+            className="flex justify-center mt-12"
+          >
+            <a
+              href="https://www.bbb.org/us/co/denver/profile/web-design/web-design-pros-365-1296-1000176091"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="BBB Accredited Business — A+ Rating — View profile"
+              className="group inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-white border border-gray-200 hover:border-[#0c5ba2] hover:shadow-lg transition-all"
+              title="BBB Accredited · A+ Rating since 12/11/2024"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/brand/bbb-accredited.png"
+                alt="BBB Accredited Business A+ Rating"
+                className="h-10 w-auto"
+                width={96}
+                height={40}
+              />
+              <div className="text-left">
+                <div className="text-[10px] uppercase tracking-wider text-gray-500">Trust Verified</div>
+                <div className="text-sm font-semibold text-gray-900 group-hover:text-[#0c5ba2] transition-colors">View BBB Profile</div>
+              </div>
+            </a>
           </motion.div>
         </div>
       </div>
