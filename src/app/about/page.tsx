@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, ShieldCheck, Users, Sparkles } from 'lucide-react';
+import { Check, ShieldCheck, Users, Sparkles, Code2, Layers, Cpu, GitBranch, Workflow, Globe2 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import CTASection from '@/components/sections/CTASection';
@@ -286,6 +286,68 @@ export default function AboutPage() {
               </motion.div>
             ))}
           </div>
+
+          {/* 4th card — horizontal extended team card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="max-w-6xl mx-auto mt-6"
+          >
+            <Card className="p-8 hover:shadow-lg transition-shadow relative overflow-hidden">
+              {/* Subtle gradient accent */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#8734E1]/5 via-transparent to-[#2F73EE]/5 pointer-events-none" />
+              <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-8 items-start">
+                {/* Left: badge cluster */}
+                <div className="flex flex-col items-start gap-3 lg:max-w-[200px]">
+                  <div className="flex items-center gap-3">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#8734E1] to-[#2F73EE] flex items-center justify-center text-white">
+                      <Users className="w-7 h-7" strokeWidth={1.75} />
+                    </div>
+                    <div>
+                      <div className="text-3xl font-bold gradient-text leading-none">25+</div>
+                      <div className="text-xs text-gray-500 uppercase tracking-wider mt-1">Builders</div>
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 leading-tight">
+                    Full Stack AI &amp; <span className="gradient-text">Development Team</span>
+                  </h3>
+                  <p className="text-xs text-[#8734E1] font-medium">The bench behind every build</p>
+                </div>
+
+                {/* Right: description + capability chips */}
+                <div>
+                  <p className="text-sm text-gray-700 leading-relaxed mb-5">
+                    Beyond the leadership trio, WDP365 operates with a deep bench of seasoned full-stack
+                    engineers, AI specialists, designers, and DevOps professionals. Senior-level talent
+                    across frontend, backend, AI integration, data engineering, infrastructure, and design.
+                    Every project draws from this team based on what the work actually needs.
+                  </p>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    {[
+                      { icon: Code2, label: 'Full-stack engineering' },
+                      { icon: Cpu, label: 'AI / ML integration' },
+                      { icon: Layers, label: 'Frontend + UX' },
+                      { icon: GitBranch, label: 'DevOps + CI/CD' },
+                      { icon: Workflow, label: 'Data + automation' },
+                      { icon: Globe2, label: 'Global delivery' },
+                    ].map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <div key={item.label} className="flex items-center gap-2 text-sm text-gray-700">
+                          <div className="w-7 h-7 rounded-lg bg-[#f0e6fb] flex items-center justify-center flex-shrink-0">
+                            <Icon className="w-3.5 h-3.5 text-[#8734E1]" strokeWidth={1.75} />
+                          </div>
+                          <span>{item.label}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
         </div>
       </section>
 
