@@ -130,7 +130,7 @@ export default function ServicesSection() {
             What We <span className="gradient-text">Build</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            From cutting-edge AI integration to performance optimization,
+            From modern AI integration to performance optimization,
             we deliver comprehensive digital solutions.
           </p>
         </motion.div>

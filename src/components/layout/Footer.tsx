@@ -37,7 +37,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-gray-600 mb-3 max-w-sm text-sm">
-              Crafting next-gen web experiences with cutting-edge technology. Your vision,
+              Building modern web experiences on an AI-native stack. Your vision,
               our expertise.
             </p>
 

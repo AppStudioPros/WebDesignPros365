@@ -69,7 +69,7 @@ Retainer packages from $5,000/month for ongoing development, support, and contin
 
 ## Key Differentiators
 
-- **Patent-anchored AI architecture (ACI #63/987,765):** "No hallucination, no drift, always human-in-the-loop" — federal-grade compliance discipline applied to commercial work.
+- **Patent-anchored AI architecture (ACI #63/987,765):** "No hallucination, no drift, always human-in-the-loop." Federal-grade compliance discipline applied to commercial work.
 - **Full AI Visibility Stack (SEO + AEO + GEO):** Most agencies still only sell SEO. We deliver all three because each captures a different audience moment.
 - **AI-accelerated delivery:** Modern stack + AI tooling compresses timelines 22-34% versus legacy agencies.
 - **Audit-trail-complete AI:** Every AI decision traceable to its source. Federal-procurement-grade discipline applied to commercial.

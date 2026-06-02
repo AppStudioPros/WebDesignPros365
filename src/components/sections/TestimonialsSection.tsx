@@ -14,7 +14,7 @@ const testimonials = [
     color: '#8734E1',
   },
   {
-    content: 'The GEO optimization they implemented has positioned us ahead of competitors in AI search results. Truly cutting-edge work!',
+    content: 'The GEO work they did put us ahead of competitors in AI search results. Real impact, fast turnaround.',
     author: 'John Cressey',
     authorTitle: 'Marketing Director',
     company: 'PocketFiler',

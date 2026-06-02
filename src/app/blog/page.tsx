@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getGAPBlogPosts, slugify, estimateReadTime, extractExcerpt } from "@/lib/gap";
 
 const GAP_CLIENT_ID = "10a80963-f49b-4bee-a6d5-c305b98e3317";
-export const metadata: Metadata = { title: "Blog — Web Design Pros 365", description: "Web design tips, SEO insights, and digital marketing strategies." };
+export const metadata: Metadata = { title: "Blog | Web Design Pros 365", description: "Web design tips, SEO insights, and digital marketing strategies." };
 export const revalidate = 60;
 
 const FALLBACK_POSTS = [

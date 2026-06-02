@@ -6,7 +6,7 @@ export const services = [
     title: 'AI Visibility Stack (SEO + AEO + GEO)',
     slug: { current: 'ai-visibility-stack' },
     shortDescription: 'Rank in Google. Be the answer in AI Overviews. Get cited by ChatGPT, Claude, Gemini, and Perplexity. Three disciplines, one engagement.',
-    fullDescription: 'Our flagship service combines three disciplines so your brand is visible across every modern search surface. SEO ranks your pages in traditional Google search. AEO (Answer Engine Optimization) makes your content the direct answer in Google AI Overviews, voice search, and featured snippets. GEO (Generative Engine Optimization) ensures your brand gets cited by ChatGPT, Claude, Gemini, and Perplexity when users ask questions in your domain. Most agencies still only do SEO. We do all three — because each one captures a different audience moment.',
+    fullDescription: 'Our flagship service combines three disciplines so your brand is visible across every modern search surface. SEO ranks your pages in traditional Google search. AEO (Answer Engine Optimization) makes your content the direct answer in Google AI Overviews, voice search, and featured snippets. GEO (Generative Engine Optimization) ensures your brand gets cited by ChatGPT, Claude, Gemini, and Perplexity when users ask questions in your domain. Most agencies still only do SEO. We do all three, because each one captures a different audience moment.',
     features: [
       'Technical SEO audit + Core Web Vitals tuning',
       'AEO: AI-extractable content blocks for AI Overviews + snippets',
@@ -26,10 +26,10 @@ export const services = [
   },
   {
     _id: '1b',
-    title: 'AEO — Answer Engine Optimization',
+    title: 'AEO: Answer Engine Optimization',
     slug: { current: 'aeo' },
     shortDescription: 'Get selected as THE direct answer in Google AI Overviews, voice search, and featured snippets.',
-    fullDescription: 'AEO is the practice of structuring content and site signals so that answer systems can identify your brand as a dependable source for direct, extractable answers. While SEO optimizes for rankings, AEO optimizes for SELECTION — being the result users see at the top of Google AI Overviews, the voice assistant\'s response, or the featured snippet on the search page. Standalone if you already have strong traditional SEO and just need to win the answer slot.',
+    fullDescription: 'AEO is the practice of structuring content and site signals so that answer systems can identify your brand as a dependable source for direct, extractable answers. While SEO optimizes for rankings, AEO optimizes for SELECTION. Being the result users see at the top of Google AI Overviews, the voice assistant\'s response, or the featured snippet on the search page. Standalone if you already have strong traditional SEO and just need to win the answer slot.',
     features: [
       'Answer-engine-friendly content structuring',
       'Concise, factual content blocks LLMs can extract',
@@ -70,7 +70,7 @@ export const services = [
     title: 'SEO & Performance Optimization',
     slug: { current: 'seo-performance' },
     shortDescription: 'Boost Google rankings and speed. Core Web Vitals optimization included. Pairs with AEO + GEO for full visibility.',
-    fullDescription: "Achieve top Google search rankings and lightning-fast load times. We optimize every aspect of your website's performance, from Core Web Vitals to technical SEO, ensuring you rank higher and convert more visitors. For the full picture across AI Overviews and generative AI engines, pair this with our AEO and GEO services — or grab the full AI Visibility Stack as a single engagement.",
+    fullDescription: "Achieve top Google search rankings and lightning-fast load times. We optimize every aspect of your website's performance, from Core Web Vitals to technical SEO, helping you rank higher and convert more visitors. For the full picture across AI Overviews and generative AI engines, pair this with our AEO and GEO services, or grab the full AI Visibility Stack as a single engagement.",
     features: [
       'Core Web Vitals optimization',
       'Technical SEO audit & fixes',

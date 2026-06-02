@@ -13,9 +13,8 @@ const navigation = [
   { name: 'Platform Engineering', href: '/platform-engineering' },
   { name: 'Portfolio', href: '/portfolio' },
   { name: 'Pricing', href: '/pricing' },
-  { name: 'Blog', href: '/blog' },
+  { name: 'Partnerships', href: '/partnerships' },
   { name: 'About', href: '/about' },
-  { name: 'FAQ', href: '/faq' },
 ];
 
 export default function Header() {

@@ -78,7 +78,7 @@ const pricingTiers = [
   {
     name: 'ACI-Powered',
     priceRange: '$75,000+',
-    description: 'Full ACI platform — patented AI architecture, custom agents, audit-trail-complete.',
+    description: 'Full ACI platform. Patented AI architecture, custom agents, audit-trail-complete.',
     bestFor: 'Flagship',
     features: [
       { feature: 'Everything in Custom', included: true },

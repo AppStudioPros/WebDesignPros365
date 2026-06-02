@@ -10,7 +10,7 @@ const projects = [
   {
     title: 'Social New London',
     category: 'Restaurant & Bar',
-    description: 'The Social Bar + Kitchen — New London\'s premier craft beer destination with 50 taps, live events, and modern American cuisine.',
+    description: 'The Social Bar + Kitchen, New London\'s premier craft beer destination with 50 taps, live events, and modern American cuisine.',
     url: 'https://socialnewlondon.com',
     image: '/portfolio/socialnewlondon.png',
     color: '#8734E1',
@@ -26,7 +26,7 @@ const projects = [
   {
     title: 'Subie Recycler',
     category: 'E-Commerce',
-    description: 'Subaru parts recycling marketplace — a digital-first breaker with online inventory and appointment scheduling.',
+    description: 'Subaru parts recycling marketplace. A digital-first breaker with online inventory and appointment scheduling.',
     url: 'https://subierecycler.com',
     image: '/portfolio/subierecycler.png',
     color: '#10b981',
@@ -34,7 +34,7 @@ const projects = [
   {
     title: 'Encore Services',
     category: 'Government AI',
-    description: 'AI solutions that serve the mission — purpose-trained custom AI agents for government and defense.',
+    description: 'AI solutions that serve the mission. Purpose-trained custom AI agents for government and defense.',
     url: 'https://encoresvcsllc.com',
     image: '/portfolio/encoresvcs.png',
     color: '#f59e0b',
@@ -42,7 +42,7 @@ const projects = [
   {
     title: 'Insurance Wheatridge',
     category: 'Insurance Agency',
-    description: 'Local Farmers Insurance agency in Wheat Ridge, Colorado — personalized coverage with a trusted community presence.',
+    description: 'Local Farmers Insurance agency in Wheat Ridge, Colorado. Personalized coverage with a trusted community presence.',
     url: 'https://www.insurancewheatridge.com',
     image: '/portfolio/insurancewheatridge.png',
     color: '#ef4444',

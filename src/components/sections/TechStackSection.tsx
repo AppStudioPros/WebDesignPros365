@@ -52,7 +52,7 @@ export default function TechStackSection() {
             Built with <span className="gradient-text">Modern Technology</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            We use cutting-edge tools and frameworks to deliver exceptional results.
+            Modern tooling. No vendor lock-in. Built for what comes next.
           </p>
         </motion.div>
 

@@ -2,30 +2,92 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
+import { Check, ShieldCheck, Users, Sparkles } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import CTASection from '@/components/sections/CTASection';
 
 const values = [
-  { title: 'Innovation First', description: 'We stay ahead of the curve, adopting cutting-edge technologies like our patented ACI platform and the full SEO + AEO + GEO AI Visibility Stack before they become mainstream.' },
-  { title: 'Client-Centric', description: 'Your success is our success. We work closely with you to understand your needs and deliver tailored solutions.' },
-  { title: 'Quality Obsessed', description: "We don't cut corners. Every project undergoes rigorous testing and optimization before launch." },
-  { title: 'Transparent Process', description: "Clear communication, honest pricing, and no surprises. You'll always know where your project stands." },
+  {
+    title: 'Modern by default',
+    description:
+      'We use the current generation of web tools (Next.js 16, React 19, Vercel Edge, Sanity, Supabase) instead of whatever was popular three years ago. The same applies to our AI work, which runs on the patented ACI platform.',
+  },
+  {
+    title: 'Honest about scope',
+    description:
+      "If something will be hard, we say so up front. If something will not work, we say that too. You will never get a quote that quietly grows by 40% mid-project.",
+  },
+  {
+    title: 'Quality before launch',
+    description:
+      "We do not cut corners. Every project goes through technical review, accessibility audit, performance testing, and a real QA pass before it ships.",
+  },
+  {
+    title: 'No surprises',
+    description:
+      "Clear communication, honest pricing, weekly updates. You always know where your project stands and what it costs.",
+  },
 ];
 
 const highlights = [
-  '2000+ Projects Delivered',
-  '98% Client Satisfaction',
-  'Next.js 16 & React 19',
-  'ACI-Powered AI Integration',
+  '2000+ projects delivered',
+  '98% client satisfaction',
+  'Next.js 16 + React 19',
+  'ACI-Powered AI integration',
   'Full AI Visibility Stack (SEO + AEO + GEO)',
-  'Sanity CMS Experts',
+  'Sanity CMS experts',
+  'Federal contractor experience',
+  'Denver-based, working globally',
+];
+
+type Person = {
+  name: string;
+  role: string;
+  bio: string;
+  highlights: string[];
+};
+
+const team: Person[] = [
+  {
+    name: 'Corey Strange',
+    role: 'Founder & CTO',
+    bio: "Corey has been building on the web for 20+ years. He founded Web Design Pros 365 in 2005 and has been the technical lead on every meaningful project since. Beyond WDP365, he serves as Chief AI Officer and Chief Technology Officer for an SDVOSB federal contracting partner, where he architects AI systems for government acquisition workflows. He is also the named inventor on the parent ACI (Adaptive Compound Intelligence) provisional patent (#63/987,765, U.S. Patent Office, filed 2026), which underlies our flagship ACI-Powered service tier.",
+    highlights: [
+      'Founder of Web Design Pros 365 (2005)',
+      'Inventor, ACI provisional patent #63/987,765',
+      'CAO + CTO of an SDVOSB federal contracting partner',
+      'Architect on every Lucid Tech production system',
+    ],
+  },
+  {
+    name: 'Kelsi Strange',
+    role: 'Design Lead',
+    bio: "Kelsi heads our design practice. She owns brand systems, visual identity, certification mark design, and the human-feel layer across every site we ship. She is the reason our work does not look like every other Next.js agency portfolio. When she is not on a build, she is mentoring on visual systems and conversion-focused UX.",
+    highlights: [
+      'Design Lead, Web Design Pros 365',
+      'Brand systems + visual identity',
+      'Certification mark and badge design',
+      'Conversion-focused UX',
+    ],
+  },
+  {
+    name: 'William Mocas',
+    role: 'Strategic Partnerships',
+    bio: 'William runs strategic partnerships and channel relationships. With a background in enterprise sales and federal acquisition, he is the connection point between our engineering team and the agencies, contractors, and resellers we work with. He owns the channel-partner program and the federal-contractor partnership track.',
+    highlights: [
+      'Strategic Partnerships + Channel',
+      'Enterprise sales + federal acquisition background',
+      'Owns federal contractor partnership track',
+      'Connects engineering with channel resellers',
+    ],
+  },
 ];
 
 export default function AboutPage() {
   return (
     <>
+      {/* HERO */}
       <section className="pt-32 pb-20 relative overflow-hidden bg-gradient-to-b from-white to-[#f8f9fc]">
         <div className="absolute inset-0 bg-gradient-mesh" />
         <div className="container-custom relative z-10">
@@ -36,16 +98,18 @@ export default function AboutPage() {
           >
             <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">About Us</Badge>
             <h1 className="heading-xl mb-6">
-              Building the <span className="gradient-text">Future</span> of Web
+              Web design that <span className="gradient-text">does the work.</span>
             </h1>
             <p className="text-lg text-gray-600">
-              We&apos;re a team of passionate developers, designers, and strategists dedicated
-              to crafting exceptional digital experiences.
+              We are a small Denver-based team that ships production websites and platforms on a
+              modern AI-native stack. No theme shops, no offshore fulfillment, no "we'll get back
+              to you next month."
             </p>
           </motion.div>
         </div>
       </section>
 
+      {/* THE COMPANY */}
       <section className="section bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -54,23 +118,30 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="heading-lg mb-6">Why Choose <span className="gradient-text">Web Design Pros 365</span>?</h2>
+              <h2 className="heading-lg mb-6">
+                Why <span className="gradient-text">Web Design Pros 365</span>
+              </h2>
               <p className="text-gray-600 mb-6">
-                We combine cutting-edge technology with creative excellence to deliver
-                websites that not only look stunning but perform exceptionally.
+                Founded in 2005, WDP365 has been the umbrella for every web project Corey
+                Strange has shipped for 20+ years. Today we operate at the intersection of
+                modern web engineering, applied AI, and federal-grade compliance discipline.
               </p>
               <p className="text-gray-600 mb-8">
-                Our team specializes in Next.js, TypeScript, and modern web technologies,
-                ensuring your website is fast, secure, and optimized for the future.
+                We are different from most agencies because we hold actual technical IP. The
+                ACI (Adaptive Compound Intelligence) provisional patent, filed with the USPTO,
+                underlies the AI systems we deploy for clients. That same architecture also
+                runs in federal acquisition systems through our SDVOSB contracting partner,
+                which means the discipline applied to your customer comms is the same we apply
+                to government acquisition workflows.
               </p>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3">
                 {highlights.map((item, index) => (
                   <motion.div
                     key={item}
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
+                    transition={{ delay: index * 0.06 }}
                     className="flex items-center gap-3"
                   >
                     <div className="w-6 h-6 rounded-full bg-[#f0e6fb] flex items-center justify-center flex-shrink-0">
@@ -81,6 +152,7 @@ export default function AboutPage() {
                 ))}
               </div>
             </motion.div>
+
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -101,11 +173,125 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* FEDERAL CONNECTION */}
+      <section className="section bg-gradient-to-br from-[#1a0b2e] via-[#2d1b4e] to-[#1a0b2e] text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern opacity-10" />
+        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#8734E1]/20 rounded-full blur-3xl" />
+        <div className="container-custom relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <Badge className="mb-4 bg-[#8734E1]/30 text-white border-[#8734E1]/50">
+                Federal Contractor Connection
+              </Badge>
+              <h2 className="heading-lg mb-4 text-white">
+                The same discipline,{' '}
+                <span className="bg-gradient-to-r from-[#BF5DE0] to-[#2F73EE] bg-clip-text text-transparent">
+                  applied commercially.
+                </span>
+              </h2>
+              <p className="text-white/80 max-w-2xl mx-auto">
+                Corey serves as Chief AI Officer and CTO for an SDVOSB-verified federal
+                contracting partner. The AI architecture you get through Web Design Pros 365
+                is the same architecture being deployed for federal acquisition workflows.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5">
+                <ShieldCheck className="w-8 h-8 text-[#BF5DE0] mb-3" />
+                <h3 className="font-semibold text-white mb-2">Federal-grade compliance</h3>
+                <p className="text-sm text-white/70 leading-relaxed">
+                  Audit-trail-complete AI. Every decision traceable. Built to survive a GAO
+                  protest, so your customer comms are bulletproof too.
+                </p>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5">
+                <Sparkles className="w-8 h-8 text-[#BF5DE0] mb-3" />
+                <h3 className="font-semibold text-white mb-2">Patented architecture</h3>
+                <p className="text-sm text-white/70 leading-relaxed">
+                  ACI #63/987,765 covers a 5-layer Adaptive Compound Intelligence stack.
+                  Filed U.S. provisional patent. Real IP under the hood, not a wrapper.
+                </p>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5">
+                <Users className="w-8 h-8 text-[#BF5DE0] mb-3" />
+                <h3 className="font-semibold text-white mb-2">Same AI, both worlds</h3>
+                <p className="text-sm text-white/70 leading-relaxed">
+                  The same Acumen-7 reasoning engine that powers federal acquisition systems
+                  also runs your CRM, your chatbot, your marketing automation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TEAM */}
+      <section className="section bg-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">The Team</Badge>
+            <h2 className="heading-lg">
+              The people <span className="gradient-text">building it.</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {team.map((person, index) => (
+              <motion.div
+                key={person.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Card className="p-6 h-full hover:shadow-lg transition-shadow">
+                  <div className="mb-4">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#8734E1] to-[#2F73EE] flex items-center justify-center text-white text-xl font-bold mb-3">
+                      {person.name
+                        .split(' ')
+                        .map((n) => n[0])
+                        .join('')}
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900">{person.name}</h3>
+                    <p className="text-sm text-[#8734E1] font-medium">{person.role}</p>
+                  </div>
+                  <p className="text-sm text-gray-600 mb-4 leading-relaxed">{person.bio}</p>
+                  <ul className="space-y-2 pt-4 border-t border-gray-100">
+                    {person.highlights.map((h) => (
+                      <li key={h} className="flex items-start gap-2 text-xs text-gray-700">
+                        <div className="w-4 h-4 rounded-full bg-[#f0e6fb] flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Check className="w-2.5 h-2.5 text-[#8734E1]" />
+                        </div>
+                        <span>{h}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* VALUES */}
       <section className="section bg-[#f8f9fc]">
         <div className="container-custom">
           <div className="text-center mb-12">
             <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Our Values</Badge>
-            <h2 className="heading-lg">What We <span className="gradient-text">Stand For</span></h2>
+            <h2 className="heading-lg">
+              How we <span className="gradient-text">actually work.</span>
+            </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
@@ -118,7 +304,7 @@ export default function AboutPage() {
               >
                 <Card className="p-6 h-full hover:shadow-lg transition-shadow">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">{value.title}</h3>
-                  <p className="text-sm text-gray-600">{value.description}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">{value.description}</p>
                 </Card>
               </motion.div>
             ))}

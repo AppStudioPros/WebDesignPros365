@@ -137,7 +137,7 @@ export default function ServicesPage() {
               Comprehensive <span className="gradient-text">Digital Solutions</span>
             </h1>
             <p className="text-lg text-gray-600">
-              From cutting-edge AI integration to performance optimization,
+              From modern AI integration to performance optimization,
               we deliver everything you need to succeed online.
             </p>
           </motion.div>

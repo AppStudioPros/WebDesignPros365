@@ -25,13 +25,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   try {
     const post = await getGAPBlogPostBySlug(GAP_CLIENT_ID, slug);
-    if (!post) return { title: "Post Not Found — Web Design Pros 365" };
+    if (!post) return { title: "Post Not Found | Web Design Pros 365" };
     return {
-      title: `${post.blog_title} — WDP365 Blog`,
+      title: `${post.blog_title} | WDP365 Blog`,
       description: extractExcerpt(post.blog_content, 160),
     };
   } catch {
-    return { title: "Blog — Web Design Pros 365" };
+    return { title: "Blog | Web Design Pros 365" };
   }
 }
 

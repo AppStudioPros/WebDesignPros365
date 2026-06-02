@@ -537,10 +537,10 @@ export default function WebsiteScannerSection() {
           issues.push({ severity: 'high', title: 'SEO improvements available', impact: `-${Math.round((90 - seoScore) * 0.2)}% visibility` });
         }
         if (aeoScore < 80) {
-          issues.push({ severity: 'high', title: 'AEO opportunity — not optimized for AI Overviews + voice search', impact: 'Direct-answer slot' });
+          issues.push({ severity: 'high', title: 'AEO opportunity: not optimized for AI Overviews + voice search', impact: 'Direct-answer slot' });
         }
         if (geoScore < 80) {
-          issues.push({ severity: 'medium', title: 'GEO optimization recommended — weak signals for ChatGPT/Claude/Gemini citations', impact: 'AI discovery' });
+          issues.push({ severity: 'medium', title: 'GEO optimization recommended: weak signals for ChatGPT/Claude/Gemini citations', impact: 'AI discovery' });
         }
         if (accessibilityScore < 90) {
           issues.push({ severity: 'medium', title: 'Accessibility enhancements recommended', impact: 'User experience' });

@@ -3,14 +3,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Zap, Atom, Rocket, Target, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const techBadges = [
-  { name: 'Next.js 16', icon: '⚡' },
-  { name: 'React 19', icon: '⚛️' },
-  { name: 'Vercel Edge', icon: '🚀' },
-  { name: 'AI Visibility Stack', icon: '🎯' },
+  { name: 'Next.js 16', Icon: Zap, color: '#8734E1' },
+  { name: 'React 19', Icon: Atom, color: '#2F73EE' },
+  { name: 'Vercel Edge', Icon: Rocket, color: '#EC4899' },
+  { name: 'AI Visibility Stack', Icon: Target, color: '#F59E0B' },
 ];
 
 const stats = [
@@ -102,7 +102,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f0e6fb] border border-[#8734E1] text-[#8734E1] mb-8"
           >
-            <span className="text-lg">🚀</span>
+            <Sparkles className="w-4 h-4" />
             <span className="text-sm font-medium">Introducing the AI Visibility Stack: SEO + AEO + GEO</span>
             <ArrowRight className="w-4 h-4" />
           </motion.div>
@@ -127,8 +127,8 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8"
           >
-            We build high-performance websites and applications using cutting-edge technology.
-            From patented ACI AI integration to the full AI Visibility Stack — SEO, AEO, and GEO —
+            We build high-performance websites and applications on a modern AI-native stack.
+            From patented ACI AI integration to the full AI Visibility Stack (SEO, AEO, and GEO),
             we make sure you rank, you're the answer, and you get cited by AI.
           </motion.p>
 
@@ -139,15 +139,18 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-wrap justify-center gap-3 mb-10"
           >
-            {techBadges.map((badge) => (
-              <div
-                key={badge.name}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-gray-200 text-gray-700 text-sm shadow-sm"
-              >
-                <span>{badge.icon}</span>
-                {badge.name}
-              </div>
-            ))}
+            {techBadges.map((badge) => {
+              const Icon = badge.Icon;
+              return (
+                <div
+                  key={badge.name}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-gray-200 text-gray-700 text-sm shadow-sm"
+                >
+                  <Icon className="w-4 h-4" style={{ color: badge.color }} />
+                  {badge.name}
+                </div>
+              );
+            })}
           </motion.div>
 
           {/* CTA Buttons */}

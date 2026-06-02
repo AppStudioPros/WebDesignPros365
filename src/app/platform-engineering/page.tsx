@@ -27,7 +27,7 @@ const painPoints = [
   {
     title: '"Click here, click there, click that..."',
     body:
-      "Every support call ends with the agency teaching YOU how to use HighLevel. That's not service — that's billable training on someone else's broken UX.",
+      "Every support call ends with the agency teaching YOU how to use HighLevel. That's not service. That's billable training on someone else's broken UX.",
   },
   {
     title: 'AI that sounds like a printer support script',
@@ -79,7 +79,7 @@ const comparison = [
   },
   {
     feature: 'Page load (Core Web Vitals)',
-    highlevel: 'Mediocre — vendor-controlled CDN',
+    highlevel: 'Mediocre. Vendor-controlled CDN.',
     wdp: 'Sub-100ms via Vercel Edge globally',
     advantage: 'wdp',
   },
@@ -103,13 +103,13 @@ const comparison = [
   },
   {
     feature: 'Audit trail / compliance',
-    highlevel: 'Limited — not designed for regulated industries',
+    highlevel: 'Limited. Not designed for regulated industries.',
     wdp: 'Audit-trail-complete (federal-grade)',
     advantage: 'wdp',
   },
   {
     feature: 'Agency reseller flywheel',
-    highlevel: 'Mature — sub-account / white-label out of the box',
+    highlevel: 'Mature. Sub-account / white-label out of the box.',
     wdp: 'Buildable as a custom module (Custom tier+)',
     advantage: 'highlevel',
   },
@@ -132,7 +132,7 @@ const modules = [
     icon: Database,
     title: 'CRM & Contact Management',
     body:
-      'Postgres-backed CRM with custom fields, tags, lifecycle stages, lead scoring, and real-time multi-user collaboration. Supabase under the hood — vector search ready out of the box.',
+      'Postgres-backed CRM with custom fields, tags, lifecycle stages, lead scoring, and real-time multi-user collaboration. Supabase under the hood, with vector search ready out of the box.',
     color: '#8734E1',
   },
   {
@@ -160,21 +160,21 @@ const modules = [
     icon: Bot,
     title: 'ACI-Powered AI Assistant',
     body:
-      'Custom AI agents trained on YOUR domain. Drafts proposals, answers customer questions, logs to CRM, schedules follow-ups, books meetings. Not a GPT-mini wrapper — actual Anthropic Claude on the patented ACI platform.',
+      'Custom AI agents trained on YOUR domain. Drafts proposals, answers customer questions, logs to CRM, schedules follow-ups, books meetings. Not a GPT-mini wrapper. Actual Anthropic Claude on the patented ACI platform.',
     color: '#F59E0B',
   },
   {
     icon: MessageSquare,
     title: 'Email + SMS + Inbox',
     body:
-      'Unified inbox for email and SMS conversations. Bulk send, transactional, drip campaigns. Resend + Twilio under the hood — modern deliverability stack.',
+      'Unified inbox for email and SMS conversations. Bulk send, transactional, drip campaigns. Resend and Twilio under the hood for modern deliverability.',
     color: '#06B6D4',
   },
   {
     icon: CreditCard,
     title: 'Invoicing & Payments',
     body:
-      'Stripe Connect integration — invoice generation, subscription billing, payment links, ACH, card payments. Multi-currency. Your money flows direct to you, not held by the platform.',
+      'Stripe Connect integration. Invoice generation, subscription billing, payment links, ACH, card payments. Multi-currency. Your money flows direct to you, not held by the platform.',
     color: '#BF5DE0',
   },
   {
@@ -205,31 +205,31 @@ const aciDifferentiators = [
   {
     title: 'Audit-trail-complete',
     body:
-      'Every AI decision, every input, every output, every action — recorded and exportable. The same compliance discipline we use on federal procurement contracts applies to your customer comms.',
+      'Every AI decision, every input, every output, every action recorded and exportable. The same compliance discipline we use on federal procurement contracts applies to your customer comms.',
   },
   {
     title: 'Methodology-bound',
     body:
-      "The AI operates within YOUR published methodology. Your brand voice, your sales playbook, your compliance constraints — all cited, all verifiable. Not vibes — verifiable doctrine.",
+      "The AI operates within YOUR published methodology. Your brand voice, your sales playbook, your compliance constraints, all cited and verifiable. Not vibes. Verifiable doctrine.",
   },
 ];
 
 const faqs = [
   {
     q: 'How long does it take to migrate off HighLevel?',
-    a: 'A realistic Phase 1 build (CRM + automation + bookings + AI chatbot + email/SMS + invoicing) ships in 6-12 weeks. We migrate your existing HighLevel data in parallel. You can keep HighLevel running until the new platform is fully live — no flag day, no panic switchover.',
+    a: 'A realistic Phase 1 build (CRM + automation + bookings + AI chatbot + email/SMS + invoicing) ships in 6-12 weeks. We migrate your existing HighLevel data in parallel. You can keep HighLevel running until the new platform is fully live. No flag day, no panic switchover.',
   },
   {
     q: 'What does this actually cost vs HighLevel?',
-    a: 'HighLevel costs $97-$497 per location per month, plus AI tokens, plus add-ons. Over 3 years for an agency with 20 client locations, that\'s $50K-$200K paid to HighLevel, with zero asset left at the end. A custom platform from us is a one-time build (typically $30K-$150K depending on scope) plus a modest retainer. You break even versus HighLevel typically in 12-24 months — and at the end, you own the platform.',
+    a: 'HighLevel costs $97-$497 per location per month, plus AI tokens, plus add-ons. Over 3 years for an agency with 20 client locations, that\'s $50K-$200K paid to HighLevel, with zero asset left at the end. A custom platform from us is a one-time build (typically $30K-$150K depending on scope) plus a modest retainer. You break even versus HighLevel typically in 12-24 months, and at the end, you own the platform.',
   },
   {
     q: 'Do I own the code?',
-    a: 'Yes. The custom-built platform is yours. We deliver source code, deployment instructions, and operational handoff. You can fork, modify, white-label, or sell it. We can also continue maintaining it via retainer — your call.',
+    a: 'Yes. The custom-built platform is yours. We deliver source code, deployment instructions, and operational handoff. You can fork, modify, white-label, or sell it. We can also continue maintaining it via retainer, your call.',
   },
   {
     q: 'Can the AI actually do work, or just answer questions?',
-    a: 'Both. Our ACI-powered agents can draft proposals, send replies (with your approval), update CRM records, schedule follow-ups, and call APIs. That\'s the agentic side. They also answer questions grounded in your data — the conversational side. Most platforms only do the latter (and badly). We do both.',
+    a: 'Both. Our ACI-powered agents can draft proposals, send replies (with your approval), update CRM records, schedule follow-ups, and call APIs. That\'s the agentic side. They also answer questions grounded in your data, the conversational side. Most platforms only do the latter (and badly). We do both.',
   },
   {
     q: 'What happens to my HighLevel data?',
@@ -237,15 +237,15 @@ const faqs = [
   },
   {
     q: 'Can you build the agency-of-agencies / sub-account / white-label feature?',
-    a: 'Yes — but it\'s a real build, not a checkbox. The white-label / multi-tenant feature is HighLevel\'s actual moat (most of their other features are commodity). Building a clean version takes 6-10 weeks on top of the core platform. We typically scope this as a Phase 2 once your core platform is shipping value.',
+    a: 'Yes, but it\'s a real build, not a checkbox. The white-label / multi-tenant feature is HighLevel\'s actual moat (most of their other features are commodity). Building a clean version takes 6-10 weeks on top of the core platform. We typically scope this as a Phase 2 once your core platform is shipping value.',
   },
   {
     q: 'Will the AI work as well as ChatGPT or Claude directly?',
-    a: 'Better, for your use case. Direct ChatGPT/Claude doesn\'t know your customers, your products, your sales playbook, or your brand voice. Our ACI integration grounds the AI in YOUR data with audit-trail-complete responses. For raw frontier-model capability, you\'re still using Anthropic Claude underneath — we don\'t downgrade to GPT-4o-mini like HighLevel does.',
+    a: 'Better, for your use case. Direct ChatGPT/Claude doesn\'t know your customers, your products, your sales playbook, or your brand voice. Our ACI integration grounds the AI in YOUR data with audit-trail-complete responses. For raw frontier-model capability, you\'re still using Anthropic Claude underneath. We don\'t downgrade to GPT-4o-mini like HighLevel does.',
   },
   {
     q: 'What if I decide to switch back?',
-    a: 'Data exports cleanly in open formats (JSON, CSV, SQL). You can take your platform anywhere. We deliberately don\'t use proprietary lock-in tactics — we earn renewal through value, not handcuffs.',
+    a: 'Data exports cleanly in open formats (JSON, CSV, SQL). You can take your platform anywhere. We deliberately don\'t use proprietary lock-in tactics. We earn renewal through value, not handcuffs.',
   },
 ];
 
@@ -272,7 +272,7 @@ export default function PlatformEngineeringPage() {
             </h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Custom Next.js + Supabase platforms with patented ACI AI integration. CRM, automation, funnels,
-              booking, AI agents — everything HighLevel does, plus everything HighLevel can&apos;t do, on a
+              booking, AI agents. Everything HighLevel does, plus everything HighLevel can&apos;t do, on a
               modern AI-native stack. Yours forever. No more per-location rent.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -415,7 +415,7 @@ export default function PlatformEngineeringPage() {
           >
             <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">The Modules</Badge>
             <h2 className="heading-lg mb-4">
-              Everything HighLevel does — <span className="gradient-text">built modern.</span>
+              Everything HighLevel does. <span className="gradient-text">Built modern.</span>
             </h2>
             <p className="text-gray-600">
               Eight production modules. Built on the modern Next.js 16 + Supabase + Vercel Edge stack with
@@ -468,7 +468,7 @@ export default function PlatformEngineeringPage() {
               No hallucination. <span className="bg-gradient-to-r from-[#BF5DE0] to-[#2F73EE] bg-clip-text text-transparent">No drift.</span> Always human.
             </h2>
             <p className="text-white/80">
-              Our platforms run on the patented ACI (Adaptive Compound Intelligence) architecture —
+              Our platforms run on the patented ACI (Adaptive Compound Intelligence) architecture,
               the same federal-grade discipline we apply to government acquisition contracts, now powering
               your customer comms.
             </p>
@@ -495,7 +495,7 @@ export default function PlatformEngineeringPage() {
           </div>
 
           <p className="text-center text-sm text-white/60 mt-8 max-w-2xl mx-auto">
-            Based on U.S. provisional patent #63/987,765 — Adaptive Compound Intelligence architecture.
+            Based on U.S. provisional patent #63/987,765, Adaptive Compound Intelligence architecture.
           </p>
         </div>
       </section>
@@ -516,7 +516,7 @@ export default function PlatformEngineeringPage() {
               </h2>
               <p className="text-gray-600">
                 You don&apos;t need to migrate everything at once. Buy the module that solves your biggest pain
-                — CRM, automation, AI assistant, or funnel builder — and add the rest when ready.
+                (CRM, automation, AI assistant, or funnel builder) and add the rest when ready.
               </p>
             </motion.div>
 
@@ -538,7 +538,7 @@ export default function PlatformEngineeringPage() {
                   step: '03',
                   title: 'Own the whole stack',
                   body:
-                    'By the time HighLevel sends their next price increase email, you\'re fully off the platform — running a modern stack you own, with AI that actually works, and zero per-location rent.',
+                    'By the time HighLevel sends their next price increase email, you\'re fully off the platform. Running a modern stack you own, with AI that actually works, and zero per-location rent.',
                 },
               ].map((s) => (
                 <Card key={s.step} className="p-6 h-full">
