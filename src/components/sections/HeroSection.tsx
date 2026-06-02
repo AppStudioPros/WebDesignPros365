@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
-import { ArrowRight, Zap, Atom, Rocket, Target, Sparkles } from 'lucide-react';
+import { ArrowRight, Zap, Atom, Rocket, Target, Sparkles, CalendarCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const techBadges = [
@@ -100,11 +100,28 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f0e6fb] border border-[#8734E1] text-[#8734E1] mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f0e6fb] border border-[#8734E1] text-[#8734E1] mb-4"
           >
             <Sparkles className="w-4 h-4" />
             <span className="text-sm font-medium">Introducing the AI Visibility Stack: SEO + AEO + GEO</span>
             <ArrowRight className="w-4 h-4" />
+          </motion.div>
+
+          {/* Free Consultation CTA — shimmering pill */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="flex justify-center mb-8"
+          >
+            <Link
+              href="/contact?topic=free-consultation"
+              className="shimmer-cta group inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-[#8734E1] to-[#2F73EE] text-white text-sm font-medium shadow-lg shadow-[#8734E1]/20 hover:shadow-xl hover:shadow-[#8734E1]/30 transition-shadow"
+            >
+              <CalendarCheck className="w-4 h-4" />
+              <span>Free 30-minute consultation</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
           </motion.div>
 
           {/* Main Heading */}

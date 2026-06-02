@@ -1,7 +1,7 @@
 import HeroSection from "@/components/sections/HeroSection";
-import WebsiteScannerSection from "@/components/sections/WebsiteScannerSection";
-import ServicesSection from "@/components/sections/ServicesSection";
+import LiveCodingSection from "@/components/sections/LiveCodingSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import ServicesSection from "@/components/sections/ServicesSection";
 import ProcessSection from "@/components/sections/ProcessSection";
 import TechStackSection from "@/components/sections/TechStackSection";
 import PricingHomeSection from "@/components/sections/PricingHomeSection";
@@ -12,9 +12,9 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <WebsiteScannerSection />
-      <ServicesSection />
+      <LiveCodingSection />
       <TestimonialsSection />
+      <ServicesSection />
       <ProcessSection />
       <TechStackSection />
       <PricingHomeSection />

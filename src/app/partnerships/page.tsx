@@ -347,7 +347,7 @@ export default function PartnershipsPage() {
                   <div className="space-y-2">
                     {[
                       {
-                        commit: 'feat: add AEO scanner + AI Visibility Stack rollout',
+                        commit: 'feat: AI Visibility Stack rollout + AEO schema deploy',
                         status: 'Ready',
                         branch: 'main',
                         time: '2h ago',
