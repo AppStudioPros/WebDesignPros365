@@ -39,88 +39,91 @@ const testimonials = [
   },
 ];
 
-// Each logo uses Simple Icons CDN (open-source SVG icon set) for real brand marks.
-// `color` is the official brand hex (no '#'). Falls back to text label if image fails.
+// Each logo uses Brandfetch's free CDN for real, color, trademarked brand marks.
+// Pattern: https://cdn.brandfetch.io/{domain}/w/64/h/64
+// When the brand isn't on Brandfetch, fall back to a styled text chip.
 type LogoChip = {
   name: string;
-  slug?: string;
-  color?: string;
+  /** Primary brand domain. Drives the Brandfetch logo URL. */
+  domain?: string;
   category: 'client' | 'core' | 'ai' | 'commerce' | 'data' | 'vertical';
 };
 
 // ROW 1 - Core stack, AI partners, client brands (scrolls left-to-right)
+// (Internal Lucid Tech brands PocketFiler + Contractor Guardians removed per spec.)
 const row1: LogoChip[] = [
-  // Internal clients (no logos on Simple Icons, render as text chips)
-  { name: 'PocketFiler', category: 'client' },
-  { name: 'Contractor Guardians', category: 'client' },
+  // External clients
   { name: 'Sculpted Beauty', category: 'client' },
   { name: 'Fast Track Solutions', category: 'client' },
   { name: 'Arrakis Insight', category: 'client' },
   { name: 'Piqsol', category: 'client' },
-  // Core stack with official brand colors
-  { name: 'Next.js', slug: 'nextdotjs', color: '000000', category: 'core' },
-  { name: 'Vercel', slug: 'vercel', color: '000000', category: 'core' },
-  { name: 'React', slug: 'react', color: '61DAFB', category: 'core' },
-  { name: 'TypeScript', slug: 'typescript', color: '3178C6', category: 'core' },
-  { name: 'Python', slug: 'python', color: '3776AB', category: 'core' },
-  { name: 'Node.js', slug: 'nodedotjs', color: '5FA04E', category: 'core' },
+  { name: 'Leader Magnus', category: 'client' },
+  { name: 'PK Page', category: 'client' },
+  // Core stack
+  { name: 'Next.js', domain: 'nextjs.org', category: 'core' },
+  { name: 'Vercel', domain: 'vercel.com', category: 'core' },
+  { name: 'React', domain: 'react.dev', category: 'core' },
+  { name: 'TypeScript', domain: 'typescriptlang.org', category: 'core' },
+  { name: 'Python', domain: 'python.org', category: 'core' },
+  { name: 'Node.js', domain: 'nodejs.org', category: 'core' },
   // AI providers
-  { name: 'Anthropic', slug: 'anthropic', color: 'D97757', category: 'ai' },
-  { name: 'OpenAI', slug: 'openai', color: '412991', category: 'ai' },
-  { name: 'Pinecone', category: 'ai' },
+  { name: 'Anthropic', domain: 'anthropic.com', category: 'ai' },
+  { name: 'OpenAI', domain: 'openai.com', category: 'ai' },
+  { name: 'Pinecone', domain: 'pinecone.io', category: 'ai' },
   // Data + infrastructure
-  { name: 'Supabase', slug: 'supabase', color: '3FCF8E', category: 'data' },
-  { name: 'PostgreSQL', slug: 'postgresql', color: '4169E1', category: 'data' },
-  { name: 'Cloudflare', slug: 'cloudflare', color: 'F38020', category: 'core' },
+  { name: 'Supabase', domain: 'supabase.com', category: 'data' },
+  { name: 'PostgreSQL', domain: 'postgresql.org', category: 'data' },
+  { name: 'Cloudflare', domain: 'cloudflare.com', category: 'core' },
 ];
 
-// ROW 2 - Commerce, CMS, CRM, comms, payments (scrolls right-to-left for visual variety)
+// ROW 2 - Commerce, CMS, CRM, comms, payments, verticals (scrolls right-to-left)
 const row2: LogoChip[] = [
   // Commerce
-  { name: 'Shopify', slug: 'shopify', color: '7AB55C', category: 'commerce' },
-  { name: 'WooCommerce', slug: 'woocommerce', color: '7F54B3', category: 'commerce' },
-  { name: 'WordPress', slug: 'wordpress', color: '21759B', category: 'commerce' },
-  { name: 'BigCommerce', slug: 'bigcommerce', color: '121118', category: 'commerce' },
+  { name: 'Shopify', domain: 'shopify.com', category: 'commerce' },
+  { name: 'WooCommerce', domain: 'woocommerce.com', category: 'commerce' },
+  { name: 'WordPress', domain: 'wordpress.org', category: 'commerce' },
+  { name: 'BigCommerce', domain: 'bigcommerce.com', category: 'commerce' },
   // Payments
-  { name: 'Stripe', slug: 'stripe', color: '635BFF', category: 'commerce' },
-  { name: 'Plaid', slug: 'plaid', color: '000000', category: 'commerce' },
+  { name: 'Stripe', domain: 'stripe.com', category: 'commerce' },
+  { name: 'Plaid', domain: 'plaid.com', category: 'commerce' },
   // CRM + Marketing
-  { name: 'HubSpot', slug: 'hubspot', color: 'FF7A59', category: 'commerce' },
-  { name: 'Salesforce', slug: 'salesforce', color: '00A1E0', category: 'commerce' },
+  { name: 'HubSpot', domain: 'hubspot.com', category: 'commerce' },
+  { name: 'Salesforce', domain: 'salesforce.com', category: 'commerce' },
   // CMS
-  { name: 'Sanity', slug: 'sanity', color: 'F03E2F', category: 'data' },
-  { name: 'Contentful', slug: 'contentful', color: '2478CC', category: 'data' },
-  { name: 'Strapi', slug: 'strapi', color: '4945FF', category: 'data' },
+  { name: 'Sanity', domain: 'sanity.io', category: 'data' },
+  { name: 'Contentful', domain: 'contentful.com', category: 'data' },
+  { name: 'Strapi', domain: 'strapi.io', category: 'data' },
   // Comms
-  { name: 'Twilio', slug: 'twilio', color: 'F22F46', category: 'commerce' },
-  { name: 'Resend', slug: 'resend', color: '000000', category: 'commerce' },
+  { name: 'Twilio', domain: 'twilio.com', category: 'commerce' },
+  { name: 'Resend', domain: 'resend.com', category: 'commerce' },
   // Auth + infrastructure
-  { name: 'Clerk', slug: 'clerk', color: '6C47FF', category: 'core' },
-  { name: 'GitHub', slug: 'github', color: '181717', category: 'core' },
-  { name: 'Figma', slug: 'figma', color: 'F24E1E', category: 'core' },
-  { name: 'Notion', slug: 'notion', color: '000000', category: 'core' },
-  // Verticals (no Simple Icons slugs for most of these niche RE/legal/healthtech platforms)
-  { name: 'kvCORE', category: 'vertical' },
-  { name: 'Sierra Interactive', category: 'vertical' },
-  { name: 'BoomTown', category: 'vertical' },
-  { name: 'Real Geeks', category: 'vertical' },
-  { name: 'Clio', category: 'vertical' },
-  { name: 'MyCase', category: 'vertical' },
-  { name: 'PracticePanther', category: 'vertical' },
-  { name: 'Lawmatics', category: 'vertical' },
-  { name: 'Epic FHIR', category: 'vertical' },
-  { name: 'Athenahealth', category: 'vertical' },
-  { name: 'eClinicalWorks', category: 'vertical' },
-  { name: 'Mercury', slug: 'mercury', color: '5F33E1', category: 'vertical' },
-  { name: 'Brex', slug: 'brex', color: '000000', category: 'vertical' },
-  { name: 'Modern Treasury', category: 'vertical' },
+  { name: 'Clerk', domain: 'clerk.com', category: 'core' },
+  { name: 'GitHub', domain: 'github.com', category: 'core' },
+  { name: 'Figma', domain: 'figma.com', category: 'core' },
+  { name: 'Notion', domain: 'notion.so', category: 'core' },
+  // Verticals — real estate
+  { name: 'kvCORE', domain: 'insiderealestate.com', category: 'vertical' },
+  { name: 'Sierra Interactive', domain: 'sierrainteractive.com', category: 'vertical' },
+  { name: 'BoomTown', domain: 'boomtownroi.com', category: 'vertical' },
+  { name: 'Real Geeks', domain: 'realgeeks.com', category: 'vertical' },
+  // Verticals — legal
+  { name: 'Clio', domain: 'clio.com', category: 'vertical' },
+  { name: 'MyCase', domain: 'mycase.com', category: 'vertical' },
+  { name: 'PracticePanther', domain: 'practicepanther.com', category: 'vertical' },
+  { name: 'Lawmatics', domain: 'lawmatics.com', category: 'vertical' },
+  // Verticals — health
+  { name: 'Epic FHIR', domain: 'epic.com', category: 'vertical' },
+  { name: 'Athenahealth', domain: 'athenahealth.com', category: 'vertical' },
+  { name: 'eClinicalWorks', domain: 'eclinicalworks.com', category: 'vertical' },
+  // Verticals — fintech
+  { name: 'Mercury', domain: 'mercury.com', category: 'vertical' },
+  { name: 'Brex', domain: 'brex.com', category: 'vertical' },
+  { name: 'Modern Treasury', domain: 'moderntreasury.com', category: 'vertical' },
 ];
 
 function LogoBadge({ logo }: { logo: LogoChip }) {
-  const hasIcon = !!logo.slug;
-  // Use brand color if provided, fall back to gray for monochrome marks
-  const iconUrl = hasIcon
-    ? `https://cdn.simpleicons.org/${logo.slug}${logo.color ? `/${logo.color}` : '/777'}`
+  const iconUrl = logo.domain
+    ? `https://cdn.brandfetch.io/${logo.domain}/w/64/h/64?c=1idV74_p2cNryY2WzAk`
     : null;
   return (
     <div className="flex-shrink-0 mx-3 py-3">
@@ -130,8 +133,12 @@ function LogoBadge({ logo }: { logo: LogoChip }) {
           <img
             src={iconUrl}
             alt={`${logo.name} logo`}
-            className="w-5 h-5"
+            className="w-5 h-5 object-contain"
             loading="lazy"
+            onError={(e) => {
+              // If Brandfetch has no logo for this domain, hide the broken img
+              (e.currentTarget as HTMLImageElement).style.display = 'none';
+            }}
           />
         )}
         <span className="text-sm">{logo.name}</span>
