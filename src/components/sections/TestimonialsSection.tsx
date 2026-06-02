@@ -40,65 +40,66 @@ const testimonials = [
 ];
 
 // Each logo uses Simple Icons CDN (open-source SVG icon set) for real brand marks.
-// Falls back to text label if image fails to render. Slug = simple-icons identifier.
+// `color` is the official brand hex (no '#'). Falls back to text label if image fails.
 type LogoChip = {
   name: string;
   slug?: string;
+  color?: string;
   category: 'client' | 'core' | 'ai' | 'commerce' | 'data' | 'vertical';
 };
 
 // ROW 1 - Core stack, AI partners, client brands (scrolls left-to-right)
 const row1: LogoChip[] = [
-  // Internal clients
+  // Internal clients (no logos on Simple Icons, render as text chips)
   { name: 'PocketFiler', category: 'client' },
   { name: 'Contractor Guardians', category: 'client' },
   { name: 'Sculpted Beauty', category: 'client' },
   { name: 'Fast Track Solutions', category: 'client' },
   { name: 'Arrakis Insight', category: 'client' },
   { name: 'Piqsol', category: 'client' },
-  // Core stack
-  { name: 'Next.js', slug: 'nextdotjs', category: 'core' },
-  { name: 'Vercel', slug: 'vercel', category: 'core' },
-  { name: 'React', slug: 'react', category: 'core' },
-  { name: 'TypeScript', slug: 'typescript', category: 'core' },
-  { name: 'Python', slug: 'python', category: 'core' },
-  { name: 'Node.js', slug: 'nodedotjs', category: 'core' },
+  // Core stack with official brand colors
+  { name: 'Next.js', slug: 'nextdotjs', color: '000000', category: 'core' },
+  { name: 'Vercel', slug: 'vercel', color: '000000', category: 'core' },
+  { name: 'React', slug: 'react', color: '61DAFB', category: 'core' },
+  { name: 'TypeScript', slug: 'typescript', color: '3178C6', category: 'core' },
+  { name: 'Python', slug: 'python', color: '3776AB', category: 'core' },
+  { name: 'Node.js', slug: 'nodedotjs', color: '5FA04E', category: 'core' },
   // AI providers
-  { name: 'Anthropic', slug: 'anthropic', category: 'ai' },
-  { name: 'OpenAI', slug: 'openai', category: 'ai' },
+  { name: 'Anthropic', slug: 'anthropic', color: 'D97757', category: 'ai' },
+  { name: 'OpenAI', slug: 'openai', color: '412991', category: 'ai' },
   { name: 'Pinecone', category: 'ai' },
   // Data + infrastructure
-  { name: 'Supabase', slug: 'supabase', category: 'data' },
-  { name: 'PostgreSQL', slug: 'postgresql', category: 'data' },
-  { name: 'Cloudflare', slug: 'cloudflare', category: 'core' },
+  { name: 'Supabase', slug: 'supabase', color: '3FCF8E', category: 'data' },
+  { name: 'PostgreSQL', slug: 'postgresql', color: '4169E1', category: 'data' },
+  { name: 'Cloudflare', slug: 'cloudflare', color: 'F38020', category: 'core' },
 ];
 
 // ROW 2 - Commerce, CMS, CRM, comms, payments (scrolls right-to-left for visual variety)
 const row2: LogoChip[] = [
   // Commerce
-  { name: 'Shopify', slug: 'shopify', category: 'commerce' },
-  { name: 'WooCommerce', slug: 'woocommerce', category: 'commerce' },
-  { name: 'WordPress', slug: 'wordpress', category: 'commerce' },
-  { name: 'BigCommerce', slug: 'bigcommerce', category: 'commerce' },
+  { name: 'Shopify', slug: 'shopify', color: '7AB55C', category: 'commerce' },
+  { name: 'WooCommerce', slug: 'woocommerce', color: '7F54B3', category: 'commerce' },
+  { name: 'WordPress', slug: 'wordpress', color: '21759B', category: 'commerce' },
+  { name: 'BigCommerce', slug: 'bigcommerce', color: '121118', category: 'commerce' },
   // Payments
-  { name: 'Stripe', slug: 'stripe', category: 'commerce' },
-  { name: 'Plaid', slug: 'plaid', category: 'commerce' },
+  { name: 'Stripe', slug: 'stripe', color: '635BFF', category: 'commerce' },
+  { name: 'Plaid', slug: 'plaid', color: '000000', category: 'commerce' },
   // CRM + Marketing
-  { name: 'HubSpot', slug: 'hubspot', category: 'commerce' },
-  { name: 'Salesforce', slug: 'salesforce', category: 'commerce' },
+  { name: 'HubSpot', slug: 'hubspot', color: 'FF7A59', category: 'commerce' },
+  { name: 'Salesforce', slug: 'salesforce', color: '00A1E0', category: 'commerce' },
   // CMS
-  { name: 'Sanity', slug: 'sanity', category: 'data' },
-  { name: 'Contentful', slug: 'contentful', category: 'data' },
-  { name: 'Strapi', slug: 'strapi', category: 'data' },
+  { name: 'Sanity', slug: 'sanity', color: 'F03E2F', category: 'data' },
+  { name: 'Contentful', slug: 'contentful', color: '2478CC', category: 'data' },
+  { name: 'Strapi', slug: 'strapi', color: '4945FF', category: 'data' },
   // Comms
-  { name: 'Twilio', slug: 'twilio', category: 'commerce' },
-  { name: 'Resend', slug: 'resend', category: 'commerce' },
+  { name: 'Twilio', slug: 'twilio', color: 'F22F46', category: 'commerce' },
+  { name: 'Resend', slug: 'resend', color: '000000', category: 'commerce' },
   // Auth + infrastructure
-  { name: 'Clerk', slug: 'clerk', category: 'core' },
-  { name: 'GitHub', slug: 'github', category: 'core' },
-  { name: 'Figma', slug: 'figma', category: 'core' },
-  { name: 'Notion', slug: 'notion', category: 'core' },
-  // Verticals
+  { name: 'Clerk', slug: 'clerk', color: '6C47FF', category: 'core' },
+  { name: 'GitHub', slug: 'github', color: '181717', category: 'core' },
+  { name: 'Figma', slug: 'figma', color: 'F24E1E', category: 'core' },
+  { name: 'Notion', slug: 'notion', color: '000000', category: 'core' },
+  // Verticals (no Simple Icons slugs for most of these niche RE/legal/healthtech platforms)
   { name: 'kvCORE', category: 'vertical' },
   { name: 'Sierra Interactive', category: 'vertical' },
   { name: 'BoomTown', category: 'vertical' },
@@ -110,22 +111,26 @@ const row2: LogoChip[] = [
   { name: 'Epic FHIR', category: 'vertical' },
   { name: 'Athenahealth', category: 'vertical' },
   { name: 'eClinicalWorks', category: 'vertical' },
-  { name: 'Mercury', slug: 'mercury', category: 'vertical' },
-  { name: 'Brex', slug: 'brex', category: 'vertical' },
+  { name: 'Mercury', slug: 'mercury', color: '5F33E1', category: 'vertical' },
+  { name: 'Brex', slug: 'brex', color: '000000', category: 'vertical' },
   { name: 'Modern Treasury', category: 'vertical' },
 ];
 
 function LogoBadge({ logo }: { logo: LogoChip }) {
   const hasIcon = !!logo.slug;
+  // Use brand color if provided, fall back to gray for monochrome marks
+  const iconUrl = hasIcon
+    ? `https://cdn.simpleicons.org/${logo.slug}${logo.color ? `/${logo.color}` : '/777'}`
+    : null;
   return (
     <div className="flex-shrink-0 mx-3 py-3">
-      <div className="px-5 py-3 rounded-xl bg-white border border-gray-200 text-gray-600 font-medium hover:bg-[#f0e6fb] hover:text-[#8734E1] hover:border-[#8734E1] hover:shadow-md transition-all flex items-center gap-2.5 whitespace-nowrap">
-        {hasIcon && (
+      <div className="px-5 py-3 rounded-xl bg-white border border-gray-200 text-gray-700 font-medium hover:bg-[#f0e6fb] hover:border-[#8734E1] hover:shadow-md transition-all flex items-center gap-2.5 whitespace-nowrap">
+        {iconUrl && (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={`https://cdn.simpleicons.org/${logo.slug}/777`}
+            src={iconUrl}
             alt={`${logo.name} logo`}
-            className="w-5 h-5 opacity-70"
+            className="w-5 h-5"
             loading="lazy"
           />
         )}
