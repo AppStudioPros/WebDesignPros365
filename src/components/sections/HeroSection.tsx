@@ -214,7 +214,7 @@ export default function HeroSection() {
             ))}
           </motion.div>
 
-          {/* BBB accreditation badge */}
+          {/* BBB accreditation badge — bigger, medallion-style */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -226,20 +226,21 @@ export default function HeroSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="BBB Accredited Business — A+ Rating — View profile"
-              className="group inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-white border border-gray-200 hover:border-[#0c5ba2] hover:shadow-lg transition-all"
+              className="group inline-flex items-center gap-4 px-7 py-5 rounded-2xl bg-white border border-gray-200 hover:border-[#0c5ba2] hover:shadow-xl shadow-md transition-all"
               title="BBB Accredited · A+ Rating since 12/11/2024"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/brand/bbb-accredited.png"
                 alt="BBB Accredited Business A+ Rating"
-                className="h-10 w-auto"
-                width={96}
-                height={40}
+                className="h-16 md:h-20 w-auto"
+                width={170}
+                height={70}
               />
               <div className="text-left">
-                <div className="text-[10px] uppercase tracking-wider text-gray-500">Trust Verified</div>
-                <div className="text-sm font-semibold text-gray-900 group-hover:text-[#0c5ba2] transition-colors">View BBB Profile</div>
+                <div className="text-xs uppercase tracking-wider text-gray-500 mb-0.5">Trust Verified</div>
+                <div className="text-base md:text-lg font-bold text-gray-900 group-hover:text-[#0c5ba2] transition-colors">View BBB Profile</div>
+                <div className="text-xs text-gray-500 mt-1">Accredited since 12/11/2024</div>
               </div>
             </a>
           </motion.div>

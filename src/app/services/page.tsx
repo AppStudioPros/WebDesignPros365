@@ -17,6 +17,7 @@ import {
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { GlassIcon } from '@/components/ui/glass-icon';
 import { services } from '@/data/services';
 import CTASection from '@/components/sections/CTASection';
 
@@ -342,31 +343,16 @@ export default function ServicesPage() {
                   />
                   <CardContent className="p-0 pt-3">
                     <div className="flex items-start justify-between mb-4">
-                      {/* Glass-morphism icon medallion */}
-                      <div
-                        className="relative w-14 h-14 rounded-2xl flex items-center justify-center overflow-hidden"
-                        style={{
-                          background: `linear-gradient(135deg, ${service.color}25, ${service.color}08)`,
-                          backdropFilter: 'blur(10px)',
-                          border: `1px solid ${service.color}30`,
-                          boxShadow: `0 4px 16px -2px ${service.color}25, inset 0 1px 0 rgba(255,255,255,0.5)`,
-                        }}
-                      >
-                        {/* Inner glass highlight */}
-                        <div
-                          className="absolute inset-0 opacity-40"
-                          style={{
-                            background: `radial-gradient(circle at 30% 20%, rgba(255,255,255,0.6) 0%, transparent 50%)`,
-                          }}
-                        />
-                        <div className="relative z-10" style={{ color: service.color }}>
-                          {service.category === 'visibility' && <Sparkles className="w-6 h-6" strokeWidth={1.75} />}
-                          {service.category === 'ai' && <Workflow className="w-6 h-6" strokeWidth={1.75} />}
-                          {service.category === 'program' && <Layers className="w-6 h-6" strokeWidth={1.75} />}
-                          {service.category === 'development' && <Code2 className="w-6 h-6" strokeWidth={1.75} />}
-                          {service.category === 'marketing' && <Zap className="w-6 h-6" strokeWidth={1.75} />}
-                        </div>
-                      </div>
+                      <GlassIcon
+                        Icon={
+                          service.category === 'visibility' ? Sparkles :
+                          service.category === 'ai' ? Workflow :
+                          service.category === 'program' ? Layers :
+                          service.category === 'development' ? Code2 :
+                          Zap
+                        }
+                        color={service.color}
+                      />
                       {service.isFlagship && (
                         <Badge className="bg-[#8734E1] text-white">Flagship</Badge>
                       )}

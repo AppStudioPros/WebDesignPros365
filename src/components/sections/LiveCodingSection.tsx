@@ -177,19 +177,19 @@ export default function LiveCodingSection() {
   });
 
   return (
-    <section className="section relative overflow-hidden">
+    <section className="pt-8 pb-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-white/70 to-white/70" />
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#8734E1]/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#2F73EE]/5 rounded-full blur-3xl" />
 
       <div className="container-custom relative z-10">
-        {/* Header */}
+        {/* Header — tightened to hug the section above */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-10"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f0e6fb] border border-[#8734E1] text-[#8734E1] mb-4">
             <Code2 className="w-4 h-4" />

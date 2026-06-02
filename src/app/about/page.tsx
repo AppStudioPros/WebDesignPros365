@@ -112,11 +112,12 @@ export default function AboutPage() {
       {/* THE COMPANY */}
       <section className="section bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              className="lg:col-span-2"
             >
               <h2 className="heading-lg mb-6">
                 Why <span className="gradient-text">Web Design Pros 365</span>
@@ -159,13 +160,17 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-[#8734E1] to-[#2F73EE] p-1">
-                <div className="w-full h-full rounded-2xl bg-white flex items-center justify-center">
+              {/* Compact logo card, top-aligned with the heading */}
+              <div className="rounded-2xl bg-gradient-to-br from-[#8734E1] to-[#2F73EE] p-0.5 max-w-[280px] mx-auto lg:mx-0">
+                <div className="rounded-2xl bg-white flex items-center justify-center p-8 aspect-[4/3]">
                   <img
                     src="https://customer-assets.emergentagent.com/job_designpros-test/artifacts/tf1dbj7e_Web%20Design%20Pros%20365%20noborder.png"
                     alt="Web Design Pros 365"
-                    className="w-2/3"
+                    className="max-w-full h-auto"
                   />
+                </div>
+                <div className="text-center text-xs text-gray-500 mt-3">
+                  Denver, Colorado · Est. 2005
                 </div>
               </div>
             </motion.div>

@@ -21,6 +21,7 @@ import {
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { GlassIcon } from '@/components/ui/glass-icon';
 import CTASection from '@/components/sections/CTASection';
 
 const painPoints = [
@@ -435,23 +436,8 @@ export default function PlatformEngineeringPage() {
                   transition={{ delay: i * 0.05 }}
                 >
                   <Card className="p-6 h-full hover:shadow-lg hover:border-[#8734E1] transition-all">
-                    {/* Glass-morphism icon medallion */}
-                    <div
-                      className="relative w-14 h-14 rounded-2xl flex items-center justify-center mb-4 overflow-hidden"
-                      style={{
-                        background: `linear-gradient(135deg, ${module.color}25, ${module.color}08)`,
-                        backdropFilter: 'blur(10px)',
-                        border: `1px solid ${module.color}30`,
-                        boxShadow: `0 4px 16px -2px ${module.color}25, inset 0 1px 0 rgba(255,255,255,0.5)`,
-                      }}
-                    >
-                      <div
-                        className="absolute inset-0 opacity-40"
-                        style={{
-                          background: `radial-gradient(circle at 30% 20%, rgba(255,255,255,0.6) 0%, transparent 50%)`,
-                        }}
-                      />
-                      <Icon className="w-6 h-6 relative z-10" strokeWidth={1.75} style={{ color: module.color }} />
+                    <div className="mb-4">
+                      <GlassIcon Icon={Icon} color={module.color} />
                     </div>
                     <h3 className="font-semibold text-gray-900 mb-2">{module.title}</h3>
                     <p className="text-sm text-gray-600">{module.body}</p>

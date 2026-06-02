@@ -21,6 +21,7 @@ import {
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { GlassIcon } from '@/components/ui/glass-icon';
 import CTASection from '@/components/sections/CTASection';
 
 const partnerCategories = [
@@ -230,11 +231,8 @@ export default function PartnershipsPage() {
                   transition={{ delay: i * 0.05 }}
                 >
                   <Card className="p-6 h-full hover:shadow-lg hover:border-[#8734E1] transition-all">
-                    <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                      style={{ backgroundColor: `${cat.color}20`, color: cat.color }}
-                    >
-                      <Icon className="w-6 h-6" />
+                    <div className="mb-4">
+                      <GlassIcon Icon={Icon} color={cat.color} />
                     </div>
                     <h3 className="font-semibold text-gray-900 mb-2">{cat.name}</h3>
                     <p className="text-xs text-gray-500 italic">{cat.examples}</p>
