@@ -13,8 +13,9 @@ import CTASection from '@/components/sections/CTASection';
 const categories = [
   { id: 'all', name: 'All Services' },
   { id: 'visibility', name: 'AI Visibility (SEO+AEO+GEO)' },
+  { id: 'ai', name: 'AI & Platforms' },
+  { id: 'program', name: 'Programs + Partnerships' },
   { id: 'development', name: 'Development' },
-  { id: 'ai', name: 'AI & Automation' },
   { id: 'marketing', name: 'Marketing' },
 ];
 
@@ -176,26 +177,50 @@ export default function ServicesPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 }}
               >
-                <Card
-                  onClick={() => setSelectedService(service)}
-                  className={`h-full p-6 group cursor-pointer hover:shadow-lg hover:border-[#8734E1] transition-all ${
-                    service.isFlagship ? 'border-[#8734E1] bg-[#f0e6fb]' : ''
-                  }`}
-                >
-                  <CardContent className="p-0">
-                    {service.isFlagship && (
-                      <Badge className="mb-4 bg-[#8734E1] text-white">Flagship</Badge>
-                    )}
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[#8734E1] transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 mb-4">{service.shortDescription}</p>
-                    <div className="flex items-center text-sm text-[#8734E1] group-hover:gap-2 transition-all">
-                      Learn more
-                      <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </CardContent>
-                </Card>
+                {service.link ? (
+                  <Link href={service.link} className="block h-full">
+                    <Card
+                      className={`h-full p-6 group cursor-pointer hover:shadow-lg hover:border-[#8734E1] transition-all ${
+                        service.isFlagship ? 'border-[#8734E1] bg-[#f0e6fb]' : ''
+                      }`}
+                    >
+                      <CardContent className="p-0">
+                        {service.isFlagship && (
+                          <Badge className="mb-4 bg-[#8734E1] text-white">Flagship</Badge>
+                        )}
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[#8734E1] transition-colors">
+                          {service.title}
+                        </h3>
+                        <p className="text-sm text-gray-600 mb-4">{service.shortDescription}</p>
+                        <div className="flex items-center text-sm text-[#8734E1] group-hover:gap-2 transition-all">
+                          Learn more
+                          <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                ) : (
+                  <Card
+                    onClick={() => setSelectedService(service)}
+                    className={`h-full p-6 group cursor-pointer hover:shadow-lg hover:border-[#8734E1] transition-all ${
+                      service.isFlagship ? 'border-[#8734E1] bg-[#f0e6fb]' : ''
+                    }`}
+                  >
+                    <CardContent className="p-0">
+                      {service.isFlagship && (
+                        <Badge className="mb-4 bg-[#8734E1] text-white">Flagship</Badge>
+                      )}
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[#8734E1] transition-colors">
+                        {service.title}
+                      </h3>
+                      <p className="text-sm text-gray-600 mb-4">{service.shortDescription}</p>
+                      <div className="flex items-center text-sm text-[#8734E1] group-hover:gap-2 transition-all">
+                        Learn more
+                        <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                )}
               </motion.div>
             ))}
           </motion.div>

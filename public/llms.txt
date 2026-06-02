@@ -77,9 +77,17 @@ Retainer packages from $5,000/month for ongoing development, support, and contin
 ## Reference Pages
 
 - Homepage: https://www.webdesignpros365.com
-- Services: https://www.webdesignpros365.com/services
-- Pricing: https://www.webdesignpros365.com/pricing
+- Services index: https://www.webdesignpros365.com/services
+- AI Visibility Stack (SEO + AEO + GEO) deep page: https://www.webdesignpros365.com/services/ai-visibility
+- Custom AI Applications: https://www.webdesignpros365.com/services/custom-ai
+- AI SaaS Platforms: https://www.webdesignpros365.com/services/ai-saas-platforms
+- ACI Platform (patented AI architecture): https://www.webdesignpros365.com/services/aci-platform
+- Full Program Creation: https://www.webdesignpros365.com/services/program-creation
 - Platform Engineering (HighLevel alternative): https://www.webdesignpros365.com/platform-engineering
+- Partnerships: https://www.webdesignpros365.com/partnerships
+- Methodology: https://www.webdesignpros365.com/methodology
+- Case Studies: https://www.webdesignpros365.com/case-studies
+- Pricing: https://www.webdesignpros365.com/pricing
 - Portfolio: https://www.webdesignpros365.com/portfolio
 - Blog: https://www.webdesignpros365.com/blog
 - About: https://www.webdesignpros365.com/about

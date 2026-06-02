@@ -1,6 +1,23 @@
 // Static services data (will be replaced with Sanity data when CMS is set up)
 
-export const services = [
+export type Service = {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  shortDescription: string;
+  fullDescription: string;
+  features: string[];
+  deliverables: string[];
+  timeline: string;
+  icon: string;
+  isFlagship: boolean;
+  color: string;
+  category: string;
+  /** Optional internal page link. If set, the 'Learn more' CTA links here instead of opening the inline modal. */
+  link?: string;
+};
+
+export const services: Service[] = [
   {
     _id: '1',
     title: 'AI Visibility Stack (SEO + AEO + GEO)',
@@ -23,6 +40,7 @@ export const services = [
     isFlagship: true,
     color: '#8734E1',
     category: 'visibility',
+    link: '/services/ai-visibility',
   },
   {
     _id: '1b',
@@ -44,26 +62,141 @@ export const services = [
     isFlagship: false,
     color: '#EC4899',
     category: 'visibility',
+    link: '/services/ai-visibility',
   },
   {
     _id: '2',
-    title: 'AI Integration & Chatbots',
-    slug: { current: 'ai-integration' },
-    shortDescription: 'Custom AI solutions, chatbots, and automation to enhance user experience.',
-    fullDescription: 'Transform your customer experience with intelligent AI solutions. We build custom chatbots, integrate AI assistants, and automate workflows to help your business scale efficiently while providing 24/7 support to your customers.',
+    title: 'Custom AI Applications',
+    slug: { current: 'custom-ai' },
+    shortDescription: 'Production AI built on the patented ACI platform. Agentic workflows, document intelligence, decision engines, RAG systems.',
+    fullDescription: 'Custom AI applications built on our patented ACI (Adaptive Compound Intelligence) platform. We ship agentic workflows that actually do work, document intelligence systems, decision engines with methodology binding, and vector + RAG systems. Audit-trail-complete, no hallucination, always human-in-the-loop.',
     features: [
-      'Custom GPT-powered chatbots',
-      'Intelligent customer support automation',
-      'AI content generation tools',
-      'Workflow automation with AI',
-      'Natural language processing integration',
+      'Agentic workflow automation',
+      'Document intelligence + RAG',
+      'Decision engines with methodology binding',
+      'Vector search + semantic retrieval',
+      'Compliance-grade audit trails',
+      'Built on patented ACI architecture',
     ],
-    deliverables: ['Custom AI chatbot', 'Training documentation', 'Integration support', 'Analytics dashboard'],
-    timeline: '6-8 weeks',
+    deliverables: ['Production AI application', 'Source code + documentation', 'Training data integration', 'Ongoing support retainer'],
+    timeline: '6-14 weeks',
     icon: '/icons/svg/gradient/mind.svg',
     isFlagship: false,
     color: '#2F73EE',
     category: 'ai',
+    link: '/services/custom-ai',
+  },
+  {
+    _id: '2b',
+    title: 'AI SaaS Platforms',
+    slug: { current: 'ai-saas-platforms' },
+    shortDescription: 'Build a real AI-native SaaS. From MVP to multi-tenant production to enterprise-grade compliance.',
+    fullDescription: 'We are the engineering arm for founders and software companies building production AI SaaS products. From MVP to multi-tenant production to enterprise-grade compliance. On the same modern stack we use for everything: Next.js 16, Supabase, Vercel Edge, ACI for the AI layer.',
+    features: [
+      'MVP to production roadmap',
+      'Multi-tenant architecture',
+      'Auth + RBAC + billing',
+      'Analytics + observability',
+      'Compliance hardening (SOC 2, HIPAA-conscious)',
+      'Vercel + Supabase + ACI stack',
+    ],
+    deliverables: ['Working SaaS platform', 'Source code', 'Operational docs', 'Phase-2 expansion plan'],
+    timeline: '8 weeks to 18 months (phased)',
+    icon: '/icons/svg/gradient/database.svg',
+    isFlagship: false,
+    color: '#0EA5E9',
+    category: 'ai',
+    link: '/services/ai-saas-platforms',
+  },
+  {
+    _id: '2c',
+    title: 'ACI Platform',
+    slug: { current: 'aci-platform' },
+    shortDescription: 'The patented 5-layer Adaptive Compound Intelligence architecture. Patent #63/987,765.',
+    fullDescription: 'ACI is our patented AI architecture: Individual Intelligence, Knowledge Extraction, Organizational Memory, Compound Reasoning, Permission + Delivery. Five layers that combine to deliver no hallucination, no drift, always human-in-the-loop, audit-trail-complete, and methodology-bound AI. Federal-grade discipline applied to commercial work.',
+    features: [
+      '5-layer patented architecture',
+      'No hallucination guarantee',
+      'No drift (context-bound)',
+      'Always human-in-the-loop',
+      'Audit-trail-complete',
+      'Methodology-bound responses',
+    ],
+    deliverables: ['ACI integration', 'Custom AI agents', 'Methodology corpus setup', 'White-glove engagement'],
+    timeline: '8-20 weeks',
+    icon: '/icons/svg/gradient/mind.svg',
+    isFlagship: false,
+    color: '#8B5CF6',
+    category: 'ai',
+    link: '/services/aci-platform',
+  },
+  {
+    _id: '2d',
+    title: 'Platform Engineering (HighLevel Alternative)',
+    slug: { current: 'platform-engineering' },
+    shortDescription: 'Custom Next.js + Supabase platforms that replace and exceed GoHighLevel. CRM, automation, funnels, bookings, AI assistant.',
+    fullDescription: 'For agencies and SMBs ready to leave GoHighLevel behind. We build custom Next.js + Supabase platforms with all the modules HighLevel has, on a modern AI-native stack with real Anthropic Claude integration (not GPT-mini wrappers). You own the code, you own the data, you keep your customers.',
+    features: [
+      'CRM + pipelines + custom fields',
+      'Visual workflow automation builder',
+      'Funnel + landing page builder',
+      'Calendar booking + scheduling',
+      'ACI-powered AI assistant',
+      'Email + SMS unified inbox',
+      'Invoicing + Stripe Connect payments',
+      'Reputation management',
+    ],
+    deliverables: ['Custom multi-module platform', 'HighLevel data migration', 'White-label option', 'Ongoing dev retainer'],
+    timeline: '6-12 weeks for Phase 1',
+    icon: '/icons/svg/gradient/coding.svg',
+    isFlagship: false,
+    color: '#EF4444',
+    category: 'ai',
+    link: '/platform-engineering',
+  },
+  {
+    _id: '2e',
+    title: 'Full Program Creation',
+    slug: { current: 'program-creation' },
+    shortDescription: 'Strategy + brand + design + engineering + AI + launch + ongoing ops. One team, one timeline, one accountability surface.',
+    fullDescription: 'For organizations that need the whole digital program, not just a website. Strategy, brand systems, design, engineering, AI integration, launch, and ongoing operations. Coordinated coherently rather than stitched together from three different vendors. Best for federal contractors, multi-brand operators, vertical platform founders, and established companies modernizing.',
+    features: [
+      'Strategy + positioning',
+      'Brand + visual identity',
+      'Multi-site architecture',
+      'AI + automation layer (ACI-anchored)',
+      'Launch + ongoing operations',
+      'One senior point of contact',
+    ],
+    deliverables: ['Strategy doc + brand system', 'Working platform(s)', 'Launch campaign', 'Ongoing retainer'],
+    timeline: '4-9 months end-to-end',
+    icon: '/icons/svg/gradient/rocket.svg',
+    isFlagship: false,
+    color: '#F97316',
+    category: 'program',
+    link: '/services/program-creation',
+  },
+  {
+    _id: '2f',
+    title: 'Partnerships',
+    slug: { current: 'partnerships' },
+    shortDescription: 'Technology partnerships, channel + reseller, vertical JVs. We work with 75+ platforms and partners.',
+    fullDescription: 'Three partnership models depending on the fit: Technology partnerships (your platform integrates into our builds, no money up front), Channel + Reseller (you bring client work, standard 10-15% referral or reseller margin), and Vertical JV (you own a specific industry, we provide the AI-native engineering layer, equity split case-by-case). 75+ active partners across 8 categories.',
+    features: [
+      '3 partnership models',
+      'Technology partnership (integration)',
+      'Channel + reseller (referral or margin)',
+      'Vertical JV (equity-based)',
+      'White-label or co-branded options',
+      '75+ active partners across 8 categories',
+    ],
+    deliverables: ['Partnership agreement', 'Joint roadmap', 'First joint project'],
+    timeline: '2 weeks to signed agreement',
+    icon: '/icons/svg/gradient/vision.svg',
+    isFlagship: false,
+    color: '#A855F7',
+    category: 'program',
+    link: '/partnerships',
   },
   {
     _id: '3',
@@ -105,6 +238,7 @@ export const services = [
     isFlagship: false,
     color: '#BF5DE0',
     category: 'development',
+    link: '/services/ai-saas-platforms',
   },
   {
     _id: '5',
