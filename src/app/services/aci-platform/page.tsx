@@ -7,6 +7,7 @@ import { ArrowRight, ChevronDown, Sparkles, Brain, Network, Database, ShieldChec
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { GlassIcon } from '@/components/ui/glass-icon';
 import CTASection from '@/components/sections/CTASection';
 
 const layers = [
@@ -88,8 +89,8 @@ export default function AciPlatformPage() {
               return (
                 <motion.div key={l.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
                   <Card className="p-5 h-full hover:shadow-lg transition-all">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style={{ backgroundColor: `${l.color}20`, color: l.color }}>
-                      <Icon className="w-5 h-5" />
+                    <div className="mb-3">
+                      <GlassIcon Icon={Icon} color={l.color} size="w-12 h-12" iconSize="w-6 h-6" />
                     </div>
                     <div className="text-xs text-gray-400 font-mono mb-1">Layer {i + 1}</div>
                     <h3 className="font-semibold text-gray-900 mb-2 text-sm">{l.name}</h3>

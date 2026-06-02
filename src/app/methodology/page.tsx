@@ -7,6 +7,7 @@ import { ArrowRight, Compass, Search, Wrench, Rocket, BarChart3, BookOpen } from
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { GlassIcon } from '@/components/ui/glass-icon';
 import CTASection from '@/components/sections/CTASection';
 
 const stages = [
@@ -57,9 +58,7 @@ export default function MethodologyPage() {
                 <motion.div key={s.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
                   <Card className="p-6 hover:shadow-lg transition-all">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-[#f0e6fb] flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-6 h-6 text-[#8734E1]" />
-                      </div>
+                      <GlassIcon Icon={Icon} color="#8734E1" />
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
                           <h3 className="font-semibold text-gray-900">Stage {i + 1}: {s.name}</h3>

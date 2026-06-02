@@ -7,6 +7,7 @@ import { ArrowRight, Zap, AlertTriangle, Code2, Shield, Check } from 'lucide-rea
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { GlassIcon } from '@/components/ui/glass-icon';
 import CTASection from '@/components/sections/CTASection';
 
 const painPoints = [
@@ -89,7 +90,7 @@ export default function WordpressMigrationPage() {
               return (
                 <motion.div key={h.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
                   <Card className="p-6 h-full hover:shadow-lg hover:border-[#8734E1] transition-all">
-                    <div className="w-12 h-12 rounded-xl bg-[#f0e6fb] flex items-center justify-center mb-4"><Icon className="w-6 h-6 text-[#8734E1]" /></div>
+                    <div className="mb-4"><GlassIcon Icon={Icon} color="#8734E1" /></div>
                     <h3 className="font-semibold text-gray-900 mb-2">{h.title}</h3>
                     <p className="text-sm text-gray-600 leading-relaxed">{h.body}</p>
                   </Card>

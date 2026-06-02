@@ -7,63 +7,58 @@ type GlassIconProps = {
   Icon: LucideIcon;
   /** Brand accent hex (with leading #) */
   color: string;
-  /** Tailwind size class, default 'w-16 h-16' */
+  /** Tailwind size class, default 'w-14 h-14' */
   size?: string;
-  /** Inner icon size class, default 'w-8 h-8' */
+  /** Inner icon size class, default 'w-7 h-7' */
   iconSize?: string;
   className?: string;
 };
 
 /**
- * Glass-crystal icon medallion. Frosted-glass meets iOS-app-icon meets brand-accent.
+ * Solid colored icon medallion with white icon on top.
+ * Industry standard pattern: Stripe, Linear, Vercel, HubSpot all use this.
  *
- * Layers from back to front:
- *   1. Solid glass-gradient background (40% -> 12% -> 4% accent over white)
- *   2. Inner radial highlight at top-left (white glass shine)
- *   3. Inner radial color glow at bottom-right (depth + saturation)
- *   4. Subtle inset stroke on top edge (glass rim highlight)
- *   5. Crisp icon with stroke-width 2 in the brand accent
+ * Visual recipe:
+ *   - Solid saturated gradient background in the brand accent (no transparency)
+ *   - WHITE icon punched on top with stroke-width 2.25
+ *   - Subtle accent-tinted drop shadow underneath for lift
+ *   - Inner glass highlight ring on the top edge for premium feel
+ *   - Slight inner bottom shadow for depth
  *
- * Sized at 64px default with a 32px icon so it reads as a real button/medallion,
- * not a tiny tinted square.
+ * This explicitly does NOT look like a flat colored emoji square.
+ * It looks like an iOS app icon or a Stripe Dashboard module card icon.
  */
 export function GlassIcon({
   Icon,
   color,
-  size = 'w-16 h-16',
-  iconSize = 'w-8 h-8',
+  size = 'w-14 h-14',
+  iconSize = 'w-7 h-7',
   className = '',
 }: GlassIconProps) {
   return (
     <div
-      className={`relative ${size} rounded-2xl flex items-center justify-center overflow-hidden ${className}`}
+      className={`relative ${size} rounded-2xl flex items-center justify-center ${className}`}
       style={{
-        // Strong gradient that actually reads as colored glass, not a flat tint
-        background: `
-          radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.9) 0%, transparent 50%),
-          radial-gradient(circle at 75% 80%, ${color}40 0%, transparent 60%),
-          linear-gradient(135deg, ${color}30 0%, ${color}15 50%, ${color}25 100%)
-        `,
-        border: `1px solid ${color}40`,
+        background: `linear-gradient(135deg, ${color} 0%, ${color}dd 50%, ${color}cc 100%)`,
         boxShadow: `
-          0 10px 30px -8px ${color}40,
-          0 4px 12px -4px ${color}25,
-          inset 0 1px 0 rgba(255, 255, 255, 0.85),
-          inset 0 -1px 2px ${color}20
+          0 10px 25px -5px ${color}55,
+          0 4px 10px -3px ${color}40,
+          inset 0 1px 0 rgba(255, 255, 255, 0.35),
+          inset 0 -2px 4px rgba(0, 0, 0, 0.08)
         `,
       }}
     >
-      {/* Top glass-rim highlight (extra crisp top edge) */}
+      {/* Top specular highlight (the glass shine) */}
       <div
-        className="absolute inset-0 rounded-2xl pointer-events-none"
+        className="absolute inset-x-0 top-0 h-1/2 rounded-t-2xl pointer-events-none"
         style={{
-          background: 'linear-gradient(180deg, rgba(255,255,255,0.5) 0%, transparent 30%)',
+          background: 'linear-gradient(180deg, rgba(255,255,255,0.25) 0%, transparent 100%)',
         }}
       />
       <Icon
-        className={`${iconSize} relative z-10 drop-shadow-sm`}
-        strokeWidth={2}
-        style={{ color }}
+        className={`${iconSize} relative z-10`}
+        strokeWidth={2.25}
+        style={{ color: '#ffffff' }}
       />
     </div>
   );

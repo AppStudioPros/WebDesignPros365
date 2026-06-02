@@ -17,6 +17,7 @@ import {
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { GlassIcon } from '@/components/ui/glass-icon';
 import CTASection from '@/components/sections/CTASection';
 
 const threeDisciplines = [
@@ -271,11 +272,8 @@ export default function AiVisibilityPage() {
                   transition={{ delay: i * 0.1 }}
                 >
                   <Card className="p-6 h-full hover:shadow-lg hover:border-[#8734E1] transition-all">
-                    <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                      style={{ backgroundColor: `${d.color}20`, color: d.color }}
-                    >
-                      <Icon className="w-6 h-6" />
+                    <div className="mb-4">
+                      <GlassIcon Icon={Icon} color={d.color} />
                     </div>
                     <div className="mb-3">
                       <h3 className="text-2xl font-bold" style={{ color: d.color }}>{d.name}</h3>

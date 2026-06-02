@@ -3,10 +3,11 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, X, Check } from 'lucide-react';
+import { ArrowRight, X, Check, Sparkles } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { GlassIcon } from '@/components/ui/glass-icon';
 import { services } from '@/data/services';
 
 function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0] | null; isOpen: boolean; onClose: () => void }) {
@@ -42,12 +43,7 @@ function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0
                   <X className="w-5 h-5" />
                 </button>
                 <div className="flex items-start gap-4">
-                  <div
-                    className="w-16 h-16 rounded-xl flex items-center justify-center text-2xl"
-                    style={{ backgroundColor: `${service.color}20` }}
-                  >
-                    🚀
-                  </div>
+                  <GlassIcon Icon={Sparkles} color={service.color} size="w-16 h-16" iconSize="w-8 h-8" />
                   <div className="flex-1">
                     {service.isFlagship && (
                       <Badge className="mb-2 bg-[#8734E1] text-white">Flagship Service</Badge>

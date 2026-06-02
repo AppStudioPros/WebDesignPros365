@@ -426,12 +426,7 @@ export default function ServicesPage() {
                 >
                   <Card className="p-5 h-full hover:shadow-lg transition-all">
                     <div className="flex items-center gap-3 mb-3">
-                      <div
-                        className="w-10 h-10 rounded-xl flex items-center justify-center"
-                        style={{ backgroundColor: `${step.color}20`, color: step.color }}
-                      >
-                        <Icon className="w-5 h-5" />
-                      </div>
+                      <GlassIcon Icon={Icon} color={step.color} size="w-11 h-11" iconSize="w-5 h-5" />
                       <div className="text-xs text-gray-400 font-mono">0{i + 1}</div>
                     </div>
                     <h3 className="font-semibold text-gray-900 mb-1">{step.label}</h3>
