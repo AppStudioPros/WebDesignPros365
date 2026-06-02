@@ -4,8 +4,11 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ShieldCheck } from 'lucide-react';
 import { cn } from '@/lib/utils';
+
+const BBB_PROFILE_URL =
+  'https://www.bbb.org/us/co/denver/profile/web-design/web-design-pros-365-1296-1000176091';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -65,8 +68,22 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
+          {/* CTA cluster: BBB badge + Start Your Project */}
+          <div className="hidden lg:flex items-center gap-3">
+            <a
+              href={BBB_PROFILE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="BBB Accredited Business – View profile"
+              className="group inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white border border-[#0c5ba2]/30 hover:border-[#0c5ba2] hover:shadow-md transition-all"
+              title="BBB Accredited · A Rating"
+            >
+              <ShieldCheck className="w-4 h-4 text-[#0c5ba2]" />
+              <div className="flex items-baseline gap-1 leading-none">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#0c5ba2]">BBB</span>
+                <span className="text-[10px] font-semibold text-gray-600 group-hover:text-[#0c5ba2] transition-colors">A · Accredited</span>
+              </div>
+            </a>
             <Link href="/contact">
               <motion.button
                 className="px-6 py-2.5 bg-white text-[#8734E1] font-semibold rounded-xl hover:bg-white/90 transition-all shadow-lg"

@@ -125,33 +125,28 @@ body {
   animation-delay: 1.5s;
 }
 
-/* Logo marquee animations (left-to-right) */
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+/* Logo marquee — smooth single-row scroll, no glitch. */
+/* Track is 3x duplicated; we slide by exactly -33.333% (one full set) so the loop is invisible. */
+@keyframes marquee-smooth {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-33.333%, 0, 0); }
 }
 
-.animate-marquee {
-  animation: marquee 60s linear infinite;
+.animate-marquee-smooth {
+  animation: marquee-smooth 50s linear infinite;
   will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
-.animate-marquee:hover {
+.animate-marquee-smooth:hover {
   animation-play-state: paused;
 }
 
-@keyframes marquee-reverse {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
-}
-
-.animate-marquee-reverse {
-  animation: marquee-reverse 75s linear infinite;
-  will-change: transform;
-}
-
-.animate-marquee-reverse:hover {
-  animation-play-state: paused;
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-smooth {
+    animation: none;
+  }
 }
 
 /* Custom scrollbar */

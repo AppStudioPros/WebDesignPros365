@@ -39,108 +39,68 @@ const testimonials = [
   },
 ];
 
-// Each logo uses Brandfetch's free CDN for real, color, trademarked brand marks.
-// Pattern: https://cdn.brandfetch.io/{domain}/w/64/h/64
-// When the brand isn't on Brandfetch, fall back to a styled text chip.
+// Logos served from Clearbit Logo API (free, real color logos by domain).
+// Verified-domain whitelist: only confirmed-working brands ship here. No broken renders.
 type LogoChip = {
   name: string;
-  /** Primary brand domain. Drives the Brandfetch logo URL. */
-  domain?: string;
-  category: 'client' | 'core' | 'ai' | 'commerce' | 'data' | 'vertical';
+  domain: string;
 };
 
-// ROW 1 - Core stack, AI partners, client brands (scrolls left-to-right)
-// (Internal Lucid Tech brands PocketFiler + Contractor Guardians removed per spec.)
-const row1: LogoChip[] = [
-  // External clients
-  { name: 'Sculpted Beauty', category: 'client' },
-  { name: 'Fast Track Solutions', category: 'client' },
-  { name: 'Arrakis Insight', category: 'client' },
-  { name: 'Piqsol', category: 'client' },
-  { name: 'Leader Magnus', category: 'client' },
-  { name: 'PK Page', category: 'client' },
+// Curated, working-domain logo list. Single smooth row, ~24 brands. Loops seamlessly.
+const logos: LogoChip[] = [
   // Core stack
-  { name: 'Next.js', domain: 'nextjs.org', category: 'core' },
-  { name: 'Vercel', domain: 'vercel.com', category: 'core' },
-  { name: 'React', domain: 'react.dev', category: 'core' },
-  { name: 'TypeScript', domain: 'typescriptlang.org', category: 'core' },
-  { name: 'Python', domain: 'python.org', category: 'core' },
-  { name: 'Node.js', domain: 'nodejs.org', category: 'core' },
+  { name: 'Next.js', domain: 'nextjs.org' },
+  { name: 'Vercel', domain: 'vercel.com' },
+  { name: 'React', domain: 'react.dev' },
+  { name: 'TypeScript', domain: 'typescriptlang.org' },
+  { name: 'Python', domain: 'python.org' },
+  { name: 'Node.js', domain: 'nodejs.org' },
   // AI providers
-  { name: 'Anthropic', domain: 'anthropic.com', category: 'ai' },
-  { name: 'OpenAI', domain: 'openai.com', category: 'ai' },
-  { name: 'Pinecone', domain: 'pinecone.io', category: 'ai' },
+  { name: 'Anthropic', domain: 'anthropic.com' },
+  { name: 'OpenAI', domain: 'openai.com' },
+  { name: 'Pinecone', domain: 'pinecone.io' },
   // Data + infrastructure
-  { name: 'Supabase', domain: 'supabase.com', category: 'data' },
-  { name: 'PostgreSQL', domain: 'postgresql.org', category: 'data' },
-  { name: 'Cloudflare', domain: 'cloudflare.com', category: 'core' },
-];
-
-// ROW 2 - Commerce, CMS, CRM, comms, payments, verticals (scrolls right-to-left)
-const row2: LogoChip[] = [
-  // Commerce
-  { name: 'Shopify', domain: 'shopify.com', category: 'commerce' },
-  { name: 'WooCommerce', domain: 'woocommerce.com', category: 'commerce' },
-  { name: 'WordPress', domain: 'wordpress.org', category: 'commerce' },
-  { name: 'BigCommerce', domain: 'bigcommerce.com', category: 'commerce' },
-  // Payments
-  { name: 'Stripe', domain: 'stripe.com', category: 'commerce' },
-  { name: 'Plaid', domain: 'plaid.com', category: 'commerce' },
-  // CRM + Marketing
-  { name: 'HubSpot', domain: 'hubspot.com', category: 'commerce' },
-  { name: 'Salesforce', domain: 'salesforce.com', category: 'commerce' },
+  { name: 'Supabase', domain: 'supabase.com' },
+  { name: 'Cloudflare', domain: 'cloudflare.com' },
+  { name: 'PostgreSQL', domain: 'postgresql.org' },
   // CMS
-  { name: 'Sanity', domain: 'sanity.io', category: 'data' },
-  { name: 'Contentful', domain: 'contentful.com', category: 'data' },
-  { name: 'Strapi', domain: 'strapi.io', category: 'data' },
+  { name: 'Sanity', domain: 'sanity.io' },
+  { name: 'Contentful', domain: 'contentful.com' },
+  // Commerce
+  { name: 'Shopify', domain: 'shopify.com' },
+  { name: 'WordPress', domain: 'wordpress.org' },
+  { name: 'Stripe', domain: 'stripe.com' },
+  // Payments + fintech
+  { name: 'Plaid', domain: 'plaid.com' },
+  { name: 'Mercury', domain: 'mercury.com' },
+  { name: 'Brex', domain: 'brex.com' },
+  // CRM
+  { name: 'HubSpot', domain: 'hubspot.com' },
+  { name: 'Salesforce', domain: 'salesforce.com' },
   // Comms
-  { name: 'Twilio', domain: 'twilio.com', category: 'commerce' },
-  { name: 'Resend', domain: 'resend.com', category: 'commerce' },
-  // Auth + infrastructure
-  { name: 'Clerk', domain: 'clerk.com', category: 'core' },
-  { name: 'GitHub', domain: 'github.com', category: 'core' },
-  { name: 'Figma', domain: 'figma.com', category: 'core' },
-  { name: 'Notion', domain: 'notion.so', category: 'core' },
-  // Verticals — real estate
-  { name: 'kvCORE', domain: 'insiderealestate.com', category: 'vertical' },
-  { name: 'Sierra Interactive', domain: 'sierrainteractive.com', category: 'vertical' },
-  { name: 'BoomTown', domain: 'boomtownroi.com', category: 'vertical' },
-  { name: 'Real Geeks', domain: 'realgeeks.com', category: 'vertical' },
-  // Verticals — legal
-  { name: 'Clio', domain: 'clio.com', category: 'vertical' },
-  { name: 'MyCase', domain: 'mycase.com', category: 'vertical' },
-  { name: 'PracticePanther', domain: 'practicepanther.com', category: 'vertical' },
-  { name: 'Lawmatics', domain: 'lawmatics.com', category: 'vertical' },
-  // Verticals — health
-  { name: 'Epic FHIR', domain: 'epic.com', category: 'vertical' },
-  { name: 'Athenahealth', domain: 'athenahealth.com', category: 'vertical' },
-  { name: 'eClinicalWorks', domain: 'eclinicalworks.com', category: 'vertical' },
-  // Verticals — fintech
-  { name: 'Mercury', domain: 'mercury.com', category: 'vertical' },
-  { name: 'Brex', domain: 'brex.com', category: 'vertical' },
-  { name: 'Modern Treasury', domain: 'moderntreasury.com', category: 'vertical' },
+  { name: 'Twilio', domain: 'twilio.com' },
+  { name: 'Resend', domain: 'resend.com' },
+  // Tools
+  { name: 'GitHub', domain: 'github.com' },
+  { name: 'Figma', domain: 'figma.com' },
+  { name: 'Notion', domain: 'notion.so' },
+  { name: 'Clerk', domain: 'clerk.com' },
 ];
 
 function LogoBadge({ logo }: { logo: LogoChip }) {
-  const iconUrl = logo.domain
-    ? `https://cdn.brandfetch.io/${logo.domain}/w/64/h/64?c=1idV74_p2cNryY2WzAk`
-    : null;
   return (
-    <div className="flex-shrink-0 mx-3 py-3">
-      <div className="px-5 py-3 rounded-xl bg-white border border-gray-200 text-gray-700 font-medium hover:bg-[#f0e6fb] hover:border-[#8734E1] hover:shadow-md transition-all flex items-center gap-2.5 whitespace-nowrap">
-        {iconUrl && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={iconUrl}
-            alt={`${logo.name} logo`}
-            className="w-5 h-5 object-contain"
-            loading="lazy"
-            onError={(e) => {
-              // If Brandfetch has no logo for this domain, hide the broken img
-              (e.currentTarget as HTMLImageElement).style.display = 'none';
-            }}
-          />
-        )}
+    <div className="flex-shrink-0 mx-3">
+      <div className="px-5 py-3 rounded-xl bg-white border border-gray-200 text-gray-700 font-medium flex items-center gap-2.5 whitespace-nowrap shadow-sm hover:shadow-md hover:border-[#8734E1]/40 transition-all">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`https://logo.clearbit.com/${logo.domain}?size=64`}
+          alt={`${logo.name} logo`}
+          className="w-5 h-5 object-contain"
+          loading="lazy"
+          onError={(e) => {
+            (e.currentTarget as HTMLImageElement).style.display = 'none';
+          }}
+        />
         <span className="text-sm">{logo.name}</span>
       </div>
     </div>
@@ -148,15 +108,48 @@ function LogoBadge({ logo }: { logo: LogoChip }) {
 }
 
 export default function TestimonialsSection() {
-  // Duplicate each row so the marquee loops seamlessly
-  const row1Full = [...row1, ...row1];
-  const row2Full = [...row2, ...row2];
+  // Triple the row so the marquee never reveals an edge during the loop reset
+  const rowFull = [...logos, ...logos, ...logos];
 
   return (
     <section className="section relative overflow-hidden">
       <div className="absolute inset-0 bg-white/70" />
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
       <div className="container-custom relative z-10">
+        {/* TRUSTED-BY MARQUEE — moved to TOP of section, single smooth row */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="relative mb-20"
+        >
+          <div className="text-center mb-8">
+            <p className="text-sm text-gray-500 uppercase tracking-wider">
+              Trusted by 50+ Companies &amp; Partnerships
+            </p>
+          </div>
+
+          {/* Single smooth row, left to right, pause on hover, no glitch */}
+          <div className="relative overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+            <div className="flex items-center animate-marquee-smooth py-4" style={{ width: 'max-content' }}>
+              {rowFull.map((logo, index) => (
+                <LogoBadge key={`logo-${logo.name}-${index}`} logo={logo} />
+              ))}
+            </div>
+          </div>
+
+          <p className="text-center text-xs text-gray-400 mt-4">
+            See the full partner directory on our{' '}
+            <a href="/partnerships" className="text-[#8734E1] hover:underline">
+              Partnerships page
+            </a>
+            .
+          </p>
+        </motion.div>
+
         {/* TESTIMONIALS HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -177,7 +170,7 @@ export default function TestimonialsSection() {
         </motion.div>
 
         {/* TESTIMONIAL CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.author}
@@ -212,52 +205,6 @@ export default function TestimonialsSection() {
             </motion.div>
           ))}
         </div>
-
-        {/* TRUSTED BY / PARTNERSHIPS - SCROLLING MARQUEE */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="relative"
-        >
-          <div className="text-center mb-8">
-            <p className="text-sm text-gray-500 uppercase tracking-wider">
-              Trusted by 50+ Companies &amp; Partnerships
-            </p>
-          </div>
-
-          {/* ROW 1 — left to right */}
-          <div className="relative overflow-hidden mb-2">
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-            <div className="flex animate-marquee-reverse" style={{ width: 'max-content' }}>
-              {row1Full.map((logo, index) => (
-                <LogoBadge key={`r1-${logo.name}-${index}`} logo={logo} />
-              ))}
-            </div>
-          </div>
-
-          {/* ROW 2 — right to left, larger logo set */}
-          <div className="relative overflow-hidden">
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-            <div className="flex animate-marquee" style={{ width: 'max-content' }}>
-              {row2Full.map((logo, index) => (
-                <LogoBadge key={`r2-${logo.name}-${index}`} logo={logo} />
-              ))}
-            </div>
-          </div>
-
-          <p className="text-center text-xs text-gray-400 mt-6">
-            Active partners across hosting, AI, commerce, CMS, CRM, payments, and vertical platforms.
-            See the full list on our{' '}
-            <a href="/partnerships" className="text-[#8734E1] hover:underline">
-              Partnerships page
-            </a>
-            .
-          </p>
-        </motion.div>
       </div>
     </section>
   );

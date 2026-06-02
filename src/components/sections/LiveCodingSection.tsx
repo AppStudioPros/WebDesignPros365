@@ -10,13 +10,13 @@ const codeFrames = [
     file: 'app/api/visibility/route.ts',
     lang: 'TypeScript',
     lines: [
-      { c: '#A78BFA', t: 'import' }, { c: '#E5E7EB', t: ' { anthropic } ' }, { c: '#A78BFA', t: 'from' }, { c: '#E5E7EB', t: " '@/lib/aci';" },
+      { c: '#A78BFA', t: 'import' }, { c: '#E5E7EB', t: ' { aci } ' }, { c: '#A78BFA', t: 'from' }, { c: '#E5E7EB', t: " '@/lib/aci';" },
       '\n',
       { c: '#A78BFA', t: 'export async function' }, { c: '#FBBF24', t: ' POST' }, { c: '#E5E7EB', t: '(req: Request) {' },
       '\n',
       { c: '#E5E7EB', t: '  ' }, { c: '#A78BFA', t: 'const' }, { c: '#E5E7EB', t: ' { url } = ' }, { c: '#A78BFA', t: 'await' }, { c: '#E5E7EB', t: ' req.json();' },
       '\n',
-      { c: '#E5E7EB', t: '  ' }, { c: '#A78BFA', t: 'const' }, { c: '#E5E7EB', t: ' result = ' }, { c: '#A78BFA', t: 'await' }, { c: '#E5E7EB', t: ' anthropic.evaluate({' },
+      { c: '#E5E7EB', t: '  ' }, { c: '#A78BFA', t: 'const' }, { c: '#E5E7EB', t: ' result = ' }, { c: '#A78BFA', t: 'await' }, { c: '#E5E7EB', t: ' aci.evaluate({' },
       '\n',
       { c: '#E5E7EB', t: '    methodology: ' }, { c: '#34D399', t: "'aci.visibility.v1'" }, { c: '#E5E7EB', t: ',' },
       '\n',
@@ -39,7 +39,7 @@ const codeFrames = [
       '\n',
       { c: '#E5E7EB', t: '  name: ' }, { c: '#34D399', t: "'Customer Concierge'" }, { c: '#E5E7EB', t: ',' },
       '\n',
-      { c: '#E5E7EB', t: '  model: ' }, { c: '#34D399', t: "'claude-opus-4-7'" }, { c: '#E5E7EB', t: ',' },
+      { c: '#E5E7EB', t: '  engine: ' }, { c: '#34D399', t: "'aci.acumen-7'" }, { c: '#E5E7EB', t: ',' },
       '\n',
       { c: '#E5E7EB', t: '  methodology: methodologyLib.brand,' },
       '\n',
@@ -122,7 +122,7 @@ const terminalLines = [
   { kind: 'cmd', text: '$ curl -s https://webdesignpros365.com/llms.txt | head -3' },
   { kind: 'info', text: '   # Web Design Pros 365' },
   { kind: 'info', text: '   > AI-native web development agency. Next.js 16 + React 19 + Vercel...' },
-  { kind: 'ok', text: '   Patent #63/987,765 — ACI architecture active' },
+  { kind: 'ok', text: '   Patent #63/987,765 · ACI architecture active' },
 ];
 
 function CodePane({ frameIndex }: { frameIndex: number }) {

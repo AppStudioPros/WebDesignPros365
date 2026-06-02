@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import {
   ArrowRight,
   X,
@@ -29,12 +29,58 @@ const categories = [
   { id: 'marketing', name: 'Marketing', count: services.filter((s) => s.category === 'marketing').length, accent: '#F59E0B' },
 ];
 
-const stats = [
-  { label: 'Services on offer', value: services.length },
-  { label: 'Years on the modern stack', value: '20+' },
-  { label: 'Patent (ACI)', value: '#63/987,765' },
-  { label: 'Average build window', value: '4-12 wks' },
+// Stats with count-up animation. 'numeric' fields animate. 'static' fields don't.
+const stats: Array<{
+  label: string;
+  type: 'numeric' | 'static';
+  value: number;
+  suffix?: string;
+  prefix?: string;
+  decimals?: number;
+  staticValue?: string;
+  duration?: number;
+}> = [
+  { label: 'Years on the modern stack', type: 'numeric', value: 20, suffix: '+', duration: 1800 },
+  { label: 'Services + pages on offer', type: 'numeric', value: 25, suffix: '+', duration: 2200 },
+  { label: 'Client satisfaction', type: 'numeric', value: 98, suffix: '%', duration: 2400 },
+  { label: 'Average build window', type: 'static', value: 0, staticValue: '4-12 wks' },
 ];
+
+function CountUpStat({ stat, inView }: { stat: typeof stats[0]; inView: boolean }) {
+  const [count, setCount] = useState(0);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    if (stat.type !== 'numeric') return;
+    if (inView && !hasAnimated.current) {
+      hasAnimated.current = true;
+      const startTime = Date.now();
+      const duration = stat.duration || 2000;
+      const animate = () => {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const currentValue = easeOut * stat.value;
+        setCount(stat.decimals ? parseFloat(currentValue.toFixed(stat.decimals)) : Math.floor(currentValue));
+        if (progress < 1) requestAnimationFrame(animate);
+        else setCount(stat.value);
+      };
+      requestAnimationFrame(animate);
+    }
+  }, [inView, stat]);
+
+  if (stat.type === 'static') {
+    return <>{stat.staticValue}</>;
+  }
+  const displayValue = stat.decimals ? count.toFixed(stat.decimals) : count.toLocaleString();
+  return (
+    <>
+      {stat.prefix || ''}
+      {displayValue}
+      {stat.suffix || ''}
+    </>
+  );
+}
 
 const howWeWork = [
   { icon: Sparkles, label: 'Discovery', body: 'Free 30-min call. Scope, audience, constraints.', color: '#8734E1' },
@@ -142,6 +188,29 @@ function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0
   );
 }
 
+function StatsRow() {
+  const statsRef = useRef<HTMLDivElement | null>(null);
+  const inView = useInView(statsRef, { once: true, margin: '-50px' });
+  return (
+    <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+      {stats.map((s, i) => (
+        <motion.div
+          key={s.label}
+          initial={{ opacity: 0, y: 10 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+          transition={{ delay: 0.2 + i * 0.08 }}
+          className="text-center"
+        >
+          <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#BF5DE0] to-[#2F73EE] bg-clip-text text-transparent mb-1">
+            <CountUpStat stat={s} inView={inView} />
+          </div>
+          <div className="text-xs text-white/60 uppercase tracking-wider">{s.label}</div>
+        </motion.div>
+      ))}
+    </div>
+  );
+}
+
 export default function ServicesPage() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedService, setSelectedService] = useState<typeof services[0] | null>(null);
@@ -174,23 +243,8 @@ export default function ServicesPage() {
               to succeed online. Patent-anchored. Audit-trail-complete. Built for what comes next.
             </p>
 
-            {/* STATS ROW */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-              {stats.map((s, i) => (
-                <motion.div
-                  key={s.label}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 + i * 0.08 }}
-                  className="text-center"
-                >
-                  <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#BF5DE0] to-[#2F73EE] bg-clip-text text-transparent mb-1">
-                    {s.value}
-                  </div>
-                  <div className="text-xs text-white/60 uppercase tracking-wider">{s.label}</div>
-                </motion.div>
-              ))}
-            </div>
+            {/* STATS ROW with count-up animation */}
+            <StatsRow />
           </motion.div>
         </div>
       </section>
