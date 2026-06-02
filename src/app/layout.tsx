@@ -3,6 +3,8 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { CookieBanner } from "@/components/layout/CookieBanner";
+import { AciChat } from "@/components/chat/AciChat";
 import { Toaster } from "@/components/ui/sonner";
 
 const poppins = Poppins({
@@ -34,6 +36,8 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <Toaster position="top-right" />
+        <CookieBanner />
+        <AciChat />
       </body>
     </html>
   );
