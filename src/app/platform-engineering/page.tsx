@@ -23,6 +23,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { GlassIcon } from '@/components/ui/glass-icon';
 import CTASection from '@/components/sections/CTASection';
+import { HighLevelDemo } from '@/components/sections/HighLevelDemo';
 
 const painPoints = [
   {
@@ -404,6 +405,9 @@ export default function PlatformEngineeringPage() {
           </p>
         </div>
       </section>
+
+      {/* INTERACTIVE FEATURE COMPARISON */}
+      <HighLevelDemo />
 
       {/* MODULES */}
       <section className="section bg-white">
