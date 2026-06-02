@@ -7,10 +7,10 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const techBadges = [
-  { name: 'Next.js 15', icon: '⚡' },
+  { name: 'Next.js 16', icon: '⚡' },
+  { name: 'React 19', icon: '⚛️' },
   { name: 'Vercel Edge', icon: '🚀' },
-  { name: 'Sanity CMS', icon: '📝' },
-  { name: 'GEO Ready', icon: '🎯' },
+  { name: 'AI Visibility Stack', icon: '🎯' },
 ];
 
 const stats = [

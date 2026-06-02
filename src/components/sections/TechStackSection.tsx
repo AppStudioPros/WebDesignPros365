@@ -6,7 +6,7 @@ const techStack = [
   {
     category: 'Frontend',
     technologies: [
-      { name: 'Next.js 15', description: 'React Framework' },
+      { name: 'Next.js 16', description: 'React 19 Framework' },
       { name: 'TypeScript', description: 'Type Safety' },
       { name: 'Tailwind CSS', description: 'Styling' },
       { name: 'Framer Motion', description: 'Animations' },
@@ -24,8 +24,8 @@ const techStack = [
   {
     category: 'AI & Optimization',
     technologies: [
-      { name: 'OpenAI', description: 'AI Integration' },
-      { name: 'GEO Ready', description: 'AI Search' },
+      { name: 'ACI Platform', description: 'Patented AI Architecture' },
+      { name: 'SEO + AEO + GEO', description: 'AI Visibility Stack' },
       { name: 'Core Web Vitals', description: 'Performance' },
       { name: 'Lighthouse 90+', description: 'Scoring' },
     ],

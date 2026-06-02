@@ -6,20 +6,20 @@ import { ChevronDown } from 'lucide-react';
 
 const faqs = [
   {
-    question: 'What is GEO (Generative Engine Optimization)?',
-    answer: 'GEO is our flagship service that optimizes your website for AI-powered search engines and LLMs like ChatGPT and Claude. As more users turn to AI for answers, GEO ensures your content is discoverable and accurately represented in AI responses.',
+    question: 'What is the AI Visibility Stack (SEO + AEO + GEO)?',
+    answer: 'Our flagship offering combines three disciplines to make your brand visible across every modern search surface. SEO ranks your pages in Google. AEO (Answer Engine Optimization) gets you selected as the direct answer in AI Overviews, voice search, and snippets. GEO (Generative Engine Optimization) makes sure your brand gets cited by ChatGPT, Claude, Gemini, and Perplexity when users ask questions in your domain. Most agencies still only do SEO. We do all three.',
   },
   {
     question: 'How long does a typical project take?',
-    answer: 'Project timelines vary based on complexity. A Starter package typically takes 4-6 weeks, Growth packages 8-12 weeks, and Premium/Enterprise projects 12-20 weeks. We provide detailed timelines during our discovery phase.',
+    answer: 'Project timelines vary based on complexity. A Launch package typically takes 4-6 weeks, Growth packages 8-12 weeks, Pro projects 10-16 weeks, and Custom/ACI-Powered engagements 14-24 weeks. We provide detailed timelines during our discovery phase.',
   },
   {
     question: 'What technologies do you use?',
-    answer: 'We specialize in modern web technologies: Next.js 15, React, TypeScript, Tailwind CSS, and Sanity CMS. For deployment, we use Vercel for edge performance. We also integrate AI tools like OpenAI and custom chatbot solutions.',
+    answer: 'We specialize in modern web technologies: Next.js 16, React 19, TypeScript, Tailwind CSS, and Sanity CMS. For deployment, we use Vercel for edge performance. For AI work, we build on our patented ACI (Adaptive Compound Intelligence) platform, integrating Anthropic Claude and OpenAI with our own audit-trail-complete architecture.',
   },
   {
     question: 'Do you offer ongoing support?',
-    answer: 'Yes! All packages include 30 days of post-launch support. For ongoing needs, we offer retainer packages starting at $3,000/month that include priority support, updates, and continuous optimization.',
+    answer: 'Yes. Every package includes post-launch support (30 days on Launch, 60 on Growth, 90 on Pro, customized on Custom and ACI-Powered tiers). For ongoing needs, we offer retainer packages starting at $5,000/month that include priority support, updates, performance reporting, and continuous SEO + AEO + GEO optimization.',
   },
   {
     question: 'What is your payment structure?',

@@ -8,7 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import CTASection from '@/components/sections/CTASection';
 
 const values = [
-  { title: 'Innovation First', description: 'We stay ahead of the curve, adopting cutting-edge technologies like GEO and AI integration before they become mainstream.' },
+  { title: 'Innovation First', description: 'We stay ahead of the curve, adopting cutting-edge technologies like our patented ACI platform and the full SEO + AEO + GEO AI Visibility Stack before they become mainstream.' },
   { title: 'Client-Centric', description: 'Your success is our success. We work closely with you to understand your needs and deliver tailored solutions.' },
   { title: 'Quality Obsessed', description: "We don't cut corners. Every project undergoes rigorous testing and optimization before launch." },
   { title: 'Transparent Process', description: "Clear communication, honest pricing, and no surprises. You'll always know where your project stands." },
@@ -17,10 +17,10 @@ const values = [
 const highlights = [
   '2000+ Projects Delivered',
   '98% Client Satisfaction',
-  'Next.js 15 & TypeScript',
-  'AI & GEO Integration',
+  'Next.js 16 & React 19',
+  'ACI-Powered AI Integration',
+  'Full AI Visibility Stack (SEO + AEO + GEO)',
   'Sanity CMS Experts',
-  'Vercel Deployment',
 ];
 
 export default function AboutPage() {

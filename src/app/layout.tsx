@@ -13,8 +13,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Web Design Pros 365 | Next-Gen Web Development",
-  description: "We build high-performance websites and applications using cutting-edge technology. From AI integration to GEO optimization, we transform your digital presence.",
-  keywords: ["web development", "Next.js", "AI integration", "GEO", "SEO", "web design"],
+  description: "We build high-performance websites and applications using cutting-edge technology. From patented ACI AI integration to the full AI Visibility Stack (SEO + AEO + GEO), we transform your digital presence.",
+  keywords: ["web development", "Next.js 16", "React 19", "AI integration", "ACI", "GEO", "AEO", "SEO", "AI Visibility Stack", "web design"],
   openGraph: {
     title: "Web Design Pros 365 | Next-Gen Web Development",
     description: "Crafting next-gen web experiences with cutting-edge technology.",

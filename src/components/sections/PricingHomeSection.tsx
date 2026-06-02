@@ -8,17 +8,17 @@ import { Button } from '@/components/ui/button';
 
 const pricingTiers = [
   {
-    name: 'Starter',
-    priceRange: '$5,000 - $7,000',
+    name: 'Launch',
+    priceRange: '$7,500',
     description: 'Perfect for small businesses and startups launching their first professional website.',
     bestFor: 'Small Business',
     features: [
-      { feature: 'Custom Design (5-7 pages)', included: true },
-      { feature: 'Mobile Responsive', included: true },
-      { feature: 'Basic SEO Setup', included: true },
-      { feature: 'Contact Form', included: true },
+      { feature: 'Custom Design (up to 5 pages)', included: true },
+      { feature: 'Next.js 16 + Mobile Responsive', included: true },
+      { feature: 'SEO + AEO + GEO Setup', included: true },
+      { feature: 'Contact Form + 30-day Support', included: true },
       { feature: 'CMS Integration', included: false },
-      { feature: 'E-commerce', included: false },
+      { feature: 'AI Chatbot', included: false },
     ],
     isPopular: false,
     ctaText: 'Get Started',
@@ -26,37 +26,71 @@ const pricingTiers = [
   },
   {
     name: 'Growth',
-    priceRange: '$10,000 - $15,000',
-    description: 'For growing businesses that need advanced features and CMS capabilities.',
+    priceRange: '$15,000',
+    description: 'For growing businesses that need advanced features, CMS, and AI Visibility.',
     bestFor: 'Growing Business',
     features: [
       { feature: 'Custom Design (10-15 pages)', included: true },
-      { feature: 'Mobile Responsive', included: true },
-      { feature: 'Advanced SEO + GEO', included: true },
+      { feature: 'Next.js 16 + Mobile Responsive', included: true },
+      { feature: 'Advanced SEO + AEO + GEO', included: true },
       { feature: 'Sanity CMS Integration', included: true },
-      { feature: 'Analytics Dashboard', included: true },
-      { feature: 'Basic E-commerce', included: true },
+      { feature: 'Analytics + Conversion Tracking', included: true },
+      { feature: '60-day Support', included: true },
     ],
     isPopular: true,
     ctaText: 'Most Popular',
     color: '#8734E1',
   },
   {
-    name: 'Premium',
-    priceRange: '$18,000 - $30,000',
-    description: 'Full-scale digital solution with custom development and AI integration.',
+    name: 'Pro',
+    priceRange: '$30,000',
+    description: 'Corporate marketing sites with full AI integration and accessibility compliance.',
+    bestFor: 'Mid-Market',
+    features: [
+      { feature: 'Unlimited Content Pages', included: true },
+      { feature: 'AI Chatbot Integration', included: true },
+      { feature: 'Advanced SEO + AEO + GEO', included: true },
+      { feature: 'A/B Testing Infrastructure', included: true },
+      { feature: 'WCAG 2.2 AA Accessibility', included: true },
+      { feature: 'CRM Integration + 90-day Support', included: true },
+    ],
+    isPopular: false,
+    ctaText: 'Get Started',
+    color: '#f59e0b',
+  },
+  {
+    name: 'Custom',
+    priceRange: '$50,000+',
+    description: 'Multi-language, headless commerce, legacy integration, custom AI applications.',
     bestFor: 'Enterprise',
     features: [
-      { feature: 'Unlimited Pages', included: true },
-      { feature: 'Custom Applications', included: true },
-      { feature: 'Full GEO Optimization', included: true },
-      { feature: 'AI Chatbot Integration', included: true },
-      { feature: 'Advanced E-commerce', included: true },
-      { feature: 'Priority Support', included: true },
+      { feature: 'Everything in Pro', included: true },
+      { feature: 'Multi-language Deployment', included: true },
+      { feature: 'Headless Commerce', included: true },
+      { feature: 'Legacy System Integration', included: true },
+      { feature: 'White-label / Agency Mode', included: true },
+      { feature: 'Priority Support + SLA', included: true },
     ],
     isPopular: false,
     ctaText: 'Contact Us',
-    color: '#f59e0b',
+    color: '#10b981',
+  },
+  {
+    name: 'ACI-Powered',
+    priceRange: '$75,000+',
+    description: 'Full ACI platform — patented AI architecture, custom agents, audit-trail-complete.',
+    bestFor: 'Flagship',
+    features: [
+      { feature: 'Everything in Custom', included: true },
+      { feature: 'Patented ACI Platform Integration', included: true },
+      { feature: 'Custom AI Agents (trained on your domain)', included: true },
+      { feature: 'No Hallucination / No Drift / Human-in-Loop', included: true },
+      { feature: 'Audit-Trail-Complete (compliance-grade)', included: true },
+      { feature: 'White-Glove + Quarterly Reviews', included: true },
+    ],
+    isPopular: false,
+    ctaText: 'Talk to Us',
+    color: '#8734E1',
   },
 ];
 
@@ -84,7 +118,7 @@ export default function PricingHomeSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
           {pricingTiers.map((tier, index) => (
             <motion.div
               key={tier.name}
@@ -157,7 +191,7 @@ export default function PricingHomeSection() {
         >
           <h3 className="text-xl font-semibold text-gray-900 mb-2">Need a Retainer?</h3>
           <p className="text-gray-600 mb-4">
-            Enterprise retainer packages starting at $3,000 - $5,000/month for ongoing development and support.
+            Enterprise retainer packages starting at $5,000/month for ongoing development, support, performance reporting, and continuous SEO + AEO + GEO optimization.
           </p>
           <Link href="/contact">
             <Button className="bg-gradient-to-r from-[#8734E1] to-[#2F73EE] hover:opacity-90">

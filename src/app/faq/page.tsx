@@ -9,11 +9,11 @@ import CTASection from '@/components/sections/CTASection';
 const faqs = [
   {
     question: 'What technologies do you use?',
-    answer: 'We specialize in modern web technologies including Next.js 15, TypeScript, Tailwind CSS, and Sanity.io for content management. For deployment, we use Vercel for optimal performance and scalability.',
+    answer: 'We specialize in modern web technologies including Next.js 16, React 19, TypeScript, Tailwind CSS, and Sanity.io for content management. For deployment, we use Vercel for optimal performance and scalability. For AI work, we build on our patented ACI (Adaptive Compound Intelligence) platform.',
   },
   {
-    question: 'What is GEO (Generative Engine Optimization)?',
-    answer: 'GEO is our flagship service that optimizes your website content for AI-powered search engines and LLMs like ChatGPT, Claude, and Google AI. This ensures your content is easily understood and cited by AI assistants.',
+    question: 'What is the AI Visibility Stack (SEO + AEO + GEO)?',
+    answer: 'Our flagship offering. SEO ranks your pages in Google search results. AEO (Answer Engine Optimization) gets your content selected as the direct answer in Google AI Overviews, voice search, and featured snippets. GEO (Generative Engine Optimization) makes your brand get cited by ChatGPT, Claude, Gemini, and Perplexity when users ask questions in your domain. Most agencies still only do SEO. We do all three.',
   },
   {
     question: 'How long does a typical project take?',
