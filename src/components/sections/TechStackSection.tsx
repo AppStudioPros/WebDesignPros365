@@ -1,10 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { Code2, Database, Brain } from 'lucide-react';
 
 const techStack = [
   {
     category: 'Frontend',
+    icon: Code2,
+    color: '#2F73EE',
+    tagline: 'The user experience layer',
     technologies: [
       { name: 'Next.js 16', description: 'React 19 Framework' },
       { name: 'TypeScript', description: 'Type Safety' },
@@ -13,21 +17,27 @@ const techStack = [
     ],
   },
   {
-    category: 'Backend & CMS',
+    category: 'Backend + Data',
+    icon: Database,
+    color: '#10b981',
+    tagline: 'The engine room',
     technologies: [
       { name: 'Sanity.io', description: 'Headless CMS' },
-      { name: 'Vercel Edge', description: 'Serverless' },
-      { name: 'Node.js', description: 'Runtime' },
-      { name: 'PostgreSQL', description: 'Database' },
+      { name: 'Vercel Edge', description: 'Serverless Runtime' },
+      { name: 'PostgreSQL', description: 'Primary Database' },
+      { name: 'Supabase', description: 'Auth + Realtime' },
     ],
   },
   {
-    category: 'AI & Optimization',
+    category: 'AI + Optimization',
+    icon: Brain,
+    color: '#8734E1',
+    tagline: 'The patented moat',
     technologies: [
-      { name: 'ACI Platform', description: 'Patented AI Architecture' },
+      { name: 'ACI Platform', description: 'Patented Architecture' },
+      { name: 'Anthropic Claude', description: 'Frontier LLM' },
       { name: 'SEO + AEO + GEO', description: 'AI Visibility Stack' },
-      { name: 'Core Web Vitals', description: 'Performance' },
-      { name: 'Lighthouse 90+', description: 'Scoring' },
+      { name: 'Core Web Vitals', description: 'Lighthouse 90+' },
     ],
   },
 ];
@@ -56,34 +66,87 @@ export default function TechStackSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {techStack.map((category, categoryIndex) => (
-            <motion.div
-              key={category.category}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-              className="bg-[#f8f9fc] border border-gray-200 rounded-2xl p-6"
-            >
-              <h3 className="text-lg font-semibold text-gray-900 mb-6">{category.category}</h3>
-              <div className="space-y-4">
-                {category.technologies.map((tech, techIndex) => (
-                  <motion.div
-                    key={tech.name}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: categoryIndex * 0.1 + techIndex * 0.05 }}
-                    className="flex items-center justify-between py-2 border-b border-gray-200 last:border-0"
-                  >
-                    <span className="text-gray-900 font-medium">{tech.name}</span>
-                    <span className="text-sm text-gray-500">{tech.description}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {techStack.map((category, categoryIndex) => {
+            const Icon = category.icon;
+            return (
+              <motion.div
+                key={category.category}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
+                className="relative bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all"
+              >
+                {/* Top accent gradient bar */}
+                <div
+                  className="absolute top-0 left-0 right-0 h-1"
+                  style={{ background: `linear-gradient(90deg, ${category.color}, ${category.color}80)` }}
+                />
+
+                {/* Header */}
+                <div
+                  className="px-6 py-5 border-b border-gray-100"
+                  style={{ background: `linear-gradient(135deg, ${category.color}08, transparent)` }}
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <div
+                      className="w-10 h-10 rounded-xl flex items-center justify-center"
+                      style={{
+                        background: `linear-gradient(135deg, ${category.color}, ${category.color}cc)`,
+                        boxShadow: `0 4px 12px -3px ${category.color}50`,
+                      }}
+                    >
+                      <Icon className="w-5 h-5 text-white" strokeWidth={2.25} />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 leading-tight">
+                        {category.category}
+                      </h3>
+                      <p className="text-xs text-gray-500">{category.tagline}</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Tech list */}
+                <div className="p-6 space-y-3">
+                  {category.technologies.map((tech, techIndex) => (
+                    <motion.div
+                      key={tech.name}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: categoryIndex * 0.1 + techIndex * 0.05 }}
+                      className="flex items-center justify-between py-2.5 px-3 rounded-lg hover:bg-gray-50 transition-colors group"
+                    >
+                      <div className="flex items-center gap-3">
+                        {/* Color dot */}
+                        <div
+                          className="w-1.5 h-1.5 rounded-full flex-shrink-0 transition-all group-hover:scale-150"
+                          style={{ backgroundColor: category.color }}
+                        />
+                        <span className="text-gray-900 font-medium text-sm">{tech.name}</span>
+                      </div>
+                      <span className="text-xs text-gray-500">{tech.description}</span>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Footer count badge */}
+                <div className="px-6 pb-5">
+                  <div className="flex items-center justify-between pt-3 border-t border-gray-100 text-xs">
+                    <span className="text-gray-400">{category.technologies.length} technologies</span>
+                    <span
+                      className="font-mono font-semibold"
+                      style={{ color: category.color }}
+                    >
+                      Production-ready
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

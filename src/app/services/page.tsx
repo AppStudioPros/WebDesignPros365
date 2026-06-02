@@ -291,10 +291,10 @@ export default function ServicesPage() {
         </section>
       )}
 
-      {/* CATEGORY FILTER — sticky, pop colors, no emoji icon */}
-      <section className="py-6 sticky top-16 z-30 bg-white/90 backdrop-blur-xl border-b border-gray-200 shadow-sm">
+      {/* CATEGORY FILTER — inline (not sticky), aligned with card grid below */}
+      <section className="py-6 bg-white border-b border-gray-100">
         <div className="container-custom">
-          <div className="flex items-center gap-2 overflow-x-auto pb-1">
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 flex-wrap">
             {categories.map((category) => {
               const isActive = activeCategory === category.id;
               return (

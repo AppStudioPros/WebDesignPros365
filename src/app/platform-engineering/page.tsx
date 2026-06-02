@@ -17,6 +17,11 @@ import {
   ShieldCheck,
   Sparkles,
   ChevronDown,
+  ShieldOff,
+  Anchor,
+  UserCheck,
+  FileText,
+  BookOpenCheck,
 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -191,26 +196,31 @@ const modules = [
 const aciDifferentiators = [
   {
     title: 'No hallucination',
+    icon: ShieldOff,
     body:
       "Every AI response is grounded in workspace state, your documents, your data, or cited sources. If the system doesn't know, it says so. Hallucinations don't ship.",
   },
   {
     title: 'No drift',
+    icon: Anchor,
     body:
       "The AI cannot wander off the workspace context. Every exchange is anchored to a specific deal, customer, or campaign. No more 'wait, what were we talking about?' moments.",
   },
   {
     title: 'Always human-in-the-loop',
+    icon: UserCheck,
     body:
       "Auto-approve only what's pre-authorized. Everything else surfaces for your sign-off. The AI proposes; humans dispose. You stay in control of every outbound action.",
   },
   {
     title: 'Audit-trail-complete',
+    icon: FileText,
     body:
       'Every AI decision, every input, every output, every action recorded and exportable. The same compliance discipline we use on federal procurement contracts applies to your customer comms.',
   },
   {
     title: 'Methodology-bound',
+    icon: BookOpenCheck,
     body:
       "The AI operates within YOUR published methodology. Your brand voice, your sales playbook, your compliance constraints, all cited and verifiable. Not vibes. Verifiable doctrine.",
   },
@@ -477,23 +487,26 @@ export default function PlatformEngineeringPage() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
-            {aciDifferentiators.map((diff, i) => (
-              <motion.div
-                key={diff.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-              >
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 h-full">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8734E1] to-[#2F73EE] flex items-center justify-center mb-3">
-                    <Sparkles className="w-5 h-5 text-white" />
+            {aciDifferentiators.map((diff, i) => {
+              const Icon = diff.icon;
+              return (
+                <motion.div
+                  key={diff.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                >
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 h-full">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8734E1] to-[#2F73EE] flex items-center justify-center mb-3">
+                      <Icon className="w-5 h-5 text-white" strokeWidth={2.25} />
+                    </div>
+                    <h3 className="font-semibold text-white mb-2">{diff.title}</h3>
+                    <p className="text-xs text-white/70 leading-relaxed">{diff.body}</p>
                   </div>
-                  <h3 className="font-semibold text-white mb-2">{diff.title}</h3>
-                  <p className="text-xs text-white/70 leading-relaxed">{diff.body}</p>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
 
           <p className="text-center text-sm text-white/60 mt-8 max-w-2xl mx-auto">

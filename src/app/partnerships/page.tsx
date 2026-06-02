@@ -17,6 +17,10 @@ import {
   Rocket,
   Users,
   Check,
+  GitBranch,
+  Server,
+  LayoutDashboard,
+  Lock,
 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -78,23 +82,39 @@ const partnerCategories = [
 const adminFeatures = [
   {
     title: 'Vercel Deployment Pipeline',
+    icon: GitBranch,
+    color: '#000000',
+    badge: 'CI/CD',
     body:
       'Git push triggers preview deploys for every branch. Production deploys on merge to main. Sub-100ms global edge cache. Rollback in one click.',
+    proof: ['Sub-100ms edge', 'Zero-downtime', 'Instant rollback'],
   },
   {
     title: 'Multi-Environment Management',
+    icon: Server,
+    color: '#10B981',
+    badge: 'INFRA',
     body:
       'Production, preview, and development environments fully isolated. Per-environment env vars, domains, and access controls. Auto-promotion or gated promotion (your choice).',
+    proof: ['3 isolated envs', 'Per-env secrets', 'Gated promotion'],
   },
   {
     title: 'Custom Admin Dashboards',
+    icon: LayoutDashboard,
+    color: '#8734E1',
+    badge: 'OPS',
     body:
       'We build your team a custom admin panel that mirrors Vercel\'s dev UX but is scoped to your operations. CRM views, content workflows, deployment controls, all on one screen.',
+    proof: ['One pane of glass', 'CRM + content + deploys', 'Branded to your team'],
   },
   {
     title: 'Role-Based Access Control',
+    icon: Lock,
+    color: '#F59E0B',
+    badge: 'SECURITY',
     body:
       'Real RBAC out of the box. Owners, admins, content editors, support agents, read-only auditors. Every action audited.',
+    proof: ['5 default roles', 'Custom roles', 'Audit-trail-complete'],
   },
 ];
 
@@ -419,25 +439,59 @@ export default function PartnershipsPage() {
             </p>
           </motion.div>
 
-          {/* What we layer on top */}
+          {/* What we layer on top — 4 admin features with varied icons + proof chips */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto mt-12">
-            {adminFeatures.map((f, i) => (
-              <motion.div
-                key={f.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-              >
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 h-full">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8734E1] to-[#2F73EE] flex items-center justify-center mb-3">
-                    <Sparkles className="w-5 h-5 text-white" />
+            {adminFeatures.map((f, i) => {
+              const Icon = f.icon;
+              return (
+                <motion.div
+                  key={f.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                >
+                  <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 h-full hover:bg-white/10 transition-colors">
+                    {/* Top accent strip */}
+                    <div
+                      className="absolute top-0 left-0 right-0 h-0.5 rounded-t-2xl"
+                      style={{ background: `linear-gradient(90deg, ${f.color}, ${f.color}80, transparent)` }}
+                    />
+                    {/* Icon + badge row */}
+                    <div className="flex items-start justify-between mb-3">
+                      <div
+                        className="w-10 h-10 rounded-xl flex items-center justify-center"
+                        style={{
+                          background: `linear-gradient(135deg, ${f.color}, ${f.color}cc)`,
+                          boxShadow: `0 4px 12px -2px ${f.color}40`,
+                        }}
+                      >
+                        <Icon className="w-5 h-5 text-white" strokeWidth={2.25} />
+                      </div>
+                      <span
+                        className="text-[9px] font-mono uppercase tracking-wider px-2 py-1 rounded-md"
+                        style={{ background: `${f.color}25`, color: f.color }}
+                      >
+                        {f.badge}
+                      </span>
+                    </div>
+                    <h3 className="font-semibold text-white mb-2 text-sm">{f.title}</h3>
+                    <p className="text-xs text-white/70 leading-relaxed mb-4">{f.body}</p>
+                    {/* Proof chips */}
+                    <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/10">
+                      {f.proof.map((p) => (
+                        <span
+                          key={p}
+                          className="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-white/60 border border-white/10"
+                        >
+                          {p}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <h3 className="font-semibold text-white mb-2 text-sm">{f.title}</h3>
-                  <p className="text-xs text-white/70 leading-relaxed">{f.body}</p>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
