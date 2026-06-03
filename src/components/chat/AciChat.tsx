@@ -210,7 +210,7 @@ export function AciChat() {
               exit={{ scale: 0.6, opacity: 0 }}
               transition={{ duration: 0.15 }}
             >
-              <AiNodeOrb className="w-7 h-7" />
+              <AiNodeOrb className="w-12 h-12" />
             </motion.span>
           )}
         </AnimatePresence>
