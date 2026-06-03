@@ -63,23 +63,25 @@ const team: Person[] = [
   {
     name: 'Kelsi Strange',
     role: 'Design Lead',
-    bio: "Kelsi heads our design practice. She owns brand systems, visual identity, certification mark design, and the human-feel layer across every site we ship. She is the reason our work does not look like every other Next.js agency portfolio. When she is not on a build, she is mentoring on visual systems and conversion-focused UX.",
+    bio: "Kelsi has been on the team for 8+ years and heads our design practice. She owns brand systems, visual identity, certification mark design, and the human-feel layer across every site we ship. Trained as a designer and shipping production work on the same modern stack the rest of the team uses (Next.js, Vercel, Sanity, Tailwind), she is the reason our work does not look like every other Next.js agency portfolio. She has also been hands-on with AI engineering and coding since the team started building on the ACI platform, contributing to several of the patented Adaptive Compound Intelligence integrations that power our flagship ACI-Powered tier.",
     highlights: [
-      'Design Lead, Web Design Pros 365',
+      'Design Lead, Web Design Pros 365 (8+ years on the team)',
       'Brand systems + visual identity',
       'Certification mark and badge design',
-      'Conversion-focused UX',
+      'Conversion-focused UX across the full client roster',
+      'AI engineering + coding experience on the ACI platform',
     ],
   },
   {
     name: 'William Mocas',
     role: 'Strategic Partnerships',
-    bio: 'William runs strategic partnerships and channel relationships. With a background in enterprise sales and federal acquisition, he is the connection point between our engineering team and the agencies, contractors, and resellers we work with. He owns the channel-partner program and the federal-contractor partnership track.',
+    bio: "William has been on the team for 8+ years and runs strategic partnerships and channel relationships. With a background in enterprise sales and federal acquisition, he is the connection point between our engineering team and the agencies, contractors, and resellers we work with. He owns the channel-partner program and the federal-contractor partnership track, and he ships production code on the same modern stack the rest of the team uses (Next.js, Vercel, Supabase). Like the rest of the leadership trio, he has hands-on AI engineering and coding experience on the ACI platform, which lets him speak fluently to both the procurement side and the technical delivery side of every partnership conversation.",
     highlights: [
-      'Strategic Partnerships + Channel',
+      'Strategic Partnerships + Channel (8+ years on the team)',
       'Enterprise sales + federal acquisition background',
-      'Owns federal contractor partnership track',
+      'Owns the federal contractor partnership track',
       'Connects engineering with channel resellers',
+      'AI engineering + coding experience on the ACI platform',
     ],
   },
 ];
