@@ -52,7 +52,7 @@ const team: Person[] = [
   {
     name: 'Corey Strange',
     role: 'Founder & CTO',
-    bio: "Corey has been building on the web for 20+ years. He founded Web Design Pros 365 in 2005 and has been the technical lead on every meaningful project since. Beyond WDP365, he serves as Chief AI Officer and Chief Technology Officer for an SDVOSB federal contracting partner, where he architects AI systems for government acquisition workflows. He is also the named inventor on the parent ACI (Adaptive Compound Intelligence) patent, which underlies our flagship ACI-Powered service tier.",
+    bio: "Corey has been in the full-circle technical space for almost 30 years, including running the #1-rated independent IT company in Denver, CO for 26+ years. Full-stack developer and web designer since 2005. Top 1% cohort at Oxford AI University. Today he serves as Chief AI Officer and Chief Technology Officer for a federal contracting company, where he architects AI systems for government acquisition workflows. He is also the named inventor on the parent ACI (Adaptive Compound Intelligence) patent, which underlies our flagship ACI-Powered service tier.",
     highlights: [
       'Founder of Web Design Pros 365 (2005)',
       'Inventor, ACI (Adaptive Compound Intelligence) patent',
