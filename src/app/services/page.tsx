@@ -265,11 +265,6 @@ export default function ServicesPage() {
               viewport={{ once: true }}
               className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-10"
             >
-              <div className="flex-shrink-0">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#8734E1] to-[#BF5DE0] flex items-center justify-center shadow-xl">
-                  <Sparkles className="w-10 h-10 text-white" />
-                </div>
-              </div>
               <div className="flex-1 text-center md:text-left">
                 <Badge className="mb-2 bg-[#8734E1] text-white">Flagship</Badge>
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
@@ -281,7 +276,7 @@ export default function ServicesPage() {
                   <span className="text-gray-300">·</span>
                   <span>Includes SEO + AEO + GEO</span>
                   <span className="text-gray-300">·</span>
-                  <span>Patent-anchored</span>
+                  <span>Patent-protected</span>
                 </div>
               </div>
               <Link href={flagship.link || `/services/${flagship.slug.current}`} className="flex-shrink-0">
