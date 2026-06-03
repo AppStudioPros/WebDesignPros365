@@ -125,32 +125,40 @@ body {
   animation-delay: 1.5s;
 }
 
-/* Black text with a flowing gold shimmer running through it. */
-@keyframes gold-shimmer-text {
-  0%   { background-position: -150% 0; }
-  100% { background-position: 250% 0; }
+/* Static black text with a slow silver shimmer gleam sweeping across the letters.
+   Uses a pseudo-element overlay clipped to text so the underlying #111 fill stays
+   intact and only the gleam moves. */
+@keyframes silver-shimmer-sweep {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -100% 0; }
 }
 
 .shimmer-gold-text {
+  position: relative;
+  color: #111;
+  display: inline-block;
+}
+
+.shimmer-gold-text::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
   background-image: linear-gradient(
     100deg,
-    #111 0%,
-    #111 38%,
-    #B8860B 47%,
-    #FFD700 50%,
-    #FFF1A8 52%,
-    #FFD700 55%,
-    #B8860B 60%,
-    #111 68%,
-    #111 100%
+    transparent 30%,
+    rgba(220, 220, 230, 0.4) 42%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(220, 220, 230, 0.4) 58%,
+    transparent 70%
   );
-  background-size: 200% 100%;
+  background-size: 220% 100%;
   background-repeat: no-repeat;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  animation: gold-shimmer-text 4.5s linear infinite;
+  animation: silver-shimmer-sweep 8s linear infinite;
 }
 
 /* Logo marquee — smooth single-row scroll, no glitch. */

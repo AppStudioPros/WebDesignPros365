@@ -172,6 +172,7 @@ export default function PartnershipsPage() {
             </h1>
             <p
               className="shimmer-gold-text font-bold whitespace-nowrap mb-6 mx-auto"
+              data-text="We are the platform behind the curtains"
               style={{ fontSize: 'clamp(1.25rem, 2.5vw, 2rem)', lineHeight: 1.1, letterSpacing: '-0.01em' }}
             >
               We are the platform behind the curtains
