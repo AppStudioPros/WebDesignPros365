@@ -7,25 +7,25 @@ const steps = [
   {
     number: '01',
     title: 'Discovery',
-    description: 'We dive deep into your business goals, target audience, and competitive landscape.',
+    description: 'A 30-minute call to understand business goals, audience, constraints, and budget. Free.',
     icon: Compass,
     color: '#2F73EE',
-    duration: '1 week',
+    duration: '30 min',
     deliverable: 'Discovery brief',
   },
   {
     number: '02',
     title: 'Strategy',
-    description: 'Define the tech stack, features, and roadmap tailored to your needs.',
+    description: 'Tech stack, features, pricing tier, and timeline mapped to your goals. Fixed-price quote.',
     icon: FileSearch,
     color: '#8734E1',
-    duration: '1 week',
+    duration: '48 hours',
     deliverable: 'Fixed-price quote',
   },
   {
     number: '03',
     title: 'Design',
-    description: 'Stunning UI/UX designs that align with your brand identity, on the modern stack.',
+    description: 'UI/UX in Figma plus a reusable design system aligned to your brand identity.',
     icon: Palette,
     color: '#BF5DE0',
     duration: '2-3 weeks',
@@ -34,7 +34,7 @@ const steps = [
   {
     number: '04',
     title: 'Development',
-    description: 'Build with Next.js 16, TypeScript, Vercel Edge, and patented ACI integration.',
+    description: 'Build on Next.js 16, TypeScript, and Vercel Edge with patented ACI integration where it fits.',
     icon: Code2,
     color: '#f59e0b',
     duration: '4-8 weeks',
@@ -46,7 +46,7 @@ const steps = [
     description: 'QA across devices, browsers, Core Web Vitals, and WCAG 2.2 AA accessibility.',
     icon: Bug,
     color: '#10b981',
-    duration: '1 week',
+    duration: '3-5 days',
     deliverable: 'Audit report + fixes',
   },
   {
@@ -81,7 +81,7 @@ export default function ProcessSection() {
             How We <span className="gradient-text">Deliver</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            A proven 6-step process. No mystery, no scope creep, no surprises.
+            Six steps. Same on every project. Fixed-price quote in 48 hours, working staging by week 4-6.
           </p>
         </motion.div>
 

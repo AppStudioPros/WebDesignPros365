@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, ArrowRight, Sparkles } from 'lucide-react';
+import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import CTASection from '@/components/sections/CTASection';
 
@@ -147,8 +148,8 @@ export default function PortfolioPage() {
                 key={project.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ delay: Math.min(index * 0.05, 0.4) }}
               >
                 <a
                   href={project.url}
@@ -197,6 +198,52 @@ export default function PortfolioPage() {
                 </a>
               </motion.div>
             ))}
+
+            {/* "Yours next" CTA card — fills the orphan grid slot when projects.length % 3 !== 0 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ delay: 0.1 }}
+              className="md:col-span-1 lg:col-span-2"
+            >
+              <Link
+                href="/contact"
+                className="group block h-full"
+              >
+                <div className="mb-3">
+                  <p className="text-xs font-semibold uppercase tracking-wider mb-1 text-[#8734E1]">
+                    Your Project
+                  </p>
+                  <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-[#8734E1] transition-colors flex items-center gap-2">
+                    Yours next?
+                    <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                  </h3>
+                  <p className="text-sm text-gray-500 line-clamp-2">
+                    Free 30-minute discovery call. Fixed-price quote within 48 hours.
+                  </p>
+                </div>
+                <div
+                  className="relative w-full h-[320px] rounded-xl overflow-hidden border-2 border-dashed border-gray-200 group-hover:border-[#8734E1] transition-all duration-300 bg-gradient-to-br from-[#f0e6fb] via-white to-[#f0e6fb] flex items-center justify-center"
+                >
+                  <div className="text-center px-8">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#8734E1] to-[#2F73EE] mx-auto mb-4 flex items-center justify-center shadow-xl shadow-[#8734E1]/30 group-hover:scale-110 transition-transform">
+                      <Sparkles className="w-8 h-8 text-white" strokeWidth={2.25} />
+                    </div>
+                    <h4 className="text-2xl font-bold text-gray-900 mb-2">
+                      Let&apos;s build yours.
+                    </h4>
+                    <p className="text-sm text-gray-600 mb-6 max-w-sm mx-auto">
+                      We&apos;re currently taking on builds for Q2 + Q3. Next.js, AI integration, ACI platform engineering, or all three.
+                    </p>
+                    <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#8734E1] text-white text-sm font-semibold shadow-lg group-hover:shadow-xl group-hover:gap-3 transition-all">
+                      Start a Project
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>

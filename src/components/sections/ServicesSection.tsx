@@ -3,12 +3,13 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, X, Check, Sparkles } from 'lucide-react';
+import { ArrowRight, X, Check } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { GlassIcon } from '@/components/ui/glass-icon';
 import { services } from '@/data/services';
+import { getServiceIcon } from '@/lib/service-icons';
 
 function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0] | null; isOpen: boolean; onClose: () => void }) {
   if (!service) return null;
@@ -43,7 +44,7 @@ function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0
                   <X className="w-5 h-5" />
                 </button>
                 <div className="flex items-start gap-4">
-                  <GlassIcon Icon={Sparkles} color={service.color} size="w-16 h-16" iconSize="w-8 h-8" />
+                  <GlassIcon Icon={getServiceIcon(service._id)} color={service.color} size="w-16 h-16" iconSize="w-8 h-8" />
                   <div className="flex-1">
                     {service.isFlagship && (
                       <Badge className="mb-2 bg-[#8734E1] text-white">Flagship Service</Badge>
@@ -142,19 +143,27 @@ export default function ServicesSection() {
             >
               <Card
                 onClick={() => setSelectedService(service)}
-                className={`h-full p-6 group cursor-pointer bg-white border-gray-200 hover:border-[#8734E1]/30 hover:shadow-lg transition-all ${
+                className={`h-full p-6 group cursor-pointer bg-white border-gray-200 hover:border-[#8734E1]/30 hover:shadow-lg transition-all relative overflow-hidden ${
                   service.isFlagship ? 'border-[#8734E1] bg-[#f0e6fb]' : ''
                 }`}
               >
-                <CardContent className="p-0">
-                  {service.isFlagship && (
-                    <Badge className="mb-4 bg-[#8734E1] text-white">Flagship</Badge>
-                  )}
+                {/* Top accent gradient bar in service color */}
+                <div
+                  className="absolute top-0 left-0 right-0 h-1"
+                  style={{ background: `linear-gradient(90deg, ${service.color}, ${service.color}80)` }}
+                />
+                <CardContent className="p-0 pt-2">
+                  <div className="flex items-start justify-between mb-4">
+                    <GlassIcon Icon={getServiceIcon(service._id)} color={service.color} />
+                    {service.isFlagship && (
+                      <Badge className="bg-[#8734E1] text-white">Flagship</Badge>
+                    )}
+                  </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[#8734E1] transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-sm text-gray-600 mb-4">{service.shortDescription}</p>
-                  <div className="flex items-center text-sm text-[#8734E1] group-hover:gap-2 transition-all">
+                  <div className="flex items-center text-sm font-medium group-hover:gap-2 transition-all" style={{ color: service.color }}>
                     Learn more
                     <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                   </div>

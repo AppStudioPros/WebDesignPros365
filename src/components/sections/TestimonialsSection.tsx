@@ -1,43 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Star, Quote } from 'lucide-react';
-import { Card } from '@/components/ui/card';
-
-const testimonials = [
-  {
-    content: 'Web Design Pros 365 transformed our online presence. Their expertise in Next.js and performance optimization resulted in a 40% increase in conversions.',
-    author: 'Ilona Bower',
-    authorTitle: 'CEO',
-    company: 'Sculpted Beauty',
-    rating: 5,
-    color: '#8734E1',
-  },
-  {
-    content: 'The GEO work they did put us ahead of competitors in AI search results. Real impact, fast turnaround.',
-    author: 'John Cressey',
-    authorTitle: 'Marketing Director',
-    company: 'PocketFiler',
-    rating: 5,
-    color: '#2F73EE',
-  },
-  {
-    content: 'Exceptional attention to detail and technical expertise. They delivered our e-commerce platform ahead of schedule with outstanding results.',
-    author: 'Chelsea Johnson',
-    authorTitle: 'Founder',
-    company: 'Fast Track Solutions',
-    rating: 5,
-    color: '#f59e0b',
-  },
-  {
-    content: 'Their AI chatbot integration increased our customer support efficiency by 60%. Professional team that truly understands modern web development.',
-    author: 'Larry Book',
-    authorTitle: 'CTO',
-    company: 'Contractor Guardians',
-    rating: 5,
-    color: '#BF5DE0',
-  },
-];
 
 // All logos served from /public/logos/ — locally hosted SVGs, no CDN dependency.
 // Verified-working file set: 26 real brand SVGs downloaded from Devicon, Lobehub, and Simple Icons.
@@ -147,61 +110,7 @@ export default function TestimonialsSection() {
           </p>
         </motion.div>
 
-        {/* TESTIMONIALS HEADER */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">
-            Testimonials
-          </div>
-          <h2 className="heading-lg mb-4">
-            Trusted by <span className="gradient-text">Industry Leaders</span>
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            See what our clients say about working with Web Design Pros 365.
-          </p>
-        </motion.div>
-
-        {/* TESTIMONIAL CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.author}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <Card className="h-full p-6 bg-white border-gray-200 hover:shadow-lg transition-shadow">
-                <Quote className="w-10 h-10 mb-4" style={{ color: `${testimonial.color}30` }} />
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-[#f59e0b] text-[#f59e0b]" />
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-6">"{testimonial.content}"</p>
-                <div className="flex items-center gap-4">
-                  <div
-                    className="w-12 h-12 rounded-full flex items-center justify-center text-white font-semibold"
-                    style={{ background: `linear-gradient(135deg, ${testimonial.color}, ${testimonial.color}80)` }}
-                  >
-                    {testimonial.author.split(' ').map((n) => n[0]).join('')}
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">{testimonial.author}</p>
-                    <p className="text-sm text-gray-500">
-                      {testimonial.authorTitle}, {testimonial.company}
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+        {/* Testimonials removed — will reintroduce only with real, attributable client reviews (Google/BBB/case studies). */}
       </div>
     </section>
   );

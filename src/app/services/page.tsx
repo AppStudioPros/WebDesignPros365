@@ -19,6 +19,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { GlassIcon } from '@/components/ui/glass-icon';
 import { services } from '@/data/services';
+import { getServiceIcon } from '@/lib/service-icons';
 import CTASection from '@/components/sections/CTASection';
 
 const categories = [
@@ -41,9 +42,9 @@ const stats: Array<{
   staticValue?: string;
   duration?: number;
 }> = [
-  { label: 'Years on the modern stack', type: 'numeric', value: 20, suffix: '+', duration: 1800 },
-  { label: 'Services + pages on offer', type: 'numeric', value: 25, suffix: '+', duration: 2200 },
-  { label: 'Client satisfaction', type: 'numeric', value: 98, suffix: '%', duration: 2400 },
+  { label: 'Years building for the web', type: 'numeric', value: 20, suffix: '+', duration: 1800 },
+  { label: 'Production services on offer', type: 'numeric', value: 12, suffix: '', duration: 2000 },
+  { label: 'BBB rating', type: 'static', value: 0, staticValue: 'A+' },
   { label: 'Average build window', type: 'static', value: 0, staticValue: '4-12 wks' },
 ];
 
@@ -126,7 +127,10 @@ function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0
                     className="w-14 h-14 rounded-xl flex items-center justify-center"
                     style={{ backgroundColor: `${service.color}20`, color: service.color }}
                   >
-                    <Layers className="w-6 h-6" />
+                    {(() => {
+                      const SvcIcon = getServiceIcon(service._id);
+                      return <SvcIcon className="w-6 h-6" strokeWidth={2.25} />;
+                    })()}
                   </div>
                   <div className="flex-1">
                     {service.isFlagship && (
@@ -240,8 +244,8 @@ export default function ServicesPage() {
               </span>
             </h1>
             <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10">
-              From modern AI integration to performance optimization, we deliver everything you need
-              to succeed online. Patent-anchored. Audit-trail-complete. Built for what comes next.
+              Patented ACI architecture, modern stack, and the same team that ships every project.
+              Fixed-price quotes within 48 hours. No mystery, no ghosting mid-build.
             </p>
 
             {/* STATS ROW with count-up animation */}
@@ -344,13 +348,7 @@ export default function ServicesPage() {
                   <CardContent className="p-0 pt-3">
                     <div className="flex items-start justify-between mb-4">
                       <GlassIcon
-                        Icon={
-                          service.category === 'visibility' ? Sparkles :
-                          service.category === 'ai' ? Workflow :
-                          service.category === 'program' ? Layers :
-                          service.category === 'development' ? Code2 :
-                          Zap
-                        }
+                        Icon={getServiceIcon(service._id)}
                         color={service.color}
                       />
                       {service.isFlagship && (
@@ -408,8 +406,8 @@ export default function ServicesPage() {
               Four <span className="gradient-text">steps</span> from call to launch
             </h2>
             <p className="text-gray-600">
-              Every engagement follows the same pattern. No mystery, no surprises, no scope creep
-              that quietly grows by 40% mid-build.
+              Same process on every engagement. You know what happens this week, next week, and at
+              launch. No mid-build scope expansion. No ghosting after kickoff.
             </p>
           </motion.div>
 

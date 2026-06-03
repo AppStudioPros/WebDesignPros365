@@ -22,6 +22,9 @@ import {
   UserCheck,
   FileText,
   BookOpenCheck,
+  MousePointerClick,
+  Users,
+  LayoutGrid,
 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -33,21 +36,25 @@ import { HighLevelDemo } from '@/components/sections/HighLevelDemo';
 const painPoints = [
   {
     title: '"Click here, click there, click that..."',
+    icon: MousePointerClick,
     body:
       "Every support call ends with the agency teaching YOU how to use HighLevel. That's not service. That's billable training on someone else's broken UX.",
   },
   {
-    title: 'AI that sounds like a printer support script',
+    title: 'AI that reads like a printer support script',
+    icon: Bot,
     body:
       'The "AI" bolted onto HighLevel is a thin wrapper over commodity LLMs. It deflects, redirects, and never actually does the work. You\'re paying for a chatbot pretending to be intelligent.',
   },
   {
     title: 'Outsourced to Upwork the next day',
+    icon: Users,
     body:
       'The agency you pay $500-$2,000/month for "HighLevel support" hires Upwork freelancers to handle your actual builds. You\'re paying retail for wholesale work.',
   },
   {
-    title: 'A flaming dumpster fire of UI',
+    title: 'UI built for accountants, not humans',
+    icon: LayoutGrid,
     body:
       "Fourteen years of feature accretion. Twenty-seven tabs to find a setting. Workflows that break when you sneeze. Your team hates opening it.",
   },
@@ -322,20 +329,33 @@ export default function PlatformEngineeringPage() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {painPoints.map((point, i) => (
-              <motion.div
-                key={point.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <Card className="p-6 h-full border-red-100 bg-red-50/30">
-                  <h3 className="font-semibold text-gray-900 mb-2">{point.title}</h3>
-                  <p className="text-sm text-gray-700">{point.body}</p>
-                </Card>
-              </motion.div>
-            ))}
+            {painPoints.map((point, i) => {
+              const PainIcon = point.icon;
+              return (
+                <motion.div
+                  key={point.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.15 }}
+                  transition={{ delay: i * 0.08 }}
+                >
+                  <Card className="p-6 h-full border-red-200 bg-red-50/30 hover:shadow-md transition-shadow relative overflow-hidden">
+                    {/* Left accent strip in red */}
+                    <div className="absolute top-0 left-0 bottom-0 w-1 bg-red-400" />
+                    <div className="flex items-start gap-4">
+                      {/* Icon medallion */}
+                      <div className="w-11 h-11 rounded-xl bg-red-100 border border-red-200 flex items-center justify-center flex-shrink-0">
+                        <PainIcon className="w-5 h-5 text-red-600" strokeWidth={2.25} />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-2">{point.title}</h3>
+                        <p className="text-sm text-gray-700 leading-relaxed">{point.body}</p>
+                      </div>
+                    </div>
+                  </Card>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -433,7 +453,7 @@ export default function PlatformEngineeringPage() {
               Everything HighLevel does. <span className="gradient-text">Built modern.</span>
             </h2>
             <p className="text-gray-600">
-              Eight production modules. Built on the modern Next.js 16 + Supabase + Vercel Edge stack with
+              Six production modules. Built on the modern Next.js 16 + Supabase + Vercel Edge stack with
               patented ACI AI layered through every interaction.
             </p>
           </motion.div>
