@@ -29,7 +29,7 @@ const claims = [
 const faqs = [
   {
     q: 'What does the ACI patent actually cover?',
-    a: 'U.S. provisional patent #63/987,765 (with non-provisional utility filed Feb 26, 2026) covers the 5-layer Adaptive Compound Intelligence architecture: Individual Intelligence, Knowledge Extraction, Organizational Memory, Compound Reasoning, and Permission + Delivery. The patent treats this as a single integrated system where each layer feeds the next. Commercial embodiments include Aetherios (commercial Company OS), Acumen-7 (federal procurement), MarqetCore (real estate), and the customer-facing applications we ship for clients.',
+    a: 'Our patent covers the 5-layer Adaptive Compound Intelligence architecture: Individual Intelligence, Knowledge Extraction, Organizational Memory, Compound Reasoning, and Permission + Delivery. The patent treats this as a single integrated system where each layer feeds the next. Commercial embodiments include Aetherios (commercial Company OS), Acumen-7 (federal procurement), MarqetCore (real estate), and the customer-facing applications we ship for clients.',
   },
   {
     q: 'How is ACI different from "RAG" or "agentic AI" terms I have heard?',
@@ -63,7 +63,7 @@ export default function AciPlatformPage() {
             <h1 className="heading-xl mb-6 text-white">Patented AI architecture. <span className="bg-gradient-to-r from-[#BF5DE0] to-[#2F73EE] bg-clip-text text-transparent">Five layers. One engine.</span></h1>
             <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8">
               Adaptive Compound Intelligence is the patented AI architecture underlying every AI system we
-              ship. U.S. provisional patent #63/987,765. Five layers that combine to deliver no hallucination,
+              ship. Five layers that combine to deliver no hallucination,
               no drift, always human-in-the-loop, audit-trail-complete, and methodology-bound AI.
             </p>
             <Link href="/contact?topic=aci-platform">
@@ -71,7 +71,7 @@ export default function AciPlatformPage() {
                 Talk to Us About ACI <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
-            <p className="text-xs text-white/60 mt-4">U.S. Provisional Patent #63/987,765 — Adaptive Compound Intelligence Architecture</p>
+            <p className="text-xs text-white/60 mt-4">Patented Adaptive Compound Intelligence Architecture</p>
           </motion.div>
         </div>
       </section>

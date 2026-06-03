@@ -112,7 +112,7 @@ export const services: Service[] = [
     _id: '2c',
     title: 'ACI Platform',
     slug: { current: 'aci-platform' },
-    shortDescription: 'The patented 5-layer Adaptive Compound Intelligence architecture. Patent #63/987,765.',
+    shortDescription: 'The patented 5-layer Adaptive Compound Intelligence architecture under every AI thing we ship.',
     fullDescription: 'ACI is our patented AI architecture: Individual Intelligence, Knowledge Extraction, Organizational Memory, Compound Reasoning, Permission + Delivery. Five layers that combine to deliver no hallucination, no drift, always human-in-the-loop, audit-trail-complete, and methodology-bound AI. Federal-grade discipline applied to commercial work.',
     features: [
       '5-layer patented architecture',

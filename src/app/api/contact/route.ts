@@ -6,7 +6,7 @@ const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KE
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, company, message } = body;
+    const { name, email, phone, company, projectType, message } = body;
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -27,12 +27,14 @@ export async function POST(request: NextRequest) {
       from: 'Web Design Pros 365 <onboarding@resend.dev>',
       to: ['info@webdesignpros365.com'],
       replyTo: email,
-      subject: `New Contact Form Submission from ${name}`,
+      subject: `[WDP365 Lead] ${name}${company ? ' · ' + company : ''}${projectType && !projectType.startsWith('—') ? ' · ' + projectType : ''}`,
       html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
+        ${phone ? `<p><strong>Phone:</strong> <a href="tel:${phone}">${phone}</a></p>` : ''}
         ${company ? `<p><strong>Company:</strong> ${company}</p>` : ''}
+        ${projectType && !projectType.startsWith('—') ? `<p><strong>Project type:</strong> ${projectType}</p>` : ''}
         <p><strong>Message:</strong></p>
         <p>${message.replace(/\n/g, '<br>')}</p>
       `,

@@ -40,48 +40,50 @@ export function CookieBanner() {
     <AnimatePresence>
       {visible && (
         <motion.div
-          initial={{ y: 100, opacity: 0 }}
+          initial={{ y: 80, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 100, opacity: 0 }}
+          exit={{ y: 80, opacity: 0 }}
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-          className="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:bottom-6 md:max-w-md z-50"
+          className="fixed bottom-0 left-0 right-0 z-50"
           role="dialog"
           aria-live="polite"
           aria-label="Cookie consent"
         >
-          <div className="bg-white border border-gray-200 rounded-2xl shadow-2xl p-5">
-            <div className="flex items-start gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-[#f0e6fb] flex items-center justify-center flex-shrink-0">
-                <Cookie className="w-5 h-5 text-[#8734E1]" strokeWidth={2} />
+          <div className="bg-white border-t border-gray-200 shadow-2xl">
+            <div className="container-custom py-3">
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6">
+                {/* Icon + copy */}
+                <div className="flex items-center gap-3 flex-1 min-w-0">
+                  <div className="w-9 h-9 rounded-xl bg-[#f0e6fb] flex items-center justify-center flex-shrink-0">
+                    <Cookie className="w-4 h-4 text-[#8734E1]" strokeWidth={2.25} />
+                  </div>
+                  <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
+                    <span className="font-semibold text-gray-900">We use cookies.</span>{' '}
+                    Essential cookies keep the site running; analytics cookies help us learn what's
+                    useful. You choose.{' '}
+                    <Link href="/privacy" className="text-[#8734E1] hover:underline whitespace-nowrap">
+                      Privacy policy
+                    </Link>
+                  </p>
+                </div>
+                {/* Two buttons, equal visual weight */}
+                <div className="flex items-center gap-2 flex-shrink-0 w-full md:w-auto">
+                  <button
+                    onClick={() => handleConsent('rejected')}
+                    className="flex-1 md:flex-none inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-900 text-sm font-medium transition-colors"
+                  >
+                    <X className="w-4 h-4" strokeWidth={2.25} />
+                    Reject All
+                  </button>
+                  <button
+                    onClick={() => handleConsent('accepted')}
+                    className="flex-1 md:flex-none inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-gradient-to-r from-[#8734E1] to-[#BF5DE0] hover:opacity-90 text-white text-sm font-medium transition-opacity"
+                  >
+                    <Check className="w-4 h-4" strokeWidth={2.25} />
+                    Accept All
+                  </button>
+                </div>
               </div>
-              <div className="flex-1">
-                <h3 className="text-sm font-semibold text-gray-900 mb-1">We use cookies</h3>
-                <p className="text-xs text-gray-600 leading-relaxed">
-                  Essential cookies keep the site working. Analytics cookies help us understand
-                  what content is useful. You choose.{' '}
-                  <Link href="/privacy" className="text-[#8734E1] hover:underline">
-                    Privacy policy
-                  </Link>
-                  .
-                </p>
-              </div>
-            </div>
-            {/* Two buttons, equal visual weight, side by side */}
-            <div className="grid grid-cols-2 gap-2">
-              <button
-                onClick={() => handleConsent('rejected')}
-                className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-900 text-sm font-medium transition-colors"
-              >
-                <X className="w-4 h-4" strokeWidth={2.25} />
-                Reject All
-              </button>
-              <button
-                onClick={() => handleConsent('accepted')}
-                className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-gradient-to-r from-[#8734E1] to-[#BF5DE0] hover:opacity-90 text-white text-sm font-medium transition-opacity"
-              >
-                <Check className="w-4 h-4" strokeWidth={2.25} />
-                Accept All
-              </button>
             </div>
           </div>
         </motion.div>

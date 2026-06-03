@@ -208,8 +208,8 @@ export default function PartnershipsPage() {
               <div className="text-sm text-gray-500">Projects shipped</div>
             </div>
             <div>
-              <div className="text-4xl font-bold gradient-text mb-1">8</div>
-              <div className="text-sm text-gray-500">Partner categories</div>
+              <div className="text-4xl font-bold gradient-text mb-1">A+</div>
+              <div className="text-sm text-gray-500">BBB rating</div>
             </div>
             <div>
               <div className="text-4xl font-bold gradient-text mb-1">20+</div>
@@ -255,7 +255,7 @@ export default function PartnershipsPage() {
                       <GlassIcon Icon={Icon} color={cat.color} />
                     </div>
                     <h3 className="font-semibold text-gray-900 mb-2">{cat.name}</h3>
-                    <p className="text-xs text-gray-500 italic">{cat.examples}</p>
+                    <p className="text-sm text-gray-600 leading-relaxed">{cat.examples}</p>
                   </Card>
                 </motion.div>
               );

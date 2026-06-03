@@ -530,7 +530,7 @@ export default function PlatformEngineeringPage() {
           </div>
 
           <p className="text-center text-sm text-white/60 mt-8 max-w-2xl mx-auto">
-            Based on U.S. provisional patent #63/987,765, Adaptive Compound Intelligence architecture.
+            Built on patented Adaptive Compound Intelligence architecture.
           </p>
         </div>
       </section>

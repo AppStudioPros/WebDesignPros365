@@ -30,7 +30,7 @@ const howWeHelp = [
 ];
 
 const advantages = [
-  'Patented ACI architecture (Patent #63/987,765) under every AI deployment',
+  'Patented ACI architecture under every AI deployment',
   'Audit-trail-complete responses (protest-defensible)',
   'Methodology-bound AI (citable to FAR / VAAR / agency-specific doctrine)',
   'No hallucination, no drift, always human-in-the-loop',

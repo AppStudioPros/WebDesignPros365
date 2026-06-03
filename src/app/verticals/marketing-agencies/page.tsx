@@ -33,7 +33,7 @@ const howWeHelp = [
 ];
 
 const advantages = [
-  'Patented ACI architecture (Patent #63/987,765) for the real-AI layer',
+  'Patented ACI architecture for the real-AI layer',
   'Full HighLevel feature replacement scoped in our Platform Engineering practice',
   'Real-world experience: we have helped agencies leave HighLevel for custom builds',
   'Per-location rent eliminated (one-time build + retainer instead)',

@@ -56,7 +56,7 @@ const faqs = [
   },
   {
     q: 'What is ACI and why does it matter?',
-    a: 'ACI (Adaptive Compound Intelligence) is the patented 5-layer architecture under everything we ship. U.S. provisional patent #63/987,765. The five layers: Individual Intelligence, Knowledge Extraction, Organizational Memory, Compound Reasoning, and Permission + Delivery. The result is AI with audit-trail-complete responses, methodology binding, and human-in-the-loop guarantees. Wrappers cannot do this.',
+    a: 'ACI (Adaptive Compound Intelligence) is our patented 5-layer architecture under everything we ship. The five layers: Individual Intelligence, Knowledge Extraction, Organizational Memory, Compound Reasoning, and Permission + Delivery. The result is AI with audit-trail-complete responses, methodology binding, and human-in-the-loop guarantees. Wrappers cannot do this.',
   },
   {
     q: 'Can you build on top of OpenAI / Claude / Gemini APIs?',

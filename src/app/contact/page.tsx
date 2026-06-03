@@ -16,11 +16,27 @@ const contactInfo = [
   { icon: MapPin, label: 'Location', value: 'Denver, Colorado', href: '#' },
 ];
 
+const projectTypes = [
+  '— Pick the closest fit —',
+  'Marketing website (Next.js + Sanity)',
+  'Web app or SaaS platform',
+  'AI integration on existing site',
+  'Custom AI / ACI platform engagement',
+  'HighLevel replacement / platform engineering',
+  'SEO + AEO + GEO (AI Visibility Stack)',
+  'WordPress migration to modern stack',
+  'Federal contracting / GovCon project',
+  'Partnership inquiry',
+  'Other / not sure yet',
+];
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     company: '',
+    projectType: projectTypes[0],
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -39,8 +55,15 @@ export default function ContactPage() {
       const data = await response.json();
 
       if (response.ok) {
-        toast.success('Message sent successfully! We\'ll get back to you soon.');
-        setFormData({ name: '', email: '', company: '', message: '' });
+        toast.success('Message sent. We respond same business day.');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          projectType: projectTypes[0],
+          message: '',
+        });
       } else {
         toast.error(data.error || 'Failed to send message. Please try again.');
       }
@@ -66,7 +89,8 @@ export default function ContactPage() {
               Let&apos;s <span className="gradient-text">Connect</span>
             </h1>
             <p className="text-lg text-gray-600">
-              Ready to start your project? Get in touch with our team.
+              Tell us about your project. We respond same business day and most quotes go out
+              within 48 hours. Free 30-minute discovery call, no commitment.
             </p>
           </motion.div>
         </div>
@@ -83,7 +107,7 @@ export default function ContactPage() {
             >
               <Card className="p-8">
                 <h2 className="heading-md mb-6">Send us a message</h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">Name *</label>
@@ -106,14 +130,43 @@ export default function ContactPage() {
                       />
                     </div>
                   </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Phone <span className="text-gray-400 font-normal">(optional)</span>
+                      </label>
+                      <Input
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        placeholder="+1 (xxx) xxx-xxxx"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Company <span className="text-gray-400 font-normal">(optional)</span>
+                      </label>
+                      <Input
+                        type="text"
+                        value={formData.company}
+                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        placeholder="Your company name"
+                      />
+                    </div>
+                  </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Company</label>
-                    <Input
-                      type="text"
-                      value={formData.company}
-                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      placeholder="Your company name"
-                    />
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Project type</label>
+                    <select
+                      value={formData.projectType}
+                      onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-gray-700 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    >
+                      {projectTypes.map((t) => (
+                        <option key={t} value={t}>
+                          {t}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Message *</label>
@@ -121,8 +174,8 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       required
-                      rows={5}
-                      placeholder="Tell us about your project..."
+                      rows={7}
+                      placeholder="What are you trying to build? Rough timeline? Existing stack we should know about?"
                     />
                   </div>
                   <Button
@@ -148,10 +201,10 @@ export default function ContactPage() {
               className="space-y-8"
             >
               <div>
-                <h2 className="heading-md mb-6">Get in touch</h2>
+                <h2 className="heading-md mb-6">Reach us directly</h2>
                 <p className="text-gray-600 mb-8">
-                  Have a question or want to discuss your project? Reach out to us directly
-                  or fill out the form and we&apos;ll get back to you within 24 hours.
+                  Prefer email or phone? Use the channels below. Same business-day response on
+                  email weekdays, voicemail returned within 4 hours.
                 </p>
               </div>
 

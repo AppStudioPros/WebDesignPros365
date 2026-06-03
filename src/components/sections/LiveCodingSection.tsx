@@ -122,7 +122,7 @@ const terminalLines = [
   { kind: 'cmd', text: '$ curl -s https://webdesignpros365.com/llms.txt | head -3' },
   { kind: 'info', text: '   # Web Design Pros 365' },
   { kind: 'info', text: '   > AI-native web development agency. Next.js 16 + React 19 + Vercel...' },
-  { kind: 'ok', text: '   Patent #63/987,765 · ACI architecture active' },
+  { kind: 'ok', text: '   ACI architecture active · patent-protected' },
 ];
 
 function CodePane({ frameIndex }: { frameIndex: number }) {

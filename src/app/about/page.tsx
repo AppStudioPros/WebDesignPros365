@@ -52,10 +52,10 @@ const team: Person[] = [
   {
     name: 'Corey Strange',
     role: 'Founder & CTO',
-    bio: "Corey has been building on the web for 20+ years. He founded Web Design Pros 365 in 2005 and has been the technical lead on every meaningful project since. Beyond WDP365, he serves as Chief AI Officer and Chief Technology Officer for an SDVOSB federal contracting partner, where he architects AI systems for government acquisition workflows. He is also the named inventor on the parent ACI (Adaptive Compound Intelligence) provisional patent (#63/987,765, U.S. Patent Office, filed 2026), which underlies our flagship ACI-Powered service tier.",
+    bio: "Corey has been building on the web for 20+ years. He founded Web Design Pros 365 in 2005 and has been the technical lead on every meaningful project since. Beyond WDP365, he serves as Chief AI Officer and Chief Technology Officer for an SDVOSB federal contracting partner, where he architects AI systems for government acquisition workflows. He is also the named inventor on the parent ACI (Adaptive Compound Intelligence) patent, which underlies our flagship ACI-Powered service tier.",
     highlights: [
       'Founder of Web Design Pros 365 (2005)',
-      'Inventor, ACI provisional patent #63/987,765',
+      'Inventor, ACI (Adaptive Compound Intelligence) patent',
       'CAO + CTO of an SDVOSB federal contracting partner',
       'Architect on every Lucid Tech production system',
     ],
@@ -97,13 +97,12 @@ export default function AboutPage() {
             className="max-w-3xl mx-auto text-center"
           >
             <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">About Us</Badge>
-            <h1 className="heading-xl mb-6">
+            <h1 className="heading-xl mb-6 max-w-2xl mx-auto leading-tight">
               Web design that <span className="gradient-text">does the work.</span>
             </h1>
-            <p className="text-lg text-gray-600">
-              We are a small Denver-based team that ships production websites and platforms on a
-              modern AI-native stack. No theme shops, no offshore fulfillment, no "we'll get back
-              to you next month."
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              A small Denver-based team shipping production websites and platforms on a modern
+              stack. No theme shops, no offshore fulfillment, no &ldquo;we&rsquo;ll get back to you next month.&rdquo;
             </p>
           </motion.div>
         </div>
@@ -219,7 +218,7 @@ export default function AboutPage() {
                 <Sparkles className="w-8 h-8 text-[#BF5DE0] mb-3" />
                 <h3 className="font-semibold text-white mb-2">Patented architecture</h3>
                 <p className="text-sm text-white/70 leading-relaxed">
-                  ACI #63/987,765 covers a 5-layer Adaptive Compound Intelligence stack.
+                  Our ACI patent covers a 5-layer Adaptive Compound Intelligence stack.
                   Filed U.S. provisional patent. Real IP under the hood, not a wrapper.
                 </p>
               </div>
