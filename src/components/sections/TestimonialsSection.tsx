@@ -18,7 +18,7 @@ const logos: LogoChip[] = [
   { name: 'TypeScript', file: 'typescript' },
   { name: 'Python', file: 'python' },
   { name: 'Node.js', file: 'nodejs' },
-  // AI providers (Lobehub-sourced for color brand-mark accuracy)
+  // AI providers
   { name: 'Anthropic', file: 'anthropic' },
   { name: 'OpenAI', file: 'openai' },
   { name: 'Claude', file: 'claude' },
@@ -29,19 +29,27 @@ const logos: LogoChip[] = [
   // CMS
   { name: 'Sanity', file: 'sanity' },
   { name: 'Contentful', file: 'contentful' },
-  // Commerce
+  // Commerce + shipping
   { name: 'Shopify', file: 'shopify' },
+  { name: 'WooCommerce', file: 'woocommerce' },
   { name: 'WordPress', file: 'wordpress' },
-  { name: 'Stripe', file: 'stripe' },
+  { name: 'Shippo', file: 'shippo' },
   // Payments + fintech
+  { name: 'Stripe', file: 'stripe' },
   { name: 'Brex', file: 'brex' },
+  { name: 'Wave', file: 'wave' },
   // CRM
   { name: 'HubSpot', file: 'hubspot' },
   { name: 'Salesforce', file: 'salesforce' },
-  // Comms
+  // Workspace + comms
+  { name: 'Slack', file: 'slack' },
+  { name: 'Google Workspace', file: 'googleworkspace' },
+  { name: 'Zapier', file: 'zapier' },
   { name: 'Twilio', file: 'twilio' },
   { name: 'Resend', file: 'resend' },
-  // Tools
+  // Social + recruiting
+  { name: 'LinkedIn', file: 'linkedin' },
+  // Dev tools
   { name: 'GitHub', file: 'github' },
   { name: 'Figma', file: 'figma' },
   { name: 'Notion', file: 'notion' },
