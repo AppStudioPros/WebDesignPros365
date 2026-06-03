@@ -166,10 +166,16 @@ export default function PartnershipsPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Partnerships</Badge>
-            <h1 className="heading-xl mb-6">
+            <h1 className="heading-xl mb-4">
               We work with{' '}
               <span className="gradient-text">75+ platforms and partners.</span>
             </h1>
+            <p
+              className="shimmer-gold-text font-bold whitespace-nowrap mb-6 mx-auto"
+              style={{ fontSize: 'clamp(1.25rem, 2.5vw, 2rem)', lineHeight: 1.1, letterSpacing: '-0.01em' }}
+            >
+              We are the platform behind the curtains
+            </p>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Custom AI applications and Next.js + Python platforms built for marketing automation companies,
               CRM resellers, vertical SaaS founders, federal contractors, and design studios that need a real
