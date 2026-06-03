@@ -3,13 +3,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  MessageCircle,
   X,
   Send,
   Sparkles,
   Loader2,
   RefreshCw,
 } from "lucide-react";
+import { AiNodeOrb } from "./AiNodeOrb";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
@@ -188,7 +188,7 @@ export function AciChat() {
         transition={{ delay: 1.5, type: "spring", stiffness: 300 }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-gradient-to-br from-[#8734E1] to-[#2F73EE] text-white shadow-xl shadow-[#8734E1]/30 flex items-center justify-center hover:shadow-2xl hover:shadow-[#8734E1]/40 transition-shadow"
+        className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-gradient-to-br from-[#3b1184] to-[#5b21b6] text-white shadow-xl shadow-[#3b1184]/40 flex items-center justify-center hover:shadow-2xl hover:shadow-[#5b21b6]/50 transition-shadow ring-1 ring-white/15"
         aria-label={open ? "Close chat" : "Open chat with the ACI assistant"}
       >
         <AnimatePresence mode="wait">
@@ -205,12 +205,12 @@ export function AciChat() {
           ) : (
             <motion.span
               key="open"
-              initial={{ rotate: 90, opacity: 0 }}
-              animate={{ rotate: 0, opacity: 1 }}
-              exit={{ rotate: -90, opacity: 0 }}
+              initial={{ scale: 0.6, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.6, opacity: 0 }}
               transition={{ duration: 0.15 }}
             >
-              <MessageCircle className="w-6 h-6" strokeWidth={2.25} />
+              <AiNodeOrb className="w-7 h-7" />
             </motion.span>
           )}
         </AnimatePresence>
