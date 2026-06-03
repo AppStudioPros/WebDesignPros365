@@ -239,7 +239,12 @@ export default function PartnershipsPage() {
             <h2 className="heading-lg mb-4">
               Who we <span className="gradient-text">build with.</span>
             </h2>
-            <p className="text-gray-600">
+            <p className="text-gray-700 font-medium mb-4 max-w-2xl mx-auto">
+              Due to the sensitivity of government projects and contractors, as well as the parallel
+              vertical companies we work with, we remain anonymous to protect integrity in our processes.
+              This is our agreement and our firm position.
+            </p>
+            <p className="text-gray-600 max-w-2xl mx-auto">
               Eight categories. Different shapes of partnership in each. If you do not see your category
               listed, that does not mean we can&apos;t work together. It just means we have not done it
               yet. Tell us about it.
