@@ -24,14 +24,18 @@ type Node = {
 };
 
 const CENTER = 16;
-const INNER_RADIUS = 12; // nodes can travel out to this distance from center
+// Nodes can travel all the way to the inside edge of the 32x32 circle (radius 16).
+// We let them ride right against the wall — the node radius itself provides visual padding.
+const INNER_RADIUS = 16;
 
 function initialNodes(): Node[] {
-  // Seed with deterministic positions so SSR + client agree on first paint
+  // Seed with deterministic positions near the inner walls so the orb reads as
+  // "already in motion across the full diameter" rather than clustered in the middle.
+  // SSR + client first paint agree because these are constants.
   return [
-    { x: 8, y: 22, vx: 5.2, vy: -4.1, baseR: 2.6, pulsePhase: 0 },
-    { x: 18, y: 10, vx: -4.5, vy: 4.8, baseR: 2.8, pulsePhase: 0.5 },
-    { x: 24, y: 18, vx: -5.0, vy: -3.9, baseR: 2.2, pulsePhase: 1.0 },
+    { x: 4,  y: 14, vx: 6.2, vy: -5.1, baseR: 2.6, pulsePhase: 0 },
+    { x: 26, y: 6,  vx: -5.5, vy: 5.8, baseR: 2.8, pulsePhase: 0.5 },
+    { x: 22, y: 26, vx: -6.0, vy: -4.9, baseR: 2.2, pulsePhase: 1.0 },
   ];
 }
 
@@ -57,11 +61,12 @@ export function AiNodeOrb({ className }: { className?: string }) {
           y += vy * dt;
 
           // Reflect off the inner wall of the circular container.
-          // Distance from center, project back if outside the radius minus node size.
+          // Distance from center, project back if the node has crossed the wall.
+          // Max travel = (orb radius - node radius) so the node visually kisses the wall on impact.
           const dx = x - CENTER;
           const dy = y - CENTER;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          const maxDist = INNER_RADIUS - n.baseR * 0.4;
+          const maxDist = INNER_RADIUS - n.baseR;
           if (dist > maxDist) {
             // Compute the wall normal (radial direction)
             const nx = dx / dist;
@@ -104,15 +109,7 @@ export function AiNodeOrb({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      {/* Subtle inner ring so the bounce boundary is visible-ish */}
-      <circle
-        cx={CENTER}
-        cy={CENTER}
-        r={INNER_RADIUS + 0.5}
-        stroke="rgba(255,255,255,0.12)"
-        strokeWidth="0.7"
-        fill="none"
-      />
+      {/* No inner-ring guide — nodes ride the actual orb perimeter so the ring would be redundant */}
 
       {/* Connection lines tracking nodes */}
       <line
