@@ -210,10 +210,9 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5">
                 <ShieldCheck className="w-8 h-8 text-[#BF5DE0] mb-3" />
-                <h3 className="font-semibold text-white mb-2">Federal-grade compliance</h3>
+                <h3 className="font-semibold text-white mb-2">Accountable AI</h3>
                 <p className="text-sm text-white/70 leading-relaxed">
-                  Audit-trail-complete AI. Every decision traceable. Built to survive a GAO
-                  protest, so your customer comms are bulletproof too.
+                  Every AI decision is logged, traceable, and explainable. Full audit trail, no black boxes — so you always know exactly what your AI did and why.
                 </p>
               </div>
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5">

@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
-import { ArrowRight, Zap, Atom, Rocket, Target, Sparkles, CalendarCheck } from 'lucide-react';
+import { ArrowRight, Zap, Atom, Rocket, Target, Sparkles, CalendarCheck, Search, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const techBadges = [
@@ -65,6 +65,25 @@ function CountUpStat({ stat, inView }: { stat: typeof stats[0]; inView: boolean 
 export default function HeroSection() {
   const statsRef = useRef(null);
   const isInView = useInView(statsRef, { once: true, margin: "-100px" });
+  const [domain,  setDomain]  = useState('');
+  const [loading, setLoading] = useState(false);
+
+  function isValidDomain(input: string): boolean {
+    const cleaned = input.trim().toLowerCase().replace(/^https?:\/\//, '').replace(/^www\./, '');
+    return /^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?(\.[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?)+$/.test(cleaned);
+  }
+
+  function handleHeroScan(e: React.FormEvent) {
+    e.preventDefault();
+    if (!domain.trim() || !isValidDomain(domain)) return;
+    // Scroll to scanner section and pre-fill domain
+    const scanner = document.getElementById('site-scanner');
+    if (scanner) {
+      scanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Dispatch a custom event to pre-fill the scanner
+      window.dispatchEvent(new CustomEvent('hero-scan', { detail: { domain: domain.trim() } }));
+    }
+  }
 
   return (
     <section className="relative flex flex-col justify-start pt-32 pb-32 overflow-hidden">
@@ -170,24 +189,33 @@ export default function HeroSection() {
             })}
           </motion.div>
 
-          {/* CTA Buttons */}
+          {/* Embedded scan form */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+            className="mb-16"
           >
-            <Link href="/contact">
-              <Button size="lg" className="bg-gradient-to-r from-[#8734E1] to-[#BF5DE0] hover:opacity-90 text-white">
-                Start Your Project
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </Link>
-            <Link href="/portfolio">
-              <Button variant="outline" size="lg">
-                View Our Work
-              </Button>
-            </Link>
+            <form onSubmit={handleHeroScan} className="flex flex-col sm:flex-row items-stretch gap-2 max-w-xl mx-auto">
+              <div className="relative flex-1">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+                <input
+                  type="text"
+                  value={domain}
+                  onChange={e => setDomain(e.target.value)}
+                  placeholder="Enter your website URL..."
+                  className="w-full pl-11 pr-4 py-3.5 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm shadow-md shadow-gray-200/50 outline-none focus:border-[#8734E1] focus:ring-2 focus:ring-[#8734E1]/10 transition-all"
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={!domain.trim() || loading}
+                className="shrink-0 flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#8734E1] to-[#2F73EE] text-white font-bold text-sm hover:opacity-90 transition-opacity disabled:opacity-50 shadow-lg shadow-[#8734E1]/25 whitespace-nowrap"
+              >
+                {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <><Search className="w-4 h-4" /> Scan My Website Free</>}
+              </button>
+            </form>
+            <p className="text-center text-[11px] text-gray-400 mt-2">No credit card required. Results in 30 seconds.</p>
           </motion.div>
 
           {/* Stats */}

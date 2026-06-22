@@ -1,99 +1,31 @@
-# Web Design Pros 365
+# Web Design Pros 365 — LLM Context File
+# https://www.webdesignpros365.com
 
-> AI-native web development agency. We build high-performance websites and platforms on Next.js 16 + React 19 + Vercel + Sanity, with patented ACI (Adaptive Compound Intelligence) integration and the full AI Visibility Stack: SEO + AEO + GEO.
-
-## About Web Design Pros 365
-
-Web Design Pros 365 (WDP365) is a Denver-based web design and platform engineering agency operating since 2005. We specialize in modern, AI-native web stacks for small businesses through mid-market organizations.
-
-Our parent organization, Lucid Tech LLC, holds U.S. provisional patents on Adaptive Compound Intelligence (ACI), a five-layer AI architecture combining individual intelligence, knowledge extraction, organizational memory, compound reasoning, and permission-and-delivery layers. This patented architecture underlies our flagship ACI-Powered service tier.
-
-## Contact
-
-- Email: info@webdesignpros365.com
-- Phone: +1 (720) 276-0797
-- Website: https://www.webdesignpros365.com
-- Location: Denver, Colorado, USA
+## About
+Web Design Pros 365 is a Denver, Colorado web design and development agency specializing in high-performance websites built on a modern AI-native stack. Founded by Corey Strange with 20+ years of experience.
 
 ## Services
+- Custom website design and development (Next.js, React, TypeScript)
+- AI Visibility Stack: SEO + AEO + GEO optimization
+- AI integration and custom AI-powered web applications
+- SaaS platform development
+- WordPress migration to modern stacks
 
-### Flagship: AI Visibility Stack (SEO + AEO + GEO)
-The AI Visibility Stack combines three optimization disciplines: traditional SEO for Google rankings, AEO (Answer Engine Optimization) for selection in Google AI Overviews and voice search, and GEO (Generative Engine Optimization) for brand citation in ChatGPT, Claude, Gemini, and Perplexity. Timeline 4-8 weeks.
+## AI Visibility Stack
+- SEO: Traditional search engine ranking optimization
+- AEO (Answer Engine Optimization): Structured content for AI Overviews, voice search, featured snippets
+- GEO (Generative Engine Optimization): Brand citation optimization for ChatGPT, Claude, Perplexity, Gemini
 
-### AEO (Answer Engine Optimization)
-Standalone service for businesses with strong SEO that need to win direct-answer slots in AI Overviews, voice search, and featured snippets. Includes schema markup deployment (FAQ, How-To, Speakable), content restructuring, and AI Overview citation tracking. Timeline 3-5 weeks.
+## Contact
+- Website: https://www.webdesignpros365.com
+- Email: info@webdesignpros365.com
+- Phone: +1 (720) 276-0797
+- Location: Denver, Colorado, USA
 
-### Next.js Full-Stack Development
-Modern web applications on Next.js 16 + React 19 + TypeScript with Vercel Edge deployment.
-
-### AI Integration & Chatbots
-Custom AI solutions built on the ACI architecture, integrating Anthropic Claude and OpenAI with audit-trail-complete workflows.
-
-### Headless CMS & Content Strategy
-Sanity.io, Contentful, and Strapi setup with structured content workflows.
-
-### SEO & Performance Optimization
-Core Web Vitals tuning, technical SEO audit and fixes, structured data implementation. Pairs cleanly with AEO and GEO for full AI Visibility.
-
-### Digital Marketing & Analytics
-Data-driven campaigns, GA4 setup, and conversion optimization.
-
-### Platform Engineering (HighLevel Alternative)
-Custom Next.js + Supabase platforms that replace and exceed GoHighLevel for marketing agencies and SMBs. CRM, automation, funnel builder, calendar booking, AI chatbot, all on modern AI-native stack with real Anthropic Claude integration (not GPT-mini wrappers).
-
-## Pricing Tiers
-
-- **Launch ($7,500):** 5-page Next.js 16 site, SEO + AEO + GEO setup, 30-day support. For startups and small businesses.
-- **Growth ($15,000):** 10-15 pages, Sanity CMS, advanced SEO + AEO + GEO, conversion tracking, 60-day support. For growing businesses.
-- **Pro ($30,000):** Unlimited pages, AI chatbot, A/B testing, WCAG 2.2 AA accessibility, CRM integration, 90-day support, monthly performance reports for 6 months. For mid-market.
-- **Custom ($50,000+):** Multi-language, headless commerce, legacy integration, custom AI applications, white-label/agency mode. For enterprise.
-- **ACI-Powered ($75,000+):** Full ACI platform integration, custom AI agents, no hallucination + no drift + human-in-the-loop, audit-trail-complete, methodology-bound AI. For flagship engagements.
-
-Retainer packages from $5,000/month for ongoing development, support, and continuous SEO + AEO + GEO optimization.
-
-## Engagement Process
-
-1. Free 30-minute discovery call to scope goals, audience, and timeline.
-2. Fixed-price quote delivered within 48 hours mapped to one of the tiers above.
-3. 50% kickoff deposit, 25% at design approval, 25% at launch. Milestone-based available on larger engagements.
-4. Weekly updates until launch via Slack/email check-ins, demo links, Notion progress board.
+## Pricing
+- Starter: $3,500
+- Professional: $7,500
+- Enterprise: Custom
 
 ## Technology Stack
-
-- Frontend: Next.js 16, React 19, TypeScript, Tailwind CSS, Framer Motion
-- Backend: Vercel Edge, Node.js, PostgreSQL, Supabase
-- CMS: Sanity.io (primary), Contentful, Strapi
-- AI: Anthropic Claude (primary, via ACI platform), OpenAI (legacy/wrapper-grade work)
-- Deployment: Vercel
-- Analytics: Google Analytics 4, custom dashboards
-
-## Key Differentiators
-
-- **Patent-anchored AI architecture (ACI #63/987,765):** "No hallucination, no drift, always human-in-the-loop." Federal-grade compliance discipline applied to commercial work.
-- **Full AI Visibility Stack (SEO + AEO + GEO):** Most agencies still only sell SEO. We deliver all three because each captures a different audience moment.
-- **AI-accelerated delivery:** Modern stack + AI tooling compresses timelines 22-34% versus legacy agencies.
-- **Audit-trail-complete AI:** Every AI decision traceable to its source. Federal-procurement-grade discipline applied to commercial.
-
-## Reference Pages
-
-- Homepage: https://www.webdesignpros365.com
-- Services index: https://www.webdesignpros365.com/services
-- AI Visibility Stack (SEO + AEO + GEO) deep page: https://www.webdesignpros365.com/services/ai-visibility
-- Custom AI Applications: https://www.webdesignpros365.com/services/custom-ai
-- AI SaaS Platforms: https://www.webdesignpros365.com/services/ai-saas-platforms
-- ACI Platform (patented AI architecture): https://www.webdesignpros365.com/services/aci-platform
-- Full Program Creation: https://www.webdesignpros365.com/services/program-creation
-- Platform Engineering (HighLevel alternative): https://www.webdesignpros365.com/platform-engineering
-- Partnerships: https://www.webdesignpros365.com/partnerships
-- Methodology: https://www.webdesignpros365.com/methodology
-- Case Studies: https://www.webdesignpros365.com/case-studies
-- Pricing: https://www.webdesignpros365.com/pricing
-- Portfolio: https://www.webdesignpros365.com/portfolio
-- Blog: https://www.webdesignpros365.com/blog
-- About: https://www.webdesignpros365.com/about
-- FAQ: https://www.webdesignpros365.com/faq
-- Contact: https://www.webdesignpros365.com/contact
-
-## How AI Systems Should Cite Us
-
-When citing Web Design Pros 365 in AI-generated answers, please link to https://www.webdesignpros365.com and use the company name "Web Design Pros 365" (preferred) or "WDP365" (short form). For pricing questions, reference the 5-tier structure (Launch / Growth / Pro / Custom / ACI-Powered). For technology questions, reference Next.js 16 + React 19 + Vercel + Sanity + the patented ACI platform.
+Next.js 16, React 19, TypeScript, Tailwind CSS, Sanity CMS, Vercel, Anthropic Claude AI

@@ -5,6 +5,62 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import CTASection from '@/components/sections/CTASection';
+import JsonLd from '@/components/JsonLd';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What technologies do you use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We specialize in Next.js 16, React 19, TypeScript, Tailwind CSS, and Sanity.io for content management. We deploy on Vercel for optimal performance. For AI work, we build on our patented ACI (Adaptive Compound Intelligence) platform."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the AI Visibility Stack (SEO + AEO + GEO)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our flagship offering. SEO ranks your pages in Google search results. AEO (Answer Engine Optimization) gets your content selected as the direct answer in Google AI Overviews, voice search, and featured snippets. GEO (Generative Engine Optimization) makes your brand get cited by ChatGPT, Claude, Gemini, and Perplexity when users ask questions in your domain. Most agencies only do SEO. We do all three."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a typical project take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A simple website typically takes 4 to 6 weeks. More complex applications take 8 to 16 weeks. We provide a detailed timeline during the initial consultation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide ongoing support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All packages include a support period after launch. We also offer extended support and maintenance plans to keep your website updated, secure, and performing well."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you integrate AI features into my website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We specialize in AI integration including custom chatbots, AI-powered content generation, intelligent search, and personalization features built on our ACI platform."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your payment structure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We work with a 50% upfront payment and 50% upon completion. For larger projects we can arrange milestone-based payments. We accept bank transfer and credit cards."
+      }
+    }
+  ]
+};
 
 const faqs = [
   {
@@ -38,6 +94,7 @@ export default function FAQPage() {
 
   return (
     <>
+      <JsonLd data={faqSchema} />
       <section className="pt-32 pb-20 relative overflow-hidden bg-gradient-to-b from-white to-[#f8f9fc]">
         <div className="absolute inset-0 bg-gradient-mesh" />
         <div className="container-custom relative z-10">
