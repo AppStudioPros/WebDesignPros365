@@ -357,7 +357,7 @@ export default function SiteAuditScanner() {
                         : 'text-red-500'
                       }`} />
                       <span className="text-sm font-bold text-gray-800">Google Ranking</span>
-                      <span className="text-[10px] text-gray-400 font-mono">"{result.ranking.query}"</span>
+                      <span className="text-[13px] font-bold text-gray-600">"{result.ranking.query}"</span>
                     </div>
                     <span className={`text-[11px] font-bold px-3 py-1 rounded-full border ${
                       result.ranking.tier === 'top25'
