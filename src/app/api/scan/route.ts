@@ -175,6 +175,42 @@ function detectPlatform(content: string, metadata: any): {
   }
 }
 
+async function fetchRankingData(domain: string, keyword: string, location: string) {
+  if (!keyword || !process.env.SERPER_API_KEY) return null
+  try {
+    const query = location ? `${keyword} ${location}` : keyword
+    const cleanDomain = domain.replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0]
+    const res = await fetch('https://google.serper.dev/search', {
+      method: 'POST',
+      headers: {
+        'X-API-KEY': process.env.SERPER_API_KEY,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ q: query, num: 100 }),
+      signal: AbortSignal.timeout(10000),
+    })
+    if (!res.ok) return null
+    const data = await res.json()
+    const organic: any[] = data.organic || []
+    const position = organic.findIndex((r: any) => {
+      const link = (r.link || '').replace(/^https?:\/\//, '').replace(/^www\./, '')
+      return link.startsWith(cleanDomain)
+    })
+    if (position === -1) return { position: null, tier: 'below100', query }
+    const pos = position + 1
+    return {
+      position: pos,
+      tier: pos <= 25 ? 'top25' : pos <= 100 ? 'top100' : 'below100',
+      snippet: organic[position]?.snippet || null,
+      title: organic[position]?.title || null,
+      query,
+    }
+  } catch (e: any) {
+    console.error('[ranking]', e.message)
+    return null
+  }
+}
+
 async function checkSecurityHeaders(url: string) {
   try {
     const res = await fetch(url, { method: 'HEAD', signal: AbortSignal.timeout(5000) })
@@ -192,7 +228,7 @@ async function checkSecurityHeaders(url: string) {
   }
 }
 
-async function runScan(domain: string, email: string) {
+async function runScan(domain: string, email: string, keyword?: string, location?: string) {
   try {
     if (!domain) {
       return NextResponse.json({ error: 'Domain is required.' }, { status: 400 })
@@ -201,10 +237,11 @@ async function runScan(domain: string, email: string) {
     const url = domain.startsWith('http') ? domain : `https://${domain}`
 
     // Run checks in parallel
-    const [pageSpeed, pageContent, secHeaders] = await Promise.all([
+    const [pageSpeed, pageContent, secHeaders, ranking] = await Promise.all([
       fetchPageSpeedData(url),
       fetchPageContent(url),
       checkSecurityHeaders(url),
+      fetchRankingData(domain, keyword || '', location || ''),
     ])
 
     // Check for quick technical flags
@@ -278,6 +315,7 @@ Format as raw JSON only: {"problem":"...","quick_win":"...","ai_gap":"..."}`
     return NextResponse.json({
       success: true,
       domain,
+      ranking: ranking || null,
       scores: {
         performance:   pageSpeed?.performance   ?? null,
         seo:           pageSpeed?.seo           ?? null,
@@ -299,7 +337,7 @@ Format as raw JSON only: {"problem":"...","quick_win":"...","ai_gap":"..."}`
 }
 
 export async function POST(req: NextRequest) {
-  const { domain, email } = await req.json().catch(() => ({ domain: '', email: '' }))
+  const { domain, email, keyword, location } = await req.json().catch(() => ({ domain: '', email: '', keyword: '', location: '' }))
 
   const timeout = new Promise<NextResponse>((resolve) =>
     setTimeout(() => resolve(
@@ -307,5 +345,5 @@ export async function POST(req: NextRequest) {
     ), 55000)
   )
 
-  return Promise.race([runScan(domain, email), timeout])
+  return Promise.race([runScan(domain, email, keyword, location), timeout])
 }

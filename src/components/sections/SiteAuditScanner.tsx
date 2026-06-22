@@ -3,8 +3,17 @@
 import { useState, useEffect, useRef } from 'react'
 import { Search, Loader2, ArrowRight, CheckCircle, XCircle, AlertCircle, ChevronRight } from 'lucide-react'
 
+interface RankingResult {
+  position: number | null
+  tier: 'top25' | 'top100' | 'below100'
+  snippet: string | null
+  title: string | null
+  query: string
+}
+
 interface ScanResult {
   domain: string
+  ranking: RankingResult | null
   scores: {
     performance:   number | null
     seo:           number | null
@@ -75,6 +84,8 @@ export default function SiteAuditScanner() {
   const domainRef = useRef<HTMLInputElement>(null)
   const [domain,       setDomain]       = useState('')
   const [email,        setEmail]        = useState('')
+  const [keyword,      setKeyword]      = useState('')
+  const [location,     setLocation]     = useState('')
 
   // Listen for pre-fill from hero scan form
   useEffect(() => {
@@ -133,7 +144,12 @@ export default function SiteAuditScanner() {
       const res = await fetch('/api/scan', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ domain: domain.trim(), email: email.trim() || '' }),
+        body: JSON.stringify({
+          domain: domain.trim(),
+          email: email.trim() || '',
+          keyword: keyword.trim() || '',
+          location: location.trim() || '',
+        }),
       })
       clearInterval(interval)
       const contentType = res.headers.get('content-type') || ''
@@ -202,6 +218,32 @@ export default function SiteAuditScanner() {
                     className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 outline-none focus:border-[#8734E1] focus:ring-2 focus:ring-[#8734E1]/10 transition-all"
                   />
                 </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-semibold text-gray-600 uppercase tracking-wide block">
+                      Target Keyword <span className="text-gray-400 font-normal normal-case">(optional)</span>
+                    </label>
+                    <input
+                      type="text"
+                      value={keyword}
+                      onChange={e => setKeyword(e.target.value)}
+                      placeholder="e.g. web design"
+                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 outline-none focus:border-[#8734E1] focus:ring-2 focus:ring-[#8734E1]/10 transition-all"
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-semibold text-gray-600 uppercase tracking-wide block">
+                      Location <span className="text-gray-400 font-normal normal-case">(optional)</span>
+                    </label>
+                    <input
+                      type="text"
+                      value={location}
+                      onChange={e => setLocation(e.target.value)}
+                      placeholder="e.g. Denver CO"
+                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 outline-none focus:border-[#8734E1] focus:ring-2 focus:ring-[#8734E1]/10 transition-all"
+                    />
+                  </div>
+                </div>
                 <button
                   type="submit"
                   disabled={!domain}
@@ -264,6 +306,62 @@ export default function SiteAuditScanner() {
                   <ScoreRing score={result.scores.ai_readiness}  label="AI Ready"    color="pink" />
                 </div>
               </div>
+
+              {/* Google Ranking */}
+              {result.ranking && (
+                <div className={`rounded-2xl border p-5 ${
+                  result.ranking.tier === 'top25'
+                    ? 'bg-emerald-50 border-emerald-200'
+                    : result.ranking.tier === 'top100'
+                    ? 'bg-amber-50 border-amber-200'
+                    : 'bg-red-50 border-red-200'
+                }`}>
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <Search className={`w-4 h-4 ${
+                        result.ranking.tier === 'top25' ? 'text-emerald-600'
+                        : result.ranking.tier === 'top100' ? 'text-amber-600'
+                        : 'text-red-500'
+                      }`} />
+                      <span className="text-sm font-bold text-gray-800">Google Ranking</span>
+                      <span className="text-[10px] text-gray-400 font-mono">"{result.ranking.query}"</span>
+                    </div>
+                    <span className={`text-[11px] font-bold px-3 py-1 rounded-full border ${
+                      result.ranking.tier === 'top25'
+                        ? 'bg-emerald-100 text-emerald-700 border-emerald-300'
+                        : result.ranking.tier === 'top100'
+                        ? 'bg-amber-100 text-amber-700 border-amber-300'
+                        : 'bg-red-100 text-red-600 border-red-200'
+                    }`}>
+                      {result.ranking.tier === 'top25' ? '🏆 Top 25'
+                        : result.ranking.tier === 'top100' ? '📊 Top 100'
+                        : '❌ Below Top 100'}
+                    </span>
+                  </div>
+                  {result.ranking.position ? (
+                    <div className="flex items-baseline gap-2">
+                      <span className={`text-4xl font-black font-mono ${
+                        result.ranking.tier === 'top25' ? 'text-emerald-600'
+                        : result.ranking.tier === 'top100' ? 'text-amber-600'
+                        : 'text-red-500'
+                      }`}>#{result.ranking.position}</span>
+                      <span className="text-sm text-gray-500">in Google organic results</span>
+                    </div>
+                  ) : (
+                    <p className="text-sm text-red-600 font-medium">Not found in the top 100 results</p>
+                  )}
+                  {result.ranking.snippet && (
+                    <p className="mt-2 text-[11px] text-gray-500 italic leading-relaxed line-clamp-2">{result.ranking.snippet}</p>
+                  )}
+                  {result.ranking.tier !== 'top25' && (
+                    <p className="mt-2 text-[11px] font-medium text-gray-600">
+                      {result.ranking.tier === 'top100'
+                        ? 'You\'re ranking but not on page 1. Our AI Visibility Stack can move you up.'
+                        : 'You\'re not showing up for this search. Customers can\'t find you here.'}
+                    </p>
+                  )}
+                </div>
+              )}
 
               {/* Flags + Analysis */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
