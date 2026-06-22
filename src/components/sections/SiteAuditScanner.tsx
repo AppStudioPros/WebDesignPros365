@@ -268,18 +268,35 @@ export default function SiteAuditScanner() {
 
           {/* SCANNING */}
           {step === 'scanning' && (
-            <div className="bg-[#0d0d14] rounded-2xl border border-white/5 p-8 space-y-4">
-              <div className="flex items-center gap-3 mb-2">
+            <div className="bg-[#0d0d14] rounded-2xl border border-white/5 p-10 w-[120%] -ml-[10%]">
+              <div className="flex items-center gap-3 mb-5">
                 <Loader2 className="w-4 h-4 text-[#8734E1] animate-spin shrink-0" />
                 <span className="text-sm font-bold text-white">Scanning {domain}...</span>
               </div>
-              <div className="space-y-2">
-                {logs.slice(0, logIndex + 1).map((log, i) => (
-                  <div key={i} className={`text-[12px] font-mono flex items-center gap-2 ${i === logIndex ? 'text-[#8734E1]' : 'text-gray-500'}`}>
-                    <span className="w-1.5 h-1.5 rounded-full bg-current shrink-0" />
-                    {log}
-                  </div>
-                ))}
+              <div className="flex items-stretch gap-6">
+                {/* Log lines — left */}
+                <div className="flex-1 space-y-3">
+                  {logs.slice(0, logIndex + 1).map((log, i) => (
+                    <div key={i} className={`text-[15px] font-bold font-mono flex items-center gap-2.5 transition-colors duration-500 ${
+                      i < logIndex
+                        ? 'text-emerald-400'
+                        : i === logIndex
+                        ? 'text-[#8734E1]'
+                        : 'text-gray-600'
+                    }`}>
+                      <span className="w-2 h-2 rounded-full bg-current shrink-0" />
+                      {log}
+                    </div>
+                  ))}
+                </div>
+                {/* % counter — right */}
+                <div className="flex flex-col items-center justify-center shrink-0 w-28">
+                  <span className="text-6xl font-black font-mono text-yellow-400 tabular-nums leading-none">
+                    {Math.round((logIndex / (logs.length - 1)) * 100)}
+                  </span>
+                  <span className="text-yellow-400 text-xl font-black font-mono mt-1">%</span>
+                  <span className="text-gray-500 text-[10px] font-mono mt-2 uppercase tracking-widest">complete</span>
+                </div>
               </div>
             </div>
           )}
