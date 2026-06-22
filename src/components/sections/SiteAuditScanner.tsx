@@ -272,33 +272,35 @@ export default function SiteAuditScanner() {
 
           {/* SCANNING */}
           {step === 'scanning' && (
-            <div className="relative bg-[#0d0d14] rounded-2xl border border-white/5 p-10 pr-44 w-[120%] -ml-[10%] min-h-[260px]">
-              <div className="flex items-center gap-3 mb-5">
-                <Loader2 className="w-4 h-4 text-[#8734E1] animate-spin shrink-0" />
-                <span className="text-sm font-bold text-white">Scanning {domain}...</span>
+            <div className="bg-[#0d0d14] rounded-2xl border border-white/5 p-8 min-h-[260px] flex gap-6 items-center">
+              {/* Log lines — left, takes remaining space */}
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-3 mb-5">
+                  <Loader2 className="w-4 h-4 text-[#8734E1] animate-spin shrink-0" />
+                  <span className="text-sm font-bold text-white">Scanning {domain}...</span>
+                </div>
+                <div className="space-y-3">
+                  {logs.slice(0, logIndex + 1).map((log, i) => (
+                    <div key={i} className={`text-[15px] font-bold font-mono flex items-center gap-2.5 transition-colors duration-500 ${
+                      i < logIndex
+                        ? 'text-emerald-400'
+                        : i === logIndex
+                        ? 'text-[#8734E1]'
+                        : 'text-gray-600'
+                    }`}>
+                      <span className="w-2 h-2 rounded-full bg-current shrink-0" />
+                      {log}
+                    </div>
+                  ))}
+                </div>
               </div>
-              {/* Log lines — left */}
-              <div className="space-y-3">
-                {logs.slice(0, logIndex + 1).map((log, i) => (
-                  <div key={i} className={`text-[15px] font-bold font-mono flex items-center gap-2.5 transition-colors duration-500 ${
-                    i < logIndex
-                      ? 'text-emerald-400'
-                      : i === logIndex
-                      ? 'text-[#8734E1]'
-                      : 'text-gray-600'
-                  }`}>
-                    <span className="w-2 h-2 rounded-full bg-current shrink-0" />
-                    {log}
-                  </div>
-                ))}
-              </div>
-              {/* % counter — absolutely centered right, never moves */}
-              <div className="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col items-center justify-center w-32">
+              {/* % counter — fixed width right column, always centered */}
+              <div className="shrink-0 w-36 flex flex-col items-center justify-center self-stretch">
                 <div className="relative leading-none">
                   <span className="text-8xl font-black font-mono text-yellow-400 tabular-nums transition-all duration-300">
                     {logIndex >= logs.length - 1 ? 100 : Math.round((logIndex / (logs.length - 1)) * 95)}
                   </span>
-                  <span className="absolute -top-1 -right-5 text-2xl font-black font-mono text-yellow-400">%</span>
+                  <span className="absolute -top-2 -right-6 text-2xl font-black font-mono text-yellow-400">%</span>
                 </div>
                 <span className="text-gray-500 text-[10px] font-mono mt-3 uppercase tracking-widest">complete</span>
               </div>
@@ -424,6 +426,11 @@ export default function SiteAuditScanner() {
                           </span>
                           <span className="text-gray-400 text-[11px]">for "{result.ranking.query}"</span>
                         </div>
+                      </div>
+                    ) : keyword.trim() ? (
+                      <div className="flex items-center gap-2 text-[11px] text-gray-400">
+                        <Search className="w-3 h-3 shrink-0" />
+                        <span>Google rank check unavailable — retry scan</span>
                       </div>
                     ) : (
                       <div className="flex items-center gap-2 text-[11px] text-gray-400">
