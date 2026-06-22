@@ -394,6 +394,7 @@ export default function SiteAuditScanner() {
 
               {/* Flags + Analysis */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* Left — Checklist */}
                 <div className="bg-white rounded-2xl border border-gray-100 shadow-md shadow-gray-100 p-5 space-y-2.5">
                   <h4 className="text-xs font-bold text-gray-700 uppercase tracking-wide mb-3">Checklist</h4>
                   <Flag ok={result.flags.hasSchema}          label="Structured data (Schema.org)" />
@@ -401,18 +402,77 @@ export default function SiteAuditScanner() {
                   <Flag ok={result.flags.hasOG}              label="Social sharing (OG tags)" />
                   <Flag ok={!result.flags.descTooLong}       label="Meta description length" />
                   <Flag ok={result.flags.secChecks >= 4}     label="Security headers" />
+                  {result.ranking && result.ranking.query && (
+                    <div className="flex items-center gap-2 text-[12px] pt-1 border-t border-gray-100 mt-1">
+                      <Search className={`w-3.5 h-3.5 shrink-0 ${
+                        result.ranking.tier === 'top25' ? 'text-emerald-500'
+                        : result.ranking.tier === 'top100' ? 'text-amber-500'
+                        : 'text-red-400'
+                      }`} />
+                      <span className={`font-medium ${
+                        result.ranking.tier === 'top25' ? 'text-emerald-600'
+                        : result.ranking.tier === 'top100' ? 'text-amber-600'
+                        : 'text-red-500'
+                      }`}>
+                        {result.ranking.position
+                          ? `Ranked #${result.ranking.position} for "${result.ranking.query}"`
+                          : `Not found for "${result.ranking.query}"`}
+                      </span>
+                    </div>
+                  )}
                 </div>
+
+                {/* Right — What this means */}
                 <div className="bg-white rounded-2xl border border-gray-100 shadow-md shadow-gray-100 p-5 space-y-3">
                   <h4 className="text-xs font-bold text-gray-700 uppercase tracking-wide">What this means</h4>
                   <p className="text-[12px] text-gray-600 leading-relaxed">{result.analysis.problem}</p>
-                  <div className="bg-amber-50 border border-amber-200 rounded-lg p-3">
-                    <p className="text-[11px] font-semibold text-amber-700 mb-1">Fastest fix:</p>
-                    <p className="text-[11px] text-amber-600 leading-relaxed">{result.analysis.quick_win}</p>
-                  </div>
                   <div className="bg-purple-50 border border-purple-200 rounded-lg p-3">
                     <p className="text-[11px] font-semibold text-purple-700 mb-1">AI visibility gap:</p>
                     <p className="text-[11px] text-purple-600 leading-relaxed">{result.analysis.ai_gap}</p>
                   </div>
+                </div>
+              </div>
+
+              {/* Ultimate AI Tech Stack Difference */}
+              <div className="bg-gradient-to-br from-[#0d0d14] to-[#1a0a2e] rounded-2xl border border-[#8734E1]/30 p-6">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
+                  <h4 className="text-base font-extrabold text-white leading-tight">
+                    Ultimate AI Tech Stack Difference
+                  </h4>
+                  <div className="shrink-0 text-right">
+                    <p className="text-[10px] text-[#8734E1] font-bold uppercase tracking-wider">Estimated Year 1 ROI</p>
+                    <p className="text-2xl font-black text-emerald-400 leading-none">$120K–$180K</p>
+                    <p className="text-[9px] text-gray-500 mt-0.5">avg for $500K+ revenue businesses</p>
+                  </div>
+                </div>
+                <p className="text-[11px] text-gray-400 mb-4 leading-relaxed">
+                  Switching to the Next.js + Vercel + Python AI stack gives you the ultimate visibility across all three search channels:
+                </p>
+                <div className="space-y-2.5">
+                  <div className="flex items-start gap-2.5">
+                    <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-[#2F73EE]/20 border border-[#2F73EE]/40 flex items-center justify-center text-[9px] font-black text-[#2F73EE]">1</span>
+                    <div>
+                      <span className="text-[12px] font-bold text-white">SEO — Search Engine Optimization</span>
+                      <p className="text-[11px] text-gray-400 leading-relaxed">Top-10 Google rankings through perfect Core Web Vitals, structured data, and a codebase search engines can actually read.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-[#EC4899]/20 border border-[#EC4899]/40 flex items-center justify-center text-[9px] font-black text-[#EC4899]">2</span>
+                    <div>
+                      <span className="text-[12px] font-bold text-white">AEO — AI Answer Engine Optimization</span>
+                      <p className="text-[11px] text-gray-400 leading-relaxed">Direct answer slots in Google AI Overviews, Siri, and voice search — putting your business at position zero before competitors even know it exists.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-[#8734E1]/20 border border-[#8734E1]/40 flex items-center justify-center text-[9px] font-black text-[#8734E1]">3</span>
+                    <div>
+                      <span className="text-[12px] font-bold text-white">GEO — Generative Engine Optimization</span>
+                      <p className="text-[11px] text-gray-400 leading-relaxed">Cited by ChatGPT, Perplexity, and Gemini when customers ask about your industry — the fastest-growing traffic source in 2025.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-4 pt-4 border-t border-white/10">
+                  <p className="text-[10px] text-gray-500 italic">ROI estimate based on avg 2-3x conversion improvement from PageSpeed 30→90+ and 20-40% organic traffic gain from AI search visibility. Individual results vary.</p>
                 </div>
               </div>
 
