@@ -406,27 +406,39 @@ export default function SiteAuditScanner() {
                   <Flag ok={result.flags.hasOG}              label="Social sharing (OG tags)" />
                   <Flag ok={!result.flags.descTooLong}       label="Meta description length" />
                   <Flag ok={result.flags.secChecks >= 4}     label="Security headers" />
-                  <div className="pt-1 border-t border-gray-100 mt-1">
+                  <div className="pt-1 border-t border-gray-100 mt-1 space-y-2">
                     {result.ranking && result.ranking.query ? (
-                      <div className="flex items-start gap-2 text-[12px]">
-                        <Search className={`w-3.5 h-3.5 shrink-0 mt-0.5 ${
-                          result.ranking.tier === 'top25' ? 'text-emerald-500'
-                          : result.ranking.tier === 'top100' ? 'text-amber-500'
-                          : 'text-red-400'
-                        }`} />
-                        <div>
-                          <span className={`font-bold block ${
-                            result.ranking.tier === 'top25' ? 'text-emerald-600'
-                            : result.ranking.tier === 'top100' ? 'text-amber-600'
-                            : 'text-red-500'
-                          }`}>
-                            {result.ranking.position
-                              ? `Google Rank: #${result.ranking.position}`
-                              : 'Not in top 100 results'}
-                          </span>
-                          <span className="text-gray-400 text-[11px]">for "{result.ranking.query}"</span>
+                      <>
+                        <div className="flex items-start gap-2 text-[12px]">
+                          <Search className={`w-3.5 h-3.5 shrink-0 mt-0.5 ${
+                            result.ranking.tier === 'top25' ? 'text-emerald-500'
+                            : result.ranking.tier === 'top100' ? 'text-amber-500'
+                            : 'text-red-400'
+                          }`} />
+                          <div>
+                            <span className={`font-bold block ${
+                              result.ranking.tier === 'top25' ? 'text-emerald-600'
+                              : result.ranking.tier === 'top100' ? 'text-amber-600'
+                              : 'text-red-500'
+                            }`}>
+                              {result.ranking.position
+                                ? `Google Rank: #${result.ranking.position}`
+                                : 'Not in top 100 results'}
+                            </span>
+                            <span className="text-gray-400 text-[11px]">for "{result.ranking.query}"</span>
+                          </div>
                         </div>
-                      </div>
+                        {(result.ranking.tier === 'below100' || !result.ranking.position) && (
+                          <div className="bg-red-50 border border-red-200 rounded-xl p-3">
+                            <p className="text-[12px] font-bold text-red-600 leading-snug">
+                              You are getting ghosted by thousands of potential clients.
+                            </p>
+                            <p className="text-[11px] text-red-500 mt-1 leading-relaxed">
+                              Switching to the Ultimate AI Tech Stack is a game changer — customers searching right now can't find you.
+                            </p>
+                          </div>
+                        )}
+                      </>
                     ) : keyword.trim() ? (
                       <div className="flex items-center gap-2 text-[11px] text-gray-400">
                         <Search className="w-3 h-3 shrink-0" />
