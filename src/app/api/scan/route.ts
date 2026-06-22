@@ -55,42 +55,219 @@ async function fetchPageContent(url: string) {
   }
 }
 
-function detectPlugins(content: string): { name: string; weight: 'heavy' | 'medium'; impact: string }[] {
+type TechCategory = 'builder' | 'analytics' | 'crm' | 'chat' | 'ecommerce' | 'seo' | 'marketing' | 'payments' | 'booking' | 'video' | 'hosting' | 'framework'
+type TechWeight = 'heavy' | 'medium' | 'light'
+
+interface TechItem {
+  name: string
+  category: TechCategory
+  weight: TechWeight
+  impact: string
+}
+
+function detectTechStack(content: string, metadata: any): TechItem[] {
   const c = content.toLowerCase()
-  const plugins = []
+  const m = JSON.stringify(metadata).toLowerCase()
+  const all = c + ' ' + m
+  const stack: TechItem[] = []
 
-  if (c.includes('elementor'))
-    plugins.push({ name: 'Elementor', weight: 'heavy' as const, impact: 'Adds 500KB+ of CSS/JS on every page load' })
-  if (c.includes('et_pb_') || c.includes('divi'))
-    plugins.push({ name: 'Divi Builder', weight: 'heavy' as const, impact: 'Generates bloated inline CSS that slows rendering' })
-  if (c.includes('wpb_') || c.includes('vc_row'))
-    plugins.push({ name: 'WPBakery', weight: 'heavy' as const, impact: 'Legacy page builder adds significant render-blocking scripts' })
-  if (c.includes('woocommerce'))
-    plugins.push({ name: 'WooCommerce', weight: 'heavy' as const, impact: 'Loads store scripts on every page, not just shop pages' })
-  if (c.includes('wpcf7') || c.includes('contact-form-7'))
-    plugins.push({ name: 'Contact Form 7', weight: 'medium' as const, impact: 'Loads scripts on every page even when no form is present' })
-  if (c.includes('yoast') || c.includes('wpseo'))
-    plugins.push({ name: 'Yoast SEO', weight: 'medium' as const, impact: 'Adds meta bloat but helps basic SEO' })
-  if (c.includes('rank-math') || c.includes('rankmath'))
-    plugins.push({ name: 'RankMath SEO', weight: 'medium' as const, impact: 'SEO plugin with moderate overhead' })
-  if (c.includes('revslider') || c.includes('revolution-slider'))
-    plugins.push({ name: 'Revolution Slider', weight: 'heavy' as const, impact: 'One of the heaviest plugins — adds 1MB+ of JS/CSS' })
-  if (c.includes('jetpack'))
-    plugins.push({ name: 'Jetpack', weight: 'heavy' as const, impact: 'Loads dozens of modules whether you use them or not' })
-  if (c.includes('intercom'))
-    plugins.push({ name: 'Intercom Chat', weight: 'medium' as const, impact: 'Third-party chat widget adds load time on every page' })
-  if (c.includes('drift.com') || c.includes('driftt.com'))
-    plugins.push({ name: 'Drift Chat', weight: 'medium' as const, impact: 'Third-party chat widget adds render-blocking scripts' })
-  if (c.includes('tidio'))
-    plugins.push({ name: 'Tidio Chat', weight: 'medium' as const, impact: 'Chat widget loads additional third-party scripts' })
-  if (c.includes('hubspot') || c.includes('hs-script'))
-    plugins.push({ name: 'HubSpot Widget', weight: 'medium' as const, impact: 'Marketing tracking adds script weight to every page' })
-  if (c.includes('popup') || c.includes('optinmonster') || c.includes('sumo'))
-    plugins.push({ name: 'Popup/OptIn Tool', weight: 'medium' as const, impact: 'Popup scripts load on every page visit' })
-  if (c.includes('wpml') || c.includes('polylang'))
-    plugins.push({ name: 'Translation Plugin', weight: 'medium' as const, impact: 'Multi-language plugins add database queries on every load' })
+  const add = (name: string, category: TechCategory, weight: TechWeight, impact: string) =>
+    stack.push({ name, category, weight, impact })
 
-  return plugins
+  // ── Page Builders ──────────────────────────────────────────────
+  if (all.includes('elementor'))
+    add('Elementor', 'builder', 'heavy', 'Adds 500KB+ of CSS/JS on every page load')
+  if (all.includes('et_pb_') || all.includes('divi'))
+    add('Divi Builder', 'builder', 'heavy', 'Generates bloated inline CSS that slows rendering')
+  if (all.includes('wpb_') || all.includes('vc_row'))
+    add('WPBakery', 'builder', 'heavy', 'Legacy builder adds render-blocking scripts')
+  if (all.includes('revslider') || all.includes('revolution-slider'))
+    add('Revolution Slider', 'builder', 'heavy', 'Adds 1MB+ of JS/CSS for sliders')
+  if (all.includes('beaver-builder') || all.includes('fl-builder'))
+    add('Beaver Builder', 'builder', 'heavy', 'Page builder adds significant frontend overhead')
+  if (all.includes('avada') || all.includes('fusion-builder'))
+    add('Avada/Fusion', 'builder', 'heavy', 'Theme + builder combo adds major page weight')
+
+  // ── Platforms / CMS ────────────────────────────────────────────
+  if (all.includes('cdn.msgsndr.com') || all.includes('leadconnectorhq') || all.includes('ghl-'))
+    add('GoHighLevel', 'hosting', 'heavy', 'Shared GHL hosting kills page speed and AI indexing')
+  if (all.includes('cdn.shopify.com') || all.includes('myshopify.com'))
+    add('Shopify', 'ecommerce', 'medium', 'Shopify theme limitations hurt Core Web Vitals')
+  if (all.includes('webflow.io') || all.includes('webflow.com'))
+    add('Webflow', 'hosting', 'medium', 'Clean code but locked CMS — you\'re renting your site')
+  if (all.includes('squarespace.com'))
+    add('Squarespace', 'hosting', 'heavy', 'Slow on mobile, poor structured data support')
+  if (all.includes('wix.com') || all.includes('wix-code') || all.includes('parastorage.com'))
+    add('Wix', 'hosting', 'heavy', 'Poor Core Web Vitals, near-zero AI search visibility')
+  if (all.includes('godaddy.com') || all.includes('secureserver.net'))
+    add('GoDaddy Website Builder', 'hosting', 'heavy', 'Shared GoDaddy hosting is among the slowest for business sites')
+  if (all.includes('wp-content') || all.includes('wp-includes'))
+    add('WordPress', 'hosting', 'medium', 'Performance depends heavily on plugins and hosting')
+  if (all.includes('ghost.io') || all.includes('ghost.org'))
+    add('Ghost CMS', 'hosting', 'light', 'Clean, fast CMS — good for content sites')
+  if (all.includes('hubspot.com/hs/') || all.includes('hs-sites.com'))
+    add('HubSpot CMS', 'hosting', 'medium', 'HubSpot-hosted sites have limited speed optimization options')
+  if (all.includes('kajabi'))
+    add('Kajabi', 'hosting', 'medium', 'All-in-one course platform with limited customization')
+  if (all.includes('clickfunnels') || all.includes('cfpage'))
+    add('ClickFunnels', 'hosting', 'heavy', 'Funnel builder generates slow, AI-unfriendly pages')
+
+  // ── Analytics ──────────────────────────────────────────────────
+  if (all.includes('gtag') || all.includes('google-analytics') || all.includes('ga4') || all.includes('googletagmanager') || all.includes('gtm.js'))
+    add('Google Analytics / GTM', 'analytics', 'light', 'Standard analytics — minimal performance impact if loaded async')
+  if (all.includes('hotjar') || all.includes('hj.sv'))
+    add('Hotjar', 'analytics', 'medium', 'Session recording adds script weight — defer loading if possible')
+  if (all.includes('clarity.ms') || all.includes('microsoft clarity'))
+    add('Microsoft Clarity', 'analytics', 'light', 'Heatmap/session tool — lighter than Hotjar')
+  if (all.includes('mixpanel'))
+    add('Mixpanel', 'analytics', 'light', 'Event analytics — minimal page weight')
+  if (all.includes('segment.com') || all.includes('analytics.js'))
+    add('Segment', 'analytics', 'medium', 'Data pipeline can multiply third-party script load')
+  if (all.includes('fbq(') || all.includes('facebook.com/tr') || all.includes('connect.facebook.net'))
+    add('Meta Pixel', 'analytics', 'medium', 'Facebook tracking pixel adds third-party request on every load')
+  if (all.includes('ads.linkedin.com') || all.includes('snap.licdn.com'))
+    add('LinkedIn Insight Tag', 'analytics', 'light', 'B2B tracking pixel — low performance impact')
+  if (all.includes('tiktok') && all.includes('pixel'))
+    add('TikTok Pixel', 'analytics', 'light', 'Ad tracking pixel')
+
+  // ── CRM / Marketing Automation ────────────────────────────────
+  if (all.includes('hs-scripts') || all.includes('hs-banner') || (all.includes('hubspot') && !all.includes('hs-sites')))
+    add('HubSpot CRM', 'crm', 'medium', 'HubSpot tracking adds marketing scripts to every page')
+  if (all.includes('activecampaign') || all.includes('activehosted.com'))
+    add('ActiveCampaign', 'crm', 'light', 'Email/CRM automation — scripts load on form pages')
+  if (all.includes('mailchimp') || all.includes('list-manage.com') || all.includes('chimpstatic'))
+    add('Mailchimp', 'marketing', 'light', 'Email marketing — pop-up scripts may affect load')
+  if (all.includes('klaviyo'))
+    add('Klaviyo', 'marketing', 'medium', 'E-commerce email tool — adds scripts to every page')
+  if (all.includes('keap') || all.includes('infusionsoft'))
+    add('Keap / Infusionsoft', 'crm', 'medium', 'CRM tracking scripts load sitewide')
+  if (all.includes('salesforce') || all.includes('pardot') || all.includes('force.com'))
+    add('Salesforce / Pardot', 'crm', 'medium', 'Enterprise CRM tracking — scripts add page weight')
+  if (all.includes('pipedrive'))
+    add('Pipedrive', 'crm', 'light', 'CRM — minimal front-end footprint')
+  if (all.includes('gohighlevel') || all.includes('leadconnector'))
+    add('GoHighLevel CRM', 'crm', 'medium', 'GHL CRM scripts load with the page')
+  if (all.includes('convertkit') || all.includes('ck.js'))
+    add('ConvertKit', 'marketing', 'light', 'Email marketing — lightweight embed scripts')
+
+  // ── Chat / Support ─────────────────────────────────────────────
+  if (all.includes('intercom'))
+    add('Intercom', 'chat', 'medium', 'Chat widget adds third-party scripts to every page')
+  if (all.includes('drift.com') || all.includes('driftt.com'))
+    add('Drift', 'chat', 'medium', 'Chat widget adds render-blocking scripts')
+  if (all.includes('tidio'))
+    add('Tidio', 'chat', 'medium', 'Chat widget loads additional third-party scripts')
+  if (all.includes('zendesk') || all.includes('zopim'))
+    add('Zendesk Chat', 'chat', 'medium', 'Support chat adds JS on every page load')
+  if (all.includes('livechat') || all.includes('livechatinc'))
+    add('LiveChat', 'chat', 'medium', 'Live chat widget adds script weight')
+  if (all.includes('crisp.chat') || all.includes('crisp-livechat'))
+    add('Crisp Chat', 'chat', 'light', 'Lightweight chat widget')
+  if (all.includes('tawk.to') || all.includes('tawk_api'))
+    add('Tawk.to', 'chat', 'light', 'Free chat widget — minimal weight')
+  if (all.includes('freshchat') || all.includes('freshdesk'))
+    add('Freshchat', 'chat', 'medium', 'Support chat widget adds page weight')
+  if (all.includes('gorgias'))
+    add('Gorgias', 'chat', 'medium', 'E-commerce support chat')
+
+  // ── E-Commerce ────────────────────────────────────────────────
+  if (all.includes('woocommerce'))
+    add('WooCommerce', 'ecommerce', 'heavy', 'Loads store scripts on every page, not just shop pages')
+  if (all.includes('bigcommerce'))
+    add('BigCommerce', 'ecommerce', 'medium', 'Hosted e-commerce platform with moderate overhead')
+  if (all.includes('magento') || all.includes('mage/'))
+    add('Magento', 'ecommerce', 'heavy', 'Heavy e-commerce platform — complex JS bundle')
+  if (all.includes('snipcart'))
+    add('Snipcart', 'ecommerce', 'light', 'Lightweight cart add-on')
+
+  // ── Payments ──────────────────────────────────────────────────
+  if (all.includes('stripe.com') || all.includes('stripe.js') || all.includes('js.stripe.com'))
+    add('Stripe', 'payments', 'light', 'Payment processor — secure, minimal page weight')
+  if (all.includes('paypal') || all.includes('paypalobjects'))
+    add('PayPal', 'payments', 'medium', 'PayPal scripts add third-party load on checkout pages')
+  if (all.includes('square') && (all.includes('squareup') || all.includes('squarespace') === false))
+    add('Square', 'payments', 'light', 'Payment processor — moderate script weight')
+  if (all.includes('authorize.net') || all.includes('authorizenet'))
+    add('Authorize.net', 'payments', 'light', 'Payment gateway')
+
+  // ── Booking / Scheduling ──────────────────────────────────────
+  if (all.includes('calendly'))
+    add('Calendly', 'booking', 'medium', 'Booking widget embeds add third-party scripts')
+  if (all.includes('acuityscheduling') || all.includes('acuity'))
+    add('Acuity Scheduling', 'booking', 'medium', 'Scheduling embed loads Acuity scripts')
+  if (all.includes('mindbody') || all.includes('mindbodyonline'))
+    add('Mindbody', 'booking', 'heavy', 'Fitness/wellness booking platform — heavy script bundle')
+  if (all.includes('booker') || all.includes('bookingkoala'))
+    add('Online Booking Tool', 'booking', 'medium', 'Booking widget adds third-party scripts')
+  if (all.includes('simplybook') || all.includes('setmore'))
+    add('Setmore / SimplyBook', 'booking', 'medium', 'Scheduling tool embed')
+
+  // ── Video ─────────────────────────────────────────────────────
+  if (all.includes('wistia'))
+    add('Wistia', 'video', 'medium', 'Business video host — loads player scripts')
+  if (all.includes('player.vimeo') || all.includes('vimeo.com/video'))
+    add('Vimeo', 'video', 'light', 'Video hosting — faster than YouTube embeds')
+  if (all.includes('youtube.com/embed') || all.includes('ytimg.com'))
+    add('YouTube Embeds', 'video', 'medium', 'YouTube iframes add significant load weight — use facades')
+  if (all.includes('loom.com/embed'))
+    add('Loom', 'video', 'light', 'Screen recording embeds — minimal weight')
+  if (all.includes('bunny.net') || all.includes('b-cdn.net'))
+    add('Bunny.net CDN/Video', 'video', 'light', 'Fast video/CDN provider')
+
+  // ── SEO Tools ────────────────────────────────────────────────
+  if (all.includes('yoast') || all.includes('wpseo'))
+    add('Yoast SEO', 'seo', 'medium', 'WordPress SEO plugin — adds meta overhead')
+  if (all.includes('rank-math') || all.includes('rankmath'))
+    add('RankMath SEO', 'seo', 'medium', 'WordPress SEO plugin with moderate overhead')
+  if (all.includes('jetpack'))
+    add('Jetpack', 'seo', 'heavy', 'Loads dozens of modules whether you use them or not')
+  if (all.includes('schema.org') || all.includes('application/ld+json'))
+    add('Structured Data (Schema)', 'seo', 'light', 'Good — helps AI engines and featured snippets')
+
+  // ── Frameworks / Tech Stack ───────────────────────────────────
+  if (all.includes('__next') || all.includes('_next/static') || all.includes('next.js'))
+    add('Next.js', 'framework', 'light', 'Modern React framework — excellent performance')
+  if (all.includes('gatsby') || all.includes('gatsby-'))
+    add('Gatsby', 'framework', 'light', 'Static site generator — fast but limited CMS flexibility')
+  if (all.includes('nuxt') || all.includes('__nuxt'))
+    add('Nuxt.js', 'framework', 'light', 'Vue-based framework — good performance')
+  if (all.includes('wp-json') && all.includes('react') || all.includes('headlesswp'))
+    add('Headless WordPress', 'framework', 'medium', 'Headless WP is faster than traditional WP but complex to maintain')
+
+  // ── CDN / Hosting Signals ─────────────────────────────────────
+  if (all.includes('cloudflare'))
+    add('Cloudflare CDN', 'hosting', 'light', 'Good — Cloudflare provides fast global CDN and security')
+  if (all.includes('amazonaws.com') || all.includes('cloudfront.net'))
+    add('AWS / CloudFront', 'hosting', 'light', 'AWS-backed hosting — good reliability')
+  if (all.includes('wpengine') || all.includes('wpenginepowered'))
+    add('WP Engine', 'hosting', 'medium', 'Managed WordPress hosting — better than shared but not as fast as Vercel')
+  if (all.includes('kinsta'))
+    add('Kinsta', 'hosting', 'light', 'Premium managed WordPress hosting — fast')
+  if (all.includes('flywheel') || all.includes('getflywheel'))
+    add('Flywheel', 'hosting', 'medium', 'Managed WordPress hosting')
+
+  // ── Other ────────────────────────────────────────────────────
+  if (all.includes('wpcf7') || all.includes('contact-form-7'))
+    add('Contact Form 7', 'builder', 'medium', 'Loads scripts on every page even without a form present')
+  if (all.includes('wpml') || all.includes('polylang'))
+    add('Translation Plugin', 'builder', 'medium', 'Multi-language plugins add database queries on load')
+  if (all.includes('optinmonster') || all.includes('sumo') || all.includes('privy'))
+    add('Popup/OptIn Tool', 'marketing', 'medium', 'Popup scripts load on every page visit')
+  if (all.includes('typeform'))
+    add('Typeform', 'marketing', 'light', 'Form/survey tool embed')
+  if (all.includes('recaptcha') || all.includes('hcaptcha'))
+    add('reCAPTCHA / hCaptcha', 'builder', 'light', 'Bot protection — adds small script load')
+  if (all.includes('disqus'))
+    add('Disqus Comments', 'builder', 'heavy', 'Comment system adds heavy third-party JS bundle')
+
+  return stack
+}
+
+// Keep legacy detectPlugins signature for backward compat — now delegates to detectTechStack
+function detectPlugins(content: string): { name: string; weight: 'heavy' | 'medium'; impact: string }[] {
+  return detectTechStack(content, {})
+    .filter(t => t.category === 'builder' || t.weight === 'heavy')
+    .map(t => ({ name: t.name, weight: t.weight as 'heavy' | 'medium', impact: t.impact }))
 }
 
 function detectPlatform(content: string, metadata: any): {
@@ -248,6 +425,7 @@ async function runScan(domain: string, email: string, keyword?: string, location
     const content   = pageContent?.markdown  || ''
     const metadata  = pageContent?.metadata  || {}
     const platform  = detectPlatform(content, metadata)
+    const techStack = detectTechStack(content, metadata)
     const plugins   = detectPlugins(content)
     const hasSchema = content.includes('application/ld+json') || content.includes('schema.org')
     const hasFAQ    = content.toLowerCase().includes('faq') || content.toLowerCase().includes('frequently asked')
@@ -325,6 +503,7 @@ Format as raw JSON only: {"problem":"...","quick_win":"...","ai_gap":"..."}`
       },
       flags: { hasSchema, hasFAQ, hasOG, descTooLong, secChecks },
       platform,
+      techStack,
       plugins,
       analysis,
       lcp: pageSpeed?.lcp ?? null,

@@ -11,9 +11,19 @@ interface RankingResult {
   query: string
 }
 
+type TechCategory = 'builder' | 'analytics' | 'crm' | 'chat' | 'ecommerce' | 'seo' | 'marketing' | 'payments' | 'booking' | 'video' | 'hosting' | 'framework'
+
+interface TechItem {
+  name: string
+  category: TechCategory
+  weight: 'heavy' | 'medium' | 'light'
+  impact: string
+}
+
 interface ScanResult {
   domain: string
   ranking: RankingResult | null
+  techStack: TechItem[]
   scores: {
     performance:   number | null
     seo:           number | null
@@ -412,6 +422,71 @@ export default function SiteAuditScanner() {
                       ⚠️ {result.plugins.filter(p => p.weight === 'heavy').length} heavy plugins detected — this is likely adding 2-4 seconds to your load time.
                     </p>
                   )}
+                </div>
+              )}
+
+              {/* Tech Stack */}
+              {result.techStack && result.techStack.length > 0 && (
+                <div className="bg-white rounded-2xl border border-gray-100 shadow-md shadow-gray-100 p-5">
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="text-xs font-bold text-gray-700 uppercase tracking-wide">Tech Stack Detected</h4>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-50 text-blue-600 border border-blue-200">
+                      {result.techStack.length} tools found
+                    </span>
+                  </div>
+                  {(() => {
+                    const categoryLabels: Record<TechCategory, string> = {
+                      hosting: '🏠 Platform / Hosting',
+                      builder: '🔧 Page Builders',
+                      analytics: '📊 Analytics',
+                      crm: '👥 CRM',
+                      marketing: '📣 Marketing',
+                      chat: '💬 Chat / Support',
+                      ecommerce: '🛒 E-Commerce',
+                      payments: '💳 Payments',
+                      booking: '📅 Booking',
+                      video: '🎥 Video',
+                      seo: '🔍 SEO Tools',
+                      framework: '⚡ Framework',
+                    }
+                    const grouped = result.techStack.reduce((acc, item) => {
+                      if (!acc[item.category]) acc[item.category] = []
+                      acc[item.category].push(item)
+                      return acc
+                    }, {} as Record<string, TechItem[]>)
+                    const order: TechCategory[] = ['hosting', 'framework', 'builder', 'analytics', 'crm', 'marketing', 'chat', 'ecommerce', 'payments', 'booking', 'video', 'seo']
+                    return order.filter(cat => grouped[cat]?.length).map(cat => (
+                      <div key={cat} className="mb-3 last:mb-0">
+                        <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">{categoryLabels[cat]}</p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {grouped[cat].map((item, i) => (
+                            <div key={i} className="group relative">
+                              <span className={`inline-flex items-center gap-1 text-[11px] font-semibold px-2.5 py-1 rounded-full border cursor-default ${
+                                item.weight === 'heavy'
+                                  ? 'bg-red-50 text-red-600 border-red-200'
+                                  : item.weight === 'medium'
+                                  ? 'bg-amber-50 text-amber-700 border-amber-200'
+                                  : 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                              }`}>
+                                <span className={`w-1.5 h-1.5 rounded-full ${
+                                  item.weight === 'heavy' ? 'bg-red-400'
+                                  : item.weight === 'medium' ? 'bg-amber-400'
+                                  : 'bg-emerald-400'
+                                }`} />
+                                {item.name}
+                              </span>
+                              <div className="absolute bottom-full left-0 mb-1 hidden group-hover:block z-10 w-48 bg-gray-900 text-white text-[10px] rounded-lg p-2 leading-relaxed shadow-xl">
+                                {item.impact}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))
+                  })()}
+                  <p className="mt-3 text-[10px] text-gray-400 border-t border-gray-100 pt-3">
+                    🔴 Heavy impact &nbsp;|&nbsp; 🟡 Moderate &nbsp;|&nbsp; 🟢 Lightweight. Hover any tag for details.
+                  </p>
                 </div>
               )}
 
