@@ -145,9 +145,9 @@ export default function SiteAuditScanner() {
     setStep('scanning')
     setLogIndex(0)
 
-    // Animate logs while waiting
+    // Animate logs — stop at second-to-last, hold until API responds
     const interval = setInterval(() => {
-      setLogIndex(prev => Math.min(prev + 1, logs.length - 1))
+      setLogIndex(prev => Math.min(prev + 1, logs.length - 2))
     }, 1200)
 
     try {
@@ -173,6 +173,10 @@ export default function SiteAuditScanner() {
         throw new Error('Scan took too long. Please try again.')
       }
       if (!res.ok) throw new Error(data?.error || 'Scan failed.')
+      // Flash to 100% then show results
+      clearInterval(interval)
+      setLogIndex(logs.length - 1)
+      await new Promise(r => setTimeout(r, 600))
       setResult(data)
       setStep('results')
     } catch (err: any) {
@@ -268,35 +272,33 @@ export default function SiteAuditScanner() {
 
           {/* SCANNING */}
           {step === 'scanning' && (
-            <div className="bg-[#0d0d14] rounded-2xl border border-white/5 p-10 w-[120%] -ml-[10%]">
+            <div className="relative bg-[#0d0d14] rounded-2xl border border-white/5 p-10 pr-44 w-[120%] -ml-[10%] min-h-[260px]">
               <div className="flex items-center gap-3 mb-5">
                 <Loader2 className="w-4 h-4 text-[#8734E1] animate-spin shrink-0" />
                 <span className="text-sm font-bold text-white">Scanning {domain}...</span>
               </div>
-              <div className="flex items-stretch gap-6">
-                {/* Log lines — left */}
-                <div className="flex-1 space-y-3">
-                  {logs.slice(0, logIndex + 1).map((log, i) => (
-                    <div key={i} className={`text-[15px] font-bold font-mono flex items-center gap-2.5 transition-colors duration-500 ${
-                      i < logIndex
-                        ? 'text-emerald-400'
-                        : i === logIndex
-                        ? 'text-[#8734E1]'
-                        : 'text-gray-600'
-                    }`}>
-                      <span className="w-2 h-2 rounded-full bg-current shrink-0" />
-                      {log}
-                    </div>
-                  ))}
-                </div>
-                {/* % counter — right */}
-                <div className="flex flex-col items-center justify-center shrink-0 w-28">
-                  <span className="text-6xl font-black font-mono text-yellow-400 tabular-nums leading-none">
-                    {Math.round((logIndex / (logs.length - 1)) * 100)}
-                  </span>
-                  <span className="text-yellow-400 text-xl font-black font-mono mt-1">%</span>
-                  <span className="text-gray-500 text-[10px] font-mono mt-2 uppercase tracking-widest">complete</span>
-                </div>
+              {/* Log lines — left */}
+              <div className="space-y-3">
+                {logs.slice(0, logIndex + 1).map((log, i) => (
+                  <div key={i} className={`text-[15px] font-bold font-mono flex items-center gap-2.5 transition-colors duration-500 ${
+                    i < logIndex
+                      ? 'text-emerald-400'
+                      : i === logIndex
+                      ? 'text-[#8734E1]'
+                      : 'text-gray-600'
+                  }`}>
+                    <span className="w-2 h-2 rounded-full bg-current shrink-0" />
+                    {log}
+                  </div>
+                ))}
+              </div>
+              {/* % counter — absolutely centered right, never moves */}
+              <div className="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col items-center justify-center w-28">
+                <span className="text-6xl font-black font-mono text-yellow-400 tabular-nums leading-none transition-all duration-300">
+                  {logIndex >= logs.length - 1 ? 100 : Math.round((logIndex / (logs.length - 1)) * 95)}
+                </span>
+                <span className="text-yellow-400 text-xl font-black font-mono mt-1">%</span>
+                <span className="text-gray-500 text-[10px] font-mono mt-2 uppercase tracking-widest">complete</span>
               </div>
             </div>
           )}
