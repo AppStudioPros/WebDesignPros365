@@ -293,12 +293,14 @@ export default function SiteAuditScanner() {
                 ))}
               </div>
               {/* % counter — absolutely centered right, never moves */}
-              <div className="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col items-center justify-center w-28">
-                <span className="text-6xl font-black font-mono text-yellow-400 tabular-nums leading-none transition-all duration-300">
-                  {logIndex >= logs.length - 1 ? 100 : Math.round((logIndex / (logs.length - 1)) * 95)}
-                </span>
-                <span className="text-yellow-400 text-xl font-black font-mono mt-1">%</span>
-                <span className="text-gray-500 text-[10px] font-mono mt-2 uppercase tracking-widest">complete</span>
+              <div className="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col items-center justify-center w-32">
+                <div className="relative leading-none">
+                  <span className="text-8xl font-black font-mono text-yellow-400 tabular-nums transition-all duration-300">
+                    {logIndex >= logs.length - 1 ? 100 : Math.round((logIndex / (logs.length - 1)) * 95)}
+                  </span>
+                  <span className="absolute -top-1 -right-5 text-2xl font-black font-mono text-yellow-400">%</span>
+                </div>
+                <span className="text-gray-500 text-[10px] font-mono mt-3 uppercase tracking-widest">complete</span>
               </div>
             </div>
           )}
@@ -402,24 +404,34 @@ export default function SiteAuditScanner() {
                   <Flag ok={result.flags.hasOG}              label="Social sharing (OG tags)" />
                   <Flag ok={!result.flags.descTooLong}       label="Meta description length" />
                   <Flag ok={result.flags.secChecks >= 4}     label="Security headers" />
-                  {result.ranking && result.ranking.query && (
-                    <div className="flex items-center gap-2 text-[12px] pt-1 border-t border-gray-100 mt-1">
-                      <Search className={`w-3.5 h-3.5 shrink-0 ${
-                        result.ranking.tier === 'top25' ? 'text-emerald-500'
-                        : result.ranking.tier === 'top100' ? 'text-amber-500'
-                        : 'text-red-400'
-                      }`} />
-                      <span className={`font-medium ${
-                        result.ranking.tier === 'top25' ? 'text-emerald-600'
-                        : result.ranking.tier === 'top100' ? 'text-amber-600'
-                        : 'text-red-500'
-                      }`}>
-                        {result.ranking.position
-                          ? `Ranked #${result.ranking.position} for "${result.ranking.query}"`
-                          : `Not found for "${result.ranking.query}"`}
-                      </span>
-                    </div>
-                  )}
+                  <div className="pt-1 border-t border-gray-100 mt-1">
+                    {result.ranking && result.ranking.query ? (
+                      <div className="flex items-start gap-2 text-[12px]">
+                        <Search className={`w-3.5 h-3.5 shrink-0 mt-0.5 ${
+                          result.ranking.tier === 'top25' ? 'text-emerald-500'
+                          : result.ranking.tier === 'top100' ? 'text-amber-500'
+                          : 'text-red-400'
+                        }`} />
+                        <div>
+                          <span className={`font-bold block ${
+                            result.ranking.tier === 'top25' ? 'text-emerald-600'
+                            : result.ranking.tier === 'top100' ? 'text-amber-600'
+                            : 'text-red-500'
+                          }`}>
+                            {result.ranking.position
+                              ? `Google Rank: #${result.ranking.position}`
+                              : 'Not in top 100 results'}
+                          </span>
+                          <span className="text-gray-400 text-[11px]">for "{result.ranking.query}"</span>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-2 text-[11px] text-gray-400">
+                        <Search className="w-3 h-3 shrink-0" />
+                        <span>Add a keyword above to see Google rank</span>
+                      </div>
+                    )}
+                  </div>
                 </div>
 
                 {/* Right — What this means */}
