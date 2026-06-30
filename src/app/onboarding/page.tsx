@@ -596,7 +596,7 @@ export default function OnboardingPage() {
     <div className="min-h-screen bg-gradient-to-b from-white to-[#f8f9fc]">
       {/* Header */}
       <div className="bg-white border-b border-gray-100 sticky top-0 z-40">
-        <div className="container-custom py-4">
+        <div className="container-custom py-4 px-4 sm:px-6">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-3">
               <span className="font-bold text-gray-900 text-sm">Client Onboarding</span>
@@ -639,7 +639,7 @@ export default function OnboardingPage() {
       {/* Hero for step */}
       <section className="pt-12 pb-8 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-mesh opacity-60" />
-        <div className="container-custom relative z-10 max-w-3xl">
+        <div className="container-custom relative z-10 max-w-3xl px-4 sm:px-6">
           <motion.div
             key={step.id + '-hero'}
             initial={{ opacity: 0, y: 10 }}
@@ -654,7 +654,7 @@ export default function OnboardingPage() {
       </section>
 
       {/* Form content */}
-      <section className="pb-48 container-custom max-w-3xl">
+      <section className="pb-40 container-custom max-w-3xl px-4 sm:px-6">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={step.id}
@@ -676,7 +676,7 @@ export default function OnboardingPage() {
 
       {/* Fixed nav footer */}
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 shadow-lg z-40">
-        <div className="container-custom py-4 max-w-3xl flex items-center justify-between gap-4">
+        <div className="container-custom py-5 max-w-3xl flex items-center justify-between gap-4 px-4 sm:px-6">
           <Button
             variant="outline"
             onClick={goPrev}
