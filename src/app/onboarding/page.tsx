@@ -654,7 +654,7 @@ export default function OnboardingPage() {
       </section>
 
       {/* Form content */}
-      <section className="pb-32 container-custom max-w-3xl">
+      <section className="pb-48 container-custom max-w-3xl">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={step.id}
