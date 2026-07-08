@@ -136,7 +136,7 @@ export default function AboutPage() {
                 which means the discipline applied to your customer comms is the same we apply
                 to government acquisition workflows.
               </p>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {highlights.map((item, index) => (
                   <motion.div
                     key={item}

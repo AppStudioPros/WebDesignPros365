@@ -124,7 +124,7 @@ export default function CaseStudiesPage() {
       <section className="section bg-[#f8f9fc]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center">
-            <div className="grid grid-cols-3 gap-8 mb-8">
+            <div className="grid grid-cols-3 gap-4 mb-8 sm:gap-8">
               <div>
                 <TrendingUp className="w-8 h-8 text-[#8734E1] mx-auto mb-2" />
                 <div className="text-3xl font-bold gradient-text">2000+</div>
