@@ -152,8 +152,8 @@ export default function ServicesSection() {
                   className="absolute top-0 left-0 right-0 h-1"
                   style={{ background: `linear-gradient(90deg, ${service.color}, ${service.color}80)` }}
                 />
-                <CardContent className="p-0 pt-2">
-                  <div className="flex items-start justify-between mb-4">
+                <CardContent className="p-0 pt-2 flex flex-col items-center text-center">
+                  <div className="flex flex-col items-center mb-4 gap-2">
                     <GlassIcon Icon={getServiceIcon(service._id)} color={service.color} />
                     {service.isFlagship && (
                       <Badge className="bg-[#8734E1] text-white">Flagship</Badge>
@@ -163,7 +163,7 @@ export default function ServicesSection() {
                     {service.title}
                   </h3>
                   <p className="text-sm text-gray-600 mb-4">{service.shortDescription}</p>
-                  <div className="flex items-center text-sm font-medium group-hover:gap-2 transition-all" style={{ color: service.color }}>
+                  <div className="flex items-center justify-center text-sm font-medium group-hover:gap-2 transition-all" style={{ color: service.color }}>
                     Learn more
                     <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                   </div>

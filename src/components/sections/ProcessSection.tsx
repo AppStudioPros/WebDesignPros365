@@ -115,7 +115,7 @@ export default function ProcessSection() {
 
                     {/* Icon medallion */}
                     <div
-                      className="relative w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                      className="relative w-12 h-12 rounded-xl flex items-center justify-center mb-4 mx-auto"
                       style={{
                         background: `linear-gradient(135deg, ${step.color}, ${step.color}cc)`,
                         boxShadow: `0 6px 20px -6px ${step.color}50, inset 0 1px 0 rgba(255,255,255,0.3)`,
@@ -125,22 +125,22 @@ export default function ProcessSection() {
                     </div>
 
                     {/* Number + step counter */}
-                    <div className="flex items-baseline gap-2 mb-2 relative">
+                    <div className="flex items-baseline justify-center gap-2 mb-2 relative">
                       <span
                         className="text-xs font-mono font-bold"
                         style={{ color: step.color }}
                       >
                         STEP {step.number}
                       </span>
-                      <span className="text-[10px] text-gray-400">·</span>
+                      <span className="text-[10px] text-gray-500">·</span>
                       <span className="text-[10px] text-gray-500">{step.duration}</span>
                     </div>
 
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2 relative">{step.title}</h3>
-                    <p className="text-gray-600 text-sm mb-4 relative leading-relaxed">{step.description}</p>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2 relative text-center">{step.title}</h3>
+                    <p className="text-gray-600 text-sm mb-4 relative leading-relaxed text-center">{step.description}</p>
 
                     {/* Deliverable footer */}
-                    <div className="relative pt-3 border-t border-gray-100 flex items-center gap-2">
+                    <div className="relative pt-3 border-t border-gray-100 flex items-center justify-center gap-2">
                       <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: step.color }} />
                       <span className="text-xs text-gray-500">
                         Deliverable: <span className="text-gray-800 font-medium">{step.deliverable}</span>

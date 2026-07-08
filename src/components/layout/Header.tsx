@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ShieldCheck } from 'lucide-react';
@@ -16,9 +17,13 @@ const navigation = [
   { name: 'Platform Engineering', href: '/platform-engineering' },
   { name: 'Portfolio', href: '/portfolio' },
   { name: 'Pricing', href: '/pricing' },
-  { name: 'Partnerships', href: '/partnerships' },
   { name: 'About', href: '/about' },
 ];
+
+const navCTA = {
+  name: 'Real Estate & Finance',
+  href: '/verticals/real-estate-financial',
+};
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,24 +48,29 @@ export default function Header() {
       <div className="container-custom">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="relative z-10">
-            <img
-              src="https://customer-assets.emergentagent.com/job_designpros-test/artifacts/tf1dbj7e_Web%20Design%20Pros%20365%20noborder.png"
+          <Link href="/" className="relative z-10 flex-shrink-0">
+            <Image
+              src="/logo-opt.png"
               alt="Web Design Pros 365"
+              width={200}
+              height={50}
               className="h-[50px] w-auto"
+              priority
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-0.5">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  'px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200',
-                  'text-gray-700 hover:text-[#8734E1] hover:bg-[#8734E1]/10',
-                  pathname === item.href && 'text-[#8734E1] bg-[#8734E1]/10'
+                  'px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200',
+                  'text-gray-600 hover:text-[#8734E1] hover:bg-[#8734E1]/8',
+                  pathname === item.href
+                    ? 'text-[#8734E1] font-semibold'
+                    : ''
                 )}
               >
                 {item.name}
@@ -68,25 +78,44 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* CTA cluster: BBB badge + Start Your Project */}
-          <div className="hidden lg:flex items-center gap-3">
+          {/* CTA cluster: BBB badge + RE&Finance + Start Your Project */}
+          <div className="hidden lg:flex items-center gap-2.5">
+            {/* BBB Badge */}
             <a
               href={BBB_PROFILE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="BBB Accredited Business – View profile"
-              className="group inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white border border-[#0c5ba2]/30 hover:border-[#0c5ba2] hover:shadow-md transition-all"
+              aria-label="BBB Accredited Business"
+              className="group inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white border border-[#0c5ba2]/30 hover:border-[#0c5ba2] hover:shadow-md transition-all"
               title="BBB Accredited · A Rating"
             >
               <ShieldCheck className="w-4 h-4 text-[#0c5ba2]" />
               <div className="flex items-baseline gap-1 leading-none">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#0c5ba2]">BBB</span>
-                <span className="text-[10px] font-semibold text-gray-600 group-hover:text-[#0c5ba2] transition-colors">A · Accredited</span>
+                <span className="text-[10px] font-semibold text-gray-500 group-hover:text-[#0c5ba2] transition-colors">A · Accredited</span>
               </div>
             </a>
+
+            {/* Real Estate & Finance — outline pill */}
+            <Link href={navCTA.href}>
+              <motion.button
+                className={cn(
+                  'px-4 py-2 text-sm font-semibold rounded-xl border transition-all',
+                  pathname === navCTA.href
+                    ? 'bg-[#8734E1] text-white border-[#8734E1]'
+                    : 'bg-transparent text-[#8734E1] border-[#8734E1] hover:bg-[#8734E1] hover:text-white'
+                )}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {navCTA.name}
+              </motion.button>
+            </Link>
+
+            {/* Start Your Project — filled */}
             <Link href="/contact">
               <motion.button
-                className="px-6 py-2.5 bg-white text-[#8734E1] font-semibold rounded-xl hover:bg-white/90 transition-all shadow-lg"
+                className="px-5 py-2 bg-[#8734E1] text-white text-sm font-semibold rounded-xl hover:bg-[#7020c8] transition-all shadow-md"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -99,6 +128,7 @@ export default function Header() {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden p-2 text-[#8734E1] hover:bg-[#8734E1]/10 rounded-lg transition-colors"
+            aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -124,16 +154,27 @@ export default function Header() {
                     className={cn(
                       'px-4 py-3 text-sm font-medium rounded-lg transition-colors',
                       'text-gray-700 hover:text-[#8734E1] hover:bg-[#8734E1]/5',
-                      pathname === item.href && 'text-[#8734E1] bg-[#8734E1]/5'
+                      pathname === item.href && 'text-[#8734E1] font-semibold bg-[#8734E1]/5'
                     )}
                   >
                     {item.name}
                   </Link>
                 ))}
                 <Link
+                  href={navCTA.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={cn(
+                    'px-4 py-3 text-sm font-semibold rounded-lg border text-center transition-colors',
+                    'text-[#8734E1] border-[#8734E1] hover:bg-[#8734E1] hover:text-white',
+                    pathname === navCTA.href && 'bg-[#8734E1] text-white'
+                  )}
+                >
+                  {navCTA.name}
+                </Link>
+                <Link
                   href="/contact"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="mt-4 px-4 py-3 bg-gradient-to-r from-[#8734E1] to-[#BF5DE0] text-white font-semibold rounded-xl text-center"
+                  className="mt-2 px-4 py-3 bg-[#8734E1] text-white font-semibold rounded-xl text-center hover:bg-[#7020c8] transition-colors"
                 >
                   Start Your Project
                 </Link>

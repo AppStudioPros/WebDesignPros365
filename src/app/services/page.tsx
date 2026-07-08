@@ -254,6 +254,38 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* VIDEO — How We Do It */}
+      <section className="py-16 bg-white border-b border-gray-100">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <p className="text-xs uppercase tracking-widest text-[#8734E1] font-semibold mb-3">
+              Watch
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+              How We Do It And Why Daily Optimization Wins
+            </h2>
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-black">
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                poster="/videos/daily-optimization-poster.png"
+                className="w-full block"
+                style={{ aspectRatio: '16/9' }}
+              >
+                <source src="/videos/daily-optimization.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* AI VISIBILITY FLAGSHIP BANNER */}
       {flagship && (
         <section className="py-12 bg-gradient-to-r from-[#f0e6fb] via-white to-[#f0e6fb] border-b border-[#8734E1]/20 relative overflow-hidden">
@@ -340,8 +372,8 @@ export default function ServicesPage() {
                     className="absolute top-0 left-0 right-0 h-1"
                     style={{ background: `linear-gradient(90deg, ${service.color}, ${service.color}80)` }}
                   />
-                  <CardContent className="p-0 pt-3">
-                    <div className="flex items-start justify-between mb-4">
+                  <CardContent className="p-0 pt-3 flex flex-col items-center text-center">
+                    <div className="flex flex-col items-center mb-4 gap-2">
                       <GlassIcon
                         Icon={getServiceIcon(service._id)}
                         color={service.color}
@@ -354,7 +386,7 @@ export default function ServicesPage() {
                       {service.title}
                     </h3>
                     <p className="text-sm text-gray-600 mb-4 leading-relaxed">{service.shortDescription}</p>
-                    <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                    <div className="flex items-center justify-center gap-4 pt-3 border-t border-gray-100 w-full">
                       <span className="text-xs text-gray-500">{service.timeline}</span>
                       <div className="flex items-center text-sm font-medium group-hover:gap-2 transition-all" style={{ color: service.color }}>
                         Learn more
@@ -417,8 +449,8 @@ export default function ServicesPage() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
                 >
-                  <Card className="p-5 h-full hover:shadow-lg transition-all">
-                    <div className="flex items-center gap-3 mb-3">
+                  <Card className="p-5 h-full hover:shadow-lg transition-all flex flex-col items-center text-center">
+                    <div className="flex flex-col items-center gap-1 mb-3">
                       <GlassIcon Icon={Icon} color={step.color} size="w-11 h-11" iconSize="w-5 h-5" />
                       <div className="text-xs text-gray-400 font-mono">0{i + 1}</div>
                     </div>

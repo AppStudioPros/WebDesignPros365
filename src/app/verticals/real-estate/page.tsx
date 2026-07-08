@@ -66,7 +66,7 @@ export default function RealEstatePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {painPoints.map((p, i) => (
               <motion.div key={p.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-                <Card className="p-6 h-full border-red-100 bg-red-50/30">
+                <Card className="p-6 h-full border-red-100 bg-red-50/30 text-center">
                   <h3 className="font-semibold text-gray-900 mb-2">{p.title}</h3>
                   <p className="text-sm text-gray-700">{p.body}</p>
                 </Card>
@@ -87,7 +87,7 @@ export default function RealEstatePage() {
               const Icon = h.icon;
               return (
                 <motion.div key={h.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
-                  <Card className="p-6 h-full hover:shadow-lg hover:border-[#8734E1] transition-all">
+                  <Card className="p-6 h-full hover:shadow-lg hover:border-[#8734E1] transition-all flex flex-col items-center text-center">
                     <div className="mb-4"><GlassIcon Icon={Icon} color="#8734E1" /></div>
                     <h3 className="font-semibold text-gray-900 mb-2">{h.title}</h3>
                     <p className="text-sm text-gray-600 leading-relaxed">{h.body}</p>

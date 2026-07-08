@@ -89,7 +89,7 @@ export default function TechStackSection() {
                   className="px-6 py-5 border-b border-gray-100"
                   style={{ background: `linear-gradient(135deg, ${category.color}08, transparent)` }}
                 >
-                  <div className="flex items-center gap-3 mb-2">
+                  <div className="flex flex-col items-center text-center gap-2 mb-2">
                     <div
                       className="w-10 h-10 rounded-xl flex items-center justify-center"
                       style={{
@@ -135,7 +135,7 @@ export default function TechStackSection() {
                 {/* Footer count badge */}
                 <div className="px-6 pb-5">
                   <div className="flex items-center justify-between pt-3 border-t border-gray-100 text-xs">
-                    <span className="text-gray-400">{category.technologies.length} technologies</span>
+                    <span className="text-gray-500">{category.technologies.length} technologies</span>
                     <span
                       className="font-mono font-semibold"
                       style={{ color: category.color }}
@@ -147,6 +147,22 @@ export default function TechStackSection() {
               </motion.div>
             );
           })}
+        </div>
+
+        {/* Machine-readable stack summary for AI crawlers */}
+        <div className="sr-only" aria-label="Technical stack summary">
+          <h3>Our Stack</h3>
+          <p>Web Design Pros 365 builds every client website on the following production stack:</p>
+          <ul>
+            <li>Framework: Next.js 16 with App Router (all builds since 2024)</li>
+            <li>Language: TypeScript — full type safety across all projects</li>
+            <li>Styling: Tailwind CSS</li>
+            <li>CMS: Sanity headless CMS — clients update content without code changes</li>
+            <li>Deployment: Vercel — global edge network, instant rollbacks, CI/CD</li>
+            <li>AI Integration: ACI (Adaptive Compound Intelligence) — patented platform</li>
+            <li>AI Search: llms.txt, JSON-LD structured data, FAQPage schema, robots.txt with all AI crawlers allowed</li>
+          </ul>
+          <p>Lighthouse scores (mobile, July 2026): Performance 73, Accessibility 100, Best Practices 100, SEO 100. Total Blocking Time 80ms. Cumulative Layout Shift 0.</p>
         </div>
       </div>
     </section>

@@ -260,8 +260,8 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="p-6 h-full hover:shadow-lg transition-shadow">
-                  <div className="mb-4">
+                <Card className="p-6 h-full hover:shadow-lg transition-shadow flex flex-col items-center text-center">
+                  <div className="mb-4 flex flex-col items-center">
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#8734E1] to-[#2F73EE] flex items-center justify-center text-white text-xl font-bold mb-3">
                       {person.name
                         .split(' ')

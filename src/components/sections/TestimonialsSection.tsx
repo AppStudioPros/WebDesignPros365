@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 // All logos served from /public/logos/ — locally hosted SVGs, no CDN dependency.
@@ -61,13 +62,14 @@ function LogoBadge({ logo }: { logo: LogoChip }) {
     <div className="flex-shrink-0 mx-3">
       <div className="px-5 py-3 rounded-xl bg-white border border-gray-200 text-gray-700 font-medium flex items-center gap-2.5 whitespace-nowrap shadow-sm hover:shadow-md hover:border-[#8734E1]/40 transition-all">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={`/logos/${logo.file}.svg`}
           alt={`${logo.name} logo`}
           className="w-5 h-5 object-contain"
           loading="lazy"
           width={20}
           height={20}
+          unoptimized
         />
         <span className="text-sm">{logo.name}</span>
       </div>
@@ -109,7 +111,7 @@ export default function TestimonialsSection() {
             </div>
           </div>
 
-          <p className="text-center text-xs text-gray-400 mt-4">
+          <p className="text-center text-xs text-gray-500 mt-4">
             See the full partner directory on our{' '}
             <a href="/partnerships" className="text-[#8734E1] hover:underline">
               Partnerships page

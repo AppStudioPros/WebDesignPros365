@@ -6,7 +6,13 @@ const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KE
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, phone, company, projectType, message } = body;
+    const { name, email, phone, company, projectType, message, _hp } = body;
+
+    // Honeypot check — bots fill this, humans don't
+    if (_hp) {
+      // Silently succeed so bots think it worked
+      return NextResponse.json({ success: true }, { status: 200 });
+    }
 
     if (!name || !email || !message) {
       return NextResponse.json(

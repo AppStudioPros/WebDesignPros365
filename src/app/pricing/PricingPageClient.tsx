@@ -47,10 +47,13 @@ export default function PricingPageClient() {
             <div>
               <h3 className="text-xl font-bold text-gray-900">Launch</h3>
               <p className="mt-2 text-sm text-gray-500">Perfect for small businesses and startups launching their professional web footprint.</p>
-              <p className="mt-6 flex items-baseline">
-                <span className="text-4xl font-extrabold tracking-tight text-gray-900">$7,500</span>
-                <span className="ml-1 text-sm font-semibold text-gray-400">/fixed</span>
-              </p>
+              <div className="mt-6">
+                <p className="flex items-baseline gap-1">
+                  <span className="text-4xl font-extrabold tracking-tight text-gray-900">$3,750</span>
+                  <span className="text-sm font-semibold text-gray-400">to start</span>
+                </p>
+                <p className="text-xs text-gray-400 mt-1">$7,500 total · 50/25/25 milestone payments</p>
+              </div>
               <ul className="mt-6 space-y-3 text-sm text-gray-600 border-t border-gray-200 pt-6">
                 <li>• Up to 5 pages built on Next.js 16</li>
                 <li>• Fully responsive framework & PWA layout*</li>
@@ -80,10 +83,13 @@ export default function PricingPageClient() {
             <div>
               <h3 className="text-xl font-bold text-gray-900">Growth</h3>
               <p className="mt-2 text-sm text-gray-500">For growing brands that require custom design structures and deep content engines.</p>
-              <p className="mt-6 flex items-baseline">
-                <span className="text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#8734E1] to-[#2F73EE]">$15,000</span>
-                <span className="ml-1 text-sm font-semibold text-gray-400">/fixed</span>
-              </p>
+              <div className="mt-6">
+                <p className="flex items-baseline gap-1">
+                  <span className="text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#8734E1] to-[#2F73EE]">$7,500</span>
+                  <span className="text-sm font-semibold text-gray-400">to start</span>
+                </p>
+                <p className="text-xs text-gray-400 mt-1">$15,000 total · 50/25/25 milestone payments</p>
+              </div>
               <ul className="mt-6 space-y-3 text-sm text-gray-600 border-t border-gray-200 pt-6">
                 <li>• Up to 15 pages with custom UI/UX design</li>
                 <li>• Native Sanity CMS headless infrastructure</li>
@@ -110,10 +116,13 @@ export default function PricingPageClient() {
             <div>
               <h3 className="text-xl font-bold text-gray-900">Pro</h3>
               <p className="mt-2 text-sm text-gray-500">Corporate properties needing complex AI interfaces and rigid accessibility features.</p>
-              <p className="mt-6 flex items-baseline">
-                <span className="text-4xl font-extrabold tracking-tight text-gray-900">$30,000</span>
-                <span className="ml-1 text-sm font-semibold text-gray-400">/fixed</span>
-              </p>
+              <div className="mt-6">
+                <p className="flex items-baseline gap-1">
+                  <span className="text-4xl font-extrabold tracking-tight text-gray-900">$15,000</span>
+                  <span className="text-sm font-semibold text-gray-400">to start</span>
+                </p>
+                <p className="text-xs text-gray-400 mt-1">$30,000 total · 50/25/25 milestone payments</p>
+              </div>
               <ul className="mt-6 space-y-3 text-sm text-gray-600 border-t border-gray-200 pt-6">
                 <li>• Unlimited context pages & custom codebases</li>
                 <li>• Production-grade interactive AI chatbot</li>
@@ -147,7 +156,13 @@ export default function PricingPageClient() {
             <div className="pb-8 lg:pb-0">
               <span className="text-xs font-bold uppercase text-[#2F73EE] tracking-wider">Enterprise</span>
               <h4 className="text-2xl font-bold mt-1 text-gray-900">Custom Package</h4>
-              <p className="text-3xl font-extrabold mt-4 text-gray-900">$50,000+</p>
+              <div className="mt-4">
+                <p className="flex items-baseline gap-1">
+                  <span className="text-3xl font-extrabold text-gray-900">$25,000+</span>
+                  <span className="text-sm font-semibold text-gray-400">to start</span>
+                </p>
+                <p className="text-xs text-gray-400 mt-1">$50,000+ total · 50/25/25 milestone payments</p>
+              </div>
               <p className="text-sm text-gray-500 mt-2">Multi-language, headless commerce, and deep legacy software system hooks.</p>
               <ul className="mt-6 space-y-2 text-sm text-gray-600">
                 <li>• Everything included in the Pro tier</li>
@@ -167,7 +182,13 @@ export default function PricingPageClient() {
             <div className="pt-8 lg:pt-0 lg:pl-12">
               <span className="text-xs font-bold uppercase text-[#8734E1] tracking-wider">Patented Technology</span>
               <h4 className="text-2xl font-bold mt-1 text-gray-900">Flagship ACI-Powered</h4>
-              <p className="text-3xl font-extrabold mt-4 text-transparent bg-clip-text bg-gradient-to-r from-[#8734E1] to-[#2F73EE]">$75,000+</p>
+              <div className="mt-4">
+                <p className="flex items-baseline gap-1">
+                  <span className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#8734E1] to-[#2F73EE]">$37,500+</span>
+                  <span className="text-sm font-semibold text-gray-400">to start</span>
+                </p>
+                <p className="text-xs text-gray-400 mt-1">$75,000+ total · 50/25/25 milestone payments</p>
+              </div>
               <p className="text-sm text-gray-500 mt-2">Full 5-layer Adaptive Compound Intelligence engineering with audit trails.</p>
               <ul className="mt-6 space-y-2 text-sm text-gray-600">
                 <li>• Patented ACI platform integration (no wrappers)</li>

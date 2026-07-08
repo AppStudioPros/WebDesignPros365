@@ -340,9 +340,9 @@ export default function PlatformEngineeringPage() {
                   transition={{ delay: i * 0.08 }}
                 >
                   <Card className="p-6 h-full border-red-200 bg-red-50/30 hover:shadow-md transition-shadow relative overflow-hidden">
-                    {/* Left accent strip in red */}
-                    <div className="absolute top-0 left-0 bottom-0 w-1 bg-red-400" />
-                    <div className="flex items-start gap-4">
+                    {/* Top accent strip in red */}
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-red-400" />
+                    <div className="flex flex-col items-center text-center gap-3">
                       {/* Icon medallion */}
                       <div className="w-11 h-11 rounded-xl bg-red-100 border border-red-200 flex items-center justify-center flex-shrink-0">
                         <PainIcon className="w-5 h-5 text-red-600" strokeWidth={2.25} />
@@ -469,7 +469,7 @@ export default function PlatformEngineeringPage() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
                 >
-                  <Card className="p-6 h-full hover:shadow-lg hover:border-[#8734E1] transition-all">
+                  <Card className="p-6 h-full hover:shadow-lg hover:border-[#8734E1] transition-all flex flex-col items-center text-center">
                     <div className="mb-4">
                       <GlassIcon Icon={Icon} color={module.color} />
                     </div>
@@ -517,7 +517,7 @@ export default function PlatformEngineeringPage() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
                 >
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 h-full">
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 h-full flex flex-col items-center text-center">
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8734E1] to-[#2F73EE] flex items-center justify-center mb-3">
                       <Icon className="w-5 h-5 text-white" strokeWidth={2.25} />
                     </div>
