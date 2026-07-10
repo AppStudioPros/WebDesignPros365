@@ -8,18 +8,18 @@ export default function HeroVideo() {
         Watch
       </p>
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
-        The Speed Problem Is Costing You Money
+        No Guesswork. Daily AI Search Domination.
       </h2>
       <div className="relative mx-auto max-w-3xl rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-black">
         <video
           controls
           playsInline
           preload="none"
-          poster="/videos/speed-problem-poster.jpg"
+          poster="/videos/ai-search-revolution-poster.jpg"
           className="w-full block"
           style={{ aspectRatio: '16/9' }}
         >
-          <source src="/videos/speed-problem.mp4" type="video/mp4" />
+          <source src="/videos/no-guesswork-ai-domination.mp4" type="video/mp4" />
         </video>
       </div>
     </div>
