@@ -162,35 +162,6 @@ export default function HeroSection() {
             ))}
           </motion.div>
 
-          {/* BBB accreditation badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.9 }}
-            className="flex justify-center mt-16"
-          >
-            <a
-              href="https://www.bbb.org/us/co/denver/profile/web-design/web-design-pros-365-1296-1000176091"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-4 px-7 py-5 rounded-2xl bg-white/10 border border-white/20 hover:border-white/40 hover:bg-white/15 backdrop-blur-sm shadow-lg transition-all"
-              title="BBB Accredited · A+ Rating since 12/11/2024"
-            >
-              <Image
-                src="/brand/bbb-accredited.png"
-                alt="BBB Accredited Business A+ Rating"
-                className="h-16 md:h-20 w-auto"
-                width={170}
-                height={70}
-              />
-              <div className="text-left">
-                <div className="text-xs uppercase tracking-wider text-white/50 mb-0.5">Trust Verified</div>
-                <div className="text-base md:text-lg font-bold text-white group-hover:text-white/90 transition-colors">View BBB Profile</div>
-                <div className="text-xs text-white/40 mt-1">Accredited since 12/11/2024</div>
-              </div>
-            </a>
-          </motion.div>
-
           {/* Video Section — lazy loaded for LCP */}
           <HeroVideo />
         </div>
