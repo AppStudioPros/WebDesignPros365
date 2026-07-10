@@ -69,18 +69,18 @@ export default function HeroSection() {
   const isInView = useInView(statsRef, { once: true, margin: "-100px" });
   return (
     <section className="relative flex flex-col justify-start pt-48 pb-48">
-      {/* Animated Gradient Background (replaces 54MB video) */}
+      {/* Animated Gradient Background — full opacity dark */}
       <div
         className="absolute inset-0 w-full h-full gradient-shift-bg"
-        style={{ zIndex: 0, opacity: 0.35 }}
+        style={{ zIndex: 0 }}
       />
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/30 to-white/40" style={{ zIndex: 1 }} />
+      {/* Subtle dark overlay for depth */}
+      <div className="absolute inset-0 bg-black/30" style={{ zIndex: 1 }} />
 
-      {/* Decorative Elements */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#8734E1]/5 rounded-full blur-3xl animate-blob" style={{ zIndex: 2 }} />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[#2F73EE]/5 rounded-full blur-3xl animate-blob animation-delay-2000" style={{ zIndex: 2 }} />
+      {/* Decorative glow blobs */}
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#8734E1]/20 rounded-full blur-3xl animate-blob" style={{ zIndex: 2 }} />
+      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[#2F73EE]/20 rounded-full blur-3xl animate-blob animation-delay-2000" style={{ zIndex: 2 }} />
 
       <div className="container-custom relative z-20">
         <div className="max-w-4xl mx-auto text-center">
@@ -89,7 +89,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="heading-xl text-balance mb-6"
+            className="heading-xl text-balance mb-6 text-white"
           >
             63-70% of people are using AI to find and vet businesses now{' '}
             <span className="gradient-text">— Are you being Ignored?</span>
@@ -100,7 +100,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-12"
+            className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-12"
           >
             Today, users have conversations with AI to find services and look for ratings. We analyze which competitors consistently appear in AI responses, and why.
           </motion.p>
@@ -117,7 +117,7 @@ export default function HeroSection() {
               return (
                 <div
                   key={badge.name}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-gray-200 text-gray-700 text-sm shadow-sm"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 border border-white/20 text-white/90 text-sm backdrop-blur-sm"
                 >
                   <Icon className="w-4 h-4" style={{ color: badge.color }} />
                   {badge.name}
@@ -131,7 +131,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-xl md:text-2xl font-bold text-gray-900 max-w-3xl mx-auto mb-20 leading-snug"
+            className="text-xl md:text-2xl font-bold text-white max-w-3xl mx-auto mb-20 leading-snug"
           >
             The Ultimate AI Visibility Tech Stack — Custom Next.js websites optimized for{' '}
             <span className="gradient-text">Technical SEO, AEO and GEO</span>{' '}
@@ -156,13 +156,13 @@ export default function HeroSection() {
               >
                 <div className="min-w-[120px] mx-auto">
                   <CountUpStat stat={stat} inView={isInView} />
-                  <div className="text-sm text-gray-500">{stat.label}</div>
+                  <div className="text-sm text-white/50">{stat.label}</div>
                 </div>
               </motion.div>
             ))}
           </motion.div>
 
-          {/* BBB accreditation badge — bigger, medallion-style */}
+          {/* BBB accreditation badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -173,11 +173,9 @@ export default function HeroSection() {
               href="https://www.bbb.org/us/co/denver/profile/web-design/web-design-pros-365-1296-1000176091"
               target="_blank"
               rel="noopener noreferrer"
-              
-              className="group inline-flex items-center gap-4 px-7 py-5 rounded-2xl bg-white border border-gray-200 hover:border-[#0c5ba2] hover:shadow-xl shadow-md transition-all"
+              className="group inline-flex items-center gap-4 px-7 py-5 rounded-2xl bg-white/10 border border-white/20 hover:border-white/40 hover:bg-white/15 backdrop-blur-sm shadow-lg transition-all"
               title="BBB Accredited · A+ Rating since 12/11/2024"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <Image
                 src="/brand/bbb-accredited.png"
                 alt="BBB Accredited Business A+ Rating"
@@ -186,9 +184,9 @@ export default function HeroSection() {
                 height={70}
               />
               <div className="text-left">
-                <div className="text-xs uppercase tracking-wider text-gray-500 mb-0.5">Trust Verified</div>
-                <div className="text-base md:text-lg font-bold text-gray-900 group-hover:text-[#0c5ba2] transition-colors">View BBB Profile</div>
-                <div className="text-xs text-gray-500 mt-1">Accredited since 12/11/2024</div>
+                <div className="text-xs uppercase tracking-wider text-white/50 mb-0.5">Trust Verified</div>
+                <div className="text-base md:text-lg font-bold text-white group-hover:text-white/90 transition-colors">View BBB Profile</div>
+                <div className="text-xs text-white/40 mt-1">Accredited since 12/11/2024</div>
               </div>
             </a>
           </motion.div>
