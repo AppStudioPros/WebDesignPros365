@@ -54,7 +54,7 @@ function VideoCard({
   index,
   onPlay,
 }: {
-  video: typeof topRow[0];
+  video: typeof allVideos[0];
   index: number;
   onPlay: (index: number) => void;
 }) {
@@ -94,7 +94,7 @@ function VideoModal({
   video,
   onClose,
 }: {
-  video: typeof topRow[0];
+  video: typeof allVideos[0];
   onClose: () => void;
 }) {
   return (
