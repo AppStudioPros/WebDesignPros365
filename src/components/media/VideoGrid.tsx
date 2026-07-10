@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Play, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const topRow = [
+const allVideos = [
   {
     title: 'The Speed Problem Is Costing You Money',
     description: 'Most business owners are already paying for a website that costs them customers. Not because the design is bad. Because it takes four seconds to load.',
@@ -26,9 +26,6 @@ const topRow = [
     poster: '/videos/daily-optimization-poster.png',
     label: 'THE PROCESS',
   },
-];
-
-const bottomRow = [
   {
     title: 'The AI Search Revolution in Real Estate',
     description: 'Your clients are already asking AI to find agents, compare lenders, and vet providers. This is what that shift looks like — and what it means for your business.',
@@ -51,8 +48,6 @@ const bottomRow = [
     label: 'THE EDGE',
   },
 ];
-
-const allVideos = [...topRow, ...bottomRow];
 
 function VideoCard({
   video,
@@ -159,13 +154,8 @@ export default function VideoGrid() {
             <p className="text-[#8734E1] uppercase tracking-widest text-xs font-semibold">WATCH</p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {topRow.map((video, index) => (
+            {allVideos.map((video, index) => (
               <VideoCard key={index} video={video} index={index} onPlay={setActiveVideo} />
-            ))}
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8 max-w-4xl mx-auto">
-            {bottomRow.map((video, index) => (
-              <VideoCard key={`bottom-${index}`} video={video} index={index + 3} onPlay={setActiveVideo} />
             ))}
           </div>
         </div>
