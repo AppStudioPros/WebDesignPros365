@@ -43,7 +43,7 @@ const allVideos = [
   {
     title: 'No Guesswork. Daily AI Search Domination.',
     description: 'Stop guessing what Google and AI want. Our daily optimization system removes the uncertainty and puts your business in front of the right people — every single day.',
-    src: 'https://render.lucidtechlabsllc.com/uploads/1783550250517_wdp365-explainer6-v9.mp4',
+    src: '/videos/no-guesswork-ai-domination.mp4',
     poster: '/videos/ai-search-revolution-poster.jpg',
     label: 'THE EDGE',
   },
