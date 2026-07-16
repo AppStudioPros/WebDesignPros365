@@ -139,7 +139,7 @@ export default function SiteAuditScanner() {
     e.preventDefault()
     if (!domain.trim() || !keyword.trim() || !location.trim()) return
     if (!isValidDomain(domain)) {
-      setError('Please enter a valid website address — e.g. www.yoursite.com')
+      setError('Please enter a valid website address, e.g. www.yoursite.com')
       return
     }
 
@@ -428,7 +428,7 @@ export default function SiteAuditScanner() {
                               You are getting ghosted by thousands of potential clients.
                             </p>
                             <p className="text-xs text-red-500 mt-1 leading-relaxed">
-                              Switching to the Ultimate AI Tech Stack is a game changer — customers searching right now can&apos;t find you.
+                              Switching to the Ultimate AI Tech Stack is a game changer. Customers searching right now can&apos;t find you.
                             </p>
                           </div>
                         )}
@@ -436,7 +436,7 @@ export default function SiteAuditScanner() {
                     ) : keyword.trim() ? (
                       <div className="flex items-center gap-2 text-xs text-gray-400">
                         <Search className="w-3.5 h-3.5 shrink-0" />
-                        <span>Google rank check unavailable — retry scan</span>
+                        <span>Google rank check unavailable. Retry scan.</span>
                       </div>
                     ) : (
                       <div className="flex items-center gap-2 text-xs text-gray-400">
@@ -482,7 +482,7 @@ export default function SiteAuditScanner() {
                   </div>
                   {result.plugins.filter(p => p.weight === 'heavy').length >= 2 && (
                     <p className="mt-4 text-sm text-red-500 font-medium border-t border-gray-100 pt-3">
-                      {result.plugins.filter(p => p.weight === 'heavy').length} heavy plugins detected — this is likely adding 2-4 seconds to your load time.
+                      {result.plugins.filter(p => p.weight === 'heavy').length} heavy plugins detected. This is likely adding 2-4 seconds to your load time.
                     </p>
                   )}
                 </div>
@@ -519,7 +519,7 @@ export default function SiteAuditScanner() {
                 <div className="bg-gradient-to-r from-[#2F73EE] to-[#8734E1] rounded-2xl p-6 text-white flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div>
                     <p className="font-bold text-lg">Report on its way to {email} ✓</p>
-                    <p className="text-white/70 text-sm mt-0.5">Ready to fix it now? Book a free 30-min call — no pressure.</p>
+                    <p className="text-white/70 text-sm mt-0.5">Ready to fix it now? Book a free 30-min call, no pressure.</p>
                   </div>
                   <a
                     href={calLink}

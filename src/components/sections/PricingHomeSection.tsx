@@ -6,14 +6,14 @@ import { ArrowRight, Check } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 const highlights = [
-  { value: '$7,500', label: 'Starting price', note: 'Launch tier — 5 pages, full AI Visibility Stack' },
+  { value: '$7,500', label: 'Starting price', note: 'Launch tier: 5 pages, full AI Visibility Stack' },
   { value: 'Fixed', label: 'Price guarantee', note: 'One quote in 48 hours. No hourly bleed, ever.' },
   { value: '48hrs', label: 'Quote turnaround', note: 'Scoped, fixed, and ready to sign in two days.' },
 ];
 
 const quickWins = [
   'SEO + AEO + GEO on every build',
-  'Next.js 16 — loads under 500ms',
+  'Next.js 16, loads under 500ms',
   '50% deposit, 50% at launch',
   'No retainers required to start',
 ];
