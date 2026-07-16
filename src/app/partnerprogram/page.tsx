@@ -263,8 +263,8 @@ export default function PartnerProgramPage() {
     setError('');
     setUnlocked(true);
     setTimeout(() => {
-      document.getElementById('offer')?.scrollIntoView({ behavior: 'smooth' });
-    }, 150);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 50);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
