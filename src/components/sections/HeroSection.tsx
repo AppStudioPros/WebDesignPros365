@@ -91,8 +91,8 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="heading-xl text-balance mb-6 text-white"
           >
-            63-70% of people are using AI to find and vet businesses now{' '}
-            <span className="gradient-text">— Are you being Ignored?</span>
+            63-70% of people are using AI to find and vet businesses now.{' '}
+            <span className="gradient-text">Are you being Ignored?</span>
           </motion.h1>
 
           {/* Subheading */}
