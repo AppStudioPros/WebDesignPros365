@@ -16,14 +16,14 @@ const allVideos = [
     title: 'SEO Is Old News. Meet GEO.',
     description: 'Traditional SEO gets you ranked. In 2026, AI answers the question before users reach your site. Generative Engine Optimization is how you get cited.',
     src: '/videos/seo-is-old-news.mp4',
-    poster: '/videos/seo-is-old-news-poster.jpg',
+    poster: '/videos/seo-is-old-news-poster.webp',
     label: 'THE SOLUTION',
   },
   {
     title: 'How We Do It And Why Daily Optimization Wins',
     description: 'One-time builds go stale. The sites that keep climbing are the ones being actively improved.',
     src: '/videos/daily-optimization.mp4',
-    poster: '/videos/daily-optimization-poster.png',
+    poster: '/videos/daily-optimization-poster.webp',
     label: 'THE PROCESS',
   },
   {

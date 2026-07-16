@@ -78,9 +78,9 @@ export default function HeroSection() {
       {/* Subtle dark overlay for depth */}
       <div className="absolute inset-0 bg-black/30" style={{ zIndex: 1 }} />
 
-      {/* Decorative glow blobs */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#8734E1]/20 rounded-full blur-3xl animate-blob" style={{ zIndex: 2 }} />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[#2F73EE]/20 rounded-full blur-3xl animate-blob animation-delay-2000" style={{ zIndex: 2 }} />
+      {/* Decorative glow blobs — GPU composited, no layout triggers */}
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#8734E1]/20 rounded-full blur-3xl animate-blob" style={{ zIndex: 2, willChange: 'transform', contain: 'layout paint' }} />
+      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[#2F73EE]/20 rounded-full blur-3xl animate-blob animation-delay-2000" style={{ zIndex: 2, willChange: 'transform', contain: 'layout paint' }} />
 
       <div className="container-custom relative z-20">
         <div className="max-w-4xl mx-auto text-center">

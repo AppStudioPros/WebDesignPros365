@@ -165,7 +165,7 @@ export default function AboutPage() {
               <div className="rounded-2xl bg-gradient-to-br from-[#8734E1] to-[#2F73EE] p-0.5 max-w-[280px] mx-auto lg:mx-0">
                 <div className="rounded-2xl bg-white flex items-center justify-center p-8 aspect-[4/3]">
                   <img
-                    src="https://customer-assets.emergentagent.com/job_designpros-test/artifacts/tf1dbj7e_Web%20Design%20Pros%20365%20noborder.png"
+                    src="/logo-opt.png"
                     alt="Web Design Pros 365"
                     className="max-w-full h-auto"
                   />

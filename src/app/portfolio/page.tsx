@@ -14,7 +14,7 @@ const projects = [
     category: 'AI Real Estate',
     description: 'Find listings before they exist. AI that ranks each morning\'s top 7 prospects per agent using 200+ behavioral and property signals.',
     url: 'https://marqetcore.com',
-    image: '/portfolio/marqetcore.png',
+    image: '/portfolio/marqetcore.webp',
     color: '#8734E1',
   },
   {
@@ -22,7 +22,7 @@ const projects = [
     category: 'AI-Native Security',
     description: 'Preemptive security platform. Detects, predicts, and neutralizes threats before they execute, built on the patented ACI architecture.',
     url: 'https://www.phylaxone.com',
-    image: '/portfolio/phylaxone.png',
+    image: '/portfolio/phylaxone.webp',
     color: '#ef4444',
   },
   {
@@ -30,7 +30,7 @@ const projects = [
     category: 'GovCon AI Platform',
     description: 'The AI platform built for government contractors. SAM.gov integration, CMMC-aligned, FedRAMP architecture. SDVOSB compliant.',
     url: 'https://www.yourworkforce.ai',
-    image: '/portfolio/yourworkforce.png',
+    image: '/portfolio/yourworkforce.webp',
     color: '#2F73EE',
   },
   {
@@ -38,7 +38,7 @@ const projects = [
     category: 'Federal Procurement',
     description: 'Federal contracting intelligence engine by Encore Services LLC. SAM.gov opportunity surveillance with AI-driven bid/no-bid scoring.',
     url: 'https://www.acusightpro.com',
-    image: '/portfolio/acusightpro.png',
+    image: '/portfolio/acusightpro.webp',
     color: '#f59e0b',
   },
   {
@@ -46,7 +46,7 @@ const projects = [
     category: 'Critical Minerals',
     description: 'Per-site critical-minerals intelligence across mining-active U.S. Reduces per-site analysis from 6-8 months to hours.',
     url: 'https://www.motherlodecmi.com',
-    image: '/portfolio/motherlodecmi.png',
+    image: '/portfolio/motherlodecmi.webp',
     color: '#0891b2',
   },
   {
@@ -54,7 +54,7 @@ const projects = [
     category: 'Family + Business OS',
     description: 'The Company Operating System. Same patented ACI intelligence that runs your company also keeps your family connected and protected.',
     url: 'https://www.aetheraci.com',
-    image: '/portfolio/aetheraci.png',
+    image: '/portfolio/aetheraci.webp',
     color: '#6366F1',
   },
   {
@@ -62,7 +62,7 @@ const projects = [
     category: 'AI Architecture',
     description: 'The patent-pending architecture behind every build. The framework that turns individual interactions into compound organizational intelligence.',
     url: 'https://www.adaptivecompoundintelligence.com',
-    image: '/portfolio/adaptivecompoundintelligence.png',
+    image: '/portfolio/adaptivecompoundintelligence.webp',
     color: '#BF5DE0',
   },
   // —— EARLIER WORK ——
@@ -71,7 +71,7 @@ const projects = [
     category: 'AI & Enterprise',
     description: 'Patent-pending Adaptive Compound Intelligence platform powering solutions across enterprise, government, and security.',
     url: 'https://lucidtechlabsllc.com',
-    image: '/portfolio/lucidtechlabs.png',
+    image: '/portfolio/lucidtechlabs.webp',
     color: '#06b6d4',
   },
   {
@@ -79,7 +79,7 @@ const projects = [
     category: 'Government AI',
     description: 'AI solutions that serve the mission. Purpose-trained custom AI agents for government and defense.',
     url: 'https://encoresvcsllc.com',
-    image: '/portfolio/encoresvcs.png',
+    image: '/portfolio/encoresvcs.webp',
     color: '#f59e0b',
   },
   {
@@ -87,7 +87,7 @@ const projects = [
     category: 'Insurance Agency',
     description: 'Local Farmers Insurance agency in Wheat Ridge, Colorado. Personalized coverage with a trusted community presence.',
     url: 'https://www.insurancewheatridge.com',
-    image: '/portfolio/insurancewheatridge.png',
+    image: '/portfolio/insurancewheatridge.webp',
     color: '#10b981',
   },
   {
@@ -95,7 +95,7 @@ const projects = [
     category: 'Restaurant & Bar',
     description: 'The Social Bar + Kitchen, New London\'s premier craft beer destination with 50 taps, live events, and modern American cuisine.',
     url: 'https://socialnewlondon.com',
-    image: '/portfolio/socialnewlondon.png',
+    image: '/portfolio/socialnewlondon.webp',
     color: '#7C3AED',
   },
   {
@@ -103,7 +103,7 @@ const projects = [
     category: 'E-Commerce',
     description: 'Subaru parts recycling marketplace. A digital-first breaker with online inventory and appointment scheduling.',
     url: 'https://subierecycler.com',
-    image: '/portfolio/subierecycler.png',
+    image: '/portfolio/subierecycler.webp',
     color: '#16A34A',
   },
   {
@@ -111,7 +111,7 @@ const projects = [
     category: 'Technology Platform',
     description: 'Custom application development studio showcasing enterprise software solutions and mobile apps.',
     url: 'https://www.appstudiopro.com',
-    image: '/portfolio/appstudiopro.png',
+    image: '/portfolio/appstudiopro.webp',
     color: '#DB2777',
   },
 ];
