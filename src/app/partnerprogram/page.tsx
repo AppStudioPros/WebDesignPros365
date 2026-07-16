@@ -168,6 +168,28 @@ const GROWTHPILOT_FEATURES = [
   { icon: Infinity, label: "Multi-brand. Enterprise scale.", desc: "Run multiple brands, locations, or clients. Each gets its own AI, voice, and content history." },
 ];
 
+function FAQItem({ q, a }: { q: string; a: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div
+      className={`bg-[#252640] rounded-xl border cursor-pointer transition-all ${open ? 'border-[#8734E1]/50' : 'border-[#3a3858] hover:border-[#8734E1]/30'}`}
+      onClick={() => setOpen(!open)}
+    >
+      <div className="flex items-start justify-between gap-4 p-5">
+        <p className="text-[#f0eef8] font-medium text-sm leading-snug">{q}</p>
+        <span className="flex-shrink-0 text-[#6e6b88] mt-0.5">
+          {open ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+        </span>
+      </div>
+      {open && (
+        <div className="px-5 pb-5 border-t border-[#3a3858] pt-4">
+          <p className="text-sm text-[#a8a4c8] leading-relaxed">{a}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function FeatureCard({ feature }: { feature: typeof INCLUDED_FEATURES[0] }) {
   const [open, setOpen] = useState(false);
   const Icon = feature.icon;
@@ -554,6 +576,80 @@ export default function PartnerProgramPage() {
                     </Link>
                   </div>
                 </div>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section className="py-20 bg-[#1e2030]">
+            <div className="container-custom max-w-3xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-[#f0eef8] mb-3">Frequently asked questions</h2>
+                <p className="text-[#a8a4c8]">Everything loan officers ask before getting started.</p>
+              </div>
+              <div className="space-y-3">
+                {[
+                  {
+                    q: "Can you add photos and pictures to my site?",
+                    a: "Yes. We include a professional headshot section, team photos, office photos, and any brand imagery you provide. If you do not have professional photos yet, we can use high-quality licensed real estate and finance photography as placeholders and swap them in when you have shots ready."
+                  },
+                  {
+                    q: "Can you copy or rebuild my current website?",
+                    a: "Yes. If you have an existing site you like, send us the URL and we will use it as a reference for layout, content, and branding. We rebuild everything from scratch on the new stack so it is faster, more secure, and AI-optimized — you end up with the look you want and the performance you need."
+                  },
+                  {
+                    q: "Will I own the website?",
+                    a: "Yes, as long as the build is paid in full. Once payment clears, the GitHub repository, all code, all content, and your domain configuration belong to you. You can take it to any developer at any time. If you leave your parent company, the site goes with you. You are not renting anything."
+                  },
+                  {
+                    q: "How long does the build take?",
+                    a: "Most builds are completed in 1 to 3 weeks depending on the current queue and how quickly we receive your content (photos, bio, loan programs, service areas). Simpler single-page builds can launch in under a week. We keep you updated throughout and do not go dark mid-build."
+                  },
+                  {
+                    q: "How long before I start seeing results?",
+                    a: "AI citations and search visibility can show movement in as little as 2 to 4 weeks, especially in lower-competition markets. SEO takes a bit longer to compound but most clients see measurable organic lead activity within 60 to 90 days. The daily optimization is cumulative — every week builds on the last."
+                  },
+                  {
+                    q: "Do I need to know how to code or manage the site myself?",
+                    a: "No. You log into a simple CMS dashboard to add or edit blog posts, update your bio, and change photos. Everything else is handled. If you want to make layout or design changes, that is a quick request to us. No technical knowledge required."
+                  },
+                  {
+                    q: "What is the difference between SEO, AEO, and GEO?",
+                    a: "SEO gets you ranked in Google search results. AEO (Answer Engine Optimization) gets your content selected as the direct answer in AI Overviews, Siri, and voice search. GEO (Generative Engine Optimization) gets your name cited when someone asks ChatGPT, Perplexity, Claude, or Gemini to recommend a loan officer. We do all three, daily."
+                  },
+                  {
+                    q: "Can I keep my existing domain?",
+                    a: "Yes. We will configure your new site to work with whatever domain you already have. If you need a new domain, we can help you register one. Domain costs are separate but typically around $15 to $20 per year."
+                  },
+                  {
+                    q: "What do I need to provide to get started?",
+                    a: "Your NMLS number, a short bio, your headshot or photos, the loan programs you offer, your service area, and any existing branding (logo, colors). If you do not have some of these, we can work with what you have and fill in the gaps with solid defaults."
+                  },
+                  {
+                    q: "Is the site compliant for mortgage?",
+                    a: "Yes. We include NMLS disclosure formatting, Equal Housing Lender badges, state-specific licensing display, rate disclaimer automation, CCPA/GDPR cookie consent, Terms of Service, and Privacy Policy pages. You review everything before launch."
+                  },
+                  {
+                    q: "What happens after my 3 months of included optimization?",
+                    a: "You choose. As a partner LO you have access to our ongoing rate of $299 per month (normal rate is $699.99). You can lock that in at signing or at the end of your 3 months. If you want to pay out the remainder of the calendar year upfront, that option is available exclusively to partner program members. No pressure either way."
+                  },
+                  {
+                    q: "Can I add more pages or integrations after launch?",
+                    a: "Yes. Additional pages are available separately, and any of the listed add-on integrations (CRM connections, calculators, co-branding pages, etc.) can be added at any time as one-time builds with no monthly fees."
+                  },
+                  {
+                    q: "What if I am not happy with the design?",
+                    a: "We do a design review before development starts and two rounds of revision are included. We do not launch anything without your sign-off. In practice, most LOs love the first version because we reference your existing site or comparable examples you like before we write a single line of code."
+                  },
+                  {
+                    q: "Can I use the GrowthPilot 25% discount even if I already have a subscription?",
+                    a: "The 25% discount applies to new subscriptions. It must be activated at the time of signing your build agreement or at the end of your 3-month optimization period. It cannot be applied retroactively to an existing account."
+                  },
+                  {
+                    q: "Does this work in my state and market?",
+                    a: "Yes. We have built for loan officers across the country. The AI visibility work is tailored to your specific city and state — we optimize for your local search queries, your market's competition level, and the loan programs that matter in your area."
+                  },
+                ].map((item, i) => <FAQItem key={i} q={item.q} a={item.a} />)}
               </div>
             </div>
           </section>
