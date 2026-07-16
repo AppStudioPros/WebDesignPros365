@@ -120,7 +120,7 @@ export default function PortfolioPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 relative overflow-hidden bg-gradient-to-b from-white to-[#f8f9fc]">
+      <section className="pt-32 pb-20 relative overflow-hidden bg-gradient-to-b from-[#1a1930] to-[#1e2030]">
         <div className="absolute inset-0 bg-gradient-mesh" />
         <div className="container-custom relative z-10">
           <motion.div
@@ -224,7 +224,7 @@ export default function PortfolioPage() {
                   </p>
                 </div>
                 <div
-                  className="relative w-full h-[320px] rounded-xl overflow-hidden border-2 border-dashed border-[#3a3858] group-hover:border-[#8734E1] transition-all duration-300 bg-gradient-to-br from-[#f0e6fb] via-white to-[#f0e6fb] flex items-center justify-center"
+                  className="relative w-full h-[320px] rounded-xl overflow-hidden border-2 border-dashed border-[#3a3858] group-hover:border-[#8734E1] transition-all duration-300 bg-gradient-to-br from-[#252640] via-[#1e1c35] to-[#252640] flex items-center justify-center"
                 >
                   <div className="text-center px-8">
                     <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#8734E1] to-[#2F73EE] mx-auto mb-4 flex items-center justify-center shadow-xl shadow-[#8734E1]/30 group-hover:scale-110 transition-transform">

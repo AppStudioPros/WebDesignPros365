@@ -95,7 +95,7 @@ export default function FAQPage() {
   return (
     <>
       <JsonLd data={faqSchema} />
-      <section className="pt-32 pb-20 relative overflow-hidden bg-gradient-to-b from-white to-[#f8f9fc]">
+      <section className="pt-32 pb-20 relative overflow-hidden bg-gradient-to-b from-[#1a1930] to-[#1e2030]">
         <div className="absolute inset-0 bg-gradient-mesh" />
         <div className="container-custom relative z-10">
           <motion.div

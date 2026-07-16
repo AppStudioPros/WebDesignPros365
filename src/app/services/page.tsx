@@ -364,7 +364,7 @@ export default function ServicesPage() {
               const card = (
                 <Card
                   className={`h-full p-6 group cursor-pointer hover:shadow-xl transition-all relative overflow-hidden ${
-                    service.isFlagship ? 'border-[#8734E1] bg-gradient-to-br from-white to-[#f0e6fb]/30 shadow-md' : 'hover:border-[#8734E1]'
+                    service.isFlagship ? 'border-[#8734E1] bg-gradient-to-br from-[#252640] to-[#1e1c35] shadow-md' : 'hover:border-[#8734E1]'
                   }`}
                 >
                   {/* Top accent bar */}

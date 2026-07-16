@@ -155,7 +155,7 @@ export default function PartnershipsPage() {
   return (
     <>
       {/* HERO */}
-      <section className="pt-32 pb-20 relative overflow-hidden bg-gradient-to-b from-white to-[#f8f9fc]">
+      <section className="pt-32 pb-20 relative overflow-hidden bg-gradient-to-b from-[#1a1930] to-[#1e2030]">
         <div className="absolute inset-0 bg-gradient-mesh" />
         <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#8734E1]/5 rounded-full blur-3xl animate-blob" />
         <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[#2F73EE]/5 rounded-full blur-3xl animate-blob animation-delay-2000" />
@@ -574,7 +574,7 @@ export default function PartnershipsPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto"
           >
-            <Card className="p-10 border-[#8734E1]/30 bg-gradient-to-br from-white to-[#f0e6fb]/30 text-center">
+            <Card className="p-10 border-[#8734E1]/30 bg-gradient-to-br from-[#252640] to-[#1e1c35] text-center">
               <Users className="w-12 h-12 text-[#8734E1] mx-auto mb-4" />
               <h2 className="heading-lg mb-3">
                 Let&apos;s see if there&apos;s a fit.

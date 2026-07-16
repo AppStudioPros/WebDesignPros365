@@ -567,7 +567,7 @@ export default function OnboardingPage() {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-white to-[#f8f9fc] flex items-center justify-center px-6">
+      <div className="min-h-screen bg-gradient-to-b from-[#1a1930] to-[#1e2030] flex items-center justify-center px-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -593,7 +593,7 @@ export default function OnboardingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-[#f8f9fc]">
+    <div className="min-h-screen bg-gradient-to-b from-[#1a1930] to-[#1e2030]">
       {/* Header */}
       <div className="bg-[#252640] border-b border-[#2e2c48] sticky top-0 z-40">
         <div className="container-custom py-4 px-4 sm:px-6">
