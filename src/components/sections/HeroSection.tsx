@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { m, useInView } from 'framer-motion';
 import { ArrowRight, Zap, Atom, Rocket, Target } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
@@ -65,8 +64,6 @@ function CountUpStat({ stat, inView }: { stat: typeof stats[0]; inView: boolean 
 }
 
 export default function HeroSection() {
-  const statsRef = useRef(null);
-  const isInView = useInView(statsRef, { once: true, margin: "-100px" });
   return (
     <section className="relative flex flex-col justify-start pt-48 pb-48 min-h-screen" style={{ contain: 'layout' }}>
       {/* Animated Gradient Background — full opacity dark */}
@@ -85,31 +82,22 @@ export default function HeroSection() {
       <div className="container-custom relative z-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main Heading */}
-          <m.h1
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+          <h1
             className="heading-xl text-balance mb-6 text-white"
           >
             63-70% of people are using AI to find and vet businesses now.{' '}
             <span className="gradient-text">Are you being Ignored?</span>
-          </m.h1>
+          </h1>
 
           {/* Subheading */}
-          <m.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+          <p
             className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-12"
           >
             Today, users have conversations with AI to find services and look for ratings. We analyze which competitors consistently appear in AI responses, and why.
-          </m.p>
+          </p>
 
           {/* Tech Badges */}
-          <m.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+          <div
             className="flex flex-wrap justify-center gap-3 mb-14"
           >
             {techBadges.map((badge) => {
@@ -124,43 +112,33 @@ export default function HeroSection() {
                 </div>
               );
             })}
-          </m.div>
+          </div>
 
           {/* Second hero line */}
-          <m.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+          <p
             className="text-xl md:text-2xl font-bold text-white max-w-3xl mx-auto mb-20 leading-snug"
           >
             The Ultimate AI Visibility Tech Stack. Custom Next.js websites optimized for{' '}
             <span className="gradient-text">Technical SEO, AEO and GEO</span>{' '}
             will get you results in weeks, not months.
-          </m.p>
+          </p>
 
           {/* Stats */}
-          <m.div
-            ref={statsRef}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
+          <div
             className="grid grid-cols-2 md:grid-cols-4 gap-8"
           >
             {stats.map((stat, index) => (
-              <m.div
+              <div
                 key={stat.label}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: 0.6 + index * 0.1 }}
                 className="text-center"
               >
                 <div className="min-w-[120px] mx-auto">
-                  <CountUpStat stat={stat} inView={isInView} />
+                  <CountUpStat stat={stat} inView={true} />
                   <div className="text-sm text-white/50">{stat.label}</div>
                 </div>
-              </m.div>
+              </div>
             ))}
-          </m.div>
+          </div>
 
           {/* Video Section — lazy loaded for LCP */}
           <HeroVideo />
