@@ -133,7 +133,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-xl md:text-2xl font-bold text-white max-w-3xl mx-auto mb-20 leading-snug"
           >
-            The Ultimate AI Visibility Tech Stack — Custom Next.js websites optimized for{' '}
+            The Ultimate AI Visibility Tech Stack. Custom Next.js websites optimized for{' '}
             <span className="gradient-text">Technical SEO, AEO and GEO</span>{' '}
             will get you results in weeks, not months.
           </motion.p>
