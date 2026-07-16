@@ -48,7 +48,16 @@ export default function Header() {
       <div className="container-custom">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="relative z-10 flex-shrink-0">
+          <Link
+            href="/"
+            className="relative z-10 flex-shrink-0"
+            onClick={(e) => {
+              if (pathname === '/') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
+          >
             <Image
               src="/logo-opt.png"
               alt="Web Design Pros 365"
