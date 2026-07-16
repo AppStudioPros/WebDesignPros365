@@ -293,10 +293,22 @@ export default function PartnerProgramPage() {
             As a loan officer with one of our partner companies, you qualify for an exclusive package
             built for exactly that reality.
           </p>
-          <p className="text-base text-[#8a87a8] max-w-xl mx-auto mb-10">
+          <p className="text-base text-[#8a87a8] max-w-xl mx-auto mb-8">
             The LO who shows up in AI search results closes the deal.
             The one who does not may never know they lost it.
           </p>
+
+          <div className="mb-10">
+            <Link
+              href="/media"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-[#252640] border-2 border-[#8734E1]/50 hover:border-[#8734E1] text-[#f0eef8] font-bold text-lg hover:bg-[#2e2c4a] transition-all shadow-lg shadow-[#8734E1]/10"
+            >
+              <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8734E1] to-[#2F73EE] flex items-center justify-center flex-shrink-0">
+                <ExternalLink className="w-5 h-5 text-white" />
+              </span>
+              See How It Works — View Our Media Library
+            </Link>
+          </div>
 
           {/* Gate */}
           {!unlocked ? (
