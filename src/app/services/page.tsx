@@ -288,7 +288,7 @@ export default function ServicesPage() {
 
       {/* AI VISIBILITY FLAGSHIP BANNER */}
       {flagship && (
-        <section className="py-12 bg-gradient-to-r from-[#f0e6fb] via-white to-[#f0e6fb] border-b border-[#8734E1]/20 relative overflow-hidden">
+        <section className="py-12 bg-gradient-to-r from-[#1e1c35] via-[#252640] to-[#1e1c35] border-b border-[#8734E1]/30 relative overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern opacity-20" />
           <div className="container-custom relative z-10">
             <motion.div
@@ -335,7 +335,7 @@ export default function ServicesPage() {
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap flex items-center gap-2 ${
                     isActive
                       ? 'text-white shadow-md'
-                      : 'bg-[#191a2c] text-[#a8a4c8] hover:bg-gray-200 hover:text-[#f0eef8]'
+                      : 'bg-[#191a2c] text-[#a8a4c8] hover:bg-[#2a2844] hover:text-[#f0eef8]'
                   }`}
                   style={isActive ? {
                     background: `linear-gradient(135deg, ${category.accent}, ${category.accent}cc)`,
