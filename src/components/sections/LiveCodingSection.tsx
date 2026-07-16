@@ -191,14 +191,14 @@ export default function LiveCodingSection() {
           viewport={{ once: true }}
           className="text-center mb-10"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f0e6fb] border border-[#8734E1] text-[#8734E1] mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1e1c35] border border-[#8734E1] text-[#8734E1] mb-4">
             <Code2 className="w-4 h-4" />
             <span className="text-sm font-mono font-medium">LIVE BUILD PIPELINE</span>
           </div>
           <h2 className="heading-lg mb-3">
             This is what <span className="gradient-text">modern looks like.</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-[#a8a4c8] max-w-2xl mx-auto">
             Real engineering, in your repo. Patent-anchored ACI architecture, audit-trail-complete AI,
             deployed on Vercel Edge. Not a no-code shell. Not a GoHighLevel wrapper. Your code, your stack.
           </p>
@@ -253,7 +253,7 @@ export default function LiveCodingSection() {
                     <div
                       key={i}
                       className={`w-1.5 h-1.5 rounded-full transition-all ${
-                        i === frameIndex ? 'bg-[#8734E1] w-4' : 'bg-white/20'
+                        i === frameIndex ? 'bg-[#8734E1] w-4' : 'bg-[#252640]/20'
                       }`}
                     />
                   ))}

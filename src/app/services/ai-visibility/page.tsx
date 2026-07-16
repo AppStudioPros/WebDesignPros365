@@ -212,14 +212,14 @@ export default function AiVisibilityPage() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">
               Flagship Service
             </Badge>
             <h1 className="heading-xl mb-6">
               The <span className="gradient-text">AI Visibility Stack</span>:<br />
               SEO + AEO + GEO
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-lg md:text-xl text-[#a8a4c8] max-w-3xl mx-auto mb-8">
               Rank in Google. Be the answer in AI Overviews. Get cited by ChatGPT, Claude,
               Gemini, and Perplexity. Three disciplines, one engagement. Backed by 2026 research
               and the patented ACI platform.
@@ -242,7 +242,7 @@ export default function AiVisibilityPage() {
       </section>
 
       {/* THE THREE DISCIPLINES */}
-      <section id="three" className="section bg-white">
+      <section id="three" className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -250,11 +250,11 @@ export default function AiVisibilityPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-12"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">The Three Disciplines</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">The Three Disciplines</Badge>
             <h2 className="heading-lg mb-4">
               SEO ranks. AEO answers. <span className="gradient-text">GEO gets cited.</span>
             </h2>
-            <p className="text-gray-600">
+            <p className="text-[#a8a4c8]">
               Three different jobs. Three different judges. Three different audience moments.
               Most agencies still only do the first one. We do all three.
             </p>
@@ -277,24 +277,24 @@ export default function AiVisibilityPage() {
                     </div>
                     <div className="mb-3">
                       <h3 className="text-2xl font-bold" style={{ color: d.color }}>{d.name}</h3>
-                      <p className="text-xs text-gray-500 uppercase tracking-wider">{d.long}</p>
+                      <p className="text-xs text-[#8a87a8] uppercase tracking-wider">{d.long}</p>
                     </div>
-                    <p className="text-base font-semibold text-gray-900 mb-4">{d.goal}</p>
+                    <p className="text-base font-semibold text-[#f0eef8] mb-4">{d.goal}</p>
                     <div className="space-y-2 text-sm mb-4">
                       <div>
-                        <span className="text-gray-500">Optimizes for:</span>{' '}
-                        <span className="text-gray-800">{d.optimizes}</span>
+                        <span className="text-[#8a87a8]">Optimizes for:</span>{' '}
+                        <span className="text-[#dddaf0]">{d.optimizes}</span>
                       </div>
                       <div>
-                        <span className="text-gray-500">Audience:</span>{' '}
-                        <span className="text-gray-800">{d.audience}</span>
+                        <span className="text-[#8a87a8]">Audience:</span>{' '}
+                        <span className="text-[#dddaf0]">{d.audience}</span>
                       </div>
                       <div>
-                        <span className="text-gray-500">Judged by:</span>{' '}
-                        <span className="text-gray-800">{d.judge}</span>
+                        <span className="text-[#8a87a8]">Judged by:</span>{' '}
+                        <span className="text-[#dddaf0]">{d.judge}</span>
                       </div>
                     </div>
-                    <p className="text-sm text-gray-600 leading-relaxed pt-3 border-t border-gray-100">
+                    <p className="text-sm text-[#a8a4c8] leading-relaxed pt-3 border-t border-[#2e2c48]">
                       {d.summary}
                     </p>
                   </Card>
@@ -306,7 +306,7 @@ export default function AiVisibilityPage() {
       </section>
 
       {/* CITATION DATA */}
-      <section className="section bg-[#f8f9fc]">
+      <section className="section bg-[#181928]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -314,11 +314,11 @@ export default function AiVisibilityPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-12"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Who Dominates AI Citations</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">Who Dominates AI Citations</Badge>
             <h2 className="heading-lg mb-4">
               The <span className="gradient-text">data behind the answers.</span>
             </h2>
-            <p className="text-gray-600">
+            <p className="text-[#a8a4c8]">
               Based on multiple 2026 studies: Semrush analyzed 150,000+ LLM citations, 5W indexed
               680M+ citations across five platforms, Lantern tracked 200M+ from the AI interfaces directly.
               The pattern is consistent.
@@ -328,7 +328,7 @@ export default function AiVisibilityPage() {
           <div className="max-w-3xl mx-auto">
             <Card className="p-6">
               <div className="flex items-center justify-between mb-6">
-                <h3 className="font-semibold text-gray-900">Top sources cited by AI engines (2026)</h3>
+                <h3 className="font-semibold text-[#f0eef8]">Top sources cited by AI engines (2026)</h3>
                 <BarChart3 className="w-5 h-5 text-[#8734E1]" />
               </div>
               <div className="space-y-4">
@@ -341,20 +341,20 @@ export default function AiVisibilityPage() {
                     transition={{ delay: i * 0.08 }}
                   >
                     <div className="flex items-center justify-between mb-1">
-                      <span className="font-medium text-gray-900 text-sm">{row.source}</span>
-                      <span className="text-sm font-mono text-gray-500">{row.percentage}%</span>
+                      <span className="font-medium text-[#f0eef8] text-sm">{row.source}</span>
+                      <span className="text-sm font-mono text-[#8a87a8]">{row.percentage}%</span>
                     </div>
-                    <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+                    <div className="w-full h-2 bg-[#191a2c] rounded-full overflow-hidden">
                       <div
                         className="h-full rounded-full transition-all duration-700"
                         style={{ width: `${(row.percentage / 40.1) * 100}%`, backgroundColor: row.color }}
                       ></div>
                     </div>
-                    <p className="text-xs text-gray-500 mt-1">{row.note}</p>
+                    <p className="text-xs text-[#8a87a8] mt-1">{row.note}</p>
                   </motion.div>
                 ))}
               </div>
-              <p className="text-xs text-gray-500 mt-6 pt-4 border-t border-gray-100">
+              <p className="text-xs text-[#8a87a8] mt-6 pt-4 border-t border-[#2e2c48]">
                 Source: Semrush 2026 LLM Citation Analysis (150K+ citations). 5W AI Platform Citation
                 Source Index 2026 (680M+ citations, Aug 2024-Apr 2026). Lantern AI Citation Content
                 Visibility Report Feb 2026 (200M+ citations). Composite data, weighted average.
@@ -365,7 +365,7 @@ export default function AiVisibilityPage() {
       </section>
 
       {/* PLATFORM PATTERNS */}
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -373,11 +373,11 @@ export default function AiVisibilityPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-12"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Platform by Platform</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">Platform by Platform</Badge>
             <h2 className="heading-lg mb-4">
               Each AI engine plays <span className="gradient-text">a different game.</span>
             </h2>
-            <p className="text-gray-600">
+            <p className="text-[#a8a4c8]">
               You do not optimize for one engine. You build broad authority signals that satisfy
               all of them. But understanding each platform&apos;s bias is how you decide where to
               focus first.
@@ -401,15 +401,15 @@ export default function AiVisibilityPage() {
                     >
                       {p.platform[0]}
                     </div>
-                    <h3 className="font-semibold text-gray-900">{p.platform}</h3>
+                    <h3 className="font-semibold text-[#f0eef8]">{p.platform}</h3>
                   </div>
                   <div className="mb-3">
-                    <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Pattern</p>
-                    <p className="text-sm text-gray-700 leading-relaxed">{p.pattern}</p>
+                    <p className="text-xs text-[#8a87a8] uppercase tracking-wider mb-1">Pattern</p>
+                    <p className="text-sm text-[#c4c0e0] leading-relaxed">{p.pattern}</p>
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">The Play</p>
-                    <p className="text-sm text-gray-700 leading-relaxed">{p.play}</p>
+                    <p className="text-xs text-[#8a87a8] uppercase tracking-wider mb-1">The Play</p>
+                    <p className="text-sm text-[#c4c0e0] leading-relaxed">{p.play}</p>
                   </div>
                 </Card>
               </motion.div>
@@ -419,7 +419,7 @@ export default function AiVisibilityPage() {
       </section>
 
       {/* AEO BEST PRACTICES */}
-      <section className="section bg-[#f8f9fc]">
+      <section className="section bg-[#181928]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -431,7 +431,7 @@ export default function AiVisibilityPage() {
             <h2 className="heading-lg mb-4">
               Win the <span className="gradient-text">direct-answer slot.</span>
             </h2>
-            <p className="text-gray-600">
+            <p className="text-[#a8a4c8]">
               Six things that move the needle on Answer Engine Optimization in 2026.
             </p>
           </motion.div>
@@ -449,8 +449,8 @@ export default function AiVisibilityPage() {
                   <div className="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center mb-3">
                     <Check className="w-4 h-4 text-pink-600" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2 text-sm">{bp.title}</h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">{bp.body}</p>
+                  <h3 className="font-semibold text-[#f0eef8] mb-2 text-sm">{bp.title}</h3>
+                  <p className="text-xs text-[#a8a4c8] leading-relaxed">{bp.body}</p>
                 </Card>
               </motion.div>
             ))}
@@ -459,7 +459,7 @@ export default function AiVisibilityPage() {
       </section>
 
       {/* GEO BEST PRACTICES */}
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -467,11 +467,11 @@ export default function AiVisibilityPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-12"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">GEO Best Practices</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">GEO Best Practices</Badge>
             <h2 className="heading-lg mb-4">
               Get cited by <span className="gradient-text">the generative engines.</span>
             </h2>
-            <p className="text-gray-600">
+            <p className="text-[#a8a4c8]">
               Six things that move the needle on Generative Engine Optimization in 2026.
               Brand mention frequency is the moat.
             </p>
@@ -487,11 +487,11 @@ export default function AiVisibilityPage() {
                 transition={{ delay: i * 0.05 }}
               >
                 <Card className="p-5 h-full hover:shadow-lg transition-all">
-                  <div className="w-8 h-8 rounded-full bg-[#f0e6fb] flex items-center justify-center mb-3">
+                  <div className="w-8 h-8 rounded-full bg-[#1e1c35] flex items-center justify-center mb-3">
                     <Quote className="w-4 h-4 text-[#8734E1]" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2 text-sm">{bp.title}</h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">{bp.body}</p>
+                  <h3 className="font-semibold text-[#f0eef8] mb-2 text-sm">{bp.title}</h3>
+                  <p className="text-xs text-[#a8a4c8] leading-relaxed">{bp.body}</p>
                 </Card>
               </motion.div>
             ))}
@@ -548,7 +548,7 @@ export default function AiVisibilityPage() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                 >
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 h-full">
+                  <div className="bg-[#252640]/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 h-full">
                     <p className="text-xs text-[#BF5DE0] font-mono uppercase tracking-wider mb-2">{s.step}</p>
                     <h3 className="font-semibold text-white mb-2">{s.title}</h3>
                     <p className="text-sm text-white/70 leading-relaxed">{s.body}</p>
@@ -561,7 +561,7 @@ export default function AiVisibilityPage() {
       </section>
 
       {/* FAQ */}
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -569,7 +569,7 @@ export default function AiVisibilityPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-12"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">FAQ</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">FAQ</Badge>
             <h2 className="heading-lg mb-4">SEO, AEO, GEO: the common questions</h2>
           </motion.div>
 
@@ -582,12 +582,12 @@ export default function AiVisibilityPage() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.03 }}
               >
-                <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+                <div className="bg-[#252640] border border-[#3a3858] rounded-2xl overflow-hidden shadow-sm">
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+                    className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-[#1c1d30] transition-colors"
                   >
-                    <span className="font-medium text-gray-900 pr-8">{faq.q}</span>
+                    <span className="font-medium text-[#f0eef8] pr-8">{faq.q}</span>
                     <ChevronDown
                       className={`w-5 h-5 text-[#8734E1] transition-transform duration-300 flex-shrink-0 ${
                         openFaq === i ? 'rotate-180' : ''
@@ -603,7 +603,7 @@ export default function AiVisibilityPage() {
                         transition={{ duration: 0.3 }}
                       >
                         <div className="px-6 pb-5">
-                          <p className="text-gray-600 leading-relaxed">{faq.a}</p>
+                          <p className="text-[#a8a4c8] leading-relaxed">{faq.a}</p>
                         </div>
                       </motion.div>
                     )}

@@ -36,7 +36,7 @@ export default function FAQHomeSection() {
 
   return (
     <section className="section relative overflow-hidden">
-      <div className="absolute inset-0 bg-[#f8f9fc]/70" />
+      <div className="absolute inset-0 bg-[#181928]/70" />
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
 
       <div className="container-custom relative z-10">
@@ -47,13 +47,13 @@ export default function FAQHomeSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">
+          <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">
             FAQ
           </div>
           <h2 className="heading-lg mb-4">
             Common <span className="gradient-text">Questions</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-[#a8a4c8] max-w-2xl mx-auto">
             Find answers to frequently asked questions about our services and process.
           </p>
         </m.div>
@@ -67,12 +67,12 @@ export default function FAQHomeSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
             >
-              <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+              <div className="bg-[#252640] border border-[#3a3858] rounded-2xl overflow-hidden shadow-sm">
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-[#1c1d30] transition-colors"
                 >
-                  <span className="font-medium text-gray-900 pr-8">{faq.question}</span>
+                  <span className="font-medium text-[#f0eef8] pr-8">{faq.question}</span>
                   <ChevronDown
                     className={`w-5 h-5 text-[#8734E1] transition-transform duration-300 flex-shrink-0 ${
                       openIndex === index ? 'rotate-180' : ''
@@ -88,7 +88,7 @@ export default function FAQHomeSection() {
                       transition={{ duration: 0.3 }}
                     >
                       <div className="px-6 pb-5">
-                        <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                        <p className="text-[#a8a4c8] leading-relaxed">{faq.answer}</p>
                       </div>
                     </m.div>
                   )}

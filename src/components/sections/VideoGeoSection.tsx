@@ -5,7 +5,7 @@ import { m } from 'framer-motion';
 
 export default function VideoGeoSection() {
   return (
-    <section className="section bg-[#f8f9fc]">
+    <section className="section bg-[#181928]">
       <div className="container-custom">
         <m.div
           initial={{ opacity: 0 }}
@@ -17,10 +17,10 @@ export default function VideoGeoSection() {
           <p className="text-xs uppercase tracking-widest text-[#8734E1] font-semibold mb-3">
             Watch
           </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#f0eef8] mb-8">
             SEO Is Old News. Meet GEO.
           </h2>
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-black">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-[#3a3858] bg-black">
             <video
               controls
               playsInline

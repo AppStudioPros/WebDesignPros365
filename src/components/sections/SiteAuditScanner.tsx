@@ -63,15 +63,15 @@ function ScoreCard({ icon: Icon, label, score, visitors }: {
   const barBg = (s: number) => s >= 80 ? 'bg-emerald-500' : s >= 60 ? 'bg-amber-500' : 'bg-red-500'
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex flex-col items-center text-center">
+    <div className="bg-[#252640] rounded-2xl border border-[#2e2c48] shadow-sm p-5 flex flex-col items-center text-center">
       <Icon className={`w-5 h-5 mb-2 ${score !== null && !visitors ? color(score) : 'text-sky-500'}`} />
-      <span className="text-xs font-bold uppercase tracking-wide text-gray-500 mb-2">{label}</span>
+      <span className="text-xs font-bold uppercase tracking-wide text-[#8a87a8] mb-2">{label}</span>
       {visitors ? (
         <span className="text-3xl font-black text-sky-500">~2.4K</span>
       ) : score !== null ? (
         <>
           <span className={`text-3xl font-black font-mono ${color(score)}`}>{score}</span>
-          <div className="w-full h-1.5 rounded-full bg-gray-100 mt-2">
+          <div className="w-full h-1.5 rounded-full bg-[#191a2c] mt-2">
             <div className={`h-1.5 rounded-full transition-all ${barBg(score)}`} style={{ width: `${score}%` }} />
           </div>
         </>
@@ -89,7 +89,7 @@ function Flag({ ok, label }: { ok: boolean; label: string }) {
         ? <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0" />
         : <XCircle className="w-4 h-4 text-red-400 shrink-0" />
       }
-      <span className={ok ? 'text-sm text-gray-500' : 'text-sm text-gray-800 font-medium'}>{label}</span>
+      <span className={ok ? 'text-sm text-[#8a87a8]' : 'text-sm text-[#dddaf0] font-medium'}>{label}</span>
     </div>
   )
 }
@@ -198,16 +198,16 @@ export default function SiteAuditScanner() {
 
         {/* Header */}
         <div className="text-center mb-10">
-          <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#8734E1] bg-[#f0e6fb] px-3 py-1 rounded-full mb-4">
+          <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#8734E1] bg-[#1e1c35] px-3 py-1 rounded-full mb-4">
             Free Site Audit
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#f0eef8] mb-3">
             Get a comprehensive analysis of your{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2F73EE] to-[#8734E1]">
               digital reach
             </span>
           </h2>
-          <p className="text-gray-500 max-w-xl mx-auto text-sm">
+          <p className="text-[#8a87a8] max-w-xl mx-auto text-sm">
             Real scan. Real scores. We check performance, SEO, security, and whether AI like ChatGPT is even able to recommend you.
           </p>
         </div>
@@ -216,7 +216,7 @@ export default function SiteAuditScanner() {
 
           {/* ─── FORM ─── */}
           {step === 'form' && (
-            <div className="bg-white rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100 p-8">
+            <div className="bg-[#252640] rounded-2xl shadow-xl shadow-gray-200/60 border border-[#2e2c48] p-8">
               {error && (
                 <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-600 text-sm rounded-xl flex items-center gap-2">
                   <AlertCircle className="w-4 h-4 shrink-0" /> {error}
@@ -224,19 +224,19 @@ export default function SiteAuditScanner() {
               )}
               <form onSubmit={handleScan} className="space-y-4">
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-gray-600 uppercase tracking-wide block">Your Website</label>
+                  <label className="text-xs font-semibold text-[#a8a4c8] uppercase tracking-wide block">Your Website</label>
                   <input
                     ref={domainRef}
                     type="text"
                     value={domain}
                     onChange={e => setDomain(e.target.value)}
                     placeholder="e.g. www.yoursite.com"
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 outline-none focus:border-[#8734E1] focus:ring-2 focus:ring-[#8734E1]/10 transition-all"
+                    className="w-full border border-[#3a3858] rounded-xl px-4 py-3 text-sm text-[#f0eef8] outline-none focus:border-[#8734E1] focus:ring-2 focus:ring-[#8734E1]/10 transition-all"
                   />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="space-y-1.5">
-                    <label className="text-xs font-semibold text-gray-600 uppercase tracking-wide block">
+                    <label className="text-xs font-semibold text-[#a8a4c8] uppercase tracking-wide block">
                       Target Keyword
                     </label>
                     <input
@@ -244,11 +244,11 @@ export default function SiteAuditScanner() {
                       value={keyword}
                       onChange={e => setKeyword(e.target.value)}
                       placeholder="e.g. real estate"
-                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 outline-none focus:border-[#8734E1] focus:ring-2 focus:ring-[#8734E1]/10 transition-all"
+                      className="w-full border border-[#3a3858] rounded-xl px-4 py-3 text-sm text-[#f0eef8] outline-none focus:border-[#8734E1] focus:ring-2 focus:ring-[#8734E1]/10 transition-all"
                     />
                   </div>
                   <div className="space-y-1.5">
-                    <label className="text-xs font-semibold text-gray-600 uppercase tracking-wide block">
+                    <label className="text-xs font-semibold text-[#a8a4c8] uppercase tracking-wide block">
                       Location
                     </label>
                     <input
@@ -256,7 +256,7 @@ export default function SiteAuditScanner() {
                       value={location}
                       onChange={e => setLocation(e.target.value)}
                       placeholder="e.g. Orlando"
-                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 outline-none focus:border-[#8734E1] focus:ring-2 focus:ring-[#8734E1]/10 transition-all"
+                      className="w-full border border-[#3a3858] rounded-xl px-4 py-3 text-sm text-[#f0eef8] outline-none focus:border-[#8734E1] focus:ring-2 focus:ring-[#8734E1]/10 transition-all"
                     />
                   </div>
                 </div>
@@ -267,7 +267,7 @@ export default function SiteAuditScanner() {
                 >
                   <Search className="w-4 h-4" /> Scan My Website Free
                 </button>
-                <p className="text-center text-xs text-gray-500">No credit card. No install. Results in about 30 seconds.</p>
+                <p className="text-center text-xs text-[#8a87a8]">No credit card. No install. Results in about 30 seconds.</p>
               </form>
             </div>
           )}
@@ -282,7 +282,7 @@ export default function SiteAuditScanner() {
               <div className="space-y-3 mb-8">
                 {logs.slice(0, logIndex + 1).map((log, i) => (
                   <div key={i} className={`text-sm font-semibold font-mono flex items-center gap-2.5 transition-colors duration-500 ${
-                    i < logIndex ? 'text-emerald-400' : i === logIndex ? 'text-[#8734E1]' : 'text-gray-600'
+                    i < logIndex ? 'text-emerald-400' : i === logIndex ? 'text-[#8734E1]' : 'text-[#a8a4c8]'
                   }`}>
                     <span className="w-2 h-2 rounded-full bg-current shrink-0" />
                     {log}
@@ -290,7 +290,7 @@ export default function SiteAuditScanner() {
                 ))}
               </div>
               {/* Progress bar */}
-              <div className="w-full h-2 rounded-full bg-white/10">
+              <div className="w-full h-2 rounded-full bg-[#252640]/10">
                 <div
                   className="h-2 rounded-full bg-gradient-to-r from-[#2F73EE] to-[#8734E1] transition-all duration-500"
                   style={{ width: `${progress}%` }}
@@ -321,8 +321,8 @@ export default function SiteAuditScanner() {
               {/* Score grid — 6 cards */}
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-bold text-gray-900 text-base">Scores for <span className="text-[#8734E1]">{result.domain}</span></h3>
-                  <span className="text-xs text-gray-500 font-mono">Just scanned</span>
+                  <h3 className="font-bold text-[#f0eef8] text-base">Scores for <span className="text-[#8734E1]">{result.domain}</span></h3>
+                  <span className="text-xs text-[#8a87a8] font-mono">Just scanned</span>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
                   <ScoreCard icon={Zap}       label="Speed"      score={result.scores.performance} />
@@ -350,8 +350,8 @@ export default function SiteAuditScanner() {
                         : result.ranking.tier === 'top100' ? 'text-amber-600'
                         : 'text-red-500'
                       }`} />
-                      <span className="text-sm font-bold text-gray-800">Google Ranking</span>
-                      <span className="text-sm font-bold text-gray-600">&ldquo;{result.ranking.query}&rdquo;</span>
+                      <span className="text-sm font-bold text-[#dddaf0]">Google Ranking</span>
+                      <span className="text-sm font-bold text-[#a8a4c8]">&ldquo;{result.ranking.query}&rdquo;</span>
                     </div>
                     <span className={`text-xs font-bold px-3 py-1 rounded-full border ${
                       result.ranking.tier === 'top25'
@@ -372,16 +372,16 @@ export default function SiteAuditScanner() {
                         : result.ranking.tier === 'top100' ? 'text-amber-600'
                         : 'text-red-500'
                       }`}>#{result.ranking.position}</span>
-                      <span className="text-sm text-gray-500">in Google organic results</span>
+                      <span className="text-sm text-[#8a87a8]">in Google organic results</span>
                     </div>
                   ) : (
                     <p className="text-sm text-red-600 font-medium">Not found in the top 100 results</p>
                   )}
                   {result.ranking.snippet && (
-                    <p className="mt-2 text-xs text-gray-500 italic leading-relaxed line-clamp-2">{result.ranking.snippet}</p>
+                    <p className="mt-2 text-xs text-[#8a87a8] italic leading-relaxed line-clamp-2">{result.ranking.snippet}</p>
                   )}
                   {result.ranking.tier !== 'top25' && (
-                    <p className="mt-2 text-sm font-medium text-gray-600">
+                    <p className="mt-2 text-sm font-medium text-[#a8a4c8]">
                       {result.ranking.tier === 'top100'
                         ? 'You\'re ranking but not on page 1. Our AI Visibility Stack can move you up.'
                         : 'You\'re not showing up for this search. Customers can\'t find you here.'}
@@ -393,14 +393,14 @@ export default function SiteAuditScanner() {
               {/* Flags + Analysis */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Left — Checklist */}
-                <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 space-y-3">
-                  <h4 className="text-xs font-bold text-gray-700 uppercase tracking-wide mb-4">Checklist</h4>
+                <div className="bg-[#252640] rounded-2xl border border-[#2e2c48] shadow-sm p-6 space-y-3">
+                  <h4 className="text-xs font-bold text-[#c4c0e0] uppercase tracking-wide mb-4">Checklist</h4>
                   <Flag ok={result.flags.hasSchema}      label="Structured data (Schema.org)" />
                   <Flag ok={result.flags.hasFAQ}         label="FAQ content for AI answers" />
                   <Flag ok={result.flags.hasOG}           label="Social sharing (OG tags)" />
                   <Flag ok={!result.flags.descTooLong}   label="Meta description length" />
                   <Flag ok={result.flags.secChecks >= 4} label="Security headers" />
-                  <div className="pt-3 border-t border-gray-100 mt-2 space-y-2">
+                  <div className="pt-3 border-t border-[#2e2c48] mt-2 space-y-2">
                     {result.ranking && result.ranking.query ? (
                       <>
                         <div className="flex items-start gap-3">
@@ -448,12 +448,12 @@ export default function SiteAuditScanner() {
                 </div>
 
                 {/* Right — What this means */}
-                <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 space-y-4">
-                  <h4 className="text-xs font-bold text-gray-700 uppercase tracking-wide">What this means</h4>
-                  <p className="text-sm text-gray-600 leading-relaxed">{result.analysis.problem}</p>
+                <div className="bg-[#252640] rounded-2xl border border-[#2e2c48] shadow-sm p-6 space-y-4">
+                  <h4 className="text-xs font-bold text-[#c4c0e0] uppercase tracking-wide">What this means</h4>
+                  <p className="text-sm text-[#a8a4c8] leading-relaxed">{result.analysis.problem}</p>
                   <div className="bg-[#8734E1]/5 border border-[#8734E1]/20 rounded-xl p-4">
                     <p className="text-sm font-bold text-[#8734E1] mb-1">AI visibility gap:</p>
-                    <p className="text-sm text-gray-600 leading-relaxed">{result.analysis.ai_gap}</p>
+                    <p className="text-sm text-[#a8a4c8] leading-relaxed">{result.analysis.ai_gap}</p>
                   </div>
                 </div>
               </div>
@@ -462,9 +462,9 @@ export default function SiteAuditScanner() {
 
               {/* Plugin detection */}
               {result.plugins.length > 0 && (
-                <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+                <div className="bg-[#252640] rounded-2xl border border-[#2e2c48] shadow-sm p-6">
                   <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-xs font-bold text-gray-700 uppercase tracking-wide">Plugins & Scripts Detected</h4>
+                    <h4 className="text-xs font-bold text-[#c4c0e0] uppercase tracking-wide">Plugins & Scripts Detected</h4>
                     <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${result.plugins.filter(p => p.weight === 'heavy').length > 0 ? 'bg-red-50 text-red-600 border border-red-200' : 'bg-amber-50 text-amber-600 border border-amber-200'}`}>
                       {result.plugins.length} found · {result.plugins.filter(p => p.weight === 'heavy').length} heavy
                     </span>
@@ -474,14 +474,14 @@ export default function SiteAuditScanner() {
                       <div key={i} className="flex items-start gap-3">
                         <span className={`shrink-0 mt-1.5 w-2 h-2 rounded-full ${plugin.weight === 'heavy' ? 'bg-red-400' : 'bg-amber-400'}`} />
                         <div>
-                          <span className="text-sm font-semibold text-gray-700">{plugin.name}</span>
+                          <span className="text-sm font-semibold text-[#c4c0e0]">{plugin.name}</span>
                           <span className="text-sm text-gray-400 ml-2">{plugin.impact}</span>
                         </div>
                       </div>
                     ))}
                   </div>
                   {result.plugins.filter(p => p.weight === 'heavy').length >= 2 && (
-                    <p className="mt-4 text-sm text-red-500 font-medium border-t border-gray-100 pt-3">
+                    <p className="mt-4 text-sm text-red-500 font-medium border-t border-[#2e2c48] pt-3">
                       {result.plugins.filter(p => p.weight === 'heavy').length} heavy plugins detected. This is likely adding 2-4 seconds to your load time.
                     </p>
                   )}
@@ -504,12 +504,12 @@ export default function SiteAuditScanner() {
                       value={email}
                       onChange={e => setEmail(e.target.value)}
                       placeholder="your@email.com"
-                      className="flex-1 bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-white/50 transition-all"
+                      className="flex-1 bg-[#252640]/10 border border-white/20 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-white/50 transition-all"
                     />
                     <button
                       type="submit"
                       disabled={!email.trim()}
-                      className="shrink-0 flex items-center gap-1.5 bg-white text-[#8734E1] font-bold text-sm px-5 py-3 rounded-xl hover:bg-white/90 transition-colors disabled:opacity-50"
+                      className="shrink-0 flex items-center gap-1.5 bg-[#252640] text-[#8734E1] font-bold text-sm px-5 py-3 rounded-xl hover:bg-[#252640]/90 transition-colors disabled:opacity-50"
                     >
                       Send it <ArrowRight className="w-3.5 h-3.5" />
                     </button>
@@ -525,7 +525,7 @@ export default function SiteAuditScanner() {
                     href={calLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="shrink-0 flex items-center gap-2 bg-white text-[#8734E1] font-bold text-sm px-5 py-3 rounded-xl hover:bg-white/90 transition-colors shadow-md"
+                    className="shrink-0 flex items-center gap-2 bg-[#252640] text-[#8734E1] font-bold text-sm px-5 py-3 rounded-xl hover:bg-[#252640]/90 transition-colors shadow-md"
                   >
                     Book a Free Call <ChevronRight className="w-4 h-4" />
                   </a>
@@ -543,7 +543,7 @@ export default function SiteAuditScanner() {
                     document.getElementById('site-scanner')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
                   }, 50)
                 }}
-                className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl border-2 border-[#8734E1]/20 bg-white hover:bg-[#f0e6fb] text-[#8734E1] font-bold text-sm transition-all"
+                className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl border-2 border-[#8734E1]/20 bg-[#252640] hover:bg-[#1e1c35] text-[#8734E1] font-bold text-sm transition-all"
               >
                 ↩ Scan a Different Site
               </button>

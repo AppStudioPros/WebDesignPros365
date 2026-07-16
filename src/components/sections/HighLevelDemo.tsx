@@ -307,7 +307,7 @@ export function HighLevelDemo() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto text-center mb-10"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#252640]/10 border border-white/20 text-white mb-4">
             <Sparkles className="w-4 h-4 text-[#BF5DE0]" />
             <span className="text-sm font-mono font-medium">INTERACTIVE COMPARISON</span>
           </div>
@@ -335,7 +335,7 @@ export function HighLevelDemo() {
                 className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   isActive
                     ? "bg-gradient-to-r from-[#8734E1] to-[#2F73EE] text-white shadow-lg shadow-[#8734E1]/30"
-                    : "bg-white/5 text-white/70 hover:bg-white/10 hover:text-white border border-white/10"
+                    : "bg-[#252640]/5 text-white/70 hover:bg-[#252640]/10 hover:text-white border border-white/10"
                 }`}
               >
                 <Icon className="w-4 h-4" strokeWidth={2.25} />
@@ -497,7 +497,7 @@ export function HighLevelDemo() {
           </p>
           <a
             href="/contact?topic=highlevel-migration"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-[#8734E1] font-semibold hover:bg-white/90 transition-colors shadow-xl"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#252640] text-[#8734E1] font-semibold hover:bg-[#252640]/90 transition-colors shadow-xl"
           >
             Book a Migration Call
             <ArrowRight className="w-4 h-4" strokeWidth={2.5} />

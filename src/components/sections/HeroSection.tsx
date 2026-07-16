@@ -105,7 +105,7 @@ export default function HeroSection() {
               return (
                 <div
                   key={badge.name}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 border border-white/20 text-white/90 text-sm backdrop-blur-sm"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#252640]/10 border border-white/20 text-white/90 text-sm backdrop-blur-sm"
                 >
                   <Icon className="w-4 h-4" style={{ color: badge.color }} />
                   {badge.name}

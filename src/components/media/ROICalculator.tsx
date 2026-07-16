@@ -55,7 +55,7 @@ export default function ROICalculator() {
                   className={`flex items-center gap-2 px-5 py-3 rounded-xl text-sm transition-all border ${
                     isSelected
                       ? 'bg-[#8734E1]/10 border-[#8734E1] text-white'
-                      : 'bg-white/5 border-white/10 text-white/60 hover:border-white/20'
+                      : 'bg-[#252640]/5 border-white/10 text-white/60 hover:border-white/20'
                   }`}
                 >
                   <Icon className="w-4 h-4" />
@@ -121,7 +121,7 @@ export default function ROICalculator() {
 
           {/* Results Panel */}
           <div className="mt-14">
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
+            <div className="bg-[#252640]/5 border border-white/10 rounded-2xl p-8">
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-white/70 font-medium">Currently:</span>

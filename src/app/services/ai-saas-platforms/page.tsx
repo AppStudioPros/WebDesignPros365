@@ -67,9 +67,9 @@ export default function AiSaasPlatformsPage() {
         <div className="absolute inset-0 bg-gradient-mesh" />
         <div className="container-custom relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">AI SaaS Platforms</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">AI SaaS Platforms</Badge>
             <h1 className="heading-xl mb-6">Build a real <span className="gradient-text">AI-native SaaS.</span></h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-lg md:text-xl text-[#a8a4c8] max-w-3xl mx-auto mb-8">
               We are the engineering arm for founders, vertical specialists, and existing software
               companies who need to ship a production AI SaaS. From MVP to multi-tenant production to
               enterprise-grade compliance. On the same modern stack we use for everything else.
@@ -86,20 +86,20 @@ export default function AiSaasPlatformsPage() {
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">The Three Phases</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">The Three Phases</Badge>
             <h2 className="heading-lg mb-4">From idea to <span className="gradient-text">enterprise-grade.</span></h2>
-            <p className="text-gray-600">SaaS builds run in phases. We do not pretend an MVP is a production system. We do not pretend a production system is enterprise-grade. Each phase has clear scope and clear pricing.</p>
+            <p className="text-[#a8a4c8]">SaaS builds run in phases. We do not pretend an MVP is a production system. We do not pretend a production system is enterprise-grade. Each phase has clear scope and clear pricing.</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {phases.map((p, i) => (
               <motion.div key={p.phase} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
                 <Card className="p-6 h-full hover:shadow-lg hover:border-[#8734E1] transition-all">
                   <div className="text-3xl font-bold text-[#8734E1]/30 mb-2">{p.phase}</div>
-                  <h3 className="font-semibold text-gray-900 mb-2">{p.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{p.body}</p>
+                  <h3 className="font-semibold text-[#f0eef8] mb-2">{p.title}</h3>
+                  <p className="text-sm text-[#a8a4c8] leading-relaxed">{p.body}</p>
                 </Card>
               </motion.div>
             ))}
@@ -107,10 +107,10 @@ export default function AiSaasPlatformsPage() {
         </div>
       </section>
 
-      <section className="section bg-[#f8f9fc]">
+      <section className="section bg-[#181928]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Production Capabilities</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">Production Capabilities</Badge>
             <h2 className="heading-lg mb-4">What we ship on <span className="gradient-text">every platform.</span></h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -119,9 +119,9 @@ export default function AiSaasPlatformsPage() {
               return (
                 <motion.div key={c.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
                   <Card className="p-5 h-full hover:shadow-lg transition-all">
-                    <div className="w-10 h-10 rounded-xl bg-[#f0e6fb] flex items-center justify-center mb-3"><Icon className="w-5 h-5 text-[#8734E1]" /></div>
-                    <h3 className="font-semibold text-gray-900 mb-2 text-sm">{c.title}</h3>
-                    <p className="text-xs text-gray-600 leading-relaxed">{c.body}</p>
+                    <div className="w-10 h-10 rounded-xl bg-[#1e1c35] flex items-center justify-center mb-3"><Icon className="w-5 h-5 text-[#8734E1]" /></div>
+                    <h3 className="font-semibold text-[#f0eef8] mb-2 text-sm">{c.title}</h3>
+                    <p className="text-xs text-[#a8a4c8] leading-relaxed">{c.body}</p>
                   </Card>
                 </motion.div>
               );
@@ -130,24 +130,24 @@ export default function AiSaasPlatformsPage() {
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">FAQ</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">FAQ</Badge>
             <h2 className="heading-lg mb-4">Common SaaS-build questions</h2>
           </motion.div>
           <div className="max-w-3xl mx-auto space-y-4">
             {faqs.map((faq, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.04 }}>
-                <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
-                  <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors">
-                    <span className="font-medium text-gray-900 pr-8">{faq.q}</span>
+                <div className="bg-[#252640] border border-[#3a3858] rounded-2xl overflow-hidden shadow-sm">
+                  <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-[#1c1d30] transition-colors">
+                    <span className="font-medium text-[#f0eef8] pr-8">{faq.q}</span>
                     <ChevronDown className={`w-5 h-5 text-[#8734E1] transition-transform duration-300 flex-shrink-0 ${openFaq === i ? 'rotate-180' : ''}`} />
                   </button>
                   <AnimatePresence>
                     {openFaq === i && (
                       <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }}>
-                        <div className="px-6 pb-5"><p className="text-gray-600 leading-relaxed">{faq.a}</p></div>
+                        <div className="px-6 pb-5"><p className="text-[#a8a4c8] leading-relaxed">{faq.a}</p></div>
                       </motion.div>
                     )}
                   </AnimatePresence>

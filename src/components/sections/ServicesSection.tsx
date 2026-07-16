@@ -31,7 +31,7 @@ function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="w-full max-w-xl bg-white rounded-2xl shadow-2xl overflow-hidden max-h-[85vh] overflow-y-auto pointer-events-auto"
+              className="w-full max-w-xl bg-[#252640] rounded-2xl shadow-2xl overflow-hidden max-h-[85vh] overflow-y-auto pointer-events-auto"
             >
               <div
                 className="relative p-6 pb-8"
@@ -39,7 +39,7 @@ function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0
               >
                 <button
                   onClick={onClose}
-                  className="absolute top-4 right-4 p-2 rounded-full bg-white/80 hover:bg-white text-gray-500 hover:text-gray-700 transition-colors"
+                  className="absolute top-4 right-4 p-2 rounded-full bg-[#252640]/80 hover:bg-[#252640] text-[#8a87a8] hover:text-[#c4c0e0] transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -49,18 +49,18 @@ function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0
                     {service.isFlagship && (
                       <Badge className="mb-2 bg-[#8734E1] text-white">Flagship Service</Badge>
                     )}
-                    <h3 className="text-2xl font-bold text-gray-900">{service.title}</h3>
-                    <p className="text-sm text-gray-500 mt-1">Typical timeline: {service.timeline}</p>
+                    <h3 className="text-2xl font-bold text-[#f0eef8]">{service.title}</h3>
+                    <p className="text-sm text-[#8a87a8] mt-1">Typical timeline: {service.timeline}</p>
                   </div>
                 </div>
               </div>
               <div className="p-6 space-y-6">
                 <div>
-                  <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Overview</h4>
-                  <p className="text-gray-700 leading-relaxed">{service.fullDescription}</p>
+                  <h4 className="text-sm font-semibold text-[#8a87a8] uppercase tracking-wider mb-2">Overview</h4>
+                  <p className="text-[#c4c0e0] leading-relaxed">{service.fullDescription}</p>
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">What&apos;s Included</h4>
+                  <h4 className="text-sm font-semibold text-[#8a87a8] uppercase tracking-wider mb-3">What&apos;s Included</h4>
                   <ul className="space-y-2">
                     {service.features.map((feature, index) => (
                       <li key={index} className="flex items-start gap-3">
@@ -70,13 +70,13 @@ function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0
                         >
                           <Check className="w-3 h-3" style={{ color: service.color }} />
                         </div>
-                        <span className="text-gray-700">{feature}</span>
+                        <span className="text-[#c4c0e0]">{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Deliverables</h4>
+                  <h4 className="text-sm font-semibold text-[#8a87a8] uppercase tracking-wider mb-3">Deliverables</h4>
                   <div className="flex flex-wrap gap-2">
                     {service.deliverables.map((item, index) => (
                       <span
@@ -89,7 +89,7 @@ function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0
                     ))}
                   </div>
                 </div>
-                <div className="pt-4 border-t border-gray-100">
+                <div className="pt-4 border-t border-[#2e2c48]">
                   <Link href="/contact" onClick={onClose}>
                     <Button className="w-full bg-gradient-to-r from-[#8734E1] to-[#BF5DE0] text-white">
                       Get Started
@@ -112,7 +112,7 @@ export default function ServicesSection() {
 
   return (
     <section className="section relative overflow-hidden">
-      <div className="absolute inset-0 bg-[#f8f9fc]/70" />
+      <div className="absolute inset-0 bg-[#181928]/70" />
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
 
       <div className="container-custom relative z-10">
@@ -122,11 +122,11 @@ export default function ServicesSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Our Services</Badge>
+          <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">Our Services</Badge>
           <h2 className="heading-lg mb-4">
             What We <span className="gradient-text">Build</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-[#a8a4c8] max-w-2xl mx-auto">
             From modern AI integration to performance optimization,
             we deliver comprehensive digital solutions.
           </p>
@@ -143,8 +143,8 @@ export default function ServicesSection() {
             >
               <Card
                 onClick={() => setSelectedService(service)}
-                className={`h-full p-6 group cursor-pointer bg-white border-gray-200 hover:border-[#8734E1]/30 hover:shadow-lg transition-all relative overflow-hidden ${
-                  service.isFlagship ? 'border-[#8734E1] bg-[#f0e6fb]' : ''
+                className={`h-full p-6 group cursor-pointer bg-[#252640] border-[#3a3858] hover:border-[#8734E1]/30 hover:shadow-lg transition-all relative overflow-hidden ${
+                  service.isFlagship ? 'border-[#8734E1] bg-[#1e1c35]' : ''
                 }`}
               >
                 {/* Top accent gradient bar in service color */}
@@ -159,10 +159,10 @@ export default function ServicesSection() {
                       <Badge className="bg-[#8734E1] text-white">Flagship</Badge>
                     )}
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[#8734E1] transition-colors">
+                  <h3 className="text-lg font-semibold text-[#f0eef8] mb-2 group-hover:text-[#8734E1] transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-gray-600 mb-4">{service.shortDescription}</p>
+                  <p className="text-sm text-[#a8a4c8] mb-4">{service.shortDescription}</p>
                   <div className="flex items-center justify-center text-sm font-medium group-hover:gap-2 transition-all" style={{ color: service.color }}>
                     Learn more
                     <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />

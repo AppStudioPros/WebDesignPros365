@@ -47,9 +47,9 @@ export default function WordpressMigrationPage() {
         <div className="absolute inset-0 bg-gradient-mesh" />
         <div className="container-custom relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Vertical: WordPress Migration</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">Vertical: WordPress Migration</Badge>
             <h1 className="heading-xl mb-6">Migrate off WordPress to <span className="gradient-text">a modern stack.</span></h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-lg md:text-xl text-[#a8a4c8] max-w-3xl mx-auto mb-8">
               For organizations on aging WordPress installs ready for sub-100ms page loads, modern
               security, an editor experience your team likes, and an AI layer that actually works.
               We migrate the content cleanly and rebuild on Next.js 16 + headless CMS.
@@ -59,7 +59,7 @@ export default function WordpressMigrationPage() {
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center mb-12">
             <Badge className="mb-4 bg-red-100 text-red-700 border-red-300">The WordPress Tax</Badge>
@@ -69,8 +69,8 @@ export default function WordpressMigrationPage() {
             {painPoints.map((p, i) => (
               <motion.div key={p.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
                 <Card className="p-6 h-full border-red-100 bg-red-50/30 text-center">
-                  <h3 className="font-semibold text-gray-900 mb-2">{p.title}</h3>
-                  <p className="text-sm text-gray-700">{p.body}</p>
+                  <h3 className="font-semibold text-[#f0eef8] mb-2">{p.title}</h3>
+                  <p className="text-sm text-[#c4c0e0]">{p.body}</p>
                 </Card>
               </motion.div>
             ))}
@@ -78,10 +78,10 @@ export default function WordpressMigrationPage() {
         </div>
       </section>
 
-      <section className="section bg-[#f8f9fc]">
+      <section className="section bg-[#181928]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">What You Get</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">What You Get</Badge>
             <h2 className="heading-lg mb-4">Four upgrades <span className="gradient-text">on day one.</span></h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
@@ -91,8 +91,8 @@ export default function WordpressMigrationPage() {
                 <motion.div key={h.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
                   <Card className="p-6 h-full hover:shadow-lg hover:border-[#8734E1] transition-all flex flex-col items-center text-center">
                     <div className="mb-4"><GlassIcon Icon={Icon} color="#8734E1" /></div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{h.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{h.body}</p>
+                    <h3 className="font-semibold text-[#f0eef8] mb-2">{h.title}</h3>
+                    <p className="text-sm text-[#a8a4c8] leading-relaxed">{h.body}</p>
                   </Card>
                 </motion.div>
               );
@@ -101,10 +101,10 @@ export default function WordpressMigrationPage() {
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Migration Path</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">Migration Path</Badge>
             <h2 className="heading-lg mb-4">Four <span className="gradient-text">steps</span> to a clean migration.</h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
@@ -112,25 +112,25 @@ export default function WordpressMigrationPage() {
               <motion.div key={s.step} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
                 <Card className="p-5 h-full text-center">
                   <div className="text-2xl font-bold text-[#8734E1]/30 mb-2">{s.step}</div>
-                  <h3 className="font-semibold text-gray-900 mb-2 text-sm">{s.title}</h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">{s.body}</p>
+                  <h3 className="font-semibold text-[#f0eef8] mb-2 text-sm">{s.title}</h3>
+                  <p className="text-xs text-[#a8a4c8] leading-relaxed">{s.body}</p>
                 </Card>
               </motion.div>
             ))}
           </div>
-          <p className="text-center text-sm text-gray-500 mt-8">Typical migration timeline: 4-8 weeks for marketing sites, 8-16 weeks for content-heavy sites with WooCommerce.</p>
+          <p className="text-center text-sm text-[#8a87a8] mt-8">Typical migration timeline: 4-8 weeks for marketing sites, 8-16 weeks for content-heavy sites with WooCommerce.</p>
         </div>
       </section>
 
-      <section className="section bg-[#f8f9fc]">
+      <section className="section bg-[#181928]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">The WDP365 Migration Advantage</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">The WDP365 Migration Advantage</Badge>
             <h2 className="heading-lg mb-6">Why teams finally pick us</h2>
             <ul className="space-y-3">
               {advantages.map((a) => (
-                <li key={a} className="flex items-start gap-3 text-gray-700">
-                  <div className="w-6 h-6 rounded-full bg-[#f0e6fb] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <li key={a} className="flex items-start gap-3 text-[#c4c0e0]">
+                  <div className="w-6 h-6 rounded-full bg-[#1e1c35] flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Check className="w-4 h-4 text-[#8734E1]" />
                   </div>
                   <span className="leading-relaxed">{a}</span>

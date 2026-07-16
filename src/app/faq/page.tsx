@@ -103,18 +103,18 @@ export default function FAQPage() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">FAQ</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">FAQ</Badge>
             <h1 className="heading-xl mb-6">
               Frequently Asked <span className="gradient-text">Questions</span>
             </h1>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-[#a8a4c8]">
               Find answers to common questions about our services and process.
             </p>
           </motion.div>
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
             {faqs.map((faq, index) => (
@@ -124,13 +124,13 @@ export default function FAQPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="border-b border-gray-200"
+                className="border-b border-[#3a3858]"
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   className="w-full py-6 flex items-center justify-between text-left"
                 >
-                  <span className="text-lg font-medium text-gray-900 pr-8">{faq.question}</span>
+                  <span className="text-lg font-medium text-[#f0eef8] pr-8">{faq.question}</span>
                   <ChevronDown
                     className={`w-5 h-5 text-[#8734E1] transition-transform ${
                       openIndex === index ? 'rotate-180' : ''
@@ -146,7 +146,7 @@ export default function FAQPage() {
                       transition={{ duration: 0.2 }}
                       className="overflow-hidden"
                     >
-                      <p className="pb-6 text-gray-600">{faq.answer}</p>
+                      <p className="pb-6 text-[#a8a4c8]">{faq.answer}</p>
                     </motion.div>
                   )}
                 </AnimatePresence>

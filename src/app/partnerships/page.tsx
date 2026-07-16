@@ -165,7 +165,7 @@ export default function PartnershipsPage() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Partnerships</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">Partnerships</Badge>
             <h1 className="heading-xl mb-4">
               We work with{' '}
               <span className="gradient-text">75+ platforms and partners.</span>
@@ -177,7 +177,7 @@ export default function PartnershipsPage() {
             >
               We are the platform behind the curtains
             </p>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-lg md:text-xl text-[#a8a4c8] max-w-3xl mx-auto mb-8">
               Custom AI applications and Next.js + Python platforms built for marketing automation companies,
               CRM resellers, vertical SaaS founders, federal contractors, and design studios that need a real
               engineering arm. If you ship to customers and your stack is starting to crack, let&apos;s talk.
@@ -195,7 +195,7 @@ export default function PartnershipsPage() {
                 </Button>
               </Link>
             </div>
-            <p className="text-xs text-gray-500 mt-4">
+            <p className="text-xs text-[#8a87a8] mt-4">
               No pricing on this page. Partnerships are scoped per-deal.
             </p>
           </motion.div>
@@ -203,31 +203,31 @@ export default function PartnershipsPage() {
       </section>
 
       {/* WHO WE WORK WITH (counter strip) */}
-      <section className="py-12 bg-[#f8f9fc] border-y border-gray-200">
+      <section className="py-12 bg-[#181928] border-y border-[#3a3858]">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-4xl font-bold gradient-text mb-1">75+</div>
-              <div className="text-sm text-gray-500">Platforms + partners</div>
+              <div className="text-sm text-[#8a87a8]">Platforms + partners</div>
             </div>
             <div>
               <div className="text-4xl font-bold gradient-text mb-1">2000+</div>
-              <div className="text-sm text-gray-500">Projects shipped</div>
+              <div className="text-sm text-[#8a87a8]">Projects shipped</div>
             </div>
             <div>
               <div className="text-4xl font-bold gradient-text mb-1">A+</div>
-              <div className="text-sm text-gray-500">BBB rating</div>
+              <div className="text-sm text-[#8a87a8]">BBB rating</div>
             </div>
             <div>
               <div className="text-4xl font-bold gradient-text mb-1">20+</div>
-              <div className="text-sm text-gray-500">Years building on the web</div>
+              <div className="text-sm text-[#8a87a8]">Years building on the web</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* PARTNER CATEGORIES */}
-      <section id="categories" className="section bg-white">
+      <section id="categories" className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -235,16 +235,16 @@ export default function PartnershipsPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-12"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Partner Categories</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">Partner Categories</Badge>
             <h2 className="heading-lg mb-4">
               Who we <span className="gradient-text">build with.</span>
             </h2>
-            <p className="text-gray-700 font-medium mb-4 max-w-2xl mx-auto">
+            <p className="text-[#c4c0e0] font-medium mb-4 max-w-2xl mx-auto">
               Due to the sensitivity of government projects and contractors, as well as the parallel
               vertical companies we work with, we remain anonymous to protect integrity in our processes.
               This is our agreement and our firm position.
             </p>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-[#a8a4c8] max-w-2xl mx-auto">
               Eight categories. Different shapes of partnership in each. If you do not see your category
               listed, that does not mean we can&apos;t work together. It just means we have not done it
               yet. Tell us about it.
@@ -266,8 +266,8 @@ export default function PartnershipsPage() {
                     <div className="mb-4">
                       <GlassIcon Icon={Icon} color={cat.color} />
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{cat.name}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{cat.examples}</p>
+                    <h3 className="font-semibold text-[#f0eef8] mb-2">{cat.name}</h3>
+                    <p className="text-sm text-[#a8a4c8] leading-relaxed">{cat.examples}</p>
                   </Card>
                 </motion.div>
               );
@@ -286,7 +286,7 @@ export default function PartnershipsPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-12"
           >
-            <Badge className="mb-4 bg-white/10 text-white border-white/20">Built On Vercel</Badge>
+            <Badge className="mb-4 bg-[#252640]/10 text-white border-white/20">Built On Vercel</Badge>
             <h2 className="heading-lg mb-4 text-white">
               Every site, every platform, on{' '}
               <span className="bg-gradient-to-r from-[#BF5DE0] to-[#2F73EE] bg-clip-text text-transparent">
@@ -354,7 +354,7 @@ export default function PartnershipsPage() {
                     <div
                       key={item}
                       className={`px-3 py-1.5 rounded ${
-                        i === 1 ? 'bg-white/10 text-white' : 'text-white/50 hover:bg-white/5'
+                        i === 1 ? 'bg-[#252640]/10 text-white' : 'text-white/50 hover:bg-[#252640]/5'
                       }`}
                     >
                       {item}
@@ -366,7 +366,7 @@ export default function PartnershipsPage() {
                   <div className="flex items-center justify-between mb-6">
                     <h3 className="text-lg font-semibold">Deployments</h3>
                     <div className="flex gap-2">
-                      <div className="px-3 py-1 text-xs rounded bg-white/10 text-white/80">All branches</div>
+                      <div className="px-3 py-1 text-xs rounded bg-[#252640]/10 text-white/80">All branches</div>
                       <div className="px-3 py-1 text-xs rounded bg-emerald-500/20 text-emerald-300">
                         ● Ready
                       </div>
@@ -414,7 +414,7 @@ export default function PartnershipsPage() {
                     ].map((d, i) => (
                       <div
                         key={i}
-                        className="flex items-center gap-4 p-3 rounded-lg border border-white/10 hover:bg-white/5"
+                        className="flex items-center gap-4 p-3 rounded-lg border border-white/10 hover:bg-[#252640]/5"
                       >
                         <div
                           className={`w-2 h-2 rounded-full ${
@@ -463,7 +463,7 @@ export default function PartnershipsPage() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
                 >
-                  <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 h-full hover:bg-white/10 transition-colors">
+                  <div className="relative bg-[#252640]/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 h-full hover:bg-[#252640]/10 transition-colors">
                     {/* Top accent strip */}
                     <div
                       className="absolute top-0 left-0 right-0 h-0.5 rounded-t-2xl"
@@ -494,7 +494,7 @@ export default function PartnershipsPage() {
                       {f.proof.map((p) => (
                         <span
                           key={p}
-                          className="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-white/60 border border-white/10"
+                          className="text-[10px] px-2 py-0.5 rounded-full bg-[#252640]/5 text-white/60 border border-white/10"
                         >
                           {p}
                         </span>
@@ -509,7 +509,7 @@ export default function PartnershipsPage() {
       </section>
 
       {/* THREE PARTNERSHIP MODELS */}
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -517,11 +517,11 @@ export default function PartnershipsPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-12"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">How It Works</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">How It Works</Badge>
             <h2 className="heading-lg mb-4">
               Three <span className="gradient-text">partnership models.</span>
             </h2>
-            <p className="text-gray-600">
+            <p className="text-[#a8a4c8]">
               Pick the shape that fits. We can also combine them for the right deal.
             </p>
           </motion.div>
@@ -555,9 +555,9 @@ export default function PartnershipsPage() {
                 transition={{ delay: i * 0.1 }}
               >
                 <Card className="p-6 h-full hover:shadow-lg hover:border-[#8734E1] transition-all">
-                  <h3 className="font-semibold text-gray-900 mb-3">{model.title}</h3>
-                  <p className="text-sm text-gray-600 mb-4 leading-relaxed">{model.body}</p>
-                  <Badge className="bg-[#f0e6fb] text-[#8734E1] border-[#8734E1] text-xs">{model.cta}</Badge>
+                  <h3 className="font-semibold text-[#f0eef8] mb-3">{model.title}</h3>
+                  <p className="text-sm text-[#a8a4c8] mb-4 leading-relaxed">{model.body}</p>
+                  <Badge className="bg-[#1e1c35] text-[#8734E1] border-[#8734E1] text-xs">{model.cta}</Badge>
                 </Card>
               </motion.div>
             ))}
@@ -566,7 +566,7 @@ export default function PartnershipsPage() {
       </section>
 
       {/* CTA BAND */}
-      <section className="section bg-[#f8f9fc]">
+      <section className="section bg-[#181928]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -579,7 +579,7 @@ export default function PartnershipsPage() {
               <h2 className="heading-lg mb-3">
                 Let&apos;s see if there&apos;s a fit.
               </h2>
-              <p className="text-gray-600 max-w-xl mx-auto mb-6">
+              <p className="text-[#a8a4c8] max-w-xl mx-auto mb-6">
                 Book a free 30-minute partnership call. No pitch, no pressure. Just a conversation
                 about what you&apos;re building and whether we should ship something together.
               </p>
@@ -589,7 +589,7 @@ export default function PartnershipsPage() {
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </Link>
-              <p className="text-xs text-gray-500 mt-4">
+              <p className="text-xs text-[#8a87a8] mt-4">
                 Partnership scoping varies by deal shape. We do not publish standard pricing for partner work.
               </p>
             </Card>
@@ -598,7 +598,7 @@ export default function PartnershipsPage() {
       </section>
 
       {/* FAQ */}
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -606,7 +606,7 @@ export default function PartnershipsPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-12"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">FAQ</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">FAQ</Badge>
             <h2 className="heading-lg mb-4">Partnership questions</h2>
           </motion.div>
 
@@ -619,12 +619,12 @@ export default function PartnershipsPage() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.04 }}
               >
-                <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+                <div className="bg-[#252640] border border-[#3a3858] rounded-2xl overflow-hidden shadow-sm">
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+                    className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-[#1c1d30] transition-colors"
                   >
-                    <span className="font-medium text-gray-900 pr-8">{faq.q}</span>
+                    <span className="font-medium text-[#f0eef8] pr-8">{faq.q}</span>
                     <ChevronDown
                       className={`w-5 h-5 text-[#8734E1] transition-transform duration-300 flex-shrink-0 ${
                         openFaq === i ? 'rotate-180' : ''
@@ -640,7 +640,7 @@ export default function PartnershipsPage() {
                         transition={{ duration: 0.3 }}
                       >
                         <div className="px-6 pb-5">
-                          <p className="text-gray-600 leading-relaxed">{faq.a}</p>
+                          <p className="text-[#a8a4c8] leading-relaxed">{faq.a}</p>
                         </div>
                       </motion.div>
                     )}

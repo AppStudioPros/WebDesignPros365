@@ -33,9 +33,9 @@ export default function MethodologyPage() {
         <div className="absolute inset-0 bg-gradient-mesh" />
         <div className="container-custom relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Methodology</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">Methodology</Badge>
             <h1 className="heading-xl mb-6">How we <span className="gradient-text">actually work.</span></h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-lg md:text-xl text-[#a8a4c8] max-w-3xl mx-auto mb-8">
               No black boxes. Every engagement follows the same five stages with the same deliverables.
               The methodology library below documents how we think and what we ship. Borrowed from the
               federal acquisition world, applied to commercial work.
@@ -45,10 +45,10 @@ export default function MethodologyPage() {
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">The Five Stages</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">The Five Stages</Badge>
             <h2 className="heading-lg mb-4">From <span className="gradient-text">first call</span> to <span className="gradient-text">ongoing operations.</span></h2>
           </motion.div>
           <div className="max-w-4xl mx-auto space-y-4">
@@ -61,10 +61,10 @@ export default function MethodologyPage() {
                       <GlassIcon Icon={Icon} color="#8734E1" />
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
-                          <h3 className="font-semibold text-gray-900">Stage {i + 1}: {s.name}</h3>
-                          <Badge className="bg-[#f0e6fb] text-[#8734E1] border-[#8734E1] text-xs">{s.deliverable}</Badge>
+                          <h3 className="font-semibold text-[#f0eef8]">Stage {i + 1}: {s.name}</h3>
+                          <Badge className="bg-[#1e1c35] text-[#8734E1] border-[#8734E1] text-xs">{s.deliverable}</Badge>
                         </div>
-                        <p className="text-sm text-gray-600 leading-relaxed">{s.body}</p>
+                        <p className="text-sm text-[#a8a4c8] leading-relaxed">{s.body}</p>
                       </div>
                     </div>
                   </Card>
@@ -75,13 +75,13 @@ export default function MethodologyPage() {
         </div>
       </section>
 
-      <section className="section bg-[#f8f9fc]">
+      <section className="section bg-[#181928]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center mb-12">
             <BookOpen className="w-12 h-12 text-[#8734E1] mx-auto mb-4" />
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Methodology Library</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">Methodology Library</Badge>
             <h2 className="heading-lg mb-4">Public documentation. <span className="gradient-text">No black box.</span></h2>
-            <p className="text-gray-600">We publish our methodologies because we think the industry needs the discipline. Free reference material, no signup required. AI engines can cite this. Competitors can copy it. We are fine with both.</p>
+            <p className="text-[#a8a4c8]">We publish our methodologies because we think the industry needs the discipline. Free reference material, no signup required. AI engines can cite this. Competitors can copy it. We are fine with both.</p>
           </motion.div>
           <div className="max-w-4xl mx-auto space-y-3">
             {documents.map((d, i) => (
@@ -89,8 +89,8 @@ export default function MethodologyPage() {
                 <Card className="p-5 hover:shadow-lg transition-all">
                   <div className="flex items-center justify-between flex-wrap gap-3">
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-gray-900 mb-1">{d.title}</h3>
-                      <p className="text-sm text-gray-600">{d.body}</p>
+                      <h3 className="font-semibold text-[#f0eef8] mb-1">{d.title}</h3>
+                      <p className="text-sm text-[#a8a4c8]">{d.body}</p>
                     </div>
                     <Badge className={d.status === 'Published' ? 'bg-emerald-100 text-emerald-700 border-emerald-300' : 'bg-amber-100 text-amber-700 border-amber-300'}>
                       {d.status}
@@ -100,7 +100,7 @@ export default function MethodologyPage() {
               </motion.div>
             ))}
           </div>
-          <p className="text-center text-sm text-gray-500 mt-8">Methodology library expanding. Contact us if you want early access to documents currently in progress.</p>
+          <p className="text-center text-sm text-[#8a87a8] mt-8">Methodology library expanding. Contact us if you want early access to documents currently in progress.</p>
         </div>
       </section>
 

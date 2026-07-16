@@ -26,7 +26,7 @@ export default function TrustLine() {
                 <p className="text-sm text-white/60">only 20%</p>
               </div>
             </div>
-            <div className="w-full h-2 rounded-full bg-white/5">
+            <div className="w-full h-2 rounded-full bg-[#252640]/5">
               <motion.div
                 initial={{ width: '0%' }}
                 whileInView={{ width: '82%' }}

@@ -53,12 +53,12 @@ export default function FederalContractingPage() {
               audit-trail-complete AI systems for the acquisition lifecycle. Built on the patented ACI
               platform with federal-grade compliance discipline from day one.
             </p>
-            <Link href="/contact?topic=federal"><Button size="lg" className="bg-white text-[#8734E1] hover:bg-white/90">Book a Federal Discovery Call <ArrowRight className="w-5 h-5 ml-2" /></Button></Link>
+            <Link href="/contact?topic=federal"><Button size="lg" className="bg-[#252640] text-[#8734E1] hover:bg-[#252640]/90">Book a Federal Discovery Call <ArrowRight className="w-5 h-5 ml-2" /></Button></Link>
           </motion.div>
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center mb-12">
             <Badge className="mb-4 bg-red-100 text-red-700 border-red-300">The Federal Acquisition Tax</Badge>
@@ -68,8 +68,8 @@ export default function FederalContractingPage() {
             {painPoints.map((p, i) => (
               <motion.div key={p.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
                 <Card className="p-6 h-full border-red-100 bg-red-50/30 text-center">
-                  <h3 className="font-semibold text-gray-900 mb-2">{p.title}</h3>
-                  <p className="text-sm text-gray-700">{p.body}</p>
+                  <h3 className="font-semibold text-[#f0eef8] mb-2">{p.title}</h3>
+                  <p className="text-sm text-[#c4c0e0]">{p.body}</p>
                 </Card>
               </motion.div>
             ))}
@@ -77,10 +77,10 @@ export default function FederalContractingPage() {
         </div>
       </section>
 
-      <section className="section bg-[#f8f9fc]">
+      <section className="section bg-[#181928]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">How We Help</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">How We Help</Badge>
             <h2 className="heading-lg mb-4">Four shapes <span className="gradient-text">we ship for federal.</span></h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
@@ -90,8 +90,8 @@ export default function FederalContractingPage() {
                 <motion.div key={h.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
                   <Card className="p-6 h-full hover:shadow-lg hover:border-[#8734E1] transition-all flex flex-col items-center text-center">
                     <div className="mb-4"><GlassIcon Icon={Icon} color="#8734E1" /></div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{h.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{h.body}</p>
+                    <h3 className="font-semibold text-[#f0eef8] mb-2">{h.title}</h3>
+                    <p className="text-sm text-[#a8a4c8] leading-relaxed">{h.body}</p>
                   </Card>
                 </motion.div>
               );
@@ -100,16 +100,16 @@ export default function FederalContractingPage() {
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Federal Platforms We Integrate</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">Federal Platforms We Integrate</Badge>
             <h2 className="heading-lg mb-4">Where we <span className="gradient-text">plug in.</span></h2>
-            <p className="text-gray-600">We connect to the federal data sources and procurement systems you already use.</p>
+            <p className="text-[#a8a4c8]">We connect to the federal data sources and procurement systems you already use.</p>
           </motion.div>
           <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-3">
             {platforms.map((p) => (
-              <div key={p} className="px-4 py-2 rounded-xl bg-[#f8f9fc] border border-gray-200 text-gray-700 text-sm font-medium">{p}</div>
+              <div key={p} className="px-4 py-2 rounded-xl bg-[#181928] border border-[#3a3858] text-[#c4c0e0] text-sm font-medium">{p}</div>
             ))}
           </div>
         </div>

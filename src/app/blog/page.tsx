@@ -26,7 +26,7 @@ export default async function BlogPage() {
             <Link key={post.slug} href={`/blog/${post.slug}`} className="block group p-6 rounded-2xl border border-gray-800 hover:border-indigo-500/30 bg-gray-900/50 hover:bg-gray-900 transition-all duration-300">
               <div className="flex items-center gap-3 mb-3">
                 <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full border" style={{ color: post.categoryColor, borderColor: `${post.categoryColor}40` }}>{post.category}</span>
-                <span className="text-xs text-gray-500">{post.date}</span><span className="text-xs text-gray-500">·</span><span className="text-xs text-gray-500">{post.readTime}</span>
+                <span className="text-xs text-[#8a87a8]">{post.date}</span><span className="text-xs text-[#8a87a8]">·</span><span className="text-xs text-[#8a87a8]">{post.readTime}</span>
               </div>
               <h2 className="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors mb-2">{post.title}</h2>
               <p className="text-gray-400 text-sm leading-relaxed">{post.excerpt}</p>

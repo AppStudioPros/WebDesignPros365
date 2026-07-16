@@ -22,10 +22,10 @@ function Field({
 }: { label: string; hint?: string; required?: boolean; children: React.ReactNode }) {
   return (
     <div className="space-y-1.5">
-      <label className="block text-sm font-semibold text-gray-800">
+      <label className="block text-sm font-semibold text-[#dddaf0]">
         {label}{required && <span className="text-[#8734E1] ml-0.5">*</span>}
       </label>
-      {hint && <p className="text-xs text-gray-500 leading-relaxed">{hint}</p>}
+      {hint && <p className="text-xs text-[#8a87a8] leading-relaxed">{hint}</p>}
       {children}
     </div>
   );
@@ -40,7 +40,7 @@ function TextInput({ value, onChange, placeholder, type = 'text' }: {
       value={value}
       onChange={e => onChange(e.target.value)}
       placeholder={placeholder}
-      className="border-gray-200 focus:border-[#8734E1] focus:ring-[#8734E1]/20"
+      className="border-[#3a3858] focus:border-[#8734E1] focus:ring-[#8734E1]/20"
     />
   );
 }
@@ -54,7 +54,7 @@ function TextArea({ value, onChange, placeholder, rows = 4 }: {
       onChange={e => onChange(e.target.value)}
       placeholder={placeholder}
       rows={rows}
-      className="border-gray-200 focus:border-[#8734E1] focus:ring-[#8734E1]/20 resize-none"
+      className="border-[#3a3858] focus:border-[#8734E1] focus:ring-[#8734E1]/20 resize-none"
     />
   );
 }
@@ -66,7 +66,7 @@ function Select({ value, onChange, options }: {
     <select
       value={value}
       onChange={e => onChange(e.target.value)}
-      className="w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-sm text-gray-800 focus:outline-none focus:border-[#8734E1] focus:ring-2 focus:ring-[#8734E1]/20"
+      className="w-full rounded-md border border-[#3a3858] bg-[#252640] px-3 py-2 text-sm text-[#dddaf0] focus:outline-none focus:border-[#8734E1] focus:ring-2 focus:ring-[#8734E1]/20"
     >
       {options.map(o => <option key={o} value={o}>{o}</option>)}
     </select>
@@ -83,7 +83,7 @@ function VibeTag({ label, selected, onToggle }: {
       className={`px-4 py-2 rounded-full text-sm font-medium border transition-all ${
         selected
           ? 'bg-[#8734E1] text-white border-[#8734E1]'
-          : 'bg-white text-gray-600 border-gray-200 hover:border-[#8734E1] hover:text-[#8734E1]'
+          : 'bg-[#252640] text-[#a8a4c8] border-[#3a3858] hover:border-[#8734E1] hover:text-[#8734E1]'
       }`}
     >
       {label}
@@ -211,7 +211,7 @@ function StepSocial({ data, set }: { data: StepData; set: (k: string, v: string)
 
   return (
     <div className="space-y-5">
-      <p className="text-sm text-gray-500">All fields optional — just fill in what you have. We&apos;ll add social icons to your footer and link them up.</p>
+      <p className="text-sm text-[#8a87a8]">All fields optional — just fill in what you have. We&apos;ll add social icons to your footer and link them up.</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {fields.map(f => (
           <Field key={f.key} label={f.label} hint="Full URL">
@@ -283,7 +283,7 @@ function StepServices({ data, set }: { data: StepData; set: (k: string, v: strin
 function StepMedia({ data, set }: { data: StepData; set: (k: string, v: string) => void }) {
   return (
     <div className="space-y-5">
-      <div className="bg-[#f0e6fb] border border-[#8734E1]/20 rounded-lg p-4 text-sm text-[#8734E1]">
+      <div className="bg-[#1e1c35] border border-[#8734E1]/20 rounded-lg p-4 text-sm text-[#8734E1]">
         <strong>How to share files:</strong> Upload photos and videos to Google Drive or Dropbox, set sharing to &ldquo;Anyone with the link can view,&rdquo; and paste the folder link below. One shared folder is fine for everything.
       </div>
       <Field label="Photo / Video Folder Link" hint="A Google Drive or Dropbox folder containing all your images and videos. Include everything and we'll sort through it." required>
@@ -308,7 +308,7 @@ function StepMedia({ data, set }: { data: StepData; set: (k: string, v: string) 
 function StepLicensing({ data, set }: { data: StepData; set: (k: string, v: string) => void }) {
   return (
     <div className="space-y-5">
-      <p className="text-sm text-gray-500">Required for regulated industries (mortgage, insurance, contracting, notary, legal, medical). Skip any fields that don&apos;t apply to you.</p>
+      <p className="text-sm text-[#8a87a8]">Required for regulated industries (mortgage, insurance, contracting, notary, legal, medical). Skip any fields that don&apos;t apply to you.</p>
       <Field label="Does your industry require license numbers on your website?" required>
         <Select
           value={data.requiresLicenses as string || 'Not sure'}
@@ -365,7 +365,7 @@ function StepTestimonials({ data, set }: { data: StepData; set: (k: string, v: s
             onChange={e => set('permissionConfirmed', e.target.checked ? 'true' : 'false')}
             className="mt-0.5 h-4 w-4 rounded border-gray-300 text-[#8734E1] focus:ring-[#8734E1]"
           />
-          <label htmlFor="permission" className="text-sm text-gray-600">
+          <label htmlFor="permission" className="text-sm text-[#a8a4c8]">
             I have permission from all named individuals to use their testimonials publicly on my website.
           </label>
         </div>
@@ -577,13 +577,13 @@ export default function OnboardingPage() {
             <CheckCircle2 className="w-10 h-10 text-green-600" />
           </div>
           <h1 className="heading-lg mb-4">You&apos;re all set! 🎉</h1>
-          <p className="text-gray-600 text-lg mb-2">
+          <p className="text-[#a8a4c8] text-lg mb-2">
             We&apos;ve received your information and we&apos;re already excited to get started.
           </p>
-          <p className="text-gray-500 text-sm">
+          <p className="text-[#8a87a8] text-sm">
             We&apos;ll review everything and reach out within 1 business day to schedule your kickoff call. Keep an eye on <strong>{steps.basics?.primaryEmail}</strong>.
           </p>
-          <div className="mt-8 pt-8 border-t border-gray-100 text-sm text-gray-400">
+          <div className="mt-8 pt-8 border-t border-[#2e2c48] text-sm text-gray-400">
             Questions in the meantime? Email us at{' '}
             <a href="mailto:info@webdesignpros365.com" className="text-[#8734E1] hover:underline">info@webdesignpros365.com</a>
           </div>
@@ -595,19 +595,19 @@ export default function OnboardingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-[#f8f9fc]">
       {/* Header */}
-      <div className="bg-white border-b border-gray-100 sticky top-0 z-40">
+      <div className="bg-[#252640] border-b border-[#2e2c48] sticky top-0 z-40">
         <div className="container-custom py-4 px-4 sm:px-6">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-3">
-              <span className="font-bold text-gray-900 text-sm">Client Onboarding</span>
-              <Badge className="bg-[#f0e6fb] text-[#8734E1] border-[#8734E1] text-xs">
+              <span className="font-bold text-[#f0eef8] text-sm">Client Onboarding</span>
+              <Badge className="bg-[#1e1c35] text-[#8734E1] border-[#8734E1] text-xs">
                 Step {currentStep + 1} of {STEPS.length}
               </Badge>
             </div>
             <span className="text-xs text-gray-400">Progress auto-saved</span>
           </div>
           {/* Progress bar */}
-          <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+          <div className="h-1.5 bg-[#191a2c] rounded-full overflow-hidden">
             <motion.div
               className="h-full rounded-full"
               style={{ background: 'linear-gradient(90deg, #8734E1, #BF5DE0)' }}
@@ -625,8 +625,8 @@ export default function OnboardingPage() {
                   i === currentStep
                     ? 'bg-[#8734E1] text-white'
                     : i < currentStep
-                    ? 'bg-[#f0e6fb] text-[#8734E1]'
-                    : 'text-gray-400 hover:text-gray-600'
+                    ? 'bg-[#1e1c35] text-[#8734E1]'
+                    : 'text-gray-400 hover:text-[#a8a4c8]'
                 }`}
               >
                 {i < currentStep && '✓ '}{s.label}
@@ -647,8 +647,8 @@ export default function OnboardingPage() {
             transition={{ duration: 0.3 }}
           >
             <p className="text-sm font-semibold text-[#8734E1] mb-2">{currentStep + 1} / {STEPS.length} — {step.label}</p>
-            <h1 className="heading-md text-gray-900 mb-2">{step.title}</h1>
-            <p className="text-gray-500">{step.sub}</p>
+            <h1 className="heading-md text-[#f0eef8] mb-2">{step.title}</h1>
+            <p className="text-[#8a87a8]">{step.sub}</p>
           </motion.div>
         </div>
       </section>
@@ -664,7 +664,7 @@ export default function OnboardingPage() {
             exit={{ opacity: 0, x: direction * -40 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
-            <Card className="p-6 sm:p-8 shadow-sm border-gray-100">
+            <Card className="p-6 sm:p-8 shadow-sm border-[#2e2c48]">
               <StepComponent
                 data={data}
                 set={(k, v) => setField(step.id, k, v)}
@@ -675,7 +675,7 @@ export default function OnboardingPage() {
       </section>
 
       {/* Fixed nav footer */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 shadow-lg z-40">
+      <div className="fixed bottom-0 left-0 right-0 bg-[#252640] border-t border-[#2e2c48] shadow-lg z-40">
         <div className="container-custom py-5 max-w-3xl flex items-center justify-between gap-4 px-4 sm:px-6">
           <Button
             variant="outline"

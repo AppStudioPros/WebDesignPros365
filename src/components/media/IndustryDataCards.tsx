@@ -66,7 +66,7 @@ export default function IndustryDataCards() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.12, duration: 0.5 }}
-                className="bg-white/5 border border-white/10 rounded-2xl p-8"
+                className="bg-[#252640]/5 border border-white/10 rounded-2xl p-8"
               >
                 <div className="flex items-center gap-3 mb-8">
                   <Icon className="w-6 h-6 text-[#8734E1]" />
@@ -85,7 +85,7 @@ export default function IndustryDataCards() {
                 <p className="text-xs text-emerald-400/70 uppercase tracking-widest font-semibold mt-8 mb-2">
                   Top Nationwide Questions
                 </p>
-                <div className="bg-white/5 rounded-lg p-4">
+                <div className="bg-[#252640]/5 rounded-lg p-4">
                   <div className="flex items-start gap-2">
                     <MessageSquare className="w-4 h-4 text-amber-300/40 mt-0.5 shrink-0" />
                     <p className="text-sm text-amber-200/70 italic leading-relaxed">

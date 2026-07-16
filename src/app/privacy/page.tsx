@@ -8,16 +8,16 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <article className="pt-32 pb-20 max-w-3xl mx-auto px-6 text-gray-800">
+    <article className="pt-32 pb-20 max-w-3xl mx-auto px-6 text-[#dddaf0]">
       <header className="mb-12">
         <p className="text-xs uppercase tracking-wider text-[#8734E1] mb-3">Legal</p>
         <h1 className="heading-xl mb-4">Privacy Policy</h1>
-        <p className="text-sm text-gray-500">Last updated: June 2, 2026</p>
+        <p className="text-sm text-[#8a87a8]">Last updated: June 2, 2026</p>
       </header>
 
       <section className="space-y-8 leading-relaxed">
         <div>
-          <h2 className="text-xl font-semibold text-gray-900 mb-3">The short version</h2>
+          <h2 className="text-xl font-semibold text-[#f0eef8] mb-3">The short version</h2>
           <p>
             We collect the minimum information we need to run the website and respond to people who
             reach out. We do not sell your data. We do not run ad pixels. We use cookies for essential
@@ -27,14 +27,14 @@ export default function PrivacyPage() {
         </div>
 
         <div>
-          <h2 className="text-xl font-semibold text-gray-900 mb-3">Cookies we use</h2>
+          <h2 className="text-xl font-semibold text-[#f0eef8] mb-3">Cookies we use</h2>
           <ul className="space-y-3">
             <li>
-              <strong className="text-gray-900">Essential</strong>: session management, anti-spam,
+              <strong className="text-[#f0eef8]">Essential</strong>: session management, anti-spam,
               your cookie-consent choice itself. These load whether or not you accept the banner.
             </li>
             <li>
-              <strong className="text-gray-900">Analytics</strong> (only with your consent): Google
+              <strong className="text-[#f0eef8]">Analytics</strong> (only with your consent): Google
               Analytics 4 and Vercel Analytics. We use these to understand which pages people read
               and where they get stuck. No cross-site tracking, no advertising IDs.
             </li>
@@ -47,7 +47,7 @@ export default function PrivacyPage() {
         </div>
 
         <div>
-          <h2 className="text-xl font-semibold text-gray-900 mb-3">Information you send us</h2>
+          <h2 className="text-xl font-semibold text-[#f0eef8] mb-3">Information you send us</h2>
           <p>
             When you fill out a contact form, schedule a call, or email us, we keep the information
             you provide (name, email, phone, message, project details) so we can respond. We store
@@ -58,7 +58,7 @@ export default function PrivacyPage() {
         </div>
 
         <div>
-          <h2 className="text-xl font-semibold text-gray-900 mb-3">AI assistant on this site</h2>
+          <h2 className="text-xl font-semibold text-[#f0eef8] mb-3">AI assistant on this site</h2>
           <p>
             If you use the AI assistant on our site, your messages are sent to our ACI platform
             (which routes to Anthropic Claude) so it can answer in real time. We log the conversation
@@ -68,7 +68,7 @@ export default function PrivacyPage() {
         </div>
 
         <div>
-          <h2 className="text-xl font-semibold text-gray-900 mb-3">Your rights</h2>
+          <h2 className="text-xl font-semibold text-[#f0eef8] mb-3">Your rights</h2>
           <p>
             Email us at <a className="text-[#8734E1] hover:underline" href="mailto:info@webdesignpros365.com">info@webdesignpros365.com</a> if
             you want to see, correct, or delete the information we have about you. We respond within
@@ -77,7 +77,7 @@ export default function PrivacyPage() {
         </div>
 
         <div>
-          <h2 className="text-xl font-semibold text-gray-900 mb-3">Contact</h2>
+          <h2 className="text-xl font-semibold text-[#f0eef8] mb-3">Contact</h2>
           <p>
             Web Design Pros 365<br />
             Denver, Colorado, USA<br />
@@ -86,7 +86,7 @@ export default function PrivacyPage() {
           </p>
         </div>
 
-        <div className="pt-6 border-t border-gray-200">
+        <div className="pt-6 border-t border-[#3a3858]">
           <Link href="/" className="text-[#8734E1] hover:underline text-sm">
             ← Back to home
           </Link>

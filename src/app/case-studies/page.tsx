@@ -75,9 +75,9 @@ export default function CaseStudiesPage() {
         <div className="absolute inset-0 bg-gradient-mesh" />
         <div className="container-custom relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Case Studies</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">Case Studies</Badge>
             <h1 className="heading-xl mb-6">Real work. <span className="gradient-text">Real results.</span></h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-lg md:text-xl text-[#a8a4c8] max-w-3xl mx-auto mb-8">
               Selected engagements from across the WDP365 portfolio. Each one documents the problem,
               the build, and the measurable outcome.
             </p>
@@ -86,7 +86,7 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <div className="max-w-6xl mx-auto space-y-8">
             {cases.map((c, i) => (
@@ -95,20 +95,20 @@ export default function CaseStudiesPage() {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="md:col-span-2">
                       <div className="flex items-center gap-3 mb-2 flex-wrap">
-                        <h3 className="text-xl font-bold text-gray-900">{c.client}</h3>
+                        <h3 className="text-xl font-bold text-[#f0eef8]">{c.client}</h3>
                         <Badge className="text-xs" style={{ backgroundColor: `${c.color}20`, color: c.color, borderColor: c.color }}>{c.industry}</Badge>
                       </div>
-                      <p className="text-sm font-semibold text-gray-700 mb-3">{c.project}</p>
-                      <p className="text-sm text-gray-600 leading-relaxed mb-4">{c.summary}</p>
-                      <blockquote className="border-l-2 border-gray-200 pl-4 italic text-sm text-gray-700">
+                      <p className="text-sm font-semibold text-[#c4c0e0] mb-3">{c.project}</p>
+                      <p className="text-sm text-[#a8a4c8] leading-relaxed mb-4">{c.summary}</p>
+                      <blockquote className="border-l-2 border-[#3a3858] pl-4 italic text-sm text-[#c4c0e0]">
                         &quot;{c.quote}&quot;
-                        <footer className="text-xs text-gray-500 mt-2 not-italic">{c.by}</footer>
+                        <footer className="text-xs text-[#8a87a8] mt-2 not-italic">{c.by}</footer>
                       </blockquote>
                     </div>
                     <div className="space-y-3">
                       {c.metrics.map((m) => (
-                        <div key={m.label} className="bg-[#f8f9fc] rounded-xl p-4">
-                          <p className="text-xs text-gray-500 mb-1">{m.label}</p>
+                        <div key={m.label} className="bg-[#181928] rounded-xl p-4">
+                          <p className="text-xs text-[#8a87a8] mb-1">{m.label}</p>
                           <p className="text-lg font-bold" style={{ color: c.color }}>{m.value}</p>
                         </div>
                       ))}
@@ -121,24 +121,24 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      <section className="section bg-[#f8f9fc]">
+      <section className="section bg-[#181928]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center">
             <div className="grid grid-cols-3 gap-4 mb-8 sm:gap-8">
               <div>
                 <TrendingUp className="w-8 h-8 text-[#8734E1] mx-auto mb-2" />
                 <div className="text-3xl font-bold gradient-text">2000+</div>
-                <div className="text-sm text-gray-500">Projects delivered</div>
+                <div className="text-sm text-[#8a87a8]">Projects delivered</div>
               </div>
               <div>
                 <Zap className="w-8 h-8 text-[#8734E1] mx-auto mb-2" />
                 <div className="text-3xl font-bold gradient-text">98%</div>
-                <div className="text-sm text-gray-500">Client satisfaction</div>
+                <div className="text-sm text-[#8a87a8]">Client satisfaction</div>
               </div>
               <div>
                 <Users className="w-8 h-8 text-[#8734E1] mx-auto mb-2" />
                 <div className="text-3xl font-bold gradient-text">75+</div>
-                <div className="text-sm text-gray-500">Active partners</div>
+                <div className="text-sm text-[#8a87a8]">Active partners</div>
               </div>
             </div>
             <h2 className="heading-lg mb-4">Want to be the next case study?</h2>

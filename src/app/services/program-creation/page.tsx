@@ -55,9 +55,9 @@ export default function ProgramCreationPage() {
         <div className="absolute inset-0 bg-gradient-mesh" />
         <div className="container-custom relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Full Program Creation</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">Full Program Creation</Badge>
             <h1 className="heading-xl mb-6">Build the whole <span className="gradient-text">digital program.</span> Not just a website.</h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-lg md:text-xl text-[#a8a4c8] max-w-3xl mx-auto mb-8">
               Strategy, brand, design, engineering, AI integration, launch, and ongoing operations.
               One team, one timeline, one accountability surface. For organizations that need the whole
               program shipped coherently, not stitched together from three vendors.
@@ -71,10 +71,10 @@ export default function ProgramCreationPage() {
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">What's In a Program</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">What's In a Program</Badge>
             <h2 className="heading-lg mb-4">Five <span className="gradient-text">elements,</span> coordinated.</h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -83,9 +83,9 @@ export default function ProgramCreationPage() {
               return (
                 <motion.div key={e.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
                   <Card className="p-6 h-full hover:shadow-lg hover:border-[#8734E1] transition-all">
-                    <div className="w-12 h-12 rounded-xl bg-[#f0e6fb] flex items-center justify-center mb-4"><Icon className="w-6 h-6 text-[#8734E1]" /></div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{e.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{e.body}</p>
+                    <div className="w-12 h-12 rounded-xl bg-[#1e1c35] flex items-center justify-center mb-4"><Icon className="w-6 h-6 text-[#8734E1]" /></div>
+                    <h3 className="font-semibold text-[#f0eef8] mb-2">{e.title}</h3>
+                    <p className="text-sm text-[#a8a4c8] leading-relaxed">{e.body}</p>
                   </Card>
                 </motion.div>
               );
@@ -94,18 +94,18 @@ export default function ProgramCreationPage() {
         </div>
       </section>
 
-      <section className="section bg-[#f8f9fc]">
+      <section className="section bg-[#181928]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Who This Is For</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">Who This Is For</Badge>
             <h2 className="heading-lg mb-4">When program creation <span className="gradient-text">fits.</span></h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {whoThisFor.map((w, i) => (
               <motion.div key={w.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
                 <Card className="p-6 h-full">
-                  <h3 className="font-semibold text-gray-900 mb-2">{w.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{w.body}</p>
+                  <h3 className="font-semibold text-[#f0eef8] mb-2">{w.title}</h3>
+                  <p className="text-sm text-[#a8a4c8] leading-relaxed">{w.body}</p>
                 </Card>
               </motion.div>
             ))}
@@ -113,24 +113,24 @@ export default function ProgramCreationPage() {
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">FAQ</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">FAQ</Badge>
             <h2 className="heading-lg mb-4">Program creation questions</h2>
           </motion.div>
           <div className="max-w-3xl mx-auto space-y-4">
             {faqs.map((faq, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.04 }}>
-                <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
-                  <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors">
-                    <span className="font-medium text-gray-900 pr-8">{faq.q}</span>
+                <div className="bg-[#252640] border border-[#3a3858] rounded-2xl overflow-hidden shadow-sm">
+                  <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-[#1c1d30] transition-colors">
+                    <span className="font-medium text-[#f0eef8] pr-8">{faq.q}</span>
                     <ChevronDown className={`w-5 h-5 text-[#8734E1] transition-transform duration-300 flex-shrink-0 ${openFaq === i ? 'rotate-180' : ''}`} />
                   </button>
                   <AnimatePresence>
                     {openFaq === i && (
                       <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }}>
-                        <div className="px-6 pb-5"><p className="text-gray-600 leading-relaxed">{faq.a}</p></div>
+                        <div className="px-6 pb-5"><p className="text-[#a8a4c8] leading-relaxed">{faq.a}</p></div>
                       </motion.div>
                     )}
                   </AnimatePresence>

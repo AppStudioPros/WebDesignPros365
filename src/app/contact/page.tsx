@@ -87,11 +87,11 @@ export default function ContactPage() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Contact Us</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">Contact Us</Badge>
             <h1 className="heading-xl mb-6">
               Let&apos;s <span className="gradient-text">Connect</span>
             </h1>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-[#a8a4c8]">
               Tell us about your project. We respond same business day and most quotes go out
               within 48 hours. Free 30-minute discovery call, no commitment.
             </p>
@@ -99,7 +99,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -124,7 +124,7 @@ export default function ContactPage() {
                   />
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Name *</label>
+                      <label className="block text-sm font-medium text-[#c4c0e0] mb-2">Name *</label>
                       <Input
                         type="text"
                         value={formData.name}
@@ -134,7 +134,7 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                      <label className="block text-sm font-medium text-[#c4c0e0] mb-2">Email *</label>
                       <Input
                         type="email"
                         value={formData.email}
@@ -146,7 +146,7 @@ export default function ContactPage() {
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-[#c4c0e0] mb-2">
                         Phone <span className="text-gray-400 font-normal">(optional)</span>
                       </label>
                       <Input
@@ -157,7 +157,7 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-[#c4c0e0] mb-2">
                         Company <span className="text-gray-400 font-normal">(optional)</span>
                       </label>
                       <Input
@@ -169,11 +169,11 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Project type</label>
+                    <label className="block text-sm font-medium text-[#c4c0e0] mb-2">Project type</label>
                     <select
                       value={formData.projectType}
                       onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-gray-700 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-[#c4c0e0] ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                     >
                       {projectTypes.map((t) => (
                         <option key={t} value={t}>
@@ -183,7 +183,7 @@ export default function ContactPage() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                    <label className="block text-sm font-medium text-[#c4c0e0] mb-2">Message *</label>
                     <Textarea
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -216,7 +216,7 @@ export default function ContactPage() {
             >
               <div>
                 <h2 className="heading-md mb-6">Reach us directly</h2>
-                <p className="text-gray-600 mb-8">
+                <p className="text-[#a8a4c8] mb-8">
                   Prefer email or phone? Use the channels below. Same business-day response on
                   email weekdays, voicemail returned within 4 hours.
                 </p>
@@ -227,14 +227,14 @@ export default function ContactPage() {
                   <a
                     key={item.label}
                     href={item.href}
-                    className="flex items-start gap-4 p-4 rounded-xl bg-[#f8f9fc] hover:bg-[#f0e6fb] transition-colors group"
+                    className="flex items-start gap-4 p-4 rounded-xl bg-[#181928] hover:bg-[#1e1c35] transition-colors group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-[#f0e6fb] flex items-center justify-center group-hover:bg-[#8734E1] transition-colors">
+                    <div className="w-12 h-12 rounded-xl bg-[#1e1c35] flex items-center justify-center group-hover:bg-[#8734E1] transition-colors">
                       <item.icon className="w-6 h-6 text-[#8734E1] group-hover:text-white transition-colors" />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-500">{item.label}</p>
-                      <p className="font-medium text-gray-900">{item.value}</p>
+                      <p className="text-sm text-[#8a87a8]">{item.label}</p>
+                      <p className="font-medium text-[#f0eef8]">{item.value}</p>
                     </div>
                   </a>
                 ))}

@@ -67,7 +67,7 @@ export default function AciPlatformPage() {
               no drift, always human-in-the-loop, audit-trail-complete, and methodology-bound AI.
             </p>
             <Link href="/contact?topic=aci-platform">
-              <Button size="lg" className="bg-white text-[#8734E1] hover:bg-white/90">
+              <Button size="lg" className="bg-[#252640] text-[#8734E1] hover:bg-[#252640]/90">
                 Talk to Us About ACI <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
@@ -76,12 +76,12 @@ export default function AciPlatformPage() {
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">The Five Layers</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">The Five Layers</Badge>
             <h2 className="heading-lg mb-4">How <span className="gradient-text">ACI works.</span></h2>
-            <p className="text-gray-600">Each layer feeds the next. Together they produce AI that is not just smart but also trustworthy, traceable, and bounded.</p>
+            <p className="text-[#a8a4c8]">Each layer feeds the next. Together they produce AI that is not just smart but also trustworthy, traceable, and bounded.</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
             {layers.map((l, i) => {
@@ -93,8 +93,8 @@ export default function AciPlatformPage() {
                       <GlassIcon Icon={Icon} color={l.color} size="w-12 h-12" iconSize="w-6 h-6" />
                     </div>
                     <div className="text-xs text-gray-400 font-mono mb-1">Layer {i + 1}</div>
-                    <h3 className="font-semibold text-gray-900 mb-2 text-sm">{l.name}</h3>
-                    <p className="text-xs text-gray-600 leading-relaxed">{l.body}</p>
+                    <h3 className="font-semibold text-[#f0eef8] mb-2 text-sm">{l.name}</h3>
+                    <p className="text-xs text-[#a8a4c8] leading-relaxed">{l.body}</p>
                   </Card>
                 </motion.div>
               );
@@ -103,10 +103,10 @@ export default function AciPlatformPage() {
         </div>
       </section>
 
-      <section className="section bg-[#f8f9fc]">
+      <section className="section bg-[#181928]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">What ACI Guarantees</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">What ACI Guarantees</Badge>
             <h2 className="heading-lg mb-4">Five disciplines, <span className="gradient-text">all the time.</span></h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
@@ -114,8 +114,8 @@ export default function AciPlatformPage() {
               <motion.div key={c.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
                 <Card className="p-5 h-full hover:shadow-lg transition-all">
                   <Sparkles className="w-6 h-6 text-[#8734E1] mb-3" />
-                  <h3 className="font-semibold text-gray-900 mb-2 text-sm">{c.name}</h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">{c.body}</p>
+                  <h3 className="font-semibold text-[#f0eef8] mb-2 text-sm">{c.name}</h3>
+                  <p className="text-xs text-[#a8a4c8] leading-relaxed">{c.body}</p>
                 </Card>
               </motion.div>
             ))}
@@ -123,24 +123,24 @@ export default function AciPlatformPage() {
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">FAQ</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">FAQ</Badge>
             <h2 className="heading-lg mb-4">ACI questions</h2>
           </motion.div>
           <div className="max-w-3xl mx-auto space-y-4">
             {faqs.map((faq, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.04 }}>
-                <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
-                  <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors">
-                    <span className="font-medium text-gray-900 pr-8">{faq.q}</span>
+                <div className="bg-[#252640] border border-[#3a3858] rounded-2xl overflow-hidden shadow-sm">
+                  <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-[#1c1d30] transition-colors">
+                    <span className="font-medium text-[#f0eef8] pr-8">{faq.q}</span>
                     <ChevronDown className={`w-5 h-5 text-[#8734E1] transition-transform duration-300 flex-shrink-0 ${openFaq === i ? 'rotate-180' : ''}`} />
                   </button>
                   <AnimatePresence>
                     {openFaq === i && (
                       <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }}>
-                        <div className="px-6 pb-5"><p className="text-gray-600 leading-relaxed">{faq.a}</p></div>
+                        <div className="px-6 pb-5"><p className="text-[#a8a4c8] leading-relaxed">{faq.a}</p></div>
                       </motion.div>
                     )}
                   </AnimatePresence>

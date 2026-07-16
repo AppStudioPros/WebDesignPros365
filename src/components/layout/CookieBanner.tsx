@@ -49,16 +49,16 @@ export function CookieBanner() {
           aria-live="polite"
           aria-label="Cookie consent"
         >
-          <div className="bg-white border-t border-gray-200 shadow-2xl">
+          <div className="bg-[#252640] border-t border-[#3a3858] shadow-2xl">
             <div className="container-custom py-3">
               <div className="flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6">
                 {/* Icon + copy */}
                 <div className="flex items-center gap-3 flex-1 min-w-0">
-                  <div className="w-9 h-9 rounded-xl bg-[#f0e6fb] flex items-center justify-center flex-shrink-0">
+                  <div className="w-9 h-9 rounded-xl bg-[#1e1c35] flex items-center justify-center flex-shrink-0">
                     <Cookie className="w-4 h-4 text-[#8734E1]" strokeWidth={2.25} />
                   </div>
-                  <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
-                    <span className="font-semibold text-gray-900">We use cookies.</span>{' '}
+                  <p className="text-xs sm:text-sm text-[#c4c0e0] leading-relaxed">
+                    <span className="font-semibold text-[#f0eef8]">We use cookies.</span>{' '}
                     Essential cookies keep the site running; analytics cookies help us learn what's
                     useful. You choose.{' '}
                     <Link href="/privacy" className="text-[#8734E1] hover:underline whitespace-nowrap">
@@ -70,7 +70,7 @@ export function CookieBanner() {
                 <div className="flex items-center gap-2 flex-shrink-0 w-full md:w-auto">
                   <button
                     onClick={() => handleConsent('rejected')}
-                    className="flex-1 md:flex-none inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-900 text-sm font-medium transition-colors"
+                    className="flex-1 md:flex-none inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-[#191a2c] hover:bg-gray-200 text-[#f0eef8] text-sm font-medium transition-colors"
                   >
                     <X className="w-4 h-4" strokeWidth={2.25} />
                     Reject All

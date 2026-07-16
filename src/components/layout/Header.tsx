@@ -41,7 +41,7 @@ export default function Header() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#f5f0fa] border-b border-[#e0d4f0]',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#1a1830] border-b border-[#2e2c4a]',
         isScrolled ? 'py-3 shadow-lg' : 'py-5'
       )}
     >
@@ -67,7 +67,7 @@ export default function Header() {
                 href={item.href}
                 className={cn(
                   'px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200',
-                  'text-gray-600 hover:text-[#8734E1] hover:bg-[#8734E1]/8',
+                  'text-[#a8a4c8] hover:text-[#8734E1] hover:bg-[#8734E1]/8',
                   pathname === item.href
                     ? 'text-[#8734E1] font-semibold'
                     : ''
@@ -86,13 +86,13 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="BBB Accredited Business"
-              className="group inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white border border-[#0c5ba2]/30 hover:border-[#0c5ba2] hover:shadow-md transition-all"
+              className="group inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#252640] border border-[#0c5ba2]/30 hover:border-[#0c5ba2] hover:shadow-md transition-all"
               title="BBB Accredited · A Rating"
             >
               <ShieldCheck className="w-4 h-4 text-[#0c5ba2]" />
               <div className="flex items-baseline gap-1 leading-none">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#0c5ba2]">BBB</span>
-                <span className="text-[10px] font-semibold text-gray-500 group-hover:text-[#0c5ba2] transition-colors">A · Accredited</span>
+                <span className="text-[10px] font-semibold text-[#8a87a8] group-hover:text-[#0c5ba2] transition-colors">A · Accredited</span>
               </div>
             </a>
 
@@ -142,7 +142,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden border-t border-[#8734E1]/10 bg-white"
+            className="lg:hidden border-t border-[#8734E1]/10 bg-[#252640]"
           >
             <div className="container-custom py-4">
               <nav className="flex flex-col gap-2">
@@ -153,7 +153,7 @@ export default function Header() {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={cn(
                       'px-4 py-3 text-sm font-medium rounded-lg transition-colors',
-                      'text-gray-700 hover:text-[#8734E1] hover:bg-[#8734E1]/5',
+                      'text-[#c4c0e0] hover:text-[#8734E1] hover:bg-[#8734E1]/5',
                       pathname === item.href && 'text-[#8734E1] font-semibold bg-[#8734E1]/5'
                     )}
                   >

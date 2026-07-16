@@ -110,7 +110,7 @@ function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="w-full max-w-xl bg-white rounded-2xl shadow-2xl overflow-hidden max-h-[85vh] overflow-y-auto pointer-events-auto"
+              className="w-full max-w-xl bg-[#252640] rounded-2xl shadow-2xl overflow-hidden max-h-[85vh] overflow-y-auto pointer-events-auto"
             >
               <div
                 className="relative p-6 pb-8"
@@ -118,7 +118,7 @@ function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0
               >
                 <button
                   onClick={onClose}
-                  className="absolute top-4 right-4 p-2 rounded-full bg-white/80 hover:bg-white text-gray-500 hover:text-gray-700 transition-colors"
+                  className="absolute top-4 right-4 p-2 rounded-full bg-[#252640]/80 hover:bg-[#252640] text-[#8a87a8] hover:text-[#c4c0e0] transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -136,18 +136,18 @@ function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0
                     {service.isFlagship && (
                       <Badge className="mb-2 bg-[#8734E1] text-white">Flagship Service</Badge>
                     )}
-                    <h3 className="text-2xl font-bold text-gray-900">{service.title}</h3>
-                    <p className="text-sm text-gray-500 mt-1">Typical timeline: {service.timeline}</p>
+                    <h3 className="text-2xl font-bold text-[#f0eef8]">{service.title}</h3>
+                    <p className="text-sm text-[#8a87a8] mt-1">Typical timeline: {service.timeline}</p>
                   </div>
                 </div>
               </div>
               <div className="p-6 space-y-6">
                 <div>
-                  <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Overview</h4>
-                  <p className="text-gray-700 leading-relaxed">{service.fullDescription}</p>
+                  <h4 className="text-xs font-semibold text-[#8a87a8] uppercase tracking-wider mb-2">Overview</h4>
+                  <p className="text-[#c4c0e0] leading-relaxed">{service.fullDescription}</p>
                 </div>
                 <div>
-                  <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">What's included</h4>
+                  <h4 className="text-xs font-semibold text-[#8a87a8] uppercase tracking-wider mb-3">What's included</h4>
                   <ul className="space-y-2">
                     {service.features.map((feature, index) => (
                       <li key={index} className="flex items-start gap-3">
@@ -157,13 +157,13 @@ function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0
                         >
                           <Check className="w-3 h-3" style={{ color: service.color }} />
                         </div>
-                        <span className="text-gray-700">{feature}</span>
+                        <span className="text-[#c4c0e0]">{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Deliverables</h4>
+                  <h4 className="text-xs font-semibold text-[#8a87a8] uppercase tracking-wider mb-3">Deliverables</h4>
                   <div className="flex flex-wrap gap-2">
                     {service.deliverables.map((item, index) => (
                       <span
@@ -176,7 +176,7 @@ function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0
                     ))}
                   </div>
                 </div>
-                <div className="pt-4 border-t border-gray-100">
+                <div className="pt-4 border-t border-[#2e2c48]">
                   <Link href="/contact" onClick={onClose}>
                     <Button className="w-full bg-gradient-to-r from-[#8734E1] to-[#BF5DE0] text-white">
                       Get Started
@@ -255,7 +255,7 @@ export default function ServicesPage() {
       </section>
 
       {/* VIDEO — How We Do It */}
-      <section className="py-16 bg-white border-b border-gray-100">
+      <section className="py-16 bg-[#252640] border-b border-[#2e2c48]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -267,10 +267,10 @@ export default function ServicesPage() {
             <p className="text-xs uppercase tracking-widest text-[#8734E1] font-semibold mb-3">
               Watch
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#f0eef8] mb-8">
               How We Do It And Why Daily Optimization Wins
             </h2>
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-black">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-[#3a3858] bg-black">
               <video
                 controls
                 playsInline
@@ -299,11 +299,11 @@ export default function ServicesPage() {
             >
               <div className="flex-1 text-center md:text-left">
                 <Badge className="mb-2 bg-[#8734E1] text-white">Flagship</Badge>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#f0eef8] mb-2">
                   {flagship.title}
                 </h2>
-                <p className="text-gray-600 mb-3">{flagship.shortDescription}</p>
-                <div className="flex flex-wrap items-center gap-3 justify-center md:justify-start text-xs text-gray-500">
+                <p className="text-[#a8a4c8] mb-3">{flagship.shortDescription}</p>
+                <div className="flex flex-wrap items-center gap-3 justify-center md:justify-start text-xs text-[#8a87a8]">
                   <span>Timeline: {flagship.timeline}</span>
                   <span className="text-gray-300">·</span>
                   <span>Includes SEO + AEO + GEO</span>
@@ -323,7 +323,7 @@ export default function ServicesPage() {
       )}
 
       {/* CATEGORY FILTER — inline (not sticky), aligned with card grid below */}
-      <section className="py-6 bg-white border-b border-gray-100">
+      <section className="py-6 bg-[#252640] border-b border-[#2e2c48]">
         <div className="container-custom">
           <div className="flex items-center gap-2 overflow-x-auto pb-1 flex-wrap">
             {categories.map((category) => {
@@ -335,7 +335,7 @@ export default function ServicesPage() {
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap flex items-center gap-2 ${
                     isActive
                       ? 'text-white shadow-md'
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-900'
+                      : 'bg-[#191a2c] text-[#a8a4c8] hover:bg-gray-200 hover:text-[#f0eef8]'
                   }`}
                   style={isActive ? {
                     background: `linear-gradient(135deg, ${category.accent}, ${category.accent}cc)`,
@@ -344,7 +344,7 @@ export default function ServicesPage() {
                   {category.name}
                   <span
                     className={`text-xs px-1.5 py-0.5 rounded-full ${
-                      isActive ? 'bg-white/20' : 'bg-white text-gray-500'
+                      isActive ? 'bg-[#252640]/20' : 'bg-[#252640] text-[#8a87a8]'
                     }`}
                   >
                     {category.count}
@@ -357,7 +357,7 @@ export default function ServicesPage() {
       </section>
 
       {/* SERVICE CARDS */}
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((service, index) => {
@@ -382,12 +382,12 @@ export default function ServicesPage() {
                         <Badge className="bg-[#8734E1] text-white">Flagship</Badge>
                       )}
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[#8734E1] transition-colors">
+                    <h3 className="text-lg font-semibold text-[#f0eef8] mb-2 group-hover:text-[#8734E1] transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-sm text-gray-600 mb-4 leading-relaxed">{service.shortDescription}</p>
-                    <div className="flex items-center justify-center gap-4 pt-3 border-t border-gray-100 w-full">
-                      <span className="text-xs text-gray-500">{service.timeline}</span>
+                    <p className="text-sm text-[#a8a4c8] mb-4 leading-relaxed">{service.shortDescription}</p>
+                    <div className="flex items-center justify-center gap-4 pt-3 border-t border-[#2e2c48] w-full">
+                      <span className="text-xs text-[#8a87a8]">{service.timeline}</span>
                       <div className="flex items-center text-sm font-medium group-hover:gap-2 transition-all" style={{ color: service.color }}>
                         Learn more
                         <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -420,7 +420,7 @@ export default function ServicesPage() {
       </section>
 
       {/* HOW WE WORK STRIP */}
-      <section className="section bg-[#f8f9fc] border-y border-gray-200">
+      <section className="section bg-[#181928] border-y border-[#3a3858]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -428,11 +428,11 @@ export default function ServicesPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-12"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">How We Work</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">How We Work</Badge>
             <h2 className="heading-lg mb-3">
               Four <span className="gradient-text">steps</span> from call to launch
             </h2>
-            <p className="text-gray-600">
+            <p className="text-[#a8a4c8]">
               Same process on every engagement. You know what happens this week, next week, and at
               launch. No mid-build scope expansion. No ghosting after kickoff.
             </p>
@@ -454,8 +454,8 @@ export default function ServicesPage() {
                       <GlassIcon Icon={Icon} color={step.color} size="w-11 h-11" iconSize="w-5 h-5" />
                       <div className="text-xs text-gray-400 font-mono">0{i + 1}</div>
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-1">{step.label}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{step.body}</p>
+                    <h3 className="font-semibold text-[#f0eef8] mb-1">{step.label}</h3>
+                    <p className="text-sm text-[#a8a4c8] leading-relaxed">{step.body}</p>
                   </Card>
                 </motion.div>
               );

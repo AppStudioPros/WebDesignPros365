@@ -98,11 +98,11 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">About Us</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">About Us</Badge>
             <h1 className="heading-xl mb-6 max-w-2xl mx-auto leading-tight">
               Web design that <span className="gradient-text">does the work.</span>
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-[#a8a4c8] max-w-2xl mx-auto">
               A small Denver-based team shipping production websites and platforms on a modern
               stack. No theme shops, no offshore fulfillment, no &ldquo;we&rsquo;ll get back to you next month.&rdquo;
             </p>
@@ -111,7 +111,7 @@ export default function AboutPage() {
       </section>
 
       {/* THE COMPANY */}
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
             <motion.div
@@ -123,12 +123,12 @@ export default function AboutPage() {
               <h2 className="heading-lg mb-6">
                 Why <span className="gradient-text">Web Design Pros 365</span>
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className="text-[#a8a4c8] mb-6">
                 Founded in 2005, WDP365 has been the umbrella for every web project Corey
                 Strange has shipped for 20+ years. Today we operate at the intersection of
                 modern web engineering, applied AI, and federal-grade compliance discipline.
               </p>
-              <p className="text-gray-600 mb-8">
+              <p className="text-[#a8a4c8] mb-8">
                 We are different from most agencies because we hold actual technical IP. The
                 ACI (Adaptive Compound Intelligence) provisional patent, filed with the USPTO,
                 underlies the AI systems we deploy for clients. That same architecture also
@@ -146,10 +146,10 @@ export default function AboutPage() {
                     transition={{ delay: index * 0.06 }}
                     className="flex items-center gap-3"
                   >
-                    <div className="w-6 h-6 rounded-full bg-[#f0e6fb] flex items-center justify-center flex-shrink-0">
+                    <div className="w-6 h-6 rounded-full bg-[#1e1c35] flex items-center justify-center flex-shrink-0">
                       <Check className="w-4 h-4 text-[#8734E1]" />
                     </div>
-                    <span className="text-sm text-gray-700">{item}</span>
+                    <span className="text-sm text-[#c4c0e0]">{item}</span>
                   </motion.div>
                 ))}
               </div>
@@ -163,14 +163,14 @@ export default function AboutPage() {
             >
               {/* Compact logo card, top-aligned with the heading */}
               <div className="rounded-2xl bg-gradient-to-br from-[#8734E1] to-[#2F73EE] p-0.5 max-w-[280px] mx-auto lg:mx-0">
-                <div className="rounded-2xl bg-white flex items-center justify-center p-8 aspect-[4/3]">
+                <div className="rounded-2xl bg-[#252640] flex items-center justify-center p-8 aspect-[4/3]">
                   <img
                     src="/logo-opt.png"
                     alt="Web Design Pros 365"
                     className="max-w-full h-auto"
                   />
                 </div>
-                <div className="text-center text-xs text-gray-500 mt-3">
+                <div className="text-center text-xs text-[#8a87a8] mt-3">
                   Denver, Colorado · Est. 2005
                 </div>
               </div>
@@ -208,14 +208,14 @@ export default function AboutPage() {
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5">
+              <div className="bg-[#252640]/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5">
                 <ShieldCheck className="w-8 h-8 text-[#BF5DE0] mb-3" />
                 <h3 className="font-semibold text-white mb-2">Accountable AI</h3>
                 <p className="text-sm text-white/70 leading-relaxed">
                   Every AI decision is logged, traceable, and explainable. Full audit trail, no black boxes — so you always know exactly what your AI did and why.
                 </p>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5">
+              <div className="bg-[#252640]/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5">
                 <Sparkles className="w-8 h-8 text-[#BF5DE0] mb-3" />
                 <h3 className="font-semibold text-white mb-2">Patented architecture</h3>
                 <p className="text-sm text-white/70 leading-relaxed">
@@ -223,7 +223,7 @@ export default function AboutPage() {
                   Filed U.S. provisional patent. Real IP under the hood, not a wrapper.
                 </p>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5">
+              <div className="bg-[#252640]/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5">
                 <Users className="w-8 h-8 text-[#BF5DE0] mb-3" />
                 <h3 className="font-semibold text-white mb-2">Same AI, both worlds</h3>
                 <p className="text-sm text-white/70 leading-relaxed">
@@ -237,7 +237,7 @@ export default function AboutPage() {
       </section>
 
       {/* TEAM */}
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -245,7 +245,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">The Team</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">The Team</Badge>
             <h2 className="heading-lg">
               The people <span className="gradient-text">building it.</span>
             </h2>
@@ -268,14 +268,14 @@ export default function AboutPage() {
                         .map((n) => n[0])
                         .join('')}
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900">{person.name}</h3>
+                    <h3 className="text-lg font-semibold text-[#f0eef8]">{person.name}</h3>
                     <p className="text-sm text-[#8734E1] font-medium">{person.role}</p>
                   </div>
-                  <p className="text-sm text-gray-600 mb-4 leading-relaxed">{person.bio}</p>
-                  <ul className="space-y-2 pt-4 border-t border-gray-100">
+                  <p className="text-sm text-[#a8a4c8] mb-4 leading-relaxed">{person.bio}</p>
+                  <ul className="space-y-2 pt-4 border-t border-[#2e2c48]">
                     {person.highlights.map((h) => (
-                      <li key={h} className="flex items-start gap-2 text-xs text-gray-700">
-                        <div className="w-4 h-4 rounded-full bg-[#f0e6fb] flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <li key={h} className="flex items-start gap-2 text-xs text-[#c4c0e0]">
+                        <div className="w-4 h-4 rounded-full bg-[#1e1c35] flex items-center justify-center flex-shrink-0 mt-0.5">
                           <Check className="w-2.5 h-2.5 text-[#8734E1]" />
                         </div>
                         <span>{h}</span>
@@ -307,10 +307,10 @@ export default function AboutPage() {
                     </div>
                     <div>
                       <div className="text-3xl font-bold gradient-text leading-none">25+</div>
-                      <div className="text-xs text-gray-500 uppercase tracking-wider mt-1">Builders</div>
+                      <div className="text-xs text-[#8a87a8] uppercase tracking-wider mt-1">Builders</div>
                     </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 leading-tight">
+                  <h3 className="text-lg font-semibold text-[#f0eef8] leading-tight">
                     Full Stack AI &amp; <span className="gradient-text">Development Team</span>
                   </h3>
                   <p className="text-xs text-[#8734E1] font-medium">The bench behind every build</p>
@@ -318,7 +318,7 @@ export default function AboutPage() {
 
                 {/* Right: description + capability chips */}
                 <div>
-                  <p className="text-sm text-gray-700 leading-relaxed mb-5">
+                  <p className="text-sm text-[#c4c0e0] leading-relaxed mb-5">
                     Beyond the leadership trio, WDP365 operates with a deep bench of seasoned full-stack
                     engineers, AI specialists, designers, and DevOps professionals. Senior-level talent
                     across frontend, backend, AI integration, data engineering, infrastructure, and design.
@@ -335,8 +335,8 @@ export default function AboutPage() {
                     ].map((item) => {
                       const Icon = item.icon;
                       return (
-                        <div key={item.label} className="flex items-center gap-2 text-sm text-gray-700">
-                          <div className="w-7 h-7 rounded-lg bg-[#f0e6fb] flex items-center justify-center flex-shrink-0">
+                        <div key={item.label} className="flex items-center gap-2 text-sm text-[#c4c0e0]">
+                          <div className="w-7 h-7 rounded-lg bg-[#1e1c35] flex items-center justify-center flex-shrink-0">
                             <Icon className="w-3.5 h-3.5 text-[#8734E1]" strokeWidth={1.75} />
                           </div>
                           <span>{item.label}</span>
@@ -352,10 +352,10 @@ export default function AboutPage() {
       </section>
 
       {/* VALUES */}
-      <section className="section bg-[#f8f9fc]">
+      <section className="section bg-[#181928]">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Our Values</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">Our Values</Badge>
             <h2 className="heading-lg">
               How we <span className="gradient-text">actually work.</span>
             </h2>
@@ -370,8 +370,8 @@ export default function AboutPage() {
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="p-6 h-full hover:shadow-lg transition-shadow">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{value.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{value.description}</p>
+                  <h3 className="text-lg font-semibold text-[#f0eef8] mb-3">{value.title}</h3>
+                  <p className="text-sm text-[#a8a4c8] leading-relaxed">{value.description}</p>
                 </Card>
               </motion.div>
             ))}

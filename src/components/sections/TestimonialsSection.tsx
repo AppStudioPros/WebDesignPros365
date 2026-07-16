@@ -59,7 +59,7 @@ const logos: LogoChip[] = [
 function LogoBadge({ logo }: { logo: LogoChip }) {
   return (
     <div className="flex-shrink-0 mx-3">
-      <div className="px-5 py-3 rounded-xl bg-white border border-gray-200 text-gray-700 font-medium flex items-center gap-2.5 whitespace-nowrap shadow-sm hover:shadow-md hover:border-[#8734E1]/40 transition-all">
+      <div className="px-5 py-3 rounded-xl bg-[#252640] border border-[#3a3858] text-[#c4c0e0] font-medium flex items-center gap-2.5 whitespace-nowrap shadow-sm hover:shadow-md hover:border-[#8734E1]/40 transition-all">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         {/* SVGs are vector — no raster resize needed; unoptimized is correct for SVG */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -84,7 +84,7 @@ export default function TestimonialsSection() {
 
   return (
     <section className="section relative overflow-hidden">
-      <div className="absolute inset-0 bg-white/70" />
+      <div className="absolute inset-0 bg-[#252640]/70" />
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
       <div className="container-custom relative z-10">
         {/* TRUSTED-BY MARQUEE — top of section, single smooth row */}
@@ -96,7 +96,7 @@ export default function TestimonialsSection() {
           className="relative mb-20"
         >
           <div className="text-center mb-8">
-            <p className="text-sm text-gray-500 uppercase tracking-wider">
+            <p className="text-sm text-[#8a87a8] uppercase tracking-wider">
               Trusted by 50+ Companies &amp; Partnerships
             </p>
           </div>
@@ -112,7 +112,7 @@ export default function TestimonialsSection() {
             </div>
           </div>
 
-          <p className="text-center text-xs text-gray-500 mt-4">
+          <p className="text-center text-xs text-[#8a87a8] mt-4">
             See the full partner directory on our{' '}
             <a href="/partnerships" className="text-[#8734E1] hover:underline">
               Partnerships page

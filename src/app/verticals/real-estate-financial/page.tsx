@@ -141,7 +141,7 @@ export default function RealEstateFinancialPage() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">
               Real Estate and Financial Services
             </Badge>
             <h1 className="heading-xl mb-6">
@@ -149,7 +149,7 @@ export default function RealEstateFinancialPage() {
               <span className="gradient-text">"who is the best agent in Florida?"</span>
               {' '}are you the answer?
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-lg md:text-xl text-[#a8a4c8] max-w-3xl mx-auto mb-8">
               Home buyers are making the biggest financial decision of their lives. They are not
               casually browsing. They are vetting. And more and more, they are vetting through AI.
               We build the web presence that gets cited, recommended, and trusted.
@@ -159,7 +159,7 @@ export default function RealEstateFinancialPage() {
       </section>
 
       {/* Video 4 — The AI Search Revolution in Real Estate */}
-      <section className="bg-white py-16">
+      <section className="bg-[#252640] py-16">
         <div className="max-w-3xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -169,8 +169,8 @@ export default function RealEstateFinancialPage() {
           >
             <div className="mb-6 text-center">
               <span className="text-[#8734E1] text-xs uppercase tracking-widest font-semibold">THE OPPORTUNITY</span>
-              <h3 className="text-2xl font-bold text-gray-900 mt-2">The AI Search Revolution in Real Estate</h3>
-              <p className="text-sm text-gray-500 mt-2 leading-relaxed max-w-xl mx-auto">Your clients are already asking AI to find agents, compare lenders, and vet providers. This is what that shift looks like — and what it means for your business.</p>
+              <h3 className="text-2xl font-bold text-[#f0eef8] mt-2">The AI Search Revolution in Real Estate</h3>
+              <p className="text-sm text-[#8a87a8] mt-2 leading-relaxed max-w-xl mx-auto">Your clients are already asking AI to find agents, compare lenders, and vet providers. This is what that shift looks like — and what it means for your business.</p>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-xl" style={{ aspectRatio: '16/9' }}>
               <video
@@ -187,7 +187,7 @@ export default function RealEstateFinancialPage() {
       </section>
 
       {/* The Shift Section */}
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -200,7 +200,7 @@ export default function RealEstateFinancialPage() {
               The click SEO was designed to capture{' '}
               <span className="gradient-text">is increasingly never made.</span>
             </h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-[#a8a4c8] text-lg">
               Traditional SEO gets you ranked. That used to mean traffic. In 2026, AI answers the
               question before the user reaches your site. The game is now about being the source AI
               cites, not the link users click.
@@ -218,8 +218,8 @@ export default function RealEstateFinancialPage() {
               >
                 <Card className="p-6 h-full text-center border-[#8734E1]/20 hover:border-[#8734E1]/50 transition-all">
                   <div className="text-4xl font-bold gradient-text mb-2">{s.number}</div>
-                  <div className="font-semibold text-gray-900 mb-2 text-sm">{s.label}</div>
-                  <p className="text-xs text-gray-500 leading-relaxed">{s.sub}</p>
+                  <div className="font-semibold text-[#f0eef8] mb-2 text-sm">{s.label}</div>
+                  <p className="text-xs text-[#8a87a8] leading-relaxed">{s.sub}</p>
                 </Card>
               </motion.div>
             ))}
@@ -228,7 +228,7 @@ export default function RealEstateFinancialPage() {
       </section>
 
       {/* Buyer Journey */}
-      <section className="section bg-[#f8f9fc]">
+      <section className="section bg-[#181928]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -236,12 +236,12 @@ export default function RealEstateFinancialPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-14"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">The Buyer Journey</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">The Buyer Journey</Badge>
             <h2 className="heading-lg mb-4">
               Five steps where you either{' '}
               <span className="gradient-text">get found or get skipped.</span>
             </h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-[#a8a4c8] text-lg">
               41 to 47 percent of home buyers start with an online search (NAR 2025). Here is what
               that search actually looks like in 2026, and where your web presence either shows up or
               disappears.
@@ -266,8 +266,8 @@ export default function RealEstateFinancialPage() {
                         <div className="text-xs font-semibold text-[#8734E1] uppercase tracking-wider mb-1">
                           {step.step}
                         </div>
-                        <h3 className="font-semibold text-gray-900 mb-2">{step.label}</h3>
-                        <p className="text-sm text-gray-600 leading-relaxed">{step.body}</p>
+                        <h3 className="font-semibold text-[#f0eef8] mb-2">{step.label}</h3>
+                        <p className="text-sm text-[#a8a4c8] leading-relaxed">{step.body}</p>
                       </div>
                     </div>
                   </Card>
@@ -279,7 +279,7 @@ export default function RealEstateFinancialPage() {
       </section>
 
       {/* Video 5 — The Future of Real Estate Marketing */}
-      <section className="bg-white py-16">
+      <section className="bg-[#252640] py-16">
         <div className="max-w-3xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -289,8 +289,8 @@ export default function RealEstateFinancialPage() {
           >
             <div className="mb-6 text-center">
               <span className="text-[#8734E1] text-xs uppercase tracking-widest font-semibold">THE FUTURE</span>
-              <h3 className="text-2xl font-bold text-gray-900 mt-2">The Future of Real Estate Marketing</h3>
-              <p className="text-sm text-gray-500 mt-2 leading-relaxed max-w-xl mx-auto">See how the top-performing agents and brokers are combining AI-powered websites, daily content optimization, and GEO to dominate their markets.</p>
+              <h3 className="text-2xl font-bold text-[#f0eef8] mt-2">The Future of Real Estate Marketing</h3>
+              <p className="text-sm text-[#8a87a8] mt-2 leading-relaxed max-w-xl mx-auto">See how the top-performing agents and brokers are combining AI-powered websites, daily content optimization, and GEO to dominate their markets.</p>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-xl" style={{ aspectRatio: '16/9' }}>
               <video
@@ -307,7 +307,7 @@ export default function RealEstateFinancialPage() {
       </section>
 
       {/* Why This Industry Is Different */}
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <motion.div
@@ -352,8 +352,8 @@ export default function RealEstateFinancialPage() {
                 >
                   <Card className="p-6 text-center h-full border-amber-200 bg-amber-50/30">
                     <div className="text-4xl font-bold text-amber-600 mb-2">{item.stat}</div>
-                    <div className="font-semibold text-gray-900 text-sm mb-3">{item.label}</div>
-                    <p className="text-xs text-gray-600 leading-relaxed">{item.body}</p>
+                    <div className="font-semibold text-[#f0eef8] text-sm mb-3">{item.label}</div>
+                    <p className="text-xs text-[#a8a4c8] leading-relaxed">{item.body}</p>
                   </Card>
                 </motion.div>
               ))}
@@ -363,7 +363,7 @@ export default function RealEstateFinancialPage() {
       </section>
 
       {/* The Stack */}
-      <section className="section bg-[#f8f9fc]">
+      <section className="section bg-[#181928]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -371,14 +371,14 @@ export default function RealEstateFinancialPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-12"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">
               The Stack That Makes It Work
             </Badge>
             <h2 className="heading-lg mb-4">
               Technical SEO, AEO, and GEO{' '}
               <span className="gradient-text">are not separate strategies.</span>
             </h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-[#a8a4c8] text-lg">
               Traditional SEO, Answer Engine Optimization, and Generative Engine Optimization work
               together on one foundation. Here is what that foundation looks like for real estate and
               financial services.
@@ -396,7 +396,7 @@ export default function RealEstateFinancialPage() {
               >
                 <Card className="p-6 h-full text-center hover:shadow-lg hover:border-[#8734E1] transition-all">
                   <h3 className="font-semibold text-[#8734E1] mb-3 text-lg">{item.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{item.body}</p>
+                  <p className="text-sm text-[#a8a4c8] leading-relaxed">{item.body}</p>
                 </Card>
               </motion.div>
             ))}
@@ -405,7 +405,7 @@ export default function RealEstateFinancialPage() {
       </section>
 
       {/* What We Build */}
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -413,7 +413,7 @@ export default function RealEstateFinancialPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-12"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">What We Build</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">What We Build</Badge>
             <h2 className="heading-lg mb-4">
               Six things every real estate and{' '}
               <span className="gradient-text">financial services site needs.</span>
@@ -435,8 +435,8 @@ export default function RealEstateFinancialPage() {
                     <div className="mb-4 flex justify-center">
                       <GlassIcon Icon={Icon} color="#8734E1" />
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{item.body}</p>
+                    <h3 className="font-semibold text-[#f0eef8] mb-2">{item.title}</h3>
+                    <p className="text-sm text-[#a8a4c8] leading-relaxed">{item.body}</p>
                   </Card>
                 </motion.div>
               );
@@ -446,7 +446,7 @@ export default function RealEstateFinancialPage() {
       </section>
 
       {/* Checklist */}
-      <section className="section bg-[#f8f9fc]">
+      <section className="section bg-[#181928]">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div
@@ -455,7 +455,7 @@ export default function RealEstateFinancialPage() {
               viewport={{ once: true }}
               className="mb-10"
             >
-              <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">
+              <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">
                 What You Get
               </Badge>
               <h2 className="heading-lg mb-4">
@@ -480,9 +480,9 @@ export default function RealEstateFinancialPage() {
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  className="flex items-start gap-3 text-gray-700"
+                  className="flex items-start gap-3 text-[#c4c0e0]"
                 >
-                  <div className="w-6 h-6 rounded-full bg-[#f0e6fb] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-6 h-6 rounded-full bg-[#1e1c35] flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Check className="w-4 h-4 text-[#8734E1]" />
                   </div>
                   <span className="leading-relaxed text-sm">{item}</span>

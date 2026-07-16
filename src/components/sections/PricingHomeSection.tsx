@@ -20,7 +20,7 @@ const quickWins = [
 
 export default function PricingHomeSection() {
   return (
-    <section className="section bg-white py-20">
+    <section className="section bg-[#252640] py-20">
       <div className="container-custom">
 
         <m.div
@@ -29,14 +29,14 @@ export default function PricingHomeSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Transparent Pricing</Badge>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">
+          <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">Transparent Pricing</Badge>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#f0eef8] mb-3">
             Fixed-price builds.{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8734E1] to-[#2F73EE]">
               Starting at $7,500.
             </span>
           </h2>
-          <p className="text-gray-500 max-w-xl mx-auto text-base">
+          <p className="text-[#8a87a8] max-w-xl mx-auto text-base">
             No mystery hourly rates. No scope creep. One number, one quote, one handshake.
           </p>
         </m.div>
@@ -50,13 +50,13 @@ export default function PricingHomeSection() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-gray-50 border border-gray-200 rounded-2xl p-6 text-center hover:shadow-md transition-shadow"
+              className="bg-[#1c1d30] border border-[#3a3858] rounded-2xl p-6 text-center hover:shadow-md transition-shadow"
             >
               <div className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#8734E1] to-[#2F73EE] mb-1">
                 {h.value}
               </div>
-              <div className="text-sm font-bold text-gray-900 mb-1">{h.label}</div>
-              <div className="text-xs text-gray-500 leading-relaxed">{h.note}</div>
+              <div className="text-sm font-bold text-[#f0eef8] mb-1">{h.label}</div>
+              <div className="text-xs text-[#8a87a8] leading-relaxed">{h.note}</div>
             </m.div>
           ))}
         </div>
@@ -70,7 +70,7 @@ export default function PricingHomeSection() {
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {quickWins.map(win => (
-              <div key={win} className="flex items-center gap-2 text-sm text-gray-700">
+              <div key={win} className="flex items-center gap-2 text-sm text-[#c4c0e0]">
                 <div className="w-5 h-5 rounded-full bg-[#8734E1]/10 flex items-center justify-center shrink-0">
                   <Check className="w-3 h-3 text-[#8734E1]" strokeWidth={3} />
                 </div>

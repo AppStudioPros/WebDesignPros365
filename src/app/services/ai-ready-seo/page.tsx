@@ -119,14 +119,14 @@ export default function AIReadySEOPage() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">
               Add-On Service
             </Badge>
             <h1 className="heading-xl mb-6">
               Your Business Found on{' '}
               <span className="gradient-text">Google. And ChatGPT. And Perplexity.</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-10">
+            <p className="text-lg md:text-xl text-[#a8a4c8] max-w-3xl mx-auto mb-10">
               AI search is the fastest-growing way people find local businesses. Most websites are
               invisible to it. Yours won&apos;t be. We optimize for all three search surfaces — SEO,
               AEO, and GEO in one engagement.
@@ -167,7 +167,7 @@ export default function AIReadySEOPage() {
       </section>
 
       {/* THREE LAYERS */}
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -175,12 +175,12 @@ export default function AIReadySEOPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-12"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">The Three Layers</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">The Three Layers</Badge>
             <h2 className="heading-lg mb-4">
               SEO ranks. AEO answers.{' '}
               <span className="gradient-text">GEO gets cited.</span>
             </h2>
-            <p className="text-gray-600">
+            <p className="text-[#a8a4c8]">
               Three different jobs. Three different judges. Most agencies only do the first one. We do all three.
             </p>
           </motion.div>
@@ -202,12 +202,12 @@ export default function AIReadySEOPage() {
                     </div>
                     <div className="mb-3">
                       <h3 className="text-2xl font-bold" style={{ color: layer.color }}>{layer.name}</h3>
-                      <p className="text-xs text-gray-500 uppercase tracking-wider">{layer.long}</p>
+                      <p className="text-xs text-[#8a87a8] uppercase tracking-wider">{layer.long}</p>
                     </div>
-                    <p className="text-base font-semibold text-gray-900 mb-4">{layer.goal}</p>
+                    <p className="text-base font-semibold text-[#f0eef8] mb-4">{layer.goal}</p>
                     <div className="space-y-2 text-sm mb-4">
-                      <div><span className="text-gray-500">Optimizes for: </span><span className="text-gray-800">{layer.what}</span></div>
-                      <div><span className="text-gray-500">Why it matters: </span><span className="text-gray-800">{layer.why}</span></div>
+                      <div><span className="text-[#8a87a8]">Optimizes for: </span><span className="text-[#dddaf0]">{layer.what}</span></div>
+                      <div><span className="text-[#8a87a8]">Why it matters: </span><span className="text-[#dddaf0]">{layer.why}</span></div>
                     </div>
                   </Card>
                 </motion.div>
@@ -218,7 +218,7 @@ export default function AIReadySEOPage() {
       </section>
 
       {/* WHAT'S INCLUDED */}
-      <section className="section bg-[#f8f9fc]">
+      <section className="section bg-[#181928]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -226,12 +226,12 @@ export default function AIReadySEOPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-12"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">What&apos;s Included</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">What&apos;s Included</Badge>
             <h2 className="heading-lg mb-4">
               Everything we{' '}
               <span className="gradient-text">set up for you.</span>
             </h2>
-            <p className="text-gray-600">
+            <p className="text-[#a8a4c8]">
               One engagement. Every surface covered. Zero ongoing code changes needed.
             </p>
           </motion.div>
@@ -246,12 +246,12 @@ export default function AIReadySEOPage() {
                 transition={{ delay: i * 0.05 }}
               >
                 <Card className="p-4 flex items-start gap-3 hover:shadow-md transition-all">
-                  <div className="w-8 h-8 rounded-lg bg-[#f0e6fb] flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-[#1e1c35] flex items-center justify-center flex-shrink-0">
                     <Icon className="w-4 h-4 text-[#8734E1]" />
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-gray-700">{text}</span>
+                    <span className="text-sm text-[#c4c0e0]">{text}</span>
                   </div>
                 </Card>
               </motion.div>
@@ -261,7 +261,7 @@ export default function AIReadySEOPage() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section id="how-it-works" className="section bg-white">
+      <section id="how-it-works" className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -269,7 +269,7 @@ export default function AIReadySEOPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-12"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">How It Works</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">How It Works</Badge>
             <h2 className="heading-lg mb-4">
               Three steps.{' '}
               <span className="gradient-text">Done in one engagement.</span>
@@ -287,8 +287,8 @@ export default function AIReadySEOPage() {
               >
                 <Card className="p-6 h-full hover:shadow-lg transition-all">
                   <p className="text-xs font-mono text-[#8734E1] uppercase tracking-wider mb-3">{s.n}</p>
-                  <h3 className="font-semibold text-gray-900 mb-2 text-lg">{s.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{s.body}</p>
+                  <h3 className="font-semibold text-[#f0eef8] mb-2 text-lg">{s.title}</h3>
+                  <p className="text-sm text-[#a8a4c8] leading-relaxed">{s.body}</p>
                 </Card>
               </motion.div>
             ))}
@@ -321,7 +321,7 @@ export default function AIReadySEOPage() {
               We don&apos;t bolt AI on top of a 2018 stack. We build for the AI era from the foundation up.
             </p>
             <Link href="/contact?topic=ai-ready-seo">
-              <Button size="lg" className="bg-white text-[#1a0b2e] hover:bg-gray-100 font-semibold">
+              <Button size="lg" className="bg-[#252640] text-[#1a0b2e] hover:bg-[#191a2c] font-semibold">
                 Get started
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
@@ -331,7 +331,7 @@ export default function AIReadySEOPage() {
       </section>
 
       {/* FAQ */}
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -339,7 +339,7 @@ export default function AIReadySEOPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-12"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">FAQ</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">FAQ</Badge>
             <h2 className="heading-lg mb-4">Common questions</h2>
           </motion.div>
 
@@ -352,12 +352,12 @@ export default function AIReadySEOPage() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.03 }}
               >
-                <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+                <div className="bg-[#252640] border border-[#3a3858] rounded-2xl overflow-hidden shadow-sm">
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+                    className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-[#1c1d30] transition-colors"
                   >
-                    <span className="font-medium text-gray-900 pr-8">{faq.q}</span>
+                    <span className="font-medium text-[#f0eef8] pr-8">{faq.q}</span>
                     <ChevronDown
                       className={`w-5 h-5 text-[#8734E1] transition-transform duration-300 flex-shrink-0 ${
                         openFaq === i ? 'rotate-180' : ''
@@ -366,7 +366,7 @@ export default function AIReadySEOPage() {
                   </button>
                   {openFaq === i && (
                     <div className="px-6 pb-5">
-                      <p className="text-gray-600 leading-relaxed">{faq.a}</p>
+                      <p className="text-[#a8a4c8] leading-relaxed">{faq.a}</p>
                     </div>
                   )}
                 </div>

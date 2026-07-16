@@ -128,11 +128,11 @@ export default function PortfolioPage() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Portfolio</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">Portfolio</Badge>
             <h1 className="heading-xl mb-6">
               Our <span className="gradient-text">Work</span>
             </h1>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-[#a8a4c8]">
               Real projects. Real results. Hover to scroll through each site.
             </p>
           </motion.div>
@@ -140,7 +140,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Portfolio Grid */}
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
@@ -165,11 +165,11 @@ export default function PortfolioPage() {
                     >
                       {project.category}
                     </p>
-                    <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-[#8734E1] transition-colors flex items-center gap-2">
+                    <h3 className="text-lg font-bold text-[#f0eef8] mb-1 group-hover:text-[#8734E1] transition-colors flex items-center gap-2">
                       {project.title}
                       <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </h3>
-                    <p className="text-sm text-gray-500 line-clamp-2">{project.description}</p>
+                    <p className="text-sm text-[#8a87a8] line-clamp-2">{project.description}</p>
                   </div>
 
                   {/* Screenshot container with scroll on hover */}
@@ -215,25 +215,25 @@ export default function PortfolioPage() {
                   <p className="text-xs font-semibold uppercase tracking-wider mb-1 text-[#8734E1]">
                     Your Project
                   </p>
-                  <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-[#8734E1] transition-colors flex items-center gap-2">
+                  <h3 className="text-lg font-bold text-[#f0eef8] mb-1 group-hover:text-[#8734E1] transition-colors flex items-center gap-2">
                     Yours next?
                     <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                   </h3>
-                  <p className="text-sm text-gray-500 line-clamp-2">
+                  <p className="text-sm text-[#8a87a8] line-clamp-2">
                     Free 30-minute discovery call. Fixed-price quote within 48 hours.
                   </p>
                 </div>
                 <div
-                  className="relative w-full h-[320px] rounded-xl overflow-hidden border-2 border-dashed border-gray-200 group-hover:border-[#8734E1] transition-all duration-300 bg-gradient-to-br from-[#f0e6fb] via-white to-[#f0e6fb] flex items-center justify-center"
+                  className="relative w-full h-[320px] rounded-xl overflow-hidden border-2 border-dashed border-[#3a3858] group-hover:border-[#8734E1] transition-all duration-300 bg-gradient-to-br from-[#f0e6fb] via-white to-[#f0e6fb] flex items-center justify-center"
                 >
                   <div className="text-center px-8">
                     <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#8734E1] to-[#2F73EE] mx-auto mb-4 flex items-center justify-center shadow-xl shadow-[#8734E1]/30 group-hover:scale-110 transition-transform">
                       <Sparkles className="w-8 h-8 text-white" strokeWidth={2.25} />
                     </div>
-                    <h4 className="text-2xl font-bold text-gray-900 mb-2">
+                    <h4 className="text-2xl font-bold text-[#f0eef8] mb-2">
                       Let&apos;s build yours.
                     </h4>
-                    <p className="text-sm text-gray-600 mb-6 max-w-sm mx-auto">
+                    <p className="text-sm text-[#a8a4c8] mb-6 max-w-sm mx-auto">
                       We&apos;re currently taking on builds for Q2 + Q3. Next.js, AI integration, ACI platform engineering, or all three.
                     </p>
                     <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#8734E1] text-white text-sm font-semibold shadow-lg group-hover:shadow-xl group-hover:gap-3 transition-all">

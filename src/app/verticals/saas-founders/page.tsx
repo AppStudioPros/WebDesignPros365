@@ -47,9 +47,9 @@ export default function SaasFoundersPage() {
         <div className="absolute inset-0 bg-gradient-mesh" />
         <div className="container-custom relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Vertical: SaaS Founders + Vertical Platforms</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">Vertical: SaaS Founders + Vertical Platforms</Badge>
             <h1 className="heading-xl mb-6">For domain experts <span className="gradient-text">building real products.</span></h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-lg md:text-xl text-[#a8a4c8] max-w-3xl mx-auto mb-8">
               You know the industry. You see the broken thing. We are the engineering arm that ships
               what you envision. From MVP to multi-tenant production to enterprise-grade compliance.
               On the same modern stack we use for everything: Next.js 16, Supabase, Vercel, ACI.
@@ -59,7 +59,7 @@ export default function SaasFoundersPage() {
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center mb-12">
             <Badge className="mb-4 bg-red-100 text-red-700 border-red-300">Why Most SaaS MVPs Fail</Badge>
@@ -69,8 +69,8 @@ export default function SaasFoundersPage() {
             {painPoints.map((p, i) => (
               <motion.div key={p.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
                 <Card className="p-6 h-full border-red-100 bg-red-50/30 text-center">
-                  <h3 className="font-semibold text-gray-900 mb-2">{p.title}</h3>
-                  <p className="text-sm text-gray-700">{p.body}</p>
+                  <h3 className="font-semibold text-[#f0eef8] mb-2">{p.title}</h3>
+                  <p className="text-sm text-[#c4c0e0]">{p.body}</p>
                 </Card>
               </motion.div>
             ))}
@@ -78,10 +78,10 @@ export default function SaasFoundersPage() {
         </div>
       </section>
 
-      <section className="section bg-[#f8f9fc]">
+      <section className="section bg-[#181928]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">How We Help</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">How We Help</Badge>
             <h2 className="heading-lg mb-4">Four shapes <span className="gradient-text">we ship for founders.</span></h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
@@ -91,8 +91,8 @@ export default function SaasFoundersPage() {
                 <motion.div key={h.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
                   <Card className="p-6 h-full hover:shadow-lg hover:border-[#8734E1] transition-all flex flex-col items-center text-center">
                     <div className="mb-4"><GlassIcon Icon={Icon} color="#8734E1" /></div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{h.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{h.body}</p>
+                    <h3 className="font-semibold text-[#f0eef8] mb-2">{h.title}</h3>
+                    <p className="text-sm text-[#a8a4c8] leading-relaxed">{h.body}</p>
                   </Card>
                 </motion.div>
               );
@@ -101,30 +101,30 @@ export default function SaasFoundersPage() {
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">SaaS Stack We Use</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">SaaS Stack We Use</Badge>
             <h2 className="heading-lg mb-4">Where we <span className="gradient-text">plug in.</span></h2>
-            <p className="text-gray-600">Modern stack from auth to billing to AI. Production-tested patterns, not new-shiny experiments.</p>
+            <p className="text-[#a8a4c8]">Modern stack from auth to billing to AI. Production-tested patterns, not new-shiny experiments.</p>
           </motion.div>
           <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-3">
             {platforms.map((p) => (
-              <div key={p} className="px-4 py-2 rounded-xl bg-[#f8f9fc] border border-gray-200 text-gray-700 text-sm font-medium">{p}</div>
+              <div key={p} className="px-4 py-2 rounded-xl bg-[#181928] border border-[#3a3858] text-[#c4c0e0] text-sm font-medium">{p}</div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section bg-[#f8f9fc]">
+      <section className="section bg-[#181928]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto">
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">The WDP365 Founder Advantage</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">The WDP365 Founder Advantage</Badge>
             <h2 className="heading-lg mb-6">Why vertical SaaS founders pick us</h2>
             <ul className="space-y-3">
               {advantages.map((a) => (
-                <li key={a} className="flex items-start gap-3 text-gray-700">
-                  <div className="w-6 h-6 rounded-full bg-[#f0e6fb] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <li key={a} className="flex items-start gap-3 text-[#c4c0e0]">
+                  <div className="w-6 h-6 rounded-full bg-[#1e1c35] flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Check className="w-4 h-4 text-[#8734E1]" />
                   </div>
                   <span className="leading-relaxed">{a}</span>

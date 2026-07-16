@@ -45,7 +45,7 @@ const techStack = [
 export default function TechStackSection() {
   return (
     <section className="section relative overflow-hidden">
-      <div className="absolute inset-0 bg-white/70" />
+      <div className="absolute inset-0 bg-[#252640]/70" />
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
       <div className="container-custom relative z-10">
         <m.div
@@ -55,13 +55,13 @@ export default function TechStackSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">
+          <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">
             Tech Stack
           </div>
           <h2 className="heading-lg mb-4">
             Built with <span className="gradient-text">Modern Technology</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-[#a8a4c8] max-w-2xl mx-auto">
             Modern tooling. No vendor lock-in. Built for what comes next.
           </p>
         </m.div>
@@ -76,7 +76,7 @@ export default function TechStackSection() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-                className="relative bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all"
+                className="relative bg-[#252640] border border-[#3a3858] rounded-2xl overflow-hidden hover:shadow-xl transition-all"
               >
                 {/* Top accent gradient bar */}
                 <div
@@ -86,7 +86,7 @@ export default function TechStackSection() {
 
                 {/* Header */}
                 <div
-                  className="px-6 py-5 border-b border-gray-100"
+                  className="px-6 py-5 border-b border-[#2e2c48]"
                   style={{ background: `linear-gradient(135deg, ${category.color}08, transparent)` }}
                 >
                   <div className="flex flex-col items-center text-center gap-2 mb-2">
@@ -100,10 +100,10 @@ export default function TechStackSection() {
                       <Icon className="w-5 h-5 text-white" strokeWidth={2.25} />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900 leading-tight">
+                      <h3 className="text-lg font-semibold text-[#f0eef8] leading-tight">
                         {category.category}
                       </h3>
-                      <p className="text-xs text-gray-500">{category.tagline}</p>
+                      <p className="text-xs text-[#8a87a8]">{category.tagline}</p>
                     </div>
                   </div>
                 </div>
@@ -117,7 +117,7 @@ export default function TechStackSection() {
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: categoryIndex * 0.1 + techIndex * 0.05 }}
-                      className="flex items-center justify-between py-2.5 px-3 rounded-lg hover:bg-gray-50 transition-colors group"
+                      className="flex items-center justify-between py-2.5 px-3 rounded-lg hover:bg-[#1c1d30] transition-colors group"
                     >
                       <div className="flex items-center gap-3">
                         {/* Color dot */}
@@ -125,17 +125,17 @@ export default function TechStackSection() {
                           className="w-1.5 h-1.5 rounded-full flex-shrink-0 transition-all group-hover:scale-150"
                           style={{ backgroundColor: category.color }}
                         />
-                        <span className="text-gray-900 font-medium text-sm">{tech.name}</span>
+                        <span className="text-[#f0eef8] font-medium text-sm">{tech.name}</span>
                       </div>
-                      <span className="text-xs text-gray-500">{tech.description}</span>
+                      <span className="text-xs text-[#8a87a8]">{tech.description}</span>
                     </m.div>
                   ))}
                 </div>
 
                 {/* Footer count badge */}
                 <div className="px-6 pb-5">
-                  <div className="flex items-center justify-between pt-3 border-t border-gray-100 text-xs">
-                    <span className="text-gray-500">{category.technologies.length} technologies</span>
+                  <div className="flex items-center justify-between pt-3 border-t border-[#2e2c48] text-xs">
+                    <span className="text-[#8a87a8]">{category.technologies.length} technologies</span>
                     <span
                       className="font-mono font-semibold"
                       style={{ color: category.color }}

@@ -64,7 +64,7 @@ function VideoCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.15, duration: 0.5 }}
-      className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-[#8734E1]/50 transition-all"
+      className="bg-[#252640]/5 border border-white/10 rounded-2xl overflow-hidden hover:border-[#8734E1]/50 transition-all"
     >
       <div className="relative bg-black cursor-pointer" style={{ aspectRatio: '16/9' }} onClick={() => onPlay(index)}>
         <img

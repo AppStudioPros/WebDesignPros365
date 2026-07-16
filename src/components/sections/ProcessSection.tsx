@@ -63,7 +63,7 @@ const steps = [
 export default function ProcessSection() {
   return (
     <section className="section relative overflow-hidden">
-      <div className="absolute inset-0 bg-[#f8f9fc]/70" />
+      <div className="absolute inset-0 bg-[#181928]/70" />
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
 
       <div className="container-custom relative z-10">
@@ -74,13 +74,13 @@ export default function ProcessSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">
+          <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">
             Our Process
           </div>
           <h2 className="heading-lg mb-4">
             How We <span className="gradient-text">Deliver</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-[#a8a4c8] max-w-2xl mx-auto">
             Six steps. Same on every project. Fixed-price quote in 48 hours, working staging by week 4-6.
           </p>
         </m.div>
@@ -102,7 +102,7 @@ export default function ProcessSection() {
                   className="relative"
                 >
                   <div
-                    className="bg-white border border-gray-200 rounded-2xl p-6 h-full hover:shadow-xl transition-all relative overflow-hidden group"
+                    className="bg-[#252640] border border-[#3a3858] rounded-2xl p-6 h-full hover:shadow-xl transition-all relative overflow-hidden group"
                     style={{ borderLeft: `3px solid ${step.color}` }}
                   >
                     {/* Background number watermark */}
@@ -132,18 +132,18 @@ export default function ProcessSection() {
                       >
                         STEP {step.number}
                       </span>
-                      <span className="text-[10px] text-gray-500">·</span>
-                      <span className="text-[10px] text-gray-500">{step.duration}</span>
+                      <span className="text-[10px] text-[#8a87a8]">·</span>
+                      <span className="text-[10px] text-[#8a87a8]">{step.duration}</span>
                     </div>
 
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2 relative text-center">{step.title}</h3>
-                    <p className="text-gray-600 text-sm mb-4 relative leading-relaxed text-center">{step.description}</p>
+                    <h3 className="text-xl font-semibold text-[#f0eef8] mb-2 relative text-center">{step.title}</h3>
+                    <p className="text-[#a8a4c8] text-sm mb-4 relative leading-relaxed text-center">{step.description}</p>
 
                     {/* Deliverable footer */}
-                    <div className="relative pt-3 border-t border-gray-100 flex items-center justify-center gap-2">
+                    <div className="relative pt-3 border-t border-[#2e2c48] flex items-center justify-center gap-2">
                       <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: step.color }} />
-                      <span className="text-xs text-gray-500">
-                        Deliverable: <span className="text-gray-800 font-medium">{step.deliverable}</span>
+                      <span className="text-xs text-[#8a87a8]">
+                        Deliverable: <span className="text-[#dddaf0] font-medium">{step.deliverable}</span>
                       </span>
                     </div>
                   </div>

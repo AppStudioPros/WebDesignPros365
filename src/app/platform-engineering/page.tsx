@@ -284,12 +284,12 @@ export default function PlatformEngineeringPage() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Platform Engineering</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">Platform Engineering</Badge>
             <h1 className="heading-xl mb-6">
               Replace <span className="line-through text-gray-400">HighLevel</span> with{' '}
               <span className="gradient-text">a platform you actually own.</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-lg md:text-xl text-[#a8a4c8] max-w-3xl mx-auto mb-8">
               Custom Next.js + Supabase platforms with patented ACI AI integration. CRM, automation, funnels,
               booking, AI agents. Everything HighLevel does, plus everything HighLevel can&apos;t do, on a
               modern AI-native stack. Yours forever. No more per-location rent.
@@ -312,7 +312,7 @@ export default function PlatformEngineeringPage() {
       </section>
 
       {/* PAIN POINTS */}
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -322,7 +322,7 @@ export default function PlatformEngineeringPage() {
           >
             <Badge className="mb-4 bg-red-100 text-red-700 border-red-300">The HighLevel Tax</Badge>
             <h2 className="heading-lg mb-4">Why agencies finally walk away</h2>
-            <p className="text-gray-600">
+            <p className="text-[#a8a4c8]">
               You&apos;re not the only one tired of it. Every agency we&apos;ve helped migrate had the same
               four complaints.
             </p>
@@ -348,8 +348,8 @@ export default function PlatformEngineeringPage() {
                         <PainIcon className="w-5 h-5 text-red-600" strokeWidth={2.25} />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-2">{point.title}</h3>
-                        <p className="text-sm text-gray-700 leading-relaxed">{point.body}</p>
+                        <h3 className="font-semibold text-[#f0eef8] mb-2">{point.title}</h3>
+                        <p className="text-sm text-[#c4c0e0] leading-relaxed">{point.body}</p>
                       </div>
                     </div>
                   </Card>
@@ -361,7 +361,7 @@ export default function PlatformEngineeringPage() {
       </section>
 
       {/* COMPARISON CHART */}
-      <section id="comparison" className="section bg-[#f8f9fc]">
+      <section id="comparison" className="section bg-[#181928]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -369,12 +369,12 @@ export default function PlatformEngineeringPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-12"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">Head to Head</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">Head to Head</Badge>
             <h2 className="heading-lg mb-4">
               HighLevel <span className="text-gray-400">vs</span>{' '}
               <span className="gradient-text">Custom WDP365 Platform</span>
             </h2>
-            <p className="text-gray-600">
+            <p className="text-[#a8a4c8]">
               We don&apos;t hide the one thing HighLevel does better. Everything else, we crush.
             </p>
           </motion.div>
@@ -385,11 +385,11 @@ export default function PlatformEngineeringPage() {
             viewport={{ once: true }}
             className="max-w-5xl mx-auto overflow-x-auto"
           >
-            <table className="w-full bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+            <table className="w-full bg-[#252640] border border-[#3a3858] rounded-2xl overflow-hidden shadow-sm">
               <thead>
                 <tr className="bg-gradient-to-r from-[#8734E1]/10 to-[#2F73EE]/10">
-                  <th className="text-left p-4 text-sm font-semibold text-gray-900">Feature</th>
-                  <th className="text-left p-4 text-sm font-semibold text-gray-600">HighLevel</th>
+                  <th className="text-left p-4 text-sm font-semibold text-[#f0eef8]">Feature</th>
+                  <th className="text-left p-4 text-sm font-semibold text-[#a8a4c8]">HighLevel</th>
                   <th className="text-left p-4 text-sm font-semibold text-[#8734E1]">WDP365 Custom Platform</th>
                 </tr>
               </thead>
@@ -397,12 +397,12 @@ export default function PlatformEngineeringPage() {
                 {comparison.map((row, i) => (
                   <tr
                     key={row.feature}
-                    className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50/40'}
+                    className={i % 2 === 0 ? 'bg-[#252640]' : 'bg-[#1c1d30]/40'}
                   >
-                    <td className="p-4 text-sm font-medium text-gray-900 border-t border-gray-100">
+                    <td className="p-4 text-sm font-medium text-[#f0eef8] border-t border-[#2e2c48]">
                       {row.feature}
                     </td>
-                    <td className="p-4 text-sm text-gray-600 border-t border-gray-100">
+                    <td className="p-4 text-sm text-[#a8a4c8] border-t border-[#2e2c48]">
                       <div className="flex items-start gap-2">
                         {row.advantage === 'highlevel' ? (
                           <Check className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" />
@@ -412,7 +412,7 @@ export default function PlatformEngineeringPage() {
                         <span>{row.highlevel}</span>
                       </div>
                     </td>
-                    <td className="p-4 text-sm text-gray-900 border-t border-gray-100">
+                    <td className="p-4 text-sm text-[#f0eef8] border-t border-[#2e2c48]">
                       <div className="flex items-start gap-2">
                         {row.advantage === 'wdp' ? (
                           <Check className="w-4 h-4 text-[#8734E1] flex-shrink-0 mt-0.5" />
@@ -428,7 +428,7 @@ export default function PlatformEngineeringPage() {
             </table>
           </motion.div>
 
-          <p className="text-center text-sm text-gray-500 mt-6 max-w-2xl mx-auto">
+          <p className="text-center text-sm text-[#8a87a8] mt-6 max-w-2xl mx-auto">
             Honest disclosure: HighLevel&apos;s mature multi-tenant agency-of-agencies feature is genuinely
             their moat. We can build it, but it&apos;s a real engagement, not a checkbox. Every other line
             on this chart is where modern stack + patented AI architecture beats legacy hands down.
@@ -440,7 +440,7 @@ export default function PlatformEngineeringPage() {
       <HighLevelDemo />
 
       {/* MODULES */}
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -448,11 +448,11 @@ export default function PlatformEngineeringPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-12"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">The Modules</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">The Modules</Badge>
             <h2 className="heading-lg mb-4">
               Everything HighLevel does. <span className="gradient-text">Built modern.</span>
             </h2>
-            <p className="text-gray-600">
+            <p className="text-[#a8a4c8]">
               Six production modules. Built on the modern Next.js 16 + Supabase + Vercel Edge stack with
               patented ACI AI layered through every interaction.
             </p>
@@ -473,8 +473,8 @@ export default function PlatformEngineeringPage() {
                     <div className="mb-4">
                       <GlassIcon Icon={Icon} color={module.color} />
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{module.title}</h3>
-                    <p className="text-sm text-gray-600">{module.body}</p>
+                    <h3 className="font-semibold text-[#f0eef8] mb-2">{module.title}</h3>
+                    <p className="text-sm text-[#a8a4c8]">{module.body}</p>
                   </Card>
                 </motion.div>
               );
@@ -517,7 +517,7 @@ export default function PlatformEngineeringPage() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
                 >
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 h-full flex flex-col items-center text-center">
+                  <div className="bg-[#252640]/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 h-full flex flex-col items-center text-center">
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8734E1] to-[#2F73EE] flex items-center justify-center mb-3">
                       <Icon className="w-5 h-5 text-white" strokeWidth={2.25} />
                     </div>
@@ -536,7 +536,7 @@ export default function PlatformEngineeringPage() {
       </section>
 
       {/* TROJAN HORSE / MODULAR STRATEGY */}
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <motion.div
@@ -545,11 +545,11 @@ export default function PlatformEngineeringPage() {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">The Modular Path</Badge>
+              <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">The Modular Path</Badge>
               <h2 className="heading-lg mb-4">
                 Start with <span className="gradient-text">one module.</span> Grow into the whole platform.
               </h2>
-              <p className="text-gray-600">
+              <p className="text-[#a8a4c8]">
                 You don&apos;t need to migrate everything at once. Buy the module that solves your biggest pain
                 (CRM, automation, AI assistant, or funnel builder) and add the rest when ready.
               </p>
@@ -578,8 +578,8 @@ export default function PlatformEngineeringPage() {
               ].map((s) => (
                 <Card key={s.step} className="p-6 h-full">
                   <div className="text-3xl font-bold text-[#8734E1]/30 mb-2">{s.step}</div>
-                  <h3 className="font-semibold text-gray-900 mb-2">{s.title}</h3>
-                  <p className="text-sm text-gray-600">{s.body}</p>
+                  <h3 className="font-semibold text-[#f0eef8] mb-2">{s.title}</h3>
+                  <p className="text-sm text-[#a8a4c8]">{s.body}</p>
                 </Card>
               ))}
             </div>
@@ -588,7 +588,7 @@ export default function PlatformEngineeringPage() {
       </section>
 
       {/* PRICING CTA */}
-      <section className="section bg-[#f8f9fc]">
+      <section className="section bg-[#181928]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -600,33 +600,33 @@ export default function PlatformEngineeringPage() {
               <div className="text-center mb-6">
                 <Badge className="mb-3 bg-[#8734E1] text-white">Pricing</Badge>
                 <h2 className="heading-lg mb-3">Typical engagement size</h2>
-                <p className="text-gray-600 max-w-xl mx-auto">
+                <p className="text-[#a8a4c8] max-w-xl mx-auto">
                   Platform engagements span our Pro through ACI-Powered tiers, depending on scope.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-                <div className="bg-white rounded-xl p-5 border border-gray-100">
-                  <p className="text-sm text-gray-500 mb-1">Single-Module Build</p>
-                  <p className="text-2xl font-bold text-gray-900 mb-1">$30,000+</p>
-                  <p className="text-xs text-gray-600">e.g. CRM only, or AI assistant only, or funnel builder only</p>
+                <div className="bg-[#252640] rounded-xl p-5 border border-[#2e2c48]">
+                  <p className="text-sm text-[#8a87a8] mb-1">Single-Module Build</p>
+                  <p className="text-2xl font-bold text-[#f0eef8] mb-1">$30,000+</p>
+                  <p className="text-xs text-[#a8a4c8]">e.g. CRM only, or AI assistant only, or funnel builder only</p>
                 </div>
-                <div className="bg-white rounded-xl p-5 border-2 border-[#8734E1] shadow-md relative">
+                <div className="bg-[#252640] rounded-xl p-5 border-2 border-[#8734E1] shadow-md relative">
                   <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#8734E1] text-white text-xs">
                     Most Common
                   </Badge>
-                  <p className="text-sm text-gray-500 mb-1">Multi-Module Platform</p>
-                  <p className="text-2xl font-bold text-gray-900 mb-1">$50,000+</p>
-                  <p className="text-xs text-gray-600">e.g. CRM + automation + bookings + AI assistant + email/SMS</p>
+                  <p className="text-sm text-[#8a87a8] mb-1">Multi-Module Platform</p>
+                  <p className="text-2xl font-bold text-[#f0eef8] mb-1">$50,000+</p>
+                  <p className="text-xs text-[#a8a4c8]">e.g. CRM + automation + bookings + AI assistant + email/SMS</p>
                 </div>
-                <div className="bg-white rounded-xl p-5 border border-gray-100">
-                  <p className="text-sm text-gray-500 mb-1">Full ACI-Powered Platform</p>
-                  <p className="text-2xl font-bold text-gray-900 mb-1">$75,000+</p>
-                  <p className="text-xs text-gray-600">Full platform with custom AI agents on patented ACI architecture</p>
+                <div className="bg-[#252640] rounded-xl p-5 border border-[#2e2c48]">
+                  <p className="text-sm text-[#8a87a8] mb-1">Full ACI-Powered Platform</p>
+                  <p className="text-2xl font-bold text-[#f0eef8] mb-1">$75,000+</p>
+                  <p className="text-xs text-[#a8a4c8]">Full platform with custom AI agents on patented ACI architecture</p>
                 </div>
               </div>
 
-              <p className="text-center text-sm text-gray-500 mt-6">
+              <p className="text-center text-sm text-[#8a87a8] mt-6">
                 Plus retainer from $5,000/month for ongoing dev, support, and continuous AI improvements.
               </p>
 
@@ -649,7 +649,7 @@ export default function PlatformEngineeringPage() {
       </section>
 
       {/* FAQ */}
-      <section className="section bg-white">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -657,7 +657,7 @@ export default function PlatformEngineeringPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-12"
           >
-            <Badge className="mb-4 bg-[#f0e6fb] text-[#8734E1] border-[#8734E1]">FAQ</Badge>
+            <Badge className="mb-4 bg-[#1e1c35] text-[#8734E1] border-[#8734E1]">FAQ</Badge>
             <h2 className="heading-lg mb-4">Common questions about leaving HighLevel</h2>
           </motion.div>
 
@@ -670,12 +670,12 @@ export default function PlatformEngineeringPage() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.04 }}
               >
-                <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+                <div className="bg-[#252640] border border-[#3a3858] rounded-2xl overflow-hidden shadow-sm">
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+                    className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-[#1c1d30] transition-colors"
                   >
-                    <span className="font-medium text-gray-900 pr-8">{faq.q}</span>
+                    <span className="font-medium text-[#f0eef8] pr-8">{faq.q}</span>
                     <ChevronDown
                       className={`w-5 h-5 text-[#8734E1] transition-transform duration-300 flex-shrink-0 ${
                         openFaq === i ? 'rotate-180' : ''
@@ -691,7 +691,7 @@ export default function PlatformEngineeringPage() {
                         transition={{ duration: 0.3 }}
                       >
                         <div className="px-6 pb-5">
-                          <p className="text-gray-600 leading-relaxed">{faq.a}</p>
+                          <p className="text-[#a8a4c8] leading-relaxed">{faq.a}</p>
                         </div>
                       </motion.div>
                     )}

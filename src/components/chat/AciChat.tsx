@@ -224,14 +224,14 @@ export function AciChat() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 320 }}
-            className="fixed bottom-24 right-6 z-40 w-[calc(100%-3rem)] max-w-[400px] h-[600px] max-h-[calc(100vh-8rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden"
+            className="fixed bottom-24 right-6 z-40 w-[calc(100%-3rem)] max-w-[400px] h-[600px] max-h-[calc(100vh-8rem)] bg-[#252640] rounded-2xl shadow-2xl border border-[#3a3858] flex flex-col overflow-hidden"
             role="dialog"
             aria-label="ACI chat assistant"
           >
             {/* Header */}
             <div className="bg-gradient-to-r from-[#8734E1] to-[#2F73EE] text-white px-5 py-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-white/20 backdrop-blur flex items-center justify-center">
+                <div className="w-9 h-9 rounded-full bg-[#252640]/20 backdrop-blur flex items-center justify-center">
                   <Sparkles className="w-5 h-5" strokeWidth={2.25} />
                 </div>
                 <div>
@@ -245,7 +245,7 @@ export function AciChat() {
               </div>
               <button
                 onClick={resetChat}
-                className="p-1.5 rounded-lg hover:bg-white/10 transition-colors"
+                className="p-1.5 rounded-lg hover:bg-[#252640]/10 transition-colors"
                 aria-label="Reset chat"
                 title="Reset chat"
               >
@@ -256,7 +256,7 @@ export function AciChat() {
             {/* Messages */}
             <div
               ref={scrollRef}
-              className="flex-1 overflow-y-auto px-4 py-4 space-y-4 bg-[#f8f9fc]"
+              className="flex-1 overflow-y-auto px-4 py-4 space-y-4 bg-[#181928]"
             >
               {messages.map((msg, i) => (
                 <div
@@ -267,7 +267,7 @@ export function AciChat() {
                     className={`max-w-[85%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap ${
                       msg.role === "user"
                         ? "bg-gradient-to-br from-[#8734E1] to-[#2F73EE] text-white rounded-br-md"
-                        : "bg-white border border-gray-200 text-gray-800 rounded-bl-md"
+                        : "bg-[#252640] border border-[#3a3858] text-[#dddaf0] rounded-bl-md"
                     }`}
                   >
                     {msg.content || (
@@ -288,7 +288,7 @@ export function AciChat() {
 
             {/* Suggested prompts — only show on initial state */}
             {messages.length === 1 && !streaming && (
-              <div className="px-4 pb-2 bg-[#f8f9fc] border-t border-gray-200">
+              <div className="px-4 pb-2 bg-[#181928] border-t border-[#3a3858]">
                 <p className="text-[10px] uppercase tracking-wider text-gray-400 mb-2 mt-2">
                   Try asking
                 </p>
@@ -297,7 +297,7 @@ export function AciChat() {
                     <button
                       key={s}
                       onClick={() => sendMessage(s)}
-                      className="text-xs px-3 py-1.5 rounded-full bg-white border border-gray-200 text-gray-700 hover:border-[#8734E1] hover:text-[#8734E1] transition-colors"
+                      className="text-xs px-3 py-1.5 rounded-full bg-[#252640] border border-[#3a3858] text-[#c4c0e0] hover:border-[#8734E1] hover:text-[#8734E1] transition-colors"
                     >
                       {s}
                     </button>
@@ -309,7 +309,7 @@ export function AciChat() {
             {/* Input */}
             <form
               onSubmit={handleSubmit}
-              className="border-t border-gray-200 bg-white p-3 flex items-center gap-2"
+              className="border-t border-[#3a3858] bg-[#252640] p-3 flex items-center gap-2"
             >
               <input
                 ref={inputRef}
@@ -318,7 +318,7 @@ export function AciChat() {
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask about services, pricing, or anything else..."
                 disabled={streaming}
-                className="flex-1 px-3 py-2 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8734E1]/40 focus:border-[#8734E1] disabled:opacity-50"
+                className="flex-1 px-3 py-2 text-sm bg-[#1c1d30] border border-[#3a3858] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8734E1]/40 focus:border-[#8734E1] disabled:opacity-50"
               />
               <button
                 type="submit"
@@ -334,7 +334,7 @@ export function AciChat() {
               </button>
             </form>
 
-            <p className="text-[10px] text-gray-400 text-center px-4 pb-3 bg-white">
+            <p className="text-[10px] text-gray-400 text-center px-4 pb-3 bg-[#252640]">
               Patented ACI architecture · No hallucination · Always human-in-the-loop
             </p>
           </motion.div>

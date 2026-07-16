@@ -10,7 +10,7 @@ export default function HeroVideo() {
       <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">
         No Guesswork. Daily AI Search Domination.
       </h2>
-      <div className="relative mx-auto max-w-3xl rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-black">
+      <div className="relative mx-auto max-w-3xl rounded-2xl overflow-hidden shadow-2xl border border-[#3a3858] bg-black">
         <video
           controls
           playsInline
