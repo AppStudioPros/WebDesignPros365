@@ -284,7 +284,7 @@ export default function PartnerProgramPage() {
             <Building2 className="w-4 h-4" />
             Exclusive Partner Offer
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-[#f0eef8] mb-6 leading-tight">
+          <h1 className="text-3xl md:text-5xl font-bold text-[#f0eef8] mb-6 leading-tight">
             Your website should be working{' '}
             <span className="gradient-text">as hard as you.</span>
           </h1>
@@ -301,7 +301,7 @@ export default function PartnerProgramPage() {
           <div className="mb-10">
             <Link
               href="/media"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-[#252640] border-2 border-[#8734E1]/50 hover:border-[#8734E1] text-[#f0eef8] font-bold text-lg hover:bg-[#2e2c4a] transition-all shadow-lg shadow-[#8734E1]/10"
+              className="inline-flex items-center gap-3 px-5 py-4 rounded-2xl bg-[#252640] border-2 border-[#8734E1]/50 hover:border-[#8734E1] text-[#f0eef8] font-bold text-base md:text-lg hover:bg-[#2e2c4a] transition-all shadow-lg shadow-[#8734E1]/10 w-full sm:w-auto justify-center"
             >
               <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8734E1] to-[#2F73EE] flex items-center justify-center flex-shrink-0">
                 <ExternalLink className="w-5 h-5 text-white" />
@@ -362,12 +362,12 @@ export default function PartnerProgramPage() {
                     </div>
                   </div>
                   <div className="flex items-baseline justify-center gap-3 mb-2">
-                    <span className="text-6xl font-black text-[#f0eef8]">$1,999<span className="text-3xl">.99</span></span>
+                    <span className="text-5xl md:text-6xl font-black text-[#f0eef8]">$1,999<span className="text-2xl md:text-3xl">.99</span></span>
                     <span className="text-[#8a87a8] text-sm">one time</span>
                   </div>
                   <div className="mb-4">
                     <span className="line-through text-[#6e6b88] text-sm">Normally $9,599.97</span>
-                    <div className="text-4xl font-black text-emerald-400 mt-1">You save $7,599.99</div>
+                    <div className="text-3xl md:text-4xl font-black text-emerald-400 mt-1">You save $7,599.99</div>
                   </div>
                   <div className="flex flex-wrap justify-center gap-4 text-sm text-[#a8a4c8]">
                     <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-emerald-400" />Custom Next.js website build</span>
@@ -384,7 +384,7 @@ export default function PartnerProgramPage() {
                       <span className="text-[#8a87a8]">$7,500.00</span>
                     </div>
                     <div className="flex justify-between text-[#c4c0e0]">
-                      <span>Daily SEO + AEO + GEO optimization x 3 months</span>
+                      <span>Daily SEO + AEO + GEO x 3 months</span>
                       <span className="text-[#8a87a8]">$2,099.97</span>
                     </div>
                     <div className="flex justify-between text-[#f0eef8] font-semibold border-t border-[#3a3858] pt-2 mt-2">
@@ -480,7 +480,7 @@ export default function PartnerProgramPage() {
                 ))}
               </div>
 
-              <blockquote className="text-2xl md:text-3xl font-bold text-[#f0eef8] border-l-4 border-[#8734E1] pl-6 text-left max-w-2xl mx-auto">
+              <blockquote className="text-xl md:text-3xl font-bold text-[#f0eef8] border-l-4 border-[#8734E1] pl-4 md:pl-6 text-left max-w-2xl mx-auto">
                 "AI is choosing winners right this moment. Are you one of them?"
               </blockquote>
             </div>
@@ -498,7 +498,7 @@ export default function PartnerProgramPage() {
                 </p>
               </div>
 
-              <div className="bg-[#252640] border border-[#3a3858] rounded-xl px-6 py-4 mb-10 flex flex-col sm:flex-row items-start sm:items-center gap-3">
+              <div className="bg-[#252640] border border-[#3a3858] rounded-xl px-5 py-4 mb-8 flex flex-col gap-3">
                 <div className="flex items-center gap-2 text-[#c084fc]">
                   <Lock className="w-5 h-5" />
                   <span className="font-bold text-sm">You own everything.</span>
@@ -510,7 +510,7 @@ export default function PartnerProgramPage() {
               </div>
 
               {/* Additional pages pricing */}
-              <div className="bg-[#1e1c35] border border-[#8734E1]/30 rounded-xl px-6 py-5 mb-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <div className="bg-[#1e1c35] border border-[#8734E1]/30 rounded-xl px-5 py-5 mb-6 flex flex-col gap-4">
                 <div className="flex items-center gap-3 flex-shrink-0">
                   <div className="w-10 h-10 rounded-lg bg-[#8734E1]/20 border border-[#8734E1]/30 flex items-center justify-center">
                     <Globe className="w-5 h-5 text-[#c084fc]" />
