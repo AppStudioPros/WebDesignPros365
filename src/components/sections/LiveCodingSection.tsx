@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Code2, Terminal, GitBranch, CheckCircle2, Cpu } from 'lucide-react';
 
 // Mocked code "frames" that loop in the editor pane
@@ -128,7 +128,7 @@ const terminalLines = [
 function CodePane({ frameIndex }: { frameIndex: number }) {
   const frame = codeFrames[frameIndex];
   return (
-    <motion.div
+    <m.div
       key={frameIndex}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -145,7 +145,7 @@ function CodePane({ frameIndex }: { frameIndex: number }) {
           </span>
         );
       })}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -185,9 +185,9 @@ export default function LiveCodingSection() {
 
       <div className="container-custom relative z-10">
         {/* Header — tightened to hug the section above */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <m.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="text-center mb-10"
         >
@@ -202,12 +202,12 @@ export default function LiveCodingSection() {
             Real engineering, in your repo. Patent-anchored ACI architecture, audit-trail-complete AI,
             deployed on Vercel Edge. Not a no-code shell. Not a GoHighLevel wrapper. Your code, your stack.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* IDE + Terminal mock */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <m.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="max-w-5xl mx-auto"
@@ -276,7 +276,7 @@ export default function LiveCodingSection() {
                           : 'text-white/60';
                     const opacity = i === 0 ? 'opacity-100' : i < 4 ? 'opacity-80' : 'opacity-40';
                     return (
-                      <motion.div
+                      <m.div
                         key={`${terminalIndex}-${i}`}
                         initial={{ opacity: 0, x: -4 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -291,7 +291,7 @@ export default function LiveCodingSection() {
                         ) : (
                           <span>{line.text}</span>
                         )}
-                      </motion.div>
+                      </m.div>
                     );
                   })}
                 </div>
@@ -316,7 +316,7 @@ export default function LiveCodingSection() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

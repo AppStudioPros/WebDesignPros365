@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { motion, useInView } from 'framer-motion';
+import { m, useInView } from 'framer-motion';
 import { ArrowRight, Zap, Atom, Rocket, Target } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
@@ -68,7 +68,7 @@ export default function HeroSection() {
   const statsRef = useRef(null);
   const isInView = useInView(statsRef, { once: true, margin: "-100px" });
   return (
-    <section className="relative flex flex-col justify-start pt-48 pb-48">
+    <section className="relative flex flex-col justify-start pt-48 pb-48 min-h-screen" style={{ contain: 'layout' }}>
       {/* Animated Gradient Background — full opacity dark */}
       <div
         className="absolute inset-0 w-full h-full gradient-shift-bg"
@@ -85,30 +85,30 @@ export default function HeroSection() {
       <div className="container-custom relative z-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main Heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+          <m.h1
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="heading-xl text-balance mb-6 text-white"
           >
             63-70% of people are using AI to find and vet businesses now.{' '}
             <span className="gradient-text">Are you being Ignored?</span>
-          </motion.h1>
+          </m.h1>
 
           {/* Subheading */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+          <m.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-12"
           >
             Today, users have conversations with AI to find services and look for ratings. We analyze which competitors consistently appear in AI responses, and why.
-          </motion.p>
+          </m.p>
 
           {/* Tech Badges */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+          <m.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-wrap justify-center gap-3 mb-14"
           >
@@ -124,30 +124,30 @@ export default function HeroSection() {
                 </div>
               );
             })}
-          </motion.div>
+          </m.div>
 
           {/* Second hero line */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+          <m.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-xl md:text-2xl font-bold text-white max-w-3xl mx-auto mb-20 leading-snug"
           >
             The Ultimate AI Visibility Tech Stack. Custom Next.js websites optimized for{' '}
             <span className="gradient-text">Technical SEO, AEO and GEO</span>{' '}
             will get you results in weeks, not months.
-          </motion.p>
+          </m.p>
 
           {/* Stats */}
-          <motion.div
+          <m.div
             ref={statsRef}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
             className="grid grid-cols-2 md:grid-cols-4 gap-8"
           >
             {stats.map((stat, index) => (
-              <motion.div
+              <m.div
                 key={stat.label}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -158,9 +158,9 @@ export default function HeroSection() {
                   <CountUpStat stat={stat} inView={isInView} />
                   <div className="text-sm text-white/50">{stat.label}</div>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
-          </motion.div>
+          </m.div>
 
           {/* Video Section — lazy loaded for LCP */}
           <HeroVideo />

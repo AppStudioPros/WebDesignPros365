@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import { ArrowRight, X, Check } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -18,7 +18,7 @@ function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0
     <AnimatePresence>
       {isOpen && (
         <>
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -26,10 +26,10 @@ function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0
             className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
           />
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            <m.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
               className="w-full max-w-xl bg-white rounded-2xl shadow-2xl overflow-hidden max-h-[85vh] overflow-y-auto pointer-events-auto"
             >
@@ -98,7 +98,7 @@ function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0
                   </Link>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           </div>
         </>
       )}
@@ -116,9 +116,9 @@ export default function ServicesSection() {
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
 
       <div className="container-custom relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <m.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
@@ -130,14 +130,14 @@ export default function ServicesSection() {
             From modern AI integration to performance optimization,
             we deliver comprehensive digital solutions.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {displayServices.map((service, index) => (
-            <motion.div
+            <m.div
               key={service._id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
@@ -169,13 +169,13 @@ export default function ServicesSection() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </m.div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <m.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="text-center mt-12"
         >
@@ -185,7 +185,7 @@ export default function ServicesSection() {
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>
-        </motion.div>
+        </m.div>
       </div>
 
       <ServiceModal

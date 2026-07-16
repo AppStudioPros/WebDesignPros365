@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { ArrowRight, Check } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
@@ -23,9 +23,9 @@ export default function PricingHomeSection() {
     <section className="section bg-white py-20">
       <div className="container-custom">
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <m.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="text-center mb-12"
         >
@@ -39,15 +39,15 @@ export default function PricingHomeSection() {
           <p className="text-gray-500 max-w-xl mx-auto text-base">
             No mystery hourly rates. No scope creep. One number, one quote, one handshake.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* 3 stat cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
           {highlights.map((h, i) => (
-            <motion.div
+            <m.div
               key={h.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               className="bg-gray-50 border border-gray-200 rounded-2xl p-6 text-center hover:shadow-md transition-shadow"
@@ -57,14 +57,14 @@ export default function PricingHomeSection() {
               </div>
               <div className="text-sm font-bold text-gray-900 mb-1">{h.label}</div>
               <div className="text-xs text-gray-500 leading-relaxed">{h.note}</div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
 
         {/* Quick win bullets + CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <m.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="bg-gradient-to-r from-[#f0e6fb] to-[#e6f0fb] border border-[#8734E1]/15 rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6"
         >
@@ -83,7 +83,7 @@ export default function PricingHomeSection() {
               See Full Pricing <ArrowRight className="w-4 h-4" />
             </button>
           </Link>
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

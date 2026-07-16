@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { CookieBanner } from "@/components/layout/CookieBanner";
+import { LazyMotion, domAnimation } from "framer-motion";
 import { AciChatLazy } from "@/components/chat/AciChatLazy";
 import { Toaster } from "@/components/ui/sonner";
 import JsonLd from "@/components/JsonLd";
@@ -214,7 +215,9 @@ export default function RootLayout({
       </head>
       <body className={`${poppins.variable} font-sans antialiased`}>
         <Header />
-        <main>{children}</main>
+        <LazyMotion features={domAnimation} strict>
+          <main>{children}</main>
+        </LazyMotion>
         <Footer />
         <Toaster position="top-right" />
         <CookieBanner />

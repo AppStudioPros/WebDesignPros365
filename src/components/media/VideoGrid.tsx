@@ -9,7 +9,7 @@ const allVideos = [
     title: 'The Speed Problem Is Costing You Money',
     description: 'Most business owners are already paying for a website that costs them customers. Not because the design is bad. Because it takes four seconds to load.',
     src: '/videos/speed-problem.mp4',
-    poster: '/videos/speed-problem-poster.jpg',
+    poster: '/videos/speed-problem-poster.webp',
     label: 'THE PROBLEM',
   },
   {
@@ -30,21 +30,21 @@ const allVideos = [
     title: 'The AI Search Revolution in Real Estate',
     description: 'Your clients are already asking AI to find agents, compare lenders, and vet providers. This is what that shift looks like, and what it means for your business.',
     src: '/videos/ai-search-revolution.mp4',
-    poster: '/videos/ai-search-revolution-poster.jpg',
+    poster: '/videos/ai-search-revolution-poster.webp',
     label: 'THE OPPORTUNITY',
   },
   {
     title: 'The Future of Real Estate Marketing',
     description: 'See how the top-performing agents and brokers are combining AI-powered websites, daily content optimization, and GEO to dominate their markets.',
     src: '/videos/real-estate-future.mp4',
-    poster: '/videos/real-estate-future-poster.jpg',
+    poster: '/videos/real-estate-future-poster.webp',
     label: 'THE FUTURE',
   },
   {
     title: 'No Guesswork. Daily AI Search Domination.',
     description: 'Stop guessing what Google and AI want. Our daily optimization system removes the uncertainty and puts your business in front of the right people, every single day.',
     src: '/videos/no-guesswork-ai-domination.mp4',
-    poster: '/videos/ai-search-revolution-poster.jpg',
+    poster: '/videos/ai-search-revolution-poster.webp',
     label: 'THE EDGE',
   },
 ];

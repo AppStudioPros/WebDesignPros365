@@ -302,8 +302,8 @@ export function HighLevelDemo() {
       <div className="container-custom relative z-10">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="max-w-3xl mx-auto text-center mb-10"
         >
@@ -350,7 +350,7 @@ export function HighLevelDemo() {
           <motion.div
             key={activeId}
             initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
             className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto"
@@ -487,8 +487,8 @@ export function HighLevelDemo() {
 
         {/* CTA below the comparison */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="max-w-2xl mx-auto text-center mt-12"
         >

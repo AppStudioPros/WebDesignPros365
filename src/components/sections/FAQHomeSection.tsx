@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
 const faqs = [
@@ -40,9 +40,9 @@ export default function FAQHomeSection() {
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
 
       <div className="container-custom relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <m.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
@@ -56,14 +56,14 @@ export default function FAQHomeSection() {
           <p className="text-gray-600 max-w-2xl mx-auto">
             Find answers to frequently asked questions about our services and process.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="max-w-3xl mx-auto space-y-4">
           {faqs.map((faq, index) => (
-            <motion.div
+            <m.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
             >
@@ -81,7 +81,7 @@ export default function FAQHomeSection() {
                 </button>
                 <AnimatePresence>
                   {openIndex === index && (
-                    <motion.div
+                    <m.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
@@ -90,11 +90,11 @@ export default function FAQHomeSection() {
                       <div className="px-6 pb-5">
                         <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
                       </div>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

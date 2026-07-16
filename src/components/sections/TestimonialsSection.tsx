@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 // All logos served from /public/logos/ — locally hosted SVGs, no CDN dependency.
 // Verified-working file set: 26 real brand SVGs downloaded from Devicon, Lobehub, and Simple Icons.
@@ -88,7 +88,7 @@ export default function TestimonialsSection() {
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
       <div className="container-custom relative z-10">
         {/* TRUSTED-BY MARQUEE — top of section, single smooth row */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -119,7 +119,7 @@ export default function TestimonialsSection() {
             </a>
             .
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Testimonials removed — will reintroduce only with real, attributable client reviews (Google/BBB/case studies). */}
       </div>

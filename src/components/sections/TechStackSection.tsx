@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Code2, Database, Brain } from 'lucide-react';
 
 const techStack = [
@@ -48,9 +48,9 @@ export default function TechStackSection() {
       <div className="absolute inset-0 bg-white/70" />
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
       <div className="container-custom relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <m.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
@@ -64,16 +64,16 @@ export default function TechStackSection() {
           <p className="text-gray-600 max-w-2xl mx-auto">
             Modern tooling. No vendor lock-in. Built for what comes next.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {techStack.map((category, categoryIndex) => {
             const Icon = category.icon;
             return (
-              <motion.div
+              <m.div
                 key={category.category}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
                 className="relative bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all"
@@ -111,10 +111,10 @@ export default function TechStackSection() {
                 {/* Tech list */}
                 <div className="p-6 space-y-3">
                   {category.technologies.map((tech, techIndex) => (
-                    <motion.div
+                    <m.div
                       key={tech.name}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: categoryIndex * 0.1 + techIndex * 0.05 }}
                       className="flex items-center justify-between py-2.5 px-3 rounded-lg hover:bg-gray-50 transition-colors group"
@@ -128,7 +128,7 @@ export default function TechStackSection() {
                         <span className="text-gray-900 font-medium text-sm">{tech.name}</span>
                       </div>
                       <span className="text-xs text-gray-500">{tech.description}</span>
-                    </motion.div>
+                    </m.div>
                   ))}
                 </div>
 
@@ -144,7 +144,7 @@ export default function TechStackSection() {
                     </span>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>

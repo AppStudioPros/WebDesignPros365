@@ -1,15 +1,15 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 export default function VideoGeoSection() {
   return (
     <section className="section bg-[#f8f9fc]">
       <div className="container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <m.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto text-center"
@@ -32,7 +32,7 @@ export default function VideoGeoSection() {
               <source src="/videos/seo-is-old-news.mp4" type="video/mp4" />
             </video>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

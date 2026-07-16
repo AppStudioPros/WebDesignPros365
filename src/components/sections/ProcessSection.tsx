@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { ArrowRight, Compass, FileSearch, Palette, Code2, Bug, Rocket } from 'lucide-react';
 
 const steps = [
@@ -67,9 +67,9 @@ export default function ProcessSection() {
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
 
       <div className="container-custom relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <m.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
@@ -83,7 +83,7 @@ export default function ProcessSection() {
           <p className="text-gray-600 max-w-2xl mx-auto">
             Six steps. Same on every project. Fixed-price quote in 48 hours, working staging by week 4-6.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="relative">
           {/* Connecting line behind cards */}
@@ -93,10 +93,10 @@ export default function ProcessSection() {
             {steps.map((step, index) => {
               const Icon = step.icon;
               return (
-                <motion.div
+                <m.div
                   key={step.number}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.08 }}
                   className="relative"
@@ -154,7 +154,7 @@ export default function ProcessSection() {
                       <ArrowRight className="w-6 h-6 text-[#8734E1]/40" strokeWidth={2} />
                     </div>
                   )}
-                </motion.div>
+                </m.div>
               );
             })}
           </div>
