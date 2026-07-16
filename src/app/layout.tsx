@@ -20,7 +20,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Web Design Pros 365 | Next-Gen Web Development",
-  description: "High-performance websites built on an AI-native stack. SEO + AEO + GEO — we make sure you rank, you're the answer, and AI recommends you.",
+  description: "High-performance websites built on an AI-native stack. SEO + AEO + GEO: we make sure you rank, you're the answer, and AI recommends you.",
   keywords: ["web development", "Next.js 16", "React 19", "AI integration", "ACI", "GEO", "AEO", "SEO", "AI Visibility Stack", "web design"],
   openGraph: {
     title: "Web Design Pros 365 | Next-Gen Web Development",
@@ -81,7 +81,7 @@ const faqStructuredData = {
       "name": "Do you use Next.js App Router?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. All WDP client builds since 2024 use the Next.js App Router with TypeScript. The App Router enables React Server Components, streaming, and parallel routes — delivering faster page loads and better Core Web Vitals than the legacy Pages Router."
+        "text": "Yes. All WDP client builds since 2024 use the Next.js App Router with TypeScript. The App Router enables React Server Components, streaming, and parallel routes, delivering faster page loads and better Core Web Vitals than the legacy Pages Router."
       }
     },
     {
@@ -160,7 +160,7 @@ const structuredData = {
         "itemOffered": {
           "@type": "Service",
           "name": "AI Visibility Stack Website",
-          "description": "Custom Next.js website optimized for SEO, AEO, and GEO — so Google ranks you, AI Overviews answer with you, and ChatGPT recommends you."
+          "description": "Custom Next.js website optimized for SEO, AEO, and GEO. Google ranks you, AI Overviews answer with you, and ChatGPT recommends you."
         }
       },
       {

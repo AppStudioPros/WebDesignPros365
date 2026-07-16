@@ -129,7 +129,7 @@ export default function AIReadySEOPage() {
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-10">
               AI search is the fastest-growing way people find local businesses. Most websites are
               invisible to it. Yours won&apos;t be. We optimize for all three search surfaces — SEO,
-              AEO, and GEO — in one engagement.
+              AEO, and GEO in one engagement.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/contact?topic=ai-ready-seo">
