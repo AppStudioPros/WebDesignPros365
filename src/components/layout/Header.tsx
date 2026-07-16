@@ -59,11 +59,12 @@ export default function Header() {
             }}
           >
             <Image
-              src="/logo-opt.png"
+              src="/logo-wdp365.png"
               alt="Web Design Pros 365"
               width={200}
               height={50}
-              className="h-[50px] w-auto"
+              className="h-[44px] w-auto"
+              style={{ mixBlendMode: 'screen' }}
               priority
             />
           </Link>

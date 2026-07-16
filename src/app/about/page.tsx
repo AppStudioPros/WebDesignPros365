@@ -165,9 +165,10 @@ export default function AboutPage() {
               <div className="rounded-2xl bg-gradient-to-br from-[#8734E1] to-[#2F73EE] p-0.5 max-w-[280px] mx-auto lg:mx-0">
                 <div className="rounded-2xl bg-[#252640] flex items-center justify-center p-8 aspect-[4/3]">
                   <img
-                    src="/logo-opt.png"
+                    src="/logo-wdp365.png"
                     alt="Web Design Pros 365"
                     className="max-w-full h-auto"
+                    style={{ mixBlendMode: 'screen' }}
                   />
                 </div>
                 <div className="text-center text-xs text-[#8a87a8] mt-3">
