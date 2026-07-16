@@ -209,12 +209,25 @@ body {
   background: #a1a1a1;
 }
 
-/* Gradient Shift Background — ported from Remotion gradient-shift.tsx */
-/* Replaces 54MB bg-video.mp4 with 0-byte CSS animation */
 .gradient-shift-bg {
-  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460, #1a1a2e);
-  background-size: 400% 400%;
-  animation: gradientShift 24s ease infinite;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-shift-bg::before {
+  content: '';
+  position: absolute;
+  inset: -60%;
+  background: conic-gradient(from 0deg, #8734E115, #2F73EE15, #0f346020, #1a1a2e, #8734E115);
+  animation: gradientRotate 24s linear infinite;
+  will-change: transform;
+  pointer-events: none;
+}
+
+@keyframes gradientRotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 @keyframes gradientShift {

@@ -1,32 +1,34 @@
-# Web Design Pros 365 — LLM Context File
-# https://www.webdesignpros365.com
-# Full content: https://www.webdesignpros365.com/llms-full.txt
+# Web Design Pros 365
+
+> AI-optimized web development agency in Denver, Colorado. We build high-performance Next.js websites with full AI Visibility Stack: Technical SEO, AEO, and GEO.
 
 ## About
-Web Design Pros 365 is a Denver, Colorado web design and development agency specializing in high-performance websites built on a modern AI-native stack. Founded by Corey Strange with 20+ years of experience.
+
+Web Design Pros 365 builds custom Next.js websites optimized for AI search engines. Founded by Corey Strange with 20+ years of web development experience, based in Denver, CO.
+
+- [Home](https://www.webdesignpros365.com)
+- [Services](https://www.webdesignpros365.com/services)
+- [AI Visibility Stack](https://www.webdesignpros365.com/services/ai-visibility)
+- [Portfolio](https://www.webdesignpros365.com/portfolio)
+- [Pricing](https://www.webdesignpros365.com/pricing)
+- [About](https://www.webdesignpros365.com/about)
+- [Contact](https://www.webdesignpros365.com/contact)
+- [Full LLM Context](https://www.webdesignpros365.com/llms-full.txt)
 
 ## Services
-- Custom website design and development (Next.js, React, TypeScript)
-- AI Visibility Stack: SEO + AEO + GEO optimization
-- AI integration and custom AI-powered web applications
-- SaaS platform development
-- WordPress migration to modern stacks
 
-## AI Visibility Stack
-- SEO: Traditional search engine ranking optimization
-- AEO (Answer Engine Optimization): Structured content for AI Overviews, voice search, featured snippets
-- GEO (Generative Engine Optimization): Brand citation optimization for ChatGPT, Claude, Perplexity, Gemini
-
-## Contact
-- Website: https://www.webdesignpros365.com
-- Email: info@webdesignpros365.com
-- Phone: +1 (720) 276-0797
-- Location: Denver, Colorado, USA
-
-## Pricing
-- Starter: $3,500
-- Professional: $7,500
-- Enterprise: Custom
+- Custom website design and development (Next.js 16, React 19, TypeScript)
+- AI Visibility Stack: SEO + AEO (Answer Engine Optimization) + GEO (Generative Engine Optimization)
+- Platform engineering: custom SaaS platforms replacing GoHighLevel
+- WordPress migration to modern Next.js stack
+- Sanity CMS integration for client-managed content
 
 ## Technology Stack
-Next.js 16, React 19, TypeScript, Tailwind CSS, Sanity CMS, Vercel, Anthropic Claude AI
+
+Next.js 16, React 19, TypeScript, Tailwind CSS, Sanity CMS, Vercel, Supabase, PostgreSQL, ACI Platform (patented)
+
+## Contact
+
+- Email: [info@webdesignpros365.com](mailto:info@webdesignpros365.com)
+- Phone: [+1 (720) 276-0797](tel:+17202760797)
+- Location: Denver, Colorado, USA

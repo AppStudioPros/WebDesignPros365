@@ -274,7 +274,7 @@ export default function ServicesPage() {
               <video
                 controls
                 playsInline
-                preload="metadata"
+                preload="none"
                 poster="/videos/daily-optimization-poster.png"
                 className="w-full block"
                 style={{ aspectRatio: '16/9' }}

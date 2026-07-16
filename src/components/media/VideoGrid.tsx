@@ -126,9 +126,10 @@ function VideoModal({
         {/* Video */}
         <div className="rounded-2xl overflow-hidden bg-black shadow-2xl">
           <video
-            autoPlay
             controls
             playsInline
+            preload="none"
+            poster={video.poster}
             className="w-full"
             style={{ aspectRatio: '16/9' }}
           >

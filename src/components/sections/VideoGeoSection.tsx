@@ -24,7 +24,7 @@ export default function VideoGeoSection() {
             <video
               controls
               playsInline
-              preload="metadata"
+              preload="none"
               poster="/videos/seo-is-old-news-poster.jpg"
               className="w-full block"
               style={{ aspectRatio: '16/9' }}
