@@ -193,7 +193,7 @@ export default function SiteAuditScanner() {
   const calLink = `https://calendly.com/webdesignpros365/consultation?email=${encodeURIComponent(email)}&a1=${encodeURIComponent(domain)}`
 
   return (
-    <section id="site-scanner" className="section bg-gradient-to-b from-white to-[#f8f9fc] py-20">
+    <section id="site-scanner" className="section bg-[#1e2030] py-20">
       <div className="container-custom">
 
         {/* Header */}
@@ -218,7 +218,7 @@ export default function SiteAuditScanner() {
           {step === 'form' && (
             <div className="bg-[#252640] rounded-2xl shadow-xl shadow-gray-200/60 border border-[#2e2c48] p-8">
               {error && (
-                <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-600 text-sm rounded-xl flex items-center gap-2">
+                <div className="mb-4 p-3 bg-red-950/40 border border-red-800/60 text-red-400 text-sm rounded-xl flex items-center gap-2">
                   <AlertCircle className="w-4 h-4 shrink-0" /> {error}
                 </div>
               )}
@@ -290,7 +290,7 @@ export default function SiteAuditScanner() {
                 ))}
               </div>
               {/* Progress bar */}
-              <div className="w-full h-2 rounded-full bg-[#252640]/10">
+              <div className="w-full h-2 rounded-full bg-[#1a1b2e]">
                 <div
                   className="h-2 rounded-full bg-gradient-to-r from-[#2F73EE] to-[#8734E1] transition-all duration-500"
                   style={{ width: `${progress}%` }}
@@ -306,7 +306,7 @@ export default function SiteAuditScanner() {
 
               {/* Platform detection banner */}
               {result.platform.slug !== 'unknown' && (
-                <div className="bg-red-50 border border-red-200 rounded-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center gap-3">
+                <div className="bg-red-950/40 border border-red-800/60 rounded-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center gap-3">
                   <div className="flex items-center gap-2 shrink-0">
                     <AlertCircle className="w-5 h-5 text-red-500 shrink-0" />
                     <span className="text-sm font-bold text-red-700">Built on {result.platform.platform}</span>
@@ -340,7 +340,7 @@ export default function SiteAuditScanner() {
                   result.ranking.tier === 'top25'
                     ? 'bg-emerald-50 border-emerald-200'
                     : result.ranking.tier === 'top100'
-                    ? 'bg-amber-50 border-amber-200'
+                    ? 'bg-amber-950/30 border-amber-800/50'
                     : 'bg-red-50 border-red-200'
                 }`}>
                   <div className="flex items-center justify-between mb-3">
@@ -423,7 +423,7 @@ export default function SiteAuditScanner() {
                           </div>
                         </div>
                         {(result.ranking.tier === 'below100' || !result.ranking.position) && (
-                          <div className="bg-red-50 border border-red-200 rounded-xl p-3">
+                          <div className="bg-red-950/40 border border-red-800/60 rounded-xl p-3">
                             <p className="text-sm font-bold text-red-600 leading-snug">
                               You are getting ghosted by thousands of potential clients.
                             </p>
@@ -465,7 +465,7 @@ export default function SiteAuditScanner() {
                 <div className="bg-[#252640] rounded-2xl border border-[#2e2c48] shadow-sm p-6">
                   <div className="flex items-center justify-between mb-4">
                     <h4 className="text-xs font-bold text-[#c4c0e0] uppercase tracking-wide">Plugins & Scripts Detected</h4>
-                    <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${result.plugins.filter(p => p.weight === 'heavy').length > 0 ? 'bg-red-50 text-red-600 border border-red-200' : 'bg-amber-50 text-amber-600 border border-amber-200'}`}>
+                    <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${result.plugins.filter(p => p.weight === 'heavy').length > 0 ? 'bg-red-950/40 text-red-400 border border-red-800/60' : 'bg-amber-950/30 text-amber-400 border border-amber-800/50'}`}>
                       {result.plugins.length} found · {result.plugins.filter(p => p.weight === 'heavy').length} heavy
                     </span>
                   </div>
@@ -504,7 +504,7 @@ export default function SiteAuditScanner() {
                       value={email}
                       onChange={e => setEmail(e.target.value)}
                       placeholder="your@email.com"
-                      className="flex-1 bg-[#252640]/10 border border-white/20 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-white/50 transition-all"
+                      className="flex-1 bg-[#1a1b2e] border border-white/20 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-white/50 transition-all"
                     />
                     <button
                       type="submit"

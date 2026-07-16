@@ -161,7 +161,7 @@ function StepBrand({ data, set }: { data: StepData; set: (k: string, v: string) 
 
   return (
     <div className="space-y-5">
-      <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-800">
+      <div className="bg-amber-950/30 border border-amber-800/50 rounded-lg p-4 text-sm text-amber-400">
         <strong>For logo and file uploads:</strong> paste a Google Drive or Dropbox share link. Don&apos;t have everything ready? Fill in what you can — we&apos;ll follow up on the rest.
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">

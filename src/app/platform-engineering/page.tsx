@@ -320,7 +320,7 @@ export default function PlatformEngineeringPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-12"
           >
-            <Badge className="mb-4 bg-red-100 text-red-700 border-red-300">The HighLevel Tax</Badge>
+            <Badge className="mb-4 bg-red-950/60 text-red-400 border-red-800">The HighLevel Tax</Badge>
             <h2 className="heading-lg mb-4">Why agencies finally walk away</h2>
             <p className="text-[#a8a4c8]">
               You&apos;re not the only one tired of it. Every agency we&apos;ve helped migrate had the same
@@ -339,13 +339,13 @@ export default function PlatformEngineeringPage() {
                   viewport={{ once: true, amount: 0.15 }}
                   transition={{ delay: i * 0.08 }}
                 >
-                  <Card className="p-6 h-full border-red-200 bg-red-50/30 hover:shadow-md transition-shadow relative overflow-hidden">
+                  <Card className="p-6 h-full border-red-900/50 bg-red-950/20 hover:shadow-md transition-shadow relative overflow-hidden">
                     {/* Top accent strip in red */}
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-red-400" />
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-red-600" />
                     <div className="flex flex-col items-center text-center gap-3">
                       {/* Icon medallion */}
-                      <div className="w-11 h-11 rounded-xl bg-red-100 border border-red-200 flex items-center justify-center flex-shrink-0">
-                        <PainIcon className="w-5 h-5 text-red-600" strokeWidth={2.25} />
+                      <div className="w-11 h-11 rounded-xl bg-red-950/40 border border-red-900/60 flex items-center justify-center flex-shrink-0">
+                        <PainIcon className="w-5 h-5 text-red-400" strokeWidth={2.25} />
                       </div>
                       <div>
                         <h3 className="font-semibold text-[#f0eef8] mb-2">{point.title}</h3>
