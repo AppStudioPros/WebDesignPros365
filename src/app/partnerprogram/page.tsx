@@ -250,6 +250,11 @@ export default function PartnerProgramPage() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
+  // Always scroll to top on page entry
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+  }, []);
+
   const handleUnlock = () => {
     if (companyName.trim().length < 2) {
       setError('Please enter your parent company name to continue.');
@@ -259,7 +264,7 @@ export default function PartnerProgramPage() {
     setUnlocked(true);
     setTimeout(() => {
       document.getElementById('offer')?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
+    }, 150);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -336,17 +341,22 @@ export default function PartnerProgramPage() {
 
               <div className="bg-[#252640] border-2 border-[#8734E1]/50 rounded-2xl overflow-hidden shadow-2xl shadow-[#8734E1]/10">
                 <div className="bg-gradient-to-r from-[#8734E1]/20 to-[#2F73EE]/20 border-b border-[#3a3858] p-8 text-center">
-                  <div className="inline-block px-4 py-1 rounded-full bg-[#8734E1] text-white text-xs font-bold uppercase tracking-widest mb-4">
-                    Partner Price
+                  <div className="flex flex-wrap items-center justify-center gap-2 mb-4">
+                    <div className="inline-block px-4 py-1 rounded-full bg-[#8734E1] text-white text-xs font-bold uppercase tracking-widest">
+                      Partner Price
+                    </div>
+                    <div className="inline-block px-4 py-1 rounded-full bg-amber-500/20 border border-amber-500/50 text-amber-400 text-xs font-bold uppercase tracking-widest">
+                      Limited Time Offer
+                    </div>
                   </div>
                   <div className="flex items-baseline justify-center gap-3 mb-2">
                     <span className="text-6xl font-black text-[#f0eef8]">$1,999<span className="text-3xl">.99</span></span>
                     <span className="text-[#8a87a8] text-sm">one time</span>
                   </div>
-                  <p className="text-[#8a87a8] mb-4">
-                    <span className="line-through text-[#6e6b88]">Normally $9,599.97</span>
-                    {' '}<span className="text-emerald-400 font-semibold">you save $7,599.99</span>
-                  </p>
+                  <div className="mb-4">
+                    <span className="line-through text-[#6e6b88] text-sm">Normally $9,599.97</span>
+                    <div className="text-4xl font-black text-emerald-400 mt-1">You save $7,599.99</div>
+                  </div>
                   <div className="flex flex-wrap justify-center gap-4 text-sm text-[#a8a4c8]">
                     <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-emerald-400" />Custom Next.js website build</span>
                     <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-emerald-400" />3 months daily SEO + AEO + GEO</span>
@@ -484,6 +494,23 @@ export default function PartnerProgramPage() {
                 <p className="text-sm text-[#a8a4c8]">
                   No HighLevel subscriptions. No platform lock-in. If you leave your parent company tomorrow, the site goes with you.
                   Bring in your own dev team whenever you want. Full documentation provided.
+                </p>
+              </div>
+
+              {/* Additional pages pricing */}
+              <div className="bg-[#1e1c35] border border-[#8734E1]/30 rounded-xl px-6 py-5 mb-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <div className="flex items-center gap-3 flex-shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-[#8734E1]/20 border border-[#8734E1]/30 flex items-center justify-center">
+                    <Globe className="w-5 h-5 text-[#c084fc]" />
+                  </div>
+                  <div>
+                    <p className="text-[#f0eef8] font-bold">Additional pages</p>
+                    <p className="text-2xl font-black text-[#c084fc]">$199 <span className="text-sm font-normal text-[#8a87a8]">per page</span></p>
+                  </div>
+                </div>
+                <p className="text-sm text-[#a8a4c8]">
+                  Your package includes up to 5 pages. Need more? Each additional page is $199, one-time, no monthly fees.
+                  Common add-ons: loan program pages, market-specific landing pages, Realtor co-brand pages, testimonial pages.
                 </p>
               </div>
 
