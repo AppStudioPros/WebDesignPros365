@@ -15,7 +15,7 @@ export default function HeroVideo() {
           controls
           playsInline
           preload="none"
-          poster="/videos/ai-search-revolution-poster.jpg"
+          poster="/videos/ai-search-revolution-poster.webp"
           className="w-full block"
           style={{ aspectRatio: '16/9' }}
         >

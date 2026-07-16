@@ -176,7 +176,7 @@ export default function RealEstateFinancialPage() {
               <video
                 controls
                 playsInline
-                poster="/videos/ai-search-revolution-poster.jpg"
+                poster="/videos/ai-search-revolution-poster.webp"
                 className="w-full h-full object-cover"
               >
                 <source src="/videos/ai-search-revolution.mp4" type="video/mp4" />
@@ -296,7 +296,7 @@ export default function RealEstateFinancialPage() {
               <video
                 controls
                 playsInline
-                poster="/videos/real-estate-future-poster.jpg"
+                poster="/videos/real-estate-future-poster.webp"
                 className="w-full h-full object-cover"
               >
                 <source src="/videos/real-estate-future.mp4" type="video/mp4" />

@@ -25,7 +25,7 @@ export default function VideoGeoSection() {
               controls
               playsInline
               preload="none"
-              poster="/videos/seo-is-old-news-poster.jpg"
+              poster="/videos/seo-is-old-news-poster.webp"
               className="w-full block"
               style={{ aspectRatio: '16/9' }}
             >

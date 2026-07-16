@@ -20,14 +20,14 @@ const videos = [
     title: 'The Speed Problem Is Costing You Money',
     description: 'Most business owners are paying for a website that costs them customers — not because the design is bad, but because it takes four seconds to load.',
     url: `${BASE}/videos/speed-problem.mp4`,
-    thumbnailUrl: `${BASE}/videos/speed-problem-poster.jpg`,
+    thumbnailUrl: `${BASE}/videos/speed-problem-poster.webp`,
     uploadDate: '2026-06-15',
   },
   {
     title: 'SEO Is Old News. Meet GEO.',
     description: 'Traditional SEO gets you ranked. In 2026, AI answers the question before users reach your site. Generative Engine Optimization is how you get cited.',
     url: `${BASE}/videos/seo-is-old-news.mp4`,
-    thumbnailUrl: `${BASE}/videos/seo-is-old-news-poster.jpg`,
+    thumbnailUrl: `${BASE}/videos/seo-is-old-news-poster.webp`,
     uploadDate: '2026-06-20',
   },
   {
@@ -41,14 +41,14 @@ const videos = [
     title: 'The AI Search Revolution in Real Estate',
     description: 'Your clients are already asking AI to find agents, compare lenders, and vet providers. This is what that shift looks like — and what it means for your business.',
     url: `${BASE}/videos/ai-search-revolution.mp4`,
-    thumbnailUrl: `${BASE}/videos/ai-search-revolution-poster.jpg`,
+    thumbnailUrl: `${BASE}/videos/ai-search-revolution-poster.webp`,
     uploadDate: '2026-07-06',
   },
   {
     title: 'No Guesswork. Daily AI Search Domination.',
     description: 'Stop guessing what Google and AI want. Our daily optimization system removes the uncertainty and puts your business in front of the right people — every single day.',
     url: `${BASE}/videos/no-guesswork-ai-domination.mp4`,
-    thumbnailUrl: `${BASE}/videos/ai-search-revolution-poster.jpg`,
+    thumbnailUrl: `${BASE}/videos/ai-search-revolution-poster.webp`,
     uploadDate: '2026-07-10',
   },
 ];
