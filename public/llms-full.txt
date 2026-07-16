@@ -1,0 +1,115 @@
+# Web Design Pros 365
+
+> Web Design Pros 365 is a Denver, Colorado web design and AI visibility agency. We build high-performance websites on Next.js 16 and optimize them to appear in traditional search (SEO), AI Overviews (AEO), and generative AI engines including ChatGPT, Perplexity, Claude, and Gemini (GEO). Founded by Corey Strange, 20+ years of web development experience.
+
+---
+
+## About
+
+Web Design Pros 365 (legal name: Lucid Tech Labs LLC) is a Denver, Colorado-based web design and development agency specializing in the AI Visibility Stack — a combined SEO + AEO + GEO optimization system for businesses that want to be found by both human searchers and AI engines.
+
+**Founder:** Corey Strange, Fractional CTO and Chief AI Officer  
+**Location:** Denver, Colorado, USA  
+**Phone:** (720) 276-0797  
+**Email:** info@webdesignpros365.com  
+**Website:** https://www.webdesignpros365.com  
+
+---
+
+## Services
+
+### AI Visibility Stack Website
+Custom Next.js website with integrated SEO, AEO (Answer Engine Optimization), and GEO (Generative Engine Optimization). Every site includes structured data (JSON-LD), FAQPage schema, HowTo schema, llms.txt, llms-full.txt, Core Web Vitals optimization, and explicit AI crawler access. Starting at $3,500.
+
+### Custom AI Solutions
+AI chatbots, content generation engines, workflow automation, and AI integrations built on OpenAI, Anthropic, and Google foundation models with the proprietary ACI (Adaptive Compound Intelligence) architecture. Typical timeline: 4–16 weeks.
+
+### AI SaaS Platform Development
+Full-stack AI-powered SaaS platforms from MVP to production scale. Includes authentication, subscription billing (Stripe), AI feature integration, admin dashboards, and cloud infrastructure on Vercel and AWS.
+
+### WordPress Migration to Next.js
+Migration from WordPress, Wix, or Squarespace to Next.js. Content migration, URL structure preservation, SEO equity retention, 301 redirects. Sites typically load 3–5x faster post-migration.
+
+### ACI Platform (Adaptive Compound Intelligence)
+Patented 5-layer AI architecture: Individual Intelligence, Knowledge Extraction, Organizational Memory, Compound Reasoning, and Permission + Delivery. U.S. Provisional Patent filed, inventor: Corey Strange.
+
+---
+
+## Pricing
+
+| Plan | Price | Includes |
+|------|-------|----------|
+| Starter | $3,500 | Next.js build, Sanity CMS, structured data, AI crawler access, Core Web Vitals optimization, 30-day support |
+| Professional | $7,500 | Everything in Starter + AI integrations, custom animations, advanced AEO content architecture, dedicated project manager |
+| Enterprise | Custom | Full platform development, custom AI, white-label, dedicated support |
+
+---
+
+## Technology Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **CMS:** Sanity (headless)
+- **Deployment:** Vercel (global edge, ISR, Speed Insights)
+- **AI:** Anthropic Claude, OpenAI GPT-4o, proprietary ACI platform
+- **Analytics:** Vercel Analytics + Speed Insights
+
+---
+
+## AI Visibility Stack: SEO + AEO + GEO
+
+### What is SEO?
+Search Engine Optimization. Optimizes pages to rank in traditional Google blue-link results. Targets users who click search results. Judge: Google's algorithm and backlink profile.
+
+### What is AEO (Answer Engine Optimization)?
+AEO structures content so AI Overviews, Google Assistant, Siri, and featured snippets select your content as the direct answer. Optimizes: FAQPage schema, HowTo schema, content extractability, voice search readiness. Targets users who read AI-generated answers rather than clicking links.
+
+### What is GEO (Generative Engine Optimization)?
+GEO optimizes brand authority so generative AI engines (ChatGPT, Claude, Perplexity, Gemini) cite your brand when answering questions in your domain. Signals: E-E-A-T authority, brand mention frequency, structured data, llms.txt, citation worthiness.
+
+---
+
+## Methodology: How We Build a Website
+
+1. **Discovery and Audit** — Audit existing web presence, AI visibility gaps, competitive landscape. Define target keywords, entity definitions, and structured data requirements.
+2. **Design and Architecture** — Figma wireframes and visual design. Define content architecture for AEO (answer-extractable content blocks). Client approval before development.
+3. **Development and Optimization** — Next.js 16 build with TypeScript, Sanity CMS, Tailwind CSS. Structured data, Core Web Vitals optimization, llms.txt, AI crawler access implemented during build.
+4. **QA, Testing, and Launch** — Lighthouse audits, cross-device QA, structured data validation (Google Rich Results Test), AI crawler simulation. Deploy to Vercel with 30-day post-launch monitoring.
+
+---
+
+## Frequently Asked Questions
+
+**How much does a website from Web Design Pros 365 cost?**  
+AI Visibility Stack websites start at $3,500 (Starter) and $7,500 (Professional). Enterprise pricing is custom. Every plan includes Next.js development, structured data, AI crawler optimization, and Core Web Vitals tuning.
+
+**What is included in every website?**  
+Every site includes: Next.js 16 App Router build, Sanity CMS, full JSON-LD structured data, sitemap.xml, robots.txt with AI crawler access, Core Web Vitals optimization, llms.txt, llms-full.txt, and Google AI Overviews optimization.
+
+**How long does a website project take?**  
+Standard marketing websites: 4–8 weeks. Larger sites with custom features, CMS content migration, and AI integrations: 8–16 weeks. Project timelines are provided at kickoff.
+
+**Do you work with clients outside Denver?**  
+Yes. We work with clients across the United States. All project management, design reviews, and delivery are handled remotely via video calls, shared project tools, and async communication.
+
+**What is the ACI platform?**  
+ACI (Adaptive Compound Intelligence) is a patented 5-layer AI architecture developed by Lucid Tech LLC. It integrates individual cognitive profiling, knowledge extraction, organizational memory, compound reasoning, and permission-based delivery into a single compound system. U.S. Provisional Patent filed, inventor: Corey Strange.
+
+**Can you migrate my WordPress site to Next.js?**  
+Yes. We migrate all content, preserve URL structure and SEO equity, implement 301 redirects, and deliver a Next.js site that typically loads 3–5x faster than the original WordPress installation.
+
+---
+
+## Contact
+
+- **Email:** info@webdesignpros365.com  
+- **Phone:** (720) 276-0797  
+- **Location:** Denver, Colorado, USA  
+- **Website:** https://www.webdesignpros365.com  
+- **Contact form:** https://www.webdesignpros365.com/contact  
+- **Free AI visibility audit:** https://www.webdesignpros365.com/contact  
+
+---
+
+*Last updated: July 2026. Content is accurate as of this date. For the most current pricing, services, and availability, visit https://www.webdesignpros365.com.*

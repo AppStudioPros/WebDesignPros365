@@ -1,5 +1,6 @@
 # Web Design Pros 365 — LLM Context File
 # https://www.webdesignpros365.com
+# Full content: https://www.webdesignpros365.com/llms-full.txt
 
 ## About
 Web Design Pros 365 is a Denver, Colorado web design and development agency specializing in high-performance websites built on a modern AI-native stack. Founded by Corey Strange with 20+ years of experience.

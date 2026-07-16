@@ -3,6 +3,8 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { CookieBanner } from "@/components/layout/CookieBanner";
 import { AciChatLazy } from "@/components/chat/AciChatLazy";
 import { Toaster } from "@/components/ui/sonner";
@@ -217,6 +219,8 @@ export default function RootLayout({
         <Toaster position="top-right" />
         <CookieBanner />
         <AciChatLazy />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

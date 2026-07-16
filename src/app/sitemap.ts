@@ -1,8 +1,11 @@
 import type { MetadataRoute } from 'next';
 
+// Update this date whenever site content meaningfully changes
+const SITE_LAST_MODIFIED = '2026-07-16';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.webdesignpros365.com';
-  const lastModified = new Date().toISOString();
+  const lastModified = new Date(SITE_LAST_MODIFIED).toISOString();
 
   return [
     { url: baseUrl, priority: 1.0, changeFrequency: 'weekly', lastModified },
@@ -23,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/services/ai-saas-platforms`, priority: 0.8, changeFrequency: 'monthly', lastModified },
     { url: `${baseUrl}/services/aci-platform`, priority: 0.8, changeFrequency: 'monthly', lastModified },
     { url: `${baseUrl}/services/program-creation`, priority: 0.8, changeFrequency: 'monthly', lastModified },
+    { url: `${baseUrl}/services/ai-ready-seo`, priority: 0.8, changeFrequency: 'monthly', lastModified },
     { url: `${baseUrl}/verticals/real-estate`, priority: 0.7, changeFrequency: 'monthly', lastModified },
     { url: `${baseUrl}/verticals/real-estate-financial`, priority: 0.7, changeFrequency: 'monthly', lastModified },
     { url: `${baseUrl}/verticals/federal-contracting`, priority: 0.7, changeFrequency: 'monthly', lastModified },
