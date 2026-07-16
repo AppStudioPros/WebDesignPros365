@@ -167,7 +167,7 @@ export function howToSchema(name: string, description: string, steps: HowToStep[
 const PAGE_FAQS: Record<string, FAQItem[]> = {
   '/services/ai-visibility': [
     { q: 'What is the AI Visibility Stack?', a: 'The AI Visibility Stack combines SEO (traditional search ranking), AEO (Answer Engine Optimization for AI Overviews and voice search), and GEO (Generative Engine Optimization for citations in ChatGPT, Claude, and Perplexity) into one integrated service.' },
-    { q: 'How long does it take to see results from AEO and GEO?', a: 'SEO improvements typically appear within 60–90 days. AEO and GEO results — citations in AI Overviews and generative engines — typically appear within 30–60 days after structured data and content optimization are deployed.' },
+    { q: 'How long does it take to see results from AEO and GEO?', a: 'SEO improvements typically appear within 60–90 days. AEO and GEO results: citations in AI Overviews and generative engines, typically appear within 30–60 days after structured data and content optimization are deployed.' },
     { q: 'What is the difference between AEO and GEO?', a: 'AEO optimizes your content to be selected as the direct answer in AI Overviews, voice search, and featured snippets. GEO optimizes your brand authority so generative AI models like ChatGPT and Perplexity cite you when answering questions in your domain.' },
     { q: 'Do I need the AI Visibility Stack if I already have good SEO?', a: 'Yes. Traditional SEO only captures clicks on blue links, which is a shrinking share of search behavior. AI Overviews now appear above organic results for most queries, and generative AI usage is growing rapidly. Good traditional SEO does not automatically transfer to AEO or GEO.' },
     { q: 'What structured data schemas do you implement?', a: 'We implement Organization, LocalBusiness, Service, FAQPage, HowTo, WebPage, BreadcrumbList, and WebSite schemas. For specific industries we add RealEstateAgent, MortgageLender, LegalService, and other domain-specific types.' },
@@ -220,7 +220,7 @@ const PAGE_HOWTOS: Record<string, { name: string; description: string; steps: Ho
     steps: [
       { name: 'Discovery and Audit', text: 'We audit your existing web presence, competitive landscape, and AI visibility gaps across Google, ChatGPT, Perplexity, and Gemini. We define target keywords, entity definitions, and structured data requirements.' },
       { name: 'Design and Architecture', text: 'We design the full site in Figma, wireframe every page, define the content architecture for AEO (answer-extractable content blocks), and get client approval before writing a line of code.' },
-      { name: 'Development and Optimization', text: 'We build on Next.js 16 App Router with TypeScript, Sanity CMS, and Tailwind CSS. We implement all structured data schemas, Core Web Vitals optimization, llms.txt, and AI crawler access during the build — not as an afterthought.' },
+      { name: 'Development and Optimization', text: 'We build on Next.js 16 App Router with TypeScript, Sanity CMS, and Tailwind CSS. We implement all structured data schemas, Core Web Vitals optimization, llms.txt, and AI crawler access during the build, not as an afterthought.' },
       { name: 'QA, Performance Testing, and Launch', text: 'We run Lighthouse audits, cross-device QA, structured data validation in Google Rich Results Test, and AI crawler simulation before launch. We deploy to Vercel with zero-downtime deployment and monitor for 30 days post-launch.' },
     ],
   },

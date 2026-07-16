@@ -28,7 +28,7 @@ const allVideos = [
   },
   {
     title: 'The AI Search Revolution in Real Estate',
-    description: 'Your clients are already asking AI to find agents, compare lenders, and vet providers. This is what that shift looks like — and what it means for your business.',
+    description: 'Your clients are already asking AI to find agents, compare lenders, and vet providers. This is what that shift looks like, and what it means for your business.',
     src: '/videos/ai-search-revolution.mp4',
     poster: '/videos/ai-search-revolution-poster.jpg',
     label: 'THE OPPORTUNITY',
@@ -42,7 +42,7 @@ const allVideos = [
   },
   {
     title: 'No Guesswork. Daily AI Search Domination.',
-    description: 'Stop guessing what Google and AI want. Our daily optimization system removes the uncertainty and puts your business in front of the right people — every single day.',
+    description: 'Stop guessing what Google and AI want. Our daily optimization system removes the uncertainty and puts your business in front of the right people, every single day.',
     src: '/videos/no-guesswork-ai-domination.mp4',
     poster: '/videos/ai-search-revolution-poster.jpg',
     label: 'THE EDGE',

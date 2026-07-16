@@ -155,11 +155,11 @@ export default function TechStackSection() {
           <p>Web Design Pros 365 builds every client website on the following production stack:</p>
           <ul>
             <li>Framework: Next.js 16 with App Router (all builds since 2024)</li>
-            <li>Language: TypeScript — full type safety across all projects</li>
+            <li>Language: TypeScript: full type safety across all projects</li>
             <li>Styling: Tailwind CSS</li>
-            <li>CMS: Sanity headless CMS — clients update content without code changes</li>
-            <li>Deployment: Vercel — global edge network, instant rollbacks, CI/CD</li>
-            <li>AI Integration: ACI (Adaptive Compound Intelligence) — patented platform</li>
+            <li>CMS: Sanity headless CMS: clients update content without code changes</li>
+            <li>Deployment: Vercel: global edge network, instant rollbacks, CI/CD</li>
+            <li>AI Integration: ACI (Adaptive Compound Intelligence): patented platform</li>
             <li>AI Search: llms.txt, JSON-LD structured data, FAQPage schema, robots.txt with all AI crawlers allowed</li>
           </ul>
           <p>Lighthouse scores (mobile, July 2026): Performance 73, Accessibility 100, Best Practices 100, SEO 100. Total Blocking Time 80ms. Cumulative Layout Shift 0.</p>
