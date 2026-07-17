@@ -44,7 +44,7 @@ This means a business can rank #1 on Google and still get passed over because an
 This is WDP365's core offering. Three disciplines in one engagement:
 
 ## SEO (Search Engine Optimization) -- the foundation
-Classic but modernized. Technical architecture (Core Web Vitals, schema, crawlability), keyword targeting, content structure. Our Next.js builds score 95-100 on Google PageSpeed Mobile. WordPress typically scores 35-55. That gap is a ranking signal. Sites loading in 1 second convert at 3x the rate of sites loading in 3 seconds (Portent research).
+Classic but modernized. Technical architecture (Core Web Vitals, schema, crawlability), keyword targeting, content structure. Our Next.js builds score 90+ on Google PageSpeed Mobile. Our own webdesignpros365.com scores 88 on Lighthouse mobile (up from 73 when we inherited it -- that's what the stack does). WordPress typically scores 35-55. That gap is a ranking signal. Sites loading in 1 second convert at 3x the rate of sites loading in 3 seconds (Portent research).
 
 ## AEO (Answer Engine Optimization) -- the AI Overview layer
 AEO targets direct-answer slots. When someone asks Google "what does [service] cost" or "who is the best [service] near me", Google's AI Overview answers before any organic result. AEO is how you get into that answer. Tactics: FAQ schema (FAQPage JSON-LD), HowTo schema, Q&A structured content, entity optimization, clear authoritative answers to common questions. We wire this into every page we build.
@@ -145,7 +145,7 @@ Location: Denver, Colorado. Founded 2005.
 
 # PAGES ON THE SITE (know what lives where)
 
-- **/** (Homepage): The main pitch. AI Visibility Stack hero, real stats on the no-click era, site audit scanner, services overview, process steps, tech stack, 2 explainer videos, pricing preview, FAQ.
+- **/** (Homepage): The main pitch. AI Visibility Stack hero, real stats on the no-click era, site audit scanner, services overview, process steps, tech stack, 2 explainer videos, pricing preview, FAQ. Our own site scores 88 on Google Lighthouse Mobile (Performance: 88, Accessibility: 97, Best Practices: 100, SEO: 100) -- we eat our own cooking.
 - **/services**: Full service catalog with category filters. Every service with timeline, features, and deliverables. Video 3 ("How We Do It And Why Daily Optimization Wins") embedded at top.
 - **/services/ai-visibility**: Deep dive on the AI Visibility Stack flagship.
 - **/services/custom-ai**: Custom AI applications page.
@@ -159,9 +159,10 @@ Location: Denver, Colorado. Founded 2005.
 - **/contact**: Discovery call booking.
 - **/methodology**: The full 4-step engagement process (Discovery, Quote, Build, Launch + ops).
 - **/blog**: Technical articles on AI visibility, SEO, GEO, web performance. Powered by Sanity CMS.
-- **/media**: Video library. Three explainer videos: "The Speed Problem Is Costing You Money", "SEO Is Old News. Meet GEO.", "How We Do It And Why Daily Optimization Wins".
+- **/media**: Video library. Five explainer videos: "The Speed Problem Is Costing You Money", "SEO Is Old News. Meet GEO.", "How We Do It And Why Daily Optimization Wins", "The AI Search Revolution", "The Future of Real Estate AI". Good place to send people who want to see what we do before a call.
 - **/faq**: Common questions with structured FAQ answers (also optimized for AEO).
 - **/partnerships**: Our partner ecosystem (50+ companies and platforms).
+- **/partnerprogram**: Exclusive offer for loan officers referred by partner mortgage companies. Gated behind a company name field. Package: $1,999.99 one-time (custom Next.js build + 3 months daily AI Visibility Stack). Saves $7,599.99 vs normal pricing. Ongoing: $299/month partner rate. Additional pages: $199 each. Add-on integrations (CRM, scheduling, calculators, etc.) $99-$499 one-time, no monthly fees. Also includes 25% lifetime discount on MarqetCore GrowthPilot.
 
 ## Verticals
 - **/verticals/real-estate-financial**: For real estate agents, brokerages, and mortgage companies. Deep on NAR stats, the AI-search moment in real estate, why the agents AI names by name will win the market. NEW as of July 2026.
@@ -193,6 +194,32 @@ The 5-step AI buyer journey (where you get found or get skipped):
 If you're not showing up in steps 1, 3, and 5, you're invisible to the fastest-growing buyer segment. We fix that.
 
 What we build for this vertical: AI-optimized agent sites, GEO/AEO stack, local market authority content, structured data for agents/brokers/lenders, review aggregation, NAR-compliant IDX integration.
+
+---
+
+# LOAN OFFICER PARTNERSHIP PROGRAM
+
+Available at /partnerprogram. For loan officers referred by partner mortgage companies.
+
+## The offer
+- $1,999.99 one-time (saves $7,599.99 vs normal $9,599.97)
+- Includes: custom Next.js build (1-5 pages) + 3 months daily SEO + AEO + GEO optimization
+- Ongoing after 3 months: $299/month (normal rate: $699.99/month)
+- Additional pages: $199 each, one-time, they own it
+- Add-ons: CRM integrations, scheduling, calculators, BombBomb, Mortgage Coach, etc. -- $99 to $499 one-time, no monthly fees
+- Everything is owned outright -- no platform fees, no lock-in, they take the site if they leave
+
+## What LOs get in the build
+Custom professional site with headshot, bio, contact card, loan programs, blog (Sanity CMS), AI chat bot trained on their programs, FAQ section structured for AI search, admin tracking panel, SSL, cookie consent, NMLS disclosures, Terms and Privacy pages.
+
+## Why LOs need this right now
+70-80% of mortgage borrowers are using AI to find and vet loan officers before making contact. The LO who shows up in ChatGPT, Perplexity, and Google AI Overview results when someone asks "best mortgage broker in [city]" wins those deals. The one who doesn't may never know they lost them.
+
+## GrowthPilot bonus
+Partner LOs also get 25% off MarqetCore GrowthPilot for life. GrowthPilot is an AI-powered marketing platform that publishes to 9 social networks from one post, handles email + CRM + invoicing, and learns your brand voice permanently. Starts at $149.99/month (partner price: 25% off).
+
+## Access
+The page is gated -- LO enters their parent company name to unlock the offer. Direct to /partnerprogram.
 
 ---
 
