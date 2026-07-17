@@ -76,10 +76,10 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  'px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200',
-                  'text-[#a8a4c8] hover:text-[#8734E1] hover:bg-[#8734E1]/8',
+                  'px-3 py-2 text-sm font-medium transition-colors duration-200 outline-none',
+                  'text-[#a8a4c8] hover:text-[#f0eef8]',
                   pathname === item.href
-                    ? 'text-[#8734E1] font-semibold'
+                    ? 'text-[#f0eef8] font-semibold'
                     : ''
                 )}
               >
