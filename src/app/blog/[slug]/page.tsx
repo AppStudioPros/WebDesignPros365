@@ -1,50 +1,40 @@
-import { getGAPBlogPostBySlug, getAllGAPSlugs, slugify, estimateReadTime, extractExcerpt, formatDate } from "@/lib/gap";
+import { getBlogPost, getAllBlogSlugs } from "@/data/blog-posts";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowLeft, Clock, Tag } from "lucide-react";
 
-const GAP_CLIENT_ID = "10a80963-f49b-4bee-a6d5-c305b98e3317";
-
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
-export const revalidate = 60;
-
 export async function generateStaticParams() {
-  try {
-    const slugs = await getAllGAPSlugs(GAP_CLIENT_ID);
-    return slugs.map((slug) => ({ slug }));
-  } catch {
-    return [];
-  }
+  return getAllBlogSlugs().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  try {
-    const post = await getGAPBlogPostBySlug(GAP_CLIENT_ID, slug);
-    if (!post) return { title: "Post Not Found | Web Design Pros 365" };
-    return {
-      title: `${post.blog_title} | WDP365 Blog`,
-      description: extractExcerpt(post.blog_content, 160),
-    };
-  } catch {
-    return { title: "Blog | Web Design Pros 365" };
-  }
+  const post = getBlogPost(slug);
+  if (!post) return { title: "Post Not Found | Web Design Pros 365" };
+  return {
+    title: `${post.title} | WDP365 Blog`,
+    description: post.excerpt,
+  };
 }
+
+const CATEGORY_COLORS: Record<string, string> = {
+  "AI Visibility": "#8734E1",
+  GEO: "#2F73EE",
+  SEO: "#10b981",
+  Design: "#f59e0b",
+};
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
-
-  let post;
-  try {
-    post = await getGAPBlogPostBySlug(GAP_CLIENT_ID, slug);
-  } catch {}
+  const post = getBlogPost(slug);
   if (!post) notFound();
 
-  const readTime = estimateReadTime(post.blog_content);
+  const color = CATEGORY_COLORS[post.category] || "#8734E1";
 
   return (
     <main className="min-h-screen bg-[#1e2030]">
@@ -62,28 +52,29 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Meta */}
           <div className="flex flex-wrap items-center gap-3 mb-5">
-            <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full border border-[#8734E1]/40 bg-[#8734E1]/15 text-[#c084fc]">
+            <span
+              className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full border"
+              style={{ color, borderColor: `${color}40`, backgroundColor: `${color}15` }}
+            >
               <Tag className="w-3 h-3" />
-              Blog
+              {post.category}
             </span>
             <span className="inline-flex items-center gap-1 text-xs text-[#8a87a8]">
               <Clock className="w-3 h-3" />
-              {readTime}
+              {post.readTime}
             </span>
-            <span className="text-xs text-[#6e6b88]">{formatDate(post.created_at)}</span>
+            <span className="text-xs text-[#6e6b88]">{post.date}</span>
           </div>
 
           {/* Title */}
           <h1 className="text-3xl md:text-4xl font-bold text-[#f0eef8] leading-tight mb-5">
-            {post.blog_title}
+            {post.title}
           </h1>
 
           {/* Lede */}
-          {post.blog_meta && (
-            <p className="text-lg text-[#a8a4c8] mb-8 border-l-4 border-[#8734E1] pl-5 leading-relaxed">
-              {post.blog_meta}
-            </p>
-          )}
+          <p className="text-lg text-[#a8a4c8] mb-8 border-l-4 border-[#8734E1] pl-5 leading-relaxed">
+            {post.meta}
+          </p>
 
           {/* Divider */}
           <div className="border-t border-[#3a3858] mb-10" />
@@ -106,7 +97,7 @@ export default async function BlogPostPage({ params }: Props) {
               prose-pre:bg-[#252640] prose-pre:border prose-pre:border-[#3a3858] prose-pre:rounded-xl
               prose-hr:border-[#3a3858]
             "
-            dangerouslySetInnerHTML={{ __html: post.blog_content }}
+            dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
           {/* CTA */}
