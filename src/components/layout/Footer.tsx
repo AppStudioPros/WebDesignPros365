@@ -36,6 +36,8 @@ export default function Footer() {
             <Link href="/" className="inline-block mb-3">
               <Image
                 src="/logo-wdp365.png"
+                  width={132}
+                  height={48}
                 alt="Web Design Pros 365"
                 width={240}
                 height={60}

@@ -81,22 +81,7 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Body */}
           <div
-            className="
-              prose prose-lg max-w-none
-              prose-headings:text-[#f0eef8] prose-headings:font-bold
-              prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
-              prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-              prose-p:text-[#a8a4c8] prose-p:leading-relaxed prose-p:mb-5
-              prose-strong:text-[#f0eef8]
-              prose-em:text-[#c4c0e0]
-              prose-blockquote:border-l-4 prose-blockquote:border-[#8734E1] prose-blockquote:text-[#a8a4c8] prose-blockquote:pl-5 prose-blockquote:not-italic
-              prose-a:text-[#8734E1] prose-a:no-underline hover:prose-a:underline hover:prose-a:text-[#c084fc]
-              prose-ul:text-[#a8a4c8] prose-ol:text-[#a8a4c8]
-              prose-li:my-1
-              prose-code:text-[#c084fc] prose-code:bg-[#252640] prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
-              prose-pre:bg-[#252640] prose-pre:border prose-pre:border-[#3a3858] prose-pre:rounded-xl
-              prose-hr:border-[#3a3858]
-            "
+            className="blog-prose"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 

@@ -61,8 +61,8 @@ export default function Header() {
             <Image
               src="/logo-wdp365.png"
               alt="Web Design Pros 365"
-              width={200}
-              height={50}
+              width={197}
+              height={72}
               className="h-[72px] w-auto"
               
               priority

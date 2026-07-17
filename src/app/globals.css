@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
-
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -248,3 +246,63 @@ body {
     background-position: 0% 50%;
   }
 }
+
+/* Blog prose styles — scoped to avoid loading full @tailwindcss/typography */
+.blog-prose h2 {
+  color: #f0eef8;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+.blog-prose h3 {
+  color: #f0eef8;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.blog-prose p {
+  color: #a8a4c8;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+  font-size: 1.0625rem;
+}
+.blog-prose strong {
+  color: #f0eef8;
+  font-weight: 600;
+}
+.blog-prose em { color: #c4c0e0; }
+.blog-prose ul, .blog-prose ol {
+  color: #a8a4c8;
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.blog-prose ul { list-style-type: disc; }
+.blog-prose ol { list-style-type: decimal; }
+.blog-prose li { margin-bottom: 0.35rem; line-height: 1.75; }
+.blog-prose blockquote {
+  border-left: 4px solid #8734E1;
+  padding-left: 1.25rem;
+  color: #a8a4c8;
+  margin: 1.5rem 0;
+}
+.blog-prose a { color: #8734E1; text-decoration: none; }
+.blog-prose a:hover { color: #c084fc; text-decoration: underline; }
+.blog-prose code {
+  color: #c084fc;
+  background: #252640;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.875em;
+}
+.blog-prose pre {
+  background: #252640;
+  border: 1px solid #3a3858;
+  border-radius: 12px;
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+}
+.blog-prose hr { border-color: #3a3858; margin: 2rem 0; }
