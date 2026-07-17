@@ -40,7 +40,7 @@ export default function Footer() {
                 width={240}
                 height={60}
                 className="h-[48px] w-auto"
-                style={{ mixBlendMode: 'screen' }}
+                
               />
             </Link>
             <p className="text-[#a8a4c8] mb-3 max-w-sm text-sm">

@@ -168,7 +168,7 @@ export default function AboutPage() {
                     src="/logo-wdp365.png"
                     alt="Web Design Pros 365"
                     className="max-w-full h-auto"
-                    style={{ mixBlendMode: 'screen' }}
+                    
                   />
                 </div>
                 <div className="text-center text-xs text-[#8a87a8] mt-3">
