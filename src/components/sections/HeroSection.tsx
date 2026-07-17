@@ -64,6 +64,7 @@ function CountUpStat({ stat, inView }: { stat: typeof stats[0]; inView: boolean 
 }
 
 export default function HeroSection() {
+  const [rankingOpen, setRankingOpen] = useState(false);
   return (
     <section className="relative flex flex-col justify-start pt-48 pb-48 min-h-screen" style={{ contain: 'layout' }}>
       {/* Animated Gradient Background — full opacity dark */}
@@ -113,6 +114,56 @@ export default function HeroSection() {
               );
             })}
           </div>
+
+          {/* AI Ranking Proof Button */}
+          <div className="flex justify-center mb-10 -mt-6">
+            <button
+              onClick={() => setRankingOpen(true)}
+              className="group inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl font-bold text-sm md:text-base transition-all duration-200 shadow-lg shadow-[#8734E1]/30 hover:shadow-[#8734E1]/50 hover:scale-105"
+              style={{ background: 'linear-gradient(135deg, #8734E1, #2F73EE)', color: '#fff' }}
+            >
+              <span className="text-lg">🤖</span>
+              How does Web Design Pros 365 rank on AI?
+              <span className="opacity-70 group-hover:opacity-100 transition-opacity">→</span>
+            </button>
+          </div>
+
+          {/* AI Ranking Modal */}
+          {rankingOpen && (
+            <div
+              className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+              onClick={() => setRankingOpen(false)}
+            >
+              <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
+              <div
+                className="relative z-10 max-w-2xl w-full bg-[#1a1930] rounded-2xl border border-[#8734E1]/40 shadow-2xl overflow-hidden"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="flex items-center justify-between p-4 border-b border-[#3a3858]">
+                  <div>
+                    <p className="text-[#f0eef8] font-bold text-sm">ChatGPT Search Results</p>
+                    <p className="text-[#8a87a8] text-xs mt-0.5">"Who is the best web design company for AI-optimized websites?"</p>
+                  </div>
+                  <button
+                    onClick={() => setRankingOpen(false)}
+                    className="w-8 h-8 rounded-lg bg-[#252640] border border-[#3a3858] text-[#8a87a8] hover:text-[#f0eef8] flex items-center justify-center text-lg leading-none transition-colors"
+                  >
+                    ×
+                  </button>
+                </div>
+                <div className="p-2">
+                  <img
+                    src="/images/chatgpt-ranking.png"
+                    alt="WDP365 ranked #1 on ChatGPT for AI-optimized web design"
+                    className="w-full rounded-xl"
+                  />
+                </div>
+                <div className="px-4 pb-4 text-center">
+                  <p className="text-[#8a87a8] text-xs">This is what AI Visibility Stack does for your business.</p>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Second hero line */}
           <p
