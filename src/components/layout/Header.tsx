@@ -70,7 +70,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-0.5">
+          <nav className="hidden lg:flex items-center">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -122,16 +122,7 @@ export default function Header() {
               </motion.button>
             </Link>
 
-            {/* Start Your Project — filled */}
-            <Link href="/contact">
-              <motion.button
-                className="px-5 py-2 bg-[#8734E1] text-white text-sm font-semibold rounded-xl hover:bg-[#7020c8] transition-all shadow-md"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Start Your Project
-              </motion.button>
-            </Link>
+
           </div>
 
           {/* Mobile Menu Button */}
