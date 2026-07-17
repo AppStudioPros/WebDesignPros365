@@ -63,7 +63,7 @@ export default function Header() {
               alt="Web Design Pros 365"
               width={200}
               height={50}
-              className="h-[132px] w-auto"
+              className="h-[72px] w-auto"
               style={{ mixBlendMode: 'screen' }}
               priority
             />
