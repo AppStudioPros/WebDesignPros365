@@ -36,13 +36,10 @@ export default function Footer() {
             <Link href="/" className="inline-block mb-3">
               <Image
                 src="/logo-wdp365.png"
-                  width={132}
-                  height={48}
                 alt="Web Design Pros 365"
-                width={240}
-                height={60}
+                width={132}
+                height={48}
                 className="h-[48px] w-auto"
-                
               />
             </Link>
             <p className="text-[#a8a4c8] mb-3 max-w-sm text-sm">
