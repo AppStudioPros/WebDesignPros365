@@ -13,6 +13,7 @@ const footerLinks = {
   resources: [
     { name: 'Blog', href: '/blog' },
     { name: 'Media', href: '/media' },
+    { name: 'Partner Program', href: '/partnerprogram' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'Partnerships', href: '/partnerships' },
