@@ -39,7 +39,7 @@ export default function Footer() {
                 alt="Web Design Pros 365"
                 width={240}
                 height={60}
-                className="h-[52px] w-auto"
+                className="h-[78px] w-auto"
                 style={{ mixBlendMode: 'screen' }}
               />
             </Link>
