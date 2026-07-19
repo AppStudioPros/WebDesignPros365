@@ -213,9 +213,44 @@ export const BLOG_POSTS: BlogPost[] = [
 <p>The businesses that establish AI citations in their market before their competitors do will hold a compounding advantage that is genuinely hard to overturn. The models update slowly. The citations you earn today last months.</p>
 <p>The window is open. It will not stay open.</p>
     `,
+  },,
+  {
+    slug: "5-seo-mistakes-costing-your-business-customers",
+    title: "5 SEO Mistakes That Are Costing Your Business Customers (And How to Fix Them)",
+    category: "SEO",
+    date: "July 19, 2026",
+    readTime: "7 min read",
+    excerpt: "Most business owners think SEO is about keywords. It\'s not — it\'s about being findable, trustworthy, and fast across Google and AI search alike. Here are five mistakes that quietly kill visibility.",
+    meta: "If your website has any of these five problems, you\'re losing customers to competitors who fixed them months ago.",
+    content: `
+<h2>Most business owners think SEO is about keywords. It\'s not.</h2>
+<p>Keywords matter, but they\'re one signal among dozens that Google and AI platforms evaluate before deciding whether to surface your business. In 2026, search behavior has split in two directions: people still type things into Google, but they\'re also asking ChatGPT, Perplexity, Gemini, and Claude for direct answers. Both paths lead to the same outcome — a business gets the customer or it doesn\'t. The difference between winning and losing is usually technical, not clever.</p>
+<p>These five mistakes are common, fixable, and expensive to ignore. If your site has any of them, it\'s costing you visibility every single day.</p>
+<h2>Mistake #1: Your Site Loads Too Slowly</h2>
+<p>Google\'s Core Web Vitals thresholds put the target Largest Contentful Paint (LCP) at under 2.5 seconds. Interaction to Next Paint (INP) — which replaced First Input Delay in 2024 — should be under 200 milliseconds. Miss them and you\'re penalized in rankings. A 1-second delay in load time reduces conversions by roughly 7%. On mobile, where over 63% of web traffic now originates, the tolerance is even lower.</p>
+<p>Slow sites are almost never slow because of bad code — they\'re slow because of decisions made during the build that nobody went back to clean up. Uncompressed images. Fonts loading from multiple CDNs. A page builder that added a dozen JavaScript files. Hosting that hasn\'t been evaluated since the site launched. These things compound.</p>
+<ul><li>Convert all images to WebP — most JPEG and PNG files are 3–10x larger than they need to be</li><li>Move to hosting optimized for your stack; generic shared hosting is usually the bottleneck</li><li>Audit third-party scripts — every chat widget, pixel, and analytics tag adds load time</li><li>Implement lazy loading for images below the fold</li><li>Run a PageSpeed Insights test at <strong>pagespeed.web.dev</strong></li></ul>
+<h2>Mistake #2: Your Site Is Mobile-Readable But Not Mobile-Friendly</h2>
+<p>There\'s a difference between a site that doesn\'t break on mobile and one that actually works on mobile. The text is readable. Nothing overlaps. But the buttons are too small to tap, the contact form requires zooming, and navigation is buried in a menu half of visitors never open. Google indexes your mobile version first. If your mobile experience is clunky, that\'s what Google evaluates — not the desktop version.</p>
+<ul><li>Tap targets should be at least 48x48px with spacing between them</li><li>No horizontal scrolling — if users scroll sideways, the layout is broken</li><li>Body text should be 16px minimum — anything smaller triggers pinch-zoom</li><li>Test on a real phone, not just Chrome DevTools</li></ul>
+<h2>Mistake #3: Your Content Doesn\'t Actually Say Anything</h2>
+<p>A lot of business websites look expensive and say nothing. Search engines are parsing your site for specificity. What services do you offer? What locations do you serve? What problems do you solve, and for whom? If your service pages are three paragraphs of generic copy, you\'re not giving Google enough signal to rank you for anything meaningful.</p>
+<p>The content gap is also where most businesses lose the AI game before they realize they\'re playing it. When ChatGPT is deciding whether to name you as a recommended mortgage broker, it\'s pulling from sites that directly answered the questions people actually ask. If your site has those answers written out clearly, you become source material. If it doesn\'t, you\'re invisible to the model.</p>
+<ul><li>Dedicated service pages for each offering — not one long "Services" page</li><li>Location-specific pages for each city or region you serve</li><li>A FAQ section that answers real questions with real specificity</li><li>Headings that describe sections accurately — not clever, accurate</li></ul>
+<h2>Mistake #4: You Set Up a Google Business Profile Once and Forgot About It</h2>
+<p>Local SEO is not a one-time task. Google uses engagement signals — review recency, Q&amp;A responses, photo updates, post activity — as part of how it decides who shows up in the local map pack. A profile sitting untouched for two years is actively hurting you compared to competitors who treat it like a live channel.</p>
+<p>Citation consistency is equally damaging. If your business name reads differently across Yelp, BBB, and your website, Google\'s confidence in your business information drops. NAP consistency — Name, Address, Phone — across every directory listing is foundational and tedious to fix, which is exactly why most businesses haven\'t done it.</p>
+<ul><li>Google Business Profile with complete, accurate information and regular activity</li><li>Consistent NAP across Yelp, BBB, Bing Places, Apple Maps, and industry directories</li><li>Recent reviews matter more than volume — 12 from 2026 often outrank 200 from 2019</li></ul>
+<h2>Mistake #5: You Haven\'t Thought About AI Search At All</h2>
+<p>AI-assisted search grew by over 400% between 2024 and 2026. Roughly 30% of US adults now use ChatGPT, Perplexity, or a similar AI tool regularly to find businesses. For professional services, AI is becoming the first stop before the phone call. Ranking on Google and getting cited by AI are completely different things. Google ranks pages. AI systems — ChatGPT, Claude, Perplexity, Google AI Overviews — cite sources. They\'re deciding whether your site is authoritative enough and structured clearly enough to pull from when constructing an answer.</p>
+<p>This is what <strong>GEO (Generative Engine Optimization)</strong> and <strong>AEO (Answer Engine Optimization)</strong> address. The major AI platforms have their own crawlers: <strong>GPTBot</strong> for OpenAI, <strong>PerplexityBot</strong> for Perplexity, <strong>ClaudeBot</strong> for Anthropic. If your robots.txt is blocking them — which happens more than you\'d think on older WordPress sites — you\'re invisible to those platforms regardless of your Google ranking. And even if they can reach your site, vague content and missing schema markup means the model can\'t confidently extract what it needs to cite you.</p>
+<ul><li>Check your robots.txt — confirm GPTBot, PerplexityBot, and ClaudeBot are not blocked</li><li>Implement JSON-LD schema markup for LocalBusiness, Service, and FAQPage on every relevant page</li><li>Write content that directly answers questions your clients actually ask</li><li>Build topical authority — AI models weight sites that cover a subject thoroughly</li></ul>
+<h2>The pattern across all five</h2>
+<p>These mistakes all point in the same direction: making your site trustworthy, accessible, and clear to entities that aren\'t human — search algorithms, AI engines, and the bots that feed them. Businesses that fix these get found organically, get cited by AI, and convert better because their technical infrastructure signals credibility before a visitor reads a single word.</p>
+<p>If you want to know exactly where your site stands on any of these five points, WDP365 runs a technical audit as part of the discovery call — an actual review of your Core Web Vitals, content structure, schema implementation, local signals, and AI crawler access. Book it at <strong>webdesignpros365.com/contact</strong>.</p>
+    `,
   },
 ];
-
 export function getBlogPost(slug: string): BlogPost | undefined {
   return BLOG_POSTS.find((p) => p.slug === slug);
 }
@@ -223,78 +258,3 @@ export function getBlogPost(slug: string): BlogPost | undefined {
 export function getAllBlogSlugs(): string[] {
   return BLOG_POSTS.map((p) => p.slug);
 }
-,
-  {
-    slug: "5-seo-mistakes-costing-your-business-customers",
-    title: "5 SEO Mistakes That Are Costing Your Business Customers (And How to Fix Them)",
-    category: "SEO",
-    date: "July 19, 2026",
-    readTime: "7 min read",
-    excerpt: "Most business owners think SEO is about keywords. It's not — it's about being findable, trustworthy, and fast across Google and AI search alike. Here are five mistakes that quietly kill visibility.",
-    meta: "If your website has any of these five problems, you're losing customers to competitors who fixed them months ago.",
-    content: `
-<h2>Most business owners think SEO is about keywords. It's not.</h2>
-<p>Keywords matter, but they're one signal among dozens that Google and AI platforms evaluate before deciding whether to surface your business. In 2026, search behavior has split in two directions: people still type things into Google, but they're also asking ChatGPT, Perplexity, Gemini, and Claude for direct answers. Both paths lead to the same outcome — a business gets the customer or it doesn't. The difference between winning and losing is usually technical, not clever.</p>
-<p>These five mistakes are common, fixable, and expensive to ignore. If your site has any of them, it's costing you visibility every single day.</p>
-
-<h2>Mistake #1: Your Site Loads Too Slowly</h2>
-<p>Google's Core Web Vitals thresholds put the target Largest Contentful Paint (LCP) at under 2.5 seconds. Interaction to Next Paint (INP) — which replaced First Input Delay in 2024 — should be under 200 milliseconds. These aren't soft guidelines. They're ranking signals. Miss them and you're penalized, not just inconvenient. A 1-second delay in load time reduces conversions by roughly 7%. On mobile, where over 63% of web traffic now originates, the tolerance is even lower.</p>
-<p>Slow sites are almost never slow because of bad code — they're slow because of decisions made during the build that nobody went back to clean up. Uncompressed images. Fonts loading from multiple CDNs. A page builder that added a dozen JavaScript files. Hosting that hasn't been evaluated since the site launched. These things compound. A site that scored 70 on PageSpeed two years ago might be scoring 45 today with no changes made by anyone.</p>
-<ul>
-<li>Convert all images to WebP — most JPEG and PNG files are 3–10x larger than they need to be</li>
-<li>Move to hosting optimized for your stack; generic shared hosting is usually the bottleneck</li>
-<li>Audit third-party scripts — every chat widget, pixel, and analytics tag adds load time</li>
-<li>Implement lazy loading for images below the fold</li>
-<li>Run a real PageSpeed Insights test at <strong>pagespeed.web.dev</strong> and look at the actual numbers</li>
-</ul>
-
-<h2>Mistake #2: Your Site Is Mobile-Readable But Not Mobile-Friendly</h2>
-<p>There's a difference between a site that doesn't break on mobile and one that actually works on mobile. A lot of business websites fall into the first category. The text is readable. Nothing overlaps. But the buttons are too small to tap cleanly, the contact form requires zooming to fill out, and the navigation is buried in a hamburger menu half the visitors never open.</p>
-<p>Google indexes your mobile version first and only. If your mobile experience is clunky, that's what Google is evaluating — not the clean desktop version. For local searches — attorney near me, loan officer in [city], real estate agent [neighborhood] — the number skews even higher because people are searching from their phones in the moment and calling whoever answers the clearest.</p>
-<ul>
-<li>Tap targets should be at least 48x48px with spacing between them</li>
-<li>No horizontal scrolling — if users scroll sideways, the layout is broken</li>
-<li>Forms should be minimal and use the right keyboard types (numeric for phone, email for email)</li>
-<li>Body text should be 16px minimum — anything smaller triggers pinch-zoom</li>
-<li>Test on a real phone, not just Chrome DevTools</li>
-</ul>
-
-<h2>Mistake #3: Your Content Doesn't Actually Say Anything</h2>
-<p>A lot of business websites look expensive and say nothing. "We're a trusted team of professionals dedicated to serving your needs." Search engines are not reading your site for vibes. They're parsing it for specificity. What services do you offer? What locations do you serve? What problems do you solve, and for whom? If your service pages are three paragraphs of generic copy, you're not giving Google enough signal to rank you for anything meaningful.</p>
-<p>The content gap is also where most businesses lose the AI game before they realize they're playing it. When ChatGPT is deciding whether to name you as a recommended mortgage broker, it's pulling from sites that directly answered the questions people actually ask: "How long does the mortgage process take?" "What documents do I need for a refinance?" If your site has those answers written out clearly, you become source material. If it doesn't, you're invisible to the model regardless of how good the design looks.</p>
-<ul>
-<li>Dedicated service pages for each offering — not one long "Services" page with everything crammed together</li>
-<li>Location-specific pages for each city or region you serve</li>
-<li>A FAQ section that answers real questions with real specificity</li>
-<li>Blog posts and resources that demonstrate actual expertise</li>
-<li>Headings that describe sections accurately — not clever, accurate</li>
-</ul>
-
-<h2>Mistake #4: You Set Up a Google Business Profile Once and Forgot About It</h2>
-<p>Local SEO is not a one-time task. A Google Business Profile that's been sitting untouched for two years is actively hurting you compared to competitors who treat it like a live channel. Google uses engagement signals — review recency, Q&A responses, photo updates, post activity — as part of how it decides who shows up in the local map pack.</p>
-<p>Citation consistency is equally damaging and less obvious. If your business name is "Smith Law Group" on your website, "Smith Law Group, LLC" on Yelp, and "Smith Legal" on a directory that listed you without asking, Google's confidence in your business information drops. NAP consistency — Name, Address, Phone — across every directory listing is foundational and it's tedious to fix, which is exactly why most businesses haven't done it.</p>
-<ul>
-<li>Google Business Profile with complete, accurate information and regular activity</li>
-<li>Consistent NAP across Yelp, BBB, Bing Places, Apple Maps, and industry directories</li>
-<li>Recent reviews matter more than volume — 12 reviews from 2026 often outrank 200 from 2019</li>
-<li>Location pages on your website that are genuinely useful, not just keyword repetition</li>
-</ul>
-
-<h2>Mistake #5: You Haven't Thought About AI Search At All</h2>
-<p>This is the newest mistake on this list, and the one with the biggest gap between businesses that have addressed it and those that haven't. AI-assisted search grew by over 400% between 2024 and 2026. Roughly 30% of US adults now use ChatGPT, Perplexity, or a similar AI tool regularly to find information and make purchasing decisions. For professional services, AI is becoming the first stop before the phone call. Someone asks "who should I use for a home equity loan in [city]" and then calls whoever gets named.</p>
-<p>Ranking on Google and getting cited by AI are completely different things. Google ranks pages. AI systems — ChatGPT, Claude, Perplexity, Google AI Overviews — cite sources. They're deciding whether your site is authoritative enough, structured clearly enough, and specific enough to pull from when constructing an answer. This is what <strong>GEO (Generative Engine Optimization)</strong> and <strong>AEO (Answer Engine Optimization)</strong> address.</p>
-<p>The major AI platforms have their own crawlers: <strong>GPTBot</strong> for OpenAI, <strong>PerplexityBot</strong> for Perplexity, <strong>ClaudeBot</strong> for Anthropic. These bots index your content separately from Google. If your robots.txt is blocking them — which happens more than you'd think on older WordPress sites — you're invisible to those platforms regardless of your Google ranking. And even if they can reach your site, vague content and missing schema markup means the model can't confidently extract what it needs to cite you.</p>
-<ul>
-<li>Check your robots.txt — confirm GPTBot, PerplexityBot, and ClaudeBot are not blocked</li>
-<li>Implement JSON-LD schema markup for LocalBusiness, Service, and FAQPage on every relevant page</li>
-<li>Write content that directly answers questions your clients actually ask</li>
-<li>Build topical authority — AI models weight sites that cover a subject thoroughly, not sites optimized for one keyword</li>
-<li>Ensure your site is technically clean: fast load, valid HTML, no crawl errors</li>
-</ul>
-
-<h2>The pattern across all five</h2>
-<p>These mistakes all point in the same direction: they're about making your site trustworthy, accessible, and clear to entities that aren't human — search algorithms, AI engines, and the bots that feed them. Businesses that fix these don't have to spend more on ads. They get found organically, they get cited by AI, and they convert better because the technical infrastructure of their website signals credibility before a visitor reads a single word.</p>
-<p>If you want to know exactly where your site stands on any of these five points, WDP365 runs a technical audit as part of the discovery call. Not a generic automated scan — an actual review of your Core Web Vitals, content structure, schema implementation, local signals, and AI crawler access. Book that at <strong>webdesignpros365.com/contact</strong>.</p>
-    `,
-  }
-];
