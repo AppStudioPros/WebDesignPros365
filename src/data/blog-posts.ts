@@ -213,7 +213,7 @@ export const BLOG_POSTS: BlogPost[] = [
 <p>The businesses that establish AI citations in their market before their competitors do will hold a compounding advantage that is genuinely hard to overturn. The models update slowly. The citations you earn today last months.</p>
 <p>The window is open. It will not stay open.</p>
     `,
-  },,
+  },
   {
     slug: "5-seo-mistakes-costing-your-business-customers",
     title: "5 SEO Mistakes That Are Costing Your Business Customers (And How to Fix Them)",
