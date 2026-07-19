@@ -2,7 +2,7 @@ import { getBlogPost, getAllBlogSlugs } from "@/data/blog-posts";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowLeft, Clock, Tag } from "lucide-react";
+import { ArrowLeft, Clock, Calendar } from "lucide-react";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -22,11 +22,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const CATEGORY_COLORS: Record<string, string> = {
-  "AI Visibility": "#8734E1",
-  GEO: "#2F73EE",
-  SEO: "#10b981",
-  Design: "#f59e0b",
+const CATEGORY_COLORS: Record<string, { color: string; label: string }> = {
+  "AI Visibility": { color: "#8734E1", label: "AI Visibility" },
+  GEO:             { color: "#2F73EE", label: "GEO" },
+  SEO:             { color: "#10b981", label: "SEO" },
+  Design:          { color: "#f59e0b", label: "Design" },
 };
 
 export default async function BlogPostPage({ params }: Props) {
@@ -34,50 +34,73 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getBlogPost(slug);
   if (!post) notFound();
 
-  const color = CATEGORY_COLORS[post.category] || "#8734E1";
+  const cat = CATEGORY_COLORS[post.category] || { color: "#8734E1", label: post.category };
 
   return (
     <main className="min-h-screen bg-[#1e2030]">
-      <article className="pt-32 pb-24">
-        <div className="container-custom max-w-3xl mx-auto px-4">
 
-          {/* Back */}
+      {/* ── Hero Header ─────────────────────────────────────── */}
+      <header style={{ position: "relative", overflow: "hidden", background: "linear-gradient(160deg, #10102a 0%, #1a1830 45%, #1e1c35 100%)", borderBottom: "1px solid #2e2c4a" }}>
+
+        {/* Purple glow top-left */}
+        <div style={{ position: "absolute", top: "-80px", left: "-60px", width: "420px", height: "420px", borderRadius: "50%", background: "radial-gradient(circle, rgba(135,52,225,0.18) 0%, transparent 70%)", pointerEvents: "none" }} />
+        {/* Blue glow bottom-right */}
+        <div style={{ position: "absolute", bottom: "-60px", right: "5%", width: "320px", height: "320px", borderRadius: "50%", background: "radial-gradient(circle, rgba(47,115,238,0.14) 0%, transparent 70%)", pointerEvents: "none" }} />
+        {/* Subtle grid */}
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(135,52,225,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(135,52,225,0.04) 1px, transparent 1px)", backgroundSize: "48px 48px", pointerEvents: "none" }} />
+
+        <div className="container-custom max-w-3xl mx-auto px-4" style={{ position: "relative", zIndex: 1, paddingTop: "9rem", paddingBottom: "3.5rem" }}>
+
+          {/* Back link */}
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-sm text-[#8a87a8] hover:text-[#c084fc] transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-sm font-medium transition-colors mb-7"
+            style={{ color: "#8a87a8" }}
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Blog
           </Link>
 
-          {/* Meta */}
+          {/* Category + meta row */}
           <div className="flex flex-wrap items-center gap-3 mb-5">
             <span
-              className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full border"
-              style={{ color, borderColor: `${color}40`, backgroundColor: `${color}15` }}
+              className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full"
+              style={{ color: cat.color, background: `${cat.color}18`, border: `1px solid ${cat.color}35`, letterSpacing: "0.05em", textTransform: "uppercase" }}
             >
-              <Tag className="w-3 h-3" />
-              {post.category}
+              {cat.label}
             </span>
-            <span className="inline-flex items-center gap-1 text-xs text-[#8a87a8]">
-              <Clock className="w-3 h-3" />
+            <span className="inline-flex items-center gap-1.5 text-xs" style={{ color: "#6e6b88" }}>
+              <Clock className="w-3.5 h-3.5" />
               {post.readTime}
             </span>
-            <span className="text-xs text-[#6e6b88]">{post.date}</span>
+            <span className="inline-flex items-center gap-1.5 text-xs" style={{ color: "#6e6b88" }}>
+              <Calendar className="w-3.5 h-3.5" />
+              {post.date}
+            </span>
           </div>
 
           {/* Title */}
-          <h1 className="text-3xl md:text-4xl font-bold text-[#f0eef8] leading-tight mb-5">
+          <h1
+            className="font-bold leading-tight mb-5"
+            style={{ fontSize: "clamp(1.75rem, 4vw, 2.75rem)", color: "#f0eef8", letterSpacing: "-0.02em", lineHeight: 1.2 }}
+          >
             {post.title}
           </h1>
 
-          {/* Lede */}
-          <p className="text-lg text-[#a8a4c8] mb-8 border-l-4 border-[#8734E1] pl-5 leading-relaxed">
-            {post.meta}
-          </p>
+          {/* Accent bar + subtitle */}
+          <div style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
+            <div style={{ width: "3px", minHeight: "100%", flexShrink: 0, borderRadius: "2px", background: `linear-gradient(180deg, ${cat.color} 0%, #2F73EE 100%)`, alignSelf: "stretch" }} />
+            <p style={{ fontSize: "1.05rem", color: "#a8a4c8", lineHeight: 1.75, margin: 0 }}>
+              {post.meta}
+            </p>
+          </div>
 
-          {/* Divider */}
-          <div className="border-t border-[#3a3858] mb-10" />
+        </div>
+      </header>
+
+      {/* ── Article Body ─────────────────────────────────────── */}
+      <article className="pb-24">
+        <div className="container-custom max-w-3xl mx-auto px-4 pt-12">
 
           {/* Body */}
           <div
