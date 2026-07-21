@@ -17,8 +17,11 @@ const CATEGORY_COLORS: Record<string, string> = {
 };
 
 export default function BlogPage() {
-  const featured = BLOG_POSTS[0];
-  const rest = BLOG_POSTS.slice(1);
+  const sorted = [...BLOG_POSTS].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+  const featured = sorted[0];
+  const rest = sorted.slice(1);
 
   return (
     <main className="min-h-screen bg-[#1e2030]">
