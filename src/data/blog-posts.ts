@@ -290,7 +290,59 @@ export const BLOG_POSTS: BlogPost[] = [
 <p>Pick one tool from this list — the one that addresses your biggest weekly time drain — and spend 30 minutes getting familiar with it this week. Build the habit with one, then layer in the next. Within a month you'll have recovered meaningful time and have a clearer sense of where each tool fits your workflow.</p>
 <p>If you want to know whether your website is actually visible to AI search engines right now, WDP365 includes a technical AI readiness audit as part of the discovery call. We check your Core Web Vitals, schema markup, AI crawler access, and content structure. Book it at <strong>webdesignpros365.com/contact</strong>.</p>
     `,
-  }
+  },
+  {
+    slug: "7-signs-your-website-is-costing-you-customers",
+    title: "7 Signs Your Website Is Costing You Customers (And How to Fix Them)",
+    category: "SEO",
+    date: "July 22, 2026",
+    readTime: "7 min read",
+    excerpt: "Your website might look fine to you — but if visitors are leaving without calling, booking, or filling out a form, something is broken. Here are 7 signs your site is quietly turning away customers.",
+    meta: "Is your website a lead machine or a leaky bucket? Find out which of these 7 signs are costing you business right now.",
+    content: `
+<p>A loan officer spent $1,200 on Google ads last month. The clicks came in — 340 of them. Know how many people filled out his contact form? Three. He called us convinced his ads were broken. They weren't. His website was. Every one of those visitors landed on a page that loaded slowly, didn't explain what he actually did, and made contacting him feel like applying for a second mortgage. The ads were fine. The site was a $1,200 drain with a broken faucet at the end.</p>
+<p>This happens constantly, across every industry — real estate agents, contractors, attorneys, mortgage brokers. They invest in getting traffic and never question why it isn't converting. If you haven't audited your website recently, there's a good chance one of these seven signs applies to you.</p>
+
+<h2>Sign #1: It Takes Too Long to Load</h2>
+<p>Google's <strong>Core Web Vitals</strong> set a clear threshold: your page's Largest Contentful Paint (LCP) should happen in under 2.5 seconds. Pages that miss that mark are ranked lower. And the behavior data explains why — 53% of mobile visitors leave a site that takes longer than three seconds to load. Every additional second of delay reduces conversions by approximately 7%.</p>
+<p>Slow sites almost always have the same culprits: uncompressed images, shared hosting that throttles under real traffic, page builders loading ten JavaScript files before showing content, and stacked third-party scripts — analytics, chat widgets, ad pixels — that nobody has audited in years. Run a test at <strong>pagespeed.web.dev</strong> and look at the actual LCP number. If it's over 2.5 seconds, you have a problem worth fixing before anything else.</p>
+<ul><li>Convert all images to WebP — most should be under 150KB</li><li>Remove or defer third-party scripts not essential to the page</li><li>Audit your hosting — cheap shared hosting is usually the bottleneck</li></ul>
+
+<h2>Sign #2: It Doesn't Look Good on Mobile</h2>
+<p>Over 63% of web traffic now comes from mobile. For local service businesses — attorneys, loan officers, contractors — that number is higher, because people search for local services on their phones in the moment they need help. Google has used <strong>mobile-first indexing</strong> since 2023, meaning it ranks your site based on the mobile experience, not desktop. If your desktop site looks great and your mobile site requires pinching and scrolling, you're getting penalized twice: once by the visitor who leaves, and once by Google.</p>
+<p>The problems we see most often aren't dramatic. They're small frictions: a phone number that isn't tap-to-call, a hero image that covers the headline on small screens, a contact form with fields too small to fill in without zooming. None of these feel "broken" when you check from a desktop — which is exactly why they go unfixed for months.</p>
+<ul><li>Test on an actual phone, not browser DevTools</li><li>Verify phone numbers are clickable links</li><li>Confirm your primary headline is visible without scrolling on a 375px screen</li></ul>
+
+<h2>Sign #3: Visitors Don't Know What You Do</h2>
+<p>There's a version of this on almost every site we audit: the headline says something like "Where Quality Meets Commitment" or "Building Tomorrow's Success Together." These sound fine until you realize they could apply to a plumber, a financial advisor, a dentist, or a dog groomer equally. A visitor has about 3–5 seconds to decide if they're in the right place. If your above-the-fold content doesn't tell them what you do, who you help, and where — most of them leave.</p>
+<p>Specificity is not the enemy of branding. "FHA and VA Home Loans for First-Time Buyers in Central Florida" tells a visitor in six seconds whether they've found what they're looking for. That's worth more than any tagline that took three weeks to workshop. The goal above the fold is not to impress — it's to confirm that this is the right place.</p>
+<ul><li>Rewrite your headline to include what you do, who you serve, and where (if local)</li><li>Test it: read your homepage to someone unfamiliar with your business — can they describe what you do in 5 seconds?</li></ul>
+
+<h2>Sign #4: There's No Clear Call-to-Action</h2>
+<p>Every page should answer one question for the visitor: <em>what do I do next?</em> When a page has five competing CTAs — "Learn More," "Subscribe," "Download," "Schedule," "Contact" — the visitor's brain stalls. Pick <strong>one primary action per page</strong> and build everything around getting visitors to take it.</p>
+<p>The friction points that kill this: forms that ask too many questions upfront (people abandon anything over 4–5 fields on first contact), CTAs buried below the fold, and button copy that says "Submit" instead of "Get My Free Estimate." The specificity reduces perceived commitment — a visitor who knows exactly what they're agreeing to is far more likely to click.</p>
+<ul><li>Cut contact forms to 3 fields max for initial contact</li><li>Make CTA button copy specific — tell the visitor exactly what happens when they click</li><li>Place at least one CTA above the fold on every service page</li></ul>
+
+<h2>Sign #5: You're Not Showing Up in Google or AI Search</h2>
+<p>Until a few years ago, "showing up online" meant ranking on page one of Google. That's still important — but it's no longer the whole picture. A growing percentage of search behavior now happens inside AI tools: <strong>ChatGPT, Perplexity, Google's AI Overviews, and Claude</strong>. These platforms have their own crawlers — <strong>GPTBot, PerplexityBot, ClaudeBot</strong> — that actively index the web to build the knowledge these models draw from when generating answers. If your site isn't being crawled by these bots, or if your content isn't structured in a way they can interpret, you won't be cited when someone asks ChatGPT "who's the best mortgage broker in Phoenix?" or Perplexity "recommend a personal injury attorney near me."</p>
+<p>This is where <strong>GEO (Generative Engine Optimization)</strong> and <strong>AEO (Answer Engine Optimization)</strong> come in. GEO is the practice of structuring your content, authority signals, and site architecture so AI systems can find, understand, and cite your business. AEO is about formatting your content to directly answer the questions your customers ask — so an AI model pulls your answer, not a competitor's. Both require intentional content structure, well-formed <strong>JSON-LD schema markup</strong> that tells crawlers exactly what your business is and what you offer, and a robots.txt file that doesn't accidentally block AI crawlers.</p>
+<p>We've audited sites where the robots.txt was blocking GPTBot or PerplexityBot — usually because a developer copied a restrictive template years ago and nobody checked it. The business owner had no idea. They were invisible to every AI-powered search experience. This is the core of what WDP365's <strong>AI Visibility Stack</strong> addresses — making sure your business appears in the answers AI platforms give, not just the links Google returns.</p>
+<ul><li>Check your robots.txt — confirm GPTBot, PerplexityBot, and ClaudeBot are not blocked</li><li>Add LocalBusiness + Service schema markup (JSON-LD) to every relevant page</li><li>Create FAQ sections that answer questions in plain, direct language</li><li>Build content that leads with the answer, then supports it</li></ul>
+
+<h2>Sign #6: It Looks Outdated</h2>
+<p>Research shows visitors form a first impression of a website in <strong>50 milliseconds</strong> — before reading a single word. That impression is almost entirely visual. Stock photos from 2015, mismatched fonts, cluttered layouts — these aren't just aesthetic problems. They're <strong>trust signals</strong>. A site that looks outdated immediately raises the question: is this business still active? Are they good at what they do?</p>
+<p>In 2026, the design bar has risen for every industry. Customers compare your HVAC company's website against well-funded competitors and national brands, even when they prefer to hire local. That comparison happens in seconds. Clean layouts, real photography, strong brand color consistency, and mobile-native design aren't optional upgrades — they're the baseline for a site people take seriously.</p>
+
+<h2>Sign #7: Nobody Is Contacting You</h2>
+<p>If your site gets traffic and produces no inquiries, the problem is almost always friction — something between the visitor's intent and the point of contact. The most common sources: contact forms that ask for too much (every additional required field reduces completion by 10–15%), phone numbers that aren't prominent or clickable on mobile, no clear statement of what happens after someone reaches out, and contact pages that feel like dead ends instead of conversion points.</p>
+<p>A form that asks for name, email, and one specific question outperforms a full intake form significantly. You can gather the rest after they've made contact. The goal of the form is to start the conversation — not to finish it before it begins. Lead your contact page with what happens next: "We'll respond within 24 hours and schedule a free 20-minute site review." That specificity converts.</p>
+<ul><li>Cut your contact form to 3 fields for first contact</li><li>Make your phone number large, prominent, and tap-to-call on every page</li><li>Tell visitors what happens after they submit — set expectations</li></ul>
+
+<h2>Where to Start</h2>
+<p>Run your own site through this list. Most business websites have at least three of these seven problems. The highest-priority fixes are load speed, mobile experience, and AI search visibility — because those affect whether people can find you at all, before they've even seen your content. The rest determine whether the people who do find you actually convert.</p>
+<p>If you want to know specifically where your site stands, WDP365 runs a technical audit as part of the discovery call — Core Web Vitals, schema markup, AI crawler access, content structure, local signals. Book it at <strong>webdesignpros365.com/contact</strong>.</p>
+    `,
+  },
 ];
 export function getBlogPost(slug: string): BlogPost | undefined {
   return BLOG_POSTS.find((p) => p.slug === slug);
