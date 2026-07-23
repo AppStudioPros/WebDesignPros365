@@ -343,6 +343,57 @@ export const BLOG_POSTS: BlogPost[] = [
 <p>If you want to know specifically where your site stands, WDP365 runs a technical audit as part of the discovery call — Core Web Vitals, schema markup, AI crawler access, content structure, local signals. Book it at <strong>webdesignpros365.com/contact</strong>.</p>
     `,
   },
+  {
+    slug: "how-ai-decides-which-businesses-to-recommend",
+    title: "Why Your Website Is Now Competing for AI Recommendations — and How the Decision Actually Gets Made",
+    category: "AI Visibility",
+    date: "July 23, 2026",
+    readTime: "7 min read",
+    excerpt: "Everyone knows they need to rank on Google. Almost nobody understands how AI platforms decide which businesses to recommend — and those decisions are already happening millions of times a day.",
+    meta: "The mechanics behind how ChatGPT, Perplexity, and Google AI Overview decide which businesses to cite — and what your website needs to qualify.",
+    content: `
+<p>A few months ago, a contractor in New Haven asked us why a competitor was showing up in ChatGPT answers for "general contractors in New Haven CT" and he wasn't. Both businesses had similar reviews, similar service areas, similar years in business. The difference wasn't reputation. It was how their websites were built and what information those sites made available to AI crawlers.</p>
+<p>Most business owners have spent years thinking about one thing: Google rankings. That thinking is still valid. But there's a second evaluation happening now — one that's less understood, growing faster, and producing outcomes that have nothing to do with where you rank in a traditional search result. This post is about how that second evaluation actually works.</p>
+
+<h2>How AI Search Engines Actually Work (They're Not All the Same)</h2>
+<p>The first thing to understand is that "AI search" isn't one uniform thing. The major platforms — <strong>ChatGPT</strong>, <strong>Perplexity</strong>, <strong>Google AI Overviews</strong>, and <strong>Claude</strong> — work differently from each other, and that difference matters for how you approach visibility.</p>
+<p><strong>ChatGPT</strong> uses a combination of training data and real-time web browsing via its <strong>GPTBot</strong> crawler. When you ask it for a local business recommendation, it draws from what it learned during training plus what GPTBot has indexed recently. Your website needs to be accessible to GPTBot (not blocked in robots.txt) and needs content the model can extract and attribute to your business as a real-world entity.</p>
+<p><strong>Perplexity</strong> operates primarily through real-time web search — closer to a search engine in architecture than a traditional LLM. It uses <strong>PerplexityBot</strong> to crawl the web and synthesizes answers from current indexed sources, citing them inline. Being cited by Perplexity is directly tied to having content that ranks for the relevant query and that PerplexityBot can read. Block its crawler and you don't exist in its answers.</p>
+<p><strong>Google AI Overviews</strong> sits on top of Google's existing search index, pulling from sites that already rank well and assembling synthesized answers. Traditional SEO work still matters here — but so does having content structured in a way that's easy to extract and quote accurately. <strong>Claude</strong> (Anthropic) has its own <strong>ClaudeBot</strong> and tends to weight structured, authoritative content with clear provenance heavily.</p>
+
+<h2>How AI Actually Decides Which Business to Name</h2>
+<p>When someone asks Perplexity "recommend a personal injury attorney in Hartford, CT," the platform isn't scrolling through a paid index. It's doing something closer to what a fast, thorough researcher would do: pulling the top results for that query, reading the content, assessing whether it directly answers the question, and synthesizing a response that cites the most credible-seeming sources.</p>
+<p>The key concept is <strong>entity recognition</strong>. Before an AI platform can recommend your business, it needs to understand that your business is a real, specific thing in the world — not just words on a page. This is built through structured data signals: your <strong>JSON-LD schema markup</strong> (which explicitly tells crawlers "this is a business, it's called X, it's at Y, it provides service Z"), your <strong>Google Business Profile</strong> (which anchors your business in Google's entity graph), <strong>NAP consistency</strong> (name, address, phone matching across every directory), and <strong>third-party citations</strong> from authoritative sources that confirm your business exists and is what you say it is.</p>
+<p>Once an AI model has established that your business is a real entity it can reference with confidence, the next question is whether your website contains content it can actually use. This is where <strong>content extractability</strong> matters. A page that says "We provide comprehensive legal services across Connecticut" gives a model nothing to cite. A page that says "We handle car accident injury claims in Hartford, CT — cases typically involve X, Y, Z, and clients recover compensation for medical bills, lost wages, and pain and suffering" gives the model specific, citable information it can pull into a response with confidence.</p>
+
+<h2>The Signals AI Engines Actually Weigh</h2>
+<p>The factors that influence AI recommendations aren't entirely different from traditional SEO — but the reasons they matter are different, and that changes how you approach them.</p>
+<p><strong>Website speed and crawlability:</strong> AI crawlers operate under time and resource constraints. A page that takes 6 seconds to load may get crawled less thoroughly — or skipped entirely — by a bot on a tight crawl budget. Fast sites get indexed more completely. This is why Core Web Vitals matter not just for Google rankings but for AI visibility.</p>
+<p><strong>Schema markup:</strong> Traditional SEO treated structured data as a "nice to have." For AI visibility, it's closer to essential. <strong>LocalBusiness</strong>, <strong>Service</strong>, <strong>Review</strong>, and <strong>FAQPage</strong> schema markup explicitly tell AI systems what your business is, what it does, where it operates, and what customers say about it. Without this, models have to infer — and inference introduces uncertainty, which means less confident recommendations.</p>
+<p><strong>Helpful, specific content:</strong> AI platforms are calibrated to surface content that genuinely answers questions. Content written to convert (aspirational, brand-voice, vague) often performs worse than content written to inform (specific, factual, direct). FAQ sections on service pages, detailed service descriptions with geographic specificity, blog posts addressing real customer questions — these are formats AI systems favor because they're easy to extract and attribute.</p>
+<p><strong>Reviews and third-party mentions:</strong> AI models treat reviews on Google, Yelp, and industry platforms as social proof signals. Recency and specificity matter more than volume. A business with 12 recent, detailed reviews often outperforms one with 200 generic reviews from four years ago. Third-party mentions — local news, industry directories, community platforms — function as citation anchors that help models confirm your legitimacy.</p>
+
+<h2>SEO Isn't Dead — It Has Two New Layers</h2>
+<p>Traditional SEO — keyword-optimized content, backlinks, technical site health — remains foundational. It's what gets you into Google's index and establishes baseline authority. But in 2026, two additional practices sit on top of it.</p>
+<p><strong>AEO (Answer Engine Optimization)</strong> is the practice of formatting content so AI systems can extract and cite specific answers. Where SEO optimizes for crawlers and keyword relevance, AEO optimizes for answerability — making sure your pages provide clear, quotable, direct responses to the specific questions buyers are asking AI assistants.</p>
+<p><strong>GEO (Generative Engine Optimization)</strong> is broader — it's the full practice of building entity authority, structured data, and content architecture so AI systems can find, understand, and confidently recommend your business. It includes schema implementation, robots.txt configuration, content strategy, and citation building across third-party platforms. The most visible businesses in 2026 have all three working together.</p>
+
+<h2>What to Actually Do Right Now</h2>
+<ul>
+<li><strong>Check your robots.txt.</strong> Confirm GPTBot, PerplexityBot, and ClaudeBot are not blocked. Search for "User-agent: GPTBot" — if it's listed with Disallow, you're invisible to OpenAI's crawler.</li>
+<li><strong>Implement JSON-LD schema markup.</strong> At minimum: LocalBusiness, Service for each offering, and FAQPage on pages with Q&A content. Validate with Google's Rich Results Test.</li>
+<li><strong>Rewrite service pages for specificity.</strong> Each page should name the service, the location, who it's for, and what the process looks like. Vague copy is hard to extract. Specific copy is easy to cite.</li>
+<li><strong>Add FAQ sections to service pages.</strong> Real questions your clients ask, written in natural language. These are prime extraction targets for AI-generated answers.</li>
+<li><strong>Audit NAP consistency.</strong> Your business name, address, and phone should match exactly across Google Business Profile, Yelp, BBB, Apple Maps, and any industry directory.</li>
+<li><strong>Run a Core Web Vitals audit.</strong> Target LCP under 2.5 seconds. Use PageSpeed Insights to find and fix the biggest offenders.</li>
+<li><strong>Keep publishing specific, question-answering content.</strong> Blog posts that address real client questions build topical authority AI platforms recognize over time.</li>
+</ul>
+
+<h2>The Window Is Still Open</h2>
+<p>The contractor in New Haven we mentioned at the start? We audited his site, found GPTBot was blocked in his robots.txt, implemented LocalBusiness and Service schema, and rewrote three service pages with specific geographic content and FAQ sections. He started showing up in ChatGPT responses for his service area within weeks. His competitor didn't do anything different. The site was just built for how search actually works now.</p>
+<p>The businesses building AI citation authority today are the ones that will be harder to displace when the rest of the market catches up. WDP365 includes a full AI readiness audit — crawler access, schema implementation, content structure, Core Web Vitals, local signals — as part of the discovery call. Book it at <strong>webdesignpros365.com/contact</strong>.</p>
+    `,
+  },
 ];
 export function getBlogPost(slug: string): BlogPost | undefined {
   return BLOG_POSTS.find((p) => p.slug === slug);
