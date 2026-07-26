@@ -6,6 +6,7 @@ export interface BlogPost {
   readTime: string;
   excerpt: string;
   meta: string;
+  mainImage?: string;
   content: string;
 }
 
@@ -258,6 +259,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "7 min read",
     excerpt: "Repetitive tasks are quietly eating your week - drafting the same emails, hunting for research, building graphics from scratch. These five AI tools handle the grind so you can focus on the work that actually grows your business.",
     meta: "Five tools small business owners are using right now to cut 10+ hours of weekly busywork - and what to do next.",
+    mainImage: "/images/blog-ai-tools-small-business.png",
     content: `
 <p>Think about last Tuesday. You opened your inbox and found three messages that needed responses - a client asking about your pricing, a lead wanting to know your turnaround time, a vendor following up on an invoice. You've answered all three of those questions before. Dozens of times. And yet you sat there, typing fresh sentences, hunting for the right tone, copying details from old emails to make sure you got the numbers right. By the time you were done, forty minutes had passed.</p>
 <p>That's not a productivity problem. That's a tooling problem. And it's fixable.</p>
@@ -299,6 +301,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "7 min read",
     excerpt: "Your website might look fine to you - but if visitors are leaving without calling, booking, or filling out a form, something is broken. Here are 7 signs your site is quietly turning away customers.",
     meta: "Is your website a lead machine or a leaky bucket? Find out which of these 7 signs are costing you business right now.",
+    mainImage: "/images/blog-7-signs-website-costing-customers.png",
     content: `
 <p>A loan officer spent $1,200 on Google ads last month. The clicks came in - 340 of them. Know how many people filled out his contact form? Three. He called us convinced his ads were broken. They weren't. His website was. Every one of those visitors landed on a page that loaded slowly, didn't explain what he actually did, and made contacting him feel like applying for a second mortgage. The ads were fine. The site was a $1,200 drain with a broken faucet at the end.</p>
 <p>This happens constantly, across every industry - real estate agents, contractors, attorneys, mortgage brokers. They invest in getting traffic and never question why it isn't converting. If you haven't audited your website recently, there's a good chance one of these seven signs applies to you.</p>
@@ -351,6 +354,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "7 min read",
     excerpt: "Everyone knows they need to rank on Google. Almost nobody understands how AI platforms decide which businesses to recommend - and those decisions are already happening millions of times a day.",
     meta: "The mechanics behind how ChatGPT, Perplexity, and Google AI Overview decide which businesses to cite - and what your website needs to qualify.",
+    mainImage: "/images/blog-how-ai-recommends-businesses.png",
     content: `
 <p>A few months ago, a contractor in New Haven asked us why a competitor was showing up in ChatGPT answers for "general contractors in New Haven CT" and he wasn't. Both businesses had similar reviews, similar service areas, similar years in business. The difference wasn't reputation. It was how their websites were built and what information those sites made available to AI crawlers.</p>
 <p>Most business owners have spent years thinking about one thing: Google rankings. That thinking is still valid. But there's a second evaluation happening now - one that's less understood, growing faster, and producing outcomes that have nothing to do with where you rank in a traditional search result. This post is about how that second evaluation actually works.</p>
@@ -402,6 +406,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "6 min read",
     excerpt: "Every month you put off fixing your website, someone chooses your competitor instead. The worst part? You never even know they were looking.",
     meta: "Your website is making decisions for your business 24/7. Here's what it's been quietly costing you.",
+    mainImage: "/images/blog-cost-of-waiting-website.png",
     content: `
 <p>Marcus runs a plumbing business out of Naperville, Illinois. He's been doing it for 14 years. His Google reviews are solid - 4.8 stars, 112 reviews, plenty of people talking about how he showed up on time, fixed the problem right the first time, and didn't overcharge. His trucks are clean. His guys are licensed. He's genuinely good at what he does.</p>
 <p>His website was built in 2018.</p>
@@ -461,6 +466,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "7 min read",
     excerpt: "Business owners almost always know where their customers came from. What they rarely know is everything that happened in between, and how many times their website had to earn the customer before that call was ever made.",
     meta: "The buying journey isn't one step anymore. Here's what actually happens before a customer picks up the phone.",
+    mainImage: "/images/blog-customer-journey-paths.png",
     content: `
 <p>Tony runs an HVAC company in suburban Columbus. He's been in business for eleven years, has a full crew, and gets a steady stream of new customers. When a first-time caller books a maintenance appointment, Tony usually asks the standard question: "How did you find us?"</p>
 <p>Nine times out of ten, the answer is something short. "A neighbor mentioned you." "I think I saw you on Google." "Someone in my neighborhood group posted about you."</p>
