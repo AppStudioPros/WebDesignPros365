@@ -390,3 +390,60 @@ body {
   font-size: 0.95rem;
   line-height: 1.7;
 }
+
+/* ── Blog prose: h2 gradient headers ─────────────────────── */
+.blog-prose h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 2.75rem 0 1rem;
+  line-height: 1.25;
+  position: relative;
+  padding-top: 1rem;
+  background: linear-gradient(90deg, #c084fc 0%, #818cf8 50%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.blog-prose h2::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #8734E1, #2F73EE);
+  margin-bottom: 0.75rem;
+}
+
+/* ── Blog prose: h3 ──────────────────────────────────────── */
+.blog-prose h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #c4c0e0;
+  letter-spacing: -0.01em;
+  margin: 2rem 0 0.75rem;
+}
+
+/* ── Callout box ─────────────────────────────────────────── */
+.blog-prose .callout {
+  background: linear-gradient(90deg, rgba(135,52,225,0.1) 0%, rgba(47,115,238,0.06) 100%);
+  border-left: 3px solid #8734E1;
+  border-radius: 0 12px 12px 0;
+  padding: 1rem 1.25rem;
+  margin: 2rem 0;
+  color: #d4d0f0;
+  font-size: 0.975rem;
+  line-height: 1.75;
+}
+
+/* ── Strong paragraph auto-highlight ────────────────────── */
+.blog-prose p strong:only-child,
+.blog-prose p > strong:first-child:last-child {
+  display: block;
+  background: linear-gradient(90deg, rgba(135,52,225,0.08) 0%, transparent 100%);
+  border-left: 2px solid rgba(135,52,225,0.5);
+  padding: 0.5rem 0.875rem;
+  border-radius: 0 8px 8px 0;
+  color: #e0dcf8;
+  font-size: 0.975rem;
+}
