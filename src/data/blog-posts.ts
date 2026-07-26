@@ -19,6 +19,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "6 min read",
     excerpt: "70-80% of people in finance, real estate, and professional services are now using AI to find and vet providers before making contact. The business that shows up in those results wins. The one that does not may never know the deal was lost.",
     meta: "AI-powered search has fundamentally changed how buyers find businesses. Here's what it means for you and exactly what to do about it.",
+    mainImage: "/images/blog-google-not-only-search.png",
     content: `
 <h2>The way people find businesses has changed. Most business owners haven't caught up.</h2>
 <p>When someone needs a mortgage broker, a web designer, a contractor, or an attorney in 2026, they don't just Google it. They ask ChatGPT. They ask Perplexity. They ask Google's AI Overview. They ask Siri. And the answer they get back is not a list of links - it's a name. One or two names. Maybe three.</p>
@@ -73,6 +74,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "7 min read",
     excerpt: "SEO gets you ranked on Google. GEO gets you cited by ChatGPT, Perplexity, and Claude. They require different strategies, different content formats, and different technical infrastructure. Here's how to think about both.",
     meta: "Most businesses are still optimizing for a search engine landscape that no longer exists. Here is how GEO differs from SEO and what you need to do about it.",
+    mainImage: "/images/blog-seo-vs-geo.png",
     content: `
 <h2>A tale of two searches</h2>
 <p>Picture two people searching for a mortgage broker in Denver right now.</p>
@@ -128,6 +130,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "5 min read",
     excerpt: "A slow website doesn't just frustrate visitors. It signals to Google, AI crawlers, and every ranking algorithm that your site is not trustworthy. Here's what your performance score is actually telling the internet about you.",
     meta: "Google Lighthouse is a free tool that scores your site on performance, accessibility, SEO, and best practices. Most business websites score below 50. Here's why that matters and what you can do about it.",
+    mainImage: "/images/blog-website-hardest-working.png",
     content: `
 <h2>Your website has a report card. Most owners have never seen it.</h2>
 <p>Google Lighthouse is a publicly available tool that scores any website from 0 to 100 on four dimensions: Performance, Accessibility, Best Practices, and SEO. You can run it yourself at pagespeed.web.dev in about 60 seconds.</p>
@@ -223,6 +226,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "7 min read",
     excerpt: "Most business owners think SEO is about keywords. It\'s not - it\'s about being findable, trustworthy, and fast across Google and AI search alike. Here are five mistakes that quietly kill visibility.",
     meta: "If your website has any of these five problems, you\'re losing customers to competitors who fixed them months ago.",
+    mainImage: "/images/blog-seo-mistakes.png",
     content: `
 <h2>Most business owners think SEO is about keywords. It\'s not.</h2>
 <p>Keywords matter, but they\'re one signal among dozens that Google and AI platforms evaluate before deciding whether to surface your business. In 2026, search behavior has split in two directions: people still type things into Google, but they\'re also asking ChatGPT, Perplexity, Gemini, and Claude for direct answers. Both paths lead to the same outcome - a business gets the customer or it doesn\'t. The difference between winning and losing is usually technical, not clever.</p>
