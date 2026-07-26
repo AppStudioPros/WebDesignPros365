@@ -180,8 +180,8 @@ export default async function BlogPostPage({ params }: Props) {
 
       {/* ── Related Posts ─────────────────────────────────────── */}
       {related.length > 0 && (
-        <section className="border-t border-[#2e2c4a] pb-24" style={{ background: "#191828" }}>
-          <div className="container-custom max-w-3xl mx-auto px-4 pt-14">
+        <section className="border-t border-[#2e2c4a] py-20" style={{ background: "#191828" }}>
+          <div className="container-custom max-w-3xl mx-auto px-4">
             <h2 className="text-lg font-bold text-[#f0eef8] mb-8" style={{ letterSpacing: "-0.01em" }}>
               Keep reading
             </h2>
