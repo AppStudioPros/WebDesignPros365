@@ -140,7 +140,7 @@ export default async function BlogPostPage({ params }: Props) {
       )}
 
       {/* ── Article Body ─────────────────────────────────────── */}
-      <article className="pb-16">
+      <article className="pb-24">
         <div className="container-custom max-w-3xl mx-auto px-4" style={{ paddingTop: post.mainImage ? "3rem" : "3.5rem" }}>
 
           {/* Body prose */}
