@@ -515,6 +515,77 @@ export const BLOG_POSTS: BlogPost[] = [
 <p>If you want to find out where your business is leaking in that journey, start at <strong>webdesignpros365.com/contact</strong>. We'll take an honest look at what's there and tell you specifically what's working and what isn't.</p>
     `,
   },
+  {
+    slug: "5-second-test-can-someone-tell-what-your-business-does",
+    title: "The 5-Second Test: Can Someone Tell What Your Business Does?",
+    category: "Web Design",
+    date: "July 29, 2026",
+    readTime: "6 min read",
+    excerpt: "Most visitors decide whether to stay or leave your website in seconds. If your homepage doesn't immediately answer what you do and who you help, they're gone before they ever learn what makes you great.",
+    mainImage: "/images/blog-5-second-test.png",
+    meta: "Most visitors decide whether to stay or leave your website in seconds. If your homepage doesn't immediately answer what you do and who you help, they're gone before they ever learn what makes you great.",
+    content: `
+<p>Someone lands on your homepage. They got there from a Google search, maybe a friend's recommendation, maybe a social post. They don't know you yet. And in about five seconds, they've already decided whether to stay or leave.</p>
+<p>That's not an exaggeration. It's just how people browse. Nobody reads every word on a homepage before deciding if it's worth their time. They scan. They glance. They form an impression almost instantly. And if that impression doesn't answer the one question they're silently asking — "Am I in the right place?" — they're gone.</p>
+<p>This is the 5-second test. And most small business websites fail it without ever knowing they do.</p>
+
+<h2>Why Clarity Beats Cleverness</h2>
+<p>There's a temptation when you're building or writing for your own website to get a little creative with the headline. You want to stand out. You want something that sounds polished and inspired. That's understandable.</p>
+<p>But there's a real difference between a headline that's memorable and one that actually works.</p>
+<p>Take two examples. Imagine you land on a homepage with the headline: <strong>"Building Digital Dreams."</strong> That sounds nice. It's got rhythm. But what does it mean? Are these people a marketing agency? A software company? A design firm? Do they work with small businesses or enterprise clients? You genuinely can't tell.</p>
+<p>Now imagine the headline says: <strong>"Custom Websites Built to Help Small Businesses Grow."</strong> That's not as poetic. But you know exactly what they do, exactly who they help, and you can immediately judge whether it applies to you.</p>
+<p>Clarity converts. Clever is a nice bonus if you can pull it off without sacrificing the first thing. But when you have to choose between the two, choose clear every time.</p>
+<p>The goal of your homepage isn't to impress visitors with your brand voice. It's to help the right people recognize they're in the right place, as fast as possible. Everything else is secondary.</p>
+
+<h2>Common Mistakes That Cost You Visitors</h2>
+<p>Most homepage clarity problems aren't the result of bad intentions. They happen because business owners are too close to their own work. You know what you do so well that it feels obvious. But to a stranger, nothing is obvious until you spell it out.</p>
+<p>Here are the patterns that come up most often:</p>
+<ul>
+<li><strong>Too much jargon.</strong> Industry terms and insider language might make sense to you, but they create friction for first-time visitors. If someone has to think hard about what your words mean, they've already lost confidence in the page.</li>
+<li><strong>Generic marketing language.</strong> Phrases like "world-class solutions," "passion-driven results," or "delivering excellence" say absolutely nothing specific. Every business claims these things. None of them actually communicate what you do.</li>
+<li><strong>Hero images with no context.</strong> A beautiful photo of a team smiling, or an abstract graphic, can look great. But if there's no headline that grounds it, the visitor gets visual information without useful information. The image supports the message — it doesn't replace it.</li>
+<li><strong>Missing or buried calls to action.</strong> Even if someone understands what you do, they need a clear next step. If your CTA is vague, hidden below the fold, or absent entirely, you've answered the first question but left them stranded on the second.</li>
+<li><strong>Trying to say everything at once.</strong> Some homepages list every service, every feature, every achievement, every client, every award in the first scroll. The result is noise. When everything is emphasized, nothing is. Visitors don't read walls of equal-weight content — they look for what stands out.</li>
+</ul>
+<p>Any one of these can undermine an otherwise solid homepage. A few of them together and you've got a page that looks professional but doesn't actually communicate.</p>
+
+<h2>How to Run the 5-Second Test on Your Own Homepage</h2>
+<p>The good news is this test is simple to run. You don't need software or a budget. You just need someone who isn't you.</p>
+<p>Pull up your homepage on a laptop or desktop. Find someone who has never seen your website before and isn't deeply familiar with your business. A neighbor, a friend from a different industry, a family member. The less they know about what you do, the better.</p>
+<p>Show them the homepage for five seconds. Then close it or flip the screen away.</p>
+<p>Ask them three questions:</p>
+<ul>
+<li>What does this company do?</li>
+<li>Who is it for?</li>
+<li>What would you do next if you were interested?</li>
+</ul>
+<p>If they answer confidently and correctly, your homepage is doing its job.</p>
+<p>If they hesitate, give a vague answer, or get something wrong, that's not a reflection on them. That's a signal from your homepage. It means the message isn't landing the way you think it is.</p>
+<p>Run this with two or three different people if you can. Patterns emerge quickly. You'll hear the same hesitations or misunderstandings, and those become your list of things to fix.</p>
+<p>The hardest part of this exercise is staying quiet while they answer. Don't explain or clarify. The homepage has to do that work on its own. If you find yourself wanting to explain what you actually do, that explanation belongs on the page.</p>
+
+<h2>What Great Homepages Actually Do</h2>
+<p>The best small business homepages aren't the flashiest ones. They're the ones that answer four things quickly and clearly.</p>
+<p><strong>What you do.</strong> Not in vague terms, not with buzzwords. In plain language. "We build custom websites for local service businesses." You can get specific here. Specific is better.</p>
+<p><strong>Who you help.</strong> This is where a lot of homepages go generic. "We help businesses of all sizes" sounds inclusive but ends up connecting with nobody. Naming your actual customer makes the right people feel seen and helps the wrong people self-select out, which saves everyone time.</p>
+<p><strong>Why you're different.</strong> This doesn't have to be a grand statement. It can be something practical. Maybe you offer faster turnaround. Maybe you specialize in a specific industry. Maybe you provide support others don't. One real differentiator, stated plainly, is worth more than a list of superlatives.</p>
+<p><strong>What visitors should do next.</strong> One clear action. Not three competing buttons. Not a form and a phone number and a chat widget all fighting for attention at the same time. Pick the primary action you want visitors to take and make it obvious.</p>
+<p>When a homepage answers all four of those things above the fold, visitors can make a decision fast. And when making a decision is easy, more of them make the right one.</p>
+
+<h2>This Matters More Than Ever in 2026</h2>
+<p>Here's something worth knowing about how search behavior has shifted. AI tools like ChatGPT, Perplexity, and Google's AI Overviews now regularly summarize businesses for people who are searching online. Someone might ask an AI assistant who does custom website design for restaurants in their city, and get a list of answers without ever clicking through to any site.</p>
+<p>Where does the AI get that information? A lot of it comes from your homepage. The text, the structure, the messaging.</p>
+<p>If your homepage is clear about what you do and who you serve, AI tools can accurately represent you. They'll surface you when someone asks a relevant question and describe your services correctly. That's ongoing visibility without extra work on your part.</p>
+<p>But if your homepage is vague, stuffed with jargon, or structured in a way that buries the important details, the AI either misrepresents you or skips you entirely. It defaults to whoever is clearest. And that's almost always your competitor who took the time to say exactly what they do in plain language.</p>
+<p>This is part of what's now called GEO, or Generative Engine Optimization. It's not about gaming algorithms. It's about making sure your homepage communicates so clearly that both humans and AI tools immediately understand what you offer. A cluttered or unclear homepage used to just hurt your bounce rate. Now it can mean you're invisible to an entire category of search behavior.</p>
+
+<h2>Let's Make Your Homepage Work Harder</h2>
+<p>If you ran the 5-second test and felt a little uncomfortable with the results, that's a good thing. It means there's something concrete to fix. And fixing homepage clarity is one of the highest-return changes you can make to a website.</p>
+<p>At <strong>Web Design Pros 365</strong>, we build and redesign websites with clarity as the starting point, not an afterthought. That means strong messaging, clean structure, and a user experience designed to answer those four questions fast. We also build with performance, SEO, and AI visibility built in from the start, so your site works in organic search and in AI-driven recommendations.</p>
+<p>Your homepage has about five seconds to make the right impression. Make them count.</p>
+<p><strong>Ready to see what your homepage could do with some clarity behind it?</strong> Visit <a href="https://www.webdesignpros365.com/contact">webdesignpros365.com/contact</a> to start the conversation.</p>
+    `,
+  },
 ];
 export function getBlogPost(slug: string): BlogPost | undefined {
   return BLOG_POSTS.find((p) => p.slug === slug);
