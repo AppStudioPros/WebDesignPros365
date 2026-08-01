@@ -586,6 +586,80 @@ export const BLOG_POSTS: BlogPost[] = [
 <p><strong>Ready to see what your homepage could do with some clarity behind it?</strong> Visit <a href="https://www.webdesignpros365.com/contact">webdesignpros365.com/contact</a> to start the conversation.</p>
     `,
   },
+  {
+    slug: "7-things-to-check-on-your-website-before-monday-morning",
+    title: "7 Things to Check on Your Website Before Monday Morning",
+    category: "Web Design",
+    date: "August 1, 2026",
+    readTime: "6 min read",
+    excerpt: "Most business owners never walk through their own website like a stranger would. Spending 20 minutes on these seven things before Monday can save you leads, trust, and credibility.",
+    mainImage: "/images/blog-weekend-website-checkup.png",
+    meta: "A quick Saturday checklist: test your contact form, check your phone number, review mobile experience, and ask whether you'd trust this business if you landed here today.",
+    content: `
+<p>Saturday morning. Coffee's hot. The week is done and Monday is two days away. This is actually the perfect time to spend 20 minutes on something most business owners never do: walk through their own website like a stranger would.</p>
+<p>Not to redesign anything. Not to overhaul the copy. Just a quick, honest look at seven things that quietly break, go stale, or stop working — and cost you real business before you ever find out.</p>
+
+<h2>1. Test Your Contact Form</h2>
+<p>Go to your contact page right now and fill out the form. Use your personal email. Hit submit. Then wait.</p>
+<p>Did the message show up in your inbox? Did you get a confirmation email back? Did the page say something reassuring — or did it just reload and leave you wondering if anything happened?</p>
+<p>A broken contact form is one of the most damaging things on a business website because it fails completely silently. The visitor fills it out, thinks they sent a message, and waits. You never see it. They assume you ignored them. They move on. You never knew any of it happened.</p>
+<p>Forms break for a lot of reasons: email delivery settings drift, plugins update and conflict, spam filters start catching your own form submissions, or a third-party service quietly expires. Any of these can knock a form out without a single error showing on screen.</p>
+<ul>
+<li>Fill out every field, including optional ones</li>
+<li>If there's a file upload, actually upload a file</li>
+<li>Check that the confirmation email looks correct, not blank or broken</li>
+<li>Check your spam folder — sometimes your own form notifications get filtered there</li>
+<li>If you use a CRM, verify the entry actually showed up there too</li>
+</ul>
+
+<h2>2. Check Your Phone Number</h2>
+<p>Call it. Right now, from your cell phone. Does it ring? Does it connect to the right place?</p>
+<p>Numbers change when businesses move, switch providers, or set up forwarding that eventually stops working. Old numbers stick around on websites, in footers, on contact pages, sometimes in images nobody thinks to update.</p>
+<p>On mobile, your number should be a clickable link. A visitor on their phone should be able to tap it and call directly. If they have to copy the number manually and dial themselves, most won't bother. Someone ready to hire you shouldn't have to work that hard to reach you.</p>
+<p>Also check your Google Business Profile. The number there needs to match your website. A mismatch is a credibility flag for search engines and AI tools that pull your business information to answer user questions.</p>
+
+<h2>3. Visit Your Website on Your Phone</h2>
+<p>Not a quick glance. A real visit. Open your browser, type in your URL, and go through your site the way a customer would.</p>
+<p>More than 60 percent of web traffic in 2026 comes from mobile devices. If your site was designed primarily on a desktop and you've only ever checked it on a desktop, you may have no idea what mobile visitors are actually experiencing.</p>
+<ul>
+<li><strong>Text size.</strong> Can you read the body copy without zooming in?</li>
+<li><strong>Buttons.</strong> Can you tap your main CTA buttons with a normal thumb?</li>
+<li><strong>Images.</strong> Are they loading properly and sized for the screen?</li>
+<li><strong>Layout.</strong> Does the page hold together, or does anything stack awkwardly?</li>
+<li><strong>Navigation.</strong> Can you find what you need without hunting?</li>
+</ul>
+<p>Google's search index is mobile-first, meaning it evaluates your site as a mobile user. AI tools that recommend local businesses also factor in whether a site delivers a decent experience on mobile. Walk through at least two or three pages, not just the homepage.</p>
+
+<h2>4. Read Your Homepage Like a First-Time Visitor</h2>
+<p>This is harder than it sounds. You know your business. You've read your own homepage a hundred times. You're not going to see it the way a stranger does.</p>
+<p>Try the five-second test. Look at your homepage for five seconds. Then ask: what does this business do? Who do they help? What should I do next?</p>
+<p>If those three things aren't immediately obvious, your homepage has a clarity problem. The fix usually isn't more content. It's clearer content.</p>
+<p>The best way to test this honestly is to ask someone who has never seen your website. Show them your homepage for five seconds, close it, and ask those three questions. Their answers will tell you more than any analytics tool.</p>
+<p>Vague headlines cost you on two fronts. First, human visitors leave when they can't quickly understand what you do. Second, AI tools summarize your business from your homepage content. Vague messaging produces vague or inaccurate AI summaries. Clear, specific language about your services, your location, and who you help gets you recommended accurately.</p>
+
+<h2>5. Look for Outdated Information</h2>
+<p>Websites drift out of date when nobody's watching. Businesses update their hours but forget the website. A team member leaves but their photo stays on the About page. A promotion from last spring is still showing in August. The footer still says 2023.</p>
+<p>Outdated information signals one thing to a first-time visitor: nobody's home. It looks like a business that stopped paying attention. That's a trust problem.</p>
+<p>It's also a real issue for AI tools. Those tools read your website and treat it as current. If your hours say one thing and you've changed them, AI might tell someone the wrong time to call. Check these spots specifically: homepage, About page, Services page, Contact page, footer, and any pages built for specific promotions or campaigns.</p>
+
+<h2>6. Make Sure Your Pages Load Quickly</h2>
+<p>Open a new tab and go to PageSpeed Insights (pagespeed.web.dev). Paste in your homepage URL and run the test. Look at your mobile score.</p>
+<p>Above 90 is good. Between 50 and 89 has room to improve. Below 50 is a real problem. A page that takes more than three seconds to load loses a significant portion of visitors before they ever see your content. On mobile, patience is even shorter.</p>
+<p>Google's Core Web Vitals measure load speed, interactivity, and layout stability. These metrics factor into your search rankings. They also affect AI visibility. Fast, well-structured sites are easier for AI tools to read and index. Slow or bloated sites create friction that can lower your chances of being recommended.</p>
+<p>Common culprits: uncompressed images, too many third-party scripts loading on every page, outdated plugins, or hosting that can't keep up. A developer can usually identify these quickly. PageSpeed Insights will even point you toward specific issues.</p>
+
+<h2>7. Ask Yourself One Final Question</h2>
+<p>After you've gone through the list, step back and ask this: <strong>if I landed on this website today with no prior knowledge of this business, would I trust them enough to reach out?</strong></p>
+<p>What builds trust fast: a clean, professional design. Real photos. A phone number and address that are easy to find. Signs of recent activity. Testimonials or reviews from real customers.</p>
+<p>What destroys trust fast: anything broken. A copyright date from three years ago. A phone number that doesn't work. A contact form with no confirmation. Placeholder text. Stock photos that obviously look like stock photos. A homepage that could describe any business in any industry anywhere.</p>
+<p>Your website is working for you or against you right now, every day, whether you're looking at it or not. This question is the fastest way to get honest about which one is true.</p>
+
+<h2>When Something Raises a Flag</h2>
+<p>Working through this checklist takes about 20 minutes. Most business owners find at least one or two things worth fixing. Some find more.</p>
+<p>At <strong>Web Design Pros 365</strong>, we offer professional website audits alongside custom website design, performance optimization, and AI visibility services. If anything on this list made you uncomfortable, an audit is the right place to start. You'll get a clear picture of what's working, what isn't, and what would actually make a difference — not a generic report, a real one.</p>
+<p>Visit <a href="https://www.webdesignpros365.com/contact">webdesignpros365.com/contact</a> to get started.</p>
+    `,
+  },
 ];
 export function getBlogPost(slug: string): BlogPost | undefined {
   return BLOG_POSTS.find((p) => p.slug === slug);

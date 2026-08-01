@@ -1,7 +1,9 @@
+"use client";
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Mail, Phone, Linkedin, Instagram, Facebook } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 const footerLinks = {
   company: [
@@ -27,6 +29,9 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
+  if (pathname === '/benefits') return null;
+
   return (
     <footer className="bg-[#1e1c35] border-t border-[#8734E1]">
       <div className="container-custom py-10">

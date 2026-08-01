@@ -38,6 +38,9 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Hidden pages — no global nav
+  if (pathname === '/benefits') return null;
+
   return (
     <header
       className={cn(
