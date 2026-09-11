@@ -380,6 +380,30 @@ export default function AboutPage() {
         </div>
       </section>
 
+
+      {/* QR Code Section */}
+      <section className="section bg-[#1e2030]">
+        <div className="container-custom">
+          <div className="flex flex-col items-center text-center">
+            <p className="text-sm uppercase tracking-widest font-semibold mb-3" style={{ color: '#7c6fe0' }}>Scan to Visit</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Take Us With You</h2>
+            <p className="text-[#a8a4c8] max-w-md mb-8 leading-relaxed">
+              Scan the QR code to visit WebDesignPros365.com on any device — or share it with someone who needs a better website.
+            </p>
+            <div className="bg-white rounded-2xl p-4 shadow-xl">
+              <img
+                src="/images/wdp365-qr.jpg"
+                alt="QR code linking to WebDesignPros365.com"
+                width={200}
+                height={200}
+                className="w-48 h-48 object-contain"
+              />
+            </div>
+            <p className="text-xs text-[#a8a4c8] mt-4">webdesignpros365.com</p>
+          </div>
+        </div>
+      </section>
+
       <CTASection />
     </>
   );

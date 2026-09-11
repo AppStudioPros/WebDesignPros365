@@ -40,7 +40,7 @@ const nextConfig: NextConfig = {
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: blob: https:",
               "connect-src 'self' https://www.google-analytics.com https://vitals.vercel-insights.com",
-              "frame-src 'none'",
+              "frame-src https://www.youtube-nocookie.com https://www.youtube.com",
               "object-src 'none'",
               "base-uri 'self'",
             ].join("; "),

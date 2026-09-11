@@ -243,10 +243,64 @@ function AIFeatureCard({ feature }: { feature: typeof AI_FEATURES[0] }) {
   );
 }
 
+function PartnerVideo() {
+  const [playing, setPlaying] = useState(false);
+  const [preconnected, setPreconnected] = useState(false);
+
+  function handleHover() {
+    if (preconnected) return;
+    setPreconnected(true);
+    ["https://www.youtube.com", "https://www.google.com", "https://i.ytimg.com"].forEach((url) => {
+      const link = document.createElement("link");
+      link.rel = "preconnect";
+      link.href = url;
+      document.head.appendChild(link);
+    });
+  }
+
+  return (
+    <div
+      className="relative w-full rounded-2xl overflow-hidden border border-[#8734E1]/30 ring-1 ring-[#8734E1]/20 shadow-xl shadow-[#8734E1]/10"
+      style={{ aspectRatio: "16/9" }}
+    >
+      {playing ? (
+        <iframe
+          className="absolute inset-0 w-full h-full"
+          src="https://www.youtube.com/embed/y94x9stnE1w?autoplay=1&rel=0&modestbranding=1"
+          title="Web Design Pros 365 — See How It Works"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        />
+      ) : (
+        <button
+          onClick={() => setPlaying(true)}
+          onMouseEnter={handleHover}
+          onFocus={handleHover}
+          onTouchStart={handleHover}
+          className="group absolute inset-0 w-full h-full flex flex-col items-center justify-center bg-[#1a1b2e] touch-manipulation"
+          aria-label="Play video"
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40 pointer-events-none" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/wdp-logo.png"
+            alt="Web Design Pros 365"
+            className="w-20 h-20 sm:w-28 sm:h-28 object-contain mb-4 drop-shadow-xl transition-transform duration-200 group-hover:scale-105"
+            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+          />
+          <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#8734E1] to-[#2F73EE] flex items-center justify-center shadow-lg group-hover:scale-110 group-active:scale-95 transition-transform duration-150">
+            <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white ml-0.5 sm:ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+          <p className="mt-3 sm:mt-4 text-white/40 text-xs sm:text-sm font-medium relative z-10">See how it works</p>
+        </button>
+      )}
+    </div>
+  );
+}
+
 export default function PartnerProgramPage() {
-  const [companyName, setCompanyName] = useState('');
-  const [unlocked, setUnlocked] = useState(false);
-  const [error, setError] = useState('');
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
@@ -255,17 +309,6 @@ export default function PartnerProgramPage() {
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
   }, []);
 
-  const handleUnlock = () => {
-    if (companyName.trim().length < 2) {
-      setError('Please enter your parent company name to continue.');
-      return;
-    }
-    setError('');
-    setUnlocked(true);
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 50);
-  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -298,51 +341,14 @@ export default function PartnerProgramPage() {
             The one who does not may never know they lost it.
           </p>
 
-          <div className="mb-10">
-            <Link
-              href="/media"
-              className="inline-flex items-center gap-3 px-5 py-4 rounded-2xl bg-[#252640] border-2 border-[#8734E1]/50 hover:border-[#8734E1] text-[#f0eef8] font-bold text-base md:text-lg hover:bg-[#2e2c4a] transition-all shadow-lg shadow-[#8734E1]/10 w-full sm:w-auto justify-center"
-            >
-              <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8734E1] to-[#2F73EE] flex items-center justify-center flex-shrink-0">
-                <ExternalLink className="w-5 h-5 text-white" />
-              </span>
-              See How It Works — View Our Media Library
-            </Link>
+          <div className="mb-10 max-w-2xl mx-auto w-full">
+            <PartnerVideo />
           </div>
 
           {/* Gate */}
-          {!unlocked ? (
-            <div className="bg-[#252640] border border-[#3a3858] rounded-2xl p-8 max-w-md mx-auto">
-              <p className="text-[#f0eef8] font-semibold mb-2">Verify your partner access</p>
-              <p className="text-sm text-[#8a87a8] mb-5">Enter your parent company name to unlock the offer.</p>
-              <input
-                type="text"
-                value={companyName}
-                onChange={(e) => setCompanyName(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && handleUnlock()}
-                placeholder="Parent company name"
-                className="w-full px-4 py-3 rounded-xl bg-[#1c1d30] border border-[#3a3858] text-[#f0eef8] placeholder:text-[#6e6b88] mb-3 focus:outline-none focus:border-[#8734E1] transition-colors"
-              />
-              {error && <p className="text-red-400 text-sm mb-3">{error}</p>}
-              <button
-                onClick={handleUnlock}
-                className="w-full py-3 rounded-xl bg-gradient-to-r from-[#8734E1] to-[#2F73EE] text-white font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
-              >
-                Unlock Offer <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          ) : (
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 font-medium">
-              <CheckCircle2 className="w-5 h-5" />
-              Access unlocked. Welcome, {companyName} partner.
-            </div>
-          )}
         </div>
       </section>
 
-      {/* Offer shown after unlock */}
-      {unlocked && (
-        <>
           {/* Pricing */}
           <section id="offer" className="section bg-[#1a1b2e] py-20">
             <div className="container-custom max-w-4xl mx-auto">
@@ -362,12 +368,12 @@ export default function PartnerProgramPage() {
                     </div>
                   </div>
                   <div className="flex items-baseline justify-center gap-3 mb-2">
-                    <span className="text-5xl md:text-6xl font-black text-[#f0eef8]">$1,999<span className="text-2xl md:text-3xl">.99</span></span>
+                    <span className="text-5xl md:text-6xl font-black text-[#f0eef8]">$2,499<span className="text-2xl md:text-3xl">.99</span></span>
                     <span className="text-[#8a87a8] text-sm">one time</span>
                   </div>
                   <div className="mb-4">
                     <span className="line-through text-[#6e6b88] text-sm">Normally $9,599.97</span>
-                    <div className="text-3xl md:text-4xl font-black text-emerald-400 mt-1">You save $7,599.99</div>
+                    <div className="text-3xl md:text-4xl font-black text-emerald-400 mt-1">You save $7,099.98</div>
                   </div>
                   <div className="flex flex-wrap justify-center gap-4 text-sm text-[#a8a4c8]">
                     <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-emerald-400" />Custom Next.js website build</span>
@@ -393,7 +399,7 @@ export default function PartnerProgramPage() {
                     </div>
                     <div className="flex justify-between text-emerald-400 font-bold text-base">
                       <span>Your partner price</span>
-                      <span>$1,999.99</span>
+                      <span>$2,499.99</span>
                     </div>
                   </div>
                 </div>
@@ -768,8 +774,6 @@ export default function PartnerProgramPage() {
               )}
             </div>
           </section>
-        </>
-      )}
     </div>
   );
 }
