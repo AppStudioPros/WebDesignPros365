@@ -133,8 +133,8 @@ export default function DenverGeoPage() {
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto items-stretch">
             {denverStats.map((s, i) => (
-              <motion.div key={s.stat} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="h-full">
-                <div className="bg-[#1e2030] border border-[#3a3858] rounded-xl p-6 text-center h-full flex flex-col justify-center transition-all duration-300 hover:border-[#8734E1] hover:shadow-[0_0_24px_rgba(135,52,225,0.25)] cursor-default">
+              <motion.div key={s.stat} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -6 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="h-full">
+                <div className="bg-[#1e2030] border border-[#3a3858] rounded-xl p-6 text-center h-full flex flex-col justify-center card-draw-border">
                   <p className="text-3xl md:text-4xl font-bold mb-2" style={{ color: '#8734E1' }}>{s.stat}</p>
                   <p className="text-xs text-white/60 leading-relaxed">{s.label}</p>
                 </div>
@@ -153,8 +153,8 @@ export default function DenverGeoPage() {
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {geoSignals.map((signal, i) => (
-              <motion.div key={signal.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-                <div className="bg-[#252640] border border-[#3a3858] rounded-xl p-8 h-full text-center transition-all duration-300 hover:border-[#8734E1] hover:shadow-[0_0_24px_rgba(135,52,225,0.25)] cursor-default">
+              <motion.div key={signal.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -6 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
+                <div className="bg-[#252640] border border-[#3a3858] rounded-xl p-8 h-full text-center card-draw-border">
                   <h3 className="font-semibold text-white mb-3">{signal.title}</h3>
                   <p className="text-sm text-white/60 leading-relaxed">{signal.body}</p>
                 </div>
@@ -172,8 +172,8 @@ export default function DenverGeoPage() {
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
             {aiPlatforms.map((p, i) => (
-              <motion.div key={p.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="h-full">
-                <div className="bg-[#1e2030] border border-[#3a3858] rounded-xl p-5 h-full flex flex-col text-center transition-all duration-300 hover:border-[#8734E1] hover:shadow-[0_0_24px_rgba(135,52,225,0.25)] cursor-default">
+              <motion.div key={p.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -6 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="h-full">
+                <div className="bg-[#1e2030] border border-[#3a3858] rounded-xl p-5 h-full flex flex-col text-center card-draw-border">
                   <div className="flex items-center justify-center gap-2 mb-3">
                     <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: p.color }} />
                     <p className="font-semibold text-white text-sm">{p.name}</p>
@@ -194,8 +194,8 @@ export default function DenverGeoPage() {
           </motion.div>
           <div className="max-w-3xl mx-auto space-y-4">
             {geoProcess.map((step, i) => (
-              <motion.div key={step.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
-                <div className="bg-[#252640] border border-[#3a3858] rounded-2xl p-6 text-center transition-all duration-300 hover:border-[#8734E1] hover:shadow-[0_0_24px_rgba(135,52,225,0.25)] cursor-default">
+              <motion.div key={step.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -6 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
+                <div className="bg-[#252640] border border-[#3a3858] rounded-2xl p-6 text-center card-draw-border">
                   <h3 className="font-semibold text-white mb-2">{step.title}</h3>
                   <p className="text-sm text-white/60 leading-relaxed">{step.body}</p>
                 </div>
