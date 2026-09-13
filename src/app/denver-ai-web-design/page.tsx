@@ -120,7 +120,7 @@ export default function DenverAiWebDesignPage() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto items-stretch">
             {buildLayers.map((layer, i) => (
               <motion.div key={layer.step} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="h-full">
-                <Card className="bg-[#252640] border-[#3a3858] p-4 text-center h-full flex flex-col justify-center hover:border-[#8734E1] hover:shadow-lg transition-all">
+                <Card className="bg-[#252640] border-[#3a3858] p-4 text-center h-full flex flex-col justify-center">
                   <p className="text-xs font-mono text-[#8734E1] mb-2">{layer.step}</p>
                   <p className="font-semibold text-white text-sm mb-1">{layer.label}</p>
                   <p className="text-xs text-white/50 leading-snug">{layer.detail}</p>
@@ -140,7 +140,7 @@ export default function DenverAiWebDesignPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {differentiators.map((d, i) => (
               <motion.div key={d.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="h-full">
-                <Card className="bg-[#1e2030] border-[#3a3858] p-8 h-full text-center hover:border-[#8734E1] hover:shadow-lg transition-all">
+                <Card className="bg-[#1e2030] border-[#3a3858] p-8 h-full text-center">
                   <h3 className="font-semibold text-white mb-3">{d.title}</h3>
                   <p className="text-sm text-white/60 leading-relaxed">{d.body}</p>
                 </Card>
@@ -160,7 +160,7 @@ export default function DenverAiWebDesignPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto items-stretch">
             {aiSearchEngines.map((engine, i) => (
               <motion.div key={engine.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="h-full">
-                <div className="bg-[#252640] border border-[#3a3858] rounded-xl p-5 h-full flex flex-col text-center hover:border-[#8734E1] hover:shadow-lg transition-all">
+                <div className="bg-[#252640] border border-[#3a3858] rounded-xl p-5 h-full flex flex-col text-center">
                   <div className="flex items-center justify-center gap-2 mb-3">
                     <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: engine.color }} />
                     <p className="font-semibold text-white text-sm">{engine.name}</p>
@@ -181,14 +181,14 @@ export default function DenverAiWebDesignPage() {
             <p className="text-white/60">Every AI-ready website includes our technical SEO and AEO foundation. For ongoing AI search visibility, pair it with:</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-            <Card className="bg-[#1e2030] border-[#3a3858] p-6 text-center hover:border-[#2F73EE] hover:shadow-lg transition-all">
+            <Card className="bg-[#1e2030] border-[#3a3858] p-6 text-center">
               <h3 className="font-semibold text-white mb-2">Denver AI SEO + AEO</h3>
               <p className="text-sm text-white/60 mb-4 leading-relaxed">Rank in traditional search and become easy for AI systems to understand, trust, and recommend.</p>
               <Button asChild variant="outline" size="sm" className="border-[#2F73EE]/40 text-[#2F73EE] hover:bg-[#2F73EE]/10">
                 <Link href="/denver-ai-seo">Learn More <ArrowRight className="ml-2 w-3 h-3" /></Link>
               </Button>
             </Card>
-            <Card className="bg-[#1e2030] border-[#3a3858] p-6 text-center hover:border-[#8734E1] hover:shadow-lg transition-all">
+            <Card className="bg-[#1e2030] border-[#3a3858] p-6 text-center">
               <h3 className="font-semibold text-white mb-2">Generative Engine Optimization</h3>
               <p className="text-sm text-white/60 mb-4 leading-relaxed">Ranking isn't enough anymore. Become the source AI cites. Our Denver GEO service builds citation authority.</p>
               <Button asChild variant="outline" size="sm" className="border-[#8734E1]/40 text-[#8734E1] hover:bg-[#8734E1]/10">

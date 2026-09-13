@@ -112,7 +112,7 @@ export default function DenverWebDesignPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {differentiators.map((d, i) => (
               <motion.div key={d.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="h-full">
-                <Card className="bg-[#252640] border-[#3a3858] p-8 h-full text-center hover:border-[#2F73EE] hover:shadow-lg transition-all">
+                <Card className="bg-[#252640] border-[#3a3858] p-8 h-full text-center">
                   <h3 className="font-semibold text-white mb-3">{d.title}</h3>
                   <p className="text-sm text-white/60 leading-relaxed">{d.body}</p>
                 </Card>
@@ -135,7 +135,7 @@ export default function DenverWebDesignPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-8">
             <div className="grid grid-cols-1 gap-3 text-left">
               {deliverables.map((item) => (
-                <div key={item} className="flex items-center gap-3 bg-[#1e2030] rounded-lg px-4 py-3 hover:border hover:border-[#2F73EE]/40 transition-all">
+                <div key={item} className="flex items-center gap-3 bg-[#1e2030] rounded-lg px-4 py-3">
                   <Check className="w-4 h-4 text-[#2F73EE] flex-shrink-0" />
                   <span className="text-sm text-white/80">{item}</span>
                 </div>

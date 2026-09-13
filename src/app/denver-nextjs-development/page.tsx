@@ -117,7 +117,7 @@ export default function DenverNextjsPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto items-stretch">
             {techStack.map((t, i) => (
               <motion.div key={t.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="h-full">
-                <Card className="bg-[#252640] border-[#3a3858] p-4 text-center h-full flex flex-col justify-center hover:border-[#2F73EE] hover:shadow-lg transition-all">
+                <Card className="bg-[#252640] border-[#3a3858] p-4 text-center h-full flex flex-col justify-center">
                   <p className="font-semibold text-white text-sm mb-1">{t.label}</p>
                   <p className="text-xs text-white/50 leading-snug">{t.note}</p>
                 </Card>
@@ -136,7 +136,7 @@ export default function DenverNextjsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
             {capabilities.map((c, i) => (
               <motion.div key={c.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="h-full">
-                <Card className="bg-[#1e2030] border-[#3a3858] p-6 h-full text-center hover:border-[#2F73EE] hover:shadow-lg transition-all">
+                <Card className="bg-[#1e2030] border-[#3a3858] p-6 h-full text-center">
                   <h3 className="font-semibold text-white mb-3 text-sm">{c.title}</h3>
                   <p className="text-xs text-white/60 leading-relaxed">{c.body}</p>
                 </Card>
