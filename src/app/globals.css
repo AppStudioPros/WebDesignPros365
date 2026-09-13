@@ -448,45 +448,47 @@ body {
   font-size: 0.975rem;
 }
 
-/* ── Animated border draw from corner ───────────────────── */
+/* ── Animated border draw from corner (rounded-corner safe) ── */
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
 .card-draw-border {
   position: relative;
   isolation: isolate;
 }
-.card-draw-border::before,
-.card-draw-border::after {
+
+.card-draw-border::before {
   content: '';
   position: absolute;
-  width: 0;
-  height: 0;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from -90deg at top left,
+    #8734E1 var(--border-angle),
+    transparent var(--border-angle)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
   pointer-events: none;
   z-index: 2;
+  --border-angle: 0deg;
+  transition: --border-angle 0s;
 }
-/* Top + Right — draws from top-left corner */
-.card-draw-border::before {
-  top: -1px;
-  left: -1px;
-  border-top: 2px solid #8734E1;
-  border-right: 2px solid #8734E1;
-  transition: width 0s, height 0s;
-}
-/* Bottom + Left — draws from bottom-right corner */
-.card-draw-border::after {
-  bottom: -1px;
-  right: -1px;
-  border-bottom: 2px solid #8734E1;
-  border-left: 2px solid #8734E1;
-  transition: width 0s, height 0s;
-}
+
 @media (hover: hover) {
-  .card-draw-border:hover::before {
-    width: calc(100% + 2px);
-    height: calc(100% + 2px);
-    transition: width 0.2s ease 0s, height 0.2s ease 0.2s;
+  .card-draw-border:hover {
+    transform: translateY(-6px);
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-  .card-draw-border:hover::after {
-    width: calc(100% + 2px);
-    height: calc(100% + 2px);
-    transition: width 0.2s ease 0.4s, height 0.2s ease 0.6s;
+  .card-draw-border:hover::before {
+    --border-angle: 360deg;
+    transition: --border-angle 0.7s ease;
   }
 }
