@@ -468,7 +468,6 @@ body {
   left: -1px;
   border-top: 2px solid #8734E1;
   border-right: 2px solid #8734E1;
-  border-radius: inherit;
   transition: width 0s, height 0s;
 }
 /* Bottom + Left — draws from bottom-right corner */
@@ -477,7 +476,6 @@ body {
   right: -1px;
   border-bottom: 2px solid #8734E1;
   border-left: 2px solid #8734E1;
-  border-radius: inherit;
   transition: width 0s, height 0s;
 }
 @media (hover: hover) {
