@@ -26,18 +26,18 @@ const differentiators = [
   },
   {
     title: 'Designed to convert',
-    body: "A good-looking site that doesn't generate leads is a liability. We design with conversion in mind — clear hierarchy, strong CTAs, and flows that move visitors toward action.",
+    body: "A good-looking site that doesn't generate leads is a liability. We design with conversion in mind: clear hierarchy, strong CTAs, and paths that move visitors toward action.",
   },
   {
     title: 'Custom, not templated',
-    body: "No ThemeForest. No Elementor. Every component is written for your business, your brand, and your audience — built to last, not to patch.",
+    body: "No ThemeForest. No Elementor. Every component is written for your business, your brand, and your audience , built to last, not swapped out next year.",
   },
 ];
 
 const deliverables = [
   'Custom Next.js 16 codebase (App Router)',
   'React 19 components, TypeScript',
-  'Vercel Edge deployment — global CDN',
+  'Vercel Edge deployment, global CDN',
   'Core Web Vitals optimized (target: 95+ Lighthouse)',
   'Technical SEO foundation built in',
   'Structured data (JSON-LD) on every page',
@@ -54,15 +54,15 @@ const faqs = [
   },
   {
     q: 'How long does a custom website build take?',
-    a: "Most 5-8 page custom builds take 2-4 weeks from kickoff to launch, depending on how quickly content and feedback come in. We work in focused sprints — you always know what's being built and when.",
+    a: "Most 5-8 page custom builds take 2-4 weeks from kickoff to launch, depending on how quickly content and feedback come in. We work in focused sprints, so you always know what's being built and when.",
   },
   {
     q: 'Do you handle design and development, or just one?',
-    a: "Both. Web Design Pros 365 handles design and development as one integrated process. The same team that designs it builds it — which means faster iteration and a cleaner result than a Figma handoff to a separate dev shop.",
+    a: "Both. Web Design Pros 365 handles design and development as one integrated process. The same team that designs it builds it. Faster iteration, cleaner result, no Figma handoff to a separate dev shop.",
   },
   {
     q: 'What does "engineered for AI discovery" mean on a web design project?',
-    a: "It means the content architecture, structured data, metadata, and technical foundations are built so AI systems — ChatGPT, Google AI Overviews, Perplexity, Claude — can find, read, and cite your business. This is standard in every project, not an add-on.",
+    a: "It means the content architecture, structured data, metadata, and technical foundations are built so AI systems (ChatGPT, Google AI Overviews, Perplexity, Claude) can find, read, and cite your business. This is standard in every project, not an add-on.",
   },
   {
     q: 'Do you work with businesses outside Denver?',
@@ -88,7 +88,7 @@ export default function DenverWebDesignPage() {
               <span style={{ color: '#2F73EE' }}>for High-Performance Websites</span>
             </h1>
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
-              Custom websites built in Denver on Next.js 16, React and Vercel — built for speed, conversions, Google search, and AI discovery.
+              Custom websites built in Denver on Next.js 16, React and Vercel. Built for speed, conversions, Google search, and AI discovery.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-[#2F73EE] hover:bg-[#2563cc] text-white px-8">
@@ -129,7 +129,7 @@ export default function DenverWebDesignPage() {
             <Badge className="mb-4 bg-[#1e1c35] text-[#2F73EE] border-[#2F73EE]/40">What's included</Badge>
             <h2 className="heading-lg text-white mb-4">Everything, built right</h2>
             <p className="text-white/60 leading-relaxed">
-              Every Denver web design project ships with a complete technical stack — not a theme with fresh colors.
+              Every Denver web design project ships with a complete technical stack, not a theme with fresh colors.
             </p>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="mb-8">
@@ -154,7 +154,7 @@ export default function DenverWebDesignPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }}>
             <h2 className="heading-lg text-white mb-4">Every website includes AI visibility foundations</h2>
             <p className="text-white/60 leading-relaxed mb-8">
-              Every project ships with technical SEO, structured data, and AEO architecture built in. For businesses that want to go further — we offer dedicated{' '}
+              Every project ships with technical SEO, structured data, and AEO architecture built in. For businesses that want to go further, we offer dedicated{' '}
               <Link href="/denver-ai-seo" className="text-[#8734E1] hover:underline">Denver AI SEO</Link>{' '}
               and{' '}
               <Link href="/denver-generative-engine-optimization" className="text-[#8734E1] hover:underline">Generative Engine Optimization</Link>{' '}
@@ -171,7 +171,7 @@ export default function DenverWebDesignPage() {
       <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="heading-lg text-white mb-4">Denver web design — common questions</h2>
+            <h2 className="heading-lg text-white mb-4">Denver web design: common questions</h2>
           </motion.div>
           <div className="max-w-3xl mx-auto space-y-3">
             {faqs.map((faq, i) => (

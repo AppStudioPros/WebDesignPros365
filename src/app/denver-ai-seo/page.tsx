@@ -87,23 +87,23 @@ const comparison = [
 const faqs = [
   {
     q: 'What is AI SEO and how is it different from regular SEO?',
-    a: "AI SEO is SEO updated for the current reality: search results now include AI-generated answers, not just blue links. Regular SEO optimizes for ranking. AI SEO also optimizes for selection — making sure your content is structured so AI Overviews, voice search, and answer engines choose your page as the source. Technical SEO remains the foundation; answer engine optimization (AEO) is the layer on top.",
+    a: "AI SEO is SEO updated for the current reality: search results now include AI-generated answers, beyond blue links. Regular SEO optimizes for ranking. AI SEO also optimizes for selection, making sure your content is structured so AI Overviews, voice search, and answer engines choose your page as the source. Technical SEO remains the foundation; answer engine optimization (AEO) is the layer on top.",
   },
   {
     q: 'What is AEO (Answer Engine Optimization)?',
-    a: "AEO is the practice of structuring content so AI systems pick your page as the direct answer to a query. Key tactics include FAQPage and HowTo schema, Speakable schema, answer-first formatting, and entity-based optimization. AEO focuses on being selected by an AI system — different from SEO which focuses on ranking in a list.",
+    a: "AEO is the practice of structuring content so AI systems pick your page as the direct answer to a query. Key tactics include FAQPage and HowTo schema, Speakable schema, answer-first formatting, and entity-based optimization. AEO focuses on being selected by an AI system, while SEO focuses on focuses on ranking in a list.",
   },
   {
     q: 'How long does it take to see AI SEO results?',
-    a: "Technical improvements — page speed, Core Web Vitals, structured data — show up in Google Search Console within days to weeks. Ranking changes typically show meaningful movement in 30-90 days. AEO signals like FAQ schema can drive featured snippets in as few as 2-4 weeks. AI search appearance (Perplexity, ChatGPT) responds to structural changes in as little as 2-7 days.",
+    a: "Technical improvements like page speed, Core Web Vitals, and structured data show up in Google Search Console within days to weeks. Ranking changes typically show meaningful movement in 30-90 days. AEO signals like FAQ schema can drive featured snippets in as few as 2-4 weeks. AI search appearance (Perplexity, ChatGPT) responds to structural changes in as little as 2-7 days.",
   },
   {
     q: 'Do you offer AI SEO for existing websites?',
-    a: "Yes. We can audit and optimize any existing website regardless of platform. If critical technical issues exist — like a WordPress site with severe speed problems or a page builder that blocks clean semantic HTML — we may recommend addressing those first.",
+    a: "Yes. We can audit and optimize any existing website regardless of platform. If critical technical issues exist , like a WordPress site with severe speed problems or a page builder that blocks clean semantic HTML, we may recommend addressing those first.",
   },
   {
     q: 'Is AI SEO different from Generative Engine Optimization (GEO)?',
-    a: "Yes. AI SEO and AEO focus on Google-adjacent signals: ranking, featured snippets, AI Overviews. GEO is specifically about getting cited by conversational AI engines — ChatGPT, Gemini, Claude, Perplexity. They require overlapping but different strategies. Our dedicated GEO service handles the citation-building layer.",
+    a: "Yes. AI SEO and AEO focus on Google-adjacent signals: ranking, featured snippets, AI Overviews. GEO is specifically about getting cited by conversational AI engines: ChatGPT, Gemini, Claude, Perplexity. They require overlapping but different strategies. Our dedicated GEO service handles the citation-building layer.",
   },
 ];
 
@@ -191,7 +191,7 @@ export default function DenverAiSeoPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }}>
             <h2 className="heading-lg text-white mb-4">Need to get cited by ChatGPT and Claude?</h2>
             <p className="text-white/60 leading-relaxed mb-8">
-              AI SEO makes you rankable and extractable. For businesses that want to go further — getting your brand cited by conversational AI engines — that's{' '}
+              AI SEO makes you rankable and extractable. For businesses that want to go further, getting your brand cited by conversational AI engines, that's{' '}
               <Link href="/denver-generative-engine-optimization" className="text-[#8734E1] hover:underline">Generative Engine Optimization (GEO)</Link>.
               Ranking isn't enough anymore. Become the source AI cites.
             </p>
@@ -206,7 +206,7 @@ export default function DenverAiSeoPage() {
       <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="heading-lg text-white mb-4">Denver AI SEO — common questions</h2>
+            <h2 className="heading-lg text-white mb-4">Denver AI SEO: common questions</h2>
           </motion.div>
           <div className="max-w-3xl mx-auto space-y-3">
             {faqs.map((faq, i) => (

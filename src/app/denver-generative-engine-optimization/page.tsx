@@ -12,13 +12,13 @@ import CTASection from '@/components/sections/CTASection';
 const _metadata = {
   title: 'Denver GEO Agency | Generative Engine Optimization',
   description:
-    'Get your Denver business discovered, understood, and cited by ChatGPT, Gemini, Claude, Perplexity and AI-powered search. Denver GEO agency — Web Design Pros 365.',
+    'Get your Denver business discovered, understood, and cited by ChatGPT, Gemini, Claude, Perplexity and AI-powered search. Denver GEO agency. Web Design Pros 365.',
 };
 
 const geoSignals = [
   {
     title: 'Entity optimization',
-    body: 'AI systems build a model of your business as an entity — name, location, industry, expertise, associations. We make that model accurate, complete, and consistent across the web.',
+    body: 'AI systems build a model of your business as an entity: name, location, industry, expertise, associations. We make that model accurate, complete, and consistent across the web.',
     color: '#8734E1',
   },
   {
@@ -28,12 +28,12 @@ const geoSignals = [
   },
   {
     title: 'llms.txt and AI crawler access',
-    body: 'We implement llms.txt files, ensure all major AI crawlers are invited and unblocked, and structure content metadata for AI parsing — not just human reading.',
+    body: 'We implement llms.txt files, make sure all major AI crawlers are invited and unblocked, and structure content metadata for AI parsing, beyond human reading.',
     color: '#EC4899',
   },
   {
     title: 'E-E-A-T authority signals',
-    body: 'Experience, Expertise, Authoritativeness, Trustworthiness — the signals AI systems and Google use to evaluate whether a source is worth citing. We build them systematically.',
+    body: 'Experience, Expertise, Authoritativeness, Trustworthiness: the signals AI systems and Google use to evaluate whether a source is worth citing. We build them systematically.',
     color: '#10B981',
   },
 ];
@@ -47,9 +47,9 @@ const denverStats = [
 
 const geoProcess = [
   { title: 'AI visibility audit', body: "We test how your business currently appears in ChatGPT, Gemini, Claude, and Perplexity. Most Denver businesses don't appear at all. This is your baseline." },
-  { title: 'Entity and citation gap analysis', body: 'We identify what signals your business is missing — structured data gaps, content structure issues, authority source presence, crawler access problems.' },
+  { title: 'Entity and citation gap analysis', body: 'We identify what signals your business is missing: structured data gaps, content structure issues, authority source presence, crawler access problems.' },
   { title: 'Content and architecture work', body: 'We restructure pages for AI extraction, implement llms.txt, fix schema gaps, and build citation-worthy content that AI systems want to reference.' },
-  { title: 'Authority signal building', body: 'We expand your presence on the sources AI systems pull from most — and ensure your brand is mentioned consistently, accurately, and authoritatively.' },
+  { title: 'Authority signal building', body: 'We expand your presence on the sources AI systems pull from most, and keep your brand mentioned consistently, accurately, and authoritatively.' },
   { title: 'Monitoring and iteration', body: 'GEO is not a one-time fix. AI search evolves fast. We track your citation presence across AI engines and iterate as the landscape shifts.' },
 ];
 
@@ -65,19 +65,19 @@ const aiPlatforms = [
 const faqs = [
   {
     q: 'What is Generative Engine Optimization (GEO)?',
-    a: "GEO is the practice of making your brand discoverable and citable by conversational AI engines — ChatGPT, Gemini, Claude, Perplexity, and Google AI Overviews. It's distinct from SEO (which optimizes for ranking in blue links) and AEO (which optimizes for being the answer in AI Overviews). GEO specifically targets the signals that make an LLM want to mention and cite your business when a user asks a relevant question.",
+    a: "GEO is the practice of making your brand discoverable and citable by conversational AI engines: ChatGPT, Gemini, Claude, Perplexity, and Google AI Overviews. It's distinct from SEO (which optimizes for ranking in blue links) and AEO (which optimizes for being the answer in AI Overviews). GEO specifically targets the signals that make an LLM want to mention and cite your business when a user asks a relevant question.",
   },
   {
     q: 'How is GEO different from SEO and AEO?',
-    a: "SEO = rank in search results. AEO = be selected as the answer in AI Overviews and featured snippets. GEO = get cited by conversational AI when users ask questions. They require overlapping but distinct strategies. Strong SEO and AEO create the technical foundation that makes GEO more effective — they're not competing approaches.",
+    a: "SEO = rank in search results. AEO = be selected as the answer in AI Overviews and featured snippets. GEO = get cited by conversational AI when users ask questions. They require overlapping but distinct strategies. Strong SEO and AEO create the technical foundation that makes GEO more effective. They're not competing approaches.",
   },
   {
     q: 'How do I know if my Denver business is being cited by AI?',
-    a: "Most Denver businesses aren't — a recent study found 86% of local businesses are completely invisible to AI systems. The first step is a GEO audit: we query ChatGPT, Claude, Perplexity, and Gemini with the questions your target customers would ask and measure whether and how your business appears.",
+    a: "Most Denver businesses aren't. A recent study found 86% of local businesses are completely invisible to AI systems. The first step is a GEO audit: we query ChatGPT, Claude, Perplexity, and Gemini with the questions your target customers would ask and measure whether and how your business appears.",
   },
   {
     q: 'How long does GEO take to show results?',
-    a: "Faster than you'd expect. Perplexity reflects structural content changes in as little as 2-7 days. ChatGPT and Claude take longer to update their knowledge — weeks to months depending on crawl schedules. Entity-level signals (brand mentions, authority source presence) build over time. We set realistic timelines based on your starting position.",
+    a: "Faster than you'd expect. Perplexity reflects structural content changes in as little as 2-7 days. ChatGPT and Claude take longer to update their knowledge, weeks to months depending on crawl schedules. Entity-level signals (brand mentions, authority source presence) build over time. We set realistic timelines based on your starting position.",
   },
   {
     q: 'Does GEO replace SEO?',
@@ -85,7 +85,7 @@ const faqs = [
   },
   {
     q: 'What Denver businesses benefit most from GEO?',
-    a: "Businesses in categories where customers ask AI tools for recommendations — professional services (legal, financial, medical), agencies, consultants, specialty retail, and B2B companies. If your customers ask AI things like 'who is the best [your service] in Denver?' — GEO determines whether you're the answer.",
+    a: "Businesses in categories where customers ask AI tools for recommendations: professional services (legal, financial, medical), agencies, consultants, specialty retail, and B2B companies. If your customers ask AI things like 'who is the best [your service] in Denver?' GEO determines whether you're the answer.",
   },
 ];
 
@@ -149,7 +149,7 @@ export default function DenverGeoPage() {
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-14">
             <h2 className="heading-lg text-white mb-4">What GEO actually optimizes</h2>
-            <p className="text-white/60 max-w-xl mx-auto text-center">GEO targets the signals that determine whether an AI system cites your brand — not just whether it can find your site.</p>
+            <p className="text-white/60 max-w-xl mx-auto text-center">GEO targets the signals that determine whether an AI system cites your brand, not whether it can merely find your site.</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {geoSignals.map((signal, i) => (
@@ -168,7 +168,7 @@ export default function DenverGeoPage() {
       <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="heading-lg text-white mb-4">How each AI engine cites — and what we do about it</h2>
+            <h2 className="heading-lg text-white mb-4">How each AI engine cites, and what we do about it</h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
             {aiPlatforms.map((p, i) => (
@@ -213,7 +213,7 @@ export default function DenverGeoPage() {
             <p className="text-white/60 leading-relaxed mb-8 text-center">
               GEO is the top layer. Before building citation authority, every business needs solid technical SEO and AEO foundations.{' '}
               <Link href="/denver-ai-seo" className="text-[#2F73EE] hover:underline">Our Denver AI SEO service</Link>{' '}
-              handles both — and pairs naturally with GEO for a complete AI search strategy. Or if you need the website built first,{' '}
+              handles both, and pairs naturally with GEO for a complete AI search strategy. Or if you need the website built first,{' '}
               <Link href="/denver-ai-web-design" className="text-[#8734E1] hover:underline">AI-ready web design</Link>{' '}
               starts with all the right technical foundations already in place.
             </p>
@@ -233,7 +233,7 @@ export default function DenverGeoPage() {
       <section className="section bg-[#1e2030]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="heading-lg text-white mb-4">GEO — frequently asked questions</h2>
+            <h2 className="heading-lg text-white mb-4">GEO: frequently asked questions</h2>
           </motion.div>
           <div className="max-w-3xl mx-auto space-y-3">
             {faqs.map((faq, i) => (

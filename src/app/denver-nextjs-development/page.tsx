@@ -29,19 +29,19 @@ const techStack = [
 const capabilities = [
   {
     title: 'App Router architecture',
-    body: 'Layouts, loading states, error boundaries, and nested routing — done right from day one, not retrofitted after launch.',
+    body: 'Layouts, loading states, error boundaries, and nested routing, done right from day one, not retrofitted after launch.',
   },
   {
     title: 'SSR, SSG, and ISR',
-    body: "The right rendering strategy per page — static where it makes sense, server-rendered where it doesn't, and incrementally regenerated where freshness matters.",
+    body: "The right rendering strategy per page: static where it makes sense, server-rendered where it doesn't, and incrementally regenerated where freshness matters.",
   },
   {
     title: 'Core Web Vitals engineered in',
-    body: "Font loading, image optimization, layout stability, and bundle splitting are architectural decisions made at the start — not fixes applied after the fact.",
+    body: "Font loading, image optimization, layout stability, and bundle splitting are architectural decisions made at the start, not fixes applied after the fact.",
   },
   {
     title: 'Structured data and SEO built in',
-    body: 'Every page gets JSON-LD schema, canonical tags, Open Graph, and sitemap entries — all from the framework level, not via plugin.',
+    body: 'Every page gets JSON-LD schema, canonical tags, Open Graph, and sitemap entries, all from the framework level, not via plugin.',
   },
   {
     title: 'Sanity CMS integration',
@@ -56,15 +56,15 @@ const capabilities = [
 const faqs = [
   {
     q: 'Why Next.js 16 specifically?',
-    a: "Next.js 16 with the App Router represents a major shift in how React applications are built — Server Components, Suspense, and streaming enable better performance and a cleaner developer experience. It's the current production standard for serious web projects.",
+    a: "Next.js 16 with the App Router represents a major shift in how React applications are built . Server Components, Suspense, and streaming enable better performance and a cleaner developer experience. It's the current production standard for serious web projects.",
   },
   {
     q: 'What is the difference between SSR, SSG, and ISR?',
-    a: "Server-Side Rendering (SSR) generates pages on each request — best for personalized or frequently changing content. Static Site Generation (SSG) pre-builds pages at deploy time — best for content that rarely changes. Incremental Static Regeneration (ISR) rebuilds individual pages on a schedule. Next.js lets you mix all three across different routes in the same application.",
+    a: "Server-Side Rendering (SSR) generates pages on each request, best for personalized or frequently changing content. Static Site Generation (SSG) pre-builds pages at deploy time, best for content that rarely changes. Incremental Static Regeneration (ISR) rebuilds individual pages on a schedule. Next.js lets you mix all three across different routes in the same application.",
   },
   {
     q: 'Do you build APIs and backend logic or just frontend?',
-    a: "Both. Next.js API routes handle server-side logic, database calls, third-party integrations, and webhook processing — all in the same codebase. For complex backend needs, we also build standalone APIs on Vercel Edge Functions.",
+    a: "Both. Next.js API routes handle server-side logic, database calls, third-party integrations, and webhook processing , all in the same codebase. For complex backend needs, we also build standalone APIs on Vercel Edge Functions.",
   },
   {
     q: 'Can you work with an existing codebase or design system?',
@@ -72,7 +72,7 @@ const faqs = [
   },
   {
     q: 'How does Next.js connect to AI visibility?',
-    a: "Next.js makes structured data clean to implement, semantic HTML natural, and page speed high by default — all foundational signals for AI search systems. Paired with AEO and GEO, the technical stack and the visibility strategy become one system.",
+    a: "Next.js makes structured data clean to implement, semantic HTML natural, and page speed high by default , all foundational signals for AI search systems. Paired with AEO and GEO, the technical stack and the visibility strategy become one system.",
   },
 ];
 
@@ -93,7 +93,7 @@ export default function DenverNextjsPage() {
               <span style={{ color: '#2F73EE' }}>for Fast, Scalable Websites</span>
             </h1>
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
-              Production-grade Next.js 16 and React 19 for Denver businesses. App Router, TypeScript, Sanity, and Vercel Edge — built to scale.
+              Production-grade Next.js 16 and React 19 for Denver businesses. App Router, TypeScript, Sanity, and Vercel Edge, built to scale.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-[#2F73EE] hover:bg-[#2563cc] text-white px-8">
@@ -154,7 +154,7 @@ export default function DenverNextjsPage() {
             <p className="text-white/60 leading-relaxed mb-8">
               Our{' '}
               <Link href="/denver-ai-web-design" className="text-[#8734E1] hover:underline">Denver AI Web Design</Link>{' '}
-              service combines Next.js development with a complete SEO, AEO, and GEO architecture — so the engineering and the visibility system ship as one build.
+              service combines Next.js development with a complete SEO, AEO, and GEO architecture , so the engineering and the visibility system ship as one build.
             </p>
             <Button asChild className="bg-[#8734E1] hover:bg-[#7228C0] text-white">
               <Link href="/denver-ai-web-design">See AI-Ready Web Design <ArrowRight className="ml-2 w-4 h-4" /></Link>
@@ -167,7 +167,7 @@ export default function DenverNextjsPage() {
       <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="heading-lg text-white mb-4">Denver Next.js development — questions</h2>
+            <h2 className="heading-lg text-white mb-4">Denver Next.js development: questions</h2>
           </motion.div>
           <div className="max-w-3xl mx-auto space-y-3">
             {faqs.map((faq, i) => (

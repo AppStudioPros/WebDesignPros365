@@ -12,7 +12,7 @@ import CTASection from '@/components/sections/CTASection';
 const _metadata = {
   title: 'Denver AI Web Design Agency | AI-Ready Next.js Websites',
   description:
-    'Denver AI web design agency building custom Next.js websites for the way customers search now — Google, AI Overviews, ChatGPT, Gemini, Claude and Perplexity. Web Design Pros 365.',
+    'Denver AI web design agency building custom Next.js websites for the way customers search now: Google, AI Overviews, ChatGPT, Gemini, Claude and Perplexity. Web Design Pros 365.',
 };
 
 const buildLayers = [
@@ -27,24 +27,24 @@ const buildLayers = [
 const aiSearchEngines = [
   { name: 'ChatGPT Search', color: '#10A37F', note: 'Favors brand mentions and authority sources across the web' },
   { name: 'Google AI Overviews', color: '#4285F4', note: 'Pulls from strong SEO signals and structured content' },
-  { name: 'Perplexity', color: '#6366f1', note: 'Cites frequently — rewards fresh, structured, citable content' },
-  { name: 'Claude', color: '#8B6FE2', note: 'Prefers depth and hierarchy — well-structured pages win' },
-  { name: 'Gemini', color: '#1A73E8', note: 'Tied to Google signals — video and multimodal content helps' },
+  { name: 'Perplexity', color: '#6366f1', note: 'Cites frequently and rewards fresh, structured, citable content' },
+  { name: 'Claude', color: '#8B6FE2', note: 'Prefers depth and hierarchy; well-structured pages win' },
+  { name: 'Gemini', color: '#1A73E8', note: 'Tied to Google signals; video and multimodal content helps' },
   { name: 'Bing Copilot', color: '#0078D4', note: 'Builds on Bing webmaster signals and indexed content' },
 ];
 
 const differentiators = [
   {
     title: 'The website and the visibility system are one build',
-    body: "Most shops either build websites or sell AI SEO. We do both in the same project. The structured data, content architecture, and technical signals that AI systems rely on are built into the site from day one — not added later.",
+    body: "Most shops either build websites or sell AI SEO. We do both in the same project. The structured data, content architecture, and technical signals that AI systems rely on are built into the site from day one, not patched on later.",
   },
   {
     title: 'Speed that search engines can measure',
-    body: "A slow website loses in both traditional search and AI-powered search. Every build targets 95+ Lighthouse performance — because page speed is a direct ranking and citation signal.",
+    body: "A slow website loses in both traditional search and AI-powered search. Every build targets 95+ Lighthouse performance. Page speed is a direct ranking and citation signal.",
   },
   {
-    title: 'Structured for extraction, not just reading',
-    body: "AI systems don't read your website the way a human does — they extract. We structure content with that in mind: clear hierarchy, lead-with-the-answer formatting, JSON-LD schema, and Speakable metadata.",
+    title: 'Structured for extraction, not decoration',
+    body: "AI systems don't read your website the way a human does. They extract. We structure content with that in mind: clear hierarchy, lead-with-the-answer formatting, JSON-LD schema, and Speakable metadata.",
   },
   {
     title: 'Built for how search is changing in Denver',
@@ -55,23 +55,23 @@ const differentiators = [
 const faqs = [
   {
     q: 'What does "AI-ready web design" actually mean?',
-    a: "It means the website is built so AI systems — ChatGPT, Google AI Overviews, Perplexity, Claude — can find, understand, and cite your business. That requires specific technical decisions: structured data (JSON-LD), answer-first content formatting, llms.txt, Speakable schema, and clean semantic HTML. These are standard in every AI-ready project at Web Design Pros 365.",
+    a: "It means the website is built so AI systems (ChatGPT, Google AI Overviews, Perplexity, Claude) can find, understand, and cite your business. That requires specific technical decisions: structured data (JSON-LD), answer-first content formatting, llms.txt, Speakable schema, and clean semantic HTML. These are standard in every AI-ready project at Web Design Pros 365.",
   },
   {
     q: 'How is this different from regular Denver web design?',
-    a: "A conventional web design project optimizes for how a human reads a webpage. AI-ready design also optimizes for how an AI system parses and extracts information. The visual design can look identical — the difference is under the hood, but it's significant to search systems.",
+    a: "A conventional web design project optimizes for how a human reads a webpage. AI-ready design also optimizes for how an AI system parses and extracts information. The visual design can look identical. The difference is under the hood, but it's significant to search systems.",
   },
   {
     q: 'How do you combine design, development, and AI visibility in one project?',
-    a: "All three disciplines are integrated from the start rather than treated as separate phases. Content architecture and development planning happen together — which means the structured data, content hierarchy, and technical SEO are built before a line of code is written, not added at the end.",
+    a: "All three disciplines are integrated from the start rather than treated as separate phases. Content architecture and development planning happen together, so the structured data, content hierarchy, and technical SEO are built before a line of code is written, not added at the end.",
   },
   {
     q: 'Do you offer ongoing AI visibility after the site launches?',
-    a: "Yes. For businesses that want to go further, we offer Denver AI SEO and Generative Engine Optimization services that continue building AI search presence after launch. The website is the foundation — ongoing work builds the citation authority on top.",
+    a: "Yes. For businesses that want to go further, we offer Denver AI SEO and Generative Engine Optimization services that continue building AI search presence after launch. The website is the foundation; ongoing work builds the citation authority on top.",
   },
   {
     q: 'Why is WDP365 the right choice for AI-ready web design in Denver?',
-    a: "We build the website and the visibility system together — most agencies do one or the other. The technical stack (Next.js 16, structured data, Vercel Edge), the content strategy (AEO, GEO), and the design all come from the same team with the same goal.",
+    a: "We build the website and the visibility system together. Most agencies do one or the other. The technical stack (Next.js 16, structured data, Vercel Edge), the content strategy (AEO, GEO), and the design all come from the same team with the same goal.",
   },
 ];
 
@@ -93,7 +93,7 @@ export default function DenverAiWebDesignPage() {
               <span style={{ color: '#8734E1' }}>for Denver Businesses</span>
             </h1>
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-4 leading-relaxed">
-              Custom Next.js websites built for the way customers search now — Google, AI Overviews, ChatGPT, Gemini, Claude, and Perplexity.
+              Custom Next.js websites built for the way customers search now: Google, AI Overviews, ChatGPT, Gemini, Claude, and Perplexity.
             </p>
             <p className="text-sm text-white/50 max-w-xl mx-auto mb-10">
               86% of Denver businesses are invisible to AI search. Your next website doesn't have to be.
@@ -202,7 +202,7 @@ export default function DenverAiWebDesignPage() {
       <section className="section bg-[#1e2030]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="heading-lg text-white mb-4">AI-ready web design — questions</h2>
+            <h2 className="heading-lg text-white mb-4">AI-ready web design: questions</h2>
           </motion.div>
           <div className="max-w-3xl mx-auto space-y-3">
             {faqs.map((faq, i) => (
