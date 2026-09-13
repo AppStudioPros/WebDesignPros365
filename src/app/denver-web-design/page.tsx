@@ -103,7 +103,7 @@ export default function DenverWebDesignPage() {
       </section>
 
       {/* DIFFERENTIATORS */}
-      <section className="section bg-[#1e2030]">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-14">
             <h2 className="heading-lg text-white mb-4">Not just a website. A system that works.</h2>
@@ -112,7 +112,7 @@ export default function DenverWebDesignPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {differentiators.map((d, i) => (
               <motion.div key={d.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="h-full">
-                <Card className="bg-[#252640] border-[#3a3858] p-8 h-full text-center">
+                <Card className="bg-[#1e2030] border-[#3a3858] p-8 h-full text-center">
                   <h3 className="font-semibold text-white mb-3">{d.title}</h3>
                   <p className="text-sm text-white/60 leading-relaxed">{d.body}</p>
                 </Card>
