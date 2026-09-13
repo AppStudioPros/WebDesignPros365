@@ -448,7 +448,7 @@ body {
   font-size: 0.975rem;
 }
 
-/* ── Animated border draw from corner (rounded-corner safe) ── */
+/* ── Animated border — both directions from top-left, meet at bottom-right ── */
 @property --border-angle {
   syntax: '<angle>';
   initial-value: 0deg;
@@ -460,17 +460,13 @@ body {
   isolation: isolate;
 }
 
-.card-draw-border::before {
+.card-draw-border::before,
+.card-draw-border::after {
   content: '';
   position: absolute;
   inset: -1px;
   border-radius: inherit;
   padding: 1px;
-  background: conic-gradient(
-    from -90deg at top left,
-    #8734E1 var(--border-angle),
-    transparent var(--border-angle)
-  );
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
@@ -482,9 +478,28 @@ body {
   transition: --border-angle 0s;
 }
 
+/* Clockwise: top edge → right side → bottom-right */
+.card-draw-border::before {
+  background: conic-gradient(
+    from -90deg at top left,
+    #8734E1 var(--border-angle),
+    transparent var(--border-angle)
+  );
+}
+
+/* Counter-clockwise: left edge → bottom → bottom-right */
+.card-draw-border::after {
+  background: conic-gradient(
+    from -90deg at top left,
+    transparent calc(360deg - var(--border-angle)),
+    #8734E1 calc(360deg - var(--border-angle))
+  );
+}
+
 @media (hover: hover) {
-  .card-draw-border:hover::before {
-    --border-angle: 360deg;
-    transition: --border-angle 0.6s ease;
+  .card-draw-border:hover::before,
+  .card-draw-border:hover::after {
+    --border-angle: 180deg;
+    transition: --border-angle 0.5s ease;
   }
 }
