@@ -110,13 +110,13 @@ export default function DenverNextjsPage() {
       {/* TECH STACK */}
       <section className="section bg-[#1e2030]">
         <div className="container-custom">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="heading-lg text-white mb-4">The stack we ship</h2>
             <p className="text-white/60 max-w-xl mx-auto">Every tool chosen for performance, developer experience, and long-term maintainability.</p>
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto items-stretch">
             {techStack.map((t, i) => (
-              <motion.div key={t.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="h-full">
+              <motion.div key={t.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="h-full">
                 <Card className="bg-[#252640] border-[#3a3858] p-4 text-center h-full flex flex-col justify-center">
                   <p className="font-semibold text-white text-sm mb-1">{t.label}</p>
                   <p className="text-xs text-white/50 leading-snug">{t.note}</p>
@@ -130,12 +130,12 @@ export default function DenverNextjsPage() {
       {/* CAPABILITIES */}
       <section className="section bg-[#252640]">
         <div className="container-custom">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-14">
             <h2 className="heading-lg text-white mb-4">What we build</h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
             {capabilities.map((c, i) => (
-              <motion.div key={c.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="h-full">
+              <motion.div key={c.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="h-full">
                 <Card className="bg-[#1e2030] border-[#3a3858] p-6 h-full text-center">
                   <h3 className="font-semibold text-white mb-3 text-sm">{c.title}</h3>
                   <p className="text-xs text-white/60 leading-relaxed">{c.body}</p>
@@ -149,7 +149,7 @@ export default function DenverNextjsPage() {
       {/* CROSSLINK */}
       <section className="section bg-[#1e2030]">
         <div className="container-custom max-w-3xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }}>
             <h2 className="heading-lg text-white mb-4">Need the website and AI visibility together?</h2>
             <p className="text-white/60 leading-relaxed mb-8">
               Our{' '}
@@ -166,12 +166,12 @@ export default function DenverNextjsPage() {
       {/* FAQ — accordion */}
       <section className="section bg-[#252640]">
         <div className="container-custom">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="heading-lg text-white mb-4">Denver Next.js development — questions</h2>
           </motion.div>
           <div className="max-w-3xl mx-auto space-y-3">
             {faqs.map((faq, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
                 <div className="bg-[#1e2030] border border-[#3a3858] rounded-2xl overflow-hidden">
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}

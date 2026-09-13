@@ -142,13 +142,13 @@ export default function DenverAiSeoPage() {
       {/* SEO vs AEO */}
       <section className="section bg-[#1e2030]">
         <div className="container-custom">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="heading-lg text-white mb-4">SEO and AEO: two disciplines, one system</h2>
             <p className="text-white/60 max-w-xl mx-auto">They're not competing approaches. They work together.</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto items-stretch">
             {comparison.map((item, i) => (
-              <motion.div key={item.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="h-full">
+              <motion.div key={item.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="h-full">
                 <Card className="bg-[#252640] border-[#3a3858] p-6 h-full text-center">
                   <div className="w-2 h-2 rounded-full mx-auto mb-4" style={{ backgroundColor: item.color }} />
                   <p className="font-semibold text-white text-sm mb-3">{item.label}</p>
@@ -163,12 +163,12 @@ export default function DenverAiSeoPage() {
       {/* SERVICES GRID */}
       <section className="section bg-[#252640]">
         <div className="container-custom">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-14">
             <h2 className="heading-lg text-white mb-4">What's included in Denver AI SEO</h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {seoServices.map((service, i) => (
-              <motion.div key={service.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="h-full">
+              <motion.div key={service.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="h-full">
                 <Card className="bg-[#1e2030] border-[#3a3858] p-6 h-full text-center">
                   <h3 className="font-semibold text-white mb-4">{service.title}</h3>
                   <ul className="space-y-2 text-left">
@@ -189,7 +189,7 @@ export default function DenverAiSeoPage() {
       {/* CROSSLINK — GEO */}
       <section className="section bg-[#1e2030]">
         <div className="container-custom max-w-3xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }}>
             <h2 className="heading-lg text-white mb-4">Need to get cited by ChatGPT and Claude?</h2>
             <p className="text-white/60 leading-relaxed mb-8">
               AI SEO makes you rankable and extractable. For businesses that want to go further — getting your brand cited by conversational AI engines — that's{' '}
@@ -206,12 +206,12 @@ export default function DenverAiSeoPage() {
       {/* FAQ — accordion */}
       <section className="section bg-[#252640]">
         <div className="container-custom">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="heading-lg text-white mb-4">Denver AI SEO — common questions</h2>
           </motion.div>
           <div className="max-w-3xl mx-auto space-y-3">
             {faqs.map((faq, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
                 <div className="bg-[#1e2030] border border-[#3a3858] rounded-2xl overflow-hidden">
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}

@@ -127,13 +127,13 @@ export default function DenverGeoPage() {
       {/* DENVER STATS */}
       <section className="section bg-[#252640]">
         <div className="container-custom">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="heading-lg text-white mb-4">The Denver AI visibility gap</h2>
             <p className="text-white/60 max-w-xl mx-auto text-center">Most Denver businesses don't know how invisible they are to AI search. The data is stark.</p>
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto items-stretch">
             {denverStats.map((s, i) => (
-              <motion.div key={s.stat} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="h-full">
+              <motion.div key={s.stat} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="h-full">
                 <div className="bg-[#1e2030] border border-[#3a3858] rounded-xl p-6 text-center h-full flex flex-col justify-center">
                   <p className="text-3xl md:text-4xl font-bold mb-2" style={{ color: '#8734E1' }}>{s.stat}</p>
                   <p className="text-xs text-white/60 leading-relaxed">{s.label}</p>
@@ -147,13 +147,13 @@ export default function DenverGeoPage() {
       {/* GEO SIGNALS — no icons, centered text */}
       <section className="section bg-[#1e2030]">
         <div className="container-custom">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-14">
             <h2 className="heading-lg text-white mb-4">What GEO actually optimizes</h2>
             <p className="text-white/60 max-w-xl mx-auto text-center">GEO targets the signals that determine whether an AI system cites your brand — not just whether it can find your site.</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {geoSignals.map((signal, i) => (
-              <motion.div key={signal.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
+              <motion.div key={signal.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
                 <div className="bg-[#252640] border border-[#3a3858] rounded-xl p-8 h-full text-center">
                   <h3 className="font-semibold text-white mb-3">{signal.title}</h3>
                   <p className="text-sm text-white/60 leading-relaxed">{signal.body}</p>
@@ -167,12 +167,12 @@ export default function DenverGeoPage() {
       {/* AI PLATFORMS — uniform card height */}
       <section className="section bg-[#252640]">
         <div className="container-custom">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="heading-lg text-white mb-4">How each AI engine cites — and what we do about it</h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
             {aiPlatforms.map((p, i) => (
-              <motion.div key={p.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="h-full">
+              <motion.div key={p.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="h-full">
                 <div className="bg-[#1e2030] border border-[#3a3858] rounded-xl p-5 h-full flex flex-col text-center">
                   <div className="flex items-center justify-center gap-2 mb-3">
                     <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: p.color }} />
@@ -189,12 +189,12 @@ export default function DenverGeoPage() {
       {/* PROCESS — no numbers */}
       <section className="section bg-[#1e2030]">
         <div className="container-custom">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="heading-lg text-white mb-4">How GEO works in practice</h2>
           </motion.div>
           <div className="max-w-3xl mx-auto space-y-4">
             {geoProcess.map((step, i) => (
-              <motion.div key={step.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
+              <motion.div key={step.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
                 <div className="bg-[#252640] border border-[#3a3858] rounded-2xl p-6 text-center">
                   <h3 className="font-semibold text-white mb-2">{step.title}</h3>
                   <p className="text-sm text-white/60 leading-relaxed">{step.body}</p>
@@ -208,7 +208,7 @@ export default function DenverGeoPage() {
       {/* CROSSLINKS */}
       <section className="section bg-[#252640]">
         <div className="container-custom max-w-3xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }}>
             <h2 className="heading-lg text-white mb-4">GEO works best on a strong foundation</h2>
             <p className="text-white/60 leading-relaxed mb-8 text-center">
               GEO is the top layer. Before building citation authority, every business needs solid technical SEO and AEO foundations.{' '}
@@ -232,12 +232,12 @@ export default function DenverGeoPage() {
       {/* FAQ — stylish accordion, auto-close */}
       <section className="section bg-[#1e2030]">
         <div className="container-custom">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="heading-lg text-white mb-4">GEO — frequently asked questions</h2>
           </motion.div>
           <div className="max-w-3xl mx-auto space-y-3">
             {faqs.map((faq, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
                 <div className="bg-[#252640] border border-[#3a3858] rounded-2xl overflow-hidden">
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}

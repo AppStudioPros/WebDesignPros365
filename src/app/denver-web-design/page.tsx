@@ -105,13 +105,13 @@ export default function DenverWebDesignPage() {
       {/* DIFFERENTIATORS */}
       <section className="section bg-[#1e2030]">
         <div className="container-custom">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-14">
             <h2 className="heading-lg text-white mb-4">Not just a website. A system that works.</h2>
             <p className="text-white/60 max-w-xl mx-auto">Most web design agencies stop at pretty. We build for performance, search, and the way customers find businesses today.</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {differentiators.map((d, i) => (
-              <motion.div key={d.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="h-full">
+              <motion.div key={d.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="h-full">
                 <Card className="bg-[#252640] border-[#3a3858] p-8 h-full text-center">
                   <h3 className="font-semibold text-white mb-3">{d.title}</h3>
                   <p className="text-sm text-white/60 leading-relaxed">{d.body}</p>
@@ -125,14 +125,14 @@ export default function DenverWebDesignPage() {
       {/* DELIVERABLES */}
       <section className="section bg-[#252640]">
         <div className="container-custom max-w-2xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="mb-10">
             <Badge className="mb-4 bg-[#1e1c35] text-[#2F73EE] border-[#2F73EE]/40">What's included</Badge>
             <h2 className="heading-lg text-white mb-4">Everything, built right</h2>
             <p className="text-white/60 leading-relaxed">
               Every Denver web design project ships with a complete technical stack — not a theme with fresh colors.
             </p>
           </motion.div>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-8">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="mb-8">
             <div className="grid grid-cols-1 gap-3 text-left">
               {deliverables.map((item) => (
                 <div key={item} className="flex items-center gap-3 bg-[#1e2030] rounded-lg px-4 py-3">
@@ -151,7 +151,7 @@ export default function DenverWebDesignPage() {
       {/* CROSSLINK */}
       <section className="section bg-[#1e2030]">
         <div className="container-custom max-w-3xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }}>
             <h2 className="heading-lg text-white mb-4">Every website includes AI visibility foundations</h2>
             <p className="text-white/60 leading-relaxed mb-8">
               Every project ships with technical SEO, structured data, and AEO architecture built in. For businesses that want to go further — we offer dedicated{' '}
@@ -170,12 +170,12 @@ export default function DenverWebDesignPage() {
       {/* FAQ — accordion */}
       <section className="section bg-[#252640]">
         <div className="container-custom">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="heading-lg text-white mb-4">Denver web design — common questions</h2>
           </motion.div>
           <div className="max-w-3xl mx-auto space-y-3">
             {faqs.map((faq, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
                 <div className="bg-[#1e2030] border border-[#3a3858] rounded-2xl overflow-hidden">
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}

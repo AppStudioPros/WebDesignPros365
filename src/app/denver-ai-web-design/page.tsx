@@ -113,13 +113,13 @@ export default function DenverAiWebDesignPage() {
       {/* BUILD LAYERS */}
       <section className="section bg-[#1e2030]">
         <div className="container-custom">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-14">
             <h2 className="heading-lg text-white mb-4">One build. Every layer.</h2>
             <p className="text-white/60 max-w-xl mx-auto">Design, development, and AI visibility aren't separate projects. They're one system.</p>
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto items-stretch">
             {buildLayers.map((layer, i) => (
-              <motion.div key={layer.step} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="h-full">
+              <motion.div key={layer.step} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="h-full">
                 <Card className="bg-[#252640] border-[#3a3858] p-4 text-center h-full flex flex-col justify-center">
                   <p className="text-xs font-mono text-[#8734E1] mb-2">{layer.step}</p>
                   <p className="font-semibold text-white text-sm mb-1">{layer.label}</p>
@@ -134,12 +134,12 @@ export default function DenverAiWebDesignPage() {
       {/* DIFFERENTIATORS */}
       <section className="section bg-[#252640]">
         <div className="container-custom">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-14">
             <h2 className="heading-lg text-white mb-4">Why this is different</h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {differentiators.map((d, i) => (
-              <motion.div key={d.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="h-full">
+              <motion.div key={d.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="h-full">
                 <Card className="bg-[#1e2030] border-[#3a3858] p-8 h-full text-center">
                   <h3 className="font-semibold text-white mb-3">{d.title}</h3>
                   <p className="text-sm text-white/60 leading-relaxed">{d.body}</p>
@@ -153,13 +153,13 @@ export default function DenverAiWebDesignPage() {
       {/* AI ENGINES */}
       <section className="section bg-[#1e2030]">
         <div className="container-custom">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="heading-lg text-white mb-4">Built to be found everywhere search is going</h2>
             <p className="text-white/60 max-w-xl mx-auto">Every AI system has different patterns. We build for all of them.</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto items-stretch">
             {aiSearchEngines.map((engine, i) => (
-              <motion.div key={engine.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="h-full">
+              <motion.div key={engine.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="h-full">
                 <div className="bg-[#252640] border border-[#3a3858] rounded-xl p-5 h-full flex flex-col text-center">
                   <div className="flex items-center justify-center gap-2 mb-3">
                     <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: engine.color }} />
@@ -176,7 +176,7 @@ export default function DenverAiWebDesignPage() {
       {/* CROSSLINKS */}
       <section className="section bg-[#252640]">
         <div className="container-custom max-w-4xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-10">
             <h2 className="heading-lg text-white mb-4">Go deeper with AI search</h2>
             <p className="text-white/60">Every AI-ready website includes our technical SEO and AEO foundation. For ongoing AI search visibility, pair it with:</p>
           </motion.div>
@@ -202,12 +202,12 @@ export default function DenverAiWebDesignPage() {
       {/* FAQ — accordion */}
       <section className="section bg-[#1e2030]">
         <div className="container-custom">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="heading-lg text-white mb-4">AI-ready web design — questions</h2>
           </motion.div>
           <div className="max-w-3xl mx-auto space-y-3">
             {faqs.map((faq, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
                 <div className="bg-[#252640] border border-[#3a3858] rounded-2xl overflow-hidden">
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
