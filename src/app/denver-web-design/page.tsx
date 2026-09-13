@@ -1,13 +1,12 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { ArrowRight, Zap, Check, Globe2, Monitor, Layers, BarChart3 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Check, ChevronDown } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { GlassIcon } from '@/components/ui/glass-icon';
 import CTASection from '@/components/sections/CTASection';
 
 const _metadata = {
@@ -18,28 +17,20 @@ const _metadata = {
 
 const differentiators = [
   {
-    icon: Zap,
     title: 'Built for speed from the start',
-    body: 'Every site is built on Next.js 16 with React 19, deployed to Vercel Edge — so it loads fast everywhere. No WordPress bloat, no page builders, no performance debt.',
-    color: '#2F73EE',
+    body: 'Every site is built on Next.js 16 with React 19, deployed to Vercel Edge. Fast everywhere, no exceptions. No WordPress bloat, no page builders, no performance debt.',
   },
   {
-    icon: Globe2,
     title: 'Engineered for search and AI discovery',
-    body: 'Speed is the foundation, not the ceiling. Every build includes technical SEO, structured data, and the content architecture needed to surface in Google and AI-powered search.',
-    color: '#8734E1',
+    body: 'Speed is the floor, not the ceiling. Every build includes technical SEO, structured data, and the content architecture needed to show up in Google and AI-powered search.',
   },
   {
-    icon: Monitor,
     title: 'Designed to convert',
-    body: 'A beautiful site that doesn\'t generate leads is a liability. We design with conversion in mind — clear hierarchy, compelling CTAs, and user flows that turn visitors into clients.',
-    color: '#EC4899',
+    body: "A good-looking site that doesn't generate leads is a liability. We design with conversion in mind — clear hierarchy, strong CTAs, and flows that move visitors toward action.",
   },
   {
-    icon: Layers,
     title: 'Custom, not templated',
-    body: 'No ThemeForest. No Elementor. Every component is written for your business, your brand, and your audience — built to last, not to patch.',
-    color: '#10B981',
+    body: "No ThemeForest. No Elementor. Every component is written for your business, your brand, and your audience — built to last, not to patch.",
   },
 ];
 
@@ -59,27 +50,29 @@ const deliverables = [
 const faqs = [
   {
     q: 'Why Next.js instead of WordPress or Squarespace?',
-    a: "Next.js is a production-grade React framework that delivers dramatically faster load times, better Core Web Vitals scores, and cleaner code architecture than CMS-based platforms. For businesses that care about search rankings and AI discoverability, the technical foundation matters. WordPress sites require constant maintenance, are vulnerable to plugins breaking, and struggle to score well on modern performance benchmarks.",
+    a: "Next.js delivers faster load times, better Core Web Vitals scores, and cleaner architecture than CMS-based platforms. WordPress sites need constant maintenance, break when plugins conflict, and routinely score poorly on modern performance tests. For businesses that care about search rankings and AI discoverability, the technical foundation matters.",
   },
   {
     q: 'How long does a custom website build take?',
     a: "Most 5-8 page custom builds take 2-4 weeks from kickoff to launch, depending on how quickly content and feedback come in. We work in focused sprints — you always know what's being built and when.",
   },
   {
-    q: 'Do you design or just develop?',
-    a: "Both. Web Design Pros 365 handles design and development as a single integrated process. We don't hand off a Figma file to a separate dev team — the same people who design it build it, which means faster iteration and cleaner execution.",
+    q: 'Do you handle design and development, or just one?',
+    a: "Both. Web Design Pros 365 handles design and development as one integrated process. The same team that designs it builds it — which means faster iteration and a cleaner result than a Figma handoff to a separate dev shop.",
   },
   {
     q: 'What does "engineered for AI discovery" mean on a web design project?',
-    a: "It means the content architecture, structured data, metadata, and technical foundations are built so your site is easy for AI systems — ChatGPT, Google AI Overviews, Perplexity, Claude — to understand, index, and cite. This is built into every project, not an add-on.",
+    a: "It means the content architecture, structured data, metadata, and technical foundations are built so AI systems — ChatGPT, Google AI Overviews, Perplexity, Claude — can find, read, and cite your business. This is standard in every project, not an add-on.",
   },
   {
-    q: 'Do you serve businesses outside of Denver?',
-    a: "Yes. We're based in Denver but work with businesses across Colorado and nationally. Our best clients value the quality of the work regardless of geography.",
+    q: 'Do you work with businesses outside Denver?',
+    a: "Yes. We're based in Denver but work with businesses across Colorado and nationally. Most client relationships are fully remote.",
   },
 ];
 
 export default function DenverWebDesignPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   return (
     <>
       {/* HERO */}
@@ -95,7 +88,7 @@ export default function DenverWebDesignPage() {
               <span style={{ color: '#2F73EE' }}>for High-Performance Websites</span>
             </h1>
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
-              Custom websites built in Denver on Next.js 16, React and Vercel — engineered for speed, conversions, Google search, and AI discovery.
+              Custom websites built in Denver on Next.js 16, React and Vercel — built for speed, conversions, Google search, and AI discovery.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-[#2F73EE] hover:bg-[#2563cc] text-white px-8">
@@ -109,19 +102,18 @@ export default function DenverWebDesignPage() {
         </div>
       </section>
 
-      {/* WHAT MAKES US DIFFERENT */}
+      {/* DIFFERENTIATORS */}
       <section className="section bg-[#1e2030]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
             <h2 className="heading-lg text-white mb-4">Not just a website. A system that works.</h2>
-            <p className="text-white/60 max-w-xl mx-auto text-center">Most web design agencies stop at pretty. We build for performance, search, and the way customers actually find businesses in 2026.</p>
+            <p className="text-white/60 max-w-xl mx-auto">Most web design agencies stop at pretty. We build for performance, search, and the way customers find businesses today.</p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {differentiators.map((d, i) => (
-              <motion.div key={d.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-                <Card className="bg-[#252640] border-[#3a3858] p-6 h-full">
-                  <GlassIcon Icon={d.icon} color={d.color} className="mb-4" />
-                  <h3 className="font-semibold text-white mb-2">{d.title}</h3>
+              <motion.div key={d.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="h-full">
+                <Card className="bg-[#252640] border-[#3a3858] p-8 h-full text-center hover:border-[#2F73EE] hover:shadow-lg transition-all">
+                  <h3 className="font-semibold text-white mb-3">{d.title}</h3>
                   <p className="text-sm text-white/60 leading-relaxed">{d.body}</p>
                 </Card>
               </motion.div>
@@ -132,40 +124,37 @@ export default function DenverWebDesignPage() {
 
       {/* DELIVERABLES */}
       <section className="section bg-[#252640]">
-        <div className="container-custom">
-          <div className="flex flex-col items-center gap-10">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <Badge className="mb-4 bg-[#1e1c35] text-[#2F73EE] border-[#2F73EE]/40">What's included</Badge>
-              <h2 className="heading-lg text-white mb-6">Everything, built right</h2>
-              <p className="text-white/60 leading-relaxed mb-6 text-center">
-                Every Denver web design project at Web Design Pros 365 ships with a complete technical stack — not a template with a new coat of paint.
-              </p>
-              <Button asChild className="bg-[#2F73EE] hover:bg-[#2563cc] text-white">
-                <Link href="/contact">Get a Project Quote <ArrowRight className="ml-2 w-4 h-4" /></Link>
-              </Button>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <div className="grid grid-cols-1 gap-3">
-                {deliverables.map((item) => (
-                  <div key={item} className="flex items-center gap-3 bg-[#1e2030] rounded-lg px-4 py-3">
-                    <Check className="w-4 h-4 text-[#2F73EE] flex-shrink-0" />
-                    <span className="text-sm text-white/80">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
+        <div className="container-custom max-w-2xl mx-auto text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10">
+            <Badge className="mb-4 bg-[#1e1c35] text-[#2F73EE] border-[#2F73EE]/40">What's included</Badge>
+            <h2 className="heading-lg text-white mb-4">Everything, built right</h2>
+            <p className="text-white/60 leading-relaxed">
+              Every Denver web design project ships with a complete technical stack — not a theme with fresh colors.
+            </p>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-8">
+            <div className="grid grid-cols-1 gap-3 text-left">
+              {deliverables.map((item) => (
+                <div key={item} className="flex items-center gap-3 bg-[#1e2030] rounded-lg px-4 py-3 hover:border hover:border-[#2F73EE]/40 transition-all">
+                  <Check className="w-4 h-4 text-[#2F73EE] flex-shrink-0" />
+                  <span className="text-sm text-white/80">{item}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+          <Button asChild className="bg-[#2F73EE] hover:bg-[#2563cc] text-white">
+            <Link href="/contact">Get a Project Quote <ArrowRight className="ml-2 w-4 h-4" /></Link>
+          </Button>
         </div>
       </section>
 
-      {/* CROSSLINK — AI VISIBILITY */}
+      {/* CROSSLINK */}
       <section className="section bg-[#1e2030]">
-        <div className="container-custom">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center">
-            <BarChart3 className="w-10 h-10 mx-auto mb-4" style={{ color: '#8734E1' }} />
+        <div className="container-custom max-w-3xl mx-auto text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="heading-lg text-white mb-4">Every website includes AI visibility foundations</h2>
-            <p className="text-white/60 leading-relaxed mb-8 text-center">
-              Every project ships with technical SEO, structured data, and AEO architecture built in. For businesses that want to go deeper — we also offer dedicated{' '}
+            <p className="text-white/60 leading-relaxed mb-8">
+              Every project ships with technical SEO, structured data, and AEO architecture built in. For businesses that want to go further — we offer dedicated{' '}
               <Link href="/denver-ai-seo" className="text-[#8734E1] hover:underline">Denver AI SEO</Link>{' '}
               and{' '}
               <Link href="/denver-generative-engine-optimization" className="text-[#8734E1] hover:underline">Generative Engine Optimization</Link>{' '}
@@ -178,18 +167,32 @@ export default function DenverWebDesignPage() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* FAQ — accordion */}
       <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="heading-lg text-white mb-4">Denver web design — common questions</h2>
           </motion.div>
-          <div className="max-w-3xl mx-auto space-y-4">
+          <div className="max-w-3xl mx-auto space-y-3">
             {faqs.map((faq, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
-                <div className="bg-[#1e2030] border border-[#3a3858] rounded-2xl p-6">
-                  <h3 className="font-semibold text-white mb-3">{faq.q}</h3>
-                  <p className="text-[#a8a4c8] leading-relaxed text-sm">{faq.a}</p>
+                <div className="bg-[#1e2030] border border-[#3a3858] rounded-2xl overflow-hidden">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-[#1c1d30] transition-colors"
+                  >
+                    <span className="font-semibold text-white pr-4 text-sm md:text-base">{faq.q}</span>
+                    <ChevronDown className={`w-5 h-5 flex-shrink-0 transition-transform duration-300 ${openFaq === i ? 'rotate-180' : ''}`} style={{ color: '#2F73EE' }} />
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {openFaq === i && (
+                      <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3, ease: 'easeInOut' }}>
+                        <div className="px-6 pb-5 border-t border-[#3a3858]">
+                          <p className="text-[#a8a4c8] leading-relaxed text-sm pt-4">{faq.a}</p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               </motion.div>
             ))}

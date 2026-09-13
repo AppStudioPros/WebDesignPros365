@@ -1,13 +1,12 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { ArrowRight, Search, Bot, Check, BarChart3, FileText, Code2 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Check, ChevronDown } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { GlassIcon } from '@/components/ui/glass-icon';
 import CTASection from '@/components/sections/CTASection';
 
 const _metadata = {
@@ -18,7 +17,6 @@ const _metadata = {
 
 const seoServices = [
   {
-    icon: Search,
     title: 'Technical SEO',
     color: '#2F73EE',
     items: [
@@ -31,7 +29,6 @@ const seoServices = [
     ],
   },
   {
-    icon: Bot,
     title: 'Answer Engine Optimization (AEO)',
     color: '#EC4899',
     items: [
@@ -44,7 +41,6 @@ const seoServices = [
     ],
   },
   {
-    icon: FileText,
     title: 'On-Page SEO',
     color: '#10B981',
     items: [
@@ -57,8 +53,7 @@ const seoServices = [
     ],
   },
   {
-    icon: BarChart3,
-    title: 'Reporting & Visibility',
+    title: 'Reporting and Visibility',
     color: '#F59E0B',
     items: [
       'Google Search Console setup and monitoring',
@@ -71,7 +66,7 @@ const seoServices = [
   },
 ];
 
-const aiVsTraditional = [
+const comparison = [
   {
     label: 'Traditional SEO goal',
     desc: 'Rank in the blue links on page 1 of Google',
@@ -84,7 +79,7 @@ const aiVsTraditional = [
   },
   {
     label: 'How they work together',
-    desc: 'Strong traditional SEO builds the domain authority that makes AEO more effective. AEO signals help traditional rankings. They are not competing strategies.',
+    desc: 'Strong SEO builds the authority that makes AEO more effective. AEO signals help traditional rankings. They are not competing strategies.',
     color: '#8734E1',
   },
 ];
@@ -92,27 +87,29 @@ const aiVsTraditional = [
 const faqs = [
   {
     q: 'What is AI SEO and how is it different from regular SEO?',
-    a: "AI SEO is SEO updated for the current reality: search results include AI-generated answers, not just blue links. Regular SEO optimizes for ranking. AI SEO also optimizes for selection — making sure your content is structured so AI Overviews, voice search, and answer engines choose your page as the source. Technical SEO remains the foundation; answer engine optimization (AEO) is layered on top.",
+    a: "AI SEO is SEO updated for the current reality: search results now include AI-generated answers, not just blue links. Regular SEO optimizes for ranking. AI SEO also optimizes for selection — making sure your content is structured so AI Overviews, voice search, and answer engines choose your page as the source. Technical SEO remains the foundation; answer engine optimization (AEO) is the layer on top.",
   },
   {
     q: 'What is AEO (Answer Engine Optimization)?',
-    a: "AEO is the practice of structuring content so AI systems pick your page as the direct answer to a query. Key tactics include FAQPage and HowTo schema markup, Speakable schema, answer-first formatting (leading every section with the direct answer before context), and entity-based optimization. AEO focuses on being SELECTED by an AI system — different from SEO which focuses on RANKING in a list.",
+    a: "AEO is the practice of structuring content so AI systems pick your page as the direct answer to a query. Key tactics include FAQPage and HowTo schema, Speakable schema, answer-first formatting, and entity-based optimization. AEO focuses on being selected by an AI system — different from SEO which focuses on ranking in a list.",
   },
   {
     q: 'How long does it take to see AI SEO results?',
-    a: "Technical SEO improvements — page speed, Core Web Vitals, structured data — show up in Google Search Console within days to weeks. Ranking improvements typically show meaningful movement in 30-90 days depending on competition. AEO signals (like FAQ schema driving featured snippets) can appear in as few as 2-4 weeks. AI search visibility (Perplexity, ChatGPT) responds to structural changes in as little as 2-7 days per published research.",
+    a: "Technical improvements — page speed, Core Web Vitals, structured data — show up in Google Search Console within days to weeks. Ranking changes typically show meaningful movement in 30-90 days. AEO signals like FAQ schema can drive featured snippets in as few as 2-4 weeks. AI search appearance (Perplexity, ChatGPT) responds to structural changes in as little as 2-7 days.",
   },
   {
-    q: 'Do you offer AI SEO for existing websites or only for sites you build?',
-    a: "Both. We can audit and optimize any existing website regardless of platform. We do require that the site has a technically sound foundation — if critical issues exist (like a WordPress site with severe speed problems or a page builder that blocks clean semantic HTML), we may recommend addressing those first.",
+    q: 'Do you offer AI SEO for existing websites?',
+    a: "Yes. We can audit and optimize any existing website regardless of platform. If critical technical issues exist — like a WordPress site with severe speed problems or a page builder that blocks clean semantic HTML — we may recommend addressing those first.",
   },
   {
     q: 'Is AI SEO different from Generative Engine Optimization (GEO)?',
-    a: "Yes. AI SEO + AEO focuses on Google-adjacent signals: ranking, featured snippets, AI Overviews. GEO is specifically about getting cited by conversational AI engines — ChatGPT, Gemini, Claude, Perplexity. They require overlapping but distinct strategies. Our dedicated GEO service handles the citation-building layer.",
+    a: "Yes. AI SEO and AEO focus on Google-adjacent signals: ranking, featured snippets, AI Overviews. GEO is specifically about getting cited by conversational AI engines — ChatGPT, Gemini, Claude, Perplexity. They require overlapping but different strategies. Our dedicated GEO service handles the citation-building layer.",
   },
 ];
 
 export default function DenverAiSeoPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   return (
     <>
       {/* HERO */}
@@ -128,7 +125,7 @@ export default function DenverAiSeoPage() {
               <span style={{ color: '#2F73EE' }}>for Google and AI-Powered Search</span>
             </h1>
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
-              Rank in traditional search and become easier for AI systems to understand, trust and recommend. Technical SEO + Answer Engine Optimization, combined.
+              Rank in traditional search and become easier for AI systems to understand, trust, and recommend. Technical SEO and Answer Engine Optimization, working together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-[#2F73EE] hover:bg-[#2563cc] text-white px-8">
@@ -146,15 +143,15 @@ export default function DenverAiSeoPage() {
       <section className="section bg-[#1e2030]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="heading-lg text-white mb-4">SEO + AEO: two disciplines, one system</h2>
-            <p className="text-white/60 max-w-xl mx-auto text-center">They're not competing approaches. They work together.</p>
+            <h2 className="heading-lg text-white mb-4">SEO and AEO: two disciplines, one system</h2>
+            <p className="text-white/60 max-w-xl mx-auto">They're not competing approaches. They work together.</p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {aiVsTraditional.map((item, i) => (
-              <motion.div key={item.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-                <Card className="bg-[#252640] border-[#3a3858] p-6 h-full">
-                  <div className="w-2 h-2 rounded-full mb-4" style={{ backgroundColor: item.color }} />
-                  <p className="font-semibold text-white text-sm mb-2">{item.label}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto items-stretch">
+            {comparison.map((item, i) => (
+              <motion.div key={item.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="h-full">
+                <Card className="bg-[#252640] border-[#3a3858] p-6 h-full text-center hover:border-[#2F73EE] hover:shadow-lg transition-all">
+                  <div className="w-2 h-2 rounded-full mx-auto mb-4" style={{ backgroundColor: item.color }} />
+                  <p className="font-semibold text-white text-sm mb-3">{item.label}</p>
                   <p className="text-sm text-white/60 leading-relaxed">{item.desc}</p>
                 </Card>
               </motion.div>
@@ -169,13 +166,12 @@ export default function DenverAiSeoPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
             <h2 className="heading-lg text-white mb-4">What's included in Denver AI SEO</h2>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {seoServices.map((service, i) => (
-              <motion.div key={service.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-                <Card className="bg-[#1e2030] border-[#3a3858] p-6 h-full">
-                  <GlassIcon Icon={service.icon} color={service.color} className="mb-4" />
+              <motion.div key={service.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="h-full">
+                <Card className="bg-[#1e2030] border-[#3a3858] p-6 h-full text-center hover:border-[#2F73EE] hover:shadow-lg transition-all">
                   <h3 className="font-semibold text-white mb-4">{service.title}</h3>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 text-left">
                     {service.items.map((item) => (
                       <li key={item} className="flex items-start gap-2">
                         <Check className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" style={{ color: service.color }} />
@@ -194,9 +190,8 @@ export default function DenverAiSeoPage() {
       <section className="section bg-[#1e2030]">
         <div className="container-custom max-w-3xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <Code2 className="w-10 h-10 mx-auto mb-4" style={{ color: '#8734E1' }} />
             <h2 className="heading-lg text-white mb-4">Need to get cited by ChatGPT and Claude?</h2>
-            <p className="text-white/60 leading-relaxed mb-8 text-center">
+            <p className="text-white/60 leading-relaxed mb-8">
               AI SEO makes you rankable and extractable. For businesses that want to go further — getting your brand cited by conversational AI engines — that's{' '}
               <Link href="/denver-generative-engine-optimization" className="text-[#8734E1] hover:underline">Generative Engine Optimization (GEO)</Link>.
               Ranking isn't enough anymore. Become the source AI cites.
@@ -208,18 +203,32 @@ export default function DenverAiSeoPage() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* FAQ — accordion */}
       <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="heading-lg text-white mb-4">Denver AI SEO — common questions</h2>
           </motion.div>
-          <div className="max-w-3xl mx-auto space-y-4">
+          <div className="max-w-3xl mx-auto space-y-3">
             {faqs.map((faq, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
-                <div className="bg-[#1e2030] border border-[#3a3858] rounded-2xl p-6">
-                  <h3 className="font-semibold text-white mb-3">{faq.q}</h3>
-                  <p className="text-[#a8a4c8] leading-relaxed text-sm">{faq.a}</p>
+                <div className="bg-[#1e2030] border border-[#3a3858] rounded-2xl overflow-hidden">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-[#1c1d30] transition-colors"
+                  >
+                    <span className="font-semibold text-white pr-4 text-sm md:text-base">{faq.q}</span>
+                    <ChevronDown className={`w-5 h-5 flex-shrink-0 transition-transform duration-300 ${openFaq === i ? 'rotate-180' : ''}`} style={{ color: '#2F73EE' }} />
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {openFaq === i && (
+                      <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3, ease: 'easeInOut' }}>
+                        <div className="px-6 pb-5 border-t border-[#3a3858]">
+                          <p className="text-[#a8a4c8] leading-relaxed text-sm pt-4">{faq.a}</p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               </motion.div>
             ))}
