@@ -111,19 +111,18 @@ export default function DenverAiWebDesignPage() {
       </section>
 
       {/* BUILD LAYERS */}
-      <section className="section bg-[#1e2030]">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-14">
             <h2 className="heading-lg text-white mb-4">One build. Every layer.</h2>
             <p className="text-white/60 max-w-xl mx-auto">Design, development, and AI visibility aren't separate projects. They're one system.</p>
           </motion.div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto items-stretch">
             {buildLayers.map((layer, i) => (
               <motion.div key={layer.step} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="h-full">
-                <Card className="bg-[#252640] border-[#3a3858] p-4 text-center h-full flex flex-col justify-center">
-                  <p className="text-xs font-mono text-[#8734E1] mb-2">{layer.step}</p>
-                  <p className="font-semibold text-white text-sm mb-1">{layer.label}</p>
-                  <p className="text-xs text-white/50 leading-snug">{layer.detail}</p>
+                <Card className="bg-[#1e2030] border-[#3a3858] p-8 text-center h-full flex flex-col justify-center">
+                  <p className="font-semibold text-white mb-2">{layer.label}</p>
+                  <p className="text-sm text-white/60 leading-relaxed">{layer.detail}</p>
                 </Card>
               </motion.div>
             ))}
