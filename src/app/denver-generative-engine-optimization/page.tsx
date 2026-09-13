@@ -1,13 +1,12 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Quote, Check, Globe2, Bot, FileText } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { GlassIcon } from '@/components/ui/glass-icon';
 import CTASection from '@/components/sections/CTASection';
 
 const _metadata = {
@@ -18,25 +17,21 @@ const _metadata = {
 
 const geoSignals = [
   {
-    icon: Globe2,
     title: 'Entity optimization',
     body: 'AI systems build a model of your business as an entity — name, location, industry, expertise, associations. We make that model accurate, complete, and consistent across the web.',
     color: '#8734E1',
   },
   {
-    icon: FileText,
     title: 'Citation-worthy content architecture',
-    body: 'AI systems cite sources that are authoritative, specific, and structured. We restructure your content so it\'s the kind of source an LLM would want to reference.',
+    body: "AI systems cite sources that are authoritative, specific, and structured. We restructure your content so it's the kind of source an LLM would want to reference.",
     color: '#2F73EE',
   },
   {
-    icon: Bot,
     title: 'llms.txt and AI crawler access',
     body: 'We implement llms.txt files, ensure all major AI crawlers are invited and unblocked, and structure content metadata for AI parsing — not just human reading.',
     color: '#EC4899',
   },
   {
-    icon: Sparkles,
     title: 'E-E-A-T authority signals',
     body: 'Experience, Expertise, Authoritativeness, Trustworthiness — the signals AI systems and Google use to evaluate whether a source is worth citing. We build them systematically.',
     color: '#10B981',
@@ -51,16 +46,16 @@ const denverStats = [
 ];
 
 const geoProcess = [
-  { step: '01', title: 'AI visibility audit', body: 'We test how your business currently appears in ChatGPT, Gemini, Claude, and Perplexity. Most Denver businesses don\'t appear at all. This is your baseline.' },
-  { step: '02', title: 'Entity and citation gap analysis', body: 'We identify what signals your business is missing — structured data gaps, content structure issues, authority source presence, crawler access problems.' },
-  { step: '03', title: 'Content and architecture work', body: 'We restructure pages for AI extraction, implement llms.txt, fix schema gaps, and build citation-worthy content that AI systems want to reference.' },
-  { step: '04', title: 'Authority signal building', body: 'We expand your presence on the sources AI systems pull from most — and ensure your brand is mentioned consistently, accurately, and authoritatively.' },
-  { step: '05', title: 'Monitoring and iteration', body: 'GEO is not a one-time fix. AI search evolves fast. We track your citation presence across AI engines and iterate as the landscape shifts.' },
+  { title: 'AI visibility audit', body: "We test how your business currently appears in ChatGPT, Gemini, Claude, and Perplexity. Most Denver businesses don't appear at all. This is your baseline." },
+  { title: 'Entity and citation gap analysis', body: 'We identify what signals your business is missing — structured data gaps, content structure issues, authority source presence, crawler access problems.' },
+  { title: 'Content and architecture work', body: 'We restructure pages for AI extraction, implement llms.txt, fix schema gaps, and build citation-worthy content that AI systems want to reference.' },
+  { title: 'Authority signal building', body: 'We expand your presence on the sources AI systems pull from most — and ensure your brand is mentioned consistently, accurately, and authoritatively.' },
+  { title: 'Monitoring and iteration', body: 'GEO is not a one-time fix. AI search evolves fast. We track your citation presence across AI engines and iterate as the landscape shifts.' },
 ];
 
 const aiPlatforms = [
   { name: 'ChatGPT / SearchGPT', note: 'Brand mention frequency is the strongest predictor of ChatGPT citation. Consistency across the open web.', color: '#10A37F' },
-  { name: 'Perplexity', note: 'Cites more sources per answer than any other engine. Responds to structural changes in 2-7 days.', color: '#1B1F23' },
+  { name: 'Perplexity', note: 'Cites more sources per answer than any other engine. Responds to structural changes in 2-7 days.', color: '#6366f1' },
   { name: 'Claude', note: '30% more likely to cite bullet-pointed, well-structured pages. Hierarchy and directness matter.', color: '#8B6FE2' },
   { name: 'Google AI Overviews', note: 'Hybrid of traditional SEO signals and community sources. Strong technical SEO is the foundation.', color: '#4285F4' },
   { name: 'Gemini', note: 'Tightly tied to Google search behavior. Video and multimodal content adds signal.', color: '#1A73E8' },
@@ -95,6 +90,8 @@ const faqs = [
 ];
 
 export default function DenverGeoPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   return (
     <>
       {/* HERO */}
@@ -147,19 +144,19 @@ export default function DenverGeoPage() {
         </div>
       </section>
 
-      {/* GEO SIGNALS */}
+      {/* GEO SIGNALS — no icons, centered text */}
       <section className="section bg-[#1e2030]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
             <h2 className="heading-lg text-white mb-4">What GEO actually optimizes</h2>
             <p className="text-white/60 max-w-xl mx-auto text-center">GEO targets the signals that determine whether an AI system cites your brand — not just whether it can find your site.</p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {geoSignals.map((signal, i) => (
               <motion.div key={signal.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-                <Card className="bg-[#252640] border-[#3a3858] p-6 h-full">
-                  <GlassIcon Icon={signal.icon} color={signal.color} className="mb-4" />
-                  <h3 className="font-semibold text-white mb-2">{signal.title}</h3>
+                <Card className="bg-[#252640] border-[#3a3858] p-8 h-full text-center">
+                  <div className="w-2 h-2 rounded-full mx-auto mb-4" style={{ backgroundColor: signal.color }} />
+                  <h3 className="font-semibold text-white mb-3">{signal.title}</h3>
                   <p className="text-sm text-white/60 leading-relaxed">{signal.body}</p>
                 </Card>
               </motion.div>
@@ -168,7 +165,7 @@ export default function DenverGeoPage() {
         </div>
       </section>
 
-      {/* AI PLATFORMS */}
+      {/* AI PLATFORMS — uniform card height */}
       <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
@@ -176,13 +173,13 @@ export default function DenverGeoPage() {
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
             {aiPlatforms.map((p, i) => (
-              <motion.div key={p.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }}>
-                <div className="bg-[#1e2030] border border-[#3a3858] rounded-xl p-5">
-                  <div className="flex items-center gap-2 mb-3">
+              <motion.div key={p.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="h-full">
+                <div className="bg-[#1e2030] border border-[#3a3858] rounded-xl p-5 h-full flex flex-col text-center">
+                  <div className="flex items-center justify-center gap-2 mb-3">
                     <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: p.color }} />
                     <p className="font-semibold text-white text-sm">{p.name}</p>
                   </div>
-                  <p className="text-xs text-white/55 leading-relaxed">{p.note}</p>
+                  <p className="text-xs text-white/55 leading-relaxed flex-1">{p.note}</p>
                 </div>
               </motion.div>
             ))}
@@ -190,7 +187,7 @@ export default function DenverGeoPage() {
         </div>
       </section>
 
-      {/* PROCESS */}
+      {/* PROCESS — no numbers */}
       <section className="section bg-[#1e2030]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
@@ -198,13 +195,10 @@ export default function DenverGeoPage() {
           </motion.div>
           <div className="max-w-3xl mx-auto space-y-4">
             {geoProcess.map((step, i) => (
-              <motion.div key={step.step} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
-                <div className="bg-[#252640] border border-[#3a3858] rounded-2xl p-6 flex gap-5">
-                  <p className="text-2xl font-bold font-mono flex-shrink-0" style={{ color: '#8734E1' }}>{step.step}</p>
-                  <div>
-                    <h3 className="font-semibold text-white mb-1">{step.title}</h3>
-                    <p className="text-sm text-white/60 leading-relaxed">{step.body}</p>
-                  </div>
+              <motion.div key={step.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
+                <div className="bg-[#252640] border border-[#3a3858] rounded-2xl p-6 text-center">
+                  <h3 className="font-semibold text-white mb-2">{step.title}</h3>
+                  <p className="text-sm text-white/60 leading-relaxed">{step.body}</p>
                 </div>
               </motion.div>
             ))}
@@ -236,18 +230,40 @@ export default function DenverGeoPage() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* FAQ — stylish accordion, auto-close */}
       <section className="section bg-[#1e2030]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="heading-lg text-white mb-4">GEO — frequently asked questions</h2>
           </motion.div>
-          <div className="max-w-3xl mx-auto space-y-4">
+          <div className="max-w-3xl mx-auto space-y-3">
             {faqs.map((faq, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
-                <div className="bg-[#252640] border border-[#3a3858] rounded-2xl p-6">
-                  <h3 className="font-semibold text-white mb-3">{faq.q}</h3>
-                  <p className="text-[#a8a4c8] leading-relaxed text-sm">{faq.a}</p>
+                <div className="bg-[#252640] border border-[#3a3858] rounded-2xl overflow-hidden">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-[#1c1d30] transition-colors"
+                  >
+                    <span className="font-semibold text-white pr-4 text-sm md:text-base">{faq.q}</span>
+                    <ChevronDown
+                      className={`w-5 h-5 flex-shrink-0 transition-transform duration-300 ${openFaq === i ? 'rotate-180' : ''}`}
+                      style={{ color: '#8734E1' }}
+                    />
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {openFaq === i && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      >
+                        <div className="px-6 pb-5 border-t border-[#3a3858]">
+                          <p className="text-[#a8a4c8] leading-relaxed text-sm pt-4">{faq.a}</p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               </motion.div>
             ))}
