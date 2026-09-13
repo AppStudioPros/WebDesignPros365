@@ -132,7 +132,7 @@ export default function DenverGeoPage() {
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="heading-lg text-white mb-4">The Denver AI visibility gap</h2>
-            <p className="text-white/60 max-w-xl mx-auto">Most Denver businesses don't know how invisible they are to AI search. The data is stark.</p>
+            <p className="text-white/60 max-w-xl mx-auto text-center">Most Denver businesses don't know how invisible they are to AI search. The data is stark.</p>
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {denverStats.map((s, i) => (
@@ -152,7 +152,7 @@ export default function DenverGeoPage() {
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
             <h2 className="heading-lg text-white mb-4">What GEO actually optimizes</h2>
-            <p className="text-white/60 max-w-xl mx-auto">GEO targets the signals that determine whether an AI system cites your brand — not just whether it can find your site.</p>
+            <p className="text-white/60 max-w-xl mx-auto text-center">GEO targets the signals that determine whether an AI system cites your brand — not just whether it can find your site.</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {geoSignals.map((signal, i) => (
@@ -198,7 +198,7 @@ export default function DenverGeoPage() {
           </motion.div>
           <div className="max-w-3xl mx-auto space-y-4">
             {geoProcess.map((step, i) => (
-              <motion.div key={step.step} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
+              <motion.div key={step.step} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
                 <div className="bg-[#252640] border border-[#3a3858] rounded-2xl p-6 flex gap-5">
                   <p className="text-2xl font-bold font-mono flex-shrink-0" style={{ color: '#8734E1' }}>{step.step}</p>
                   <div>
@@ -217,7 +217,7 @@ export default function DenverGeoPage() {
         <div className="container-custom max-w-3xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="heading-lg text-white mb-4">GEO works best on a strong foundation</h2>
-            <p className="text-white/60 leading-relaxed mb-8">
+            <p className="text-white/60 leading-relaxed mb-8 text-center">
               GEO is the top layer. Before building citation authority, every business needs solid technical SEO and AEO foundations.{' '}
               <Link href="/denver-ai-seo" className="text-[#2F73EE] hover:underline">Our Denver AI SEO service</Link>{' '}
               handles both — and pairs naturally with GEO for a complete AI search strategy. Or if you need the website built first,{' '}

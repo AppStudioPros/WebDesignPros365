@@ -123,7 +123,7 @@ export default function DenverNextjsPage() {
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="heading-lg text-white mb-4">The stack we ship in Denver</h2>
-            <p className="text-white/60 max-w-xl mx-auto">Every tool chosen for production performance, developer experience, and long-term maintainability.</p>
+            <p className="text-white/60 max-w-xl mx-auto text-center">Every tool chosen for production performance, developer experience, and long-term maintainability.</p>
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {techStack.map((t, i) => (
@@ -163,7 +163,7 @@ export default function DenverNextjsPage() {
         <div className="container-custom max-w-3xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="heading-lg text-white mb-4">Need the website AND AI visibility?</h2>
-            <p className="text-white/60 leading-relaxed mb-8">
+            <p className="text-white/60 leading-relaxed mb-8 text-center">
               Our{' '}
               <Link href="/denver-ai-web-design" className="text-[#8734E1] hover:underline">Denver AI Web Design</Link>{' '}
               service combines Next.js development with a complete SEO, AEO, and GEO architecture — so you get the engineering and the visibility system in one build.

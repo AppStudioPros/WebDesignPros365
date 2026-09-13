@@ -114,7 +114,7 @@ export default function DenverWebDesignPage() {
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
             <h2 className="heading-lg text-white mb-4">Not just a website. A system that works.</h2>
-            <p className="text-white/60 max-w-xl mx-auto">Most web design agencies stop at pretty. We build for performance, search, and the way customers actually find businesses in 2026.</p>
+            <p className="text-white/60 max-w-xl mx-auto text-center">Most web design agencies stop at pretty. We build for performance, search, and the way customers actually find businesses in 2026.</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {differentiators.map((d, i) => (
@@ -133,18 +133,18 @@ export default function DenverWebDesignPage() {
       {/* DELIVERABLES */}
       <section className="section bg-[#252640]">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+          <div className="flex flex-col items-center gap-10">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <Badge className="mb-4 bg-[#1e1c35] text-[#2F73EE] border-[#2F73EE]/40">What's included</Badge>
               <h2 className="heading-lg text-white mb-6">Everything, built right</h2>
-              <p className="text-white/60 leading-relaxed mb-6">
+              <p className="text-white/60 leading-relaxed mb-6 text-center">
                 Every Denver web design project at Web Design Pros 365 ships with a complete technical stack — not a template with a new coat of paint.
               </p>
               <Button asChild className="bg-[#2F73EE] hover:bg-[#2563cc] text-white">
                 <Link href="/contact">Get a Project Quote <ArrowRight className="ml-2 w-4 h-4" /></Link>
               </Button>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <div className="grid grid-cols-1 gap-3">
                 {deliverables.map((item) => (
                   <div key={item} className="flex items-center gap-3 bg-[#1e2030] rounded-lg px-4 py-3">
@@ -164,7 +164,7 @@ export default function DenverWebDesignPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center">
             <BarChart3 className="w-10 h-10 mx-auto mb-4" style={{ color: '#8734E1' }} />
             <h2 className="heading-lg text-white mb-4">Every website includes AI visibility foundations</h2>
-            <p className="text-white/60 leading-relaxed mb-8">
+            <p className="text-white/60 leading-relaxed mb-8 text-center">
               Every project ships with technical SEO, structured data, and AEO architecture built in. For businesses that want to go deeper — we also offer dedicated{' '}
               <Link href="/denver-ai-seo" className="text-[#8734E1] hover:underline">Denver AI SEO</Link>{' '}
               and{' '}

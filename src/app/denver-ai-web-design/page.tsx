@@ -122,7 +122,7 @@ export default function DenverAiWebDesignPage() {
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
             <h2 className="heading-lg text-white mb-4">One build. Every layer.</h2>
-            <p className="text-white/60 max-w-xl mx-auto">Design, development, and AI visibility are not separate projects. They're one integrated system.</p>
+            <p className="text-white/60 max-w-xl mx-auto text-center">Design, development, and AI visibility are not separate projects. They're one integrated system.</p>
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
             {buildLayers.map((layer, i) => (
@@ -163,7 +163,7 @@ export default function DenverAiWebDesignPage() {
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="heading-lg text-white mb-4">Built to be found everywhere search is going</h2>
-            <p className="text-white/60 max-w-xl mx-auto">Every AI system has different patterns. We build for all of them.</p>
+            <p className="text-white/60 max-w-xl mx-auto text-center">Every AI system has different patterns. We build for all of them.</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
             {aiSearchEngines.map((engine, i) => (

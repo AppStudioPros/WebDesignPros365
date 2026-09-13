@@ -147,7 +147,7 @@ export default function DenverAiSeoPage() {
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="heading-lg text-white mb-4">SEO + AEO: two disciplines, one system</h2>
-            <p className="text-white/60 max-w-xl mx-auto">They're not competing approaches. They work together.</p>
+            <p className="text-white/60 max-w-xl mx-auto text-center">They're not competing approaches. They work together.</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {aiVsTraditional.map((item, i) => (
@@ -196,7 +196,7 @@ export default function DenverAiSeoPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <Code2 className="w-10 h-10 mx-auto mb-4" style={{ color: '#8734E1' }} />
             <h2 className="heading-lg text-white mb-4">Need to get cited by ChatGPT and Claude?</h2>
-            <p className="text-white/60 leading-relaxed mb-8">
+            <p className="text-white/60 leading-relaxed mb-8 text-center">
               AI SEO makes you rankable and extractable. For businesses that want to go further — getting your brand cited by conversational AI engines — that's{' '}
               <Link href="/denver-generative-engine-optimization" className="text-[#8734E1] hover:underline">Generative Engine Optimization (GEO)</Link>.
               Ranking isn't enough anymore. Become the source AI cites.
