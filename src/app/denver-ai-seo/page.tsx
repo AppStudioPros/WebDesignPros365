@@ -140,7 +140,7 @@ export default function DenverAiSeoPage() {
       </section>
 
       {/* SEO vs AEO */}
-      <section className="section bg-[#1e2030]">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="heading-lg text-white mb-4">SEO and AEO: two disciplines, one system</h2>
@@ -150,7 +150,6 @@ export default function DenverAiSeoPage() {
             {comparison.map((item, i) => (
               <motion.div key={item.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="h-full">
                 <Card className="bg-[#252640] border-[#3a3858] p-6 h-full text-center">
-                  <div className="w-2 h-2 rounded-full mx-auto mb-4" style={{ backgroundColor: item.color }} />
                   <p className="font-semibold text-white text-sm mb-3">{item.label}</p>
                   <p className="text-sm text-white/60 leading-relaxed">{item.desc}</p>
                 </Card>
