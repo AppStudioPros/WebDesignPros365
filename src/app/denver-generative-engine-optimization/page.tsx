@@ -155,7 +155,6 @@ export default function DenverGeoPage() {
             {geoSignals.map((signal, i) => (
               <motion.div key={signal.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
                 <Card className="bg-[#252640] border-[#3a3858] p-8 h-full text-center">
-                  <div className="w-2 h-2 rounded-full mx-auto mb-4" style={{ backgroundColor: signal.color }} />
                   <h3 className="font-semibold text-white mb-3">{signal.title}</h3>
                   <p className="text-sm text-white/60 leading-relaxed">{signal.body}</p>
                 </Card>
