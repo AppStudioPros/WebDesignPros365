@@ -108,7 +108,7 @@ export default function DenverNextjsPage() {
       </section>
 
       {/* TECH STACK */}
-      <section className="section bg-[#1e2030]">
+      <section className="section bg-[#252640]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="heading-lg text-white mb-4">The stack we ship</h2>
@@ -128,7 +128,7 @@ export default function DenverNextjsPage() {
       </section>
 
       {/* CAPABILITIES */}
-      <section className="section bg-[#252640]">
+      <section className="section bg-[#1e2030]">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }} viewport={{ once: true }} className="text-center mb-14">
             <h2 className="heading-lg text-white mb-4">What we build</h2>
