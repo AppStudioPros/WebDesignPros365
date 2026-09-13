@@ -131,10 +131,10 @@ export default function DenverGeoPage() {
             <h2 className="heading-lg text-white mb-4">The Denver AI visibility gap</h2>
             <p className="text-white/60 max-w-xl mx-auto text-center">Most Denver businesses don't know how invisible they are to AI search. The data is stark.</p>
           </motion.div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto items-stretch">
             {denverStats.map((s, i) => (
-              <motion.div key={s.stat} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-                <Card className="bg-[#1e2030] border-[#3a3858] p-6 text-center">
+              <motion.div key={s.stat} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="h-full">
+                <Card className="bg-[#1e2030] border-[#3a3858] p-6 text-center h-full flex flex-col justify-center">
                   <p className="text-3xl md:text-4xl font-bold mb-2" style={{ color: '#8734E1' }}>{s.stat}</p>
                   <p className="text-xs text-white/60 leading-relaxed">{s.label}</p>
                 </Card>
