@@ -62,6 +62,54 @@ export const posts = [
     featured: false,
   },
   {
+    _id: '7',
+    title: 'Why AI Search Is Rewriting Who Gets Found Online',
+    slug: { current: 'why-ai-search-is-rewriting-who-gets-found-online' },
+    excerpt: "The way buyers search has changed. AI systems are now filtering businesses before the first click happens, and most websites aren't built for it.",
+    content: `Something shifted in how people find businesses, and most business owners haven't caught on yet.
+
+I'm not talking about a Google algorithm update. Those happen all the time and the playbook has stayed mostly the same for years. I'm talking about something bigger: the way buyers actually search has changed, and the websites that haven't adapted are quietly losing ground to ones that have.
+
+Here's what I mean. When someone used to search for "best mortgage broker in Denver," they'd get a list of ten blue links. They'd click through a few, compare, and eventually pick up the phone. That's how it worked. That's what SEO was built for.
+
+Now they type the same question into ChatGPT, Perplexity, or the AI Overview section at the top of Google, and they get an answer. Not a list of links. An answer. With a name, maybe a brief description, sometimes a direct recommendation. And if your name isn't in that answer, you don't exist for that buyer.
+
+## This is what GEO is.
+
+Generative Engine Optimization is the practice of building your online presence so that AI systems can find you, understand what you do, and include you in their answers. It's not a replacement for SEO. It's what you stack on top of it.
+
+The difference matters. SEO gets your website to rank on a results page. GEO gets your business cited as an answer. One gets you a click. The other gets you trust before the click ever happens.
+
+## What makes a business show up in AI answers?
+
+I've been working on this for a while now, and a few things consistently make the difference.
+
+First, clarity of purpose. AI systems are pulling from your site and trying to understand what you do, who you do it for, and where you do it. If your homepage buries that information three scrolls down, or if your site tries to sound impressive instead of clear, the AI can't confidently cite you. Write your site like someone's going to read one page and need to explain your business to a friend. Because that's basically what the AI is doing.
+
+Second, structured data. This is the technical side, but the concept is simple: you add a layer of code to your site that explicitly tells Google and other systems "this is a local business, here's the address, here's the phone number, here's what they specialize in." Without it, the AI is guessing. With it, you're giving it something solid to pull from.
+
+Third, content that answers real questions. AI systems are built to answer questions. If your site doesn't have content that answers questions your buyers are actually asking, you're invisible to those systems. Not because your site is bad. Because it's not speaking the language those tools are listening for.
+
+## The no-click era is already here.
+
+There's a term circulating in the search world right now: zero-click searches. It means a user searched for something and got the answer without clicking any link at all. That number has been climbing for years, and the rise of AI answers has pushed it further. A buyer gets their question answered by an AI, decides you sound right for what they need, and reaches out directly. No search results page. No comparison shopping. No clicking through six websites.
+
+That's not a bad thing if your business is the one being recommended. It's a problem if you're not.
+
+## Most websites aren't built for this.
+
+The websites most businesses have right now were built for 2018 SEO. Keyword density, backlinks, meta tags. Those things still matter. But they were built for a game where a human was doing the clicking and comparing. The new game has an AI doing the first layer of filtering, and the businesses that win are the ones whose sites can communicate clearly with machines, not just humans.
+
+That's most of what we work on at Web Design Pros 365. Not just making sites that look good and rank on Google, but building the full technical and content stack that makes a business visible in the places buyers are actually looking now.
+
+If you want to know where your site stands on this, reach out. We can look at what's working and what's not.`,
+    publishedAt: '2026-09-30',
+    readTime: '6 min read',
+    category: 'AI',
+    mainImage: 'https://cdn.prod.website-files.com/68e79bad9c543e2ea52b6147/68eb8221d4f313aae84cece2_b2.png',
+    featured: false,
+  },
+  {
     _id: '6',
     title: 'Why Mobile Responsiveness Is No Longer Optional in 2025',
     slug: { current: 'why-mobile-responsiveness-is-no-longer-optional-in-2025' },
