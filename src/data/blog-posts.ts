@@ -660,6 +660,45 @@ export const BLOG_POSTS: BlogPost[] = [
 <p>Visit <a href="https://www.webdesignpros365.com/contact">webdesignpros365.com/contact</a> to get started.</p>
     `,
   },
+  {
+    slug: "why-ai-search-is-rewriting-who-gets-found-online",
+    title: "There's a Waiting Room Full of Businesses AI Will Never Call",
+    category: "AI Visibility",
+    date: "September 30, 2026",
+    readTime: "6 min read",
+    excerpt: "AI search has already decided which businesses get recommended and which ones sit in the waiting room forever. Most business owners have no idea they're in the room.",
+    meta: "AI search doesn't return a list of options. It picks a name. If your business isn't built to be found by AI systems, you're already in the waiting room.",
+    mainImage: "/images/blog-ai-search-rewriting.png",
+    content: `
+<p>Picture a waiting room. Uncomfortable chairs. Flickering lights. A sign on the wall that says "Same Old SEO? Good Luck With That." Dozens of business owners sitting there holding signs with their website URLs, waiting to be called.</p>
+<p>Nobody's coming.</p>
+<p>The decision already got made. AI search picked who gets recommended, who gets the call, who gets the client — and it didn't check the waiting room first. Most businesses sitting in that room don't even know they're in it. They think they're doing fine because their Google ranking looks okay, or because they got a new website a few years ago, or because someone told them their SEO was "solid."</p>
+<p>It wasn't. And the gap is getting wider every day.</p>
+
+<h2>What actually changed</h2>
+<p>When someone used to search for "best mortgage broker in Denver," they'd get a list of ten links. They'd click a few, compare, make a call. That's the game SEO was built for. It's not the game anymore.</p>
+<p>Now they ask ChatGPT. They ask Perplexity. They ask the AI Overview at the top of Google. And they get an answer. Not ten links. An answer. A name. Sometimes two. And if your name isn't one of them, you don't exist for that buyer. The search happened. You just weren't in it.</p>
+<p>This is not a coming shift. It already happened. 68% of all Google searches in 2026 end without a single click. When an AI Overview is present, that number hits 83%. ChatGPT crossed a billion monthly users earlier this year. Buyers in mortgage, real estate, and professional services now report using AI to vet providers before making contact at rates between 70 and 80 percent.</p>
+<p>Your next client probably already asked an AI about someone in your space. The question is whether your name came up.</p>
+
+<h2>What GEO actually is</h2>
+<p>Generative Engine Optimization is the practice of building your online presence so AI systems can find you, understand what you do, and include you in their answers. It's not a replacement for SEO. It stacks on top of it.</p>
+<p>The difference is simple. SEO gets you onto a results page. GEO gets you cited as the answer. One earns a click. The other earns the call before the buyer ever looks anywhere else.</p>
+<p>And most businesses have zero GEO in place. None. The website exists. It might even rank. But AI systems can't read it clearly enough to confidently recommend it, so they recommend someone else instead.</p>
+
+<h2>Three things that determine whether AI cites you or skips you</h2>
+<p>I've seen enough of these sites to know what makes the difference.</p>
+<p>The first is clarity. AI systems pull from your site and try to figure out what you do, who you do it for, and where. If your homepage leads with a tagline about "solutions" and buries the actual service three scrolls down, the AI can't confidently summarize you. It moves on. Your site should communicate what you do in the first sentence, full stop.</p>
+<p>The second is structured data. There's a layer of code that tells search engines and AI systems exactly what they're looking at: the business name, address, phone number, service type, category. Without it, the AI is guessing. With it, you're handing it something solid to pull from. Most small business websites don't have this. It's not optional anymore.</p>
+<p>The third is content that answers questions. AI systems are built to answer questions. If your site has no content that matches what buyers are actually asking, you're invisible. Not because your site is bad. Because it's speaking a language these tools aren't listening for.</p>
+
+<h2>The problem with waiting</h2>
+<p>The businesses getting recommended right now in AI search built that position over months. It came from structured data, from informational content, from a site that communicates clearly to machines and humans at the same time. That advantage compounds. Every month another business figures this out and locks in another piece of their AI visibility. Every month you wait, there's one more competitor sitting in the lit seat while your chair grows cobwebs.</p>
+<p>That's the waiting room. It looks fine from the inside. It's not.</p>
+<p>If you want to know where your site stands, reach out. We'll tell you exactly what's there, what's missing, and what it would take to get you out of the room.</p>
+<p><a href="https://www.webdesignpros365.com/contact">webdesignpros365.com/contact</a></p>
+    `,
+  },
 ];
 export function getBlogPost(slug: string): BlogPost | undefined {
   return BLOG_POSTS.find((p) => p.slug === slug);

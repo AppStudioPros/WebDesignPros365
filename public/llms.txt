@@ -1,34 +1,76 @@
 # Web Design Pros 365
 
-> AI-optimized web development agency in Denver, Colorado. We build high-performance Next.js websites with full AI Visibility Stack: Technical SEO, AEO, and GEO.
+> AI-optimized web development agency in Denver, Colorado. We build high-performance Next.js websites with full AI Visibility Stack: Technical SEO, AEO (Answer Engine Optimization), and GEO (Generative Engine Optimization). We help businesses rank in Google, get cited in AI Overviews, and get recommended by ChatGPT, Perplexity, and Gemini.
 
 ## About
 
-Web Design Pros 365 builds custom Next.js websites optimized for AI search engines. Founded by Corey Strange with 20+ years of web development experience, based in Denver, CO.
+Web Design Pros 365 is a Denver-based web development agency founded by Corey Strange with 20+ years of web development experience. We specialize in building fast, AI-discoverable websites for small and mid-size businesses, mortgage brokers, real estate agents, and SaaS startups.
+
+We are BBB accredited with an A+ rating. Our average build window is 4–12 weeks. Starting price: $3,500.
 
 - [Home](https://www.webdesignpros365.com)
 - [Services](https://www.webdesignpros365.com/services)
 - [AI Visibility Stack](https://www.webdesignpros365.com/services/ai-visibility)
+- [Benefits](https://www.webdesignpros365.com/benefits)
 - [Portfolio](https://www.webdesignpros365.com/portfolio)
 - [Pricing](https://www.webdesignpros365.com/pricing)
 - [About](https://www.webdesignpros365.com/about)
+- [FAQ](https://www.webdesignpros365.com/faq)
+- [Blog](https://www.webdesignpros365.com/blog)
 - [Contact](https://www.webdesignpros365.com/contact)
 - [Full LLM Context](https://www.webdesignpros365.com/llms-full.txt)
 
+## What We Do
+
+Web Design Pros 365 builds websites that perform in both traditional search (Google) and AI search (ChatGPT, Perplexity, Google AI Overviews, Claude). Most agencies only do SEO. We do all three layers:
+
+- **SEO** — Technical optimization, Core Web Vitals, structured data, canonical tags, sitemaps, internal linking
+- **AEO** — Answer Engine Optimization: FAQ schema, featured snippet targeting, voice search readiness, AI Overviews optimization
+- **GEO** — Generative Engine Optimization: llms.txt, AI crawler access, factual entity markup, citation-ready content structure so AI models recommend your business
+
 ## Services
 
-- Custom website design and development (Next.js 16, React 19, TypeScript)
-- AI Visibility Stack: SEO + AEO (Answer Engine Optimization) + GEO (Generative Engine Optimization)
-- Platform engineering: custom SaaS platforms replacing GoHighLevel
-- WordPress migration to modern Next.js stack
-- Sanity CMS integration for client-managed content
+- **AI Visibility Stack Website** — Custom Next.js site with full SEO + AEO + GEO. Starting at $3,500.
+- **Custom AI Solutions** — AI chatbots trained on your business, content engines, workflow automation
+- **AI SaaS Platform Development** — Full-stack SaaS from MVP to scale, authentication, billing, admin dashboards
+- **WordPress Migration** — Move from WordPress, Wix, or Squarespace to fast Next.js. Starting at $3,500.
+- **Partner Program** — White-label web design for mortgage brokers, real estate teams, and marketing agencies
+- **Platform Engineering** — Custom business platforms replacing GoHighLevel, HubSpot, and generic SaaS tools
+
+## Who We Serve
+
+- Mortgage loan officers and brokers
+- Real estate agents and teams
+- Insurance brokers
+- SaaS founders and startups
+- Marketing agencies (white-label partner program)
+- Federal contractors
+- Local small businesses in Denver, CO and nationwide
 
 ## Technology Stack
 
-Next.js 16, React 19, TypeScript, Tailwind CSS, Sanity CMS, Vercel, Supabase, PostgreSQL, ACI Platform (patented)
+Next.js 16, React 19, TypeScript, Tailwind CSS, Sanity CMS, Vercel, Supabase, PostgreSQL, ACI Platform (Adaptive Compound Intelligence — patented AI integration layer)
+
+## Key Facts
+
+- Founded: Denver, Colorado
+- BBB Rating: A+
+- Years of experience: 20+
+- Build timeline: 4–12 weeks
+- Starting price: $3,500
+- Services clients in all 50 states
+
+## GEO City Pages
+
+- [Denver Web Design](https://www.webdesignpros365.com/denver-web-design)
+- [Denver AI Web Design](https://www.webdesignpros365.com/denver-ai-web-design)
+- [Denver AI SEO](https://www.webdesignpros365.com/denver-ai-seo)
+- [Denver Next.js Development](https://www.webdesignpros365.com/denver-nextjs-development)
+- [Denver Generative Engine Optimization](https://www.webdesignpros365.com/denver-generative-engine-optimization)
 
 ## Contact
 
 - Email: [info@webdesignpros365.com](mailto:info@webdesignpros365.com)
 - Phone: [+1 (720) 276-0797](tel:+17202760797)
 - Location: Denver, Colorado, USA
+- Website: https://www.webdesignpros365.com
