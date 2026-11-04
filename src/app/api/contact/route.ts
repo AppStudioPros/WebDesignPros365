@@ -6,7 +6,7 @@ const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KE
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, phone, company, projectType, message, _hp } = body;
+    const { name, email, phone, company, projectType, message, _hp, ref } = body;
 
     // Honeypot check — bots fill this, humans don't
     if (_hp) {
@@ -33,9 +33,10 @@ export async function POST(request: NextRequest) {
       from: 'Web Design Pros 365 <onboarding@resend.dev>',
       to: ['info@webdesignpros365.com'],
       replyTo: email,
-      subject: `[WDP365 Lead] ${name}${company ? ' · ' + company : ''}${projectType && !projectType.startsWith('—') ? ' · ' + projectType : ''}`,
+      subject: `[WDP365 Lead${ref ? ' · via ' + ref : ''}] ${name}${company ? ' · ' + company : ''}${projectType && !projectType.startsWith('—') ? ' · ' + projectType : ''}`,
       html: `
         <h2>New Contact Form Submission</h2>
+        ${ref ? `<p style="background:#fef3c7;padding:8px 12px;border-radius:4px;border-left:4px solid #f59e0b"><strong>🔗 Referred by:</strong> ${ref}</p>` : ''}
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         ${phone ? `<p><strong>Phone:</strong> <a href="tel:${phone}">${phone}</a></p>` : ''}
