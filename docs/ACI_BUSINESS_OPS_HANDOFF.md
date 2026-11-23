@@ -37,3 +37,9 @@ The builder now treats a known Anthropic key prefix in OPENAI_API_KEY as unavail
 ## Separate OpenAI setting, 2026-11-23
 
 The owner added separate Sensitive OpenAI variables in Production, Preview, and Development, named OPEN_API_KEY. Vercel rejects renaming Sensitive variables with HTTP 400. The application now accepts this existing name as a server-only fallback, preserving the values and Sensitive protection without reading or recreating secrets. ANTHROPIC_API_KEY remains restored. The alias and standard-name precedence are covered by a regression test; all 14 API tests passed. Live verification must use a new deployment containing this alias support.
+
+## Live GPT verification passed, 2026-11-23
+
+Preview dpl_DJ3AvUsbd5DFwTX7DFzU3iSn4GSK at application commit cc6582ea70b4fceb23458255058dc43184e2ea87 reached READY with the OPEN_API_KEY alias. Its configuration endpoint returned available:true. Two real server requests returned HTTP 200: generation created a land-acquisition board with 5 fields and 3 records; a follow-up added County as a sixth field while preserving all record IDs and a manually edited property name. No mock provider was used in these requests. Authentication used the existing Vercel connection; no deployment protection setting or provider secret was exposed.
+
+The credential blocker is resolved. All 14 API tests pass, and the latest Vercel build passes. Next: merge the verified implementation and verify the production page. The PR description will record final release state; earlier blocked checkpoints above are historical.
