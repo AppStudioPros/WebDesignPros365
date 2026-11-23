@@ -43,3 +43,21 @@ The owner added separate Sensitive OpenAI variables in Production, Preview, and 
 Preview dpl_DJ3AvUsbd5DFwTX7DFzU3iSn4GSK at application commit cc6582ea70b4fceb23458255058dc43184e2ea87 reached READY with the OPEN_API_KEY alias. Its configuration endpoint returned available:true. Two real server requests returned HTTP 200: generation created a land-acquisition board with 5 fields and 3 records; a follow-up added County as a sixth field while preserving all record IDs and a manually edited property name. No mock provider was used in these requests. Authentication used the existing Vercel connection; no deployment protection setting or provider secret was exposed.
 
 The credential blocker is resolved. All 14 API tests pass, and the latest Vercel build passes. Next: merge the verified implementation and verify the production page. The PR description will record final release state; earlier blocked checkpoints above are historical.
+
+## Publication completed, 2026-11-23
+
+PR #3 was merged as c76c8b70c91a56d045331ca74a1176a6fb1355ba. Production deployment dpl_BaVsmfjM4i51ZD1QhfcqCxHHFPyo reached READY and received the public site aliases. Real generation, a manual edit, and a follow-up field addition preserving that edit were verified on the public page. The earlier next-merge text is historical. No additional provider key setup is needed.
+
+## Demo audit and discovery revision, 2026-11-23
+
+Corey requested a researched review, five core apps for corporate/city managers, prominent reset, and a broad capability guide distinguishing demo and production features. Read `ACI_DEMO_AUDIT_2026-11-23.md` for sources, observed findings, implementation decisions, and limits.
+
+Branch codex/aci-demo-discovery adds five instant prepared samples (projects, purchasing, service requests, assets, calendars) plus acquisitions. Samples are clearly labeled and do not call OpenAI; custom generation and editing remain GPT-backed. The capability catalog works by button or common discovery questions in either mode, keeps the current workspace, and separates 25 additional tracker ideas from production-only functionality. A server guard answers recognized discovery questions without calling OpenAI or consuming generation quota. New schedules receive current UTC date context.
+
+The shared Reset demo button is prominent and confirms clearing both mode states and both local-storage keys. Pending generation is invalidated by unmount. Browser-storage failure is disclosed and the reset session skips restoring stale saves. Mode switching preserves unsaved work; opening another sample confirms replacement. Contrast and important control sizes were improved. No dependency, plugin, credential, firewall, or billing change was made.
+
+Verification: 17/17 API and sample checks pass; the final production build and TypeScript pass; the final browser suite with a mocked provider passes, including five samples, both-mode discovery, preserving edits across mode changes, cancelled replacement/reset, late response invalidation, both saved states clearing, error recovery, all views, and five viewport widths. Fresh local browser inspection corrected and verified the catalog width. The local server lacks an AI key, so live GPT access must be distinguished from these local checks. The baseline public model was used during the audit to reproduce the original capability-table problem.
+
+Vercel's active firewall query returned configured:false; the default firewall applies. Code throttling remains per instance. A deployment-wide API rate rule/shared limiter is recommended before larger promotion, with pricing reviewed first. This is distinct from adding an AI plugin and is not a guaranteed hard spending cap.
+
+Release boundary: this revision is prepared for review. Production remains on c76c8b7 until the new revision is accepted and merged. Preserve the private ACI engine boundary and do not present the sample trackers as live accounting, approvals, synchronized calendars, or shared company systems.

@@ -21,7 +21,6 @@ import {
   Minus,
   Package,
   Plus,
-  RotateCcw,
   Save,
   Search,
   Send,
@@ -41,6 +40,8 @@ import {
   type Scenario,
 } from "./demo-model";
 import styles from "@/app/business-applications/page.module.css";
+import { capabilityMessage, isCapabilityQuestion } from "./demo-catalog";
+import builderStyles from "./generated-program.module.css";
 
 type Message = { role: "user" | "assistant"; text: string };
 type Filter = "all" | "overdue" | "low-stock" | "site-visits";
@@ -79,7 +80,7 @@ function Stat({
   );
 }
 
-export default function BusinessAppsDemo() {
+export default function BusinessAppsDemo({ restoreSaved = true, onShowCapabilities }: { restoreSaved?: boolean; onShowCapabilities: () => void }) {
   const [state, setState] = useState<DemoState>(initialDemo);
   const [messages, setMessages] = useState<Message[]>([
     { role: "user", text: scenarios.acquisitions.prompt },
@@ -101,7 +102,7 @@ export default function BusinessAppsDemo() {
 
   useEffect(() => {
     try {
-      const raw = localStorage.getItem(STORAGE_KEY);
+      const raw = restoreSaved ? localStorage.getItem(STORAGE_KEY) : null;
       if (!raw) return;
       const result = demoSchema.safeParse(JSON.parse(raw));
       if (result.success) {
@@ -118,7 +119,7 @@ export default function BusinessAppsDemo() {
     } catch {
       /* Storage is optional; the demo also works without it. */
     }
-  }, []);
+  }, [restoreSaved]);
 
   useEffect(() => {
     if (hasInteracted.current && chatRef.current)
@@ -156,6 +157,11 @@ export default function BusinessAppsDemo() {
     if (!text) return;
     hasInteracted.current = true;
     setInput("");
+    if (isCapabilityQuestion(text)) {
+      setMessages(previous => [...previous.slice(-6), { role: "user", text }, { role: "assistant", text: capabilityMessage }]);
+      onShowCapabilities();
+      return;
+    }
     const command = parseDemoCommand(text);
     let reply = "";
     if (command.kind === "scenario") {
@@ -225,26 +231,6 @@ export default function BusinessAppsDemo() {
         "Browser storage is unavailable. You can keep exploring without saving.",
       );
     }
-  }
-
-  function reset() {
-    try {
-      localStorage.removeItem(STORAGE_KEY);
-    } catch {
-      /* Current session remains resettable. */
-    }
-    setState(initialDemo());
-    setFilter("all");
-    setQuery("");
-    setView("table");
-    setInput("");
-    setSaved(false);
-    setNotice("Sample data reset");
-    setEvent(null);
-    setMessages([
-      { role: "user", text: scenarios.acquisitions.prompt },
-      { role: "assistant", text: scenarios.acquisitions.response },
-    ]);
   }
 
   const matchingProperties = state.properties.filter(
@@ -421,6 +407,7 @@ export default function BusinessAppsDemo() {
               </div>
               <span className={styles.chatStatus} />
             </div>
+            <button type="button" className={builderStyles.guideButton} onClick={onShowCapabilities}><Sparkles size={16} /> What can we build?</button>
             <div
               className={styles.chatMessages}
               ref={chatRef}
@@ -1147,10 +1134,6 @@ export default function BusinessAppsDemo() {
             <Check size={14} />
             {notice}
           </span>
-          <button onClick={reset}>
-            <RotateCcw size={13} />
-            Reset demo
-          </button>
         </div>
       </div>
       <p className={styles.demoCaption}>

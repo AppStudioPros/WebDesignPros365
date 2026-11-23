@@ -1,6 +1,9 @@
 const assert = require("node:assert/strict");
 const { test } = require("node:test");
 const { configuredOpenAIKey, createBusinessAppsHandlers } = require(process.env.BUSINESS_APPS_TEST_MODULE);
+const path = require("node:path");
+const { coreApps, acquisitionApp, isCapabilityQuestion, starterProgram } = require(path.resolve(path.dirname(process.env.BUSINESS_APPS_TEST_MODULE), "../components/business-apps/demo-catalog.js"));
+const { programSchema } = require(path.resolve(path.dirname(process.env.BUSINESS_APPS_TEST_MODULE), "../components/business-apps/program-model.js"));
 
 const program = {
   title: "Acquisition pipeline", description: "Fictional sample opportunities", view: "board",
@@ -170,4 +173,40 @@ test("global instance limit also bounds distinct visitor bursts", async () => {
   for (let i = 0; i < 60; i++) assert.equal((await api.POST(request(undefined, { "x-forwarded-for": `192.0.2.${i}` }))).status, 200);
   assert.equal((await api.POST(request(undefined, { "x-forwarded-for": "192.0.2.100" }))).status, 429);
   assert.equal(api.calls.length, 60);
+});
+
+test("capability help never calls the provider, consumes generation quota, or replaces a workspace", async () => {
+  const api = setup();
+  const current = structuredClone(program);
+  for (const prompt of ["What can we build?", "ACI, what apps are available?", "Show me your capabilities", "What's possible in the demo?"]) {
+    const response = await api.POST(request({ prompt, current }));
+    assert.equal(response.status, 200);
+    const result = await response.json();
+    assert.equal(result.program, null);
+    assert.match(result.message, /production build/);
+  }
+  assert.equal(api.calls.length, 0);
+  assert.deepEqual(current, program);
+  for (let i = 0; i < 6; i++) assert.equal((await api.POST(request())).status, 200);
+  const offline = setup({ getKey: () => undefined });
+  assert.equal((await offline.POST(request({ prompt: "What can we build?", current }))).status, 200);
+});
+
+test("discovery intent does not intercept build or edit instructions containing capability words", () => {
+  for (const prompt of ["Build a calendar called What can we build?", "Add a field for available tools", "List the overdue projects", "Show the board view"]) assert.equal(isCapabilityQuestion(prompt), false, prompt);
+});
+
+test("all five core apps and the acquisition specialty have valid editable fictional samples", () => {
+  assert.equal(coreApps.length, 5);
+  const apps = [...coreApps, acquisitionApp];
+  assert.equal(new Set(apps.map(app => app.id)).size, 6);
+  for (const app of apps) {
+    const sample = programSchema.parse(starterProgram(app.id, new Date("2040-01-01T00:00:00Z")));
+    assert.equal(sample.records.length, 3);
+    assert.match(sample.description, /fictional sample/);
+    const dateIndex = sample.fields.findIndex(field => field.type === "date");
+    if (dateIndex >= 0) assert(sample.records.every(record => record.values[dateIndex] > "2040-01-01"));
+    sample.records[0].values[0] = "Edited sample";
+    assert.notEqual(starterProgram(app.id).records[0].values[0], "Edited sample");
+  }
 });
