@@ -81,6 +81,13 @@ function extractOutput(value: unknown): { refused: boolean; text: string | null 
 }
 
 export function createBusinessAppsHandlers(deps: Dependencies) {
+  function openAIKey() {
+    const key = deps.getKey()?.trim();
+    // A renamed environment variable does not change the credential's provider.
+    // Do not transmit an accidentally configured Anthropic credential to OpenAI.
+    return key && !key.startsWith("sk-ant-") ? key : undefined;
+  }
+
   // These buckets reduce bursts within one server instance. Vercel instances do
   // not share memory: deployment-wide enforcement requires a shared limiter or
   // hosting firewall rule. OpenAI project budget alerts are not a hard cap.
@@ -106,7 +113,7 @@ export function createBusinessAppsHandlers(deps: Dependencies) {
 
   return {
     GET() {
-      return json({ available: Boolean(deps.getKey()?.trim()) });
+      return json({ available: Boolean(openAIKey()) });
     },
     async POST(request: Request): Promise<Response> {
       const origin = request.headers.get("origin");
@@ -128,7 +135,7 @@ export function createBusinessAppsHandlers(deps: Dependencies) {
       }
       const parsed = programRequestSchema.safeParse(input);
       if (!parsed.success) return json({ error: "Use a prompt up to 1,200 characters and a workspace with at most 10 fields and 20 records." }, 400);
-      const apiKey = deps.getKey()?.trim();
+      const apiKey = openAIKey();
       if (!apiKey) return json({ error: "AI generation is not configured yet. You can explore the guided samples." }, 503);
       const retryAfter = allowance(request);
       if (retryAfter) return json({ error: "The demo is receiving too many requests. Please try again later." }, 429, { "Retry-After": String(retryAfter) });

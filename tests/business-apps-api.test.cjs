@@ -57,6 +57,15 @@ test("missing configuration is explicit and does not call the provider", async (
   assert.equal(api.calls.length, 0);
 });
 
+test("a renamed Anthropic credential is never sent to OpenAI", async () => {
+  const api = setup({ getKey: () => "  sk-ant-fixture-not-a-real-key  " });
+  assert.deepEqual(await api.GET().json(), { available: false });
+  const response = await api.POST(request());
+  assert.equal(response.status, 503);
+  assert.doesNotMatch(await response.text(), /sk-ant-|fixture/);
+  assert.equal(api.calls.length, 0);
+});
+
 test("untrusted origin, content type, malformed JSON, unknown properties and oversized bodies are rejected", async () => {
   const api = setup();
   assert.equal((await api.POST(request(undefined, { Origin: "https://attacker.example" }))).status, 403);
