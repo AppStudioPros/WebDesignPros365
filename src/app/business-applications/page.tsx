@@ -73,7 +73,10 @@ export default function BusinessApplicationsPage() {
           <h1 id="business-apps-title">
             Your website brings in business.
             <br />
-            <span>Now, help it run your business.</span>
+            <span>
+              Now, help it run your business
+              <br /> with ACI Patented Intelligence.
+            </span>
           </h1>
           <p className={styles.heroDescription}>
             A company calendar. An acquisition pipeline. Your next inventory
