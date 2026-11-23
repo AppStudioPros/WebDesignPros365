@@ -254,6 +254,13 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <section className="border-y border-[#8060a2]/30 bg-[#21192f] py-6" aria-label="Explore ACI business applications">
+        <div className="container-custom flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div><p className="text-xs font-semibold uppercase tracking-widest text-[#ba92e5]">ACI Business Applications</p><h2 className="mt-2 text-lg font-semibold text-[#f0eef8]">Your next business tool starts with a conversation.</h2><p className="mt-1 text-sm text-[#b8a9c9]">Explore acquisition, calendar, and inventory workspaces built around your day-to-day.</p></div>
+          <Link href="/business-applications" className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-[#9f72ce] px-5 py-3 text-sm font-semibold text-[#dec5f5] hover:bg-[#382448]">Try the interactive demo <ArrowRight className="h-4 w-4" /></Link>
+        </div>
+      </section>
+
       {/* VIDEO — How We Do It */}
       <section className="py-16 bg-[#252640] border-b border-[#2e2c48]">
         <div className="container-custom">

@@ -92,6 +92,7 @@ const FALLBACK_SERVICES: ServiceData[] = [
 ];
 
 const FALLBACK_PAGE_SEO: Record<string, { title: string; description: string }> = {
+  '/business-applications': { title: 'ACI Business Applications | Web Design Pros 365', description: 'Explore business applications shaped through conversation. Try interactive acquisition, calendar, and inventory demos, then plan a workspace for your company.' },
   '/': { title: 'Web Design Pros 365 | AI-Optimized Websites for Denver Businesses', description: 'Custom Next.js websites built for the AI era. SEO + AEO + GEO optimization gets your business found by Google, ChatGPT, Perplexity, and every AI search engine.' },
   '/about': { title: 'About Web Design Pros 365 | Denver Web Development Agency', description: 'Meet the team behind Web Design Pros 365. 20+ years building high-performance websites.' },
   '/contact': { title: 'Contact Web Design Pros 365 | Free AI Visibility Audit', description: 'Get a free AI visibility audit for your website.' },
@@ -166,6 +167,7 @@ export const pageSEO: Record<string, PageSEO> = {};
 // Pre-build pageSEO from fallbacks for synchronous access
 // (layouts can't be async, so we need sync access)
 const SYNC_PAGES: Record<string, { title: string; description: string; breadcrumbs?: { name: string; url: string }[] }> = {
+  '/business-applications': { title: 'ACI Business Applications | Web Design Pros 365', description: 'Explore business applications shaped through conversation. Try interactive acquisition, calendar, and inventory demos, then plan a workspace for your company.', breadcrumbs: [{ name: 'Business Applications', url: `${BASE}/business-applications` }] },
   '/': { title: 'Web Design Pros 365 | AI-Optimized Websites for Denver Businesses', description: 'Custom Next.js websites built for the AI era. SEO + AEO + GEO optimization gets your business found by Google, ChatGPT, Perplexity, and every AI search engine.' },
   '/about': { title: 'About Web Design Pros 365 | Denver Web Development Agency', description: 'Meet the team behind Web Design Pros 365. 20+ years building high-performance websites, now pioneering AI Visibility Stack optimization for businesses.', breadcrumbs: [{ name: 'About', url: `${BASE}/about` }] },
   '/contact': { title: 'Contact Web Design Pros 365 | Free AI Visibility Audit', description: 'Get a free AI visibility audit for your website. See how you show up in ChatGPT, Perplexity, and Google AI Overviews. Denver-based, serving clients nationwide.', breadcrumbs: [{ name: 'Contact', url: `${BASE}/contact` }] },
