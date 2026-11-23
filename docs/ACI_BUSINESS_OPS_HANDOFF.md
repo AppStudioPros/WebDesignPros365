@@ -25,3 +25,9 @@ GET /api/business-apps reports only whether a nonempty key is configured; it doe
 ## Next action / release boundary
 
 Resolve the saved-variable mismatch, then build a fresh preview so it receives the configuration. Verify availability and perform a real generation plus follow-up edit using fictional data. Confirm actual model access and inspect safe provider status logs if it fails. Update PR #3 with results and complete the already requested site integration only after live verification. Do not report GPT as connected based only on mocked tests or key presence. Production remains on the guided implementation until this succeeds.
+
+## Configuration correction, 2026-11-23
+
+The owner confirmed that the existing ANTHROPIC_API_KEY row had been renamed to OPENAI_API_KEY. This explained the missing-variable mismatch; renaming a variable does not convert a provider credential. Restored the existing row to ANTHROPIC_API_KEY via a name-only Vercel update, preserving its value and Production/Preview/Development targets. No secret value was read or changed. The owner has been asked to add a separate OPENAI_API_KEY row using an actual OpenAI secret key.
+
+A preview was started while the renamed setting existed (dpl_2uCSufbqGxwFj7ThveK9gHHRurnH). Do not use it for live API calls: its OpenAI-named setting may hold the Anthropic credential. Use a fresh build only after the separate OpenAI row is correctly saved. No live OpenAI request has been made. Production remains unchanged.
