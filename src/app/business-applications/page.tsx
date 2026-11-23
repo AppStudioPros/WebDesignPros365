@@ -12,6 +12,7 @@ import {
 import { autoMetadata } from "@/lib/metadata";
 import AutoSchema from "@/components/AutoSchema";
 import BusinessAppsExperience from "@/components/business-apps/BusinessAppsExperience";
+import { ACI_PRODUCT_DESCRIPTION } from "@/lib/aci-identity";
 import styles from "./page.module.css";
 
 export const metadata = autoMetadata("/business-applications");
@@ -43,7 +44,7 @@ const useCases = [
 const faqs = [
   [
     "What is an ACI business application?",
-    "A business tool designed around your workflow, with a conversational interface for shaping its screens and processes. It can be scoped as part of a new website build or as a private workspace connected to your existing site.",
+    `${ACI_PRODUCT_DESCRIPTION} Its business applications are tools designed around your workflow, with a conversational interface for shaping screens and processes. They can be scoped as part of a new website build or as a private workspace connected to your existing site.`,
   ],
   [
     "What can I do in the demo?",

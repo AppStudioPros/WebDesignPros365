@@ -13,13 +13,14 @@ import {
 } from "./program-model";
 import CapabilityGuide from "./CapabilityGuide";
 import { acquisitionApp, capabilityMessage, coreApps, isCapabilityQuestion, starterProgram, type StarterId } from "./demo-catalog";
+import { ACI_IDENTITY, identityReply } from "../../lib/aci-identity";
 import styles from "./generated-program.module.css";
 
 type Message = { role: "user" | "assistant"; text: string };
 type Editor = { id: string | null; values: string[] };
 const welcome: Message = {
   role: "assistant",
-  text: "Describe a business tool and I’ll generate an editable preview. Or open a prepared sample instantly. Ask ‘What can we build?’ to explore the possibilities and demo limits.",
+  text: `${ACI_IDENTITY} Describe a business tool for an editable preview, open a prepared sample, or ask ‘What can we build?’`,
 };
 
 function recordName(program: GeneratedProgram, values: string[], index: number) {
@@ -92,6 +93,14 @@ export default function GeneratedProgramDemo({ onShowGuided, restoreSaved = true
   async function send(prompt: string) {
     prompt = prompt.trim();
     if (!prompt || prompt.length > 1200 || requestRef.current) return;
+    const identity = identityReply(prompt);
+    if (identity) {
+      interacted.current = true;
+      setMessages(previous => [...previous.slice(-10), { role: "user", text: prompt }, { role: "assistant", text: identity }]);
+      setInput("");
+      setError("");
+      return;
+    }
     if (isCapabilityQuestion(prompt)) { showCapabilities(prompt, true); return; }
     if (availability !== "available") return;
     const controller = new AbortController();
@@ -233,7 +242,7 @@ export default function GeneratedProgramDemo({ onShowGuided, restoreSaved = true
           <aside className={styles.chat} aria-label="ACI AI builder chat">
             <div className={styles.chatHeading}>
               <span className={styles.mark}><Sparkles size={20} /></span>
-              <div><strong>ACI Business Ops</strong><span>Describe it. See it take shape.</span></div>
+              <div><strong>ACI Business Ops</strong><span>Lucid Tech Labs LLC</span></div>
             </div>
             <button type="button" ref={guideTriggerRef} className={styles.guideButton} onClick={() => showCapabilities()}><Sparkles size={16} /> What can we build?</button>
             <div className={styles.messages} role="log" aria-live="polite" aria-relevant="additions text" aria-label="AI builder conversation" ref={chatRef}>
@@ -254,7 +263,7 @@ export default function GeneratedProgramDemo({ onShowGuided, restoreSaved = true
               <label className={styles.promptLabel} htmlFor="ai-business-prompt">{program ? "What would you like to change?" : "What does your business need?"}</label>
               <form onSubmit={(event) => { event.preventDefault(); void send(input); }}>
                 <textarea id="ai-business-prompt" value={input} onChange={(event) => setInput(event.target.value)} maxLength={1200} rows={3} placeholder={program ? "Add a budget field and a review stage…" : "Build a project tracker, or ask what we can build…"} disabled={busy} />
-                <div className={styles.composerBottom}><span>{input.length}/1200</span><button type="submit" disabled={busy || (!ready && !isCapabilityQuestion(input)) || !input.trim()} aria-label="Build or update workspace">{busy ? <LoaderCircle size={15} className={styles.spin} /> : <Send size={15} />} {isCapabilityQuestion(input) ? "Explore" : program ? "Update" : "Build"}</button></div>
+                <div className={styles.composerBottom}><span>{input.length}/1200</span><button type="submit" disabled={busy || (!ready && !isCapabilityQuestion(input) && !identityReply(input)) || !input.trim()} aria-label="Build or update workspace">{busy ? <LoaderCircle size={15} className={styles.spin} /> : <Send size={15} />} {isCapabilityQuestion(input) ? "Explore" : identityReply(input) ? "Ask ACI" : program ? "Update" : "Build"}</button></div>
               </form>
               <p className={styles.disclosure}>Your prompt and current sample workspace are sent to OpenAI. Use fictional information.</p>
             </div>

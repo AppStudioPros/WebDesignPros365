@@ -60,10 +60,17 @@ export default function PrivacyPage() {
         <div>
           <h2 className="text-xl font-semibold text-[#f0eef8] mb-3">AI assistant on this site</h2>
           <p>
-            If you use the AI assistant on our site, your messages are sent to our ACI platform
-            (which routes to Anthropic Claude) so it can answer in real time. We log the conversation
-            so we can improve the assistant and respond if you ask us to follow up. We do not train
-            third-party models on your messages. We do not share them with anyone outside our team.
+            The ACI website assistant sends your message and recent chat history to OpenAI to
+            generate a response. The ACI Business Ops demo sends your request and current sample
+            workspace to OpenAI when you ask it to build or update a tool. These are separate
+            experiences; the website assistant does not receive your demo workspace.
+          </p>
+          <p className="mt-3">
+            Website chat history and saved demo workspaces stay in this browser. Reset chat clears
+            the website conversation; Reset demo clears the demo data. We do not save chat
+            transcripts in an application database. OpenAI processing is subject to its API data
+            controls and applicable retention policies. Do not enter secrets or sensitive personal
+            or business information, and use fictional data in the public demo.
           </p>
         </div>
 

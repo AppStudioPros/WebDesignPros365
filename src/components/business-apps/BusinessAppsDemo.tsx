@@ -41,6 +41,7 @@ import {
 } from "./demo-model";
 import styles from "@/app/business-applications/page.module.css";
 import { capabilityMessage, isCapabilityQuestion } from "./demo-catalog";
+import { identityReply } from "../../lib/aci-identity";
 import builderStyles from "./generated-program.module.css";
 
 type Message = { role: "user" | "assistant"; text: string };
@@ -157,6 +158,11 @@ export default function BusinessAppsDemo({ restoreSaved = true, onShowCapabiliti
     if (!text) return;
     hasInteracted.current = true;
     setInput("");
+    const identity = identityReply(text);
+    if (identity) {
+      setMessages(previous => [...previous.slice(-6), { role: "user", text }, { role: "assistant", text: identity }]);
+      return;
+    }
     if (isCapabilityQuestion(text)) {
       setMessages(previous => [...previous.slice(-6), { role: "user", text }, { role: "assistant", text: capabilityMessage }]);
       onShowCapabilities();
@@ -403,7 +409,7 @@ export default function BusinessAppsDemo({ restoreSaved = true, onShowCapabiliti
               </span>
               <div>
                 <strong>ACI</strong>
-                <span>Your workspace, in a conversation</span>
+                <span>Lucid Tech Labs LLC</span>
               </div>
               <span className={styles.chatStatus} />
             </div>

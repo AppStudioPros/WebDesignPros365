@@ -61,3 +61,13 @@ Verification: 17/17 API and sample checks pass; the final production build and T
 Vercel's active firewall query returned configured:false; the default firewall applies. Code throttling remains per instance. A deployment-wide API rate rule/shared limiter is recommended before larger promotion, with pricing reviewed first. This is distinct from adding an AI plugin and is not a guaranteed hard spending cap.
 
 Release boundary: this revision is prepared for review. Production remains on c76c8b7 until the new revision is accepted and merged. Preserve the private ACI engine boundary and do not present the sample trackers as live accounting, approvals, synchronized calendars, or shared company systems.
+
+## Shared GPT connection and ACI identity, 2026-11-23
+
+The owner requested consistent identity as “ACI, a custom patented AI product from Lucid Tech Labs LLC,” followed by switching the main website node to the demo's existing GPT connection with separate behavior. No new key setup is needed. `src/lib/openai-config.ts` now supplies both `/api/chat` and `/api/business-apps` with the same key alias/precedence and model configuration. Anthropic remains in use by the unchanged `/api/scan` route.
+
+The website node retains its service/pricing knowledge and text conversation. It directs interactive program requests to `/business-applications#workspace-demo` and has no booking, sending, or company-system tools. The demo retains structured program generation. Profiles are fixed server-side; history and reset actions remain separate. See `TEMP-openai-migration-ledger.md` for exact scope, controls, migration tradeoffs, and verification.
+
+The shared ACI identity helper answers common identity questions without a provider call, prevents common persona changes, and blocks conflicting identity text in completed responses. Patent wording is owner-supplied; patent numbers and scope are not invented or independently verified. Product branding remains distinct from truthful provider-processing information. The node's visible copy and privacy page reflect the new route. Website answers use the existing SSE format but appear only after completion/identity checks. These changes continue PR #4 for review and do not themselves publish production.
+
+Local verification: 30/30 API/sample tests pass, final build/TypeScript pass, and both browser suites pass with mocked provider responses. The node stays hidden on the demo page. Tests cover separate request/history/reset paths and late-response cancellation. Visual inspection corrected a clipped send button at mobile widths; final controls fit at 360px. Fresh preview GPT verification is recorded in the PR after deployment so it remains tied to the tested source commit.

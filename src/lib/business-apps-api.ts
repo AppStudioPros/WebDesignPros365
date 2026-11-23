@@ -4,11 +4,17 @@ import {
   programResponseSchema,
 } from "../components/business-apps/program-model";
 import { capabilityMessage, isCapabilityQuestion } from "../components/business-apps/demo-catalog";
+import { ACI_IDENTITY, hasConflictingIdentity, identityInstructions, identityReply } from "./aci-identity";
+
+import { DEFAULT_OPENAI_MODEL } from "./openai-config";
+import { BodyTooLarge, extractOutput, json, readLimited } from "./ai-http";
 
 const REQUEST_LIMIT = 48 * 1024;
 const RESPONSE_LIMIT = 128 * 1024;
 const WINDOW_MS = 15 * 60 * 1000;
 const INSTRUCTIONS = `You design sample business operations programs for the public Web Design Pros 365 demo.
+${identityInstructions("business-apps")}
+For identity, provider, or patent questions return program:null and preserve the workspace.
 Return only the structured response requested. Produce data, never HTML, code, expressions, links, or executable instructions.
 Supported programs have up to 10 fields and 20 records. Prefer 4-7 fields and 3-5 fictional sample records for new programs.
 Field IDs and record IDs must be unique lower-case identifiers beginning with a letter. Record values are strings in EXACT field order, one value per field.
@@ -29,64 +35,7 @@ type Dependencies = {
 };
 type Bucket = { count: number; until: number };
 
-export function configuredOpenAIKey(env: Record<string, string | undefined>) {
-  // Support the project's existing Sensitive variable without exposing its value
-  // or recreating it. Prefer the standard name when both are configured.
-  return env.OPENAI_API_KEY?.trim() || env.OPEN_API_KEY?.trim();
-}
-
-class BodyTooLarge extends Error {}
-
-async function readLimited(body: ReadableStream<Uint8Array> | null, limit: number): Promise<string> {
-  if (!body) return "";
-  const reader = body.getReader();
-  const chunks: Uint8Array[] = [];
-  let size = 0;
-  try {
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      size += value.byteLength;
-      if (size > limit) {
-        await reader.cancel().catch(() => undefined);
-        throw new BodyTooLarge();
-      }
-      chunks.push(value);
-    }
-  } finally {
-    reader.releaseLock();
-  }
-  const combined = new Uint8Array(size);
-  let offset = 0;
-  for (const chunk of chunks) {
-    combined.set(chunk, offset);
-    offset += chunk.byteLength;
-  }
-  return new TextDecoder("utf-8", { fatal: true }).decode(combined);
-}
-
-function json(body: unknown, status = 200, extra: Record<string, string> = {}) {
-  return Response.json(body, {
-    status,
-    headers: { "Cache-Control": "no-store", "X-Content-Type-Options": "nosniff", ...extra },
-  });
-}
-
-function extractOutput(value: unknown): { refused: boolean; text: string | null } {
-  if (!value || typeof value !== "object") return { refused: false, text: null };
-  const response = value as { status?: unknown; output?: unknown };
-  if (response.status !== "completed" || !Array.isArray(response.output)) return { refused: false, text: null };
-  const texts: string[] = [];
-  let refused = false;
-  for (const item of response.output) {
-    if (!item || item.type !== "message" || item.role !== "assistant" || !Array.isArray(item.content)) continue;
-    for (const content of item.content) {
-      if (content?.type === "refusal") refused = true;
-      if (content?.type === "output_text" && typeof content.text === "string") texts.push(content.text);
-    }
-  }
-  return { refused, text: texts.length === 1 ? texts[0] : null };
-}
+export { configuredOpenAIKey } from "./openai-config";
 
 export function createBusinessAppsHandlers(deps: Dependencies) {
   function openAIKey() {
@@ -143,6 +92,8 @@ export function createBusinessAppsHandlers(deps: Dependencies) {
       }
       const parsed = programRequestSchema.safeParse(input);
       if (!parsed.success) return json({ error: "Use a prompt up to 1,200 characters and a workspace with at most 10 fields and 20 records." }, 400);
+      const identity = identityReply(parsed.data.prompt);
+      if (identity) return json({ message: identity, program: null });
       if (isCapabilityQuestion(parsed.data.prompt)) return json({ message: capabilityMessage, program: null });
       const apiKey = openAIKey();
       if (!apiKey) return json({ error: "AI generation is not configured yet. You can explore the guided samples." }, 503);
@@ -162,7 +113,7 @@ export function createBusinessAppsHandlers(deps: Dependencies) {
           signal: controller.signal,
           cache: "no-store",
           body: JSON.stringify({
-            model: deps.getModel()?.trim() || "gpt-6.2-sol",
+            model: deps.getModel()?.trim() || DEFAULT_OPENAI_MODEL,
             instructions: `${INSTRUCTIONS}\nCurrent UTC date: ${new Date(deps.now()).toISOString().slice(0, 10)}. For new sample schedules without specified dates, use dates from today onward. Preserve existing dates when editing unless asked to change them.`,
             input: JSON.stringify({ request: parsed.data.prompt, current: parsed.data.current }),
             store: false,
@@ -187,6 +138,8 @@ export function createBusinessAppsHandlers(deps: Dependencies) {
         if (!output.text) return json({ error: "The generated workspace was incomplete. Please try a simpler request." }, 502);
         const result = programResponseSchema.safeParse(JSON.parse(output.text));
         if (!result.success) return json({ error: "The generated workspace could not be validated. Your current workspace is unchanged." }, 502);
+        const explanations = [result.data.message, result.data.program?.title, result.data.program?.description];
+        if (explanations.some(text => text && hasConflictingIdentity(text))) return json({ message: ACI_IDENTITY, program: null });
         return json(result.data);
       } catch {
         return json({ error: controller.signal.aborted ? "Generation took too long or was cancelled. Please try again." : "AI generation could not finish. Your current workspace is unchanged." }, controller.signal.aborted ? 504 : 502);

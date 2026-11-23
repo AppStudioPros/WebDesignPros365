@@ -10,6 +10,8 @@ import {
   RefreshCw,
 } from "lucide-react";
 import { AiNodeOrb } from "./AiNodeOrb";
+import { ACI_IDENTITY, identityReply } from "../../lib/aci-identity";
+import { siteMessageSchema } from "../../lib/site-chat-model";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
@@ -26,7 +28,7 @@ const SUGGESTED = [
 const WELCOME: Msg = {
   role: "assistant",
   content:
-    "Hi. I'm the WDP365 assistant, powered by our ACI platform. I can answer questions about our services, pricing, the AI Visibility Stack, or how we replace platforms like GoHighLevel. What are you working on?",
+    `${ACI_IDENTITY} Here I help with Web Design Pros 365 services, pricing, and project planning. What are you working on?`,
 };
 
 export function AciChat() {
@@ -35,8 +37,11 @@ export function AciChat() {
   const [input, setInput] = useState("");
   const [streaming, setStreaming] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [restored, setRestored] = useState(false);
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
+  const requestRef = useRef<AbortController | null>(null);
+  const versionRef = useRef(0);
 
   // Restore history + open state on mount
   useEffect(() => {
@@ -44,9 +49,13 @@ export function AciChat() {
     try {
       const saved = window.localStorage.getItem(STORAGE_KEY);
       if (saved) {
-        const parsed = JSON.parse(saved) as Msg[];
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          setMessages(parsed);
+        const parsed = siteMessageSchema.array().max(1000).safeParse(JSON.parse(saved));
+        if (parsed.success && parsed.data.length > 0) {
+          // Existing saves include the old welcome; refresh that UI copy while
+          // preserving the visitor's completed conversation.
+          const first = parsed.data[0];
+          const history = first.role === "assistant" && (first.content.startsWith("Hi. I'm the WDP365 assistant") || first.content.startsWith(ACI_IDENTITY)) ? parsed.data.slice(1) : parsed.data;
+          setMessages([WELCOME, ...history.slice(-40)]);
         }
       }
       const openSaved = window.localStorage.getItem(OPEN_KEY);
@@ -54,17 +63,19 @@ export function AciChat() {
     } catch {
       // ignore
     }
+    setRestored(true);
+    return () => { versionRef.current++; requestRef.current?.abort(); };
   }, []);
 
   // Persist
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
-  }, [messages]);
+    if (!restored || streaming) return;
+    try { window.localStorage.setItem(STORAGE_KEY, JSON.stringify([WELCOME, ...messages.slice(1).filter(message => message.content.trim()).slice(-40)])); } catch { /* Browser storage is optional. */ }
+  }, [messages, restored, streaming]);
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    window.localStorage.setItem(OPEN_KEY, open ? "1" : "0");
-  }, [open]);
+    if (!restored) return;
+    try { window.localStorage.setItem(OPEN_KEY, open ? "1" : "0"); } catch { /* Browser storage is optional. */ }
+  }, [open, restored]);
 
   // Auto-scroll to latest message
   useEffect(() => {
@@ -84,11 +95,16 @@ export function AciChat() {
 
   const sendMessage = async (overrideText?: string) => {
     const text = (overrideText ?? input).trim();
-    if (!text || streaming) return;
+    if (!text || text.length > 1200 || requestRef.current || streaming) return;
     setInput("");
     setError(null);
 
     const next = [...messages, { role: "user" as const, content: text }];
+    const identity = identityReply(text, "website");
+    if (identity) { setMessages([...next, { role: "assistant", content: identity }]); return; }
+    const controller = new AbortController();
+    const version = ++versionRef.current;
+    requestRef.current = controller;
     setMessages(next);
     setStreaming(true);
 
@@ -101,9 +117,11 @@ export function AciChat() {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
           // strip the welcome message from the wire payload — it's UI-only
-          messages: next.slice(1),
+          messages: next.slice(1).filter(message => message.content.trim()).slice(-40),
         }),
+        signal: controller.signal,
       });
+      if (controller.signal.aborted || version !== versionRef.current) return;
 
       if (!res.ok || !res.body) {
         const errBody = await res.json().catch(() => ({ error: "Request failed" }));
@@ -113,9 +131,11 @@ export function AciChat() {
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
       let buffer = "";
+      let completed = false;
 
       while (true) {
         const { value, done } = await reader.read();
+        if (controller.signal.aborted || version !== versionRef.current) return;
         if (done) break;
         buffer += decoder.decode(value, { stream: true });
         const lines = buffer.split("\n");
@@ -123,7 +143,7 @@ export function AciChat() {
         for (const line of lines) {
           if (!line.startsWith("data: ")) continue;
           const data = line.slice(6);
-          if (data === "[DONE]") continue;
+          if (data === "[DONE]") { completed = true; continue; }
           try {
             const parsed = JSON.parse(data);
             if (parsed.error) {
@@ -150,20 +170,22 @@ export function AciChat() {
           }
         }
       }
+      if (!completed) throw new Error("The answer was interrupted. Please try again.");
     } catch (err) {
+      if (controller.signal.aborted || version !== versionRef.current) return;
       const message =
         err instanceof Error ? err.message : "Something went wrong.";
       setError(message);
-      // Remove the empty assistant placeholder if streaming failed early
+      // Do not save a failed or incomplete assistant answer.
       setMessages((prev) => {
         const last = prev[prev.length - 1];
-        if (last && last.role === "assistant" && last.content === "") {
+        if (last && last.role === "assistant") {
           return prev.slice(0, -1);
         }
         return prev;
       });
     } finally {
-      setStreaming(false);
+      if (version === versionRef.current) { requestRef.current = null; setStreaming(false); }
     }
   };
 
@@ -173,6 +195,10 @@ export function AciChat() {
   };
 
   const resetChat = () => {
+    versionRef.current++;
+    requestRef.current?.abort();
+    requestRef.current = null;
+    setStreaming(false);
     setMessages([WELCOME]);
     setError(null);
     setInput("");
@@ -236,10 +262,10 @@ export function AciChat() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-sm leading-tight">
-                    ACI Assistant
+                    ACI Website Assistant
                   </h3>
                   <p className="text-xs text-white/80 leading-tight">
-                    Patented AI · Powered by ACI
+                    Lucid Tech Labs LLC
                   </p>
                 </div>
               </div>
@@ -256,6 +282,9 @@ export function AciChat() {
             {/* Messages */}
             <div
               ref={scrollRef}
+              role="log"
+              aria-label="Website assistant conversation"
+              aria-live="polite"
               className="flex-1 overflow-y-auto px-4 py-4 space-y-4 bg-[#181928]"
             >
               {messages.map((msg, i) => (
@@ -314,16 +343,18 @@ export function AciChat() {
               <input
                 ref={inputRef}
                 type="text"
+                aria-label="Message ACI website assistant"
+                maxLength={1200}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask about services, pricing, or anything else..."
+                placeholder="Ask about services, pricing, or your project…"
                 disabled={streaming}
-                className="flex-1 px-3 py-2 text-sm bg-[#1c1d30] border border-[#3a3858] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8734E1]/40 focus:border-[#8734E1] disabled:opacity-50"
+                className="min-w-0 flex-1 px-3 py-2 text-sm bg-[#1c1d30] border border-[#3a3858] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8734E1]/40 focus:border-[#8734E1] disabled:opacity-50"
               />
               <button
                 type="submit"
                 disabled={streaming || !input.trim()}
-                className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#8734E1] to-[#2F73EE] text-white flex items-center justify-center hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
+                className="shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-[#8734E1] to-[#2F73EE] text-white flex items-center justify-center hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
                 aria-label="Send message"
               >
                 {streaming ? (
@@ -334,9 +365,10 @@ export function AciChat() {
               </button>
             </form>
 
-            <p className="text-[10px] text-gray-400 text-center px-4 pb-3 bg-[#252640]">
-              Patented ACI architecture · No hallucination · Always human-in-the-loop
+            <p className="text-xs text-gray-300 text-center px-4 pb-2 bg-[#252640]">
+              Messages are processed by OpenAI. Avoid sensitive information. <a href="/privacy" className="underline">Privacy</a>
             </p>
+            <a href="/business-applications#workspace-demo" className="text-xs text-[#dddaf0] underline text-center px-4 pb-3 bg-[#252640]">Open the ACI Business Ops demo</a>
           </motion.div>
         )}
       </AnimatePresence>
