@@ -47,11 +47,11 @@ try {
  mode='error';
  await page.locator('#ai-business-prompt').fill('Change the title');
  await page.getByRole('button',{name:'Build or update workspace',exact:true}).click();
- await expect(page.getByRole('alert')).toContainText('Generation unavailable');
+ await expect(page.locator('#workspace-demo').getByRole('alert')).toContainText('Generation unavailable');
  await expect(page.getByRole('table')).toContainText('Pine Valley');
  mode='invalid';
  await page.getByRole('button',{name:'Build or update workspace',exact:true}).click();
- await expect(page.getByRole('alert')).toContainText('could not be loaded');
+ await expect(page.locator('#workspace-demo').getByRole('alert')).toContainText('could not be loaded');
  await expect(page.getByRole('table')).toContainText('Pine Valley');
  await page.getByRole('button',{name:'Agenda',exact:true}).click();
  await expect(page.getByRole('button',{name:'Edit Pine Valley',exact:true})).toBeVisible();
