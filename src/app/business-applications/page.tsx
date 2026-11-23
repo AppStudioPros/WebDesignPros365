@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { autoMetadata } from "@/lib/metadata";
 import AutoSchema from "@/components/AutoSchema";
-import BusinessAppsDemo from "@/components/business-apps/BusinessAppsDemo";
+import BusinessAppsExperience from "@/components/business-apps/BusinessAppsExperience";
 import styles from "./page.module.css";
 
 export const metadata = autoMetadata("/business-applications");
@@ -44,7 +44,7 @@ const faqs = [
   ],
   [
     "What can I do in the demo?",
-    "Switch between three sample workspaces, try supported chat prompts, add sample records, change inventory quantities, and save the demo in this browser. This is a guided product preview using sample data. It does not connect to your company systems or the private ACI engine.",
+    "Describe a business tool and AI creates an editable preview with fields, sample records, and a table, board, or calendar agenda. Ask for changes, edit records, and save the preview in this browser. Prompts and the current sample workspace are sent to OpenAI, so use fictional information. You can also explore three guided samples. Neither mode connects to company systems or the private ACI engine.",
   ],
   [
     "Will my employees use it behind a login?",
@@ -106,7 +106,7 @@ export default function BusinessApplicationsPage() {
         className={`${styles.container} ${styles.demoSection}`}
         aria-label="Interactive business application demo"
       >
-        <BusinessAppsDemo />
+        <BusinessAppsExperience />
       </section>
 
       <section
