@@ -10,7 +10,7 @@ The builder uses validated data, never executable model-generated code. It suppo
 
 ## Configuration
 
-Set OPENAI_API_KEY on Vercel project webdesignpros365 (team webdesignpros), including Preview and Production. Optional OPENAI_BUSINESS_MODEL overrides the default gpt-6.2-sol. The key is server-only. Never commit an environment file or print secret values.
+Set OPENAI_API_KEY on Vercel project webdesignpros365 (team webdesignpros), including Preview and Production. The existing OPEN_API_KEY name is also supported as a server-only fallback; OPENAI_API_KEY takes precedence. Optional OPENAI_BUSINESS_MODEL overrides the default gpt-6.2-sol. The key is server-only. Never commit an environment file or print secret values.
 
 GET /api/business-apps reports only whether a nonempty key is configured; it does not prove provider access or billing. POST uses Responses API, store:false, strict structured output, schema validation, a 45-second timeout, and a 4,000-output-token ceiling. Provider failures log only HTTP status and a validated request ID. Per-instance/IP throttling is best-effort; it is not a distributed spending cap. Deployment-wide controls require a shared limiter or platform firewall rule. Provider budgets may be alerts rather than hard limits.
 
@@ -33,3 +33,7 @@ The owner confirmed that the existing ANTHROPIC_API_KEY row had been renamed to 
 A preview was started while the renamed setting existed (dpl_2uCSufbqGxwFj7ThveK9gHHRurnH). Do not use it for live API calls: its OpenAI-named setting may hold the Anthropic credential. Use a fresh build only after the separate OpenAI row is correctly saved. No live OpenAI request has been made. Production remains unchanged.
 
 The builder now treats a known Anthropic key prefix in OPENAI_API_KEY as unavailable and rejects generation before any provider request. This guards against the observed variable-renaming mistake without logging credential values. The additional regression test verifies no outbound request occurs.
+
+## Separate OpenAI setting, 2026-11-23
+
+The owner added separate Sensitive OpenAI variables in Production, Preview, and Development, named OPEN_API_KEY. Vercel rejects renaming Sensitive variables with HTTP 400. The application now accepts this existing name as a server-only fallback, preserving the values and Sensitive protection without reading or recreating secrets. ANTHROPIC_API_KEY remains restored. The alias and standard-name precedence are covered by a regression test; all 14 API tests passed. Live verification must use a new deployment containing this alias support.

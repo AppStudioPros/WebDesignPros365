@@ -1,6 +1,6 @@
 const assert = require("node:assert/strict");
 const { test } = require("node:test");
-const { createBusinessAppsHandlers } = require(process.env.BUSINESS_APPS_TEST_MODULE);
+const { configuredOpenAIKey, createBusinessAppsHandlers } = require(process.env.BUSINESS_APPS_TEST_MODULE);
 
 const program = {
   title: "Acquisition pipeline", description: "Fictional sample opportunities", view: "board",
@@ -55,6 +55,17 @@ test("missing configuration is explicit and does not call the provider", async (
   assert.deepEqual(await api.GET().json(), { available: false });
   assert.equal((await api.POST(request())).status, 503);
   assert.equal(api.calls.length, 0);
+});
+
+test("the saved Sensitive variable alias works while the standard name takes precedence", async () => {
+  const env = { OPEN_API_KEY: " test-alias-credential-not-real " };
+  const api = setup({ getKey: () => configuredOpenAIKey(env) });
+  assert.deepEqual(await api.GET().json(), { available: true });
+  assert.equal((await api.POST(request())).status, 200);
+  assert.equal(api.calls[0][1].headers.Authorization, "Bearer test-alias-credential-not-real");
+  assert.equal(configuredOpenAIKey({ ...env, OPENAI_API_KEY: " standard-test-value " }), "standard-test-value");
+  assert.equal(configuredOpenAIKey({ ...env, OPENAI_API_KEY: "  " }), "test-alias-credential-not-real");
+  assert.equal(configuredOpenAIKey({}), undefined);
 });
 
 test("a renamed Anthropic credential is never sent to OpenAI", async () => {
