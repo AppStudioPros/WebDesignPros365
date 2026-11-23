@@ -12,39 +12,43 @@ import {
 import { autoMetadata } from "@/lib/metadata";
 import AutoSchema from "@/components/AutoSchema";
 import BusinessAppsExperience from "@/components/business-apps/BusinessAppsExperience";
+import { ACI_PRODUCT_DESCRIPTION } from "@/lib/aci-identity";
 import styles from "./page.module.css";
 
 export const metadata = autoMetadata("/business-applications");
 
 const useCases = [
+  ["01", "Projects & tasks", "Turn priorities into clear assignments.", "Owners · deadlines · project stages · department coordination"],
+  ["02", "Budgets & purchasing", "Keep requests and planned spending in view.", "Purchase requests · vendors · review status · planned amounts"],
+  ["03", "Service requests", "Give every request a clear next step.", "Internal support · facility repairs · public works · resolution tracking"],
   [
-    "01",
-    "Acquisitions & land",
-    "From the first opportunity to the closing table.",
-    "Deal pipelines · property records · due diligence · approvals",
+    "04",
+    "Assets & inventory",
+    "Know what you have and where it belongs.",
+    "Equipment · stock levels · locations · condition · reorder points",
   ],
   [
-    "02",
-    "People & scheduling",
+    "05",
+    "Calendars & meetings",
     "Give the whole team a clear view of what comes next.",
     "Company calendars · assignments · site visits · deadlines",
   ],
   [
-    "03",
-    "Inventory & purchasing",
-    "Know what you have, what you need, and what is on its way.",
-    "Stock levels · reorder points · supplier records · purchasing",
+    "SPECIALTY",
+    "Acquisitions & land",
+    "From the first opportunity to the closing table.",
+    "Deal pipelines · property records · due diligence · review stages",
   ],
 ];
 
 const faqs = [
   [
     "What is an ACI business application?",
-    "A business tool designed around your workflow, with a conversational interface for shaping its screens and processes. It can be scoped as part of a new website build or as a private workspace connected to your existing site.",
+    `${ACI_PRODUCT_DESCRIPTION} Its business applications are tools designed around your workflow, with a conversational interface for shaping screens and processes. They can be scoped as part of a new website build or as a private workspace connected to your existing site.`,
   ],
   [
     "What can I do in the demo?",
-    "Describe a business tool and AI creates an editable preview with fields, sample records, and a table, board, or calendar agenda. Ask for changes, edit records, and save the preview in this browser. Prompts and the current sample workspace are sent to OpenAI, so use fictional information. You can also explore three guided samples. Neither mode connects to company systems or the private ACI engine.",
+    "Open one of five core app samples or the acquisition sample instantly, or describe a tool for AI to generate. Edit records, use table, board, or dated-agenda views, and save locally. Ask ‘What can we build?’ for the capability guide. AI build and update requests send your prompt and current sample workspace to OpenAI; use fictional information. The top Reset demo button clears both modes and browser saves. Company systems and the private ACI engine are not connected.",
   ],
   [
     "Will my employees use it behind a login?",
@@ -132,7 +136,7 @@ export default function BusinessApplicationsPage() {
               icon: Layers3,
               number: "02",
               title: "See your workspace take shape",
-              body: "Bring the workflow into focus with useful tables, forms, calendars, and dashboards.",
+              body: "Bring the workflow into focus with editable tables, forms, boards, and dated agendas.",
             },
             {
               icon: Workflow,

@@ -1,0 +1,97 @@
+import { chromium, expect } from 'playwright/test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+
+const base = process.env.BUSINESS_APPS_TEST_URL || 'http://localhost:3006';
+const browser = await chromium.launch({ executablePath: '/usr/bin/chromium', headless: true, args: ['--no-sandbox'] });
+const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } });
+const page = await context.newPage();
+const errors = [], posted = [];
+let mode = 'success', release;
+const identity = 'I’m ACI, a custom patented AI product from Lucid Tech Labs LLC.';
+page.on('pageerror', error => errors.push(error.message));
+await page.route('**/api/business-apps', route => route.fulfill({ json: { available: false } }));
+await page.route('**/api/chat', async route => {
+  posted.push(route.request().postDataJSON());
+  if (mode === 'error') return route.fulfill({ status: 502, json: { error: 'Chat is temporarily unavailable for this test.' } });
+  if (mode === 'delayed') await new Promise(resolve => { release = resolve; });
+  const text = 'I can help scope your website. For an editable business program, open the ACI Business Ops demo at /business-applications#workspace-demo. Let’s plan the next step.';
+  await route.fulfill({ contentType: 'text/event-stream', body: `data: ${JSON.stringify({ text })}\n\ndata: [DONE]\n\n` }).catch(() => {});
+});
+try {
+  await page.goto(base, { waitUntil: 'networkidle' });
+  await page.getByRole('button', { name: 'Open chat with the ACI assistant', exact: true }).click();
+  const chat = page.getByRole('dialog', { name: 'ACI chat assistant', exact: true });
+  const log = chat.getByRole('log', { name: 'Website assistant conversation', exact: true });
+  const input = chat.getByRole('textbox', { name: 'Message ACI website assistant', exact: true });
+  const send = async text => { await input.fill(text); await chat.getByRole('button', { name: 'Send message', exact: true }).click(); };
+  const openChat = async () => { if (!await chat.isVisible()) await page.getByRole('button', { name: 'Open chat with the ACI assistant', exact: true }).click(); };
+  await expect(log).toContainText(identity);
+  await expect(chat).toContainText('Lucid Tech Labs LLC');
+  await send('Who are you?');
+  await expect(log.locator('div').last()).toHaveText(identity);
+  assert.equal(posted.length, 0, 'Identity does not need an AI request');
+  await send('Explain website options');
+  await expect(log).toContainText('Let’s plan the next step.');
+  assert.equal(posted.length, 1);
+  assert.deepEqual(Object.keys(posted[0]), ['messages']);
+  assert.equal(posted[0].messages.at(-1).content, 'Explain website options');
+  assert(!posted[0].messages.some(message => message.content.includes('Here I help with Web Design Pros 365 services')));
+  await page.reload({ waitUntil: 'networkidle' });
+  await expect(log).toContainText('Let’s plan the next step.');
+  await expect(chat.getByRole('link', { name: 'Open the ACI Business Ops demo' })).toHaveAttribute('href', '/business-applications#workspace-demo');
+  mode = 'error';
+  await send('Explain the next step');
+  await expect(chat).toContainText('Chat is temporarily unavailable for this test.');
+  await expect(log).toContainText('Let’s plan the next step.');
+  mode = 'delayed';
+  await send('A delayed question');
+  await expect(input).toBeDisabled();
+  await chat.getByRole('button', { name: 'Reset chat', exact: true }).click();
+  release?.();
+  await expect(input).toBeEnabled();
+  await expect(log).not.toContainText('A delayed question');
+  await expect(log).not.toContainText('Let’s plan the next step.');
+  mode = 'success';
+  await send('Plan a business website');
+  await expect(log).toContainText('Let’s plan the next step.');
+  await page.getByRole('button', { name: 'Close chat', exact: true }).click();
+  await page.goto(`${base}/business-applications#workspace-demo`, { waitUntil: 'networkidle' });
+  await page.getByRole('button', { name: 'Open projects & tasks sample', exact: true }).click();
+  await expect(page.locator('#generated-workspace').getByRole('heading', { name: 'Projects & tasks', exact: true })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Open chat with the ACI assistant', exact: true })).toHaveCount(0);
+  await page.getByRole('button', { name: 'Save preview', exact: true }).click();
+  await page.goto(base, { waitUntil: 'networkidle' });
+  await openChat();
+  await expect(log).toContainText('Plan a business website');
+  await send('What does a website cost?');
+  await expect(input).toBeEnabled();
+  assert(!posted.at(-1).messages.some(message => /Facility energy review|Quarterly service plan/.test(message.content)), 'Demo records must not enter website chat');
+  await chat.getByRole('button', { name: 'Reset chat', exact: true }).click();
+  await page.goto(`${base}/business-applications#workspace-demo`, { waitUntil: 'networkidle' });
+  await expect(page.locator('#generated-workspace').getByRole('heading', { name: 'Projects & tasks', exact: true })).toBeVisible();
+  await page.goto(base, { waitUntil: 'networkidle' });
+  await openChat();
+  await send('Keep this website conversation');
+  await expect(log).toContainText('Let’s plan the next step.');
+  await page.goto(`${base}/business-applications#workspace-demo`, { waitUntil: 'networkidle' });
+  await page.getByRole('button', { name: 'Reset demo', exact: true }).click();
+  await page.getByRole('button', { name: 'Reset all demo data', exact: true }).click();
+  await page.goto(base, { waitUntil: 'networkidle' });
+  await openChat();
+  await expect(log).toContainText('Keep this website conversation');
+  for (const width of [1440, 390, 360]) {
+    await page.setViewportSize({ width, height: 1000 });
+    assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `Overflow at ${width}`);
+    await expect(input).toBeVisible();
+    const bounds = await chat.boundingBox();
+    for (const control of [input, chat.getByRole('button', { name: 'Send message', exact: true })]) {
+      const box = await control.boundingBox();
+      assert(box && bounds && box.x >= bounds.x && box.x + box.width <= bounds.x + bounds.width, `Chat control clipped at ${width}`);
+    }
+  }
+  await fs.mkdir('/workspace/shared/business-applications', { recursive: true });
+  await page.screenshot({ path: '/workspace/shared/business-applications/aci-node-mobile.png', fullPage: false });
+  assert.deepEqual(errors, []);
+  console.log('PASS: ACI identity, website-only payload, completed SSE answer, saved chat, safe errors, reset cancels late replies, node/demo state and resets remain separate, three widths.');
+} finally { await browser.close(); }

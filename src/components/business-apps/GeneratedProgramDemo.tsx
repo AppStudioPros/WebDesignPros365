@@ -4,26 +4,24 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import {
   ArrowDown, ArrowUpRight, CalendarDays, Check, ChevronRight, Columns3,
-  FolderOpen, Info, LoaderCircle, MapPin, Package, Pencil, Plus,
-  RotateCcw, Save, Send, Sparkles, Table2, Trash2, X,
+  FolderOpen, Info, LoaderCircle, Pencil, Plus,
+  Save, Send, Sparkles, Table2, Trash2, X,
 } from "lucide-react";
 import {
   PROGRAM_STORAGE_KEY, programResponseSchema, programSchema,
   type GeneratedProgram,
 } from "./program-model";
+import CapabilityGuide from "./CapabilityGuide";
+import { acquisitionApp, capabilityMessage, coreApps, isCapabilityQuestion, starterProgram, type StarterId } from "./demo-catalog";
+import { ACI_IDENTITY, identityReply } from "../../lib/aci-identity";
 import styles from "./generated-program.module.css";
 
 type Message = { role: "user" | "assistant"; text: string };
 type Editor = { id: string | null; values: string[] };
 const welcome: Message = {
   role: "assistant",
-  text: "Describe a business tool you need. I’ll build an editable preview with fields and sample records, then help you refine it.",
+  text: `${ACI_IDENTITY} Describe a business tool for an editable preview, open a prepared sample, or ask ‘What can we build?’`,
 };
-const starters = [
-  { icon: MapPin, label: "Acquisitions & land", prompt: "Build a land acquisition program with properties, asking prices, acreage, due diligence dates, assigned owners, and stages from sourcing to closing. Show a pipeline board with fictional sample properties." },
-  { icon: CalendarDays, label: "Company calendar", prompt: "Create a company calendar with dates, team members, meeting types, and notes for meetings, site visits, and deadlines. Use fictional sample events and a calendar view." },
-  { icon: Package, label: "Inventory system", prompt: "Create an inventory system with item names, SKUs, quantities, reorder points, unit costs, and suppliers. Show a table with fictional sample products." },
-];
 
 function recordName(program: GeneratedProgram, values: string[], index: number) {
   const nameIndex = program.fields.findIndex((field) => field.type === "text");
@@ -38,7 +36,9 @@ function displayValue(value: string, type: GeneratedProgram["fields"][number]["t
   return value;
 }
 
-export default function GeneratedProgramDemo({ onShowGuided }: { onShowGuided: () => void }) {
+export default function GeneratedProgramDemo({ onShowGuided, restoreSaved = true, guideOpen, onGuideOpenChange: setGuideOpen }: {
+  onShowGuided: () => void; restoreSaved?: boolean; guideOpen: boolean; onGuideOpenChange: (open: boolean) => void;
+}) {
   const [program, setProgram] = useState<GeneratedProgram | null>(null);
   const [messages, setMessages] = useState<Message[]>([welcome]);
   const [input, setInput] = useState("");
@@ -49,11 +49,13 @@ export default function GeneratedProgramDemo({ onShowGuided }: { onShowGuided: (
   const [saved, setSaved] = useState(false);
   const [editor, setEditor] = useState<Editor | null>(null);
   const [editorError, setEditorError] = useState("");
+  const [pendingStarter, setPendingStarter] = useState<StarterId | null>(null);
   const requestRef = useRef<AbortController | null>(null);
   const versionRef = useRef(0);
   const chatRef = useRef<HTMLDivElement>(null);
   const editorTriggerRef = useRef<HTMLElement | null>(null);
   const addRecordRef = useRef<HTMLButtonElement>(null);
+  const guideTriggerRef = useRef<HTMLButtonElement>(null);
   const interacted = useRef(false);
 
   useEffect(() => {
@@ -65,7 +67,7 @@ export default function GeneratedProgramDemo({ onShowGuided }: { onShowGuided: (
       })
       .catch(() => { if (!controller.signal.aborted) setAvailability("unavailable"); });
     try {
-      const raw = localStorage.getItem(PROGRAM_STORAGE_KEY);
+      const raw = restoreSaved ? localStorage.getItem(PROGRAM_STORAGE_KEY) : null;
       if (raw) {
         const result = programSchema.safeParse(JSON.parse(raw));
         if (result.success) {
@@ -82,7 +84,7 @@ export default function GeneratedProgramDemo({ onShowGuided }: { onShowGuided: (
       requestRef.current?.abort();
       requestRef.current = null;
     };
-  }, []);
+  }, [restoreSaved]);
 
   useEffect(() => {
     if (interacted.current && chatRef.current) chatRef.current.scrollTop = chatRef.current.scrollHeight;
@@ -90,7 +92,17 @@ export default function GeneratedProgramDemo({ onShowGuided }: { onShowGuided: (
 
   async function send(prompt: string) {
     prompt = prompt.trim();
-    if (!prompt || prompt.length > 1200 || requestRef.current || availability !== "available") return;
+    if (!prompt || prompt.length > 1200 || requestRef.current) return;
+    const identity = identityReply(prompt);
+    if (identity) {
+      interacted.current = true;
+      setMessages(previous => [...previous.slice(-10), { role: "user", text: prompt }, { role: "assistant", text: identity }]);
+      setInput("");
+      setError("");
+      return;
+    }
+    if (isCapabilityQuestion(prompt)) { showCapabilities(prompt, true); return; }
+    if (availability !== "available") return;
     const controller = new AbortController();
     requestRef.current = controller;
     const version = ++versionRef.current;
@@ -135,6 +147,33 @@ export default function GeneratedProgramDemo({ onShowGuided }: { onShowGuided: (
     }
   }
 
+  function showCapabilities(prompt = "What can we build?", clearInput = false) {
+    interacted.current = true;
+    setMessages(previous => [...previous.slice(-10), { role: "user", text: prompt }, { role: "assistant", text: capabilityMessage }]);
+    if (clearInput) setInput("");
+    setGuideOpen(true);
+  }
+
+  function loadSample(id: StarterId) {
+    if (requestRef.current) return;
+    const sample = programSchema.parse(starterProgram(id));
+    setProgram(sample);
+    setSaved(false);
+    setInput("");
+    setError("");
+    setEditor(null);
+    setPendingStarter(null);
+    setNotice("Prepared sample loaded. Edit the records or ask AI to customize it.");
+    setMessages([{ role: "assistant", text: `Opened the prepared ${sample.title.toLowerCase()} sample. No AI request was used to load it. Edit a record, try another view, or ask me to change its fields and layout.` }]);
+  }
+
+  function chooseSample(id: StarterId) {
+    if (requestRef.current) return;
+    setGuideOpen(false);
+    if (program) setPendingStarter(id);
+    else loadSample(id);
+  }
+
   function change(next: GeneratedProgram, message: string) {
     const result = programSchema.safeParse(next);
     if (!result.success) return false;
@@ -154,22 +193,6 @@ export default function GeneratedProgramDemo({ onShowGuided }: { onShowGuided: (
       setSaved(false);
       setNotice("Browser storage is unavailable. You can keep using your preview without saving.");
     }
-  }
-
-  function reset() {
-    versionRef.current += 1;
-    requestRef.current?.abort();
-    requestRef.current = null;
-    setBusy(false);
-    setProgram(null);
-    setMessages([welcome]);
-    setInput("");
-    setError("");
-    setSaved(false);
-    setEditor(null);
-    let removed = true;
-    try { localStorage.removeItem(PROGRAM_STORAGE_KEY); } catch { removed = false; }
-    setNotice(removed ? "Preview reset. Describe your next business tool." : "Preview reset for this session. Browser storage could not be cleared.");
   }
 
   function openEditor(id: string | null, values?: string[]) {
@@ -213,14 +236,15 @@ export default function GeneratedProgramDemo({ onShowGuided }: { onShowGuided: (
         <div className={styles.windowBar}>
           <span className={styles.windowDots} aria-hidden="true"><i /><i /><i /></span>
           <span>your-company / workspace</span>
-          <span className={styles.badge}>AI-generated preview</span>
+          <span className={styles.badge}>Interactive preview · sample data</span>
         </div>
         <div className={styles.body}>
           <aside className={styles.chat} aria-label="ACI AI builder chat">
             <div className={styles.chatHeading}>
               <span className={styles.mark}><Sparkles size={20} /></span>
-              <div><strong>ACI Business Ops</strong><span>Describe it. See it take shape.</span></div>
+              <div><strong>ACI Business Ops</strong><span>Lucid Tech Labs LLC</span></div>
             </div>
+            <button type="button" ref={guideTriggerRef} className={styles.guideButton} onClick={() => showCapabilities()}><Sparkles size={16} /> What can we build?</button>
             <div className={styles.messages} role="log" aria-live="polite" aria-relevant="additions text" aria-label="AI builder conversation" ref={chatRef}>
               <p className={styles.eyebrow}>YOUR NEXT TOOL STARTS HERE</p>
               {messages.map((message, index) => (
@@ -238,8 +262,8 @@ export default function GeneratedProgramDemo({ onShowGuided }: { onShowGuided: (
               {error && <p className={styles.error} role="alert">{error}</p>}
               <label className={styles.promptLabel} htmlFor="ai-business-prompt">{program ? "What would you like to change?" : "What does your business need?"}</label>
               <form onSubmit={(event) => { event.preventDefault(); void send(input); }}>
-                <textarea id="ai-business-prompt" value={input} onChange={(event) => setInput(event.target.value)} maxLength={1200} rows={3} placeholder={program ? "Add a budget field and a review stage…" : "Build an acquisitions program for my team…"} disabled={!ready} />
-                <div className={styles.composerBottom}><span>{input.length}/1200</span><button type="submit" disabled={!ready || !input.trim()} aria-label="Build or update workspace">{busy ? <LoaderCircle size={15} className={styles.spin} /> : <Send size={15} />} {program ? "Update" : "Build"}</button></div>
+                <textarea id="ai-business-prompt" value={input} onChange={(event) => setInput(event.target.value)} maxLength={1200} rows={3} placeholder={program ? "Add a budget field and a review stage…" : "Build a project tracker, or ask what we can build…"} disabled={busy} />
+                <div className={styles.composerBottom}><span>{input.length}/1200</span><button type="submit" disabled={busy || (!ready && !isCapabilityQuestion(input) && !identityReply(input)) || !input.trim()} aria-label="Build or update workspace">{busy ? <LoaderCircle size={15} className={styles.spin} /> : <Send size={15} />} {isCapabilityQuestion(input) ? "Explore" : identityReply(input) ? "Ask ACI" : program ? "Update" : "Build"}</button></div>
               </form>
               <p className={styles.disclosure}>Your prompt and current sample workspace are sent to OpenAI. Use fictional information.</p>
             </div>
@@ -276,16 +300,25 @@ export default function GeneratedProgramDemo({ onShowGuided }: { onShowGuided: (
                 <div className={styles.emptyMark}><Sparkles size={29} /></div>
                 <p className={styles.eyebrow}>BUILT AROUND THE WAY YOU WORK</p>
                 <h3>Your idea.<br /><span>A working workspace.</span></h3>
-                <p>Start with a workflow below, or describe your own. AI creates the fields, layout, and sample records for you to explore.</p>
-                <div className={styles.starters}>{starters.map(({ icon: Icon, label, prompt }) => <button type="button" key={label} disabled={!ready} onClick={() => void send(prompt)}><Icon size={19} /><span>{label}</span><ArrowUpRight size={16} /></button>)}</div>
+                <p>Five everyday apps for business and city teams. Open a prepared sample instantly, or describe your own tool in chat to build with AI.</p>
+                <div className={styles.starters}>{coreApps.map(app => <button type="button" key={app.id} disabled={busy} onClick={() => chooseSample(app.id)} aria-label={`Open ${app.title.toLowerCase()} sample`}><span><strong>{app.title}</strong><small>{app.view} · Open sample</small></span><ArrowUpRight size={16} /></button>)}</div>
+                <button type="button" className={styles.specialtyButton} disabled={busy} onClick={() => chooseSample(acquisitionApp.id)}>Also explore: Acquisitions & land <ArrowUpRight size={15} /></button>
                 <div className={styles.emptySteps}><span><Check size={13} /> Editable records</span><span><Check size={13} /> Follow-up changes</span><span><Check size={13} /> Save locally</span></div>
               </div>
             )}
           </section>
         </div>
-        <div className={styles.statusBar}><span role="status"><Info size={14} />{notice}</span><button type="button" onClick={reset}><RotateCcw size={13} /> Reset preview</button></div>
+        <div className={styles.statusBar}><span role="status"><Info size={14} />{notice}</span></div>
       </div>
       <p className={styles.caption}><Info size={14} />AI generates a sample workspace, not a deployed company system. Team accounts, shared storage, and business integrations are scoped separately. This demo does not access the private ACI engine.</p>
+      <CapabilityGuide open={guideOpen} onOpenChange={setGuideOpen} onChoose={chooseSample} busy={busy} onClose={() => guideTriggerRef.current?.focus()} />
+      <Dialog.Root open={pendingStarter !== null} onOpenChange={open => { if (!open) setPendingStarter(null); }}>
+        <Dialog.Portal><Dialog.Overlay className={styles.dialogOverlay} /><Dialog.Content className={styles.dialog} onCloseAutoFocus={event => { event.preventDefault(); guideTriggerRef.current?.focus(); }}>
+          <Dialog.Title className={styles.dialogTitle}>Open a different sample?</Dialog.Title>
+          <Dialog.Description className={styles.dialogDescription}>This replaces your current working preview. Unsaved edits will be lost. Your last saved preview stays in this browser until you save again or reset the demo.</Dialog.Description>
+          <div className={styles.formActions}><Dialog.Close className={styles.cancelButton}>Keep current workspace</Dialog.Close><button type="button" className={styles.submitButton} onClick={() => { if (pendingStarter) loadSample(pendingStarter); }}>Open sample</button></div>
+        </Dialog.Content></Dialog.Portal>
+      </Dialog.Root>
       <Dialog.Root open={editor !== null} onOpenChange={(open) => { if (!open) setEditor(null); }}>
         <Dialog.Portal>
           <Dialog.Overlay className={styles.dialogOverlay} />
